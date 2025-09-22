@@ -3,6 +3,35 @@
   "content_id": "genesis",
   "book_id": "book_1",
   "scene_id": "1.7",
+  "title": "Ledger Heart",
+  "narration": "You reach the vault's heart. A colossal gear of light records every choice made so far.",
+  "rounds": [
+    {
+      "round_id": "1.7-R1",
+      "description": "Present your ledger",
+      "actions": [
+        {
+          "id": "test_integrity",
+          "label": "Test integrity pathways",
+          "roll": { "kind": "phi_d20", "tags": ["integrity", "insight"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "xp", "value": 90 }, { "type": "coins", "value": 120 } ], "narration": "The gear brightens, acknowledging your precise account." },
+            "success": { "effects": [ { "type": "xp", "value": 40 } ], "narration": "Your ledger holds. The heart rotates calmly." },
+            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 2 } ], "narration": "Inconsistencies glare back at you." },
+            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 3 } ], "narration": "The heart stalls; adjustments required." }
+          }
+        },
+        {
+          "id": "offer_manifest",
+          "label": "Offer the manifest",
+          "roll": { "kind": "phi_d20", "tags": ["harmony", "ritual"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "flag", "id": "ledger_honored", "value": true }, { "type": "xp", "value": 80 } ], "narration": "The heart etches your manifest along its rim." },
+            "success": { "effects": [ { "type": "xp", "value": 30 } ], "narration": "Your pledge resonates, granting a gentle boon." },
+            "fail": { "effects": [ { "type": "hp", "op": "-", "value": 1 } ], "narration": "The heart questions your pledge and taps your vitality." },
+            "crit_fail": { "effects": [ { "type": "hp", "op": "-", "value": 2 } ], "narration": "A backlash of light scorches your hands." }
+          },
+          "telemetry_tags": ["neutral"]
   "title": "The Door of Many Keys — Proof of Entry",
   "narration": "The corridor exhales and the echo returns with a different haircut. Ahead rises a door assembled from locks like a choir assembled from throats: impossible until you hear it. Brass plates nest in black stone frames; keyways bloom like tiny mouths rehearsing vowels. Runes thread between the plates in patterns that refuse to sit still. Some locks are old enough to be revered and young enough to be improved; others are jokes told by engineers with excellent ethics and terrible timing. \n\nAcross the door a beam of tempered light scrolls a message that edits itself as you read: PRESENT CREDENTIALS. The letters then shuffle into another sentence: PROVE WHAT YOU ARE WITHOUT SAYING IT. Then, smaller: PLEASE DO NOT ATTEMPT TO BLOW ON KEYHOLES. A gremlin, halfway to blowing on the nearest keyhole, pockets a straw with theatrical innocence. \n\nSeven arcs curve out from the threshold like questions with different flavors of punctuation: the Trust Arc (a hinge that opens only when weight is shared), the Insight Arc (runes that read you while you pretend to read them), the Gremlin Arc (a cluster of auxiliary locks that prefer chaos but require compliance), the Harmony Arc (a chord-slot that drinks breath like water), the Bearing Arc (a lever that measures what you carry and why), the Record Arc (receipts demanded politely and permanently), and the Joke Arc (a small, shiny slot with a tiny placard: LAUGHTER HAS MASS). At the base of the door, an inset plate reads: THIS ENTRYWAY REMEMBERS YOUR 1.x. TRY TO BE PROUD OF IT. \n\nLedger Plate warms as if anticipating impact; Audit Carapace straightens with courtroom grace. Shardmail remembers three recent stumbles and offers to reframe them as choreography. Liquidity Spear ticks like a clock that loves shortcuts; Mergeblade whispers in clauses, planning a dramatic sentence. Beacon Visor paints your retinas with possible paths and three improved versions of your posture. Protocol Staff—not a physical staff, but a way of standing—requests permission to recite safety. Permission is granted by the way the bolts stop pretending they aren't listening. \n\nThe Door of Many Keys is not a boss. It is a biography asking to be signed. The gremlin crown leans close and hisses: \"Rule of Keys: Everyone brings a tooth. Don't argue about mouths.\" The crown is not wrong, and probably heard that from the door itself.",
   "rounds": [
@@ -151,6 +180,35 @@
     },
     {
       "round_id": "1.7-R2",
+      "description": "Claim the heart's blessing",
+      "actions": [
+        {
+          "id": "sync_party",
+          "label": "Sync party heartbeat",
+          "roll": { "kind": "phi_d20", "tags": ["harmony", "gremlin"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "xp", "value": 100 }, { "type": "coins", "value": 150 } ], "narration": "Everyone's heartbeat aligns with the vault—an unforgettable moment." },
+            "success": { "effects": [ { "type": "coins", "value": 60 } ], "narration": "You feel collectively empowered." },
+            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 2 } ], "narration": "You miss a beat, wobbling slightly." },
+            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 3 } ], "narration": "The gear squeals; you scramble to stay upright." }
+          }
+        },
+        {
+          "id": "activate_reward",
+          "label": "Activate threshold reward",
+          "roll": { "kind": "phi_d20", "tags": ["integrity", "ritual"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "item", "id": "reward_heartglyph" }, { "type": "xp", "value": 90 } ], "narration": "A Heartglyph materializes, pulsing with promise." },
+            "success": { "effects": [ { "type": "xp", "value": 45 } ], "narration": "The heart offers a moderate boon." },
+            "fail": { "effects": [ { "type": "coins", "op": "-", "value": 25 } ], "narration": "You pay into the ledger for another attempt later." },
+            "crit_fail": { "effects": [ { "type": "coins", "op": "-", "value": 60 } ], "narration": "The heart rejects your request and debits your account." }
+          }
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [ { "sleight_gte": 7, "rewards": [ { "type": "coins", "value": 250 }, { "type": "xp", "value": 120 } ] } ],
+  "arrivals": [ { "when": "else", "goto": "2.1" } ]
       "description": "Key of Trust: a hinge that only opens if more than one hand claims it in rhythm.",
       "actions": [
         {

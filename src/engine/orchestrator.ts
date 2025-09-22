@@ -4,6 +4,7 @@ import { loadScene, loadManifest } from '../content/contentLoader.js';
 import { phiD20, pickOutcome, applyEffects } from './rules.js';
 import { thresholdRewards, groupBonusAllSurvive, loneSurvivor } from './rewards.js';
 import { computeHiddenTier, flavorForTier } from './difficulty.js';
+import { calculatePartyDifficultyInputs } from './partyStrength.js';
 import { SceneDef } from '../models.js';
 import {
   equipmentAdvantageState,
@@ -16,6 +17,7 @@ import {
   fragmentsBoost,
 } from '../ui/equipment.js';
 import { randomCompliment } from '../ui/compliments.js';
+import { getGuildSettings } from '../persistence/settings.js';
 
 const TURN_TIMEOUT_MS = 24 * 60 * 60 * 1000;
 
@@ -58,6 +60,7 @@ export function startRun(
     );
   db.prepare('UPDATE runs SET turn_order_json=?, active_user_id=?, turn_expires_at=? WHERE run_id=?')
     .run(JSON.stringify(turnOrder), active, active ? now + TURN_TIMEOUT_MS : null, run_id);
+  db.prepare('UPDATE runs SET ui_channel_id=? WHERE run_id=?').run(channel_id, run_id);
   return run_id;
 }
 
@@ -240,6 +243,30 @@ export function handleAction(
 
   const tags: string[] = act.roll?.tags ?? [];
   const { advantage, disadvantage, dcShift, dcOffset, focusBonus, hpBonus } = equipmentAdvantageState(user_id, tags);
+  const difficultyInputs = calculatePartyDifficultyInputs(run);
+  const settings = getGuildSettings(run.guild_id);
+  const { dcOffset: hiddenOffset, tier } = computeHiddenTier(
+    difficultyInputs.avgLevel,
+    difficultyInputs.avgPower,
+    difficultyInputs.debuffBias,
+    settings.difficulty_bias
+  );
+  db.prepare(
+    'INSERT INTO difficulty_snapshots (run_id, scene_id, snapshot_ts, tier, dc_offset, inputs_json) VALUES (?,?,?,?,?,?)'
+  ).run(
+    run_id,
+    run.scene_id,
+    Date.now(),
+    tier,
+    hiddenOffset,
+    JSON.stringify({
+      avgLevel: difficultyInputs.avgLevel,
+      avgPower: difficultyInputs.avgPower,
+      debuffBias: difficultyInputs.debuffBias,
+      bias: settings.difficulty_bias,
+      members: difficultyInputs.members,
+    })
+  );
   const { dcOffset: hiddenOffset, tier } = computeHiddenTier(10, 1200, 0);
 
   const baseDc = 13 + dcShift;
@@ -378,6 +405,7 @@ export function processAfkTimeouts(now = Date.now()) {
   const timedOut = db
     .prepare('SELECT * FROM runs WHERE turn_expires_at IS NOT NULL AND turn_expires_at <= ?')
     .all(now) as any[];
+  const events: { run_id: string; user_id: string; action_id: string; message: string; channel_id: string; refresh?: boolean }[] = [];
   const events: { run_id: string; user_id: string; action_id: string; message: string; channel_id: string }[] = [];
   for (const run of timedOut) {
     if (!run.active_user_id) continue;
@@ -403,6 +431,7 @@ export function processAfkTimeouts(now = Date.now()) {
         action_id: fallback.id,
         message: `⏱️ Forced a neutral outcome for <@${run.active_user_id}> (timeout).`,
         channel_id: run.channel_id,
+        refresh: true,
       });
     } catch (err) {
       console.error('Failed to resolve timeout', err);

@@ -189,6 +189,7 @@ export function handleRoleSelection(customId: string, user_id: string, values?: 
     db.prepare('UPDATE profiles SET selected_role=? WHERE user_id=?').run(roleId, user_id);
 
     if (parts[2] === 'tutorial') {
+      startRoleBasedRun(user_id, roleId, '1.1', { is_tutorial: true });
       startRoleBasedRun(user_id, roleId, '1.1', true);
       return `🎭 **Tutorial Started**\nYou are now playing as **${role.emoji} ${role.name}**!\n\nThe tutorial will show you unique dialogue and choices for this role.`;
     }
@@ -202,6 +203,7 @@ export function handleRoleSelection(customId: string, user_id: string, values?: 
       return '❌ Please select a role first.';
     }
 
+    startRoleBasedRun(user_id, currentRole.selected_role, '1.1', { is_tutorial: true });
     startRoleBasedRun(user_id, currentRole.selected_role, '1.1', true);
     const role = getRoleById(currentRole.selected_role);
     return `🔄 **Tutorial Restarted**\nPlaying as ${role?.emoji ?? '🎭'} ${role?.name ?? 'Unknown'}`;
@@ -218,6 +220,15 @@ export function handleRoleSelection(customId: string, user_id: string, values?: 
   return 'Unknown role action.';
 }
 
+export function startRoleBasedRun(
+  user_id: string,
+  role_id: string,
+  scene_id: string,
+  options: { is_tutorial?: boolean; guild_id?: string; channel_id?: string } = {}
+): string {
+  const guild_id = options.guild_id ?? (options.is_tutorial ? 'tutorial' : 'solo');
+  const channel_id = options.channel_id ?? `${guild_id}:${user_id}`;
+  const run_id = startRun(guild_id, channel_id, [user_id], 'genesis', scene_id);
 export function startRoleBasedRun(user_id: string, role_id: string, scene_id: string, is_tutorial = false): string {
   const run_id = startRun('global', is_tutorial ? 'tutorial' : 'main', [user_id], 'genesis', scene_id);
 
@@ -290,6 +301,7 @@ export function getRoleBanter(action: any, role_id: string): string | undefined 
   return action.banter[role.banter_key];
 }
 
+export function joinGameWithRole(user_id: string, scene_id: string, guild_id: string, channel_id: string) {
 export function joinGameWithRole(user_id: string, scene_id: string) {
   const currentRole = getCurrentRole(user_id);
 
@@ -316,6 +328,10 @@ export function joinGameWithRole(user_id: string, scene_id: string) {
     };
   }
 
+  const run_id = startRoleBasedRun(user_id, currentRole.selected_role, scene_id, {
+    guild_id,
+    channel_id,
+  });
   const run_id = startRoleBasedRun(user_id, currentRole.selected_role, scene_id);
   const role = getRoleById(currentRole.selected_role);
 

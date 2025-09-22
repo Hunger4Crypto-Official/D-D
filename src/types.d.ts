@@ -162,12 +162,43 @@ declare module 'node:path' {
   export default path;
 }
 
+declare module 'node:crypto' {
+  const crypto: any;
+  export default crypto;
+}
+
+declare module 'node:http' {
+  export type IncomingMessage = any;
+  export type ServerResponse = any;
+  export type RequestListener = (req: IncomingMessage, res: ServerResponse) => void;
+  export function createServer(listener: RequestListener): any;
+  const http: {
+    createServer: typeof createServer;
+  };
 declare module 'node:http' {
   const http: any;
   export default http;
 }
 
 declare module 'node:url' {
+  export class URLSearchParams {
+    constructor(init?: any);
+    append(name: string, value: string): void;
+    toString(): string;
+    get(name: string): string | null;
+    set(name: string, value: string): void;
+    entries(): IterableIterator<[string, string]>;
+  }
+  export class URL {
+    constructor(input: string, base?: string);
+    toString(): string;
+    searchParams: URLSearchParams;
+    pathname: string;
+  }
+  const url: {
+    URLSearchParams: typeof URLSearchParams;
+    URL: typeof URL;
+  };
   const url: any;
   export default url;
 }
@@ -186,5 +217,11 @@ declare const process: {
   env: Record<string, string | undefined>;
   argv: string[];
   exit(code?: number): void;
+};
+
+type Buffer = any;
+declare const Buffer: {
+  from(input: any, encoding?: any): Buffer;
+  concat(list: Buffer[]): Buffer;
 };
 declare module 'better-sqlite3';

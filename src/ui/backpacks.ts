@@ -49,6 +49,10 @@ export function openPack(user_id: string, packIdentifier = 'Genesis', options: O
   const pack_id = options.packIdOverride ?? (isFile ? 'Genesis' : packIdentifier);
   const tableFile = isFile ? packIdentifier : PACK_FILES[packIdentifier] ?? 'packs_genesis.json';
   const dt = loadDropTable(tableFile);
+
+  const costCoins = dt.cost.coins ?? 0;
+  const spendAmount = options.spendAmountOverride ?? costCoins;
+
 export function openPack(user_id: string, pack_id = 'Genesis', options: OpenPackOptions = {}) {
   const dt = loadDropTable('packs_genesis.json');
   if (dt.pack_id !== pack_id) throw new Error('Unknown pack');

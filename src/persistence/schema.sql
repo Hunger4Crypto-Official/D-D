@@ -168,6 +168,53 @@ CREATE TABLE IF NOT EXISTS licenses (
   expires_at INTEGER
 );
 
+CREATE TABLE IF NOT EXISTS guild_settings (
+  guild_id TEXT PRIMARY KEY,
+  gm_reward INTEGER DEFAULT 25,
+  gn_reward INTEGER DEFAULT 25,
+  xp_reward INTEGER DEFAULT 1,
+  difficulty_bias INTEGER DEFAULT 0,
+  created_at INTEGER,
+  updated_at INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS feature_flags (
+  guild_id TEXT,
+  feature TEXT,
+  enabled INTEGER DEFAULT 1,
+  updated_at INTEGER,
+  PRIMARY KEY(guild_id, feature)
+);
+
+CREATE TABLE IF NOT EXISTS content_overrides (
+  guild_id TEXT,
+  content_id TEXT,
+  scene_id TEXT,
+  override_json TEXT,
+  updated_at INTEGER,
+  PRIMARY KEY(guild_id, content_id, scene_id)
+);
+
+CREATE TABLE IF NOT EXISTS shop_packs (
+  pack_id TEXT PRIMARY KEY,
+  definition_json TEXT,
+  rotation_tag TEXT,
+  updated_at INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS gem_orders (
+  order_id TEXT PRIMARY KEY,
+  user_id TEXT,
+  network TEXT,
+  tx_id TEXT,
+  amount INTEGER,
+  gems INTEGER,
+  status TEXT,
+  meta_json TEXT,
+  created_at INTEGER,
+  updated_at INTEGER
+);
+
 CREATE INDEX IF NOT EXISTS idx_events_run ON events(run_id);
 CREATE INDEX IF NOT EXISTS idx_runs_guild ON runs(guild_id);
 CREATE INDEX IF NOT EXISTS idx_user_runs_status ON user_runs(user_id, status);
