@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "1.7",
+  "title": "Placeholder Scene",
+  "narration": "This is placeholder text for a scene that has not yet been written.",
+  "rounds": [],
+  "threshold_rewards": [],
+  "arrivals": []
+}

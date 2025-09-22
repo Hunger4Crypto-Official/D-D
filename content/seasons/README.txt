@@ -1,0 +1,1 @@
+Drop seasonal campaign folders here (e.g., christmas/, pizza_day/).

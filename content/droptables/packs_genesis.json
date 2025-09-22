@@ -1,0 +1,76 @@
+{
+  "pack_id": "Genesis",
+  "cost": {
+    "coins": 350
+  },
+  "pity": {
+    "rare_after": 10,
+    "epic_after": 30
+  },
+  "weights": {
+    "common": 0.618,
+    "uncommon": 0.236,
+    "rare": 0.09,
+    "epic": 0.036,
+    "legendary": 0.01,
+    "mythic": 0.006
+  },
+  "pools": {
+    "common": [
+      {
+        "kind": "phrase",
+        "id": "phrase_chain_whisper"
+      },
+      {
+        "kind": "card",
+        "id": "card_hodl_flame"
+      },
+      {
+        "kind": "cosmetic",
+        "id": "cosmetic_spark_trail"
+      }
+    ],
+    "uncommon": [
+      {
+        "kind": "gear",
+        "id": "gear_ledger_plate"
+      },
+      {
+        "kind": "trinket",
+        "id": "trinket_hardware_wallet"
+      }
+    ],
+    "rare": [
+      {
+        "kind": "trinket",
+        "id": "trinket_ledger_amulet"
+      },
+      {
+        "kind": "helm",
+        "id": "helm_oracle_hood"
+      }
+    ],
+    "epic": [
+      {
+        "kind": "helm",
+        "id": "helm_forked_crown"
+      },
+      {
+        "kind": "weapon",
+        "id": "wp_liquidity_spear"
+      }
+    ],
+    "legendary": [
+      {
+        "kind": "utility",
+        "id": "util_moon_ticket"
+      }
+    ],
+    "mythic": [
+      {
+        "kind": "cosmetic",
+        "id": "cosmetic_gremlin_wings"
+      }
+    ]
+  }
+}

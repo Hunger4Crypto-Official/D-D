@@ -1,0 +1,1 @@
+Add minigame JSONs here (memory runes, reaction puzzles, etc.).
