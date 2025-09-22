@@ -16,6 +16,9 @@ CREATE TABLE IF NOT EXISTS profiles (
   last_gn_ts INTEGER,
   coins INTEGER DEFAULT 0,
   gems INTEGER DEFAULT 0,
+  last_weekly_claim INTEGER,
+  weekly_streak INTEGER DEFAULT 0,
+  selected_role TEXT,
   CHECK (level >= 1),
   FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
@@ -84,6 +87,19 @@ CREATE TABLE IF NOT EXISTS pity (
   PRIMARY KEY(user_id, pack_id)
 );
 
+CREATE TABLE IF NOT EXISTS user_runs (
+  user_id TEXT,
+  run_id TEXT,
+  role_id TEXT,
+  scene_id TEXT,
+  status TEXT DEFAULT 'active',
+  created_at INTEGER,
+  updated_at INTEGER,
+  PRIMARY KEY(user_id, run_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+  FOREIGN KEY (run_id) REFERENCES runs(run_id) ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS licenses (
   guild_id TEXT PRIMARY KEY,
   tier TEXT,
@@ -93,3 +109,4 @@ CREATE TABLE IF NOT EXISTS licenses (
 
 CREATE INDEX IF NOT EXISTS idx_events_run ON events(run_id);
 CREATE INDEX IF NOT EXISTS idx_runs_guild ON runs(guild_id);
+CREATE INDEX IF NOT EXISTS idx_user_runs_status ON user_runs(user_id, status);

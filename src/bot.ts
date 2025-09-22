@@ -1,8 +1,32 @@
-import { Client, GatewayIntentBits, Partials, Events, ChannelType, ActionRowBuilder, ButtonBuilder, ButtonStyle, TextChannel, SlashCommandBuilder, REST, Routes, ButtonInteraction } from 'discord.js';
+import {
+  Client,
+  GatewayIntentBits,
+  Partials,
+  Events,
+  ChannelType,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  TextChannel,
+  SlashCommandBuilder,
+  REST,
+  Routes,
+  ButtonInteraction,
+  StringSelectMenuInteraction,
+} from 'discord.js';
 import { CFG } from './config.js';
 import db from './persistence/db.js';
-import { startRun } from './engine/orchestrator.js';
-import { renderScene, onButton, showShop } from './ui/ui.js';
+import { renderScene, onButton, showShop, onSelectMenu } from './ui/ui.js';
+import {
+  showRoleSelection,
+  getCurrentRole,
+  startRoleBasedRun,
+  joinGameWithRole,
+  showUserGames,
+  getUserActiveRuns,
+  getRoleById,
+} from './ui/roles.js';
+import { claimWeeklyReward } from './ui/shop.js';
 
 export const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers],
@@ -43,24 +67,87 @@ client.on(Events.MessageCreate, async (m)=>{
     } else {
       await m.reply({ content:`(Ritual on cooldown or max 2/day reached.)` });
     }
+    return;
   }
 
-  // quick start
-  if (lc === '!start'){
+  if (lc === '!role'){
+    const view = await showRoleSelection(m.author.id);
+    await m.reply(view);
+    return;
+  }
+
+  if (lc === '!games'){
+    await m.reply({ content: showUserGames(m.author.id) });
+    return;
+  }
+
+  if (lc === '!resume'){
+    const runs = getUserActiveRuns(m.author.id);
+    if (runs.length === 0){
+      await m.reply({ content: '❌ No active games to resume.' });
+      return;
+    }
     if (m.channel.type !== ChannelType.GuildText) return;
-    const run_id = startRun(m.guild!.id, m.channelId, [m.author.id]);
+    const latest = runs[0];
+    const payload = await renderScene(latest.run_id);
+    await (m.channel as TextChannel).send(payload);
+    await m.reply({ content: `▶️ Resumed Scene ${latest.current_scene_id} (${latest.round_id}).` });
+    return;
+  }
+
+  if (lc === '!weekly'){
+    const reward = claimWeeklyReward(m.author.id);
+    if (!reward.success){
+      await m.reply({ content: '❌ Weekly reward already claimed.' });
+    } else {
+      await m.reply({ content: `📅 Weekly reward claimed! +${reward.amount?.toLocaleString()} coins (streak ${reward.streak}).` });
+    }
+    return;
+  }
+
+  if (lc === '!tutorial'){
+    const currentRole = getCurrentRole(m.author.id);
+    if (!currentRole?.selected_role){
+      const view = await showRoleSelection(m.author.id, true);
+      await m.reply({ content: '❌ Please select a role first.', ...view });
+      return;
+    }
+    if (m.channel.type !== ChannelType.GuildText) return;
+    const run_id = startRoleBasedRun(m.author.id, currentRole.selected_role, '1.1', true);
     const payload = await renderScene(run_id);
     await (m.channel as TextChannel).send(payload);
+    const roleInfo = getRoleById(currentRole.selected_role);
+    await m.reply({ content: `🔄 Tutorial restarted as ${roleInfo?.emoji ?? '🎭'} ${roleInfo?.name ?? 'Adventurer'}!` });
+    return;
+  }
+
+  if (lc.startsWith('!start')){
+    if (m.channel.type !== ChannelType.GuildText) return;
+    const parts = m.content.trim().split(/\s+/);
+    const sceneId = parts[1] ?? '1.1';
+    const join = joinGameWithRole(m.author.id, sceneId);
+    if (!join.success){
+      const view = await showRoleSelection(m.author.id);
+      await m.reply({ content: join.message, ...view });
+      return;
+    }
+    const payload = await renderScene(join.run_id!);
+    await (m.channel as TextChannel).send(payload);
     const shopRow = new ActionRowBuilder<ButtonBuilder>()
-      .addComponents(new ButtonBuilder().setCustomId('shop:open:genesis').setLabel('Open Shop').setStyle(ButtonStyle.Primary));
+      .addComponents(new ButtonBuilder().setCustomId('shop:open').setLabel('Open Shop').setStyle(ButtonStyle.Primary));
     await (m.channel as TextChannel).send({ content:'Open the shop:', components:[shopRow] });
+    await m.reply({ content: join.message });
+    return;
   }
 });
 
 client.on(Events.InteractionCreate, async (i)=>{
   if (i.isButton()){
-    if (i.customId.startsWith('shop:open')) return showShop(i as ButtonInteraction);
-    if (i.customId.startsWith('act:') || i.customId.startsWith('shop:')) return onButton(i as ButtonInteraction);
+    if (i.customId === 'shop:open') return showShop(i as ButtonInteraction);
+    return onButton(i as ButtonInteraction);
+  }
+  if (i.isStringSelectMenu()){
+    return onSelectMenu(i as StringSelectMenuInteraction);
   }
   if (i.isChatInputCommand()){
     if (i.commandName === 'admin_gems_grant'){
