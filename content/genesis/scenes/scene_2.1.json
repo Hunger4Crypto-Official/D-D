@@ -1,0 +1,519 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "2.1",
+  "title": "The Careful Corridor — Audit of Footfalls",
+  "narration": "The hall ahead narrows until the air itself seems to pass with shoulders drawn in. Brass ribs bow overhead like the inside of a cautious throat. Each step lands on a tile that is not a tile but an opinion about how steps should behave: measured, squared, declared. Lanterns are set into the walls not as decoration but as witnesses, each with a bevel for notes and a habit of clearing its throat before you get clever. Between ribs, a pale vapor moves as though remembering where it was supposed to be. The floor is etched with small numerals that count, not the number of feet, but the number of intentions per foot. A gremlin rides a rolling abacus and stops every few meters to push a bead and whisper, \"For the record.\"\\n\\nHere, patience is a door and the hinge is your weight. Trust is respected, but tested—here it must cite sources. Insight is welcomed, but red-lined for clarity. Gremlin antics are tolerated with fines payable in the currency of snacks. Above all, the Corridor despises the sprint that forgets to breathe. It likes checklists. It likes proofs. It likes you best when you move like a sentence that knows where it is going and why it takes its commas seriously.\\n\\nThere are seven checkpoints in the first span: the Pace Gate (counts cadence and mercy toward ankles), the Weight Ledger (does your burden match your claim), the Breath Bar (inhale, exhale, don’t lie), the Rune Gloss (do you name what you read), the Gremlin Kiosk (compliance snacks; fines inevitable), the Proof Niche (receipts for posture), and the Promise Ring (a small ritual of future intent written in present tense). None of these are bosses. All of them are auditors with kind eyes. The Corridor’s scent is metal cooled responsibly and parchment dried on a clothesline. The first lantern coughs politely. The abacus squeaks, and a bead slides with the sound of a tiny judgment dressed as encouragement.",
+  "rounds": [
+    {
+      "round_id": "2.1-R1",
+      "description": "Pace Gate: a turnstile that counts rhythm and remembers ankles fondly.",
+      "actions": [
+        {
+          "id": "count_steps",
+          "label": "Count Your Steps Aloud",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","harmony","integrity"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "buff", "id": "rhythm_true", "value": true },
+                { "type": "xp", "value": 24 }
+              ],
+              "narration": "Your count becomes metronome and mercy. The bars of the turnstile click in time, and the gate stamps your cadence with a discreet seal."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "pace_ok", "value": true },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "Feet and breath agree to be cooperative colleagues. The turnstile waves you through with bureaucratic warmth."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your count skips a number and the gate pretends not to notice, then charges you interest in attention."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "You attempt swagger; the gate attempts physics. Ankles object. The abacus gleefully adds a bead."
+            }
+          },
+          "banter": {
+            "dev": "Event loop meets ankle loop.",
+            "trader": "Tempo trims slippage.",
+            "whale": "Wake prefers steady fetch.",
+            "hacker": "Debounce the stride.",
+            "shiller": "Rhythm is the brand voice of feet.",
+            "validator": "Cadence attested.",
+            "miner": "Keep the pick swing even.",
+            "meme": "Step-count but make it canon."
+          },
+          "telemetry_tags": ["scene:2.1","action:count_steps"]
+        },
+        {
+          "id": "pace_by_pair",
+          "label": "Match a Partner’s Pace",
+          "requirements": { "items_any": [], "flags_all": ["trustful"] },
+          "roll": { "kind": "phi_d20", "tags": ["harmony","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "You align like twin pendulums. The turnstile doesn’t just open—it bows."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Half-step early, half-step late; the gate clicks its tongue in mechanical sympathy."
+            }
+          },
+          "banter": {
+            "dev": "Follower/following: resolved.",
+            "trader": "Tandem entry, tighter spread.",
+            "whale": "Wake braided.",
+            "hacker": "Latency reduced with friendship.",
+            "shiller": "Two-shot hero entry.",
+            "validator": "Dual signature accepted.",
+            "miner": "Two picks, one seam.",
+            "meme": "Duet not regret."
+          },
+          "telemetry_tags": ["scene:2.1","action:pace_by_pair"]
+        },
+        {
+          "id": "gremlin_fee",
+          "label": "Pay Gremlin Compliance Fee (Optional)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 },
+                { "type": "buff", "id": "gremlin_spotters", "value": true }
+              ],
+              "narration": "A sticker appears on your breastplate: I RESPECT PROCESS. Two gremlins agree to spot you for ‘oopsies.’"
+            }
+          },
+          "banter": {
+            "dev": "Third-party auditors (jam-powered).",
+            "trader": "Optionality paid in snacks.",
+            "whale": "Wake supervised by goblins.",
+            "hacker": "Bug bounty, pastry-denominated.",
+            "shiller": "Compliance glamour.",
+            "validator": "Receipt stamped.",
+            "miner": "Two tiny hardhats acquired.",
+            "meme": "Hehe-OSHA."
+          },
+          "telemetry_tags": ["scene:2.1","action:gremlin_fee"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.1-R2",
+      "description": "Weight Ledger: a brass lectern asks what you carry and whether it should carry you back.",
+      "actions": [
+        {
+          "id": "declare_load",
+          "label": "Declare Your Load Honestly",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "bearing_bonus", "value": true },
+                { "type": "xp", "value": 22 }
+              ],
+              "narration": "You confess not the weight but the reason for it. The lectern softens and gives you a palm-wide chit: CARRY WELL."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "bearing_bonus", "value": true }
+              ],
+              "narration": "Your list balances. The ledger agrees to remember you kindly for two corridors."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "You round down. The lectern rounds up and charges a rounding fee labelled HONESTY CORRECTION."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You claim ‘light as trust.’ The lectern drops an anvil-sized metaphor on your pride."
+            }
+          },
+          "banter": {
+            "dev": "Load balancer meets ethics.",
+            "trader": "Risk declared, margin ok.",
+            "whale": "Wake shoulders reasons.",
+            "hacker": "Permissions, but truthful.",
+            "shiller": "Narrative inventory.",
+            "validator": "Disclosure acceptable.",
+            "miner": "Carry what matters or drop it.",
+            "meme": "Weight? I barely knew it."
+          },
+          "telemetry_tags": ["scene:2.1","action:declare_load"]
+        },
+        {
+          "id": "redistribute_gear",
+          "label": "Redistribute Gear Fairly",
+          "requirements": { "items_any": [], "flags_all": ["trustful","bearing_bonus"] },
+          "roll": { "kind": "phi_d20", "tags": ["social","tactics","integrity"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "Packs change shoulders. The corridor tightens its bolts with satisfaction."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Arguing about fairness makes the lanterns blink in union rules."
+            }
+          },
+          "banter": {
+            "dev": "Even shards, fewer shards in feet.",
+            "trader": "Rebalance the portfolio of pain.",
+            "whale": "Wake trims squatters’ drag.",
+            "hacker": "Load-shedding with consent.",
+            "shiller": "Story: we carry together.",
+            "validator": "Distribution logged.",
+            "miner": "Weight where strength lives.",
+            "meme": "Who holds the bag? We all do."
+          },
+          "telemetry_tags": ["scene:2.1","action:redistribute_gear"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.1-R3",
+      "description": "Breath Bar: an instrument panel for lungs—inhale on kindness, exhale on posture.",
+      "actions": [
+        {
+          "id": "breathe_on_two",
+          "label": "Breathe on the Two Count",
+          "requirements": { "items_any": [], "flags_all": ["harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","harmony","poise"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 },
+                { "type": "flag", "id": "harmony_kept", "value": true }
+              ],
+              "narration": "The needles align; the panel purrs. You are permitted to keep your breeze."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You bite your own air. The panel forgives but files a note."
+            }
+          },
+          "banter": {
+            "dev": "Breath as clock source.",
+            "trader": "Volatility hedged by lungs.",
+            "whale": "Wake timed to tide.",
+            "hacker": "Signal amp = calm.",
+            "shiller": "Soundtrack: you.",
+            "validator": "Gauge reads true.",
+            "miner": "Bellows steady the pick.",
+            "meme": "Inhale W, exhale FUD."
+          },
+          "telemetry_tags": ["scene:2.1","action:breathe_on_two"]
+        },
+        {
+          "id": "focus_tonic_use",
+          "label": "Use a Focus Tonic",
+          "requirements": { "items_any": ["consumable_focus_tonic"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 }
+              ],
+              "narration": "A minty hush stretches your patience two notches."
+            }
+          },
+          "banter": {
+            "dev": "Boost with guardrails.",
+            "trader": "Premium on clarity.",
+            "whale": "Wake narrows, deepens.",
+            "hacker": "Cache cleared, threads tuned.",
+            "shiller": "Ad for patience, unskippable.",
+            "validator": "Stimulant disclosed.",
+            "miner": "Sip, swing cleaner.",
+            "meme": "Brain juice go brr."
+          },
+          "telemetry_tags": ["scene:2.1","action:focus_tonic_use"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.1-R4",
+      "description": "Rune Gloss: marginalia carved by someone who loved footnotes and doors equally.",
+      "actions": [
+        {
+          "id": "annotate_runes",
+          "label": "Annotate the Margin Runes",
+          "requirements": { "items_any": [], "flags_all": ["insight"] },
+          "roll": { "kind": "phi_d20", "tags": ["rune","insight","puzzle"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "glossary_made", "value": true },
+                { "type": "item", "id": "trinket_gloss_pin" }
+              ],
+              "narration": "You add one definition and remove two confusions. The wall gifts a neat pin that says READ KINDLY."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "glossary_made", "value": true }
+              ],
+              "narration": "Notes appear in a tasteful serif, and the lanterns hum approval."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "You mis-punctuate a sigil; it nips your fingertip with grammatical love."
+            }
+          },
+          "banter": {
+            "dev": "Docs for doors.",
+            "trader": "Info edge compounding.",
+            "whale": "Wake reads its bedrock.",
+            "hacker": "Find the hinge in syntax.",
+            "shiller": "Explain it, own it.",
+            "validator": "Definition accepted.",
+            "miner": "Map the seam notes.",
+            "meme": "Oxford comma spell."
+          },
+          "telemetry_tags": ["scene:2.1","action:annotate_runes"]
+        },
+        {
+          "id": "oracle_hood_peek",
+          "label": "Oracle Hood Peek (If Equipped)",
+          "requirements": { "items_any": ["helm_oracle_hood"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","focus"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "preview_safe_step", "value": true }
+              ],
+              "narration": "A margin glows around three tiles ahead—the safe way learns your name."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The hood whispers a recipe for tea. It’s probably a metaphor."
+            }
+          },
+          "banter": {
+            "dev": "Speculative execution (ethical).",
+            "trader": "Forward guidance, unlevered.",
+            "whale": "Wake predicts next bend.",
+            "hacker": "Peek buffer legally.",
+            "shiller": "Spoilers that help.",
+            "validator": "Preview recorded.",
+            "miner": "Flag the hollow stone.",
+            "meme": "Wallhacks but wholesome."
+          },
+          "telemetry_tags": ["scene:2.1","action:oracle_hood_peek"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.1-R5",
+      "description": "Gremlin Kiosk: compliance, snacks, and consequences with sprinkles.",
+      "actions": [
+        {
+          "id": "buy_clipboard",
+          "label": "Buy a Tiny Clipboard",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 12 },
+                { "type": "item", "id": "trinket_tiny_clipboard" }
+              ],
+              "narration": "The clipboard contains checkboxes labeled: BREATHE, COUNT, KIND. It adds one: SNACK."
+            }
+          },
+          "banter": {
+            "dev": "Stationery as feature flag.",
+            "trader": "Small cost, large order.",
+            "whale": "Wake with adorable governance.",
+            "hacker": "UX for doing it right.",
+            "shiller": "Brandable lists.",
+            "validator": "Box-ticking but sincere.",
+            "miner": "Checklist saves wrists.",
+            "meme": "Clipboard meta."
+          },
+          "telemetry_tags": ["scene:2.1","action:buy_clipboard"]
+        },
+        {
+          "id": "fine_for_fun",
+          "label": "Get Fined for Fun (Optional)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 },
+                { "type": "buff", "id": "hehe_advantage_next", "value": true }
+              ],
+              "narration": "You pay a laughter tax and receive a coupon for one reroute of embarrassment into charm."
+            }
+          },
+          "banter": {
+            "dev": "Chaos budgeted.",
+            "trader": "Buying vol of delight.",
+            "whale": "Wake smiles wider.",
+            "hacker": "Exploit joy safely.",
+            "shiller": "PR in pastry form.",
+            "validator": "Fine acknowledged.",
+            "miner": "We paid to laugh at rocks.",
+            "meme": "Rug? Nah, hug with receipt."
+          },
+          "telemetry_tags": ["scene:2.1","action:fine_for_fun"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.1-R6",
+      "description": "Proof Niche: a recess in the wall offers stamps for good form.",
+      "actions": [
+        {
+          "id": "stamp_posture",
+          "label": "Stamp Good Posture",
+          "requirements": { "items_any": [], "flags_all": ["pace_ok","bearing_bonus"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","ritual"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "phrase_form_is_kindness" },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "A neat impression in chainlight reads: FORM IS KINDNESS. The wall blushes brass."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "You almost stamp your thumb. The niche tuts like a disappointed librarian with a cookie for later."
+            }
+          },
+          "banter": {
+            "dev": "CI for bodies.",
+            "trader": "Discipline yields dividends.",
+            "whale": "Wake correct = wake efficient.",
+            "hacker": "Form follows function; kindness follows form.",
+            "shiller": "Posture is brand posture.",
+            "validator": "Impression admissible.",
+            "miner": "Spine straight, seam straight.",
+            "meme": "Posture PR."
+          },
+          "telemetry_tags": ["scene:2.1","action:stamp_posture"]
+        },
+        {
+          "id": "coinsplit_receipt",
+          "label": "Coinsplit Receipt (If Tally)",
+          "requirements": { "items_any": ["trinket_chainlink_tally"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 30 }
+              ],
+              "narration": "The tally pings. A drawer dispenses coins labeled FAIRLY DONE."
+            }
+          },
+          "banter": {
+            "dev": "Ledger handshake.",
+            "trader": "PnL reconciled nicely.",
+            "whale": "Wake pays what it owes.",
+            "hacker": "Proof of split.",
+            "shiller": "Transparency delivers content.",
+            "validator": "Receipt clear.",
+            "miner": "Wage for weight.",
+            "meme": "Payday but polite."
+          },
+          "telemetry_tags": ["scene:2.1","action:coinsplit_receipt"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.1-R7",
+      "description": "Promise Ring: a low arch that listens for futures spoken like presents.",
+      "actions": [
+        {
+          "id": "bind_small_oath",
+          "label": "Bind a Small Oath",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","integrity","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "careful_next_act", "value": true }
+              ],
+              "narration": "You promise to check twice and the arch promises to remember once for you."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Your oath uses an adverb irresponsibly. The arch forgives with a yawn."
+            }
+          },
+          "banter": {
+            "dev": "Commit small, commit often.",
+            "trader": "Risk plan in declaratives.",
+            "whale": "Wake promises wake.",
+            "hacker": "Pledge a patch.",
+            "shiller": "Vows anyone can envy.",
+            "validator": "Attested without flourish.",
+            "miner": "Say it; swing it.",
+            "meme": "Micro-oath, macro vibes."
+          },
+          "telemetry_tags": ["scene:2.1","action:bind_small_oath"]
+        },
+        {
+          "id": "advance_to_2.2",
+          "label": "Advance Carefully",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "The corridor inhales and makes space exactly your size. The next lantern clears its throat with optimism.",
+              "next_hint": "2.2"
+            }
+          },
+          "banter": {
+            "dev": "Ship on green (measured).",
+            "trader": "Execution without slippage.",
+            "whale": "Wake threads the narrows.",
+            "hacker": "Exit code: 0, warnings: 0.",
+            "shiller": "Satisfying fade-to-next.",
+            "validator": "Checkpoint notarized.",
+            "miner": "Boots confident, cautious.",
+            "meme": "Careful.exe continues."
+          },
+          "telemetry_tags": ["scene:2.1","action:advance_to_2.2"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "sleight_gte": 5,  "rewards": [ { "type": "coins", "value": 70 } ] },
+    { "sleight_gte": 8,  "rewards": [ { "type": "coins", "value": 70 }, { "type": "fragment", "value": 1 } ] },
+    { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_form_is_kindness" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.key_insight", "goto": "2C" },
+    { "when": "flags.gremlin", "goto": "2D" },
+    { "when": "else", "goto": "2.2" }
+  ]
+}
