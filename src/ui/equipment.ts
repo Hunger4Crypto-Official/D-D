@@ -7,23 +7,10 @@ import {
   StringSelectMenuBuilder,
   StringSelectMenuInteraction,
 } from 'discord.js';
+import { EquipmentBonus } from '../models.js';
 import db from '../persistence/db.js';
 
 export type EquipmentSlot = 'weapon' | 'armor' | 'helm' | 'trinket' | 'deck';
-
-interface EquipmentBonus {
-  dcShift?: number;
-  dcOffset?: number;
-  advantageTags?: string[];
-  disadvantageTags?: string[];
-  focusBonus?: number;
-  hpBonus?: number;
-  sleightBonus?: number;
-  rerollFail?: boolean;
-  neutralizeCritFail?: boolean;
-  fragmentsBoost?: number;
-  preventsCoinLoss?: boolean;
-}
 
 interface EquipmentDefinition {
   id: string;
