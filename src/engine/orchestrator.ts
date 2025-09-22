@@ -267,6 +267,8 @@ export function handleAction(
       members: difficultyInputs.members,
     })
   );
+  
+  const { dcOffset: hiddenOffset, tier } = computeHiddenTier(10, 1200, 0);
 
   const baseDc = 13 + dcShift;
   const totalOffset = hiddenOffset + dcOffset;
@@ -353,6 +355,15 @@ export function handleAction(
       .replace(/^\s*→?\s*/, '')
       .replace(/^Scene\s*/, '')
       .replace(/^2([A-D])$/, (m, p: 'A' | 'B' | 'C' | 'D') => sceneMap[p]);
+    const rewards = thresholdRewards(run.sleight_score, scene.threshold_rewards);
+    applyEffects(rewards, state, user_id);
+    const arr = scene.arrivals||[];
+    const next = arr.find(a => a.when.startsWith('flags') && (newFlags as any)[a.when.split('.')[1]])?.goto || arr.find(a=>a.when==='else')?.goto || '2B';
+    const sceneMap: Record<'A'|'B'|'C'|'D', string> = { A: '2.1', B: '2.1', C: '2.1', D: '2.1' };
+    run.scene_id = (''+next)
+      .replace(/^\s*→?\s*/,'')
+      .replace(/^Scene\s*/,'')
+      .replace(/^2([A-D])$/,(m, p: 'A'|'B'|'C'|'D')=> sceneMap[p]);
     run.round_id = `${run.scene_id}-R1`;
     run.micro_ix += 1;
     run.sleight_score = 0;
@@ -396,6 +407,7 @@ export function processAfkTimeouts(now = Date.now()) {
     .prepare('SELECT * FROM runs WHERE turn_expires_at IS NOT NULL AND turn_expires_at <= ?')
     .all(now) as any[];
   const events: { run_id: string; user_id: string; action_id: string; message: string; channel_id: string; refresh?: boolean }[] = [];
+  const events: { run_id: string; user_id: string; action_id: string; message: string; channel_id: string }[] = [];
   for (const run of timedOut) {
     if (!run.active_user_id) continue;
     const scene = loadScene(run.content_id, run.scene_id);
@@ -427,4 +439,6 @@ export function processAfkTimeouts(now = Date.now()) {
     }
   }
   return events;
+  
+  return { roll, outcome, summary, tier };
 }

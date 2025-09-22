@@ -190,6 +190,7 @@ export function handleRoleSelection(customId: string, user_id: string, values?: 
 
     if (parts[2] === 'tutorial') {
       startRoleBasedRun(user_id, roleId, '1.1', { is_tutorial: true });
+      startRoleBasedRun(user_id, roleId, '1.1', true);
       return `🎭 **Tutorial Started**\nYou are now playing as **${role.emoji} ${role.name}**!\n\nThe tutorial will show you unique dialogue and choices for this role.`;
     }
 
@@ -203,6 +204,7 @@ export function handleRoleSelection(customId: string, user_id: string, values?: 
     }
 
     startRoleBasedRun(user_id, currentRole.selected_role, '1.1', { is_tutorial: true });
+    startRoleBasedRun(user_id, currentRole.selected_role, '1.1', true);
     const role = getRoleById(currentRole.selected_role);
     return `🔄 **Tutorial Restarted**\nPlaying as ${role?.emoji ?? '🎭'} ${role?.name ?? 'Unknown'}`;
   }
@@ -226,6 +228,7 @@ export function handleRoleSelection(customId: string, user_id: string, values?: 
       })
       .join('\n');
     return `▶️ **Resume Games**\n${lines}`;
+    return '▶️ Resume flow coming soon!';
   }
 
   return 'Unknown role action.';
@@ -240,6 +243,8 @@ export function startRoleBasedRun(
   const guild_id = options.guild_id ?? (options.is_tutorial ? 'tutorial' : 'solo');
   const channel_id = options.channel_id ?? `${guild_id}:${user_id}`;
   const run_id = startRun(guild_id, channel_id, [user_id], 'genesis', scene_id);
+export function startRoleBasedRun(user_id: string, role_id: string, scene_id: string, is_tutorial = false): string {
+  const run_id = startRun('global', is_tutorial ? 'tutorial' : 'main', [user_id], 'genesis', scene_id);
 
   db.prepare(
     `
@@ -269,6 +274,11 @@ export function getUserActiveRuns(user_id: string): ActiveRunSummary[] {
     .prepare(
       `
     SELECT ur.*, r.scene_id as current_scene_id, r.round_id, r.channel_id, r.guild_id
+export function getUserActiveRuns(user_id: string) {
+  return db
+    .prepare(
+      `
+    SELECT ur.*, r.scene_id as current_scene_id, r.round_id
     FROM user_runs ur
     JOIN runs r ON ur.run_id = r.run_id
     WHERE ur.user_id = ? AND ur.status = 'active'
@@ -276,6 +286,16 @@ export function getUserActiveRuns(user_id: string): ActiveRunSummary[] {
   `
     )
     .all(user_id) as ActiveRunSummary[];
+    .all(user_id) as Array<{
+    run_id: string;
+    role_id: string;
+    scene_id: string;
+    status: string;
+    created_at: number;
+    updated_at: number;
+    current_scene_id: string;
+    round_id: string;
+  }>;
 }
 
 export function getCurrentRole(user_id: string) {
@@ -307,6 +327,13 @@ export function showUserGames(user_id: string): string {
   });
 
   response += 'Use **Resume Game** or `!resume <number>` in the run channel to continue where you left off!';
+    response += `**${index + 1}.** ${role?.emoji ?? '🎲'} Scene ${run.current_scene_id}\n`;
+    response += `   Role: ${role?.name ?? 'Unknown'}\n`;
+    response += `   Progress: ${run.round_id}\n`;
+    response += `   Started: <t:${Math.floor(run.created_at / 1000)}:R>\n\n`;
+  });
+
+  response += 'Use "Resume Game" to continue where you left off!';
   return response;
 }
 
@@ -317,6 +344,7 @@ export function getRoleBanter(action: any, role_id: string): string | undefined 
 }
 
 export function joinGameWithRole(user_id: string, scene_id: string, guild_id: string, channel_id: string) {
+export function joinGameWithRole(user_id: string, scene_id: string) {
   const currentRole = getCurrentRole(user_id);
 
   if (!currentRole?.selected_role) {
@@ -346,6 +374,7 @@ export function joinGameWithRole(user_id: string, scene_id: string, guild_id: st
     guild_id,
     channel_id,
   });
+  const run_id = startRoleBasedRun(user_id, currentRole.selected_role, scene_id);
   const role = getRoleById(currentRole.selected_role);
 
   return {

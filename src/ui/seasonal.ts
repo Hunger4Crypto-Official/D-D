@@ -38,11 +38,14 @@ export function listSeasons(): SeasonInfo[] {
 }
 
 export function startSeasonalRun(user_id: string, guild_id: string, channel_id: string, seasonId: string) {
+export function startSeasonalRun(user_id: string, channel_id: string, seasonId: string) {
   const seasonPath = path.join('seasons', seasonId);
   const manifestPath = path.join(CFG.contentRoot, seasonPath, 'manifest.json');
   if (!fs.existsSync(manifestPath)) {
     throw new Error('Season not found');
   }
   const run_id = startRun(guild_id, channel_id, [user_id], seasonPath, '6.1');
+  const run_id = startRun(guild_id, channel_id, [user_id], seasonPath, '6.1')
+  const run_id = startRun('global', channel_id, [user_id], seasonPath, '6.1');
   return run_id;
 }

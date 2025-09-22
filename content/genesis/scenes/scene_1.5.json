@@ -31,6 +31,160 @@
             "fail": { "effects": [ { "type": "coins", "op": "-", "value": 15 } ], "narration": "Echo bait costs you a few coins." },
             "crit_fail": { "effects": [ { "type": "coins", "op": "-", "value": 35 } ], "narration": "Gremlin guides lead you astray on purpose." }
           }
+          
+  "title": "The Custodian’s Challenge — Stone Sentinel",
+  "narration": "The world narrows to a gate that does not yet admit being a gate. Chains descend from the ceiling in measured braids the size of tree trunks, each link stamped with dates that never happened and signatures you almost remember. Between the braids stands something that is not a statue in the same way a storm is not a painting. The Custodian of Chains wakes like a ledger opening its eyes. Runes at the joints of its shoulders crackle and then go very quiet; the quiet is a threat in its most polite handwriting. \n\nIt is carved from the same black stone as the Ledger’s vault but polished where you are soft and faceted where you are sure. Where a face might have been, an unfriendly ellipse rotates slowly, displaying the kinds of expressions that only probability distributions can have. Each tilt of its head is a weighted vote; the room tallies; the chains lean. Three ribs on its left side bear the scars of promises kept under duress. A fourth rib—newer—glows faintly where a group like yours once negotiated a truce and was graded Pass With Conditions. The conditions were written into the floor, which is why the floor feels like a contract you should have read. \n\nGremlins collect above on crossbeams, polite for once. The crown speaks in a whisper that echoes as if it had shouted from a cathedral: \"Rule of Custodian: it tests weight fairly, then rudely, then fairly again. If you break a rule it hasn’t told you yet, it will give you a receipt. If you pass without learning anything, it will fail you later and claim it was a kindness.\" The crown looks proud of memorizing that. It probably did not. \n\nYou are close enough to feel the Sentinel’s posture in your knees: not hostile, but uninterested in pretending that your convenience is important. Its arms end not in hands but in grammatical instruments—clamps for clauses, spatulas for slippery language, a hinge that can turn a vow into a mechanism. Its voice, when it arrives, is the scraping of two stones that respect each other. \n\n“Weight presented?” it asks. You realize, with embarrassment, that it is not asking to see your inventory; it is asking to see your story. Ledger Plate sits heavier at that word; Gaslight Cloak tries to look unimpressed and fails. Audit Carapace warms at the seams as if remembering old courts. The flute from earlier hums once in your bag and then pretends to be wood. \n\nBeyond the Custodian stands a corridor bright with a thousand suspended chains. You can see Act 1’s shape from here: a series of decisions that only look linear because you are walking through them in an order you picked. The Sentinel tilts. Its ellipse expresses a distribution called Amused But Not Indulgent. “Proceed when your breath matches,” it says, which is either spiritual counsel or an attack on your aerobic fitness. It raises one arm. Two bells in the rafters do not ring. They continue not ringing with such purpose that ringing becomes the eccentric choice. \n\nTests will follow. You know this in your teeth. They will not all be about hitting things. Some will be about being hit and remembering who you are while it happens. Some will be about remembering the part of you that knows when not to pull. Some will be about the gremlins and what they whispered when they thought you were asleep. The Custodian’s first step lands like a stamp you cannot appeal.",
+  "rounds": [
+    {
+      "round_id": "1.5-R1",
+      "description": "The Sentinel’s wake-up checklist finishes. A scroll of light unrolls in the air: ENTRY CONDITIONS. An invisible clerk licks a finger and turns the first page.",
+      "actions": [
+        {
+          "id": "state_intent",
+          "label": "State Your Intent (Plainly)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["will","integrity","social"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "custodian_respect", "value": true },
+                { "type": "xp", "value": 30 }
+              ],
+              "narration": "Your sentence arrives with the grammar of a bridge. The Custodian steps onto it and does not fall through."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "custodian_respect", "value": true },
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "Plain talk survives the room. The ellipse tilts toward Approved For Now."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your words gather adjectives like burrs. You pull them out while the Sentinel watches, patient and unimpressed."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You attempt poetry on an empty stomach. The poem breaks a tooth."
+            }
+          },
+          "banter": {
+            "dev": "Clear requirements, fewer bugs.",
+            "trader": "Declare size; get filled or don’t.",
+            "whale": "Hull announces course; harbor nods.",
+            "hacker": "Protocol > vibes (this once).",
+            "shiller": "Honesty is the hook.",
+            "validator": "Claim attested.",
+            "miner": "Say what you dig.",
+            "meme": "No cap, just map."
+          },
+          "telemetry_tags": ["scene:1.5","action:state_intent"]
+        },
+        {
+          "id": "breathe_sync",
+          "label": "Match the Sentinel’s Breath (Cadence)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","harmony"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "harmony", "value": true },
+                { "type": "hp", "op": "+", "value": 1 }
+              ],
+              "narration": "One inhale, shared by two chests that are not chests. The room’s edges soften a millimeter."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your exhale arrives at the wrong time and the bells continue not ringing in disapproval."
+            }
+          },
+          "banter": {
+            "dev": "Clock drift reduced.",
+            "trader": "Tempo is risk management.",
+            "whale": "Wake smooths with rhythm.",
+            "hacker": "Scheduler aligned.",
+            "shiller": "Breath sells calm.",
+            "validator": "Variance down.",
+            "miner": "Bellows steady.",
+            "meme": "Yoga with a forklift."
+          },
+          "telemetry_tags": ["scene:1.5","action:breathe"]
+        },
+        {
+          "id": "declare_weight",
+          "label": "Present Your Weight (Inventory of Story)",
+          "requirements": { "items_any": [], "flags_all": ["custodian_respect"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 20 },
+                { "type": "sleight", "op": "+", "value": 1 }
+              ],
+              "narration": "You list flags as if they were virtues and the Sentinel lets you pretend they are. It writes your list into the light with good penmanship."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "A missing line item pokes your ribs. The Custodian loves complete ledgers."
+            }
+          },
+          "banter": {
+            "dev": "State dump complete.",
+            "trader": "Positions marked.",
+            "whale": "Weight declared; drag priced.",
+            "hacker": "Introspect, don’t segfault.",
+            "shiller": "We make growth look good on paper.",
+            "validator": "Ledger balanced-ish.",
+            "miner": "Pile the ore, count it once.",
+            "meme": "Patch notes: You."
+          },
+          "telemetry_tags": ["scene:1.5","action:declare_weight"]
+        },
+        {
+          "id": "gremlin_form_filing",
+          "label": "Let Gremlins File the Forms (Chaotic Clerk)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","trade","poise"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "trinket_clipped_stamp" },
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "They stamp the ether in just the right place. Bureaucracy purrs."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "Forms filed; giggles filed louder."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 15 }
+              ],
+              "narration": "Filing fee disguised as pastry budget."
+            }
+          },
+          "banter": {
+            "dev": "Third-party integration risky, fun.",
+            "trader": "Clerks on retainer.",
+            "whale": "Paperwork moves ships.",
+            "hacker": "APIs with sprinkles.",
+            "shiller": "Rubber-stamp chic.",
+            "validator": "Stamped-ish.",
+            "miner": "They dig forms fast.",
+            "meme": "Gasless filing (allegedly)."
+          },
+          "telemetry_tags": ["scene:1.5","action:gremlin_forms"]
         }
       ]
     },
@@ -66,4 +220,665 @@
   ],
   "threshold_rewards": [ { "sleight_gte": 5, "rewards": [ { "type": "coins", "value": 180 }, { "type": "xp", "value": 60 } ] } ],
   "arrivals": [ { "when": "else", "goto": "1.6" } ]
+
+      "description": "Measure of Force: the Sentinel extends an arm. The air around the hand feels like a rule that will only break once.",
+      "actions": [
+        {
+          "id": "strike_joint",
+          "label": "Target the Shoulder Joint (Precision Hit)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["agility","courage","combat"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "You land a clean diagnostic on the hinge; a rune flickers from smug to merely proud."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "Stone admits it felt that."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "Elbow counters with a paragraph about hubris."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "You punch a sentence and the semicolon punches back."
+            }
+          },
+          "banter": {
+            "dev": "Hitboxes verified.",
+            "trader": "Take the edge, not the bulk.",
+            "whale": "Wake trims when you clip right.",
+            "hacker": "Exploit: shoulder.v1.",
+            "shiller": "Hero shot, tasteful lens flare.",
+            "validator": "Contact real.",
+            "miner": "Strike where grain yields.",
+            "meme": "Crit on comma splice."
+          },
+          "telemetry_tags": ["scene:1.5","action:strike_joint"]
+        },
+        {
+          "id": "deflect",
+          "label": "Deflect With Armor (Mitigate)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","armor","will"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 }
+              ],
+              "narration": "Ledger Plate angles the blow into the floor. The floor writes you a thank-you note."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "Gaslight Cloak deflects the light more than the force. You look good getting hit."
+            }
+          },
+          "banter": {
+            "dev": "Damage model behaving.",
+            "trader": "Downside hedged.",
+            "whale": "Wake absorbs, hull holds.",
+            "hacker": "Sandbox the impact.",
+            "shiller": "Armor glam shot.",
+            "validator": "Mitigation acceptable.",
+            "miner": "Bend, don’t break.",
+            "meme": "Parry but make it pretty."
+          },
+          "telemetry_tags": ["scene:1.5","action:deflect"]
+        },
+        {
+          "id": "call_gremlins_risk",
+          "label": "Call Gremlins to Distract (Risky Aid)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","tactics"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "gremlin_screen", "value": true },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "They swarm the shin and draw a footnoted frown from the ellipse."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "They distract you instead with snack discourse (heated)."
+            }
+          },
+          "banter": {
+            "dev": "Chaos middleware installed.",
+            "trader": "Volatility as cover.",
+            "whale": "Wake chopped for stealth.",
+            "hacker": "Ad hoc botnet.",
+            "shiller": "Street team ops.",
+            "validator": "Noise measured.",
+            "miner": "Dust cloud on cue.",
+            "meme": "Hehe tank support."
+          },
+          "telemetry_tags": ["scene:1.5","action:gremlin_risk"]
+        },
+        {
+          "id": "observe_pattern",
+          "label": "Observe Attack Pattern (Read the Kernel)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","puzzle","focus"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "custodian_pattern", "value": true }
+              ],
+              "narration": "Block, feint, clause, clause, period. You see the paragraph forming before the sentence lands."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You watch too hard and get hit by a parenthesis."
+            }
+          },
+          "banter": {
+            "dev": "Logs hint the loop.",
+            "trader": "Price action says mind the wick.",
+            "whale": "Wake repeats; tides do.",
+            "hacker": "Reading opcodes in stone.",
+            "shiller": "Foreshadow, but useful.",
+            "validator": "Pattern admissible.",
+            "miner": "Listen for hollows between hits.",
+            "meme": "Telegraph.exe spotted."
+          },
+          "telemetry_tags": ["scene:1.5","action:observe_pattern"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.5-R3",
+      "description": "Measure of Words: the ellipse brightens, and the Sentinel presents a sentence missing its spine.",
+      "actions": [
+        {
+          "id": "complete_sentence_truth",
+          "label": "Complete the Sentence with Truth",
+          "requirements": { "items_any": [], "flags_all": ["integrity_boost"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 18 }
+              ],
+              "narration": "The clause accepts your weight and the period lands with relief."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "Truth delivered clumsily can still bruise the mouth that carried it."
+            }
+          },
+          "banter": {
+            "dev": "Strong typing for morals.",
+            "trader": "Mark to market on intentions.",
+            "whale": "Wake honest, water follows.",
+            "hacker": "No obfuscation pass.",
+            "shiller": "Sincerity is expensive; worth it.",
+            "validator": "Proof accepted.",
+            "miner": "Straight seam, clean cut.",
+            "meme": "No lie speedrun."
+          },
+          "telemetry_tags": ["scene:1.5","action:truth"]
+        },
+        {
+          "id": "complete_sentence_clever",
+          "label": "Complete the Sentence with Cleverness",
+          "requirements": { "items_any": [], "flags_all": ["insight"] },
+          "roll": { "kind": "phi_d20", "tags": ["puzzle","rune","poise"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 16 }
+              ],
+              "narration": "A hinge disguised as a pun opens twice what should open once."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "The joke arrives early and the room is not warmed up."
+            }
+          },
+          "banter": {
+            "dev": "Lambda of wit deployed.",
+            "trader": "Arb the premise.",
+            "whale": "Wake bends, doesn’t break.",
+            "hacker": "Regex the riddle.",
+            "shiller": "Clever sells if kind.",
+            "validator": "Argument passes smell test.",
+            "miner": "Cut with finesse.",
+            "meme": "Brain wrinkle moment."
+          },
+          "telemetry_tags": ["scene:1.5","action:clever"]
+        },
+        {
+          "id": "complete_sentence_gremlin",
+          "label": "Let Gremlins Fill the Blank (Chaos Plea)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","social","morale"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "phrase_gremlin_latin" },
+                { "type": "xp", "value": 18 }
+              ],
+              "narration": "They declaim in a classical language that never existed. The Sentinel pretends to understand and awards points for commitment."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 8 }
+              ],
+              "narration": "Chaos fills; the clause accepts; grammar sighs."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "They invoice you for the etymology."
+            }
+          },
+          "banter": {
+            "dev": "Nonsense parser returns poetry.",
+            "trader": "Price of silliness spikes.",
+            "whale": "Wake giggles, ship stays true.",
+            "hacker": "Injection but harmless.",
+            "shiller": "Meme Latin merch when?",
+            "validator": "Clause passes via laughter.",
+            "miner": "They mine puns.",
+            "meme": "Lorem hehe sum."
+          },
+          "telemetry_tags": ["scene:1.5","action:gremlin_blank"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.5-R4",
+      "description": "Measure of Timing: the Sentinel begins a pattern—feint, pressure, silence, then something nobody calls out loud.",
+      "actions": [
+        {
+          "id": "counter_pattern",
+          "label": "Counter on the Silence (Half-Beat)",
+          "requirements": { "items_any": [], "flags_all": ["custodian_pattern"] },
+          "roll": { "kind": "phi_d20", "tags": ["agility","sleight","focus"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 16 }
+              ],
+              "narration": "You step where the beat forgot to be. The hinge whines in admiration."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "The silence was a trapdoor. You demonstrate how trapdoors work."
+            }
+          },
+          "banter": {
+            "dev": "Race condition exploited.",
+            "trader": "Front-run the pause.",
+            "whale": "Wake turns under lull.",
+            "hacker": "Time a patch, not a punch.",
+            "shiller": "Silence is stagecraft.",
+            "validator": "Counter admissible.",
+            "miner": "Hit when rock inhales.",
+            "meme": "Off-beat on purpose."
+          },
+          "telemetry_tags": ["scene:1.5","action:counter"]
+        },
+        {
+          "id": "ritual_anchor",
+          "label": "Anchor With Ritual (Hold the Line)",
+          "requirements": { "items_any": [], "flags_all": ["harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","will","integrity"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "You hum the old note; the floor remembers it owes you a favor."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your ritual stumbles over a syllable and pretends it meant to."
+            }
+          },
+          "banter": {
+            "dev": "Reliable code with candles.",
+            "trader": "Conviction hedge.",
+            "whale": "Wake holds shape.",
+            "hacker": "Rooting in ceremony.",
+            "shiller": "Classic brand moment.",
+            "validator": "Anchor verified.",
+            "miner": "Song keeps pick straight.",
+            "meme": "Chant patch v1.0."
+          },
+          "telemetry_tags": ["scene:1.5","action:ritual_anchor"]
+        },
+        {
+          "id": "armor_posture",
+          "label": "Adjust Armor & Posture (Mitigate Phase 2)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "stance_tuned", "value": true }
+              ],
+              "narration": "Audit Carapace hums with quiet delight; Ledger Plate shifts to catch edge cases."
+            }
+          },
+          "banter": {
+            "dev": "Hot reload of bravery.",
+            "trader": "Drawdown control.",
+            "whale": "Trim and torque.",
+            "hacker": "Recompile spine.",
+            "shiller": "Fit check saves HP.",
+            "validator": "Angle certified.",
+            "miner": "Straps tight: fewer regrets.",
+            "meme": "Posture OP."
+          },
+          "telemetry_tags": ["scene:1.5","action:armor_posture"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.5-R5",
+      "description": "Measure of Mercy: the ellipse dims. The Sentinel produces a small problem you cannot solve with hardness alone.",
+      "actions": [
+        {
+          "id": "aid_ally",
+          "label": "Aid an Ally Mid-Test (Lift Together)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["social","poise","will"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "unity_next_act", "value": true },
+                { "type": "xp", "value": 14 }
+              ],
+              "narration": "You lend balance where it was missing. The Custodian marks the gesture in a neat box labeled Correct."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "You intend help and achieve commentary."
+            }
+          },
+          "banter": {
+            "dev": "Distributed robustness.",
+            "trader": "Team trade clears better.",
+            "whale": "Wake overlaps into one.",
+            "hacker": "Assist packet delivered.",
+            "shiller": "Wholesome brand beats.",
+            "validator": "Mutual attestation.",
+            "miner": "Two picks, one rhythm.",
+            "meme": "We ball as a service."
+          },
+          "telemetry_tags": ["scene:1.5","action:aid_ally"]
+        },
+        {
+          "id": "spare_gremlin",
+          "label": "Spare a Gremlin From a Small Consequence",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "gremlin", "value": true },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "You intercept a tiny slap of fate. The crown stamps your hand with ink that refuses to wash off and somehow helps later."
+            }
+          },
+          "banter": {
+            "dev": "QA saved a test subject.",
+            "trader": "Goodwill compounding.",
+            "whale": "Wake protects small boats.",
+            "hacker": "Graceful exception.",
+            "shiller": "We do kindness content.",
+            "validator": "Mercy recorded.",
+            "miner": "Pick up the little ones.",
+            "meme": "Hehe protected by plot armor."
+          },
+          "telemetry_tags": ["scene:1.5","action:spare_gremlin"]
+        },
+        {
+          "id": "offer_token",
+          "label": "Offer Your Token of Reroll (If Owned)",
+          "requirements": { "items_any": ["token_reroll_once"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","trade"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "token", "id": "reroll_once" },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "A hinge spins and returns truer. The Sentinel appreciates tasteful gambling that is not gambling."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The hinge squeaks, takes rain check."
+            }
+          },
+          "banter": {
+            "dev": "Idempotent risk tool.",
+            "trader": "Optionality re-upped.",
+            "whale": "Spare wake for later.",
+            "hacker": "Checkpoint restored.",
+            "shiller": "Reroll but classy.",
+            "validator": "Swap observed.",
+            "miner": "Reset the swing.",
+            "meme": "Gacha but wholesome."
+          },
+          "telemetry_tags": ["scene:1.5","action:offer_token"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.5-R6",
+      "description": "The Custodian lowers its mass, gathering decision like a storm deciding which roof to test first. Final measure: resolve.",
+      "actions": [
+        {
+          "id": "stand_firm",
+          "label": "Stand Firm (Resolve Check)",
+          "requirements": { "items_any": [], "flags_all": ["stance_tuned"] },
+          "roll": { "kind": "phi_d20", "tags": ["will","courage","integrity"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 18 }
+              ],
+              "narration": "You do not move and you do not pretend not to be afraid. The Sentinel respects both choices at once."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "A test of stillness reveals a wiggle. Wiggles are honest too."
+            }
+          },
+          "banter": {
+            "dev": "Stability suite passed mostly.",
+            "trader": "Hold line through chop.",
+            "whale": "Wake straightens under gale.",
+            "hacker": "Do nothing, expertly.",
+            "shiller": "Stoic brand moment.",
+            "validator": "Posture verified.",
+            "miner": "Boots down. Rock listens.",
+            "meme": "Idle but alpha."
+          },
+          "telemetry_tags": ["scene:1.5","action:stand_firm"]
+        },
+        {
+          "id": "press_forward",
+          "label": "Press Forward (Calculated Advance)",
+          "requirements": { "items_any": [], "flags_all": ["custodian_respect"] },
+          "roll": { "kind": "phi_d20", "tags": ["courage","agility","tactics"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 16 }
+              ],
+              "narration": "Advance on the comma; land on the period. The Sentinel gives ground because language said so."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "You trip over a subordinate clause. It was crouching."
+            }
+          },
+          "banter": {
+            "dev": "Forward progress with assertions.",
+            "trader": "Buy strength post-confirmation.",
+            "whale": "Wake eats headwind.",
+            "hacker": "Sliding window of courage.",
+            "shiller": "Momentum montage.",
+            "validator": "Advance valid.",
+            "miner": "Pick bites deeper.",
+            "meme": "Go next, but smart."
+          },
+          "telemetry_tags": ["scene:1.5","action:press_forward"]
+        },
+        {
+          "id": "parley",
+          "label": "Parley (Negotiate Terms of Passage)",
+          "requirements": { "items_any": [], "flags_all": ["custodian_respect"] },
+          "roll": { "kind": "phi_d20", "tags": ["social","integrity","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "custodian_allied", "value": true },
+                { "type": "item", "id": "trinket_stamp_of_passage" }
+              ],
+              "narration": "You propose a sentence that leaves both sides taller. The Sentinel contributes a clause of its own and the contract learns to purr."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "custodian_allied", "value": true }
+              ],
+              "narration": "Terms recognized; conditions attached; dignity intact."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Your offer is generous in ways the Sentinel cannot audit."
+            }
+          },
+          "banter": {
+            "dev": "Interface negotiated.",
+            "trader": "Terms priced fair.",
+            "whale": "Wake merges gently.",
+            "hacker": "Patch diff approved.",
+            "shiller": "Story handshake.",
+            "validator": "Quorum met.",
+            "miner": "Split the seam; share the vein.",
+            "meme": "Diplomacy speedrun."
+          },
+          "telemetry_tags": ["scene:1.5","action:parley"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.5-R7",
+      "description": "Judgment. The ellipse dims to a line, then an idea of a line. The chains ratchet, once, politely. The gate begins to remember that it is a gate.",
+      "actions": [
+        {
+          "id": "receive_verdict",
+          "label": "Receive the Custodian’s Verdict",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "A stamp lands in the air and refuses to fade. You are graded: Passed, With Teeth. The gate parts by the width of honesty."
+            }
+          },
+          "banter": {
+            "dev": "CI passed; merge on green.",
+            "trader": "PnL of courage nets positive.",
+            "whale": "Wake earns corridor.",
+            "hacker": "Exit syscall returns 0.",
+            "shiller": "Boss clear, trailer moment.",
+            "validator": "Verdict notarized.",
+            "miner": "Rock makes way.",
+            "meme": "Certified W."
+          },
+          "telemetry_tags": ["scene:1.5","action:verdict"]
+        },
+        {
+          "id": "loot_check",
+          "label": "Inspect the Fallen Runes (Loot/Narrative)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["sleight","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "weapon_mergeblade" }
+              ],
+              "narration": "Where force met form, a blade grew out of a sentence. It likes combos and applause."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 25 }
+              ],
+              "narration": "No blade; a tasteful pile of coins instead, minted by friction."
+            }
+          },
+          "banter": {
+            "dev": "Drop table hit: tasteful.",
+            "trader": "Value realized, one way or another.",
+            "whale": "Wake pays dividends.",
+            "hacker": "Weapon compile success.",
+            "shiller": "Hero gear moment!",
+            "validator": "Loot verified.",
+            "miner": "Shavings are money.",
+            "meme": "Blade IRL? No. Blade vibe? Yes."
+          },
+          "telemetry_tags": ["scene:1.5","action:loot"]
+        },
+        {
+          "id": "final_shop_peek",
+          "label": "Gremlin Pop-Up Kiosk (If Allied)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "shop", "id": "custodian_clear_pop" }
+              ],
+              "narration": "A kiosk unfolds from a pocket dimension that smells like roasted sugar and paperwork."
+            }
+          },
+          "banter": {
+            "dev": "Micro-market deployed.",
+            "trader": "Liquidity between bosses.",
+            "whale": "Impulse buys, tasteful.",
+            "hacker": "Popup UI compliant.",
+            "shiller": "Merch sings.",
+            "validator": "Ledger tethered.",
+            "miner": "Tools before tunnels.",
+            "meme": "Lootbox but cute."
+          },
+          "telemetry_tags": ["scene:1.5","action:shop_peek"]
+        },
+        {
+          "id": "advance_to_1_6",
+          "label": "Advance to the Corridor of Chains",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "Chains ahead sway like a field inventing wind. The next lesson wears links for clothing.",
+              "next_hint": "chains"
+            }
+          },
+          "banter": {
+            "dev": "Transition committed.",
+            "trader": "Execution clean.",
+            "whale": "Weight forward.",
+            "hacker": "Open next module.",
+            "shiller": "Arc continues.",
+            "validator": "Path attested.",
+            "miner": "Bring your hands.",
+            "meme": "Chain walk incoming."
+          },
+          "telemetry_tags": ["scene:1.5","action:advance"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "sleight_gte": 5,  "rewards": [ { "type": "coins", "value": 60 } ] },
+    { "sleight_gte": 8,  "rewards": [ { "type": "coins", "value": 60 }, { "type": "fragment", "value": 1 } ] },
+    { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_etched_in_chain" } ] },
+    { "flags_all": ["custodian_allied"], "rewards": [ { "type": "item", "id": "trinket_stamp_of_passage" } ] },
+    { "flags_all": ["integrity_boost"],  "rewards": [ { "type": "item", "id": "armor_audit_carapace" } ] },
+    { "flags_all": ["gremlin"],          "rewards": [ { "type": "item", "id": "trinket_gremlin_whistle" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.custodian_allied", "goto": "1.6" },
+    { "when": "flags.unity_next_act",   "goto": "1.6" },
+    { "when": "flags.harmony",          "goto": "1.6" },
+    { "when": "else",                   "goto": "1.6" }
+  ]
 }

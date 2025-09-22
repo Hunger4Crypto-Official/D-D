@@ -175,6 +175,8 @@ declare module 'node:http' {
   const http: {
     createServer: typeof createServer;
   };
+declare module 'node:http' {
+  const http: any;
   export default http;
 }
 
@@ -197,6 +199,8 @@ declare module 'node:url' {
     URLSearchParams: typeof URLSearchParams;
     URL: typeof URL;
   };
+
+  const url: any;
   export default url;
 }
 
@@ -221,3 +225,5 @@ declare const Buffer: {
   from(input: any, encoding?: any): Buffer;
   concat(list: Buffer[]): Buffer;
 };
+
+declare module 'better-sqlite3';
