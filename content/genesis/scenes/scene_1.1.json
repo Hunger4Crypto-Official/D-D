@@ -1,1 +1,939 @@
-... Paste full scene_1.1.json content here ...
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "1.1",
+  "title": "The First Pulse — First Contact",
+  "narration": "The chamber does not wait to be admired; it watches. Black stone sweats a patient aurora of code, thin as breath and bright as cut copper. At the center rises the Ledger Stone, a shard of night veined with living glyphs that drift as though listening for your next mistake. The air tastes like static and iron. Somewhere in the walls, something old begins to turn—a cautious gear, a waking millstone.\\n\\nGremlins cling to cornices and buttresses, hand-sized and bronze-skinned, their eyes spinning like minted coins. They whisper to each other in a chorus of treble clicks that somehow feel like laughter in a foreign exchange. One cups its hands around its mouth and squeaks down at you: \\\"Make a choice, meat-wallets. The stone gets bored.\\\"\\n\\nThe floor is not flat but a memory of flatness poured yesterday and still deciding what to be. If you stand very still, you can feel the vault’s heartbeat counting time through your boots—slow, then almost slow, then not slow at all. The Ledger Stone hums and your teeth hum with it. Sparks breathe from the ceiling in lazy filaments that dangle like glass vines. Each filament knows your name in the way lightning knows a church steeple.\\n\\nYou notice small things: a thread of dust that refuses to settle; a hairline crack in the far wall that reveals not darkness but an even blacker dark; a ring carved into the floor at the stone’s base, as if the Ledger has been lifted and set back a thousand times. The ring is shallow yet absolute, like a promise made in public. If you lean in, the ring speaks faintly of oil and bitter herbs and something like salt tears. It is a place of offerings.\\n\\nThere are smells here and each one is a verb: metal (to cut), ozone (to arrive), old leather (to carry), ash (to remember). The gremlins smell faintly of coin and furnace and guilty sugar. The Ledger smells like the first rainfall on a courtyard stone that has been waiting all dry season to be itself again.\\n\\nYou have come to touch the heart of the chain, and the heart of the chain intends to touch you back. Your breath fogs in a room that has no reason to be cold. The hum resolves into something like music—first a note, then a harmony, then a rhythm, as if the vault were testing which of you will sing in key.\\n\\nSomewhere in that hum is a sentence you can almost—but not quite—hear. It brushes the inner ear and departs, leaving the shape of an answer without the question. The gremlins mimic it cruelly and get it wrong and giggle because getting it wrong is part of the fun. You stand beneath the Ledger Stone and feel a small gravity take hold. The room leans; the choice leans with it. You understand, perhaps too late, that this is not a museum. It is a test that writes the grade in light.",
+  "rounds": [
+    {
+      "round_id": "1.1-R1",
+      "description": "Sparks drift like lazy fireflies and then, when you look directly at them, pretend they were never drifting at all. The Ledger Stone brightens one degree, as if squinting at you. A crowned gremlin swings down on a chain of linked rings, lands on your shoulder, and pats your cheek with a coin-sized hand. \"Make a choice,\" it says, solemnly, and then ruins the effect by adding, \"Or at least make a mess.\"",
+      "actions": [
+        {
+          "id": "bold_touch",
+          "label": "Reach Out (Bold)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["contact","courage"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 50 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "You place your palm on the Ledger as if returning a key to its lock. Heat lifts through your wrist in a rising tide, then warmth, then a feeling you have no name for: the intimate relief of being recognized by a door that had every right to refuse you. Glyphs flare, not warning but welcome—an old neighborhood turning its lamps on at your approach. The hum matches your pulse and then your pulse matches the hum. Behind you, dust rises in a patient halo as if the room itself were exhaling. A million small locks click open in far-off corridors you have never walked. For one bright second the world is almost understandable. The gremlins fall briefly silent, which is their highest compliment."
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 1 },
+                { "type": "xp", "value": 25 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "Your palm meets living crystal. The Ledger does not flinch. Light swells beneath the skin of the stone in a slow pulse that answers your hand like surf answering the moon. The hum deepens into a note that feels like standing in the doorway of your own house after a long absence. Courage does not make the sparks disappear; it persuades them to orbit politely. The crowned gremlin nods once, as if to say: acceptable."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "You strike like a dare and the Ledger answers like a lesson. White threads of bite-light curl around your fingertips and write your impatience in stinging cursive. The smell is acrid, like solder gone wrong. A chorus of gremlins sings \"Rekt! Rekt!\" in unfortunate harmony, and one produces a tiny placard that reads, in beautiful calligraphy, Try Again, But Smarter."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "You slap the stone as if it owes you, and the stone pays in the only currency it respects: consequence. A cold flare detonates up your arm like winter lightning snapping a branch. Light crashes through your eyes so fiercely you see the bones of your own hand for a breathless heartbeat. When color returns, the gremlins are applauding with tiny brass hands, and someone has already started selling popcorn."
+            }
+          },
+          "banter": {
+            "dev": "Half these glyphs are syntactic sugar; the other half are knives.",
+            "trader": "Volatility is a mood. We are the market.",
+            "whale": "Weight persuades even the tide. The stone will learn it.",
+            "hacker": "Interfaces that punish taps are begging for a hinge.",
+            "shiller": "Watch this entrance. We’re farming applause.",
+            "validator": "Contact established. Integrity pending.",
+            "miner": "Heat is good. Heat means work gets done.",
+            "meme": "If I get shocked I’m calling it a pre-mine."
+          },
+          "telemetry_tags": ["scene:1.1","action:bold"]
+        },
+        {
+          "id": "cautious_touch",
+          "label": "Reach Out (Cautious)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["contact","poise"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": true },
+                { "type": "focus", "op": "+", "value": 1 },
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "You approach as if the Ledger were a skittish animal: patient, attentive, respectful of its right to flee. Your fingers hover a breath, then settle, and the stone welcomes the honesty of your care. Sparks that might have lunged soften into a lace curtain of light. The hum thins and refines, landing cleanly on a pitch that suits your breathing. The gremlins grumble, offended by manners, but their complaint sounds like envy with bad posture."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": true }
+              ],
+              "narration": "You graze the Ledger and the Ledger grazes back—an exchange of temperature, a brief audit of mutual intent. The room marks down your patience in a neat, unfussy hand. No trumpets; no teeth. Respect paid and returned."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Hesitation coils into itself until it becomes a thing with small sharp edges. The curtain of sparks snaps shut around your wrist, not vicious but corrective. A gremlin whistles a tune that sounds like a receipt printer refusing a card."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You practice caution so elaborately it becomes performance. The Ledger, bored, pinches your hovering hand as a teacher pinches the bridge of their nose. The hum writes a sigh across the floor. A gremlin holds up a scorecard: 3/10 for style, 9/10 for comedy."
+            }
+          },
+          "banter": {
+            "dev": "Latency acceptable. Debounce your fear function.",
+            "trader": "Sometimes the best entry is a limit order.",
+            "whale": "Depth requires patience; even gravity waits.",
+            "hacker": "Slow is smooth, smooth is exploit.",
+            "shiller": "Elegance sells better than sparks.",
+            "validator": "Measured touch. Noted.",
+            "miner": "This is the part before the pick hits rock.",
+            "meme": "Soft rug. You love to see it."
+          },
+          "telemetry_tags": ["scene:1.1","action:cautious"]
+        },
+        {
+          "id": "study_runes",
+          "label": "Study the Glyphs",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["rune","puzzle","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "insight", "value": true },
+                { "type": "xp", "value": 35 },
+                { "type": "item", "id": "trinket_shard_of_satoshi" }
+              ],
+              "narration": "You sink until your eyes are almost touching the skin of the symbol. What looked like a triangle in a circle becomes three triangles sharing a point that is not there, and each gap is a door, and each door remembers one password: kindness. You do not read the rune; it reads you. A sliver of cooled light flakes off the Ledger and lands on your knuckle: a shard, thin as a fingernail and twice as sharp. You slip it into your pocket without needing to be told to keep it clean."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "insight", "value": true },
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "The pattern clarifies one degree at a time, like a fogged window accepting a breath and then another. A triangle nested in a circle, yes—but also a path, a route for attention to travel and return improved. You trace it in the air and your hand remembers the route. Somewhere inside the stone, a shy latch thinks about opening."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "The glyphs bloom too brightly all at once and your pupils, convinced they are drowning, slam shut. Stars pop behind your eyes. A gremlin drapes a napkin over your head like a sympathetic waiter and whispers, \\\"On the house.\\\""
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 },
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You try to count what was not meant to be counted. The pattern writhes into noise and the noise into an accusation: who gave you permission? Heat pricks the corners of your eyes. When sight returns, you are weeping tears that smell faintly of copper. The Ledger does not apologize."
+            }
+          },
+          "banter": {
+            "dev": "Recursive structure with human-readable edges. Elegant.",
+            "trader": "Information is alpha if you’re first and last to act.",
+            "whale": "This depth is not for the shallow-chested.",
+            "hacker": "Seen two locks; looking for the hinge.",
+            "shiller": "Narrative check: we’re geniuses.",
+            "validator": "Documenting rune morphology as we go.",
+            "miner": "Patterns are veins. Follow the shine.",
+            "meme": "Enhance. Enhance. ENHANCE."
+          },
+          "telemetry_tags": ["scene:1.1","action:study"]
+        },
+        {
+          "id": "talk_gremlins",
+          "label": "Talk to the Gremlins",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["social","gremlin"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "gremlin", "value": true },
+                { "type": "xp", "value": 25 },
+                { "type": "item", "id": "trinket_gremlin_charm" }
+              ],
+              "narration": "You pitch your tone to the frequency of mischief and sincerity. The crowned gremlin’s grin widens until it is most of its face. It produces, from nowhere, a small charm engraved with a rude smile and bestows it like a medal. \\\"Now we are friends. Or something better. Co-conspirators.\\\" The others nod with such vigor one falls off the ledge, then declares it was intentional."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "gremlin", "value": true },
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "Your words land where words should: between the ears and the appetite. You promise nothing you can’t afford and hint at everything you could. The crowned gremlin hops to your shoulder and pats your cheek like a coach approving a good warm-up. \\\"Friend? Or food?\\\" it asks, and then, generously, answers itself: \\\"Friend. For now.\\\""
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 25 }
+              ],
+              "narration": "Light-fingered paws liberate a handful of coins from your pouch while you are busy inventing your most persuasive argument. The gremlins applaud your rhetoric and your gullibility with equal enthusiasm. Someone unfurls a banner that reads, in exquisite script, Better Luck, Better Lock."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 40 },
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your opening joke dies on the way to its home planet. An awkward silence descends, broken only by the tiny sound of many tiny hands removing a not-tiny number of coins. You are presented with a consolation prize: a paper crown labeled \\\"King of Talking.\\\" It is too small."
+            }
+          },
+          "banter": {
+            "dev": "Negotiating with undefined behavior.",
+            "trader": "Great, we’re long on gremlins now.",
+            "whale": "Allies are ballast if you treat them like cargo.",
+            "hacker": "Social engineering in a literal sense.",
+            "shiller": "Perfect brand partners. Micro-influencers.",
+            "validator": "Unexpected quorum forming.",
+            "miner": "Little hands, fast picks.",
+            "meme": "W or L? Feels like W with spice."
+          },
+          "telemetry_tags": ["scene:1.1","action:gremlin"]
+        },
+        {
+          "id": "offer_shiny",
+          "label": "Offer Something Shiny",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["trade","gremlin"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 25 },
+                { "type": "item", "id": "trinket_ledger_amulet" },
+                { "type": "flag", "id": "gremlin", "value": true }
+              ],
+              "narration": "You palm the coin with a magician’s casual gravity and let it wink in the Ledger’s light before offering it up. The gremlins go feral in a polite way. A smaller one returns with a cool, bright weight pressed into your hand: a tiny amulet etched with a spiral that hurts to stare at and feels safe to hold. \\\"Trade sealed,\\\" the crown intones, and the chorus repeats it in thirty-seven keys."
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 25 },
+                { "type": "xp", "value": 10 },
+                { "type": "flag", "id": "gremlin", "value": true }
+              ],
+              "narration": "You make the air glint. The gremlins make the room vibrate with approval. A truce signs itself on the wind. Something bright and useless and perfect changes hands, and it is enough to make the next breath easier."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 25 }
+              ],
+              "narration": "Your offering vanishes into a scrum of elbows and giggles and does not reappear. From somewhere in the mess a voice squeaks, \\\"Finder’s keepers, losers… marketing opportunity!\\\" The crown pretends not to hear."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 40 },
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You attempt a flourish. The flourish attempts you. The coin flips, the light misbehaves, and the Ledger decides now is the moment to demonstrate gravity. You learn a small lesson about showmanship and a large one about timing."
+            }
+          },
+          "banter": {
+            "dev": "Asset transfer complete; counterparty questionable.",
+            "trader": "Paid the spread in smiles.",
+            "whale": "Shiny buys silence. Sometimes loyalty.",
+            "hacker": "Bribery is just fast routing.",
+            "shiller": "Influencer kit: unlocked.",
+            "validator": "Recording consideration. Noting receipt.",
+            "miner": "Shine attracts. Also bandits.",
+            "meme": "Airdropped my patience."
+          },
+          "telemetry_tags": ["scene:1.1","action:offer"]
+        },
+        {
+          "id": "channel_energy",
+          "label": "Channel Inner Energy",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","breath","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 2 },
+                { "type": "flag", "id": "insight", "value": true },
+                { "type": "flag", "id": "harmony", "value": true }
+              ],
+              "narration": "You lower your thoughts into yourself like a bucket into a well, and when you draw them up, the water that spills is not yours alone. Another rhythm braids with your breath and then another behind that—older, slower, patient as basalt. The Ledger hum catches and holds you the way a choir catches a note falling and refuses to let it hit the ground. Harmony threads your ribs and ties them into something like courage."
+            },
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 },
+                { "type": "flag", "id": "insight", "value": true }
+              ],
+              "narration": "Inhale on the pulse. Exhale on the silence. The vault recognizes the courtesy and knocks softly from the inside. The gremlins nod like monks badly faking sincerity."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You try too hard and a knot forms where your breath should be. The hum steps back a pace and watches, not unkindly, as you untangle yourself with a rueful smile."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "Your inhale meets your exhale coming the other way and both panic. Spots dance. The room tilts. A gremlin offers you a paper bag labeled \\\"Breathe Here\\\" and you do and you are better."
+            }
+          },
+          "banter": {
+            "dev": "Sync clock: true.",
+            "trader": "Breathing through volatility. Best instrument I own.",
+            "whale": "Weight finds rhythm; rhythm finds victory.",
+            "hacker": "Tuning the interface between meat and math.",
+            "shiller": "Inhale: hype. Exhale: community.",
+            "validator": "Stability increased; deviation reduced.",
+            "miner": "Pulse like a piston. Good.",
+            "meme": "Meditation but make it mainnet."
+          },
+          "telemetry_tags": ["scene:1.1","action:channel"]
+        },
+        {
+          "id": "wait_listen",
+          "label": "Wait & Listen",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "insight", "value": true },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "Stillness is an unpopular art form. You practice it anyway. The sparks at last accept the theater and go about their work: the slow weaving of light between ribs of stone. Not sound but certainty arrives behind your ear like a remembered name: \\\"Block zero. Key of Origin. Beware the Custodian.\\\" The gremlins pretend they heard it first. You let them have the pretense."
+            }
+          },
+          "banter": {
+            "dev": "Telemetry stable at silence.",
+            "trader": "Sometimes the market pays best for the trade you didn’t take.",
+            "whale": "Patience is a heavy coin.",
+            "hacker": "Listening finds the unguarded port.",
+            "shiller": "Silence? Bold marketing.",
+            "validator": "No change is a kind of change.",
+            "miner": "Rest is work with different muscles.",
+            "meme": "AFK inside my head."
+          },
+          "telemetry_tags": ["scene:1.1","action:listen"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.1-R2",
+      "description": "The Ledger grows impatient and then—seeing you see it—pretends it was never impatient at all. Sparks lengthen into thin filaments that dangle from the ceiling like glass vines; the floor shivers as though the stone were poured last night and the recipe forgot to set. Somewhere in the walls, a grindstone protests the indignity of waking up twice.",
+      "actions": [
+        {
+          "id": "press_firmly",
+          "label": "Press Your Palm Firmly",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["contact","courage"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 1 },
+                { "type": "flag", "id": "trustful", "value": true },
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "You lean into the pressure and the pressure leans back until it breaks like a wave around a stubborn rock. When it passes, a buoyancy remains, a lightness under the bones like you could be taller simply by remembering how. The Ledger’s hum adds a third above your note and, for a bar or two, harmony is a fact."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "Curlicues of white bite-light crown your wrist and scribble a small reprimand against your skin. The gremlins ooh and ahh like you’re fireworks and they’re children who came to see what the noise was about."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You press as if you could make the stone apologize. It doesn’t. Heat chatters up your forearm and turns your elbow into a weather report. You are now eighty percent chance of lightning and a hundred percent chance of learning from it."
+            }
+          },
+          "banter": {
+            "dev": "Force applied with adequate debouncing.",
+            "trader": "Conviction but with a stop loss.",
+            "whale": "Persistence is a load-bearing virtue.",
+            "hacker": "If it squeaks, grease. If it shocks, ground.",
+            "shiller": "This is our hero shot.",
+            "validator": "Signal strengthened.",
+            "miner": "Feels like breaking through to ore.",
+            "meme": "Hand staking."
+          },
+          "telemetry_tags": ["scene:1.1","action:press"]
+        },
+        {
+          "id": "step_back_reapproach",
+          "label": "Step Back, Re-Approach",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["poise"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": true },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "You give the stone a pace of respect and it takes the space like a breath. On the return step, the glyphs expand and accept you, a door that prefers to be knocked. The gremlins whisper, scandalized: etiquette!"
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "The breath catches. Your timing misses by a hair and the hair becomes a wire and the wire hums annoyed against your knuckles. You shake out your hand and pretend you were making a point."
+            }
+          },
+          "banter": {
+            "dev": "Timing window detected and mapped.",
+            "trader": "Entry is an art. So is not forcing it.",
+            "whale": "Tidal patience. Pull back to push in.",
+            "hacker": "Recon again. Then act.",
+            "shiller": "Make anticipation the story.",
+            "validator": "Rhythm observed.",
+            "miner": "Tap tap—listen for hollow.",
+            "meme": "Moonwalk to handshake."
+          },
+          "telemetry_tags": ["scene:1.1","action:reapproach"]
+        },
+        {
+          "id": "decipher_second",
+          "label": "Decipher the Second Rune",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["rune","puzzle","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "insight", "value": true },
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "The triangle-in-circle acquires an escort: a line segment flexes into an arrow, then a path. You trace it midair and your hand continues two beats after your brain stops—muscle memory born one second old. Somewhere, a latch unlatches half a thought."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "White static swims across your vision like snow that thinks too highly of itself. You blink it away. The gremlins rate your blinking a seven."
+            }
+          },
+          "banter": {
+            "dev": "Syntax evolves under observation. Noted.",
+            "trader": "Maps pay twice: once now, once later.",
+            "whale": "Pathfinding is weightfinding.",
+            "hacker": "Arrow implies direction. Direction implies door.",
+            "shiller": "This is that part of the montage where we look smart.",
+            "validator": "Recording vector notation.",
+            "miner": "Follow the shine sings again.",
+            "meme": "Draw the squiggle. Profit."
+          },
+          "telemetry_tags": ["scene:1.1","action:decipher2"]
+        },
+        {
+          "id": "negotiate_crown",
+          "label": "Negotiate with the Gremlin Leader",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["social","gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "gremlin", "value": true },
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "The crowned gremlin plants its fists on its tiny hips and says, \\\"Terms: one shiny per help, two shinies per save, compliments free, insults extra.\\\" You counter in a tone that suggests you will remember this contract longer than it will. A handshake follows. Its hand is very small and very warm and smells like mischief."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "You propose; the crown imposes. A \\\"consideration fee\\\" materializes between you, payable immediately in both coin and dignity. You pay because the alternative costs more."
+            }
+          },
+          "banter": {
+            "dev": "API negotiated. Expect undocumented methods.",
+            "trader": "Counterparty risk adjusted.",
+            "whale": "Small partners, large leverage.",
+            "hacker": "Social exploit successful. Patch later.",
+            "shiller": "Collab secured. Hype responsibly.",
+            "validator": "Handshake recorded; terms… elastic.",
+            "miner": "We got a foreman with jokes.",
+            "meme": "King Gremlin just rugged my pockets—respect."
+          },
+          "telemetry_tags": ["scene:1.1","action:negotiate"]
+        },
+        {
+          "id": "cast_shinies",
+          "label": "Cast a Handful of Coins",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["trade","morale"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 15 },
+                { "type": "xp", "value": 10 },
+                { "type": "flag", "id": "gremlin", "value": true }
+              ],
+              "narration": "Coins arc in neat parabolas that would make a geometry teacher blush. Gremlins leap in a blur of teeth and giggles; the chaos softens the room. The Ledger’s hum brightens by two notes like a smile caught slowly."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 15 }
+              ],
+              "narration": "One coin ricochets into a rune slit; the wall pouts for a full minute. You apologize to architecture. Architecture pretends not to hear."
+            }
+          },
+          "banter": {
+            "dev": "Entropy injection successful.",
+            "trader": "Liquidity event (micro).",
+            "whale": "Spray works when a net fails.",
+            "hacker": "Distraction layer: deployed.",
+            "shiller": "Make it rain, keep it brand-safe.",
+            "validator": "Morale nudge acceptable.",
+            "miner": "Coins feed the small fires.",
+            "meme": "Airdrop IRL."
+          },
+          "telemetry_tags": ["scene:1.1","action:cast"]
+        },
+        {
+          "id": "breathe_resonance",
+          "label": "Breathe the Resonance",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "insight", "value": true },
+                { "type": "flag", "id": "harmony", "value": true },
+                { "type": "hp", "op": "+", "value": 1 }
+              ],
+              "narration": "You match the pulse beat for beat and then feel a third heartbeat arrive—older, patient, cut from igneous time. The three pulses braid and your ribs hold the braid like a story you’ve known since childhood but forgot to tell."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "The braid slips. Your breath tangles. You lose a stitch and then another. It is fine. You pick them up again, slower."
+            }
+          },
+          "banter": {
+            "dev": "Clock sync drift: reduced.",
+            "trader": "Calm hands, clear entries.",
+            "whale": "Rhythm outruns force.",
+            "hacker": "Kernel space meets user space.",
+            "shiller": "Breath sells calm better than merch.",
+            "validator": "Noise down, signal up.",
+            "miner": "Steam in the pistons. Good.",
+            "meme": "Yoga but for ledgers."
+          },
+          "telemetry_tags": ["scene:1.1","action:resonance"]
+        },
+        {
+          "id": "meditate_deeper",
+          "label": "Meditate Deeper",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 10 },
+                { "type": "flag", "id": "insight", "value": true }
+              ],
+              "narration": "You listen past the whispers to the quiet underneath—the subfloor of hush that carries all houses. A sentence arrives dipped in frost: \\\"Consensus must be earned.\\\" You believe it in your teeth."
+            }
+          },
+          "banter": {
+            "dev": "Thread yields. No deadlocks.",
+            "trader": "Patience compounding.",
+            "whale": "Deep water, slow strokes.",
+            "hacker": "Silence is an API with no rate limit.",
+            "shiller": "Minimalist branding: breathtaking.",
+            "validator": "Baseline recalibrated.",
+            "miner": "You can hear the seam if you’re quiet.",
+            "meme": "Zen and the art of gas savings."
+          },
+          "telemetry_tags": ["scene:1.1","action:meditate"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.1-R3",
+      "description": "The chamber shivers with decision, pretending it hasn’t been deciding you since you arrived. Light pours down the walls and puddles around your boots, then retreats as if shy. Your breath is too loud. Your heartbeat is an amateur drummer. The gremlins arrange themselves in rows like a terrible choir.",
+      "actions": [
+        {
+          "id": "seize_ledger",
+          "label": "Seize the Ledger Entirely",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["contact","will","courage"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "trustful", "value": true },
+                { "type": "item", "id": "cosmetic_glow_halo" },
+                { "type": "xp", "value": 40 }
+              ],
+              "narration": "Two hands, all heart. You take hold of absence as if it were a handle and for a heartbeat you are a window. The chain moves through you like weather moves through a field and the field does not complain because it was always for this. When the moment closes, you are both lighter and heavier; weight has changed its mind about you in some useful way."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "trustful", "value": true },
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "It does not budge because it does not need to. But it accepts your grip and that is more than nothing; it is almost a promise. Your fingers tingle with patient electricity."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "Backlash scalds your palm—courage without breath is an excellent way to meet the floor. You do not fall. You are assisted into an elegant crouch by embarrassment."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 6 }
+              ],
+              "narration": "Old teeth. White room. You learn the Ledger’s least favorite flavor: entitlement served hot. When the color comes back, a gremlin is fanning you with a receipt stamped: Denied."
+            }
+          },
+          "banter": {
+            "dev": "Undefined behavior met with undefined charisma.",
+            "trader": "Taking size when size is warranted.",
+            "whale": "Grip first, gravity later.",
+            "hacker": "Unsafe pointer but I like the speed.",
+            "shiller": "Clip that. That’s the trailer.",
+            "validator": "Contact verified. Outcome acceptable.",
+            "miner": "Hands on rock, heart on fire.",
+            "meme": "Touched grass (legendary)."
+          },
+          "telemetry_tags": ["scene:1.1","action:seize"]
+        },
+        {
+          "id": "demand_answers",
+          "label": "Demand Answers of the Vault",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["social","will"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "“Why do you test?” The question stings the tongue and tastes of copper. The vault answers in equivalences: a scale etched in light; a hand changing weight; a smile that is neither kind nor cruel. \\\"Because we remember,\\\" the idea says. \\\"Because weight matters.\\\""
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Your words arrive like a check with the wrong signature. The vault files them under Eventually and says nothing out loud."
+            }
+          },
+          "banter": {
+            "dev": "Asking prod for root cause on purpose.",
+            "trader": "Narrative check. Risk on truth.",
+            "whale": "Answers weigh less than action.",
+            "hacker": "Social 200 OK or 403?",
+            "shiller": "Mic on. Stage hot.",
+            "validator": "Question recorded.",
+            "miner": "Talk is a tool. Use sparingly.",
+            "meme": "Lore drop or lore rug?"
+          },
+          "telemetry_tags": ["scene:1.1","action:demand"]
+        },
+        {
+          "id": "sacrifice_item",
+          "label": "Offer a Sacrifice at the Ring",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["trade","ritual"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 20 },
+                { "type": "item", "id": "token_reroll_once" }
+              ],
+              "narration": "You lay a phrase, a trinket, a little brave memory at the circle’s center. Light fills the shallow groove like dawn filling a shallow lagoon. The gremlins hush, which is their second-highest compliment. When the glow drains away you are left with a small token stamped with a hinge: a promise to open twice what should open once."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "The offering sits where you put it, pretending to be humble and failing. The vault returns it, not unkindly, with a small bite for your presumption."
+            }
+          },
+          "banter": {
+            "dev": "I/O with ceremonial overhead.",
+            "trader": "Premium paid for optionality.",
+            "whale": "An offering’s weight attracts attention.",
+            "hacker": "Privilege escalation via ritual.",
+            "shiller": "Ceremony scales brand trust.",
+            "validator": "Witnessed. Notarized.",
+            "miner": "Blood and sweat are currencies too.",
+            "meme": "Sacrifice to the number go up gods."
+          },
+          "telemetry_tags": ["scene:1.1","action:sacrifice"]
+        },
+        {
+          "id": "conscript_gremlins",
+          "label": "Conscript Gremlins to Intervene",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "gremlin", "value": true },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "“Help and the story will make you legends,” you say. Gremlins adore the word legend. The crown slaps your palm with a tiny hand sticky with sugar. \\\"Deal. We are legends already but more is more.\\\""
+            },
+            "fail": {
+              "effects": [],
+              "narration": "They agree to help and then help by offering elaborate advice about snacks. It is not the help you needed but your morale rises shockingly."
+            }
+          },
+          "banter": {
+            "dev": "External dependency acquired.",
+            "trader": "Leverage, but furry.",
+            "whale": "Allies multiply weight.",
+            "hacker": "Botnet of gremlins. Terrifying.",
+            "shiller": "Ambassadors onboarded.",
+            "validator": "Quorum odd. Still workable.",
+            "miner": "They dig small holes fast.",
+            "meme": "Hehe-as-a-service."
+          },
+          "telemetry_tags": ["scene:1.1","action:conscript"]
+        },
+        {
+          "id": "admit_unready",
+          "label": "Admit You Are Not Ready",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "Out loud or in the muscle of your jaw, you confess the thing honesty demands: not yet. The vault does not punish truth; it grades it. The hum lowers by a note and the next hazard’s teeth shorten a fraction."
+            }
+          },
+          "banter": {
+            "dev": "Deferred until dependency resolves.",
+            "trader": "Capital preserved is capital earned.",
+            "whale": "Weight waits.",
+            "hacker": "Timing is an exploit too.",
+            "shiller": "Even silence can be on-brand.",
+            "validator": "Honesty recorded. Adjustment applied.",
+            "miner": "You don’t swing before the stance is right.",
+            "meme": "Skill issue acknowledged. Respect."
+          },
+          "telemetry_tags": ["scene:1.1","action:admit"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.1-R4",
+      "description": "Reflections gather on the walls like a jury called early and told there will be snacks. Each reflection looks at the hands of the others. The Ledger lifts its glow until shadows vanish and then, very gently, lets them come back.",
+      "actions": [
+        {
+          "id": "formalize_vote",
+          "label": "Consensus Forms (Silent Vote)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 50 }
+              ],
+              "narration": "The vote is not a show of hands; it is the memory of whom you were three minutes ago colliding with who you are now.\\n\\n• Majority Bold → Trustful Wallet: The room warms. Sparks become stars in a slow carousel, and for a blink you think you hear your name spoken the way a well speaks it back to a stone—lovingly, with gravity.\\n• Majority Cautious → Shy Spark: The stars sharpen into needles that hang at eye height. You will walk through them anyway, because you brought yourselves here and the door is honest even when it is unkind.\\n• Majority Insight → Rune Insight: Stars redraft themselves into lines and then letters, knitting a temporary alphabet you nearly remember from a dream in which you could read anything except the thing you wanted most.\\n• Majority Gremlin → Gremlin Ally: The stars arrange to spell HEHE and then scatter as a dozen gremlins arrive late to their own joke.\\n\\nSomewhere, a door rolls back a fraction of an inch, not enough to pass but enough for the future to squeeze in its foot."
+            }
+          },
+          "banter": {
+            "dev": "State converged.",
+            "trader": "Price discovered.",
+            "whale": "Weight expressed.",
+            "hacker": "Handshake minimal, meaning maximal.",
+            "shiller": "That’s a brand moment.",
+            "validator": "Consensus achieved; finalizing block.",
+            "miner": "Time to set the charge.",
+            "meme": "We voted vibes."
+          },
+          "telemetry_tags": ["scene:1.1","action:consensus"]
+        },
+        {
+          "id": "bind_oath",
+          "label": "Bind an Oath (Optional)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 15 },
+                { "type": "buff", "id": "unity_next_act" }
+              ],
+              "narration": "You speak a sentence that begins with \\\"We\\\" and ends with \\\"together.\\\" The vault hears without eavesdropping. An invisible ribbon ties the group’s wrists for a heartbeat and then dissolves into the air with a taste like rain."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Your oath meanders and loses its way in adjectives. The gremlins clap because they are generous or because they misunderstood the genre."
+            }
+          },
+          "banter": {
+            "dev": "Commit message: present tense, clear subject.",
+            "trader": "We hedge together; we win together.",
+            "whale": "A fleet is many ships with one wake.",
+            "hacker": "Pledge accepted; auth cached.",
+            "shiller": "Clip it. People love vows.",
+            "validator": "Witnessed. Strong handwriting.",
+            "miner": "Spit shake but fancy.",
+            "meme": "We ball."
+          },
+          "telemetry_tags": ["scene:1.1","action:oath"]
+        },
+        {
+          "id": "harmonic_chant",
+          "label": "Harmonic Chant (If Harmony)",
+          "requirements": { "items_any": [], "flags_all": ["harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 10 },
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "You hum the note that hums you and the Ledger returns the favor. The room likes musicians who can keep time with a heart they didn’t grow themselves."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "You drift sharp, then flat, then land on something charming and wrong. The gremlins harmonize badly on purpose and it is suddenly a party."
+            }
+          },
+          "banter": {
+            "dev": "Latency negligible.",
+            "trader": "Tempo steady, risk steady.",
+            "whale": "Chord carries more than one man can lift.",
+            "hacker": "Signal clean; noise musical.",
+            "shiller": "We sound expensive.",
+            "validator": "Tuning acceptable.",
+            "miner": "Song for the seam.",
+            "meme": "Auto-tune me, daddy ledger."
+          },
+          "telemetry_tags": ["scene:1.1","action:chant"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.1-R5",
+      "description": "An interlude writes itself in the dust: a spiral drawn by no hand you can see. The gremlins insist it was them; the Ledger insists on nothing at all.",
+      "actions": [
+        {
+          "id": "observe_environment",
+          "label": "Observe the Environment",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "Cracks in the far wall are not damage but deliberate: a pattern of stress relief shaped like a map you will need later. The air near the ceiling tastes sweeter, as if the vault keeps the best oxygen where only the ancient can reach. You file it under Useful Trivia With Teeth."
+            }
+          },
+          "banter": {
+            "dev": "Observability matters.",
+            "trader": "Macro before micro.",
+            "whale": "The room is a creature. Learn its gait.",
+            "hacker": "Recon never not pays.",
+            "shiller": "Look at that texture. Cinematic.",
+            "validator": "Notes appended.",
+            "miner": "Rock speaks if you listen.",
+            "meme": "Environmental storytelling pog."
+          },
+          "telemetry_tags": ["scene:1.1","action:observe"]
+        },
+        {
+          "id": "banter_relief",
+          "label": "Crack a Joke to Cut the Tension",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["social","morale"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 5 }
+              ],
+              "narration": "The laugh lands where you aimed and then ricochets in exactly the right way. The sparks brighten on the punchline. One gremlin laughs so hard it falls off the ledge and announces from the floor: \\\"I meant to do that.\\\""
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Your joke trips on its own shoes. The silence is charitable. The Ledger pretends not to notice humor until it can be held to a standard."
+            }
+          },
+          "banter": {
+            "dev": "Comic timing is a concurrency issue.",
+            "trader": "Laughter reduces slippage.",
+            "whale": "A ship that laughs turns smoother.",
+            "hacker": "Injecting joy packets.",
+            "shiller": "Engagement up and to the right.",
+            "validator": "Morale verified.",
+            "miner": "Jokes mine smiles.",
+            "meme": "Certified chuckle."
+          },
+          "telemetry_tags": ["scene:1.1","action:joke"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.1-R6",
+      "description": "The Ledger lowers its hum to a pitch that mentions your bones by their first names. This is not a threat. It is a promise that the next door will remember how you were when you opened it.",
+      "actions": [
+        {
+          "id": "steady_breath",
+          "label": "Steady Your Breath Together",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "A ridiculous choreography: inhale, exhale, look like you meant to do that. The vault likes choirs. You become one for three slow beats and feel ridiculous and then rare."
+            }
+          },
+          "banter": {
+            "dev": "Distributed sync achieved.",
+            "trader": "We breathe like a market on a good day.",
+            "whale": "Row together; wake together.",
+            "hacker": "Mesh network of lungs.",
+            "shiller": "This is community, not a word, a verb.",
+            "validator": "Variance down.",
+            "miner": "Bellows in rhythm.",
+            "meme": "Group buff IRL."
+          },
+          "telemetry_tags": ["scene:1.1","action:steady"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.1-R7",
+      "description": "Dust settles with obedient grace. Coins cling to your boots, then fall away like they remembered their chores. The Ledger’s light dims one thoughtful notch: not goodbye; a nod.",
+      "actions": [
+        {
+          "id": "final_consensus_gate",
+          "label": "Proceed on the Chosen Vibe (Trustful/Shy/Insight/Gremlin)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "You step where you meant to step when you walked in: toward the door that knew your name before you did. The room does not smile because rooms do not have faces; it hums in a key that sounds like kindness trying to keep a straight face.",
+              "next_hint": "trust"
+            }
+          },
+          "banter": {
+            "dev": "Advancing state.",
+            "trader": "No slippage on execution.",
+            "whale": "Weight forward.",
+            "hacker": "Hinge found. Door rotates.",
+            "shiller": "This way to our next miracle.",
+            "validator": "Path consistent with prior signals.",
+            "miner": "Bring your hands. The next stone won’t move itself.",
+            "meme": "GIGA VIBE CHECK PASSED."
+          },
+          "telemetry_tags": ["scene:1.1","action:advance"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "sleight_gte": 5,  "rewards": [ { "type": "coins", "value": 50 } ] },
+    { "sleight_gte": 8,  "rewards": [ { "type": "coins", "value": 50 }, { "type": "fragment", "value": 1 } ] },
+    { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_etched_in_chain" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.trustful", "goto": "2A" },
+    { "when": "flags.insight",  "goto": "2C" },
+    { "when": "flags.gremlin",  "goto": "2D" },
+    { "when": "else",           "goto": "2B" }
+  ]
+}
