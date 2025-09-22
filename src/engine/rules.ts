@@ -15,13 +15,13 @@ export function applyEffects(effects: Effect[], state: any, userId: string){
     switch (e.type) {
       case 'hp': {
         const d = (e.op === '-') ? -(e.value as number) : (e.value as number);
-        state.hp[userId] = Math.max(0, (state.hp[userId]||20) + d);
+        state.hp[userId] = Math.max(0, (state.hp[userId] ?? 20) + d);
         summary.push(`HP ${d>=0?'+':''}${d}`);
         break;
       }
       case 'focus': {
         const d = (e.op === '-') ? -(e.value as number) : (e.value as number);
-        state.focus[userId] = Math.max(0, (state.focus[userId]||10) + d);
+        state.focus[userId] = Math.max(0, (state.focus[userId] ?? 10) + d);
         summary.push(`Focus ${d>=0?'+':''}${d}`);
         break;
       }

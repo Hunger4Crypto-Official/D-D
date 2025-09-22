@@ -3,6 +3,34 @@
   "content_id": "genesis",
   "book_id": "book_1",
   "scene_id": "1.5",
+  "title": "Resonance Junction",
+  "narration": "A nexus of sonic corridors awaits. Resonant plates vibrate with every motion, measuring the party's sleight.",
+  "rounds": [
+    {
+      "round_id": "1.5-R1",
+      "description": "Calibrate resonance plates",
+      "actions": [
+        {
+          "id": "harmonic_alignment",
+          "label": "Perform harmonic alignment",
+          "roll": { "kind": "phi_d20", "tags": ["harmony", "integrity"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "xp", "value": 70 }, { "type": "coins", "value": 60 } ], "narration": "The junction sings back, storing your cadence for future boosts." },
+            "success": { "effects": [ { "type": "xp", "value": 35 } ], "narration": "You settle the plates into a gentle oscillation." },
+            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 2 } ], "narration": "Feedback rattles through the chamber." },
+            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 3 } ], "narration": "The plates shriek, forcing you to cover your ears." }
+          }
+        },
+        {
+          "id": "echo_mapping",
+          "label": "Map echo corridors",
+          "roll": { "kind": "phi_d20", "tags": ["insight", "ritual"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "flag", "id": "echo_map", "value": true }, { "type": "xp", "value": 60 } ], "narration": "Holographic pathways appear, revealing shortcuts." },
+            "success": { "effects": [ { "type": "xp", "value": 30 } ], "narration": "Your sketches catch the major routes." },
+            "fail": { "effects": [ { "type": "coins", "op": "-", "value": 15 } ], "narration": "Echo bait costs you a few coins." },
+            "crit_fail": { "effects": [ { "type": "coins", "op": "-", "value": 35 } ], "narration": "Gremlin guides lead you astray on purpose." }
+          }
   "title": "The Custodian’s Challenge — Stone Sentinel",
   "narration": "The world narrows to a gate that does not yet admit being a gate. Chains descend from the ceiling in measured braids the size of tree trunks, each link stamped with dates that never happened and signatures you almost remember. Between the braids stands something that is not a statue in the same way a storm is not a painting. The Custodian of Chains wakes like a ledger opening its eyes. Runes at the joints of its shoulders crackle and then go very quiet; the quiet is a threat in its most polite handwriting. \n\nIt is carved from the same black stone as the Ledger’s vault but polished where you are soft and faceted where you are sure. Where a face might have been, an unfriendly ellipse rotates slowly, displaying the kinds of expressions that only probability distributions can have. Each tilt of its head is a weighted vote; the room tallies; the chains lean. Three ribs on its left side bear the scars of promises kept under duress. A fourth rib—newer—glows faintly where a group like yours once negotiated a truce and was graded Pass With Conditions. The conditions were written into the floor, which is why the floor feels like a contract you should have read. \n\nGremlins collect above on crossbeams, polite for once. The crown speaks in a whisper that echoes as if it had shouted from a cathedral: \"Rule of Custodian: it tests weight fairly, then rudely, then fairly again. If you break a rule it hasn’t told you yet, it will give you a receipt. If you pass without learning anything, it will fail you later and claim it was a kindness.\" The crown looks proud of memorizing that. It probably did not. \n\nYou are close enough to feel the Sentinel’s posture in your knees: not hostile, but uninterested in pretending that your convenience is important. Its arms end not in hands but in grammatical instruments—clamps for clauses, spatulas for slippery language, a hinge that can turn a vow into a mechanism. Its voice, when it arrives, is the scraping of two stones that respect each other. \n\n“Weight presented?” it asks. You realize, with embarrassment, that it is not asking to see your inventory; it is asking to see your story. Ledger Plate sits heavier at that word; Gaslight Cloak tries to look unimpressed and fails. Audit Carapace warms at the seams as if remembering old courts. The flute from earlier hums once in your bag and then pretends to be wood. \n\nBeyond the Custodian stands a corridor bright with a thousand suspended chains. You can see Act 1’s shape from here: a series of decisions that only look linear because you are walking through them in an order you picked. The Sentinel tilts. Its ellipse expresses a distribution called Amused But Not Indulgent. “Proceed when your breath matches,” it says, which is either spiritual counsel or an attack on your aerobic fitness. It raises one arm. Two bells in the rafters do not ring. They continue not ringing with such purpose that ringing becomes the eccentric choice. \n\nTests will follow. You know this in your teeth. They will not all be about hitting things. Some will be about being hit and remembering who you are while it happens. Some will be about remembering the part of you that knows when not to pull. Some will be about the gremlins and what they whispered when they thought you were asleep. The Custodian’s first step lands like a stamp you cannot appeal.",
   "rounds": [
@@ -161,6 +189,36 @@
     },
     {
       "round_id": "1.5-R2",
+      "description": "Ride the resonance wave",
+      "actions": [
+        {
+          "id": "surf_signal",
+          "label": "Surf the signal",
+          "roll": { "kind": "phi_d20", "tags": ["rush", "gremlin"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "xp", "value": 40 }, { "type": "coins", "value": 80 } ], "narration": "You glide across the plates, leaving cheering gremlins." },
+            "success": { "effects": [ { "type": "coins", "value": 40 } ], "narration": "The wave carries you toward the next junction." },
+            "fail": { "effects": [ { "type": "hp", "op": "-", "value": 1 } ], "narration": "You stumble, bruising a shin on the plates." },
+            "crit_fail": { "effects": [ { "type": "hp", "op": "-", "value": 2 } ], "narration": "You wipe out spectacularly; gremlins hand you a pity scarf." }
+          },
+          "telemetry_tags": ["neutral"]
+        },
+        {
+          "id": "seal_portal",
+          "label": "Seal a destabilized portal",
+          "roll": { "kind": "phi_d20", "tags": ["integrity", "insight"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "flag", "id": "portal_sealed", "value": true }, { "type": "xp", "value": 55 } ], "narration": "The portal locks in place with a satisfied chime." },
+            "success": { "effects": [ { "type": "xp", "value": 25 } ], "narration": "You reinforce the edges with stabilizing glyphs." },
+            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 1 } ], "narration": "The seal resists, draining your focus." },
+            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 2 } ], "narration": "The portal snaps back and erupts with static." }
+          }
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [ { "sleight_gte": 5, "rewards": [ { "type": "coins", "value": 180 }, { "type": "xp", "value": 60 } ] } ],
+  "arrivals": [ { "when": "else", "goto": "1.6" } ]
       "description": "Measure of Force: the Sentinel extends an arm. The air around the hand feels like a rule that will only break once.",
       "actions": [
         {

@@ -10,12 +10,20 @@ CREATE TABLE IF NOT EXISTS profiles (
   level INTEGER DEFAULT 1,
   xp INTEGER DEFAULT 0,
   hp INTEGER DEFAULT 20,
+  hp_max INTEGER DEFAULT 20,
   focus INTEGER DEFAULT 10,
+  focus_max INTEGER DEFAULT 10,
   flags_json TEXT DEFAULT '{}',
   last_gm_ts INTEGER,
   last_gn_ts INTEGER,
   coins INTEGER DEFAULT 0,
   gems INTEGER DEFAULT 0,
+  fragments INTEGER DEFAULT 0,
+  last_weekly_claim INTEGER,
+  weekly_streak INTEGER DEFAULT 0,
+  selected_role TEXT,
+  downed_at INTEGER,
+  loadout_hash TEXT,
   last_weekly_claim INTEGER,
   weekly_streak INTEGER DEFAULT 0,
   selected_role TEXT,
@@ -47,8 +55,61 @@ CREATE TABLE IF NOT EXISTS runs (
   rng_seed TEXT,
   flags_json TEXT,
   sleight_score INTEGER DEFAULT 0,
+  sleight_history_json TEXT DEFAULT '[]',
+  active_user_id TEXT,
+  turn_order_json TEXT,
+  turn_expires_at INTEGER,
+  afk_tracker_json TEXT DEFAULT '{}',
+  ui_message_id TEXT,
+  ui_channel_id TEXT,
   created_at INTEGER,
   updated_at INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS equipment_loadouts (
+  user_id TEXT,
+  slot TEXT,
+  item_id TEXT,
+  durability INTEGER DEFAULT 100,
+  max_durability INTEGER DEFAULT 100,
+  set_key TEXT,
+  equipped_at INTEGER,
+  PRIMARY KEY(user_id, slot),
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS seasonal_badges (
+  user_id TEXT,
+  season_id TEXT,
+  version TEXT,
+  earned_at INTEGER,
+  PRIMARY KEY(user_id, season_id, version)
+);
+
+CREATE TABLE IF NOT EXISTS minigame_scores (
+  user_id TEXT,
+  minigame_id TEXT,
+  best_score INTEGER,
+  last_played INTEGER,
+  PRIMARY KEY(user_id, minigame_id)
+);
+
+CREATE TABLE IF NOT EXISTS shop_rotations (
+  rotation_id TEXT PRIMARY KEY,
+  active_from INTEGER,
+  active_to INTEGER,
+  packs_json TEXT,
+  items_json TEXT
+);
+
+CREATE TABLE IF NOT EXISTS pvp_matches (
+  match_id TEXT PRIMARY KEY,
+  kind TEXT,
+  status TEXT,
+  participants_json TEXT,
+  created_at INTEGER,
+  updated_at INTEGER,
+  result_json TEXT
 );
 
 CREATE TABLE IF NOT EXISTS difficulty_snapshots (

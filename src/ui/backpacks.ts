@@ -7,6 +7,7 @@ type RarityWeights = Record<string, number>;
 interface OpenPackOptions {
   skipCost?: boolean;
   spendAmountOverride?: number;
+  packIdOverride?: string;
 }
 
 function weightedPick(weights: RarityWeights): string {
@@ -30,6 +31,24 @@ function pityAdjustedRarity(
   return weightedPick(weights);
 }
 
+const PACK_FILES: Record<string, string> = {
+  Genesis: 'packs_genesis.json',
+};
+
+const FRAGMENT_VALUES: Record<string, number> = {
+  common: 5,
+  uncommon: 10,
+  rare: 25,
+  epic: 40,
+  legendary: 60,
+  mythic: 100,
+};
+
+export function openPack(user_id: string, packIdentifier = 'Genesis', options: OpenPackOptions = {}) {
+  const isFile = packIdentifier.endsWith('.json');
+  const pack_id = options.packIdOverride ?? (isFile ? 'Genesis' : packIdentifier);
+  const tableFile = isFile ? packIdentifier : PACK_FILES[packIdentifier] ?? 'packs_genesis.json';
+  const dt = loadDropTable(tableFile);
 export function openPack(user_id: string, pack_id = 'Genesis', options: OpenPackOptions = {}) {
   const dt = loadDropTable('packs_genesis.json');
   if (dt.pack_id !== pack_id) throw new Error('Unknown pack');
@@ -77,6 +96,20 @@ export function openPack(user_id: string, pack_id = 'Genesis', options: OpenPack
     );
   }
 
+  const existing = db
+    .prepare('SELECT qty FROM inventories WHERE user_id=? AND item_id=?')
+    .get(user_id, pick.id) as { qty?: number } | undefined;
+
+  let duplicate = false;
+  if (existing?.qty) {
+    duplicate = true;
+    const fragments = FRAGMENT_VALUES[rarity] ?? 5;
+    db.prepare('UPDATE profiles SET fragments=fragments+? WHERE user_id=?').run(fragments, user_id);
+  } else {
+    db.prepare(
+      'INSERT INTO inventories (user_id,item_id,kind,rarity,qty,meta_json) VALUES (?,?,?,?,?,?) ON CONFLICT(user_id,item_id) DO UPDATE SET qty=qty+excluded.qty'
+    ).run(user_id, pick.id, pick.kind, rarity, 1, '{}');
+  }
   db.prepare(
     'INSERT INTO inventories (user_id,item_id,kind,rarity,qty,meta_json) VALUES (?,?,?,?,?,?) ON CONFLICT(user_id,item_id) DO UPDATE SET qty=qty+excluded.qty'
   ).run(user_id, pick.id, pick.kind, rarity, 1, '{}');
@@ -101,5 +134,5 @@ export function openPack(user_id: string, pack_id = 'Genesis', options: OpenPack
      ON CONFLICT(user_id,pack_id) DO UPDATE SET opened=excluded.opened, last_rarity=excluded.last_rarity`
   ).run(user_id, pack_id, newOpened, rarity);
 
-  return { rarity, drop: pick };
+  return { rarity, drop: pick, duplicate };
 }

@@ -3,6 +3,134 @@
   "content_id": "genesis",
   "book_id": "book_1",
   "scene_id": "1.4",
+  "title": "Chromatic Vault",
+  "narration": "The corridor blooms into a prism chamber. Four color-coded conduits whirl, humming with ledger energy.",
+  "rounds": [
+    {
+      "round_id": "1.4-R1",
+      "description": "Stabilize the converging colors",
+      "actions": [
+        {
+          "id": "trace_gold",
+          "label": "Trace the Gold Flow",
+          "roll": { "kind": "phi_d20", "tags": ["insight", "integrity"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [ { "type": "xp", "value": 60 }, { "type": "flag", "id": "gold_understood", "value": true } ],
+              "narration": "You follow the golden arc to its anchor. Ledger whispers reward your precision."
+            },
+            "success": {
+              "effects": [ { "type": "xp", "value": 30 } ],
+              "narration": "Golden motes align, hinting at a secure path ahead."
+            },
+            "fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 1 } ],
+              "narration": "The flow slips from your fingers, leaving static on your gloves."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 2 } ],
+              "narration": "The gold flares. Numbers scramble across your vision."
+            }
+          }
+        },
+        {
+          "id": "steady_teal",
+          "label": "Steady the Teal Current",
+          "roll": { "kind": "phi_d20", "tags": ["harmony", "ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [ { "type": "coins", "value": 120 }, { "type": "flag", "id": "teal_attuned", "value": true } ],
+              "narration": "You breathe with the current. Teal coils wrap your party in balanced light."
+            },
+            "success": {
+              "effects": [ { "type": "coins", "value": 60 } ],
+              "narration": "The current hums, smoothing microfractures along the walls."
+            },
+            "fail": {
+              "effects": [ { "type": "hp", "op": "-", "value": 1 } ],
+              "narration": "A teal wave catches you off guard, knocking you back a step."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "hp", "op": "-", "value": 2 } ],
+              "narration": "The current pulses unpredictably and slams into the party."
+            }
+          }
+        },
+        {
+          "id": "sync_magenta",
+          "label": "Sync Magenta Signals",
+          "roll": { "kind": "phi_d20", "tags": ["gremlin", "rush"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [ { "type": "xp", "value": 45 }, { "type": "coins", "value": 45 } ],
+              "narration": "Gremlin beacons flash in rhythm with your gestures, cheering wildly."
+            },
+            "success": {
+              "effects": [ { "type": "xp", "value": 25 } ],
+              "narration": "The magenta line stabilizes just enough to keep the chamber calm."
+            },
+            "fail": {
+              "effects": [ { "type": "coins", "op": "-", "value": 10 } ],
+              "narration": "The line jitters and siphons a handful of coins."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "coins", "op": "-", "value": 25 } ],
+              "narration": "Magenta sparks scatter your reserves before sputtering out."
+            }
+          },
+          "telemetry_tags": ["neutral"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.4-R2",
+      "description": "Reconcile the chromatic ledger",
+      "actions": [
+        {
+          "id": "cross_reference",
+          "label": "Cross-reference color ledgers",
+          "roll": { "kind": "phi_d20", "tags": ["integrity", "ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [ { "type": "xp", "value": 70 }, { "type": "flag", "id": "chromatic_balance", "value": true } ],
+              "narration": "You align the ledger entries. The room rings with satisfied consensus."
+            },
+            "success": {
+              "effects": [ { "type": "xp", "value": 35 } ],
+              "narration": "Numbers balance; the path forward gains clarity."
+            },
+            "fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 2 } ],
+              "narration": "Contradictory hues tangle your focus."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 3 } ],
+              "narration": "The ledgers reject your input, swirling into chaos."
+            }
+          }
+        },
+        {
+          "id": "gremlin_consult",
+          "label": "Consult chromatic gremlins",
+          "roll": { "kind": "phi_d20", "tags": ["gremlin", "harmony"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [ { "type": "coins", "value": 90 }, { "type": "flag", "id": "gremlin_trust", "value": true } ],
+              "narration": "Gremlins hand you color-coded notes and salute."
+            },
+            "success": {
+              "effects": [ { "type": "coins", "value": 40 } ],
+              "narration": "They exchange hints for a cut of your shine."
+            },
+            "fail": {
+              "effects": [ { "type": "coins", "op": "-", "value": 15 } ],
+              "narration": "The gremlins demand a toll for wasted time."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "coins", "op": "-", "value": 35 } ],
+              "narration": "You get pranked with paint bombs."
+            }
+          }
   "title": "The Trial of Echoes — Hall of a Thousand Voices",
   "narration": "The corridor after the spectrum does not turn so much as remember that it could; it kinks like a thought catching on a nail, then widens into a nave carved from listening. Here, sound is a local sovereign. Steps do not merely report themselves to stone; they negotiate. The first heel’s tap comes back as three; the second as a dozen; by the third, your pace is hosting a convention of itself. Gremlins arrive and then politely pretend not to have arrived, practicing the art of stealth as a kind of performance. The air is Choral. In the ribbing overhead hang bells that do not ring; their tongues are runes and they taste the room continuously. Somewhere in the belly of the hall, something practices your voice with ridiculous accuracy and unfortunate editorial decisions. \n\nAt intervals along the walls, reliefs of former travelers bulge from the basalt as if stone were a memory foam with long patience. Some reliefs are laughing; some are praying; one is shrugging with such eloquence it appears to have solved a problem you have not met yet. Between each relief, the wall is scored with grooves: audit marks left by echoes that wanted to be more than noise and were graded accordingly. Ledger Plate reads those grooves like a weather report and sits heavier on the shoulders of the overconfident. Gaslight Cloak tries to produce flattering lighting and succeeds, but the lighting flatters the wall instead of you. \n\nThere is etiquette in the Hall, and it is not written anywhere you can point to. You learn it immediately or you learn it loudly. The gremlin crown whispers, \"Rule one of echo: the room only mocks what you insist on. Rule two: someone's always insisting. Rule three: hehe.\" The third rule is considered self-evident and therefore debated extensively. \n\nAhead, the Hall narrows into seven bays, each an organ pipe tuned to a different kind of honesty. Your path color lingers on the edges of things: red hardens corners; blue softens them; green turns passages into lanes; yellow offers invitations where there were none; indigo puts small weights into places that reward bearing them; violet hangs a curtain you are permitted to hold aside if you remember to wash your hands. The half-colors flit like gossip; they are correct more often than they deserve to be. \n\nThis is the Trial of Echoes. You will be measured by how you sound to yourself, and by whether you can stand the hearing. Failures do not eject you; they breed smaller rooms in your pocket which demand to be cleaned later. Successes do not crown you; they permit fewer cautions and more care. The Ledger loves both results equally because both are proofs of weight. You adjust posture; the Hall adjusts its opinion. You think a sentence you would never say, and the Hall says it for you just to see what happens. The bells continue not to ring. The bells are ringing constantly.",
   "rounds": [
@@ -772,6 +900,9 @@
     }
   ],
   "threshold_rewards": [
+    { "sleight_gte": 4, "rewards": [ { "type": "coins", "value": 150 }, { "type": "xp", "value": 50 } ] }
+  ],
+  "arrivals": [ { "when": "else", "goto": "1.5" } ]
     { "sleight_gte": 5,  "rewards": [ { "type": "coins", "value": 50 } ] },
     { "sleight_gte": 8,  "rewards": [ { "type": "coins", "value": 50 }, { "type": "fragment", "value": 1 } ] },
     { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_etched_in_chain" } ] },

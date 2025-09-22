@@ -1,0 +1,8 @@
+{
+  "content_id": "seasons/christmas2025",
+  "version": "2025.1",
+  "book_name": "Room 6 — Frost Signal",
+  "description": "A limited-time hunt through crystalline corridors.",
+  "scenes": ["6.1"],
+  "schema_version": "1.0"
+}
