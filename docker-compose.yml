@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  ledger-legends:
+    build: .
+    container_name: ledger-legends-bot
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./content:/app/content
+      - ./logs:/app/logs
+    ports:
+      - "${DASHBOARD_PORT:-3000}:3000"
+    healthcheck:
+      test: ["CMD", "node", "-e", "process.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - ledger-network
+
+  # Optional nginx reverse proxy
+  nginx:
+    image: nginx:alpine
+    container_name: ledger-legends-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - ledger-legends
+    networks:
+      - ledger-network
+    profiles:
+      - with-proxy
+
+networks:
+  ledger-network:
+    driver: bridge
+
+volumes:
+  bot-data:
+    driver: local
