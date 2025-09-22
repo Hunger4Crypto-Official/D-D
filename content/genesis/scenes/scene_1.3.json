@@ -3,9 +3,946 @@
   "content_id": "genesis",
   "book_id": "book_1",
   "scene_id": "1.3",
-  "title": "Placeholder Scene",
-  "narration": "This is placeholder text for a scene that has not yet been written.",
-  "rounds": [],
-  "threshold_rewards": [],
-  "arrivals": []
+  "title": "The Fractured Threshold — Doors That Listen",
+  "narration": "The door does not open so much as admit it has been two doors all along. Seams rise on the stone like gooseflesh and then become grooves, and then—impossibly—color. Twelve bands flare out of the split and hang in the air like ribbons dipped in electricity: red that hums like a forge at midnight; blue that tastes like clean glass; green that smells of cut copper and rain; yellow that is not sunshine but the idea of sunshine; indigo that presses lightly on the skull as if testing its own weight; violet that sings a note just low enough to be felt in the knees; and between them the half-colors, shy cousins with sharp teeth. The gremlins, who are not shy and whose teeth are an HR concern, swarm to the spectrum and begin conducting an auction with their fingers. The auction is for nothing in particular and everything at once. They clap to bid, whistle to fold, and hiss to drive the price of yellow down because yellow is having a moment and someone should stop it.\\n\\nBehind the colors, the Vault goes on being itself: a patient animal the size of a city, listening with its stones. The Ledger’s hum follows you here but thins into threads; it becomes embroidery rather than bassline. Every breath you take writes a small ledger entry against your ribs: Inhale (credit); Exhale (debit); Remain (interest). It is absurd and accurate and not your worst interest rate.\\n\\nShadows are also present—taller than yours and entirely too curious. They wear their own shadows and carry objects that seem borrowed from a myth that was embarrassed to include them: a chain as simple as a promise, a mask with no holes where holes should be, a flute made of maybe bone (best not to ask whose). The objects have moods. The moods have opinions about you. The gremlins shout advice like sports commentators who have never seen this sport but know how it should be played.\\n\\nThe spectrum is not simply decoration. Each band hums at a mood, and each mood presses on a part of you that you did not name until this instant. Red wants decisiveness and will respect you even if you bring it in the wrong glass. Blue wants patience and will scold you kindly. Green wants motion like a tide wants shore. Yellow is brash optimism that can talk itself into trouble and out again. Indigo and violet are old; they smell of cool caves and responsibility. The half-colors—orange, cyan, teal, magenta, and the faint almost-thing between blue and violet the gremlins call spleen—worry the edges of your decisions like a cat worrying a thread.\\n\\nThe chamber remembers your start: how you first touched the Ledger (bold or cautious), whether you read the glyphs before you tried to move them, whether you bribed the mischief with shinies or earned their giggling respect, whether you breathed with the hum and found harmony or held your breath and found stars. These things tint the bands in ways only your nerves perceive. It is not unfair; it is bookkeeping done in poetry. Your armor sits differently on your shoulders depending on which memory is louder: fear or cadence. Ledger Plate feels heavier in red; Gaslight Cloak flares in yellow as if it heard a rumor about itself. The Forked Crown (which is never casual) grows quiet at violet like a king taking off his ring to wash his hands.\\n\\nThis threshold is not a hallway to be walked. It is an algorithm of trust to be executed. Or, if the metaphor makes you itch, think of it as a choir audition where the choir is the building and the song is you. The test begins when you move. The test also begins if you stay still, because stillness here is a kind of motion. The gremlins whisper, \\\"Make a choice, meat-wallets. The stone gets bored.\\\" And though you are not stone, and though boredom is not your gravest fear, you understand that the worst grade you can get here is Not Interesting.",
+  "rounds": [
+    {
+      "round_id": "1.3-R1",
+      "description": "The first measure of the spectrum: red and blue breathe like two lungs that forgot they are one chest. Gremlins surf the bands with coins for shoes. Your shadow leans toward decisions it has not yet made.",
+      "actions": [
+        {
+          "id": "choose_red",
+          "label": "Step Into the Crimson (Decisive)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["courage","will","start_bias"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "path_red", "value": true },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 50 },
+                { "type": "sleight", "op": "+", "value": 1 }
+              ],
+              "narration": "Crimson condenses under your boots into petals that burn without heat. The band welcomes decisive weight. Somewhere, a hinge unlatches in a language made of sparks."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "path_red", "value": true },
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "Your step writes a straight line through flame and comes out cleaner than it went in."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "Heat nips your knuckles; the band requests less swagger and more spine."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 },
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Red bites, and the bite leaves handwriting. The message is: Not like that."
+            }
+          },
+          "banter": {
+            "dev": "Committing without review. Bold interface.",
+            "trader": "Buying strength while it’s expensive.",
+            "whale": "Weight persuades even fire.",
+            "hacker": "Heatmap says go. Fingers say ouch.",
+            "shiller": "Urgency is a colorway.",
+            "validator": "Signal strong; smoke tolerable.",
+            "miner": "Feels like ore behind hot rock.",
+            "meme": "Speedrun the spice route."
+          },
+          "telemetry_tags": ["scene:1.3","action:red","tier:auto"]
+        },
+        {
+          "id": "choose_blue",
+          "label": "Step Into the Azure (Patient)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","insight","start_bias"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "path_blue", "value": true },
+                { "type": "item", "id": "trinket_drop_of_frozen_ocean" },
+                { "type": "xp", "value": 40 }
+              ],
+              "narration": "Blue lowers itself like a tide to carry you. A bead of old sea hangs in the air; when it touches your palm it rings like a bell only bones can hear."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "path_blue", "value": true },
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "Cool glass, easy passage. Your breath remembers count."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Reflection lag. You move; your mirror lingers and steals a thought."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 3 }
+              ],
+              "narration": "Blue forgets to give you back your ankles for one alarming second."
+            }
+          },
+          "banter": {
+            "dev": "Latency shaved; patience cached.",
+            "trader": "Liquidity favors the calm hand.",
+            "whale": "Deep water lifts slow hulls.",
+            "hacker": "Encrypt the panic; expose the plan.",
+            "shiller": "Serenity sells itself.",
+            "validator": "Variance reduced; posture improved.",
+            "miner": "Brine-tempered stone cuts true.",
+            "meme": "Blue vibes, no rug."
+          },
+          "telemetry_tags": ["scene:1.3","action:blue","tier:auto"]
+        },
+        {
+          "id": "wait_listen_band",
+          "label": "Wait & Listen Between Bands",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "insight", "value": true },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "Between red and blue lives a third rhythm that belongs to neither and educates both."
+            }
+          },
+          "banter": {
+            "dev": "Telemetry: silence. Signal: loud.",
+            "trader": "The trade you don’t take pays sometimes.",
+            "whale": "Weight waits.",
+            "hacker": "Listening finds unguarded ports.",
+            "shiller": "Anticipation is marketing.",
+            "validator": "Baseline established.",
+            "miner": "Rock hums different where it’s hollow.",
+            "meme": "AFK inside my head."
+          },
+          "telemetry_tags": ["scene:1.3","action:listen"]
+        },
+        {
+          "id": "gremlin_small_trade",
+          "label": "Flip a Shiny to the Gremlins",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["trade","gremlin"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 20 },
+                { "type": "item", "id": "trinket_ledger_amulet" },
+                { "type": "flag", "id": "gremlin", "value": true }
+              ],
+              "narration": "A coin becomes applause becomes an amulet that hums on your skin like friendly static."
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 20 },
+                { "type": "flag", "id": "gremlin", "value": true }
+              ],
+              "narration": "The crown approves; the chorus approves louder."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 20 }
+              ],
+              "narration": "Your shiny is now everyone’s shiny. Economics!"
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 35 },
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your flourish flourishes you."
+            }
+          },
+          "banter": {
+            "dev": "Counterparty whimsical; contract implied.",
+            "trader": "Paid the spread in giggles.",
+            "whale": "Small bribes, large ripples.",
+            "hacker": "Gremlin API: undocumented but fast.",
+            "shiller": "Micro-influencers onboarded.",
+            "validator": "Receipt written in squeaks.",
+            "miner": "Teeny hands, big throughput.",
+            "meme": "Hehe staking."
+          },
+          "telemetry_tags": ["scene:1.3","action:gremlin_trade"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.3-R2",
+      "description": "The spectrum widens. Green arrives like a tide pretending to be ivy; yellow crackles with civic optimism; indigo and violet stand at the back like uncles at a wedding who know this dance and will not admit it.",
+      "actions": [
+        {
+          "id": "choose_green",
+          "label": "Lean Into Green (Motion)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["agility","courage"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "path_green", "value": true },
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "You move and the path races ahead to meet your feet."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "Vines that were helpful become helpful in the other direction."
+            }
+          },
+          "banter": {
+            "dev": "Throughput is a love language.",
+            "trader": "Momentum begets momentum.",
+            "whale": "Wake first, then wave.",
+            "hacker": "Latency drops when you stop thinking about it.",
+            "shiller": "Growth is a color.",
+            "validator": "Friction minimal.",
+            "miner": "Green rock? Copper’s near.",
+            "meme": "Go go green candle."
+          },
+          "telemetry_tags": ["scene:1.3","action:green"]
+        },
+        {
+          "id": "choose_yellow",
+          "label": "Step Into Yellow (Optimism)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["morale","charm"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "path_yellow", "value": true },
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "Light compliments you out loud and you nearly believe it."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Optimism trips on its cape; you steady it, which is somehow exhausting."
+            }
+          },
+          "banter": {
+            "dev": "UI brighter; bugs brighter too.",
+            "trader": "Sentiment index: chirp.",
+            "whale": "Sun on steel makes good wakes.",
+            "hacker": "Cheerful exploits are still exploits.",
+            "shiller": "Brand tone: vitamin D.",
+            "validator": "Optimism noted; checks remain.",
+            "miner": "Sunbaked strata flake easy.",
+            "meme": "We sunshine now."
+          },
+          "telemetry_tags": ["scene:1.3","action:yellow"]
+        },
+        {
+          "id": "choose_indigo",
+          "label": "Accept Indigo (Responsibility)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["will","integrity"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "path_indigo", "value": true },
+                { "type": "flag", "id": "integrity_boost", "value": true }
+              ],
+              "narration": "A weight settles on your shoulders that fits so well you did not notice you were made for it."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "Duty taps your sternum with a knuckle; you bruise where pride was thin."
+            }
+          },
+          "banter": {
+            "dev": "Strong types, strict lint.",
+            "trader": "Risk desk nods; we sign.",
+            "whale": "Weight knows where to sit.",
+            "hacker": "Authz before authn—spicy take.",
+            "shiller": "Trust, but make it handsome.",
+            "validator": "Integrity increase observed.",
+            "miner": "Load-bearing veins don’t lie.",
+            "meme": "Adult mode: on."
+          },
+          "telemetry_tags": ["scene:1.3","action:indigo"]
+        },
+        {
+          "id": "choose_violet",
+          "label": "Bow to Violet (Old Promise)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "path_violet", "value": true },
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "You lower your head; the room lowers its noise."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Reverence attempted; telegraphed."
+            }
+          },
+          "banter": {
+            "dev": "Ritual is just reliable code with candles.",
+            "trader": "Legacy systems still clear size.",
+            "whale": "Old oaths carry big wakes.",
+            "hacker": "Reverse-engineering reverence.",
+            "shiller": "Vintage trust, new label.",
+            "validator": "Witnessed. Ink still wet.",
+            "miner": "Amethyst seams cut slow, pay long.",
+            "meme": "Grandma chain bless."
+          },
+          "telemetry_tags": ["scene:1.3","action:violet"]
+        },
+        {
+          "id": "inspect_bands",
+          "label": "Study the Half-Colors (Orange/Cyan/Teal/Magenta/Spleen)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["rune","puzzle","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "halfcolor_literate", "value": true },
+                { "type": "item", "id": "token_spectral_key" }
+              ],
+              "narration": "The between-colors are not indecision; they are grammar. You learn a preposition the spectrum kept hidden."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "halfcolor_literate", "value": true }
+              ],
+              "narration": "Edges become lanes when you squint correctly."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "Color bleeds; your eyes file a complaint."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "Spleen is not a color you wanted in your head. Too late."
+            }
+          },
+          "banter": {
+            "dev": "Type unions, meet palettes.",
+            "trader": "Basis trades but for vibes.",
+            "whale": "Edge lanes carry quiet weight.",
+            "hacker": "The exploit is always between specs.",
+            "shiller": "Colorways that move product and hearts.",
+            "validator": "Between is still verifiable.",
+            "miner": "Veins live in edges.",
+            "meme": "Magenta supremacy (temporarily)."
+          },
+          "telemetry_tags": ["scene:1.3","action:halfcolors"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.3-R3",
+      "description": "Shadows step forward carrying artifacts: chain, mask, flute. None are subtle. Each carries obligations like weather.",
+      "actions": [
+        {
+          "id": "take_chain",
+          "label": "Accept the Chain (Continuity)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["will","integrity"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "token_chainlink_oath" },
+                { "type": "flag", "id": "integrity_boost", "value": true },
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "The links are cool and heavier than they look. A promise starts writing itself around your wrists and stops before it becomes rude."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "You drop a link; it falls through the floor in search of gravity more serious than yours."
+            }
+          },
+          "banter": {
+            "dev": "Referential integrity hand-delivered.",
+            "trader": "Carry the spread; earn the spread.",
+            "whale": "Chains tow fleets.",
+            "hacker": "Binding primitive achieved.",
+            "shiller": "Narrative continuity accessorized.",
+            "validator": "Continuity verified.",
+            "miner": "Links are just ore with manners.",
+            "meme": "We chained up responsibly."
+          },
+          "telemetry_tags": ["scene:1.3","action:chain"]
+        },
+        {
+          "id": "take_mask",
+          "label": "Try the Mask (Role)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["charm","deception","poise"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "cosmetic_mask_of_many_handles" },
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "You become someone you could have been on purpose. The room is briefly fooled and pleased about it."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Mask inside-out. Happens to the best of us."
+            }
+          },
+          "banter": {
+            "dev": "Dependency inversion for identities.",
+            "trader": "Liquidity of self.",
+            "whale": "Mass wears many faces; wake stays one.",
+            "hacker": "Spoofing but make it art.",
+            "shiller": "Rebrand, but spiritually.",
+            "validator": "Mask noted; person intact.",
+            "miner": "Dust on the inside—real work mask.",
+            "meme": "Who is he? He is vibes."
+          },
+          "telemetry_tags": ["scene:1.3","action:mask"]
+        },
+        {
+          "id": "take_flute",
+          "label": "Play the Flute (Control Rhythm)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","insight","harmony"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "harmony", "value": true },
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "You find the room’s breath and play it back to itself. The Vault blushes in stone-language."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "harmony", "value": true }
+              ],
+              "narration": "A note lands where it should and stays there, proud."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Reed bite; lip learns humility."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You and the room share a wrong note intimately."
+            }
+          },
+          "banter": {
+            "dev": "Clock sync via melody.",
+            "trader": "Tempo management is risk management.",
+            "whale": "Hull hums when notes align.",
+            "hacker": "Kernel rhythm exposed.",
+            "shiller": "Catchy sells, steady keeps.",
+            "validator": "Phase locked.",
+            "miner": "Bellows in time.",
+            "meme": "Bone flute solo goes hard."
+          },
+          "telemetry_tags": ["scene:1.3","action:flute"]
+        },
+        {
+          "id": "decline_artifacts",
+          "label": "Decline Gracefully",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "Not every gift is for now. The room appreciates your calendar discipline."
+            }
+          },
+          "banter": {
+            "dev": "Feature flagged off (for now).",
+            "trader": "Passing on a trade is still a trade.",
+            "whale": "Weight reserves win wars.",
+            "hacker": "Don’t install unknown drivers.",
+            "shiller": "Scarcity is hottest when self-made.",
+            "validator": "Restraint recorded.",
+            "miner": "Save your back for ore.",
+            "meme": "Skip cutscene, gain lore."
+          },
+          "telemetry_tags": ["scene:1.3","action:decline_artifacts"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.3-R4",
+      "description": "A gremlin parliament convenes upon a ledge. The crown wears a newer crown over the old crown. Roberts Rules of Hehe are invoked and immediately ignored.",
+      "actions": [
+        {
+          "id": "negotiate_crown",
+          "label": "Negotiate Terms with the Crown",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["social","gremlin","charm"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "gremlin", "value": true },
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "A handshake the size of a coin confers temporary legitimacy and permanent mischief."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "Consulting fee, payable in jingles."
+            }
+          },
+          "banter": {
+            "dev": "Third-party SDK linked (chaotic).",
+            "trader": "Counterparty risk enormous; payoff adorable.",
+            "whale": "Small allies, large leverage.",
+            "hacker": "Social exploit with plush UI.",
+            "shiller": "Partnership signed on glitter.",
+            "validator": "Handshake notarized (sort of).",
+            "miner": "They move dirt fast.",
+            "meme": "Gov proposal: more snacks."
+          },
+          "telemetry_tags": ["scene:1.3","action:negotiate_crown"]
+        },
+        {
+          "id": "hire_gremlins",
+          "label": "Hire Gremlins to Run Interference",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","tactics"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 15 },
+                { "type": "buff", "id": "gremlin_screen", "value": true }
+              ],
+              "narration": "A screen of giggling bodies misdirects hazards for one upcoming mess."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 15 }
+              ],
+              "narration": "They interfere with you with impeccable enthusiasm."
+            }
+          },
+          "banter": {
+            "dev": "Concurrency increased, determinism decreased.",
+            "trader": "Hedge achieved by chaos.",
+            "whale": "Wake churned for cover.",
+            "hacker": "Botnet but ethical?",
+            "shiller": "Street team activated.",
+            "validator": "Interference recorded.",
+            "miner": "Dust cloud on demand.",
+            "meme": "Paid shills (adorable)."
+          },
+          "telemetry_tags": ["scene:1.3","action:hire_gremlins"]
+        },
+        {
+          "id": "gremlin_trial",
+          "label": "Submit to the Hehe Trial (Fun but Binding)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["morale","poise","gremlin"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "trinket_gremlin_whistle" },
+                { "type": "xp", "value": 25 },
+                { "type": "flag", "id": "gremlin", "value": true }
+              ],
+              "narration": "You win a game whose rules were spelled with confetti. The whistle summons help at narratively funny times."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 10 },
+                { "type": "flag", "id": "gremlin", "value": true }
+              ],
+              "narration": "You don’t lose, which in this jurisdiction is legally a win."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "Fine for crimes against fun (minor)."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 20 },
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Contempt of court; you made a pun they were saving."
+            }
+          },
+          "banter": {
+            "dev": "Unit tests failing cheerfully.",
+            "trader": "Low EV, high morale.",
+            "whale": "Wake with confetti still a wake.",
+            "hacker": "Playpen with sharp corners.",
+            "shiller": "Trial but make it brandable.",
+            "validator": "Judgment rendered by applause.",
+            "miner": "We dig fun trenches now.",
+            "meme": "Hehe jurisprudence."
+          },
+          "telemetry_tags": ["scene:1.3","action:gremlin_trial"]
+        },
+        {
+          "id": "respectfully_decline",
+          "label": "Decline the Gremlin Court (Politely)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "Politeness confuses them. Confusion is respect wearing a clown nose."
+            }
+          },
+          "banter": {
+            "dev": "Feature toggle: humor=off (temporary).",
+            "trader": "Passing on volatility.",
+            "whale": "Wake narrows; course straightens.",
+            "hacker": "Sandbox exited gracefully.",
+            "shiller": "We’ll collab later (maybe).",
+            "validator": "Boundary respected.",
+            "miner": "Back to rock.",
+            "meme": "No hehe today."
+          },
+          "telemetry_tags": ["scene:1.3","action:decline_court"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.3-R5",
+      "description": "Noise thins. Runes bare their bones. This is the listening part of the test—the one that rewards people who forget to show off.",
+      "actions": [
+        {
+          "id": "meditate_resonance",
+          "label": "Meditate with the Vault’s Resonance",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","insight","harmony"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "harmony", "value": true },
+                { "type": "hp", "op": "+", "value": 1 },
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "You match pulse for pulse until the room decides you are a metronome it can trust."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your inhale and exhale meet in a hallway and argue about right-of-way."
+            }
+          },
+          "banter": {
+            "dev": "Clock drift shrinking.",
+            "trader": "Temper beats timing.",
+            "whale": "Wake evens when oars agree.",
+            "hacker": "Kernel tick aligned.",
+            "shiller": "Quiet brand moments convert.",
+            "validator": "Variance down.",
+            "miner": "Bellows steady.",
+            "meme": "Yoga but for ledgers."
+          },
+          "telemetry_tags": ["scene:1.3","action:meditate"]
+        },
+        {
+          "id": "decode_runes",
+          "label": "Decode the Fracture Glyphs",
+          "requirements": { "items_any": [], "flags_all": ["insight"] },
+          "roll": { "kind": "phi_d20", "tags": ["rune","puzzle","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "phrase_etched_in_chain" },
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "You extract a sentence from noise and it likes you back."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "Meaning arrives shy and stays."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "Light splinters; your pupils file paperwork."
+            }
+          },
+          "banter": {
+            "dev": "Syntax tree bears fruit.",
+            "trader": "Information pays twice.",
+            "whale": "Deep reads anchor deep wakes.",
+            "hacker": "Two locks, one hinge.",
+            "shiller": "Lore is brand with edges.",
+            "validator": "Statement parsed.",
+            "miner": "Pattern is a seam with manners.",
+            "meme": "ENHANCE (but actually)."
+          },
+          "telemetry_tags": ["scene:1.3","action:decode"]
+        },
+        {
+          "id": "armor_check",
+          "label": "Adjust Armor & Posture",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "stance_tuned", "value": true }
+              ],
+              "narration": "Ledger Plate shifts kindly; Gaslight Cloak stops trying to be a chandelier."
+            }
+          },
+          "banter": {
+            "dev": "Config change applied without restart.",
+            "trader": "Risk posture, not just risk appetite.",
+            "whale": "Trim sail; keep wake clean.",
+            "hacker": "Recompile spine.",
+            "shiller": "Fit check: immaculate.",
+            "validator": "Shield angle verified.",
+            "miner": "Straps tight. Swing freer.",
+            "meme": "Drip but practical."
+          },
+          "telemetry_tags": ["scene:1.3","action:armor"]
+        },
+        {
+          "id": "share_insight",
+          "label": "Share a Quiet Insight with the Party",
+          "requirements": { "items_any": [], "flags_all": ["insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "unity_next_act", "value": true },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "A small sentence becomes a big bridge."
+            }
+          },
+          "banter": {
+            "dev": "Knowledge replication complete.",
+            "trader": "We compound together.",
+            "whale": "Fleet turns smoother than solo.",
+            "hacker": "Patch diff shared.",
+            "shiller": "Internal comms but cozy.",
+            "validator": "Consensus warmed.",
+            "miner": "Pass the lamp.",
+            "meme": "Group brain online."
+          },
+          "telemetry_tags": ["scene:1.3","action:share_insight"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.3-R6",
+      "description": "Consensus ritual. The chamber calls the vote without hands, without boxes, without lies. It counts what you became in here.",
+      "actions": [
+        {
+          "id": "silent_vote",
+          "label": "Stand for Silent Vote",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 40 }
+              ],
+              "narration": "The room reads posture like ballots. It is impossible to stuff a posture."
+            }
+          },
+          "banter": {
+            "dev": "State converged.",
+            "trader": "Price discovered.",
+            "whale": "Wake averaged.",
+            "hacker": "Handshake minimal, meaning maximal.",
+            "shiller": "We look good voting.",
+            "validator": "Consensus achieved.",
+            "miner": "Tap rock; it rings true.",
+            "meme": "We voted vibes."
+          },
+          "telemetry_tags": ["scene:1.3","action:vote"]
+        },
+        {
+          "id": "bind_oath",
+          "label": "Bind an Oath (Optional)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "unity_next_act", "value": true },
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "You say we and the fire nods."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Your oath has verbs; it needs a spine. Later."
+            }
+          },
+          "banter": {
+            "dev": "Commit message clear enough.",
+            "trader": "We hedge together; win together.",
+            "whale": "Wake shared, storm shared.",
+            "hacker": "Pledge cached.",
+            "shiller": "Clip the vow.",
+            "validator": "Witnessed.",
+            "miner": "Spit shake, deluxe.",
+            "meme": "We ball officially."
+          },
+          "telemetry_tags": ["scene:1.3","action:oath"]
+        },
+        {
+          "id": "harmony_chant",
+          "label": "Harmonic Chant (If Harmony)",
+          "requirements": { "items_any": [], "flags_all": ["harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 1 },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "Your note threads a needle the size of the room."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "A charming wrongness; the gremlins harmonize badly on purpose."
+            }
+          },
+          "banter": {
+            "dev": "Latency negligible.",
+            "trader": "Tempo steady; risk steady.",
+            "whale": "Chord carries hulls.",
+            "hacker": "Signal clean.",
+            "shiller": "We sound expensive.",
+            "validator": "Tuning acceptable.",
+            "miner": "Song for the seam.",
+            "meme": "Auto-tune me, ledger."
+          },
+          "telemetry_tags": ["scene:1.3","action:chant"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.3-R7",
+      "description": "Record of choice. The spectrum folds back into stone like a banner furling itself. What remains is a door with your name disguised as geometry.",
+      "actions": [
+        {
+          "id": "advance_by_color",
+          "label": "Advance on the Chosen Vibe (Red/Blue/Green/Yellow/Indigo/Violet/Half)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "You step where the room was already waiting.",
+              "next_hint": "trust"
+            }
+          },
+          "banter": {
+            "dev": "Advancing state machine.",
+            "trader": "Execution without slippage.",
+            "whale": "Weight forward.",
+            "hacker": "Hinge found; rotate.",
+            "shiller": "This way to Act Two.",
+            "validator": "Path consistent.",
+            "miner": "Next rock awaits.",
+            "meme": "GIGA VIBE CHECK PASSED."
+          },
+          "telemetry_tags": ["scene:1.3","action:advance"]
+        },
+        {
+          "id": "last_shop_peek",
+          "label": "Quick Peek at Shop (If Gremlins Like You)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "shop", "id": "vault_threshold_pop" }
+              ],
+              "narration": "A small stall unfolds from someone’s pocket. Inventory is labeled in squeaks."
+            }
+          },
+          "banter": {
+            "dev": "Micro-market spun up.",
+            "trader": "Liquidity event (tiny).",
+            "whale": "Impulse buys burden wakes.",
+            "hacker": "Pop-up API.",
+            "shiller": "Merch that hums.",
+            "validator": "Ledger connected.",
+            "miner": "Tools before tunnels.",
+            "meme": "Lootbox but ethical."
+          },
+          "telemetry_tags": ["scene:1.3","action:shop_peek"]
+        },
+        {
+          "id": "review_log",
+          "label": "Review What the Room Recorded",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "A neat list appears on the wall: flags set, oaths spoken, laughs permitted, bites survived. It is kinder than it could have been."
+            }
+          },
+          "banter": {
+            "dev": "Audit log human-readable.",
+            "trader": "PnL of courage nets green.",
+            "whale": "Wake diagram crisp.",
+            "hacker": "Telemetry with feelings.",
+            "shiller": "Story recap is content.",
+            "validator": "Entries balanced.",
+            "miner": "Strata mapped.",
+            "meme": "Patch notes for your soul."
+          },
+          "telemetry_tags": ["scene:1.3","action:log_review"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "sleight_gte": 5,  "rewards": [ { "type": "coins", "value": 50 } ] },
+    { "sleight_gte": 8,  "rewards": [ { "type": "coins", "value": 50 }, { "type": "fragment", "value": 1 } ] },
+    { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_etched_in_chain" } ] },
+    { "flags_all": ["integrity_boost"], "rewards": [ { "type": "item", "id": "armor_audit_carapace" } ] },
+    { "flags_all": ["gremlin"], "rewards": [ { "type": "item", "id": "trinket_gremlin_whistle" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.path_red",    "goto": "2A" },
+    { "when": "flags.path_blue",   "goto": "2B" },
+    { "when": "flags.path_green",  "goto": "2C" },
+    { "when": "flags.path_yellow", "goto": "2D" },
+    { "when": "flags.path_indigo", "goto": "2E" },
+    { "when": "flags.path_violet", "goto": "2F" },
+    { "when": "flags.halfcolor_literate", "goto": "2G" },
+    { "when": "flags.gremlin",     "goto": "2D" },
+    { "when": "flags.insight",     "goto": "2C" },
+    { "when": "else",              "goto": "2B" }
+  ]
 }
