@@ -24,6 +24,9 @@ CREATE TABLE IF NOT EXISTS profiles (
   selected_role TEXT,
   downed_at INTEGER,
   loadout_hash TEXT,
+  last_weekly_claim INTEGER,
+  weekly_streak INTEGER DEFAULT 0,
+  selected_role TEXT,
   CHECK (level >= 1),
   FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );

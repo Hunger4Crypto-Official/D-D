@@ -32,6 +32,149 @@
             "crit_fail": { "effects": [ { "type": "hp", "op": "-", "value": 2 } ], "narration": "A backlash of light scorches your hands." }
           },
           "telemetry_tags": ["neutral"]
+  "title": "The Door of Many Keys — Proof of Entry",
+  "narration": "The corridor exhales and the echo returns with a different haircut. Ahead rises a door assembled from locks like a choir assembled from throats: impossible until you hear it. Brass plates nest in black stone frames; keyways bloom like tiny mouths rehearsing vowels. Runes thread between the plates in patterns that refuse to sit still. Some locks are old enough to be revered and young enough to be improved; others are jokes told by engineers with excellent ethics and terrible timing. \n\nAcross the door a beam of tempered light scrolls a message that edits itself as you read: PRESENT CREDENTIALS. The letters then shuffle into another sentence: PROVE WHAT YOU ARE WITHOUT SAYING IT. Then, smaller: PLEASE DO NOT ATTEMPT TO BLOW ON KEYHOLES. A gremlin, halfway to blowing on the nearest keyhole, pockets a straw with theatrical innocence. \n\nSeven arcs curve out from the threshold like questions with different flavors of punctuation: the Trust Arc (a hinge that opens only when weight is shared), the Insight Arc (runes that read you while you pretend to read them), the Gremlin Arc (a cluster of auxiliary locks that prefer chaos but require compliance), the Harmony Arc (a chord-slot that drinks breath like water), the Bearing Arc (a lever that measures what you carry and why), the Record Arc (receipts demanded politely and permanently), and the Joke Arc (a small, shiny slot with a tiny placard: LAUGHTER HAS MASS). At the base of the door, an inset plate reads: THIS ENTRYWAY REMEMBERS YOUR 1.x. TRY TO BE PROUD OF IT. \n\nLedger Plate warms as if anticipating impact; Audit Carapace straightens with courtroom grace. Shardmail remembers three recent stumbles and offers to reframe them as choreography. Liquidity Spear ticks like a clock that loves shortcuts; Mergeblade whispers in clauses, planning a dramatic sentence. Beacon Visor paints your retinas with possible paths and three improved versions of your posture. Protocol Staff—not a physical staff, but a way of standing—requests permission to recite safety. Permission is granted by the way the bolts stop pretending they aren't listening. \n\nThe Door of Many Keys is not a boss. It is a biography asking to be signed. The gremlin crown leans close and hisses: \"Rule of Keys: Everyone brings a tooth. Don't argue about mouths.\" The crown is not wrong, and probably heard that from the door itself.",
+  "rounds": [
+    {
+      "round_id": "1.7-R1",
+      "description": "Briefing in Brass: the door presents a tray of blank keys that are clearly not blank. Each is an outline inviting a story to pour itself into a shape.",
+      "actions": [
+        {
+          "id": "inventory_self",
+          "label": "Inventory Yourselves (Flags as Teeth)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","integrity","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "keybed_mapped", "value": true },
+                { "type": "xp", "value": 30 }
+              ],
+              "narration": "You list your truths without apology. The key tray warms and one outline fills with light shaped like your last good decision."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "keybed_mapped", "value": true },
+                { "type": "xp", "value": 16 }
+              ],
+              "narration": "Your flags settle into slots as if they were forged for this tray on the day you chose them."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your inventory argues with your memory; the tray sighs in italic."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You attempt to humble-brag to a door that can count. It awards you a small lesson and good posture."
+            }
+          },
+          "banter": {
+            "dev": "State dump with unit tests.",
+            "trader": "Mark to market on soul.",
+            "whale": "Wake declares mass.",
+            "hacker": "Introspection without segfault.",
+            "shiller": "Brand book but real.",
+            "validator": "Claims notarized.",
+            "miner": "Count the ore, then swing.",
+            "meme": "Patch notes: us."
+          },
+          "telemetry_tags": ["scene:1.7","action:inventory_self"]
+        },
+        {
+          "id": "ask_door",
+          "label": "Ask the Door a Question (Establish Protocol)",
+          "requirements": { "items_any": [], "flags_all": ["keybed_mapped"] },
+          "roll": { "kind": "phi_d20", "tags": ["social","insight","integrity"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "door_listening", "value": true },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "You ask what it measures when it measures you. It answers: \"Weight remembered.\" The tray seems pleased you asked nicely."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "You ask how to cheat. The door takes notes for later and pretends not to hear."
+            }
+          },
+          "banter": {
+            "dev": "Handshake first, hacks later.",
+            "trader": "Price discovery for manners.",
+            "whale": "Wake meets lock gently.",
+            "hacker": "Protocol over prybar (for now).",
+            "shiller": "Set the tone; own the tone.",
+            "validator": "Scope clarified.",
+            "miner": "Talk to the rock; it listens.",
+            "meme": "Ask to pass, get a sass."
+          },
+          "telemetry_tags": ["scene:1.7","action:ask_door"]
+        },
+        {
+          "id": "gremlin_orientation",
+          "label": "Gremlin Orientation (Aux Locks & Snack Law)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","tactics","engineering"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "buff", "id": "gremlin_tumbler_map", "value": true },
+                { "type": "xp", "value": 18 }
+              ],
+              "narration": "They sketch the auxiliary tumbler layout on your palm in jam. It's sticky but accurate."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 9 }
+              ],
+              "narration": "A noisy but correct briefing about \"sidelocks\" and \"emotional shims.\""
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 12 }
+              ],
+              "narration": "Mandatory snack fee for orientation. The pretzels are jurisprudentially crunchy."
+            }
+          },
+          "banter": {
+            "dev": "Third-party docs (jam flavored).",
+            "trader": "Counterparty: small, chaotic, useful.",
+            "whale": "Wake finds side channels.",
+            "hacker": "Infoleak via sugar.",
+            "shiller": "Onboard the mascots.",
+            "validator": "Aux path mapped.",
+            "miner": "Lock guts explained loud.",
+            "meme": "Hehe-Ops 101."
+          },
+          "telemetry_tags": ["scene:1.7","action:gremlin_orientation"]
+        },
+        {
+          "id": "posture_check",
+          "label": "Posture & Gear Check (Quiet Prep)",
+          "requirements": { "items_any": [], "flags_all": ["stance_tuned"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 }
+              ],
+              "narration": "Straps settle; metal learns where your courage lives."
+            }
+          },
+          "banter": {
+            "dev": "Hot reload: spine.",
+            "trader": "Sharpen RR before entry.",
+            "whale": "Hull trim; wake ready.",
+            "hacker": "Recompile calm.",
+            "shiller": "Fit check earns clicks.",
+            "validator": "Angles certified.",
+            "miner": "Tight kit, steady hand.",
+            "meme": "Posture DLC equipped."
+          },
+          "telemetry_tags": ["scene:1.7","action:posture_check"]
         }
       ]
     },
@@ -66,4 +209,622 @@
   ],
   "threshold_rewards": [ { "sleight_gte": 7, "rewards": [ { "type": "coins", "value": 250 }, { "type": "xp", "value": 120 } ] } ],
   "arrivals": [ { "when": "else", "goto": "2.1" } ]
+      "description": "Key of Trust: a hinge that only opens if more than one hand claims it in rhythm.",
+      "actions": [
+        {
+          "id": "trust_press",
+          "label": "Press Together (Trust Arc)",
+          "requirements": { "items_any": [], "flags_all": ["unity_next_act"] },
+          "roll": { "kind": "phi_d20", "tags": ["harmony","will","social"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "trustful", "value": true },
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 24 }
+              ],
+              "narration": "Hands meet hinge; the hinge remembers the shape of a fleet. The brass warms like tea in winter."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "trustful", "value": true },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "Pressure shared; the hinge concedes politely."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "One hand gets ahead, one behind. The hinge waits with benevolent patience sharpened into a tool."
+            }
+          },
+          "banter": {
+            "dev": "Distributed lock, distributed push.",
+            "trader": "Team fill, fair price.",
+            "whale": "Wake overlaps; door nods.",
+            "hacker": "Multi-sig but vibes.",
+            "shiller": "Hero shot: four hands, one hinge.",
+            "validator": "Quorum sensed.",
+            "miner": "Two picks, one crack.",
+            "meme": "We press. We bless."
+          },
+          "telemetry_tags": ["scene:1.7","action:trust_press"]
+        },
+        {
+          "id": "oath_key",
+          "label": "Spoken Oath as Key (Validator Move)",
+          "requirements": { "items_any": [], "flags_all": ["integrity_boost"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","ritual","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "key_trust_oath", "value": true },
+                { "type": "xp", "value": 14 }
+              ],
+              "narration": "A sentence becomes metal; it clicks into the arc and refuses to budge for lies."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The oath has the right words but the wrong temperature. The brass remains skeptical."
+            }
+          },
+          "banter": {
+            "dev": "Contracts in present tense.",
+            "trader": "Terms honored audibly.",
+            "whale": "Wake signs the water.",
+            "hacker": "Auth by honesty.",
+            "shiller": "Vows trend well.",
+            "validator": "Attestation accepted.",
+            "miner": "Words as wedges.",
+            "meme": "Oathpunk."
+          },
+          "telemetry_tags": ["scene:1.7","action:oath_key"]
+        },
+        {
+          "id": "gremlin_counterweight",
+          "label": "Gremlin Counterweight (If Allied)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","engineering","morale"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "gremlin_counterpull", "value": true },
+                { "type": "xp", "value": 9 }
+              ],
+              "narration": "They hang from the far chain and giggle at gravity until it helps."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "Snack-weight surcharge. Gravity is a premium service."
+            }
+          },
+          "banter": {
+            "dev": "External ballast.",
+            "trader": "Borrowed delta-V.",
+            "whale": "Wake assisted by small hands.",
+            "hacker": "Counterpull patch.",
+            "shiller": "Adorable leverage.",
+            "validator": "Counterforce documented.",
+            "miner": "Every pebble counts.",
+            "meme": "Hehe mass effect."
+          },
+          "telemetry_tags": ["scene:1.7","action:gremlin_counterweight"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.7-R3",
+      "description": "Key of Insight: runes nest like parentheses and would like to be read by someone who remembers that reading is a relationship.",
+      "actions": [
+        {
+          "id": "trace_runes",
+          "label": "Trace the Runes (Read & Be Read)",
+          "requirements": { "items_any": [], "flags_all": ["insight"] },
+          "roll": { "kind": "phi_d20", "tags": ["rune","puzzle","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "key_insight", "value": true },
+                { "type": "item", "id": "trinket_keysliver_insight" },
+                { "type": "xp", "value": 22 }
+              ],
+              "narration": "You find the hinge within the grammar and the grammar within the hinge. A sliver flakes into your palm and hums when you think kindly."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "key_insight", "value": true },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "Runes accept your attention and shape it into a key you can only see when not looking straight at it."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "The pattern flashes too quickly and writes a tiny complaint in your vision. It fades after a blink and a laugh."
+            }
+          },
+          "banter": {
+            "dev": "Parsing with consent.",
+            "trader": "Information that pays twice.",
+            "whale": "Wake reads its riverbed.",
+            "hacker": "Find the hinge, not the handle.",
+            "shiller": "Smart looks good on you.",
+            "validator": "Interpretation attested.",
+            "miner": "Vein maps vein.",
+            "meme": "Lore hack unlocked."
+          },
+          "telemetry_tags": ["scene:1.7","action:trace_runes"]
+        },
+        {
+          "id": "protocol_recite",
+          "label": "Recite Protocol (Staff/Docs)",
+          "requirements": { "items_any": ["weapon_protocol_staff"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["rune","integrity","engineering"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "dc_minus_one_next", "value": true },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "You say the quiet part loud, but correctly. The door appreciates accurate commentary."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The staff coughs in API and suggests fewer adjectives."
+            }
+          },
+          "banter": {
+            "dev": "Docs as spells.",
+            "trader": "Edge with disclosure.",
+            "whale": "Wake follows spec.",
+            "hacker": "Read, then riff.",
+            "shiller": "Documentation chic.",
+            "validator": "Procedure passes.",
+            "miner": "Map first, then swing.",
+            "meme": "RTFM IRL."
+          },
+          "telemetry_tags": ["scene:1.7","action:protocol_recite"]
+        },
+        {
+          "id": "oracle_peek",
+          "label": "Oracle Glance (Beacon/Oracle Helm)",
+          "requirements": { "items_any": ["helm_beacon_visor","helm_oracle_hood"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","focus"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "preview_safe_step", "value": true }
+              ],
+              "narration": "Three notches brighten in sequence: a breadcrumb trail laid by kindness."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The visor compliments your eyelashes. Useful, arguably."
+            }
+          },
+          "banter": {
+            "dev": "Speculative execution (safe).",
+            "trader": "Forward guidance, tasteful.",
+            "whale": "Wake predicts wake.",
+            "hacker": "Peek the buffer.",
+            "shiller": "Spoilers that help.",
+            "validator": "Preview recorded.",
+            "miner": "Plan the bite.",
+            "meme": "Wallhacks for hearts."
+          },
+          "telemetry_tags": ["scene:1.7","action:oracle_peek"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.7-R4",
+      "description": "Harmony & Bearing: breath measured; burden weighed. The door listens like a choir director with a ledger.",
+      "actions": [
+        {
+          "id": "harmony_key",
+          "label": "Hum the Note that Hums You (Harmony Arc)",
+          "requirements": { "items_any": [], "flags_all": ["harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","poise","ritual"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "key_harmony", "value": true },
+                { "type": "hp", "op": "+", "value": 1 }
+              ],
+              "narration": "Your ribcage is a bowl; the note fills it; the arc drinks."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You clip a half-tone and the door forgives you like a grandparent who lifts weights."
+            }
+          },
+          "banter": {
+            "dev": "Latency negligible.",
+            "trader": "Tempo under control.",
+            "whale": "Wake sings straight.",
+            "hacker": "Signal > noise.",
+            "shiller": "Audio brand excellence.",
+            "validator": "Tune attested.",
+            "miner": "Song steadies swing.",
+            "meme": "Auto-tune by courage."
+          },
+          "telemetry_tags": ["scene:1.7","action:harmony_key"]
+        },
+        {
+          "id": "bearing_key",
+          "label": "Lift What Matters (Bearing Arc)",
+          "requirements": { "items_any": [], "flags_all": ["bearing_bonus"] },
+          "roll": { "kind": "phi_d20", "tags": ["will","integrity","armor"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "key_bearing", "value": true },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "You offer not weight but why. The lever nods like a judge who missed lunch but not the point."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "You bring too much; the lever suggests edits with gentle pain."
+            }
+          },
+          "banter": {
+            "dev": "Load test of purpose.",
+            "trader": "Carry risk you understand.",
+            "whale": "Wake shoulders meaning.",
+            "hacker": "Privilege used cleanly.",
+            "shiller": "Burden but photogenic.",
+            "validator": "Evidence carried.",
+            "miner": "Only bring the good rock.",
+            "meme": "Hard carry, wholesome."
+          },
+          "telemetry_tags": ["scene:1.7","action:bearing_key"]
+        },
+        {
+          "id": "flow_adjust",
+          "label": "Adjust to the Door’s Breath (Flow)",
+          "requirements": { "items_any": [], "flags_all": ["flow_bonus"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 }
+              ],
+              "narration": "You move when the locks exhale. Being easy is suddenly difficult and you do it anyway."
+            }
+          },
+          "banter": {
+            "dev": "Control flow tamed again.",
+            "trader": "Trade with the lungs.",
+            "whale": "Wake times itself.",
+            "hacker": "Scheduler empathy.",
+            "shiller": "Effortless is a product.",
+            "validator": "Rhythm recorded.",
+            "miner": "Swing on the soft beat.",
+            "meme": "Go with the doorflow."
+          },
+          "telemetry_tags": ["scene:1.7","action:flow_adjust"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.7-R5",
+      "description": "Record & Joke: receipts demanded; laughter invited. The lock cluster looks stern and then, very slightly, winks.",
+      "actions": [
+        {
+          "id": "record_receipt",
+          "label": "Present Receipts (Record Arc)",
+          "requirements": { "items_any": ["trinket_chainlink_tally"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","rune","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "key_record", "value": true },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "The tally clicks into a slot you could have sworn wasn’t there a second ago. The beam of light nods in legalese."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The tally insists on a better angle. Gremlins offer a ring light for a fee."
+            }
+          },
+          "banter": {
+            "dev": "Log or it didn’t happen.",
+            "trader": "PnL but poetic.",
+            "whale": "Wake reconciled.",
+            "hacker": "Proof portable.",
+            "shiller": "Screenshots, but classy.",
+            "validator": "Receipt acknowledged.",
+            "miner": "Count, then recount.",
+            "meme": "L + no receipts + door closed."
+          },
+          "telemetry_tags": ["scene:1.7","action:record_receipt"]
+        },
+        {
+          "id": "laugh_key",
+          "label": "Offer a Joke (Hehe Arc)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","morale","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "key_joke", "value": true },
+                { "type": "item", "id": "phrase_keysmile", "value": 1 }
+              ],
+              "narration": "The lock laughs like a bell and loses one pound of skepticism. The gremlins applaud in thirty-seven keys."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "key_joke", "value": true }
+              ],
+              "narration": "A small laugh oils the pins. The door pretends not to enjoy itself."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "Pun tax, payable in snack chips and humility."
+            }
+          },
+          "banter": {
+            "dev": "Delight as lubricant.",
+            "trader": "Sentiment hedge triggers.",
+            "whale": "Wake smiles back.",
+            "hacker": "Exploit joy responsibly.",
+            "shiller": "Comedy converts.",
+            "validator": "Laughter admissible.",
+            "miner": "Jokes mine breath.",
+            "meme": "Key-hee-hee."
+          },
+          "telemetry_tags": ["scene:1.7","action:laugh_key"]
+        },
+        {
+          "id": "custodian_reference",
+          "label": "Name the Custodian (Respect Chain)",
+          "requirements": { "items_any": [], "flags_all": ["custodian_allied"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "custodian_reference_ok", "value": true }
+              ],
+              "narration": "You mention the stone sentinel with the tone you reserve for allies. The door understands networks."
+            }
+          },
+          "banter": {
+            "dev": "Upstream dependency acknowledged.",
+            "trader": "Counterparty reference.",
+            "whale": "Wake cites the river.",
+            "hacker": "Kerberos but polite.",
+            "shiller": "Name-drop with taste.",
+            "validator": "Reference passes.",
+            "miner": "We vouch with calloused hands.",
+            "meme": "Boss cosign speedrun."
+          },
+          "telemetry_tags": ["scene:1.7","action:custodian_reference"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.7-R6",
+      "description": "Assembly: keys gathered must become a chord. The tray hums; the locks listen the way an audience listens before clapping.",
+      "actions": [
+        {
+          "id": "assemble_keys",
+          "label": "Assemble the Keys (Chord of Proof)",
+          "requirements": { "items_any": [], "flags_all": ["trustful","key_insight","key_harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","harmony","integrity"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 16 }
+              ],
+              "narration": "Trust, insight, harmony: three teeth of one key. The door leans into opening as if relieved you remembered music."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "The chord lands slightly sharp; the locks request one more breath and a kinder thought."
+            }
+          },
+          "banter": {
+            "dev": "Integration test.",
+            "trader": "Basket performs better than legs.",
+            "whale": "Wake becomes wave.",
+            "hacker": "Compose primitives; unlock elegance.",
+            "shiller": "Trilogy payoff.",
+            "validator": "Aggregate passes.",
+            "miner": "Three strong swings, one vein.",
+            "meme": "Voltron but keys."
+          },
+          "telemetry_tags": ["scene:1.7","action:assemble_keys"]
+        },
+        {
+          "id": "aux_lock_solve",
+          "label": "Solve Auxiliary Locks (Gremlin/Tumbler Map)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin_tumbler_map"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","engineering","puzzle"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "aux_ok", "value": true },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "Side tumblers click in a rhythm that sounds like a very small audience applauding with pastries."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "A service charge materializes labeled JAM REMOVAL FEE."
+            }
+          },
+          "banter": {
+            "dev": "Sidecar subsystem tamed.",
+            "trader": "Basis tightened.",
+            "whale": "Wake trims turbulence.",
+            "hacker": "Edge case locked down.",
+            "shiller": "B-roll of competence.",
+            "validator": "Aux compliance logged.",
+            "miner": "Clean the crumbs from the seam.",
+            "meme": "JamOps concluded."
+          },
+          "telemetry_tags": ["scene:1.7","action:aux_lock_solve"]
+        },
+        {
+          "id": "safety_valve",
+          "label": "Trigger Safety Valve (Grace If Held)",
+          "requirements": { "items_any": [], "flags_all": ["grace_granted"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 }
+              ],
+              "narration": "A bypass opens for those who learned to forgive. The door blushes brass."
+            }
+          },
+          "banter": {
+            "dev": "Graceful failure, by design.",
+            "trader": "Stops that hug back.",
+            "whale": "Wake cushions the stern.",
+            "hacker": "Retry, not revert.",
+            "shiller": "Mercy UX matters.",
+            "validator": "Leniency recorded.",
+            "miner": "Spare your wrists; swing smarter.",
+            "meme": "Forgiveware v1.0."
+          },
+          "telemetry_tags": ["scene:1.7","action:safety_valve"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.7-R7",
+      "description": "Opening: locks consult, gears gossip, and brass revises its position on you. The door’s seam fills with a light that behaves like etiquette.",
+      "actions": [
+        {
+          "id": "final_breath",
+          "label": "Final Breath & Push",
+          "requirements": { "items_any": [], "flags_all": ["door_listening"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "You exhale your fear and keep the rest. The seam widens to the width of your future and then a little more."
+            }
+          },
+          "banter": {
+            "dev": "Ship on green.",
+            "trader": "Execution no slippage.",
+            "whale": "Wake passes the sill.",
+            "hacker": "Exit code: 0.",
+            "shiller": "Cinematic open.",
+            "validator": "Entry attested.",
+            "miner": "Rock yields, handshake accepted.",
+            "meme": "Door go brrrr (politely)."
+          },
+          "telemetry_tags": ["scene:1.7","action:final_breath"]
+        },
+        {
+          "id": "loot_plate",
+          "label": "Inspect the Key Tray (Loot)",
+          "requirements": { "items_any": [], "flags_all": ["keybed_mapped"] },
+          "roll": { "kind": "phi_d20", "tags": ["sleight","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "helm_beacon_visor" }
+              ],
+              "narration": "A visor of etched brass remains where your attention warmed the tray. It prefers leaders who share light."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 35 }
+              ],
+              "narration": "No visor, but the tray tips you in coins stamped with a tasteful pun."
+            }
+          },
+          "banter": {
+            "dev": "Drop table smiles again.",
+            "trader": "Value either way.",
+            "whale": "Wake yields treasure.",
+            "hacker": "Cache hit (or coins).",
+            "shiller": "Loot glam shot.",
+            "validator": "Find notarized.",
+            "miner": "Shavings worth keeping.",
+            "meme": "Drip or drip-funds."
+          },
+          "telemetry_tags": ["scene:1.7","action:loot_plate"]
+        },
+        {
+          "id": "gremlin_pop",
+          "label": "Gremlin Kiosk: Keyrings & Stickers",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "shop", "id": "keyside_pop" }
+              ],
+              "narration": "A drawer unfolds from nowhere, labeled: ACCESSORIES FOR ACCESS. The stickers are aggressively cute."
+            }
+          },
+          "banter": {
+            "dev": "Micro-market thrives.",
+            "trader": "Liquidity between chapters.",
+            "whale": "Impulse buys with receipts.",
+            "hacker": "POS with jam-resistant buttons.",
+            "shiller": "Merch that keys into memory.",
+            "validator": "Kiosk reconciled nightly.",
+            "miner": "Tools after tunnels.",
+            "meme": "Gacha? Nah. Gotcha."
+          },
+          "telemetry_tags": ["scene:1.7","action:gremlin_pop"]
+        },
+        {
+          "id": "advance_act2",
+          "label": "Advance Through the Door (Begin Act 2)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "Beyond, the vault’s halls fork like family trees: a trust-bright arcade, a careful corridor, a library of moving questions, and a gremlin carnival that smells like sugar and good advice. The Door of Many Keys whispers, not unkindly: \"Go be heavier in the right places.\"",
+              "next_hint": "act2"
+            }
+          },
+          "banter": {
+            "dev": "Next module mounted.",
+            "trader": "New market, same discipline.",
+            "whale": "Wake chooses a river.",
+            "hacker": "More hinges ahead.",
+            "shiller": "Season two energy.",
+            "validator": "Path notarized.",
+            "miner": "Bring your hands.",
+            "meme": "We go again."
+          },
+          "telemetry_tags": ["scene:1.7","action:advance_act2"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "sleight_gte": 5,  "rewards": [ { "type": "coins", "value": 70 } ] },
+    { "sleight_gte": 8,  "rewards": [ { "type": "coins", "value": 70 }, { "type": "fragment", "value": 1 } ] },
+    { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_opening_argument" } ] },
+    { "flags_all": ["trustful","key_harmony"],  "rewards": [ { "type": "item", "id": "armor_ledger_plate" } ] },
+    { "flags_all": ["key_insight","preview_safe_step"], "rewards": [ { "type": "item", "id": "weapon_protocol_staff" } ] },
+    { "flags_all": ["gremlin","key_joke"],      "rewards": [ { "type": "item", "id": "trinket_gremlin_keyring" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.trustful", "goto": "2A" },
+    { "when": "flags.key_insight", "goto": "2C" },
+    { "when": "flags.gremlin", "goto": "2D" },
+    { "when": "else", "goto": "2B" }
+  ]
 }
