@@ -244,6 +244,51 @@ client.on(Events.MessageCreate, async (m: Message) => {
       return;
     }
     if (m.channel.type !== ChannelType.GuildText) return;
+  }
+
+  if (lc === '!role'){
+    const view = await showRoleSelection(m.author.id);
+    await m.reply(view);
+    return;
+  }
+
+  if (lc === '!games'){
+    await m.reply({ content: showUserGames(m.author.id) });
+    return;
+  }
+
+  if (lc === '!resume'){
+    const runs = getUserActiveRuns(m.author.id);
+    if (runs.length === 0){
+      await m.reply({ content: '❌ No active games to resume.' });
+      return;
+    }
+    if (m.channel.type !== ChannelType.GuildText) return;
+    const latest = runs[0];
+    const payload = await renderScene(latest.run_id);
+    await (m.channel as TextChannel).send(payload);
+    await m.reply({ content: `▶️ Resumed Scene ${latest.current_scene_id} (${latest.round_id}).` });
+    return;
+  }
+
+  if (lc === '!weekly'){
+    const reward = claimWeeklyReward(m.author.id);
+    if (!reward.success){
+      await m.reply({ content: '❌ Weekly reward already claimed.' });
+    } else {
+      await m.reply({ content: `📅 Weekly reward claimed! +${reward.amount?.toLocaleString()} coins (streak ${reward.streak}).` });
+    }
+    return;
+  }
+
+  if (lc === '!tutorial'){
+    const currentRole = getCurrentRole(m.author.id);
+    if (!currentRole?.selected_role){
+      const view = await showRoleSelection(m.author.id, true);
+      await m.reply({ content: '❌ Please select a role first.', ...view });
+      return;
+    }
+    if (m.channel.type !== ChannelType.GuildText) return;
     const run_id = startRoleBasedRun(m.author.id, currentRole.selected_role, '1.1', true);
     const payload = await renderScene(run_id);
     await (m.channel as TextChannel).send(payload);
@@ -253,11 +298,13 @@ client.on(Events.MessageCreate, async (m: Message) => {
   }
 
   if (lc.startsWith('!start')) {
+  if (lc.startsWith('!start')){
     if (m.channel.type !== ChannelType.GuildText) return;
     const parts = m.content.trim().split(/\s+/);
     const sceneId = parts[1] ?? '1.1';
     const join = joinGameWithRole(m.author.id, sceneId);
     if (!join.success) {
+    if (!join.success){
       const view = await showRoleSelection(m.author.id);
       await m.reply({ content: join.message, ...view });
       return;
@@ -268,6 +315,9 @@ client.on(Events.MessageCreate, async (m: Message) => {
       new ButtonBuilder().setCustomId('shop:open').setLabel('Open Shop').setStyle(ButtonStyle.Primary)
     );
     await (m.channel as TextChannel).send({ content: 'Open the shop:', components: [shopRow] });
+    const shopRow = new ActionRowBuilder<ButtonBuilder>()
+      .addComponents(new ButtonBuilder().setCustomId('shop:open').setLabel('Open Shop').setStyle(ButtonStyle.Primary));
+    await (m.channel as TextChannel).send({ content:'Open the shop:', components:[shopRow] });
     await m.reply({ content: join.message });
     return;
   }
@@ -278,6 +328,13 @@ client.on(Events.InteractionCreate, async (i: Interaction) => {
     if (i.customId === 'shop:open') return showShop(i as ButtonInteraction);
     if (i.customId.startsWith('minigame:')) return handleMinigameButton(i as ButtonInteraction);
     return onButton(i as ButtonInteraction);
+client.on(Events.InteractionCreate, async (i)=>{
+  if (i.isButton()){
+    if (i.customId === 'shop:open') return showShop(i as ButtonInteraction);
+    return onButton(i as ButtonInteraction);
+  }
+  if (i.isStringSelectMenu()){
+    return onSelectMenu(i as StringSelectMenuInteraction);
   }
   if (i.isStringSelectMenu()) {
     return onSelectMenu(i as StringSelectMenuInteraction);

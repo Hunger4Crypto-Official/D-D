@@ -49,6 +49,9 @@ export function openPack(user_id: string, packIdentifier = 'Genesis', options: O
   const pack_id = options.packIdOverride ?? (isFile ? 'Genesis' : packIdentifier);
   const tableFile = isFile ? packIdentifier : PACK_FILES[packIdentifier] ?? 'packs_genesis.json';
   const dt = loadDropTable(tableFile);
+export function openPack(user_id: string, pack_id = 'Genesis', options: OpenPackOptions = {}) {
+  const dt = loadDropTable('packs_genesis.json');
+  if (dt.pack_id !== pack_id) throw new Error('Unknown pack');
 
   const costCoins = dt.cost.coins ?? 0;
   const spendAmount = options.spendAmountOverride ?? costCoins;
@@ -107,6 +110,9 @@ export function openPack(user_id: string, packIdentifier = 'Genesis', options: O
       'INSERT INTO inventories (user_id,item_id,kind,rarity,qty,meta_json) VALUES (?,?,?,?,?,?) ON CONFLICT(user_id,item_id) DO UPDATE SET qty=qty+excluded.qty'
     ).run(user_id, pick.id, pick.kind, rarity, 1, '{}');
   }
+  db.prepare(
+    'INSERT INTO inventories (user_id,item_id,kind,rarity,qty,meta_json) VALUES (?,?,?,?,?,?) ON CONFLICT(user_id,item_id) DO UPDATE SET qty=qty+excluded.qty'
+  ).run(user_id, pick.id, pick.kind, rarity, 1, '{}');
 
   db.prepare(
     'INSERT INTO economy_ledger (txn_id,user_id,kind,amount,reason,meta_json,ts) VALUES (?,?,?,?,?,?,?)'

@@ -187,3 +187,4 @@ declare const process: {
   argv: string[];
   exit(code?: number): void;
 };
+declare module 'better-sqlite3';

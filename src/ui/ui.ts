@@ -4,6 +4,7 @@ import {
   ButtonBuilder,
   ButtonStyle,
   EmbedBuilder,
+  TextChannel,
   StringSelectMenuInteraction,
 } from 'discord.js';
 import { sceneState, handleAction } from '../engine/orchestrator.js';
@@ -125,6 +126,40 @@ export async function onSelectMenu(i: StringSelectMenuInteraction) {
   }
   if (i.customId.startsWith('role:')) {
     await i.deferReply({ ephemeral: true });
+  if (prefix === 'shop'){
+    await i.deferReply({ ephemeral:true });
+    const msg = await handleEnhancedShopInteraction(i.customId, i.user.id);
+    if (i.customId === 'shop:refresh'){
+      const view = await renderEnhancedShop(i.user.id);
+      await i.message.edit(view);
+    }
+    await i.editReply(msg);
+    return;
+  }
+  if (prefix === 'role'){
+    await i.deferReply({ ephemeral:true });
+    const msg = handleRoleSelection(i.customId, i.user.id);
+    const isTutorial = i.customId.includes('tutorial');
+    const view = await showRoleSelection(i.user.id, isTutorial);
+    await i.message.edit(view);
+    await i.editReply(msg);
+    return;
+  }
+}
+
+export async function onSelectMenu(i: StringSelectMenuInteraction){
+  if (i.customId.startsWith('shop:')){
+    await i.deferReply({ ephemeral:true });
+    const msg = await handleEnhancedShopInteraction(i.customId, i.user.id, i.values);
+    if (i.customId === 'shop:select'){
+      const view = await renderEnhancedShop(i.user.id);
+      await i.message.edit(view);
+    }
+    await i.editReply(msg);
+    return;
+  }
+  if (i.customId.startsWith('role:')){
+    await i.deferReply({ ephemeral:true });
     const msg = handleRoleSelection(i.customId, i.user.id, i.values);
     const isTutorial = i.customId.includes('tutorial');
     const view = await showRoleSelection(i.user.id, isTutorial);

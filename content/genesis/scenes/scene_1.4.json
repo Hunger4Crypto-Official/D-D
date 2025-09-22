@@ -131,6 +131,770 @@
               "narration": "You get pranked with paint bombs."
             }
           }
+  "title": "The Trial of Echoes — Hall of a Thousand Voices",
+  "narration": "The corridor after the spectrum does not turn so much as remember that it could; it kinks like a thought catching on a nail, then widens into a nave carved from listening. Here, sound is a local sovereign. Steps do not merely report themselves to stone; they negotiate. The first heel’s tap comes back as three; the second as a dozen; by the third, your pace is hosting a convention of itself. Gremlins arrive and then politely pretend not to have arrived, practicing the art of stealth as a kind of performance. The air is Choral. In the ribbing overhead hang bells that do not ring; their tongues are runes and they taste the room continuously. Somewhere in the belly of the hall, something practices your voice with ridiculous accuracy and unfortunate editorial decisions. \n\nAt intervals along the walls, reliefs of former travelers bulge from the basalt as if stone were a memory foam with long patience. Some reliefs are laughing; some are praying; one is shrugging with such eloquence it appears to have solved a problem you have not met yet. Between each relief, the wall is scored with grooves: audit marks left by echoes that wanted to be more than noise and were graded accordingly. Ledger Plate reads those grooves like a weather report and sits heavier on the shoulders of the overconfident. Gaslight Cloak tries to produce flattering lighting and succeeds, but the lighting flatters the wall instead of you. \n\nThere is etiquette in the Hall, and it is not written anywhere you can point to. You learn it immediately or you learn it loudly. The gremlin crown whispers, \"Rule one of echo: the room only mocks what you insist on. Rule two: someone's always insisting. Rule three: hehe.\" The third rule is considered self-evident and therefore debated extensively. \n\nAhead, the Hall narrows into seven bays, each an organ pipe tuned to a different kind of honesty. Your path color lingers on the edges of things: red hardens corners; blue softens them; green turns passages into lanes; yellow offers invitations where there were none; indigo puts small weights into places that reward bearing them; violet hangs a curtain you are permitted to hold aside if you remember to wash your hands. The half-colors flit like gossip; they are correct more often than they deserve to be. \n\nThis is the Trial of Echoes. You will be measured by how you sound to yourself, and by whether you can stand the hearing. Failures do not eject you; they breed smaller rooms in your pocket which demand to be cleaned later. Successes do not crown you; they permit fewer cautions and more care. The Ledger loves both results equally because both are proofs of weight. You adjust posture; the Hall adjusts its opinion. You think a sentence you would never say, and the Hall says it for you just to see what happens. The bells continue not to ring. The bells are ringing constantly.",
+  "rounds": [
+    {
+      "round_id": "1.4-R1",
+      "description": "An antechamber with a floor as exact as grid paper and a ceiling like a mouth about to whistle. The first test is basic: how you announce yourself to yourself.",
+      "actions": [
+        {
+          "id": "enter_in_silence",
+          "label": "Enter in Silence (Composure)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","insight","harmony"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "echo_respect", "value": true },
+                { "type": "xp", "value": 30 }
+              ],
+              "narration": "Silence is not nothing here; it is a tune with all the notes removed. The room nods in the language of dust."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "echo_respect", "value": true },
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "You arrive without announcing the arrival. The arrival thanks you."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Shoelace whispers traitor; the Hall amplifies it. Focus leaks while you fix the knot everyone can hear."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "A cough you did not plan becomes a proclamation you did not intend. The Hall publishes it."
+            }
+          },
+          "banter": {
+            "dev": "No logs is a log.",
+            "trader": "Flat print; no slippage.",
+            "whale": "Wake narrows when oars still.",
+            "hacker": "Quiet packets arrive first.",
+            "shiller": "Minimalism, but charming.",
+            "validator": "Variance reduced.",
+            "miner": "Listen before you strike.",
+            "meme": "Mute button OP."
+          },
+          "telemetry_tags": ["scene:1.4","action:silence"]
+        },
+        {
+          "id": "announce_clear",
+          "label": "Announce Yourself Clearly (Confidence)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["courage","will","morale"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 20 },
+                { "type": "flag", "id": "voice_claimed", "value": true }
+              ],
+              "narration": "Your name arrives, stands up straight, and behaves itself."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "Your echo corrects your pronunciation. Rude, but accurate."
+            }
+          },
+          "banter": {
+            "dev": "Println with posture.",
+            "trader": "Put size on; get filled.",
+            "whale": "Hull says hello; harbor replies.",
+            "hacker": "ASSERT(name).",
+            "shiller": "Intro, but make it convert.",
+            "validator": "Identity attested.",
+            "miner": "Say it, then swing.",
+            "meme": "Name reveal speedrun."
+          },
+          "telemetry_tags": ["scene:1.4","action:announce"]
+        },
+        {
+          "id": "gremlin_greeting",
+          "label": "Let Gremlins Introduce You (Chaotic PR)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "voice_claimed", "value": true },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "They pronounce your name in thirty-seven keys at once. The Hall claps exactly once."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "Consultancy fee for crowd-wrangling. Worth it? Debatable; funny? Yes."
+            }
+          },
+          "banter": {
+            "dev": "Third-party integration loud.",
+            "trader": "Hype desk online.",
+            "whale": "Wake with confetti.",
+            "hacker": "Middleware is mischievous.",
+            "shiller": "Our brand has hobgoblins.",
+            "validator": "Attestation: chaotic-good.",
+            "miner": "Noise miners.",
+            "meme": "Hehe PR."
+          },
+          "telemetry_tags": ["scene:1.4","action:gremlin_intro"]
+        },
+        {
+          "id": "armor_settle",
+          "label": "Settle Armor & Breath (Prep)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "stance_tuned", "value": true }
+              ],
+              "narration": "Ledger Plate lowers its hum into your ribs; Gaslight Cloak agrees to stop editorializing the lighting."
+            }
+          },
+          "banter": {
+            "dev": "Config reconcile done.",
+            "trader": "Risk posture tuned.",
+            "whale": "Trim, then thrust.",
+            "hacker": "Reboot spine.",
+            "shiller": "Drip stabilized.",
+            "validator": "Shield angle good.",
+            "miner": "Gloves, belt, go.",
+            "meme": "Fit check passes."
+          },
+          "telemetry_tags": ["scene:1.4","action:armor"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.4-R2",
+      "description": "The First Bay: a gallery of your own attempts at speaking. The walls rehearse your sentences back to you with edits. Some are generous. Some are proofread by enemies.",
+      "actions": [
+        {
+          "id": "whisper_test",
+          "label": "Try a Whisper (Subtlety)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","sleight","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "A room designed to hum hears a thread and respects it."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "Your whisper returns with better punctuation."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "The whisper trips into a hiss. The hiss sounds like self-doubt with a lisp."
+            }
+          },
+          "banter": {
+            "dev": "Log level: DEBUG.",
+            "trader": "Market hears the hint.",
+            "whale": "Big ships can whisper too.",
+            "hacker": "Covert channel clean.",
+            "shiller": "Soft sell works on Tuesdays.",
+            "validator": "Signal subtle; enough.",
+            "miner": "Tap rock, not smack.",
+            "meme": "ASMR but plot."
+          },
+          "telemetry_tags": ["scene:1.4","action:whisper"]
+        },
+        {
+          "id": "shout_test",
+          "label": "Try a Shout (Conviction)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["courage","will","morale"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 18 }
+              ],
+              "narration": "A shout well-aimed convinces even stone that hearing is worthwhile."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "Your shout argues with the architecture; the architecture wins on a technicality."
+            }
+          },
+          "banter": {
+            "dev": "Broadcast storm contained.",
+            "trader": "Conviction prints.",
+            "whale": "Wake announces a hull.",
+            "hacker": "UDP feelings.",
+            "shiller": "Projection but healthy.",
+            "validator": "Amplitude within spec.",
+            "miner": "Yell at rock; rock shrugs.",
+            "meme": "ALL CAPS responsibly."
+          },
+          "telemetry_tags": ["scene:1.4","action:shout"]
+        },
+        {
+          "id": "echo_mimic",
+          "label": "Mimic Your Echo (Meta)",
+          "requirements": { "items_any": [], "flags_all": ["echo_respect"] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","focus","puzzle"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "echo_sync", "value": true },
+                { "type": "xp", "value": 16 }
+              ],
+              "narration": "You imitate your imitation so precisely it has to become original again."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Copy jitters; timing off by the width of pride."
+            }
+          },
+          "banter": {
+            "dev": "Loopback stabilized.",
+            "trader": "Arb the delay.",
+            "whale": "Wake reads its own log.",
+            "hacker": "Echo server handshake.",
+            "shiller": "Brand echoes that sell.",
+            "validator": "Self-similarity attested.",
+            "miner": "Strike where the ring says sweet.",
+            "meme": "I am him (again)."
+          },
+          "telemetry_tags": ["scene:1.4","action:mimic"]
+        },
+        {
+          "id": "gremlin_echo",
+          "label": "Ask Gremlins to Echo for You",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 },
+                { "type": "flag", "id": "echo_sync", "value": true }
+              ],
+              "narration": "A choir of wrong makes a right you can stand behind."
+            }
+          },
+          "banter": {
+            "dev": "Middleware chorus.",
+            "trader": "Liquidity of noise.",
+            "whale": "Wake doped with giggle.",
+            "hacker": "Proxy layer adorable.",
+            "shiller": "Influencer echo chamber (ethical).",
+            "validator": "Attestation via gremlin quorum.",
+            "miner": "They mine applause.",
+            "meme": "Hehe reverb."
+          },
+          "telemetry_tags": ["scene:1.4","action:gremlin_echo"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.4-R3",
+      "description": "The Second Bay: mirrors that do not show images, only captions. You read what you would have been thinking if you had been someone else.",
+      "actions": [
+        {
+          "id": "study_caption",
+          "label": "Study a Caption (Introspection)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","rune","puzzle"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "insight", "value": true },
+                { "type": "xp", "value": 18 }
+              ],
+              "narration": "The caption edits itself as you read until both of you agree on an honest typo."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Words multiply like rabbits; you chase the wrong litter."
+            }
+          },
+          "banter": {
+            "dev": "Diff the self.",
+            "trader": "Narrative basis trade.",
+            "whale": "Wake footnotes wake.",
+            "hacker": "Regex for your soul.",
+            "shiller": "Copy that converts you.",
+            "validator": "Claim refined; proof pending.",
+            "miner": "Vein labeled correctly (finally).",
+            "meme": "Caption me daddy ledger."
+          },
+          "telemetry_tags": ["scene:1.4","action:caption"]
+        },
+        {
+          "id": "confront_caption",
+          "label": "Confront a Hard Caption",
+          "requirements": { "items_any": [], "flags_all": ["integrity_boost"] },
+          "roll": { "kind": "phi_d20", "tags": ["will","integrity"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 22 }
+              ],
+              "narration": "Staring wins. The sentence blinks first."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "You do not look away; the caption sheds a layer of sarcasm as a courtesy."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "Truth bruises on contact; no fracture."
+            }
+          },
+          "banter": {
+            "dev": "Strict mode enabled.",
+            "trader": "Mark to market on ego.",
+            "whale": "Mass meets mirror.",
+            "hacker": "Authz to change self denied (this time).",
+            "shiller": "Honesty is brand premium.",
+            "validator": "Statement survives scrutiny.",
+            "miner": "Hit the hard seam; spark flew.",
+            "meme": "Mirror said skill issue; we agreed."
+          },
+          "telemetry_tags": ["scene:1.4","action:hard_caption"]
+        },
+        {
+          "id": "joke_at_mirror",
+          "label": "Tell a Joke at the Mirror",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["morale","gremlin","charm"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 8 }
+              ],
+              "narration": "Comedy trims cruelty a notch. Even captions have a sense of timing."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Your joke breaks its leg and lies there until a gremlin adopts it."
+            }
+          },
+          "banter": {
+            "dev": "Exceptions handled with humor.",
+            "trader": "Sentiment lift.",
+            "whale": "Wake smiles; water easier.",
+            "hacker": "Laughter injection successful.",
+            "shiller": "Delight is sticky.",
+            "validator": "Morale verified.",
+            "miner": "Jokes mine air from rock.",
+            "meme": "Certified chuckle."
+          },
+          "telemetry_tags": ["scene:1.4","action:joke"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.4-R4",
+      "description": "The Third Bay: phantoms—your doubles—arrive with the manners of cousins at a wedding who owe you money. They wear your posture better than you do. For now.",
+      "actions": [
+        {
+          "id": "befriend_double",
+          "label": "Befriend Your Double (Ally Route)",
+          "requirements": { "items_any": [], "flags_all": ["voice_claimed"] },
+          "roll": { "kind": "phi_d20", "tags": ["social","poise"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "companion", "id": "echo_double" },
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "You nod; they nod. An alliance of nodding is formed and proves shockingly effective."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Your double pretends to get a call and ghosts you. Impressive commitment to the bit."
+            }
+          },
+          "banter": {
+            "dev": "Forked process rejoined.",
+            "trader": "Pair trade with self.",
+            "whale": "Wake doubled; drag halved.",
+            "hacker": "Shadow as subsystem.",
+            "shiller": "Collab with personal brand.",
+            "validator": "Co-signed by same.",
+            "miner": "Two picks, one seam.",
+            "meme": "We’re our own party now."
+          },
+          "telemetry_tags": ["scene:1.4","action:befriend_double"]
+        },
+        {
+          "id": "outwit_double",
+          "label": "Outwit Your Double (Test of Timing)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","sleight","agility"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 18 }
+              ],
+              "narration": "You cut on the half-beat your double owns. Ownership updates."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your double anticipated your anticipation and left you holding a bag of echoes."
+            }
+          },
+          "banter": {
+            "dev": "Race condition resolved (barely).",
+            "trader": "Front-run the mirror.",
+            "whale": "Wake crosses; turbulence acceptable.",
+            "hacker": "Predictive cache abused.",
+            "shiller": "Narrative juked.",
+            "validator": "Result reproducible? Debated.",
+            "miner": "Strike between strikes.",
+            "meme": "Galaxy brain vs. galaxy brain."
+          },
+          "telemetry_tags": ["scene:1.4","action:outwit_double"]
+        },
+        {
+          "id": "strike_double",
+          "label": "Strike Your Double (Confrontation)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["courage","will","combat"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 14 }
+              ],
+              "narration": "You land a clean lesson; the phantom exports the patch and dissolves with dignity."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "Punch an echo, bruise a knuckle. Every school has tuition."
+            }
+          },
+          "banter": {
+            "dev": "Unit test with fists.",
+            "trader": "Price impact on pride.",
+            "whale": "Hull thumps hull; wake blurs.",
+            "hacker": "Violence is a coarse-grained patch.",
+            "shiller": "Hero shot, one take.",
+            "validator": "Integrity remained intact.",
+            "miner": "Rock strikes back.",
+            "meme": "Beating the main character allegations."
+          },
+          "telemetry_tags": ["scene:1.4","action:strike_double"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.4-R5",
+      "description": "The Fourth Bay: a catwalk over a well of echoing names. Labels drift up like balloons, some of them yours from lives you didn’t pick.",
+      "actions": [
+        {
+          "id": "choose_label",
+          "label": "Choose a Label to Wear (Temporary)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["charm","morale","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "title_glow", "value": true },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "The Hall pins a word on your chest and somehow it fits without reducing you."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The label peels; adhesive was sentiment-based."
+            }
+          },
+          "banter": {
+            "dev": "Type alias for a session.",
+            "trader": "Brand premium intraday.",
+            "whale": "Hull gets a paint stripe.",
+            "hacker": "Mask-lite; safer than root.",
+            "shiller": "Title but tasteful.",
+            "validator": "Badge verified.",
+            "miner": "Name tag, not name.",
+            "meme": "New role: vibe artisan."
+          },
+          "telemetry_tags": ["scene:1.4","action:choose_label"]
+        },
+        {
+          "id": "reject_labels",
+          "label": "Reject All Labels (Stance)",
+          "requirements": { "items_any": [], "flags_all": ["integrity_boost"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 }
+              ],
+              "narration": "You decline the sticker and the Hall, surprisingly, nods in professional admiration."
+            }
+          },
+          "banter": {
+            "dev": "No enums; freeform string.",
+            "trader": "Trade the index, not the name.",
+            "whale": "Wake without flag.",
+            "hacker": "Root identity stubborn.",
+            "shiller": "Anti-brand as brand.",
+            "validator": "Principle attested.",
+            "miner": "You are your own seam.",
+            "meme": "Label-less main character."
+          },
+          "telemetry_tags": ["scene:1.4","action:reject_labels"]
+        },
+        {
+          "id": "gremlin_tag",
+          "label": "Let Gremlins Tag You (Chaotic Title)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "title_hehe", "value": true }
+              ],
+              "narration": "Your new title is technically pronounceable. The Hall adds a polite asterisk."
+            }
+          },
+          "banter": {
+            "dev": "Title generator (beta).",
+            "trader": "Vol premium on fun.",
+            "whale": "Wake with glitter.",
+            "hacker": "Name injection safe.",
+            "shiller": "This merch will slap.",
+            "validator": "Title notarized (with sticker).",
+            "miner": "Tag stable under dust.",
+            "meme": "CEO of Hehe."
+          },
+          "telemetry_tags": ["scene:1.4","action:gremlin_tag"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.4-R6",
+      "description": "The Fifth Bay: the Meta-Echo—rumors about the Custodian of Chains collect here like lint at the edge of a universe. If there is a lore drop, it drips here.",
+      "actions": [
+        {
+          "id": "listen_meta",
+          "label": "Listen for the Custodian (Lore)",
+          "requirements": { "items_any": [], "flags_all": ["insight"] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","rune","focus"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "lore_custodian_scrap" },
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "A phrase condenses: \"Consensus must be earned.\" It was not meant to be a secret and yet it behaves like one."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Meaning hovers just out of reach like a cat that does not believe in you yet."
+            }
+          },
+          "banter": {
+            "dev": "Design doc fragment retrieved.",
+            "trader": "Macro thesis ticked.",
+            "whale": "Wake charts point sternward.",
+            "hacker": "Kernel comments leaked.",
+            "shiller": "Teaser trailer (text).",
+            "validator": "Doctrine plausible.",
+            "miner": "Ore rumor with shine.",
+            "meme": "LORE DROP !!!"
+          },
+          "telemetry_tags": ["scene:1.4","action:meta_listen"]
+        },
+        {
+          "id": "offer_phrase",
+          "label": "Offer Your Phrase Etched in Chain (If Owned)",
+          "requirements": { "items_any": ["phrase_etched_in_chain"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","trade"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "token", "id": "reroll_once" },
+                { "type": "xp", "value": 18 }
+              ],
+              "narration": "You feed the Hall a sentence; it mints you a hinge to open twice what should open once."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The sentence returns with edits; keep for later."
+            }
+          },
+          "banter": {
+            "dev": "I/O ritual with checksum.",
+            "trader": "Optionality acquired.",
+            "whale": "Spare wake in pocket.",
+            "hacker": "Idempotent sacrifice.",
+            "shiller": "Premium word swap.",
+            "validator": "Gift witnessed.",
+            "miner": "Phrase smelts clean.",
+            "meme": "Paid in hinge coins."
+          },
+          "telemetry_tags": ["scene:1.4","action:offer_phrase"]
+        },
+        {
+          "id": "gremlin_rumor",
+          "label": "Trade Shinies for Rumors (Gremlin Desk)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["trade","gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 15 },
+                { "type": "flag", "id": "custodian_hint", "value": true }
+              ],
+              "narration": "They sell you a rumor that tastes true. It will be very funny if it isn’t."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 15 }
+              ],
+              "narration": "You purchase a proverb. It’s good merch."
+            }
+          },
+          "banter": {
+            "dev": "Rumor API returns 200-ish.",
+            "trader": "Buy the whisper, sell the shout.",
+            "whale": "Wake insidery.",
+            "hacker": "Intel with sprinkles.",
+            "shiller": "Lore paywalled by giggles.",
+            "validator": "Rumor notarized with crayon.",
+            "miner": "Shiny-for-story swap.",
+            "meme": "Alpha (allegedly)."
+          },
+          "telemetry_tags": ["scene:1.4","action:gremlin_rumor"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.4-R7",
+      "description": "The Exit Bay: echoes thin until only footsteps remain—yours, the doubles’, the gremlins’ (who sneak loudly on purpose), and the sound of a door choosing its favorite hinge.",
+      "actions": [
+        {
+          "id": "consensus_resonance",
+          "label": "Consensus Resonance (Party Vote via Posture)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 40 }
+              ],
+              "narration": "Postures converge; the Hall records applause in the ledgers that are not written but are never missing."
+            }
+          },
+          "banter": {
+            "dev": "State converged.",
+            "trader": "Price discovered.",
+            "whale": "Wake aligned.",
+            "hacker": "Handshake minimal.",
+            "shiller": "The exit is on-brand.",
+            "validator": "Consensus achieved.",
+            "miner": "Rings true.",
+            "meme": "Vibe DAOn."
+          },
+          "telemetry_tags": ["scene:1.4","action:consensus"]
+        },
+        {
+          "id": "bind_exit_oath",
+          "label": "Bind Exit Oath (Optional Buff)",
+          "requirements": { "items_any": [], "flags_all": ["echo_sync"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","social","integrity"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "unity_next_act", "value": true },
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "You say we and the Hall does not mock you. That is rare and therefore meaningful."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The oath becomes a draft awaiting signatures when you are less interesting."
+            }
+          },
+          "banter": {
+            "dev": "Commit with co-authors.",
+            "trader": "Hedge as a family.",
+            "whale": "Shared wake; shared port.",
+            "hacker": "Pledge cached; TTL high.",
+            "shiller": "Clip it.",
+            "validator": "Witnessed.",
+            "miner": "Spit shake, versioned.",
+            "meme": "We ball (again)."
+          },
+          "telemetry_tags": ["scene:1.4","action:exit_oath"]
+        },
+        {
+          "id": "final_log_review",
+          "label": "Review the Echo Log",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "The Hall prints your run as a tasteful receipt: whispers attempted, shouts survived, captions edited, doubles befriended or bruised. You look taller on paper."
+            }
+          },
+          "banter": {
+            "dev": "Audit readable.",
+            "trader": "PnL of posture positive.",
+            "whale": "Wake notes annotated.",
+            "hacker": "Telemetry with jokes.",
+            "shiller": "Recap sizzles.",
+            "validator": "Entries balance.",
+            "miner": "Strata matched.",
+            "meme": "Patch notes for your mouth."
+          },
+          "telemetry_tags": ["scene:1.4","action:log_review"]
+        },
+        {
+          "id": "advance_to_1_5",
+          "label": "Advance Toward the Custodian",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "Stone breathes out. Somewhere ahead, chains stir like wind has finally been invented.",
+              "next_hint": "custodian"
+            }
+          },
+          "banter": {
+            "dev": "Transition function called.",
+            "trader": "Execution clean.",
+            "whale": "Weight forward.",
+            "hacker": "Door.exe launches.",
+            "shiller": "Next act teaser.",
+            "validator": "Path attested.",
+            "miner": "Pick ready.",
+            "meme": "Boss time?"
+          },
+          "telemetry_tags": ["scene:1.4","action:advance"]
         }
       ]
     }
@@ -139,4 +903,16 @@
     { "sleight_gte": 4, "rewards": [ { "type": "coins", "value": 150 }, { "type": "xp", "value": 50 } ] }
   ],
   "arrivals": [ { "when": "else", "goto": "1.5" } ]
+    { "sleight_gte": 5,  "rewards": [ { "type": "coins", "value": 50 } ] },
+    { "sleight_gte": 8,  "rewards": [ { "type": "coins", "value": 50 }, { "type": "fragment", "value": 1 } ] },
+    { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_etched_in_chain" } ] },
+    { "flags_all": ["echo_sync"], "rewards": [ { "type": "item", "id": "helm_beacon_visor" } ] },
+    { "flags_all": ["integrity_boost"], "rewards": [ { "type": "item", "id": "armor_audit_carapace" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.custodian_hint", "goto": "1.5" },
+    { "when": "flags.unity_next_act",  "goto": "1.5" },
+    { "when": "flags.echo_sync",       "goto": "1.5" },
+    { "when": "else",                  "goto": "1.5" }
+  ]
 }
