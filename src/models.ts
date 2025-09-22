@@ -3,10 +3,25 @@ export type GuildId = string;
 export type RunId = string;
 
 export interface Effect {
-  type: 'hp'|'focus'|'coins'|'xp'|'flag'|'item'|'fragment'|'gem'|'buff'|'debuff';
-  op?: '+'|'-'|'=';
+  type: 'hp' | 'focus' | 'coins' | 'xp' | 'flag' | 'item' | 'fragment' | 'gem' | 'buff' | 'debuff' | 'unlock';
+  op?: '+' | '-' | '=';
   value?: number | string | boolean;
   id?: string; // for items/buffs
+  target?: string;
+}
+
+export interface EquipmentBonus {
+  dcShift?: number;
+  dcOffset?: number;
+  advantageTags?: string[];
+  disadvantageTags?: string[];
+  focusBonus?: number;
+  hpBonus?: number;
+  sleightBonus?: number;
+  rerollFail?: boolean;
+  neutralizeCritFail?: boolean;
+  fragmentsBoost?: number;
+  preventsCoinLoss?: boolean;
 }
 
 export interface Outcome {
@@ -83,4 +98,44 @@ export interface Checkpoint {
   flags_json: any;
   sleight_score: number;
   updated_at: number;
+}
+
+export interface PvPMatch {
+  format: '1v1' | '3v3' | 'guild_war' | 'tournament';
+  ruleset: {
+    banList: string[];
+    draftPhase: boolean;
+    handicaps: Record<string, number>;
+  };
+  stakes: {
+    entryFee: { coins: number; gems: number };
+    winnerTakeAll: boolean;
+    leaderboardPoints: number;
+  };
+  spectators: string[];
+}
+
+export interface TournamentBracket {
+  id: string;
+  participants: string[];
+  prizes: { first: Effect[]; second: Effect[]; third: Effect[] };
+  sponsorship: { sponsor: string; bonusRewards: Effect[] };
+}
+
+export interface VaultRoom {
+  type: 'workshop' | 'shrine' | 'trophy_hall' | 'gremlin_den';
+  level: number;
+  decorations: string[];
+  activeEffects: EquipmentBonus[];
+}
+
+export interface PlayerVault {
+  rooms: VaultRoom[];
+  decorations: { id: string; slot?: string }[];
+  visitors: { user_id: string; timestamp: number }[];
+  upgrades: {
+    storage: number;
+    workshop: number;
+    shrine: number;
+  };
 }

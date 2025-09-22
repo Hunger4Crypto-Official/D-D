@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0",
+  "content_id": "seasons/christmas2025",
+  "book_id": "room6",
+  "scene_id": "6.1",
+  "title": "Frost Signal Arrival",
+  "narration": "Crystalline branches hang over Room 6. Gremlins drag strings of frosted lights while the vault hums a resonant carol.",
+  "rounds": [
+    {
+      "round_id": "6.1-R1",
+      "description": "First survey of the frost signal",
+      "actions": [
+        {
+          "id": "inspect_runes",
+          "label": "Inspect frozen runes",
+          "roll": { "kind": "phi_d20", "tags": ["insight", "ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 40 },
+                { "type": "flag", "id": "frost_runes", "value": true }
+              ],
+              "narration": "You decipher the frost glyphs and note their harmonic cadence."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "The glyphs glow softly, revealing a calming pattern."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your breath fogs the rune and the pattern slips away."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "The rune flashes and a shard of chill nicks your focus."
+            }
+          }
+        },
+        {
+          "id": "join_carol",
+          "label": "Join gremlin carol",
+          "roll": { "kind": "phi_d20", "tags": ["harmony", "gremlin"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "value": 75 },
+                { "type": "flag", "id": "carol_spirit", "value": true }
+              ],
+              "narration": "You lead the chorus, gremlins tossing silver petals at your feet."
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "value": 40 }
+              ],
+              "narration": "The gremlins echo your rhythm and the vault warms a fraction."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "A gremlin misfires a bell and it bonks your shoulder."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "Your voice cracks and the choir dissolves into chaotic laughter."
+            }
+          }
+        },
+        {
+          "id": "stoke_braziers",
+          "label": "Stoke crystalline braziers",
+          "roll": { "kind": "phi_d20", "tags": ["rush", "integrity"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "value": 60 },
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "Heat ripples along the walls and hidden mosaics blink awake."
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "value": 30 }
+              ],
+              "narration": "The braziers shimmer, keeping the frost at bay."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "Sparks lick your gloves as the brazier sputters."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "A shard pops loose and skitters down your arm."
+            }
+          }
+        },
+        {
+          "id": "trade_tokens",
+          "label": "Trade frost tokens",
+          "roll": { "kind": "phi_d20", "tags": ["trader", "gremlin"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "value": 120 }
+              ],
+              "narration": "The gremlins hand you a pouch of minted frost credits."
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "value": 55 }
+              ],
+              "narration": "You swap trinkets for a tidy stack of coins."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "A gremlin pockets a shiny and shrugs innocently."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 25 }
+              ],
+              "narration": "The trade stalls and your tokens melt uselessly."
+            }
+          },
+          "telemetry_tags": ["neutral"]
+        }
+      ]
+    },
+    {
+      "round_id": "6.1-R2",
+      "description": "Redirect the signal",
+      "actions": [
+        {
+          "id": "align_prisms",
+          "label": "Align frost prisms",
+          "roll": { "kind": "phi_d20", "tags": ["insight", "integrity"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 60 },
+                { "type": "flag", "id": "prism_harmony", "value": true }
+              ],
+              "narration": "Prisms snap into a precise lattice and the vault applauds with resonant bells."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 30 }
+              ],
+              "narration": "You nudge the prisms and the beam stabilizes."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "Reflections blur, leaving a headache of light."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 3 }
+              ],
+              "narration": "Prisms scatter and a shard of light briefly blinds you."
+            }
+          }
+        },
+        {
+          "id": "harness_aura",
+          "label": "Harness aurora",
+          "roll": { "kind": "phi_d20", "tags": ["harmony", "ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 45 },
+                { "type": "coins", "value": 80 }
+              ],
+              "narration": "You bottle the aurora and the party gains a luminous aura."
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "value": 40 }
+              ],
+              "narration": "Threads of light wrap around your party like scarves."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "Static zaps your hand and the aurora flickers away."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "The aurora recoils and leaves frostbite kisses." 
+            }
+          }
+        },
+        {
+          "id": "gift_ledger",
+          "label": "Offer ledger gift",
+          "roll": { "kind": "phi_d20", "tags": ["integrity", "trader"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "gift_frostsigil" },
+                { "type": "xp", "value": 30 }
+              ],
+              "narration": "The vault returns a Frost Sigil to wear proudly."
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "value": 50 }
+              ],
+              "narration": "Your offering impresses the watchers."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 15 }
+              ],
+              "narration": "The gift cracks and slides into a drain."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 30 }
+              ],
+              "narration": "Gremlins giggle and abscond with your satchel."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    {
+      "sleight_gte": 4,
+      "rewards": [
+        { "type": "coins", "value": 120 },
+        { "type": "xp", "value": 50 }
+      ]
+    }
+  ],
+  "arrivals": [
+    { "when": "else", "goto": "6.1" }
+  ]
+}
