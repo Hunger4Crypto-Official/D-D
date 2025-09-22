@@ -3,9 +3,67 @@
   "content_id": "genesis",
   "book_id": "book_1",
   "scene_id": "1.7",
-  "title": "Placeholder Scene",
-  "narration": "This is placeholder text for a scene that has not yet been written.",
-  "rounds": [],
-  "threshold_rewards": [],
-  "arrivals": []
+  "title": "Ledger Heart",
+  "narration": "You reach the vault's heart. A colossal gear of light records every choice made so far.",
+  "rounds": [
+    {
+      "round_id": "1.7-R1",
+      "description": "Present your ledger",
+      "actions": [
+        {
+          "id": "test_integrity",
+          "label": "Test integrity pathways",
+          "roll": { "kind": "phi_d20", "tags": ["integrity", "insight"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "xp", "value": 90 }, { "type": "coins", "value": 120 } ], "narration": "The gear brightens, acknowledging your precise account." },
+            "success": { "effects": [ { "type": "xp", "value": 40 } ], "narration": "Your ledger holds. The heart rotates calmly." },
+            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 2 } ], "narration": "Inconsistencies glare back at you." },
+            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 3 } ], "narration": "The heart stalls; adjustments required." }
+          }
+        },
+        {
+          "id": "offer_manifest",
+          "label": "Offer the manifest",
+          "roll": { "kind": "phi_d20", "tags": ["harmony", "ritual"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "flag", "id": "ledger_honored", "value": true }, { "type": "xp", "value": 80 } ], "narration": "The heart etches your manifest along its rim." },
+            "success": { "effects": [ { "type": "xp", "value": 30 } ], "narration": "Your pledge resonates, granting a gentle boon." },
+            "fail": { "effects": [ { "type": "hp", "op": "-", "value": 1 } ], "narration": "The heart questions your pledge and taps your vitality." },
+            "crit_fail": { "effects": [ { "type": "hp", "op": "-", "value": 2 } ], "narration": "A backlash of light scorches your hands." }
+          },
+          "telemetry_tags": ["neutral"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.7-R2",
+      "description": "Claim the heart's blessing",
+      "actions": [
+        {
+          "id": "sync_party",
+          "label": "Sync party heartbeat",
+          "roll": { "kind": "phi_d20", "tags": ["harmony", "gremlin"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "xp", "value": 100 }, { "type": "coins", "value": 150 } ], "narration": "Everyone's heartbeat aligns with the vault—an unforgettable moment." },
+            "success": { "effects": [ { "type": "coins", "value": 60 } ], "narration": "You feel collectively empowered." },
+            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 2 } ], "narration": "You miss a beat, wobbling slightly." },
+            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 3 } ], "narration": "The gear squeals; you scramble to stay upright." }
+          }
+        },
+        {
+          "id": "activate_reward",
+          "label": "Activate threshold reward",
+          "roll": { "kind": "phi_d20", "tags": ["integrity", "ritual"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "item", "id": "reward_heartglyph" }, { "type": "xp", "value": 90 } ], "narration": "A Heartglyph materializes, pulsing with promise." },
+            "success": { "effects": [ { "type": "xp", "value": 45 } ], "narration": "The heart offers a moderate boon." },
+            "fail": { "effects": [ { "type": "coins", "op": "-", "value": 25 } ], "narration": "You pay into the ledger for another attempt later." },
+            "crit_fail": { "effects": [ { "type": "coins", "op": "-", "value": 60 } ], "narration": "The heart rejects your request and debits your account." }
+          }
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [ { "sleight_gte": 7, "rewards": [ { "type": "coins", "value": 250 }, { "type": "xp", "value": 120 } ] } ],
+  "arrivals": [ { "when": "else", "goto": "2.1" } ]
 }

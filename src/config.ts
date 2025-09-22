@@ -7,6 +7,7 @@ export const CFG = {
   dbPath: process.env.DATABASE_PATH || './data/bot.db',
   botName: process.env.BOT_NAME || 'LedgerLegends',
   contentRoot: './content',
+  dashboardPort: Number(process.env.DASHBOARD_PORT || 0),
 };
 
 if (!CFG.token) throw new Error('Missing DISCORD_TOKEN in .env');

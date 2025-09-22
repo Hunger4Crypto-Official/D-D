@@ -3,9 +3,67 @@
   "content_id": "genesis",
   "book_id": "book_1",
   "scene_id": "1.6",
-  "title": "Placeholder Scene",
-  "narration": "This is placeholder text for a scene that has not yet been written.",
-  "rounds": [],
-  "threshold_rewards": [],
-  "arrivals": []
+  "title": "Gremlin Summit",
+  "narration": "A council of gremlin captains convenes around a floating ledger. They debate who should steer the next expedition.",
+  "rounds": [
+    {
+      "round_id": "1.6-R1",
+      "description": "Negotiate with captains",
+      "actions": [
+        {
+          "id": "champion_dev",
+          "label": "Champion the Dev Wizard",
+          "roll": { "kind": "phi_d20", "tags": ["insight", "integrity"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "xp", "value": 80 }, { "type": "flag", "id": "captain_support", "value": "dev" } ], "narration": "They nod, impressed by your logic diagrams." },
+            "success": { "effects": [ { "type": "xp", "value": 40 } ], "narration": "You secure tentative support." },
+            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 1 } ], "narration": "They counter with questions that fray your focus." },
+            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 3 } ], "narration": "Your argument glitches; they laugh kindly." }
+          }
+        },
+        {
+          "id": "back_trade",
+          "label": "Back the Trader captain",
+          "roll": { "kind": "phi_d20", "tags": ["trader", "gremlin"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "coins", "value": 120 }, { "type": "flag", "id": "captain_support", "value": "trader" } ], "narration": "You structure a fair split; they clink ledgers in approval." },
+            "success": { "effects": [ { "type": "coins", "value": 60 } ], "narration": "Profitable numbers sway the room." },
+            "fail": { "effects": [ { "type": "coins", "op": "-", "value": 20 } ], "narration": "You cover a short-term deficit to keep the peace." },
+            "crit_fail": { "effects": [ { "type": "coins", "op": "-", "value": 40 } ], "narration": "Your math slips; they dock you for the trouble." }
+          },
+          "telemetry_tags": ["neutral"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.6-R2",
+      "description": "Seal the alliance",
+      "actions": [
+        {
+          "id": "write_manifesto",
+          "label": "Draft a joint manifesto",
+          "roll": { "kind": "phi_d20", "tags": ["integrity", "ritual"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "xp", "value": 75 }, { "type": "flag", "id": "gremlin_manifesto", "value": true } ], "narration": "The captains sign and stamp the parchment." },
+            "success": { "effects": [ { "type": "xp", "value": 30 } ], "narration": "You compile principles that keep the room unified." },
+            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 1 } ], "narration": "Draft revisions wear you down." },
+            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 2 } ], "narration": "Arguments erupt over clause wording." }
+          }
+        },
+        {
+          "id": "gift_charm",
+          "label": "Offer gremlin charms",
+          "roll": { "kind": "phi_d20", "tags": ["gremlin", "harmony"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "item", "id": "trinket_gremlin_charm" }, { "type": "coins", "value": 90 } ], "narration": "The captains adorn themselves with your gifts." },
+            "success": { "effects": [ { "type": "coins", "value": 45 } ], "narration": "They appreciate the gesture and pass around snacks." },
+            "fail": { "effects": [ { "type": "coins", "op": "-", "value": 15 } ], "narration": "Your charms fall apart mid-handshake." },
+            "crit_fail": { "effects": [ { "type": "coins", "op": "-", "value": 35 } ], "narration": "The charms explode in confetti; cleanup fees apply." }
+          }
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [ { "sleight_gte": 6, "rewards": [ { "type": "coins", "value": 200 }, { "type": "xp", "value": 70 } ] } ],
+  "arrivals": [ { "when": "else", "goto": "1.7" } ]
 }

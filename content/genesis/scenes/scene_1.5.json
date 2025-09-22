@@ -3,9 +3,67 @@
   "content_id": "genesis",
   "book_id": "book_1",
   "scene_id": "1.5",
-  "title": "Placeholder Scene",
-  "narration": "This is placeholder text for a scene that has not yet been written.",
-  "rounds": [],
-  "threshold_rewards": [],
-  "arrivals": []
+  "title": "Resonance Junction",
+  "narration": "A nexus of sonic corridors awaits. Resonant plates vibrate with every motion, measuring the party's sleight.",
+  "rounds": [
+    {
+      "round_id": "1.5-R1",
+      "description": "Calibrate resonance plates",
+      "actions": [
+        {
+          "id": "harmonic_alignment",
+          "label": "Perform harmonic alignment",
+          "roll": { "kind": "phi_d20", "tags": ["harmony", "integrity"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "xp", "value": 70 }, { "type": "coins", "value": 60 } ], "narration": "The junction sings back, storing your cadence for future boosts." },
+            "success": { "effects": [ { "type": "xp", "value": 35 } ], "narration": "You settle the plates into a gentle oscillation." },
+            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 2 } ], "narration": "Feedback rattles through the chamber." },
+            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 3 } ], "narration": "The plates shriek, forcing you to cover your ears." }
+          }
+        },
+        {
+          "id": "echo_mapping",
+          "label": "Map echo corridors",
+          "roll": { "kind": "phi_d20", "tags": ["insight", "ritual"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "flag", "id": "echo_map", "value": true }, { "type": "xp", "value": 60 } ], "narration": "Holographic pathways appear, revealing shortcuts." },
+            "success": { "effects": [ { "type": "xp", "value": 30 } ], "narration": "Your sketches catch the major routes." },
+            "fail": { "effects": [ { "type": "coins", "op": "-", "value": 15 } ], "narration": "Echo bait costs you a few coins." },
+            "crit_fail": { "effects": [ { "type": "coins", "op": "-", "value": 35 } ], "narration": "Gremlin guides lead you astray on purpose." }
+          }
+        }
+      ]
+    },
+    {
+      "round_id": "1.5-R2",
+      "description": "Ride the resonance wave",
+      "actions": [
+        {
+          "id": "surf_signal",
+          "label": "Surf the signal",
+          "roll": { "kind": "phi_d20", "tags": ["rush", "gremlin"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "xp", "value": 40 }, { "type": "coins", "value": 80 } ], "narration": "You glide across the plates, leaving cheering gremlins." },
+            "success": { "effects": [ { "type": "coins", "value": 40 } ], "narration": "The wave carries you toward the next junction." },
+            "fail": { "effects": [ { "type": "hp", "op": "-", "value": 1 } ], "narration": "You stumble, bruising a shin on the plates." },
+            "crit_fail": { "effects": [ { "type": "hp", "op": "-", "value": 2 } ], "narration": "You wipe out spectacularly; gremlins hand you a pity scarf." }
+          },
+          "telemetry_tags": ["neutral"]
+        },
+        {
+          "id": "seal_portal",
+          "label": "Seal a destabilized portal",
+          "roll": { "kind": "phi_d20", "tags": ["integrity", "insight"] },
+          "outcomes": {
+            "crit_success": { "effects": [ { "type": "flag", "id": "portal_sealed", "value": true }, { "type": "xp", "value": 55 } ], "narration": "The portal locks in place with a satisfied chime." },
+            "success": { "effects": [ { "type": "xp", "value": 25 } ], "narration": "You reinforce the edges with stabilizing glyphs." },
+            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 1 } ], "narration": "The seal resists, draining your focus." },
+            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 2 } ], "narration": "The portal snaps back and erupts with static." }
+          }
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [ { "sleight_gte": 5, "rewards": [ { "type": "coins", "value": 180 }, { "type": "xp", "value": 60 } ] } ],
+  "arrivals": [ { "when": "else", "goto": "1.6" } ]
 }
