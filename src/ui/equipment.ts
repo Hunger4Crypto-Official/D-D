@@ -7,6 +7,7 @@ import {
   StringSelectMenuBuilder,
   StringSelectMenuInteraction,
 } from 'discord.js';
+import { EquipmentBonus } from '../models.js';
 import db from '../persistence/db.js';
 
 export type EquipmentSlot = 'weapon' | 'armor' | 'helm' | 'trinket' | 'deck';

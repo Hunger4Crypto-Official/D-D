@@ -174,6 +174,34 @@ export async function onSelectMenu(i: StringSelectMenuInteraction) {
   }
   if (i.customId.startsWith('role:')) {
     await i.deferReply({ ephemeral: true });
+    await i.editReply(msg);
+    return;
+  }
+  if (prefix === 'equipment') {
+    if (rest === 'open') {
+      await i.deferReply({ ephemeral: true });
+      const view = await renderEquipment(i.user.id);
+      await i.editReply(view);
+      return;
+    }
+    await handleEquipmentButton(i);
+    return;
+  }
+}
+
+export async function onSelectMenu(i: StringSelectMenuInteraction) {
+  if (i.customId.startsWith('shop:')) {
+    await i.deferReply({ ephemeral: true });
+    const msg = await handleEnhancedShopInteraction(i.customId, i.user.id, i.values);
+    if (i.customId === 'shop:select' || i.customId === 'shop:craft') {
+      const view = await renderEnhancedShop(i.user.id);
+      await i.message.edit(view);
+    }
+    await i.editReply(msg);
+    return;
+  }
+  if (i.customId.startsWith('role:')) {
+    await i.deferReply({ ephemeral: true });
   if (prefix === 'shop'){
     await i.deferReply({ ephemeral:true });
     const msg = await handleEnhancedShopInteraction(i.customId, i.user.id);

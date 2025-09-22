@@ -826,5 +826,5 @@
     { "when": "flags.key_insight", "goto": "2C" },
     { "when": "flags.gremlin", "goto": "2D" },
     { "when": "else", "goto": "2B" }
-  ]
+  
 }

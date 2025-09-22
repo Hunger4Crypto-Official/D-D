@@ -161,6 +161,38 @@ CREATE TABLE IF NOT EXISTS user_runs (
   FOREIGN KEY (run_id) REFERENCES runs(run_id) ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS player_guilds (
+  guild_id TEXT PRIMARY KEY,
+  owner_id TEXT,
+  name TEXT UNIQUE,
+  created_at INTEGER,
+  updated_at INTEGER,
+  FOREIGN KEY (owner_id) REFERENCES users(user_id) ON DELETE SET NULL
+);
+
+CREATE TABLE IF NOT EXISTS player_guild_members (
+  guild_id TEXT,
+  user_id TEXT,
+  role TEXT,
+  joined_at INTEGER,
+  PRIMARY KEY(guild_id, user_id),
+  FOREIGN KEY (guild_id) REFERENCES player_guilds(guild_id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS player_guild_invites (
+  invite_id TEXT PRIMARY KEY,
+  guild_id TEXT,
+  inviter_id TEXT,
+  invitee_id TEXT,
+  status TEXT DEFAULT 'pending',
+  created_at INTEGER,
+  responded_at INTEGER,
+  FOREIGN KEY (guild_id) REFERENCES player_guilds(guild_id) ON DELETE CASCADE,
+  FOREIGN KEY (inviter_id) REFERENCES users(user_id) ON DELETE SET NULL,
+  FOREIGN KEY (invitee_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS licenses (
   guild_id TEXT PRIMARY KEY,
   tier TEXT,

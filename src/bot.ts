@@ -38,6 +38,21 @@ import { startMinigame, handleMinigameButton } from './ui/minigames.js';
 import { listSeasons, startSeasonalRun } from './ui/seasonal.js';
 import { listCraftables, craftItem } from './ui/crafting.js';
 import { queueForMatch, listActiveMatches, recordPvPAction, concludeMatch } from './pvp/duels.js';
+import { processAfkTimeouts, startRun } from './engine/orchestrator.js';
+import { guildHasLicense, featureEnabled } from './persistence/licensing.js';
+import { getGuildSettings } from './persistence/settings.js';
+import {
+  createPlayerGuild,
+  inviteMembersToGuild,
+  acceptGuildInvite,
+  guildSummary,
+  leaveGuild,
+  listAvailableRaids,
+  prepareRaidStart,
+  ensureUserRecord,
+  registerRunParticipants,
+  declineGuildInvite,
+} from './guilds/guilds.js';
 import { processAfkTimeouts } from './engine/orchestrator.js';
 import { guildHasLicense, featureEnabled } from './persistence/licensing.js';
 import { getGuildSettings } from './persistence/settings.js';
@@ -58,6 +73,11 @@ function scheduleDecay(messagePromise: Promise<any>) {
       }, 45 * 60 * 1000);
     })
     .catch(() => {});
+}
+
+function tokenizeArgs(raw: string): string[] {
+  const matches = raw.match(/"[^"]+"|\S+/g) ?? [];
+  return matches.map((token) => token.replace(/^"|"$/g, ''));
 }
 
 function ensureFeatureAccess(message: Message, feature: string) {
@@ -132,6 +152,261 @@ client.on(Events.MessageCreate, async (m: Message) => {
       db.prepare(
         `UPDATE profiles SET coins=coins+?, xp=xp+?, ${column}=? WHERE user_id=?`
       ).run(coinsAward, xpAward, now, m.author.id);
+      db.prepare('INSERT INTO events (event_id, run_id, user_id, type, payload_json, ts) VALUES (?,?,?,?,?,?)')
+        .run(`${m.id}`, '', m.author.id, 'ritual.claim', JSON.stringify({ kind: lc }), now);
+      await m.reply({
+        content: `☀️ **${lc.toUpperCase()}!** You earned +${coinsAward.toLocaleString()} Coins, +${xpAward} XP.`,
+      });
+    } else {
+      scheduleDecay(m.reply({ content: '(Ritual on cooldown or max 2/day reached.)' }));
+    }
+    return;
+  }
+
+  if (lc.startsWith('!guild')) {
+    if (!ensureFeatureAccess(m, 'guilds')) return;
+    const raw = m.content.trim().slice('!guild'.length).trim();
+    const tokens = tokenizeArgs(raw);
+    const sub = (tokens.shift() ?? 'info').toLowerCase();
+
+    if (sub === 'create') {
+      const name = tokens.join(' ');
+      const res = createPlayerGuild(m.author.id, name);
+      scheduleDecay(m.reply({ content: res.message }));
+      return;
+    }
+
+    if (sub === 'invite') {
+      const mentions = Array.from(m.mentions.users.values()).map((user: any) => user.id as string);
+      const res = inviteMembersToGuild(m.author.id, mentions);
+      scheduleDecay(m.reply({ content: res.message }));
+      return;
+    }
+
+    if (sub === 'accept') {
+      const name = tokens.join(' ');
+      const res = acceptGuildInvite(m.author.id, name || undefined);
+      scheduleDecay(m.reply({ content: res.message }));
+      return;
+    }
+
+    if (sub === 'decline') {
+      const name = tokens.join(' ');
+      const res = declineGuildInvite(m.author.id, name || undefined);
+      scheduleDecay(m.reply({ content: res.message }));
+      return;
+    }
+
+    if (sub === 'leave') {
+      const res = leaveGuild(m.author.id);
+      scheduleDecay(m.reply({ content: res.message }));
+      return;
+    }
+
+    if (sub === 'raid') {
+      const raidSub = (tokens.shift() ?? '').toLowerCase();
+      if (raidSub === 'list' || raidSub === '') {
+        const raids = listAvailableRaids();
+        const lines = raids.map((r) => `• **${r.name}** — ${r.min_party}-${r.max_party} players`);
+        scheduleDecay(m.reply({ content: lines.length ? lines.join('\n') : 'No raids available yet.' }));
+        return;
+      }
+      if (raidSub === 'start') {
+        if (!ensureFeatureAccess(m, 'campaign')) return;
+        if (!m.guild || m.channel.type !== ChannelType.GuildText) {
+          scheduleDecay(m.reply({ content: '❌ Raids must be started inside a server text channel.' }));
+          return;
+        }
+        const raidName = tokens.join(' ');
+        if (!raidName) {
+          scheduleDecay(m.reply({ content: '❌ Provide the raid name. Example: `!guild raid start "Custodian\'s Vault"`' }));
+          return;
+        }
+        const prep = prepareRaidStart(m.author.id, raidName);
+        if (!prep.success) {
+          scheduleDecay(m.reply({ content: prep.message }));
+          return;
+        }
+        const { party_ids, raid } = prep;
+        for (const id of party_ids) {
+          ensureUserRecord(id);
+        }
+        const run_id = startRun(
+          m.guild.id,
+          (m.channel as TextChannel).id,
+          party_ids,
+          raid.content_id,
+          raid.scene_id
+        );
+        registerRunParticipants(run_id, raid.scene_id, party_ids);
+        await syncPinnedUi(m.channel as TextChannel, run_id);
+        const names = party_ids.map((id) => `<@${id}>`).join(', ');
+        await m.reply({ content: `⚔️ **${raid.name}** raid started! Party: ${names}` });
+        return;
+      }
+      scheduleDecay(m.reply({ content: '❌ Unknown raid command. Use `list` or `start`.' }));
+      return;
+    }
+
+    if (sub === 'info') {
+      scheduleDecay(m.reply({ content: guildSummary(m.author.id) }));
+      return;
+    }
+
+    const help =
+      '🏰 **Guild Commands**\n' +
+      '• `!guild create "Name"` — create a guild\n' +
+      '• `!guild invite @user` — invite players\n' +
+      '• `!guild accept` — accept the newest invite\n' +
+      '• `!guild decline` — decline an invite\n' +
+      '• `!guild raid list` — list raids\n' +
+      '• `!guild raid start "Custodian\'s Vault"` — begin a guild raid\n' +
+      '• `!guild info` — show guild roster';
+    scheduleDecay(m.reply({ content: help }));
+    return;
+  }
+
+  if (lc === '!role') {
+    const view = await showRoleSelection(m.author.id);
+    await m.reply(view);
+    return;
+  }
+
+  if (lc === '!games') {
+    scheduleDecay(m.reply({ content: showUserGames(m.author.id) }));
+    return;
+  }
+
+  if (lc === '!resume') {
+    if (!ensureFeatureAccess(m, 'campaign')) return;
+    const runs = getUserActiveRuns(m.author.id);
+    if (runs.length === 0) {
+      await m.reply({ content: '❌ No active games to resume.' });
+      return;
+    }
+    if (!m.guild || m.channel.type !== ChannelType.GuildText) return;
+    const latest = runs[0];
+    await syncPinnedUi(m.channel as TextChannel, latest.run_id);
+    await m.reply({ content: `▶️ Resumed Scene ${latest.current_scene_id} (${latest.round_id}).` });
+    return;
+  }
+
+  if (lc === '!weekly') {
+    if (!ensureFeatureAccess(m, 'shop')) return;
+    const reward = claimWeeklyReward(m.author.id);
+    if (!reward.success) {
+      scheduleDecay(m.reply({ content: '❌ Weekly reward already claimed.' }));
+    } else {
+      await m.reply({ content: `📅 Weekly reward claimed! +${reward.amount?.toLocaleString()} coins (streak ${reward.streak}).` });
+    }
+    return;
+  }
+
+  if (lc === '!loadout') {
+    if (!ensureFeatureAccess(m, 'campaign')) return;
+    const view = await renderEquipment(m.author.id);
+    await m.reply(view);
+    return;
+  }
+
+  if (lc === '!crafts') {
+    if (!ensureFeatureAccess(m, 'shop')) return;
+    const lines = listCraftables().map((c) => `${c.id} — ${c.costFragments} fragments`).join('\n');
+    scheduleDecay(m.reply({ content: `🛠️ Available recipes:\n${lines}` }));
+    return;
+  }
+
+  if (lc.startsWith('!craft ')) {
+    if (!ensureFeatureAccess(m, 'shop')) return;
+    const parts = m.content.trim().split(/\s+/);
+    const recipeId = parts[1];
+    const res = craftItem(m.author.id, recipeId);
+    scheduleDecay(m.reply({ content: res.message }));
+    return;
+  }
+
+  if (lc === '!reboot') {
+    if (!ensureFeatureAccess(m, 'campaign')) return;
+    const res = attemptSelfReboot(m.author.id);
+    scheduleDecay(m.reply({ content: res.message }));
+    return;
+  }
+
+  if (lc.startsWith('!revive')) {
+    if (!ensureFeatureAccess(m, 'campaign')) return;
+    const target = m.mentions.users.first();
+    if (!target) {
+      scheduleDecay(m.reply({ content: '❌ Mention a user to revive.' }));
+      return;
+    }
+    const res = attemptAllyRevive(m.author.id, target.id);
+    await m.reply({ content: res.message });
+    return;
+  }
+
+  if (lc.startsWith('!minigame')) {
+    if (!ensureFeatureAccess(m, 'minigames')) return;
+    const parts = m.content.trim().split(/\s+/);
+    const type = (parts[1] as any) || 'memory';
+    const { embed, row } = startMinigame(m.author.id, type);
+    await m.reply({ embeds: [embed], components: [row] });
+    return;
+  }
+
+  if (lc.startsWith('!season')) {
+    if (!ensureFeatureAccess(m, 'seasonal')) return;
+    const parts = m.content.trim().split(/\s+/);
+    if (!parts[1]) {
+      const seasons = listSeasons();
+      const lines = seasons.map((s) => `${s.id} (${s.version}) — ${s.description}`).join('\n');
+      scheduleDecay(m.reply({ content: lines || 'No seasons loaded.' }));
+      return;
+    }
+    if (parts[1] === 'start' && parts[2]) {
+      if (m.channel.type !== ChannelType.GuildText) return;
+      try {
+        const run_id = startSeasonalRun(m.author.id, m.guild!.id, (m.channel as TextChannel).id, parts[2]);
+        await syncPinnedUi(m.channel as TextChannel, run_id);
+        await m.reply({ content: `🎄 Seasonal run started: ${parts[2]}` });
+      } catch (err: any) {
+        scheduleDecay(m.reply({ content: `❌ ${err.message ?? 'Failed to start season.'}` }));
+      }
+      return;
+    }
+  }
+
+  if (lc.startsWith('!pvp')) {
+    if (!ensureFeatureAccess(m, 'pvp')) return;
+    const parts = m.content.trim().split(/\s+/);
+    const sub = parts[1] ?? 'queue';
+    if (sub === 'queue') {
+      const mode = (parts[2] as any) || '1v1';
+      const res = queueForMatch(m.author.id, mode);
+      scheduleDecay(m.reply({ content: res.message }));
+      return;
+    }
+    if (sub === 'matches') {
+      const matches = listActiveMatches();
+      const lines = matches.map((match) => `${match.matchId}: ${match.participants.join(', ')} ${JSON.stringify(match.scores)}`).join('\n');
+      scheduleDecay(m.reply({ content: lines || 'No active matches.' }));
+      return;
+    }
+    if (sub === 'report' && parts[2] && parts[3]) {
+      const res = recordPvPAction(parts[2], m.author.id, parts[3] as any);
+      scheduleDecay(m.reply({ content: res.message }));
+      return;
+    }
+    if (sub === 'conclude' && parts[2]) {
+      const res = concludeMatch(parts[2]);
+      scheduleDecay(m.reply({ content: res.success ? `Match ${parts[2]} complete. Winner <@${res.winner}>` : 'Unable to conclude.' }));
+      return;
+    }
+  }
+
+  if (lc === '!tutorial') {
+    if (!ensureFeatureAccess(m, 'campaign')) return;
+    const currentRole = getCurrentRole(m.author.id);
+    if (!currentRole?.selected_role) {
       db.prepare('INSERT INTO events (event_id, run_id, user_id, type, payload_json, ts) VALUES (?,?,?,?,?,?)')
         .run(`${m.id}`, '', m.author.id, 'ritual.claim', JSON.stringify({ kind: lc }), now);
       await m.reply({
@@ -497,6 +772,25 @@ client.on(Events.MessageCreate, async (m: Message) => {
       await m.reply({ content: '❌ Please select a role first.', ...view });
       return;
     }
+    if (!m.guild || m.channel.type !== ChannelType.GuildText) return;
+    const run_id = startRoleBasedRun(m.author.id, currentRole.selected_role, '1.1', {
+      is_tutorial: true,
+      guild_id: m.guild.id,
+      channel_id: (m.channel as TextChannel).id,
+    });
+    await syncPinnedUi(m.channel as TextChannel, run_id);
+    const roleInfo = getRoleById(currentRole.selected_role);
+    await m.reply({ content: `🔄 Tutorial restarted as ${roleInfo?.emoji ?? '🎭'} ${roleInfo?.name ?? 'Adventurer'}!` });
+    return;
+  }
+
+  if (lc.startsWith('!start')) {
+    if (!ensureFeatureAccess(m, 'campaign')) return;
+    if (m.channel.type !== ChannelType.GuildText) return;
+    const parts = m.content.trim().split(/\s+/);
+    const sceneId = parts[1] ?? '1.1';
+    const join = joinGameWithRole(m.author.id, sceneId, m.guild!.id, (m.channel as TextChannel).id);
+    if (!join.success) {
     if (m.channel.type !== ChannelType.GuildText) return;
     const run_id = startRoleBasedRun(m.author.id, currentRole.selected_role, '1.1', true);
     const payload = await renderScene(run_id);
@@ -538,6 +832,7 @@ client.on(Events.InteractionCreate, async (i: Interaction) => {
     if (i.customId === 'shop:open') return showShop(i as ButtonInteraction);
     if (i.customId.startsWith('minigame:')) return handleMinigameButton(i as ButtonInteraction);
     return onButton(i as ButtonInteraction);
+  }
   }
   if (i.isStringSelectMenu()) {
     return onSelectMenu(i as StringSelectMenuInteraction);

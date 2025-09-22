@@ -44,7 +44,7 @@ export function startSeasonalRun(user_id: string, channel_id: string, seasonId: 
   if (!fs.existsSync(manifestPath)) {
     throw new Error('Season not found');
   }
-  const run_id = startRun(guild_id, channel_id, [user_id], seasonPath, '6.1');
+  const run_id = startRun(guild_id, channel_id, [user_id], seasonPath, '6.1')
   const run_id = startRun('global', channel_id, [user_id], seasonPath, '6.1');
   return run_id;
 }

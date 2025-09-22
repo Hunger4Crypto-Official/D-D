@@ -53,6 +53,51 @@ export function openPack(user_id: string, packIdentifier = 'Genesis', options: O
   const costCoins = dt.cost.coins ?? 0;
   const spendAmount = options.spendAmountOverride ?? costCoins;
 
+  if (!options.skipCost && costCoins > 0) {
+    const prof = db
+      .prepare('SELECT coins FROM profiles WHERE user_id=?')
+      .get(user_id) as { coins?: number } | undefined;
+    if ((prof?.coins ?? 0) < costCoins) throw new Error('Not enough coins');
+    db.prepare('UPDATE profiles SET coins=coins-? WHERE user_id=?').run(costCoins, user_id);
+  }
+
+  const pityRow = db
+    .prepare('SELECT opened, last_rarity FROM pity WHERE user_id=? AND pack_id=?')
+    .get(user_id, pack_id) as { opened?: number; last_rarity?: string } | undefined;
+
+  const rarity = pityAdjustedRarity(
+    pityRow?.opened ?? 0,
+    dt.weights,
+    dt.pity?.rare_after,
+    dt.pity?.epic_after
+  );
+  const pool = dt.pools[rarity] ?? [];
+  const pick =
+    pool[Math.floor(Math.random() * pool.length)] ?? ({
+      kind: 'cosmetic',
+      id: 'cosmetic_confetti',
+      rarity,
+    } as { kind: string; id: string; rarity?: string });
+
+  if (spendAmount > 0) {
+    db.prepare(
+      'INSERT INTO economy_ledger (txn_id,user_id,kind,amount,reason,meta_json,ts) VALUES (?,?,?,?,?,?,?)'
+    ).run(
+      `txn_${nanoid(8)}`,
+      user_id,
+      'pack_open',
+      spendAmount,
+      'coins_spent',
+      JSON.stringify({ pack_id }),
+      Date.now()
+    );
+  }
+
+  const existing = db
+    .prepare('SELECT qty FROM inventories WHERE user_id=? AND item_id=?')
+    .get(user_id, pick.id) as { qty?: number } | undefined;
+
+
 export function openPack(user_id: string, pack_id = 'Genesis', options: OpenPackOptions = {}) {
   const dt = loadDropTable('packs_genesis.json');
   if (dt.pack_id !== pack_id) throw new Error('Unknown pack');
