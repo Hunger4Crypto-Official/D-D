@@ -3,67 +3,822 @@
   "content_id": "genesis",
   "book_id": "book_1",
   "scene_id": "1.6",
-  "title": "Gremlin Summit",
-  "narration": "A council of gremlin captains convenes around a floating ledger. They debate who should steer the next expedition.",
+  "title": "The Corridor of Chains — Weight Walk",
+  "narration": "The gate remembers the meaning of open and decides, with some reluctance, to demonstrate it. Beyond, a corridor blossoms into an arcade of suspended mass: a thousand chains braided into lanes, lattices, ladders, and riddles the size of bridges. Links as broad as shields hang beside filigree so fine it sings itself apart and back together in time with your breath. Every chain is a statement about weight; every statement asks to be tested. \n\nUnderfoot, stone gives way to segments of grating that were once handwriting. The script speaks a dialect of engineering: load tolerance, graceful failure, bias toward repair. Where the bands of iron meet in nodes, someone has set small votive bowls of powdered graphite that glitters like a night sky spilled into a saucer. Gremlins patrol the crossbeams with the bored intensity of ushers in a cathedral that also happens to be a factory. The crowned one has acquired a reflective vest labeled SAFETY in four alphabets and an emoticon that implies liability. \n\nAhead, seven distinct lanes unspool, each tuned to a different law of weight: the Red Lane (Momentum; rewards bravery with traction), the Blue Lane (Balance; mercy for patience), the Green Lane (Flow; pathfinding across moving parts), the Yellow Lane (Invitation; opportunities appear where feet fall), the Indigo Lane (Bearing; burden made art), the Violet Lane (Veil; trust in what you cannot see), and the Half-Lane (Hehe; chaos but compliant). Your earlier path-color echoes along the rails, flickering like a rumor that turned out to be infrastructure. \n\nYou can taste metal here: copper bright as sunrise on a roof, iron like resolve, nickel like a memory of coins that paid for a shared meal. Ledger Plate hums with professional curiosity; Audit Carapace remembers lawsuits it enjoyed. Gaslight Cloak tries to flatter the reflections and mostly flatters the bolts. Mergeblade twitches at thoughts of combo bridges; Liquidity Spear thirsts for pathing like a river thirsts for downhill. Protocol Staff requests permission to read the load-bearing runes and waits, terribly polite, as if to show it could be dangerous. \n\nAt the corridor’s heart hangs a device you refuse to call a puzzle because it is also a promise: a balance cradle with three cups, each inscribed with a law—\"Consensus\", \"Grace\", and \"Receipt\"—and a fourth cup, smaller, labeled \"Joke\" in gremlin shorthand. A sign beside it reads: WEIGHTS MAY BE PEOPLE. Another sign, professional-looking, reads: DO NOT SWING EXCESSIVELY. A smaller handwritten note adds: EXCESS IS A RELATIVE TERM. \n\nThe chains do not merely wait. They tune to your intentions the way water tunes to a hand. And the corridor hums a question you have already asked and are about to answer again: how much do you weigh together?",
   "rounds": [
     {
       "round_id": "1.6-R1",
-      "description": "Negotiate with captains",
+      "description": "Staging Platform A: Safeties, belts, and the first decisions about lanes. The gremlin foreman clears its throat like a gavel made of candy.",
       "actions": [
         {
-          "id": "champion_dev",
-          "label": "Champion the Dev Wizard",
-          "roll": { "kind": "phi_d20", "tags": ["insight", "integrity"] },
+          "id": "inspect_rigging",
+          "label": "Inspect the Rigging (Engineering Pass)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","rune","engineering"] },
           "outcomes": {
-            "crit_success": { "effects": [ { "type": "xp", "value": 80 }, { "type": "flag", "id": "captain_support", "value": "dev" } ], "narration": "They nod, impressed by your logic diagrams." },
-            "success": { "effects": [ { "type": "xp", "value": 40 } ], "narration": "You secure tentative support." },
-            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 1 } ], "narration": "They counter with questions that fray your focus." },
-            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 3 } ], "narration": "Your argument glitches; they laugh kindly." }
-          }
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "rigging_map", "value": true },
+                { "type": "xp", "value": 28 }
+              ],
+              "narration": "You read the welds like weather and find a quiet seam of mercy. A hidden service catwalk winks into your mental map."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "rigging_map", "value": true },
+                { "type": "xp", "value": 14 }
+              ],
+              "narration": "Load paths clarify. A diagram draws itself behind your eyes with satisfying arrows."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Too many rivets, not enough patience. The diagram smears."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "A test tug becomes a lesson. A link bites your glove, strictly pedagogical."
+            }
+          },
+          "banter": {
+            "dev": "Observability first.",
+            "trader": "Know the ladder before you climb the chart.",
+            "whale": "Wake respects scaffolds.",
+            "hacker": "Read the kernel of steel.",
+            "shiller": "Blueprints are content.",
+            "validator": "Weld integrity passable.",
+            "miner": "Follow the grain of metal.",
+            "meme": "We ball, but we bolt-check."
+          },
+          "telemetry_tags": ["scene:1.6","action:inspect_rigging"]
         },
         {
-          "id": "back_trade",
-          "label": "Back the Trader captain",
-          "roll": { "kind": "phi_d20", "tags": ["trader", "gremlin"] },
+          "id": "choose_lane",
+          "label": "Choose a Lane (Red/Blue/Green/Yellow/Indigo/Violet/Hehe)",
+          "requirements": { "items_any": [], "flags_all": [] },
           "outcomes": {
-            "crit_success": { "effects": [ { "type": "coins", "value": 120 }, { "type": "flag", "id": "captain_support", "value": "trader" } ], "narration": "You structure a fair split; they clink ledgers in approval." },
-            "success": { "effects": [ { "type": "coins", "value": 60 } ], "narration": "Profitable numbers sway the room." },
-            "fail": { "effects": [ { "type": "coins", "op": "-", "value": 20 } ], "narration": "You cover a short-term deficit to keep the peace." },
-            "crit_fail": { "effects": [ { "type": "coins", "op": "-", "value": 40 } ], "narration": "Your math slips; they dock you for the trouble." }
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "lane_chosen", "value": true }
+              ],
+              "narration": "The chain you eye eyes you back, then lowers like a bow waiting for a foot."
+            }
           },
-          "telemetry_tags": ["neutral"]
+          "banter": {
+            "dev": "Routing set.",
+            "trader": "Pick a trend, ride it.",
+            "whale": "Lane is wake with manners.",
+            "hacker": "Pathing compiled.",
+            "shiller": "Aesthetic choice is gameplay.",
+            "validator": "Selection notarized.",
+            "miner": "Pick the seam your pick likes.",
+            "meme": "We choose violence (or vibes)."
+          },
+          "telemetry_tags": ["scene:1.6","action:choose_lane"]
+        },
+        {
+          "id": "gremlin_briefing",
+          "label": "Request Gremlin Safety Briefing",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","social","engineering"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "gremlin_spotters", "value": true },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "They issue tiny whistles and a manual with diagrams that are rude but informative."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "Mandatory snack-fee for the briefing. Compliance tastes like sugar."
+            }
+          },
+          "banter": {
+            "dev": "QA with sprinkles.",
+            "trader": "Risk desk but adorable.",
+            "whale": "Spotters trim drift.",
+            "hacker": "Middleware of mercy.",
+            "shiller": "Safety is on-brand.",
+            "validator": "Briefing acknowledged.",
+            "miner": "Hard hats optional, whistles not.",
+            "meme": "OSHA = Oh Small Helpful Animals."
+          },
+          "telemetry_tags": ["scene:1.6","action:gremlin_briefing"]
+        },
+        {
+          "id": "tune_posture",
+          "label": "Tune Posture & Armor Fit",
+          "requirements": { "items_any": [], "flags_all": ["stance_tuned"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 }
+              ],
+              "narration": "Ledger Plate shifts weight from pride to hips. Audit Carapace lowers litigation risk."
+            }
+          },
+          "banter": {
+            "dev": "Hot reload of spine.",
+            "trader": "Sharpen RR.",
+            "whale": "Trim for balance.",
+            "hacker": "Recompile stance.",
+            "shiller": "Fit check: cinematic.",
+            "validator": "Angle certified.",
+            "miner": "Straps = fewer regrets.",
+            "meme": "Posture patch v1.6."
+          },
+          "telemetry_tags": ["scene:1.6","action:tune_posture"]
         }
       ]
     },
     {
       "round_id": "1.6-R2",
-      "description": "Seal the alliance",
+      "description": "Red & Blue: Momentum versus Balance. The corridor invites a decision about speed and its manners.",
       "actions": [
         {
-          "id": "write_manifesto",
-          "label": "Draft a joint manifesto",
-          "roll": { "kind": "phi_d20", "tags": ["integrity", "ritual"] },
+          "id": "red_dash",
+          "label": "Red Lane — Dash the Long Links (Momentum)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["agility","courage","combat"] },
           "outcomes": {
-            "crit_success": { "effects": [ { "type": "xp", "value": 75 }, { "type": "flag", "id": "gremlin_manifesto", "value": true } ], "narration": "The captains sign and stamp the parchment." },
-            "success": { "effects": [ { "type": "xp", "value": 30 } ], "narration": "You compile principles that keep the room unified." },
-            "fail": { "effects": [ { "type": "focus", "op": "-", "value": 1 } ], "narration": "Draft revisions wear you down." },
-            "crit_fail": { "effects": [ { "type": "focus", "op": "-", "value": 2 } ], "narration": "Arguments erupt over clause wording." }
-          }
+            "crit_success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 22 }
+              ],
+              "narration": "You sprint the sentence. Commas become footholds. Periods, platforms."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "Momentum gives you a hand and you take it with grace."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "A link rolls an ankle you didn’t admit you had."
+            }
+          },
+          "banter": {
+            "dev": "Throughput high.",
+            "trader": "Ride strength.",
+            "whale": "Wake piles forward.",
+            "hacker": "Latency dagger moment.",
+            "shiller": "Speed makes the trailer.",
+            "validator": "Impulse measured.",
+            "miner": "Stride like a winch.",
+            "meme": "Go next IRL."
+          },
+          "telemetry_tags": ["scene:1.6","action:red_dash"]
         },
         {
-          "id": "gift_charm",
-          "label": "Offer gremlin charms",
-          "roll": { "kind": "phi_d20", "tags": ["gremlin", "harmony"] },
+          "id": "blue_balance",
+          "label": "Blue Lane — Heel-to-Toe (Balance)",
+          "requirements": { "items_any": [], "flags_all": ["harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","focus","will"] },
           "outcomes": {
-            "crit_success": { "effects": [ { "type": "item", "id": "trinket_gremlin_charm" }, { "type": "coins", "value": 90 } ], "narration": "The captains adorn themselves with your gifts." },
-            "success": { "effects": [ { "type": "coins", "value": 45 } ], "narration": "They appreciate the gesture and pass around snacks." },
-            "fail": { "effects": [ { "type": "coins", "op": "-", "value": 15 } ], "narration": "Your charms fall apart mid-handshake." },
-            "crit_fail": { "effects": [ { "type": "coins", "op": "-", "value": 35 } ], "narration": "The charms explode in confetti; cleanup fees apply." }
-          }
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 },
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "You place one future on another and it does not wobble."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Breath and step argue, briefly, like siblings."
+            }
+          },
+          "banter": {
+            "dev": "Jitter reduced.",
+            "trader": "Tight risk bands.",
+            "whale": "Wake narrows, losses trimmed.",
+            "hacker": "Debounce the foot.",
+            "shiller": "Elegance sells twice.",
+            "validator": "Variance down.",
+            "miner": "Weight where it counts.",
+            "meme": "Balance patch live."
+          },
+          "telemetry_tags": ["scene:1.6","action:blue_balance"]
+        },
+        {
+          "id": "gremlin_zipline",
+          "label": "Hehe Half-Lane — Gremlin Zipline",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","agility","tactics"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "hehe_momentum", "value": true },
+                { "type": "xp", "value": 8 }
+              ],
+              "narration": "A line appears that definitely passed inspection (by a gremlin). You glide on laughter."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "Toll for the thrill. Worth it? The squeal suggests yes."
+            }
+          },
+          "banter": {
+            "dev": "Third-party transport.",
+            "trader": "Momentum rental.",
+            "whale": "Wake on rails.",
+            "hacker": "Shortcut with jokes.",
+            "shiller": "Clip material.",
+            "validator": "Zipline notarized in crayon.",
+            "miner": "Ride the chain vein.",
+            "meme": "Hehe airlines."
+          },
+          "telemetry_tags": ["scene:1.6","action:gremlin_zipline"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.6-R3",
+      "description": "Green & Yellow: Flow and Invitation. The corridor offers paths that arrive because you walked toward them.",
+      "actions": [
+        {
+          "id": "green_flow",
+          "label": "Green Lane — Read the Flow (Pathfinding)",
+          "requirements": { "items_any": [], "flags_all": ["rigging_map"] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","tactics","rune"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "flow_bonus", "value": true },
+                { "type": "xp", "value": 14 }
+              ],
+              "narration": "You step where currents meet and discover the convenience of inevitability."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You chase the shiny eddy and miss the river."
+            }
+          },
+          "banter": {
+            "dev": "Control flow tamed.",
+            "trader": "Trade with the tape.",
+            "whale": "Wake stitches itself.",
+            "hacker": "Read the scheduler.",
+            "shiller": "Be where story wants you.",
+            "validator": "Path consistent.",
+            "miner": "Follow the soft glint.",
+            "meme": "Flow state acquired."
+          },
+          "telemetry_tags": ["scene:1.6","action:green_flow"]
+        },
+        {
+          "id": "yellow_invite",
+          "label": "Yellow Lane — Make the Step that Makes the Bridge",
+          "requirements": { "items_any": [], "flags_all": ["voice_claimed"] },
+          "roll": { "kind": "phi_d20", "tags": ["will","morale","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "A rung condenses from hypothesis into hardware under your foot."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "The invitation RSVP was for later. You arrive early and scuff your pride."
+            }
+          },
+          "banter": {
+            "dev": "Spec becomes code.",
+            "trader": "Liquidity appears for first movers.",
+            "whale": "Wake invents a lane.",
+            "hacker": "Manifest a path via assertion.",
+            "shiller": "Make it happen on camera.",
+            "validator": "Bridge notarized post-hoc.",
+            "miner": "Step makes ledge real.",
+            "meme": "Fake it till it’s built."
+          },
+          "telemetry_tags": ["scene:1.6","action:yellow_invite"]
+        },
+        {
+          "id": "protocol_read",
+          "label": "Protocol Staff — Read Load-Bearing Runes (If Equipped)",
+          "requirements": { "items_any": ["weapon_protocol_staff"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["rune","insight","engineering"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "dc_minus_one_next", "value": true }
+              ],
+              "narration": "Runes unfold like documentation that was secretly well-written."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The staff coughs politely and suggests trying again after snacks."
+            }
+          },
+          "banter": {
+            "dev": "Docs discovered.",
+            "trader": "Edge found, responsibly.",
+            "whale": "Wake guided by footnotes.",
+            "hacker": "Understand before modify.",
+            "shiller": "Lore-as-feature.",
+            "validator": "Interpretation sound.",
+            "miner": "Read the seam map.",
+            "meme": "RTFM but magic."
+          },
+          "telemetry_tags": ["scene:1.6","action:protocol_read"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.6-R4",
+      "description": "Indigo & Violet: Bearing and Veil. Carry what must be carried; trust what you cannot yet see.",
+      "actions": [
+        {
+          "id": "indigo_bearing",
+          "label": "Indigo Lane — Shoulder the Burden (Bearing)",
+          "requirements": { "items_any": [], "flags_all": ["integrity_boost"] },
+          "roll": { "kind": "phi_d20", "tags": ["will","integrity","armor"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "bearing_bonus", "value": true },
+                { "type": "xp", "value": 14 }
+              ],
+              "narration": "You carry more than the pack: you carry permission. The chain settles kindly."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "The load argues back and cites precedent."
+            }
+          },
+          "banter": {
+            "dev": "Load test of character.",
+            "trader": "Drawdown borne, not hidden.",
+            "whale": "Wake shoulders storm.",
+            "hacker": "Privilege used sparingly.",
+            "shiller": "Burden looks heroic in this light.",
+            "validator": "Evidence carried.",
+            "miner": "Weight is work spelled long.",
+            "meme": "Hard carry patch."
+          },
+          "telemetry_tags": ["scene:1.6","action:indigo_bearing"]
+        },
+        {
+          "id": "violet_veil",
+          "label": "Violet Lane — Step Through the Veil (Trust)",
+          "requirements": { "items_any": [], "flags_all": ["harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","poise","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "veil_passed", "value": true },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "You accept not-knowing with professionalism. The unknown behaves better."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You peek and the veil peeks back. Nobody blinks."
+            }
+          },
+          "banter": {
+            "dev": "Feature flags of fate.",
+            "trader": "Trust the system when the system earned it.",
+            "whale": "Wake crosses fog.",
+            "hacker": "Faith as protocol.",
+            "shiller": "Mystery, but approachable.",
+            "validator": "Assumptions documented.",
+            "miner": "Tunnel bends; keep swinging.",
+            "meme": "Schrödinger’s bridge."
+          },
+          "telemetry_tags": ["scene:1.6","action:violet_veil"]
+        },
+        {
+          "id": "shardmail_reflect",
+          "label": "Shardmail — Reflect a Small Fail (If Equipped)",
+          "requirements": { "items_any": ["armor_shardmail"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "A stumble becomes a neutral pivot. Shardmail tinkles like triumphant rain."
+            }
+          },
+          "banter": {
+            "dev": "Error-handling IRL.",
+            "trader": "Loss turned flat.",
+            "whale": "Wake redirects.",
+            "hacker": "Catch → continue.",
+            "shiller": "Fail forward, look good.",
+            "validator": "Reflection valid.",
+            "miner": "Chip saved the chisel.",
+            "meme": "Skill issue neutralized."
+          },
+          "telemetry_tags": ["scene:1.6","action:shardmail_reflect"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.6-R5",
+      "description": "The Balance Cradle: three cups and a fourth that calls itself a joke until it isn’t. This is where weight becomes policy.",
+      "actions": [
+        {
+          "id": "cup_consensus",
+          "label": "Weigh the Cup of Consensus",
+          "requirements": { "items_any": [], "flags_all": ["unity_next_act"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","integrity","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 16 }
+              ],
+              "narration": "The needle settles on together. The corridor approves with a noise like polite thunder."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Votes tally but posture disagrees. The needle chooses Later."
+            }
+          },
+          "banter": {
+            "dev": "Quorum found.",
+            "trader": "Fair price for we.",
+            "whale": "Wake overlaps perfectly.",
+            "hacker": "Multi-sig of hearts.",
+            "shiller": "Teamwork montage.",
+            "validator": "Consensus earned.",
+            "miner": "Many picks, one seam.",
+            "meme": "DAO but hugs."
+          },
+          "telemetry_tags": ["scene:1.6","action:cup_consensus"]
+        },
+        {
+          "id": "cup_grace",
+          "label": "Weigh the Cup of Grace",
+          "requirements": { "items_any": [], "flags_all": ["veil_passed"] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","mercy","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "grace_granted", "value": true },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "Mercy has mass. You lift it and it lifts you back."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Grace refuses to be weighed by hurry."
+            }
+          },
+          "banter": {
+            "dev": "User error forgiven.",
+            "trader": "Stops widened with compassion.",
+            "whale": "Wake cushions others.",
+            "hacker": "Retry with kindness.",
+            "shiller": "Mercy is premium UX.",
+            "validator": "Leniency logged.",
+            "miner": "Help shovel their rock.",
+            "meme": "Forgive.exe ran."
+          },
+          "telemetry_tags": ["scene:1.6","action:cup_grace"]
+        },
+        {
+          "id": "cup_receipt",
+          "label": "Weigh the Cup of Receipt",
+          "requirements": { "items_any": [], "flags_all": ["custodian_allied"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","rune","will"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_chainlink_tally" },
+                { "type": "xp", "value": 14 }
+              ],
+              "narration": "A tidy token prints in the air: a chainlink etched with a number you will be glad to recall later."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Receipt withheld pending funnier audit."
+            }
+          },
+          "banter": {
+            "dev": "Log with panache.",
+            "trader": "Accounting you can flex.",
+            "whale": "Wake reconciles.",
+            "hacker": "Proof with hardware.",
+            "shiller": "Receipts or it didn’t happen.",
+            "validator": "Attestation portable.",
+            "miner": "Count the links; pace the seam.",
+            "meme": "Show me the receipts (cute)."
+          },
+          "telemetry_tags": ["scene:1.6","action:cup_receipt"]
+        },
+        {
+          "id": "cup_joke",
+          "label": "Place a Joke in the Small Cup (Hehe)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","morale","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "phrase_chain_proverb" },
+                { "type": "xp", "value": 14 }
+              ],
+              "narration": "The joke lands with physics. The cradle adjusts its calibration to allow delight."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 8 }
+              ],
+              "narration": "A small laugh shifts big weight."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "You pay a pun tax. It funds safety snacks."
+            }
+          },
+          "banter": {
+            "dev": "Humor as middleware.",
+            "trader": "Sentiment hedge.",
+            "whale": "Wake smiles; hull lighter.",
+            "hacker": "Exploit joy.",
+            "shiller": "Delight KPI up.",
+            "validator": "Laughter admissible.",
+            "miner": "Jokes mine breath.",
+            "meme": "Economy of giggles."
+          },
+          "telemetry_tags": ["scene:1.6","action:cup_joke"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.6-R6",
+      "description": "The Far Span: a single, elegant chain-bridge arcing over a vault of wind. The chorus of metal waits to see if patience remembered to pack courage.",
+      "actions": [
+        {
+          "id": "combo_run",
+          "label": "Mergeblade — Combo the Span (If Equipped)",
+          "requirements": { "items_any": ["weapon_mergeblade"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["agility","sleight","courage"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "xp", "value": 14 }
+              ],
+              "narration": "Each step triggers the next foothold like punctuation applauding."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "Combo drops; the bridge scolds gently."
+            }
+          },
+          "banter": {
+            "dev": "Chaining calls responsibly.",
+            "trader": "Momentum stacking.",
+            "whale": "Wake drums in rhythm.",
+            "hacker": "Pipelined courage.",
+            "shiller": "Montage fuel.",
+            "validator": "Sequence valid.",
+            "miner": "Strike-strike-strike.",
+            "meme": "Combo meter pog."
+          },
+          "telemetry_tags": ["scene:1.6","action:combo_run"]
+        },
+        {
+          "id": "liquidity_probe",
+          "label": "Liquidity Spear — Probe for Hidden Rungs (If Equipped)",
+          "requirements": { "items_any": ["weapon_liquidity_spear"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["tactics","insight","agility"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "hidden_rungs", "value": true }
+              ],
+              "narration": "You tap the air and find stairs that prefer to be asked."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The spear points at philosophy. Useful, but not immediately."
+            }
+          },
+          "banter": {
+            "dev": "Discovery API online.",
+            "trader": "Depth revealed.",
+            "whale": "Wake finds secret eddies.",
+            "hacker": "Probe, don’t poke.",
+            "shiller": "Reveal is the content.",
+            "validator": "Rungs attested.",
+            "miner": "Tap tap—hollow!",
+            "meme": "Liquidity stairs."
+          },
+          "telemetry_tags": ["scene:1.6","action:liquidity_probe"]
+        },
+        {
+          "id": "oracle_glance",
+          "label": "Beacon/Oracle — Glance Ahead (If Helm)",
+          "requirements": { "items_any": ["helm_beacon_visor","helm_oracle_hood"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","focus","puzzle"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "preview_safe_step", "value": true }
+              ],
+              "narration": "Light sketches the next safe three steps like a promise with footnotes."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The visor sighs and shows you a very handsome reflection instead."
+            }
+          },
+          "banter": {
+            "dev": "Look-ahead cache.",
+            "trader": "Forward guidance.",
+            "whale": "Wake predicts itself.",
+            "hacker": "Peeking the buffer.",
+            "shiller": "Foresight is PR.",
+            "validator": "Preview notarized.",
+            "miner": "Plan the swing.",
+            "meme": "Spoilers but helpful."
+          },
+          "telemetry_tags": ["scene:1.6","action:oracle_glance"]
+        },
+        {
+          "id": "group_sync",
+          "label": "Group Sync — Count Off and Cross",
+          "requirements": { "items_any": [], "flags_all": ["unity_next_act"] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","morale","harmony"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "Four voices, one cadence. The bridge likes choirs."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Two people clap on one and three. You recalibrate with affection."
+            }
+          },
+          "banter": {
+            "dev": "Distributed sync achieved.",
+            "trader": "Risk correlates on purpose.",
+            "whale": "Wake harmonized.",
+            "hacker": "Clock skew reduced.",
+            "shiller": "Teamwork sizzle reel.",
+            "validator": "March verified.",
+            "miner": "Picks in rhythm.",
+            "meme": "We ball (bridge edition)."
+          },
+          "telemetry_tags": ["scene:1.6","action:group_sync"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.6-R7",
+      "description": "The far landing collects your steps and adds them to its biography. The chains hum a chord that tastes like keys.",
+      "actions": [
+        {
+          "id": "audit_arrival",
+          "label": "Audit the Landing (Receipts & Risks)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "Footprints in graphite, runes in relief. The landing signs your visit with excellent penmanship."
+            }
+          },
+          "banter": {
+            "dev": "Post-run telemetry tidy.",
+            "trader": "PnL of footsteps = net growth.",
+            "whale": "Wake diff narrows to a point.",
+            "hacker": "Logs with hugs.",
+            "shiller": "Recap writes itself.",
+            "validator": "Entries balance.",
+            "miner": "Grain tells truth.",
+            "meme": "Patch notes for feet."
+          },
+          "telemetry_tags": ["scene:1.6","action:audit_arrival"]
+        },
+        {
+          "id": "gremlin_kiosk",
+          "label": "Pop-Up Gremlin Kiosk: Bridge Snacks & Trinkets",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "shop", "id": "chainside_pop" }
+              ],
+              "narration": "A stall unfolds from a toolbox. The menu lists snacks and an alarming number of warranties."
+            }
+          },
+          "banter": {
+            "dev": "Micro-economy spins up.",
+            "trader": "Liquidity between spans.",
+            "whale": "Impulse buys, ethical.",
+            "hacker": "POS but cute.",
+            "shiller": "Merch that jingles.",
+            "validator": "Receipts pre-printed.",
+            "miner": "Snack is fuel.",
+            "meme": "Giga corn dog of destiny."
+          },
+          "telemetry_tags": ["scene:1.6","action:gremlin_kiosk"]
+        },
+        {
+          "id": "loot_cache",
+          "label": "Check the Chain Cache (Loot)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["sleight","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "armor_shardmail" }
+              ],
+              "narration": "Between two links waits armor that remembers every scrapes’ lesson and returns them politely."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 30 }
+              ],
+              "narration": "No armor, but a purse of honest coins caught in the grate."
+            }
+          },
+          "banter": {
+            "dev": "Drop table smiles.",
+            "trader": "Value or value, win-win.",
+            "whale": "Wake pays out.",
+            "hacker": "Cache hit.",
+            "shiller": "Loot glam.",
+            "validator": "Find verified.",
+            "miner": "Shavings worth keeping.",
+            "meme": "Drip acquired."
+          },
+          "telemetry_tags": ["scene:1.6","action:loot_cache"]
+        },
+        {
+          "id": "advance_to_1_7",
+          "label": "Advance to the Door of Many Keys",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "Ahead, a door made of locks waits, already practicing the sound of being opened. The air smells faintly of brass and promises.",
+              "next_hint": "keys"
+            }
+          },
+          "banter": {
+            "dev": "Transition queued.",
+            "trader": "Execution clean.",
+            "whale": "Weight forward.",
+            "hacker": "Next module: keys.",
+            "shiller": "Cliffhanger with hardware.",
+            "validator": "Path attested.",
+            "miner": "Pick meets lock soon.",
+            "meme": "Key time babyyy."
+          },
+          "telemetry_tags": ["scene:1.6","action:advance"]
         }
       ]
     }
   ],
-  "threshold_rewards": [ { "sleight_gte": 6, "rewards": [ { "type": "coins", "value": 200 }, { "type": "xp", "value": 70 } ] } ],
-  "arrivals": [ { "when": "else", "goto": "1.7" } ]
+  "threshold_rewards": [
+    { "sleight_gte": 5,  "rewards": [ { "type": "coins", "value": 60 } ] },
+    { "sleight_gte": 8,  "rewards": [ { "type": "coins", "value": 60 }, { "type": "fragment", "value": 1 } ] },
+    { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_etched_in_chain" } ] },
+    { "flags_all": ["flow_bonus"],      "rewards": [ { "type": "item", "id": "helm_oracle_hood" } ] },
+    { "flags_all": ["bearing_bonus"],   "rewards": [ { "type": "item", "id": "weapon_liquidity_spear" } ] },
+    { "flags_all": ["grace_granted"],   "rewards": [ { "type": "item", "id": "deck_card_gremlin_distraction" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.veil_passed", "goto": "1.7" },
+    { "when": "flags.grace_granted", "goto": "1.7" },
+    { "when": "flags.chainlink_tally", "goto": "1.7" },
+    { "when": "else", "goto": "1.7" }
+  ]
 }
