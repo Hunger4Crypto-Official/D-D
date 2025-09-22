@@ -267,6 +267,7 @@ export function handleAction(
       members: difficultyInputs.members,
     })
   );
+  
   const { dcOffset: hiddenOffset, tier } = computeHiddenTier(10, 1200, 0);
 
   const baseDc = 13 + dcShift;
@@ -438,5 +439,6 @@ export function processAfkTimeouts(now = Date.now()) {
     }
   }
   return events;
+  
   return { roll, outcome, summary, tier };
 }

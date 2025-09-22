@@ -214,6 +214,20 @@ export function handleRoleSelection(customId: string, user_id: string, values?: 
   }
 
   if (parts[1] === 'resume' && parts[2] === 'select') {
+    const runs = getUserActiveRuns(user_id);
+    if (runs.length === 0) {
+      return '❌ No active games to resume.';
+    }
+    const lines = runs
+      .map((run, index) => {
+        const role = getRoleById(run.role_id);
+        const channelLabel = /^\d+$/.test(run.channel_id) ? `<#${run.channel_id}>` : run.channel_id;
+        return `• **${index + 1}.** ${role?.emoji ?? '🎲'} Scene ${run.current_scene_id} — visit ${channelLabel} and use !resume ${
+          index + 1
+        }`;
+      })
+      .join('\n');
+    return `▶️ **Resume Games**\n${lines}`;
     return '▶️ Resume flow coming soon!';
   }
 
@@ -242,6 +256,24 @@ export function startRoleBasedRun(user_id: string, role_id: string, scene_id: st
   return run_id;
 }
 
+export interface ActiveRunSummary {
+  run_id: string;
+  role_id: string;
+  scene_id: string;
+  status: string;
+  created_at: number;
+  updated_at: number;
+  current_scene_id: string;
+  round_id: string;
+  channel_id: string;
+  guild_id: string;
+}
+
+export function getUserActiveRuns(user_id: string): ActiveRunSummary[] {
+  return db
+    .prepare(
+      `
+    SELECT ur.*, r.scene_id as current_scene_id, r.round_id, r.channel_id, r.guild_id
 export function getUserActiveRuns(user_id: string) {
   return db
     .prepare(
@@ -253,6 +285,7 @@ export function getUserActiveRuns(user_id: string) {
     ORDER BY ur.updated_at DESC
   `
     )
+    .all(user_id) as ActiveRunSummary[];
     .all(user_id) as Array<{
     run_id: string;
     role_id: string;
@@ -285,6 +318,15 @@ export function showUserGames(user_id: string): string {
   let response = '📋 **Your Active Games**\n\n';
   runs.forEach((run, index) => {
     const role = getRoleById(run.role_id);
+    const channelLabel = /^\d+$/.test(run.channel_id) ? `<#${run.channel_id}>` : run.channel_id;
+    response += `**${index + 1}.** ${role?.emoji ?? '🎲'} Scene ${run.current_scene_id}\n`;
+    response += `   Role: ${role?.name ?? 'Unknown'}\n`;
+    response += `   Progress: ${run.round_id}\n`;
+    response += `   Channel: ${channelLabel}\n`;
+    response += `   Started: <t:${Math.floor(run.created_at / 1000)}:R>\n\n`;
+  });
+
+  response += 'Use **Resume Game** or `!resume <number>` in the run channel to continue where you left off!';
     response += `**${index + 1}.** ${role?.emoji ?? '🎲'} Scene ${run.current_scene_id}\n`;
     response += `   Role: ${role?.name ?? 'Unknown'}\n`;
     response += `   Progress: ${run.round_id}\n`;

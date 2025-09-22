@@ -149,6 +149,42 @@ export function openPack(user_id: string, pack_id = 'Genesis', options: OpenPack
     .prepare('SELECT qty FROM inventories WHERE user_id=? AND item_id=?')
     .get(user_id, pick.id) as { qty?: number } | undefined;
 
+  const pityRow = db
+    .prepare('SELECT opened, last_rarity FROM pity WHERE user_id=? AND pack_id=?')
+    .get(user_id, pack_id) as { opened?: number; last_rarity?: string } | undefined;
+
+  const rarity = pityAdjustedRarity(
+    pityRow?.opened ?? 0,
+    dt.weights,
+    dt.pity?.rare_after,
+    dt.pity?.epic_after
+  );
+  const pool = dt.pools[rarity] ?? [];
+  const pick =
+    pool[Math.floor(Math.random() * pool.length)] ?? ({
+      kind: 'cosmetic',
+      id: 'cosmetic_confetti',
+      rarity,
+    } as { kind: string; id: string; rarity?: string });
+
+  if (spendAmount > 0) {
+    db.prepare(
+      'INSERT INTO economy_ledger (txn_id,user_id,kind,amount,reason,meta_json,ts) VALUES (?,?,?,?,?,?,?)'
+    ).run(
+      `txn_${nanoid(8)}`,
+      user_id,
+      'pack_open',
+      spendAmount,
+      'coins_spent',
+      JSON.stringify({ pack_id }),
+      Date.now()
+    );
+  }
+
+  const existing = db
+    .prepare('SELECT qty FROM inventories WHERE user_id=? AND item_id=?')
+    .get(user_id, pick.id) as { qty?: number } | undefined;
+
   let duplicate = false;
   if (existing?.qty) {
     duplicate = true;

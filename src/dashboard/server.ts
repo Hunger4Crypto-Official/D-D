@@ -564,6 +564,7 @@ export function startDashboardServer(port: number) {
       console.error('Dashboard request failed', err);
       return sendHtml(res, 500, '<h1>Server Error</h1>');
     }
+    
   const server = http.createServer((req: any, res: any) => {
     if (!req.url) return json(res, 404, { error: 'Not found' });
     const parsed = url.parse(req.url, true);

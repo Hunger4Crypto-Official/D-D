@@ -214,7 +214,6 @@ export async function renderEnhancedShop(user_id: string) {
 }
 
 export async function handleEnhancedShopInteraction(customId: string, user_id: string, values?: string[]) {
-=======
 
 interface ShopPack {
   id: string;
@@ -739,6 +738,22 @@ export async function handleEnhancedShopInteraction(
   if (parts[1] === 'refresh') {
     const rotation = ensureWeeklyRotation(true);
     return `🔄 Rotation refreshed. New packs: ${rotation.packs.join(', ')}`;
+    }
+  }
+
+  if (parts[1] === 'craft' && values?.[0]) {
+    const result = craftItem(user_id, values[0]);
+    return result.message;
+  }
+
+  if (parts[1] === 'category' && parts[2] === 'skins') {
+    const rotation = ensureWeeklyRotation();
+    return `🎨 Seasonal stock: ${rotation.items.map((i) => `${i.emoji} ${i.id}`).join(', ')}`;
+  }
+
+  if (parts[1] === 'refresh') {
+    const rotation = ensureWeeklyRotation(true);
+    return `🔄 Rotation refreshed. New packs: ${rotation.packs.join(', ')}`;
     try {
       const message = purchasePack(user_id, pack);
       return message;
@@ -865,6 +880,8 @@ export function claimWeeklyReward(user_id: string): { success: boolean; amount?:
   );
 
   return { success: true, amount: totalReward, streak: newStreak };
+}
+
 }
 
 }
