@@ -7,8 +7,6 @@ import {
   StringSelectMenuInteraction,
   Message,
   TextChannel,
-  TextChannel,
-  StringSelectMenuInteraction,
 } from 'discord.js';
 import { sceneState, handleAction } from '../engine/orchestrator.js';
 import db from '../persistence/db.js';
@@ -103,48 +101,9 @@ export async function syncPinnedUi(channel: TextChannel, run_id: string, reuse?:
   return target;
 }
 
-}
-
-async function ensureUiReference(run_id: string, message: Message) {
-  if (!message.pinned) {
-    try {
-      await message.pin();
-    } catch (err) {
-      console.warn('Unable to pin UI message', err);
-    }
-  }
-  db.prepare('UPDATE runs SET ui_message_id=?, ui_channel_id=? WHERE run_id=?').run(
-    message.id,
-    message.channelId,
-    run_id
-  );
-}
-
-export async function syncPinnedUi(channel: TextChannel, run_id: string, reuse?: Message | null) {
-  const run = db.prepare('SELECT ui_message_id, ui_channel_id FROM runs WHERE run_id=?').get(run_id) as
-    | { ui_message_id?: string; ui_channel_id?: string }
-    | undefined;
-  const payload = await renderScene(run_id);
-  let target = reuse ?? null;
-  if (!target && run?.ui_message_id) {
-    try {
-      target = await channel.messages.fetch(run.ui_message_id);
-    } catch {
-      target = null;
-    }
-  }
-  if (target) {
-    await target.edit(payload);
-  } else {
-    target = await channel.send(payload);
-  }
-  if (!target) throw new Error('Failed to render scene UI');
-  await ensureUiReference(run_id, target);
-  return target;
-}
-
 export async function onButton(i: ButtonInteraction) {
   const [prefix, run_id, rest] = i.customId.split(':');
+  
   if (prefix === 'act') {
     await i.deferReply({ ephemeral: true });
     let res;
@@ -158,14 +117,13 @@ export async function onButton(i: ButtonInteraction) {
     if (i.channel && (i.channel as any).isTextBased?.()) {
       await syncPinnedUi(i.channel as unknown as TextChannel, run_id, i.message as Message);
     }
-    const payload = await renderScene(run_id);
-    await i.message.edit(payload);
     const channel = i.channel;
     if (res.compliment && channel && channel.isTextBased() && 'send' in channel) {
       await (channel as any).send({ content: `✨ ${res.compliment} (<@${i.user.id}>)` });
     }
     return;
   }
+  
   if (prefix === 'shop') {
     await i.deferReply({ ephemeral: true });
     const msg = await handleEnhancedShopInteraction(i.customId, i.user.id);
@@ -176,14 +134,7 @@ export async function onButton(i: ButtonInteraction) {
     await i.editReply(msg);
     return;
   }
-  if (prefix === 'role') {
-    await i.deferReply({ ephemeral: true });
-    return;
-  }
-  if (prefix === 'role') {
-    await i.deferReply({ ephemeral: true });
-    return;
-  }
+  
   if (prefix === 'role') {
     await i.deferReply({ ephemeral: true });
     const msg = handleRoleSelection(i.customId, i.user.id);
@@ -193,6 +144,7 @@ export async function onButton(i: ButtonInteraction) {
     await i.editReply(msg);
     return;
   }
+  
   if (prefix === 'equipment') {
     if (rest === 'open') {
       await i.deferReply({ ephemeral: true });
@@ -216,78 +168,7 @@ export async function onSelectMenu(i: StringSelectMenuInteraction) {
     await i.editReply(msg);
     return;
   }
-  if (i.customId.startsWith('role:')) {
-    await i.deferReply({ ephemeral: true });
-    await i.editReply(msg);
-    return;
-  }
-  if (prefix === 'equipment') {
-    if (rest === 'open') {
-      await i.deferReply({ ephemeral: true });
-      const view = await renderEquipment(i.user.id);
-      await i.editReply(view);
-      return;
-    }
-    await handleEquipmentButton(i);
-    return;
-  }
-}
-
-export async function onSelectMenu(i: StringSelectMenuInteraction) {
-  if (i.customId.startsWith('shop:')) {
-    await i.deferReply({ ephemeral: true });
-    const msg = await handleEnhancedShopInteraction(i.customId, i.user.id, i.values);
-    if (i.customId === 'shop:select' || i.customId === 'shop:craft') {
-      const view = await renderEnhancedShop(i.user.id);
-      await i.message.edit(view);
-    }
-    await i.editReply(msg);
-    return;
-  }
-  if (i.customId.startsWith('role:')) {
-    await i.deferReply({ ephemeral: true });
-  if (prefix === 'shop'){
-    await i.deferReply({ ephemeral:true });
-    const msg = await handleEnhancedShopInteraction(i.customId, i.user.id);
-    if (i.customId === 'shop:refresh'){
-      const view = await renderEnhancedShop(i.user.id);
-      await i.message.edit(view);
-    }
-    await i.editReply(msg);
-    return;
-  }
-  if (prefix === 'role'){
-    await i.deferReply({ ephemeral:true });
-    const msg = handleRoleSelection(i.customId, i.user.id);
-    const isTutorial = i.customId.includes('tutorial');
-    const view = await showRoleSelection(i.user.id, isTutorial);
-    await i.message.edit(view);
-    await i.editReply(msg);
-    return;
-  }
-  if (prefix === 'equipment') {
-    if (rest === 'open') {
-      await i.deferReply({ ephemeral: true });
-      const view = await renderEquipment(i.user.id);
-      await i.editReply(view);
-      return;
-    }
-    await handleEquipmentButton(i);
-    return;
-  }
-}
-
-export async function onSelectMenu(i: StringSelectMenuInteraction) {
-  if (i.customId.startsWith('shop:')) {
-    await i.deferReply({ ephemeral: true });
-    const msg = await handleEnhancedShopInteraction(i.customId, i.user.id, i.values);
-    if (i.customId === 'shop:select' || i.customId === 'shop:craft') {
-      const view = await renderEnhancedShop(i.user.id);
-      await i.message.edit(view);
-    }
-    await i.editReply(msg);
-    return;
-  }
+  
   if (i.customId.startsWith('role:')) {
     await i.deferReply({ ephemeral: true });
     const msg = handleRoleSelection(i.customId, i.user.id, i.values);
@@ -297,70 +178,12 @@ export async function onSelectMenu(i: StringSelectMenuInteraction) {
     await i.editReply(msg);
     return;
   }
-    await i.editReply(msg);
-    return;
-  }
-  if (prefix === 'equipment') {
-    if (rest === 'open') {
-      await i.deferReply({ ephemeral: true });
-      const view = await renderEquipment(i.user.id);
-      await i.editReply(view);
-      return;
-    }
-    await handleEquipmentButton(i);
-    return;
-  }
-}
-
-export async function onSelectMenu(i: StringSelectMenuInteraction) {
-  if (i.customId.startsWith('shop:')) {
-    await i.deferReply({ ephemeral: true });
-    const msg = await handleEnhancedShopInteraction(i.customId, i.user.id, i.values);
-    if (i.customId === 'shop:select' || i.customId === 'shop:craft') {
-      const view = await renderEnhancedShop(i.user.id);
-      await i.message.edit(view);
-    }
-    await i.editReply(msg);
-    return;
-  }
-  if (i.customId.startsWith('role:')) {
-    await i.deferReply({ ephemeral: true });
-    const msg = handleRoleSelection(i.customId, i.user.id, i.values);
-    const isTutorial = i.customId.includes('tutorial');
-    const view = await showRoleSelection(i.user.id, isTutorial);
-    await i.message.edit(view);
-    await i.editReply(msg);
-    return;
-  }
-    await i.editReply(msg);
-    return;
-  }
-}
-
-export async function onSelectMenu(i: StringSelectMenuInteraction){
-  if (i.customId.startsWith('shop:')){
-    await i.deferReply({ ephemeral:true });
-    const msg = await handleEnhancedShopInteraction(i.customId, i.user.id, i.values);
-    if (i.customId === 'shop:select'){
-      const view = await renderEnhancedShop(i.user.id);
-      await i.message.edit(view);
-    }
-    await i.editReply(msg);
-    return;
-  }
-  if (i.customId.startsWith('role:')){
-    await i.deferReply({ ephemeral:true });
-    const msg = handleRoleSelection(i.customId, i.user.id, i.values);
-    const isTutorial = i.customId.includes('tutorial');
-    const view = await showRoleSelection(i.user.id, isTutorial);
-    await i.message.edit(view);
-    await i.editReply(msg);
-    return;
-  }
+  
   if (i.customId === 'equipment:slot') {
     await handleEquipmentSelect(i);
     return;
   }
+  
   if (i.customId.startsWith('equipment:equip:')) {
     await handleEquipmentEquip(i);
     return;
