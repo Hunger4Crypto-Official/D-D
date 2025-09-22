@@ -1,0 +1,393 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "2.2",
+  "title": "The Careful Corridor — The Audit Bridge",
+  "narration": "A bridge unrolls itself like a scroll read aloud by an engineer with a poet’s day job. Planks are engraved with numbers, not sequential but conditional: this plank is number Seven if you stepped kindly on Five; this plank is number Three if your left foot apologized to your right for hurrying. Handrails bloom only when two hands ask politely at the same moment. A diagram carved into the near post shows, with loving clarity, how to cross without making the bridge feel taken for granted. A chorus of lanterns waits to grade your posture and offer extra credit for good jokes that admit fear without worshiping it. Beneath, a dry channel full of polite pebbles makes a sound like old typewriters, the keys willing to record but unwilling to lie.",
+  "rounds": [
+    {
+      "round_id": "2.2-R1",
+      "description": "On-Ramp: the bridge requests an intention stated like a subject line.",
+      "actions": [
+        {
+          "id": "state_intent",
+          "label": "State Your Intent Clearly",
+          "requirements": { "items_any": [], "flags_all": ["careful_next_act"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","ritual","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "intent_logged", "value": true },
+                { "type": "xp", "value": 14 }
+              ],
+              "narration": "The handrails extend with the relief of bureaucracy done right."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Your intent includes a metaphor that confuses the diagram. It forgives by redrawing itself simpler."
+            }
+          },
+          "banter": {
+            "dev": "Good commit message energy.",
+            "trader": "Plan, then size.",
+            "whale": "Wake announces course.",
+            "hacker": "Clarity lowers attack surface.",
+            "shiller": "Narrative with nouns.",
+            "validator": "Intent notarized.",
+            "miner": "Say the job before the swing.",
+            "meme": "Subject: cross bridge (carefully)."
+          },
+          "telemetry_tags": ["scene:2.2","action:state_intent"]
+        },
+        {
+          "id": "pair_check",
+          "label": "Pair Up and Check Gear",
+          "requirements": { "items_any": [], "flags_all": ["trustful"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "buddy_check", "value": true }
+              ],
+              "narration": "Belts tighten; courage fastens properly. The bridge purrs in ergonomic approval."
+            }
+          },
+          "banter": {
+            "dev": "Code review but straps.",
+            "trader": "Counterparty risk reduced.",
+            "whale": "Wake aligns sources.",
+            "hacker": "Threat model: fixed.",
+            "shiller": "Buddy system sells calm.",
+            "validator": "Checks recorded.",
+            "miner": "Knot re-tied. Good.",
+            "meme": "Peer-reviewed drip."
+          },
+          "telemetry_tags": ["scene:2.2","action:pair_check"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.2-R2",
+      "description": "Numbered Planks: count to reach a truth, not to finish a sentence.",
+      "actions": [
+        {
+          "id": "count_kind",
+          "label": "Count Kindly (Out Loud)",
+          "requirements": { "items_any": [], "flags_all": ["rhythm_true"] },
+          "roll": { "kind": "phi_d20", "tags": ["harmony","poise"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 }
+              ],
+              "narration": "Each number lands where a foot will be grateful to have been."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "A stray seven steps in where a four belonged. The bridge glances away, disappointed but patient."
+            }
+          },
+          "banter": {
+            "dev": "Clock sync through manners.",
+            "trader": "Tempo reduces drift.",
+            "whale": "Wake follows counted fetch.",
+            "hacker": "Human timing protocol.",
+            "shiller": "ASMR for safety.",
+            "validator": "Count attested.",
+            "miner": "Pick swings on twos.",
+            "meme": "Counting but wholesome."
+          },
+          "telemetry_tags": ["scene:2.2","action:count_kind"]
+        },
+        {
+          "id": "liquidity_probe",
+          "label": "Probe Next Plank (Liquidity Spear)",
+          "requirements": { "items_any": ["weapon_liquidity_spear"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["recon","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "preview_safe_step", "value": true }
+              ],
+              "narration": "The spear rings on solid grain; a faint glow outlines the safe quadrant."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Your spear sermonizes about market depth. The plank claps politely."
+            }
+          },
+          "banter": {
+            "dev": "Prefetch foot placement.",
+            "trader": "Test liquidity, then size.",
+            "whale": "Wake scouts for draft.",
+            "hacker": "Probe with soft touch.",
+            "shiller": "Reveal safety, sell courage.",
+            "validator": "Ping recorded.",
+            "miner": "Knock to find hollow.",
+            "meme": "Tap-tap meta."
+          },
+          "telemetry_tags": ["scene:2.2","action:liquidity_probe"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.2-R3",
+      "description": "Wind Audit: a polite cross-breeze requests to see your posture license.",
+      "actions": [
+        {
+          "id": "brace_correctly",
+          "label": "Brace Correctly Against Wind",
+          "requirements": { "items_any": [], "flags_all": ["bearing_bonus","buddy_check"] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","will","armor"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "Knees smile. Rails approve. The breeze downgrades itself from test to flirtation."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "Your stance argues with leverage; the wind audits you into humility."
+            }
+          },
+          "banter": {
+            "dev": "Posture handler passed.",
+            "trader": "Risk metered; gust priced.",
+            "whale": "Wake leans, not lurches.",
+            "hacker": "Exploit mitigated by stance.",
+            "shiller": "We make wind look good.",
+            "validator": "Form admissible.",
+            "miner": "Knees soft, back strong.",
+            "meme": "Winded, not rugged."
+          },
+          "telemetry_tags": ["scene:2.2","action:brace_correctly"]
+        },
+        {
+          "id": "shardmail_catch",
+          "label": "Shardmail Catch (If Equipped)",
+          "requirements": { "items_any": ["armor_shardmail"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "A slip translates into an elegant pivot. Shardmail approves in chimes."
+            }
+          },
+          "banter": {
+            "dev": "Hardware rollback.",
+            "trader": "Drawdown softened.",
+            "whale": "Wake redirects gracefully.",
+            "hacker": "Catch and continue.",
+            "shiller": "Fail-forward couture.",
+            "validator": "Mitigated with receipts.",
+            "miner": "Armor that edits mistakes.",
+            "meme": "Oops patched live."
+          },
+          "telemetry_tags": ["scene:2.2","action:shardmail_catch"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.2-R4",
+      "description": "Inspector’s Bell: a small bell dings if you step honestly and screams if you don’t.",
+      "actions": [
+        {
+          "id": "ring_soft",
+          "label": "Ring Soft with a True Step",
+          "requirements": { "items_any": [], "flags_all": ["intent_logged","preview_safe_step"] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 }
+              ],
+              "narration": "A single ding like a small compliment perfectly sized to your ear."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "The bell coughs. Somewhere, a lantern writes ‘almost.’"
+            }
+          },
+          "banter": {
+            "dev": "Unit test passes with sound.",
+            "trader": "Execution sings.",
+            "whale": "Wake purls.",
+            "hacker": "Assertion: true.",
+            "shiller": "Audio UX of honesty.",
+            "validator": "Ding admissible.",
+            "miner": "Bell says keep swinging.",
+            "meme": "Ding = W."
+          },
+          "telemetry_tags": ["scene:2.2","action:ring_soft"]
+        },
+        {
+          "id": "hehe_silencer",
+          "label": "Gremlin Hehe-Silencer (Optional)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","morale"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "hehe_advantage_next", "value": true }
+              ],
+              "narration": "Timed giggles cause false positives to be logged as ‘charming anomalies.’"
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "Mirth surcharge for excessive mirth."
+            }
+          },
+          "banter": {
+            "dev": "Noise shaped into delight.",
+            "trader": "Sentiment hedge deployed.",
+            "whale": "Wake grins mid-current.",
+            "hacker": "Jitter masked by joy.",
+            "shiller": "Comedy compliance.",
+            "validator": "Anomalies excused (documented).",
+            "miner": "Laugh, then lift.",
+            "meme": "Hehe stealth tech."
+          },
+          "telemetry_tags": ["scene:2.2","action:hehe_silencer"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.2-R5",
+      "description": "Mid-Span Ledger: a bench invites you to record method, not just progress.",
+      "actions": [
+        {
+          "id": "record_method",
+          "label": "Record Method (Not Just Steps)",
+          "requirements": { "items_any": [], "flags_all": ["glossary_made","intent_logged"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","rune","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "phrase_steps_are_articles" }
+              ],
+              "narration": "Your process becomes a tidy phrase: STEPS ARE ARTICLES. The bench signs as co-author."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "You ramble. The bench gently edits you down to kindness."
+            }
+          },
+          "banter": {
+            "dev": "Docstrings for feet.",
+            "trader": "Journal the why, not just the PnL.",
+            "whale": "Wake discloses how, not just where.",
+            "hacker": "Repro, then brag.",
+            "shiller": "Teach, then clip.",
+            "validator": "Method notarized.",
+            "miner": "Write how you swung.",
+            "meme": "Tutorial% IRL."
+          },
+          "telemetry_tags": ["scene:2.2","action:record_method"]
+        },
+        {
+          "id": "coins_tip",
+          "label": "Tip the Inspectors (Optional)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 },
+                { "type": "xp", "value": 8 }
+              ],
+              "narration": "Lanterns blush. The bell dings appreciatively in a minor key."
+            }
+          },
+          "banter": {
+            "dev": "Support your local auditors.",
+            "trader": "Greasing wheels, not palms.",
+            "whale": "Wake pays its river.",
+            "hacker": "Tip jar as middleware.",
+            "shiller": "Public good PR.",
+            "validator": "Gratuity recorded.",
+            "miner": "Pebbles say thanks.",
+            "meme": "Barista lantern arc."
+          },
+          "telemetry_tags": ["scene:2.2","action:coins_tip"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.2-R6",
+      "description": "Final Span: the bridge expects one last honest breath.",
+      "actions": [
+        {
+          "id": "final_breath_bridge",
+          "label": "Final Breath & Step",
+          "requirements": { "items_any": [], "flags_all": ["harmony_kept"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "Your exhale fits the diagram like a key fits a friendly door."
+            }
+          },
+          "banter": {
+            "dev": "Ship breath on green.",
+            "trader": "Execution, no slippage.",
+            "whale": "Wake exits clean.",
+            "hacker": "Exit code 0 again.",
+            "shiller": "Elegant ending shot.",
+            "validator": "Breath admissible.",
+            "miner": "Pick rests an inch.",
+            "meme": "Sigh% complete."
+          },
+          "telemetry_tags": ["scene:2.2","action:final_breath_bridge"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.2-R7",
+      "description": "Off-Ramp: time to choose the measured path, the clever path, or the giggling path.",
+      "actions": [
+        {
+          "id": "advance_to_2.3",
+          "label": "Advance — Measured",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "The Corridor nods at your carefulness and produces a staircase that pretends it was always there.",
+              "next_hint": "2.3"
+            }
+          },
+          "banter": {
+            "dev": "Module done, next module mounted.",
+            "trader": "Next venue, same rules.",
+            "whale": "Wake threads the next channel.",
+            "hacker": "Hinges ahead, unsqueaked.",
+            "shiller": "Act two, shot three.",
+            "validator": "Checkpoint logged.",
+            "miner": "Stairs politely sturdy.",
+            "meme": "Careful.exe keeps loading."
+          },
+          "telemetry_tags": ["scene:2.2","action:advance_to_2.3"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "sleight_gte": 5,  "rewards": [ { "type": "coins", "value": 75 } ] },
+    { "sleight_gte": 8,  "rewards": [ { "type": "coins", "value": 75 }, { "type": "fragment", "value": 1 } ] },
+    { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_steps_are_articles" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.key_insight", "goto": "2C" },
+    { "when": "flags.gremlin", "goto": "2D" },
+    { "when": "else", "goto": "2.3" }
+  ]
+}
