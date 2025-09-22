@@ -1,1 +1,439 @@
-... Paste full scene_1.2.json content here ...
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "1.2",
+  "title": "The Listening Ledger — Mood & Reply",
+  "narration": "Silence does a trick: it gets louder. The Ledger lowers its hum until you feel it in the places your heartbeat hides—behind the tongue, inside the wrists, at the soft hinge where the ribs forget they are cages. Light sheens the stone like breath on glass, and for a long, weighty instant the vault looks at each of you with the kind of attention most people never meet in a lifetime.\\n\\nMood settles over the chamber like weather. It is not a single feeling, not exactly. More like a chord with changing names depending on who listens: courage tastes it as warmth, caution as clean air, cleverness as a puzzle generous enough to be solved, mischief as a stage with perfect lighting. The gremlins feel it as permission and immediately misuse it.\\n\\nYou did not come for praise. Good: the Ledger does not offer it. You came for an answer the world has the bad habit of asking every time you walk into a room: *Who are you, really?* The Ledger replies the only way the honest ever do—by showing you a mirror and refusing to lie.\\n\\nThis is the part after the dare and before the door. The part where intentions harden into instruments. Where your class isn’t just flavor but physics. Where the vault writes a mood into your bones and lets you keep it if you can carry the weight.\\n\\nSomewhere beyond the next wall, something heavy and careful turns a second blade in a sheath you hope is decorative. A breath like winter drifts through a seam you can’t find, and the hum writes a patient question across your ribs: *Are you scaffolds, or are you knives?*",
+  "rounds": [
+    {
+      "round_id": "1.2-R1",
+      "description": "The Ledger addresses you not by name but by *function*. Its replies are private, but privacy echoes.",
+      "actions": [
+        {
+          "id": "dev_wizard_vision",
+          "label": "Dev Wizard — Read the Contract Beneath the World",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","dev"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 60 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "flag", "id": "insight", "value": true }
+              ],
+              "narration": "A plaintext blooms beneath reality: a contract whose comments are better than its code because the author feared misunderstood kindness more than clean syntax. You read a clause that says *no one becomes a monster alone* and another that defines *grace* as *idempotent mercy in the presence of repeated failure*. You add a semicolon to the air out of habit and the air thanks you with a small, amused shiver."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 35 },
+                { "type": "flag", "id": "insight", "value": true }
+              ],
+              "narration": "Interfaces peel back with polite reluctance. The Ledger shows a design pattern you once dreamed you invented and wakes in you the pleasant ache of being anticipated by a stranger who wanted you to win. *Beware leaky abstractions,* a margin note says, and the margin winks."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You reach for the kernel and grab a process. It bites. The Ledger does not apologize for letting you learn with your fingers."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 },
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You recurse into your own recursion until your stack throws up a small white flag. The gremlins applaud the segmentation fault and sell tickets to the core dump."
+            }
+          },
+          "banter": {
+            "dev": "God objects are just gods with better tests.",
+            "trader": "If you can price the bug, you can price the risk.",
+            "whale": "Weight respects structure.",
+            "hacker": "Find the hinge; open the room.",
+            "shiller": "We’ll ship the patch notes with drama.",
+            "validator": "Spec clarified; invariants noted.",
+            "miner": "If the code sings, the rock will too.",
+            "meme": "Ship it live, what could go wrong."
+          },
+          "telemetry_tags": ["scene:1.2","action:dev_vision"]
+        },
+        {
+          "id": "trader_vision",
+          "label": "Trader — See the Market as a Mirror",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","trade"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 60 },
+                { "type": "coins", "op": "+", "value": 75 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "The room becomes a book so honest it hurts. Every candle is a confession; every wick a reason you can smell if you close your eyes and admit why you want to win. You see a liquidity pocket under the floor and step around it the way one steps around a friend’s old grief: not timid, just respectful. The Ledger lowers friction by a hair. It feels like luck and isn’t."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 35 },
+                { "type": "coins", "op": "+", "value": 30 }
+              ],
+              "narration": "Supply shifts, demand breathes; your hands move smaller and kinder than your ego expected. You do not chase. The room marks down *restraint* as *alpha with a clean conscience.*"
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 15 }
+              ],
+              "narration": "You reach for a wick you named and the market yanks back its hand because names are not ownership. The gremlins ring a tiny liquidation bell that makes a sad, comedic sound."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 35 },
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You go full hero trade in a room that hates heroes and loves farmers. It goes how it goes. The Ledger records *lesson paid* and lets you keep the receipt in your pocket until you’re ready to laugh about it."
+            }
+          },
+          "banter": {
+            "dev": "Latency is a fee you pay for pretending you’re fast.",
+            "trader": "Price is a story; position is an opinion.",
+            "whale": "Depth is destiny.",
+            "hacker": "Front-run your own impulses.",
+            "shiller": "We buy dips; we sell narratives.",
+            "validator": "Slippage documented.",
+            "miner": "Rock doesn’t care about charts.",
+            "meme": "Number go… thoughtfully sideways."
+          },
+          "telemetry_tags": ["scene:1.2","action:trader_vision"]
+        },
+        {
+          "id": "validator_vision",
+          "label": "Validator — Feel the Weight of Clean Blocks",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["order","discipline"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 35 },
+                { "type": "flag", "id": "insight", "value": true }
+              ],
+              "narration": "You stand inside a block and feel its geometry resist gossip. Each transaction is a promise braided tighter than hair in loving hands. You straighten your spine because the block deserves a straighter one."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You flinch at an edge that wasn’t sharp a moment ago. The Ledger notes it without judgment and files the moment under *calibration required.*"
+            }
+          },
+          "banter": {
+            "dev": "Definition of done: actually done.",
+            "trader": "Clean fills feel better.",
+            "whale": "Integrity is ballast.",
+            "hacker": "Audits are love letters with knives.",
+            "shiller": "We brand trust by acting trustworthy.",
+            "validator": "Attestation complete.",
+            "miner": "Blocks are bricks; build right.",
+            "meme": "Proof of vibe."
+          },
+          "telemetry_tags": ["scene:1.2","action:validator_vision"]
+        },
+        {
+          "id": "hacker_vision",
+          "label": "Hacker — Find the Hinge in the Wall",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","exploit"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 35 },
+                { "type": "flag", "id": "insight", "value": true }
+              ],
+              "narration": "Every door is a fact until someone remembers hinges. You remember two. Neither are crimes. One is kindness. You choose that one and the wall thanks you by pretending it was always meant to open this way."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "You touch the seam and the seam touches back with a snap, like a cat wrongdoing caught mid-pounce."
+            }
+          },
+          "banter": {
+            "dev": "Undefined behavior is a romantic invitation.",
+            "trader": "Edge found; don’t fall off.",
+            "whale": "Leverage without greed is grace.",
+            "hacker": "Hello, world. Hello, hinge.",
+            "shiller": "We tell the story where the door was always there.",
+            "validator": "If it bends, record how.",
+            "miner": "Hinges are just tiny mines.",
+            "meme": "Open sesa— nope, not yet."
+          },
+          "telemetry_tags": ["scene:1.2","action:hacker_vision"]
+        },
+        {
+          "id": "meme_vision",
+          "label": "Meme Lord — Weaponize Laughter, Don’t Worship It",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["social","morale"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 30 },
+                { "type": "coins", "op": "+", "value": 15 }
+              ],
+              "narration": "You aim the joke at fear and pin it to the wall. Laughter arrives not as escape but as clarity. The gremlins attempt to steal the punchline and trip over the setup, which is funnier."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "You rehearse too long and the moment leaves. It happens. Even comedy obeys physics."
+            }
+          },
+          "banter": {
+            "dev": "Jokes are just timed assertions.",
+            "trader": "Sentiment’s a chart too.",
+            "whale": "A room that laughs rows faster.",
+            "hacker": "Payload delivered; payload enjoyed.",
+            "shiller": "We print delight.",
+            "validator": "Morale green.",
+            "miner": "Coal turns to diamonds under jokes.",
+            "meme": "Friendship is the real virality."
+          },
+          "telemetry_tags": ["scene:1.2","action:meme_vision"]
+        },
+        {
+          "id": "gremlin_allies",
+          "label": "Gremlin Ally — Bargain for Mischief on Lease",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 20 },
+                { "type": "item", "id": "trinket_gremlin_whistle" }
+              ],
+              "narration": "The crown grants you a whistle that makes no sound you can hear and every sound they love. *For legend-making only,* it warns, then adds, *or snacks.*"
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 10 }
+              ],
+              "narration": "A new fee is invented with ancient urgency. You pay it because dignity rehydrates quickly."
+            }
+          },
+          "banter": {
+            "dev": "Third-party service level: chaotic-good.",
+            "trader": "Pay for flow, not for noise.",
+            "whale": "Little hands move big levers.",
+            "hacker": "Gremlinware 1.0.",
+            "shiller": "Influencer affiliate secured.",
+            "validator": "Receipt written in giggles.",
+            "miner": "Hire local labor.",
+            "meme": "Hehe-as-a-button."
+          },
+          "telemetry_tags": ["scene:1.2","action:gremlin_whistle"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.2-R2",
+      "description": "Mood becomes architecture. The room changes its angle toward you depending on what you proved.",
+      "actions": [
+        {
+          "id": "trustful_weather",
+          "label": "If Trustful — Walk the Warm Aurora",
+          "requirements": { "items_any": [], "flags_all": ["trustful"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 1 },
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "Light moves with you rather than ahead. Echoes soften. Even your shadow looks relieved to be yours."
+            }
+          },
+          "banter": {
+            "dev": "UX: cooperative.",
+            "trader": "Slippage trimmed by manners.",
+            "whale": "Momentum, not force.",
+            "hacker": "Privilege: read-pleasant, write-kind.",
+            "shiller": "Aesthetic: welcome.",
+            "validator": "Friction down.",
+            "miner": "Heat, but friendly.",
+            "meme": "The room said we’re cool."
+          },
+          "telemetry_tags": ["scene:1.2","action:trustful_weather"]
+        },
+        {
+          "id": "shy_weather",
+          "label": "If Shy — Thread the Beaded Curtain",
+          "requirements": { "items_any": [], "flags_all": ["shy"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "Sparks hang like a beaded doorway. You pass through without catching a sleeve because you meant to."
+            }
+          },
+          "banter": {
+            "dev": "Tolerance window accepted.",
+            "trader": "Thin liquidity, clean execution.",
+            "whale": "Edges respected.",
+            "hacker": "No alarms if no bumps.",
+            "shiller": "Minimalist move; maximal effect.",
+            "validator": "Contact light, integrity high.",
+            "miner": "Don’t scrape your knuckles.",
+            "meme": "Tiptoe but in swagger."
+          },
+          "telemetry_tags": ["scene:1.2","action:shy_weather"]
+        },
+        {
+          "id": "insight_weather",
+          "label": "If Insight — Read the Jellyfish Runes",
+          "requirements": { "items_any": [], "flags_all": ["insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "Symbols float like bioluminescent creatures. You do not chase. They drift into memory at their pace and arrive right on time."
+            }
+          },
+          "banter": {
+            "dev": "Docs that read themselves.",
+            "trader": "Signal delivered gently.",
+            "whale": "Patience multiplies meaning.",
+            "hacker": "Autocompletion for the soul.",
+            "shiller": "Gorgeous typography.",
+            "validator": "Schema detectable.",
+            "miner": "Lights in the seam.",
+            "meme": "Undersea but above chain."
+          },
+          "telemetry_tags": ["scene:1.2","action:insight_weather"]
+        },
+        {
+          "id": "gremlin_weather",
+          "label": "If Gremlin — Tread the Graffiti",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 15 }
+              ],
+              "narration": "Walls develop writing in fifty hands: HEHE, and stick figures of you with heroic chins. Some of the jokes are good. Some of the jokes are daggers filed to look like jokes. You smile at both."
+            }
+          },
+          "banter": {
+            "dev": "UI is memes; backend is teeth.",
+            "trader": "Volatility but make it charming.",
+            "whale": "Stylish turbulence.",
+            "hacker": "Graffiti is plaintext with attitude.",
+            "shiller": "User-generated content: unstoppable.",
+            "validator": "Legibility… adequate.",
+            "miner": "Paint flakes; keep your filters on.",
+            "meme": "We’re canon now."
+          },
+          "telemetry_tags": ["scene:1.2","action:gremlin_weather"]
+        }
+      ]
+    },
+    {
+      "round_id": "1.2-R3",
+      "description": "The Ledger asks its question another way: a small, sharp test dressed as kindness.",
+      "actions": [
+        {
+          "id": "truth_tell",
+          "label": "Say Something True (All)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["social","will"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "You say the thing that costs a little to say. The room makes change in courage and hands it back neatly rolled."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "You dodge with elegance. The Ledger nods like a teacher who sees the dodge and saves the harder question for later."
+            }
+          },
+          "banter": {
+            "dev": "Truth compiles to trust.",
+            "trader": "Honesty is positive carry.",
+            "whale": "Weight can carry confession.",
+            "hacker": "No obfuscation this once.",
+            "shiller": "Transparency is a brand advantage.",
+            "validator": "Attestation: sincere.",
+            "miner": "Say it like a hammer.",
+            "meme": "We cry a little; it’s fine."
+          },
+          "telemetry_tags": ["scene:1.2","action:truth"]
+        },
+        {
+          "id": "flaw_confess",
+          "label": "Confess a Flaw (All)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["social","will"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "integrity_boost", "value": true },
+                { "type": "xp", "value": 25 }
+              ],
+              "narration": "Your seam shows. The vault approves the joinery. Hazards later grow one degree kinder—not soft, just honest."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "You try to confess a story and tell a performance. The Ledger sighs in a pitch that straightens picture frames."
+            }
+          },
+          "banter": {
+            "dev": "Bugs filed; will fix.",
+            "trader": "Greed reined; still present.",
+            "whale": "I am heavy and sometimes unkind.",
+            "hacker": "I like doors too much.",
+            "shiller": "I shout when I should listen.",
+            "validator": "I confuse rules with wisdom.",
+            "miner": "I swing too hard on thin rock.",
+            "meme": "I use humor to hide weather."
+          },
+          "telemetry_tags": ["scene:1.2","action:flaw"]
+        },
+        {
+          "id": "ask_better",
+          "label": "Ask a Better Question (All)",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 20 }
+              ],
+              "narration": "The Ledger loves a good question like a musician loves a good room. It answers in a smell: rain on hot stone. In a picture: two hands passing weight carefully. In a word that isn’t a word and tastes like *stewardship.*"
+            }
+          },
+          "banter": {
+            "dev": "Spec clarified by inquiry.",
+            "trader": "Edge refined by curiosity.",
+            "whale": "Weight respects wonder.",
+            "hacker": "Ask until the hinge answers.",
+            "shiller": "Curiosity is contagious.",
+            "validator": "Great questions make great proofs.",
+            "miner": "Find the seam by listening.",
+            "meme": "We asked the room for vibes; it gave us soup."
+          },
+          "telemetry_tags": ["scene:1.2","action:ask"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "sleight_gte": 5,  "rewards": [ { "type": "coins", "value": 60 } ] },
+    { "sleight_gte": 8,  "rewards": [ { "type": "coins", "value": 60 }, { "type": "fragment", "value": 1 } ] },
+    { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_weight_matters" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.trustful", "goto": "2A" },
+    { "when": "flags.insight",  "goto": "2C" },
+    { "when": "flags.gremlin",  "goto": "2D" },
+    { "when": "else",           "goto": "2B" }
+  ]
+}
