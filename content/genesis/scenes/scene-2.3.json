@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "2.3",
+  "title": "The Careful Corridor — Quiet Traps, Loud Lessons",
+  "narration": "The staircase ends at a mezzanine carved with warnings that refuse to be mean. Each warning is a bedtime story for grownups who carry backpacks and good intentions. Below the rail, an exhibit of tasteful dangers awaits: pressure tiles disguised as compliments, a pendulum that swings only when watched, a field of threads that become a web if you posture for the camera. None of these intend harm; all intend memory. The lanterns dim to a teaching brightness. Gremlins don tiny spectacles and pass out programs: today’s lesson is how not to be surprised by the obvious while remaining delighted by the unexpected.",
+  "rounds": [
+    {
+      "round_id": "2.3-R1",
+      "description": "Compliment Tiles: each says something nice; some mean it, some wait for feet.",
+      "actions": [
+        {
+          "id": "read_without_stepping",
+          "label": "Read the Compliment Without Stepping",
+          "requirements": { "items_any": [], "flags_all": ["glossary_made"] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","rune","poise"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "trapmap_soft", "value": true },
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "You parse the flattery into its moving parts. Three tiles blush guiltily and reveal their springs."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 1 }
+              ],
+              "narration": "A tile compliments your shoes and lightly pinches your ankle for believing it too fast."
+            }
+          },
+          "banter": {
+            "dev": "UX copy audit.",
+            "trader": "Sentiment ≠ price.",
+            "whale": "Wake ignores bait current.",
+            "hacker": "Compliments can be webhooks.",
+            "shiller": "Flatter, don’t splatter.",
+            "validator": "Text admissible or suspicious.",
+            "miner": "Read the rock before the rock reads you.",
+            "meme": "Rizz with receipts."
+          },
+          "telemetry_tags": ["scene:2.3","action:read_without_stepping"]
+        },
+        {
+          "id": "probe_with_spear",
+          "label": "Probe with Liquidity Spear",
+          "requirements": { "items_any": ["weapon_liquidity_spear"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["recon","tactics"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "preview_safe_step", "value": true }
+              ],
+              "narration": "Tap-tap: the honest tiles ring at a frequency only confident ankles hear."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "Your spear holds forth on depth again. The tiles applaud ironically."
+            }
+          },
+          "banter": {
+            "dev": "Prefetch pressure map.",
+            "trader": "Price test before size.",
+            "whale": "Wake scouts seam safely.",
+            "hacker": "Probe with empathy.",
+            "shiller": "Reveal and revel.",
+            "validator": "Ping logged.",
+            "miner": "Tap until the hollow sings.",
+            "meme": "Tap-indeed."
+          },
+          "telemetry_tags": ["scene:2.3","action:probe_with_spear"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.3-R2",
+      "description": "Observer Pendulum: swings only under observation, teaches about bias with charm.",
+      "actions": [
+        {
+          "id": "look_then_not",
+          "label": "Look, Then Don’t",
+          "requirements": { "items_any": [], "flags_all": ["harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 12 }
+              ],
+              "narration": "You observe, release, and allow. The pendulum confesses it likes being watched but doesn’t need the pressure."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You stare too hard and the pendulum stares back. Nobody swings."
+            }
+          },
+          "banter": {
+            "dev": "Observer effect demo.",
+            "trader": "Market watched behaves worse.",
+            "whale": "Wake smooths when ignored.",
+            "hacker": "Measure without meddling.",
+            "shiller": "Stage lights can blind.",
+            "validator": "Observation logged as influence.",
+            "miner": "Look, then swing.",
+            "meme": "Schrödinger’s swing."
+          },
+          "telemetry_tags": ["scene:2.3","action:look_then_not"]
+        },
+        {
+          "id": "gremlin_cover_eyes",
+          "label": "Gremlin Eye-Cover (Optional)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "roll": { "kind": "phi_d20", "tags": ["gremlin","morale"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 1 }
+              ],
+              "narration": "A tiny paw covers your eyes at the exact right moment. The world relaxes by one notch."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 6 }
+              ],
+              "narration": "Misdirected paw; the pendulum takes a light bop at your pride. Fine applied; sticker granted."
+            }
+          },
+          "banter": {
+            "dev": "Adorable middleware.",
+            "trader": "Sentiment dampener.",
+            "whale": "Wake gets privacy.",
+            "hacker": "Opt-out toggle, furry.",
+            "shiller": "Mascot-driven focus.",
+            "validator": "Cover step noted.",
+            "miner": "Blink, then bite.",
+            "meme": "Peekaboo patch."
+          },
+          "telemetry_tags": ["scene:2.3","action:gremlin_cover_eyes"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.3-R3",
+      "description": "Thread Field: thin lines that knot into webbing if you perform for them.",
+      "actions": [
+        {
+          "id": "move_without_show",
+          "label": "Move Without Performing",
+          "requirements": { "items_any": [], "flags_all": ["careful_next_act"] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","integrity","stealth"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "threads_unimpressed", "value": true }
+              ],
+              "narration": "You travel like a useful rumor—quiet, accurate, unglamorous. The threads decline to knot around you."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "A flourish sneaks into a shoulder. Threads raise an eyebrow and tie one disapproving bow near your boot."
+            }
+          },
+          "banter": {
+            "dev": "No logging, just doing.",
+            "trader": "No victory laps; book it.",
+            "whale": "Wake without spray.",
+            "hacker": "Exploit without clout.",
+            "shiller": "Restraint is a campaign.",
+            "validator": "Humility attested.",
+            "miner": "Swing, don’t sing.",
+            "meme": "Silent W."
+          },
+          "telemetry_tags": ["scene:2.3","action:move_without_show"]
+        },
+        {
+          "id": "gaslight_cloak",
+          "label": "Gaslight Cloak Mislead (If Equipped)",
+          "requirements": { "items_any": ["armor_gaslight_cloak"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "buff", "id": "thread_ignore", "value": true }
+              ],
+              "narration": "Threads lose interest in your statistically average swagger. A mercy."
+            }
+          },
+          "banter": {
+            "dev": "Perception layer shim.",
+            "trader": "Hide size, show grace.",
+            "whale": "Wake looks normal (lol).",
+            "hacker": "Adversarial glam filter.",
+            "shiller": "Invisible flex.",
+            "validator": "De-emphasized safely.",
+            "miner": "Dust jacket for deeds.",
+            "meme": "Stealth drip."
+          },
+          "telemetry_tags": ["scene:2.3","action:gaslight_cloak"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.3-R4",
+      "description": "Courtesy Alarms: bells ring if you forget ‘please.’",
+      "actions": [
+        {
+          "id": "say_please",
+          "label": "Say Please Before Crossing Beam",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["social","integrity"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "A bell rings like a smile you can hear. The beam settles into a more welcoming angle."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "You mumble. The alarm considers ringing, then writes you a recommendation to try again later."
+            }
+          },
+          "banter": {
+            "dev": "Politeness is a protocol.",
+            "trader": "Manners reduce friction.",
+            "whale": "Wake yields and gets yield.",
+            "hacker": "Exploit courtesy for access.",
+            "shiller": "Please is a brand asset.",
+            "validator": "Civility logged.",
+            "miner": "Ask the rock nicely.",
+            "meme": "Please% ↑."
+          },
+          "telemetry_tags": ["scene:2.3","action:say_please"]
+        },
+        {
+          "id": "meme_apology",
+          "label": "Meme Lord Apology (If Class: Meme)",
+          "requirements": { "items_any": [], "flags_all": ["class_meme"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "A sincere shitpost restores equilibrium. Courtesy alarms stan redemption arcs."
+            }
+          },
+          "banter": {
+            "dev": "Patch notes: apologized.",
+            "trader": "Sentiment recovered.",
+            "whale": "Wake forgives wakes.",
+            "hacker": "Exploit closed humanely.",
+            "shiller": "PR with punchline.",
+            "validator": "Apology admissible.",
+            "miner": "Laugh and swing better.",
+            "meme": "Sry 4 being based."
+          },
+          "telemetry_tags": ["scene:2.3","action:meme_apology"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.3-R5",
+      "description": "Reproof Booth: failure converts to instruction with a receipt.",
+      "actions": [
+        {
+          "id": "submit_failure",
+          "label": "Submit a Recent Failure for Review",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","ritual","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "phrase_fail_forward_form" },
+                { "type": "xp", "value": 16 }
+              ],
+              "narration": "Your flop becomes a form with a checkbox: learned. The booth stamps: APPROVED FOR BETTER."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 10 }
+              ],
+              "narration": "A tidy note titles your misstep: rehearsal."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You dodge the point and the point boomerangs gently into your ribs."
+            }
+          },
+          "banter": {
+            "dev": "Post-mortem culture wins.",
+            "trader": "Loss journaled = alpha later.",
+            "whale": "Wake accepts drag to improve keel.",
+            "hacker": "Root cause, root growth.",
+            "shiller": "Own the L, sell the arc.",
+            "validator": "Review admissible.",
+            "miner": "Miss, learn, hit.",
+            "meme": "L → lore."
+          },
+          "telemetry_tags": ["scene:2.3","action:submit_failure"]
+        },
+        {
+          "id": "patch_draft",
+          "label": "Use Patch Draft (Consumable)",
+          "requirements": { "items_any": ["consumable_patch_draft"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 }
+              ],
+              "narration": "A neat sticky label turns ‘mistake’ into ‘draft.’ Your shoulders thank the semantic upgrade."
+            }
+          },
+          "banter": {
+            "dev": "Hotfix for heart.",
+            "trader": "Drawdown reframed.",
+            "whale": "Wake edits wake.",
+            "hacker": "PR merged emotionally.",
+            "shiller": "Spin, but honest.",
+            "validator": "Patch documented.",
+            "miner": "Glue for grit.",
+            "meme": "Ctrl-Z in a bottle."
+          },
+          "telemetry_tags": ["scene:2.3","action:patch_draft"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.3-R6",
+      "description": "Kind Exit: the mezzanine asks for one more demonstration of restraint.",
+      "actions": [
+        {
+          "id": "exit_without_flourish",
+          "label": "Exit Without Flourish",
+          "requirements": { "items_any": [], "flags_all": ["threads_unimpressed"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "Nothing remarkable happens, on purpose. The lanterns record a very satisfying nothing."
+            }
+          },
+          "banter": {
+            "dev": "Sensible defaults.",
+            "trader": "No victory lap, no slippage.",
+            "whale": "Wake settles quietly.",
+            "hacker": "Leave no surface exposed.",
+            "shiller": "Under-promise, properly deliver.",
+            "validator": "Unremarkable, and that’s the point.",
+            "miner": "Pack your pick, not your ego.",
+            "meme": "Subtle W (rare)."
+          },
+          "telemetry_tags": ["scene:2.3","action:exit_without_flourish"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.3-R7",
+      "description": "Fork of Futures: careful continues, insight seduces, gremlins giggle somewhere ahead.",
+      "actions": [
+        {
+          "id": "advance_careful",
+          "label": "Advance: Stay Careful",
+          "requirements": { "items_any": [], "flags_all": ["careful_next_act"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "The Corridor grows fractionally wider, like trust earned with yourself.",
+              "next_hint": "2.4"
+            }
+          },
+          "banter": {
+            "dev": "Module chain continues.",
+            "trader": "Patience compounds.",
+            "whale": "Wake deepens.",
+            "hacker": "Hinges remain friendly.",
+            "shiller": "Campaign arc breathes.",
+            "validator": "Checkpoint notarized.",
+            "miner": "Quiet gains.",
+            "meme": "Careful saga DLC."
+          },
+          "telemetry_tags": ["scene:2.3","action:advance_careful"]
+        },
+        {
+          "id": "branch_insight",
+          "label": "Branch: The Moving Library",
+          "requirements": { "items_any": [], "flags_all": ["key_insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "A page-door turns; a margin opens. The Library hums you in.",
+              "next_hint": "2C"
+            }
+          },
+          "banter": {
+            "dev": "Docs side quest (main quest).",
+            "trader": "Information alpha time.",
+            "whale": "Wake reads the riverbed.",
+            "hacker": "Find the hinge in the index.",
+            "shiller": "Lore arc sells itself.",
+            "validator": "Card catalog attested.",
+            "miner": "Veins in books.",
+            "meme": "Library speedrun."
+          },
+          "telemetry_tags": ["scene:2.3","action:branch_insight"]
+        },
+        {
+          "id": "branch_gremlin",
+          "label": "Branch: Gremlin Carnival",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "Streamers fall from nowhere. A ticket bites your finger affectionately.",
+              "next_hint": "2D"
+            }
+          },
+          "banter": {
+            "dev": "Chaos with railings.",
+            "trader": "Vol but wholesome.",
+            "whale": "Wake rides rides.",
+            "hacker": "Exploit consented.",
+            "shiller": "Content farm (ethical).",
+            "validator": "Wristband recorded.",
+            "miner": "Games mine smiles.",
+            "meme": "Hehe-world."
+          },
+          "telemetry_tags": ["scene:2.3","action:branch_gremlin"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "sleight_gte": 5,  "rewards": [ { "type": "coins", "value": 80 } ] },
+    { "sleight_gte": 8,  "rewards": [ { "type": "coins", "value": 80 }, { "type": "fragment", "value": 1 } ] },
+    { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_fail_forward_form" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.key_insight", "goto": "2C" },
+    { "when": "flags.gremlin", "goto": "2D" },
+    { "when": "else", "goto": "2.4" }
+  ]
+}
