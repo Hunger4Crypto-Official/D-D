@@ -1,0 +1,433 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "2.4",
+  "title": "The Careful Corridor — Crosschecks & Echoes",
+  "narration": "Corridor becomes colonnade: pairs of pillars face each other like witnesses sworn in duplicate. Every sound returns with a footnote: your step arrives, then its audit; your intention speaks, then its transcript reads it back with kinder grammar. Chalk lines on the floor form careful lanes—not to constrain, but to declare which questions belong where. Lanterns here are quieter, as if inside libraries wearing hard hats. A placard reads: “In this span, the echo is not an echo; it is a second mind.” Gremlins roll out a tape measure that measures reasons instead of inches. Someone has etched a small mercy into the rail: ‘We check because we care to carry together.’ The metal smells like restraint warmed by courage.",
+  "rounds": [
+    {
+      "round_id": "2.4-R1",
+      "description": "Twin Pillars: speak a plan to one pillar; the other repeats it with corrections if welcomed.",
+      "actions": [
+        {
+          "id": "invite_correction",
+          "label": "Invite the Echo to Correct You",
+          "requirements": { "items_any": [], "flags_all": ["intent_logged"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","social","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "buff", "id": "echo_partner", "value": true },
+                { "type": "xp", "value": 22 }
+              ],
+              "narration": "Your echo returns with additions you meant but had not said. The pillars trade nods like colleagues who trust your draft."
+            },
+            "success": {
+              "effects": [ { "type": "buff", "id": "echo_partner", "value": true } ],
+              "narration": "Edits arrive as kindness with timestamps. Your plan stands straighter without getting taller."
+            },
+            "fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 1 } ],
+              "narration": "You brace against the feedback and the echo braces back. Both of you exhale a note to try again softer."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "hp", "op": "-", "value": 3 } ],
+              "narration": "You declare perfection; the echo declares gravity. The floor demonstrates consensus."
+            }
+          },
+          "banter": {
+            "dev": "Rubber duck with write access.",
+            "trader": "Echo = counterparty sanity check.",
+            "whale": "Wake reviews wake.",
+            "hacker": "Feedback loop, not feedback trap.",
+            "shiller": "Brand draft, now proofed.",
+            "validator": "Corrections notarized.",
+            "miner": "Plan, then pick.",
+            "meme": "Echo: friend not clone."
+          },
+          "telemetry_tags": ["scene:2.4","action:invite_correction"]
+        },
+        {
+          "id": "gremlin_echo_peanuts",
+          "label": "Pay Gremlin for Peanut Gallery (Optional)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 7 },
+                { "type": "buff", "id": "hehe_advantage_next", "value": true }
+              ],
+              "narration": "Two gremlins annotate your echo with jokes that land like cushions. The hard parts bounce once before they teach."
+            }
+          },
+          "banter": {
+            "dev": "Humor middleware.",
+            "trader": "Vol dampened by chuckles.",
+            "whale": "Wake smiles; spray lowers.",
+            "hacker": "Latency of pain reduced.",
+            "shiller": "Punchline polish.",
+            "validator": "Laughs logged.",
+            "miner": "Jokes keep wrists loose.",
+            "meme": "Peanut gallery α."
+          },
+          "telemetry_tags": ["scene:2.4","action:gremlin_echo_peanuts"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.4-R2",
+      "description": "Ledger Mirror: a waist-high mirror shows posture; a brass plate beneath logs methods used.",
+      "actions": [
+        {
+          "id": "mirror_method",
+          "label": "Mirror Your Method (Describe Then Do)",
+          "requirements": { "items_any": [], "flags_all": ["glossary_made"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","rune","poise"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "phrase_method_makes_margin" },
+                { "type": "xp", "value": 18 }
+              ],
+              "narration": "Your outline teaches your limbs. The plate engraves: METHOD MAKES MARGIN."
+            },
+            "success": {
+              "effects": [ { "type": "flag", "id": "method_reflected", "value": true } ],
+              "narration": "You name steps kindly; your stance edits itself into comfort."
+            },
+            "fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 1 } ],
+              "narration": "You skip a description; a calf muscle files a bug report."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "hp", "op": "-", "value": 2 } ],
+              "narration": "You pantomime perfection; the mirror mimics fatigue. Lesson accepted through shin."
+            }
+          },
+          "banter": {
+            "dev": "Docstrings for bodies 2.0.",
+            "trader": "Playbook > play.",
+            "whale": "Wake planned flows truer.",
+            "hacker": "Spec drives build.",
+            "shiller": "Narrative of how beats hype of what.",
+            "validator": "Method attested.",
+            "miner": "Describe swing, then swing.",
+            "meme": "Tutorial IRL v2."
+          },
+          "telemetry_tags": ["scene:2.4","action:mirror_method"]
+        },
+        {
+          "id": "oracle_line",
+          "label": "Trace Safe Line (If Oracle or Spear Buff)",
+          "requirements": { "items_any": [], "flags_all": ["preview_safe_step"] },
+          "outcomes": {
+            "success": {
+              "effects": [ { "type": "buff", "id": "lane_safe", "value": true } ],
+              "narration": "A faint silver line appears where you intend to be kind to your future ankles."
+            }
+          },
+          "banter": {
+            "dev": "Precomputed path.",
+            "trader": "Marked liquidity.",
+            "whale": "Wake groove drawn.",
+            "hacker": "Cursor on corridor.",
+            "shiller": "UX of foresight.",
+            "validator": "Line admissible.",
+            "miner": "Chalk the seam.",
+            "meme": "Glow line go brr."
+          },
+          "telemetry_tags": ["scene:2.4","action:oracle_line"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.4-R3",
+      "description": "Call-and-Response Steps: the floor asks, you answer with feet.",
+      "actions": [
+        {
+          "id": "answer_in_time",
+          "label": "Answer in Time (Two-Beat Reply)",
+          "requirements": { "items_any": [], "flags_all": ["rhythm_true","harmony_kept"] },
+          "roll": { "kind": "phi_d20", "tags": ["harmony","poise","focus"] },
+          "outcomes": {
+            "success": {
+              "effects": [ { "type": "sleight", "op": "+", "value": 1 } ],
+              "narration": "Your reply lands like a compliment properly sized to the question."
+            },
+            "fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 1 } ],
+              "narration": "You answer early and the step answers late. Both of you agree to laugh later."
+            }
+          },
+          "banter": {
+            "dev": "Event timing solid.",
+            "trader": "Spread tightened by rhythm.",
+            "whale": "Wake and echo harmonize.",
+            "hacker": "Latency budget met.",
+            "shiller": "Beat-matched brand.",
+            "validator": "Timing attested.",
+            "miner": "Pick meets vein on two.",
+            "meme": "Clap back (literally)."
+          },
+          "telemetry_tags": ["scene:2.4","action:answer_in_time"]
+        },
+        {
+          "id": "buddy_count",
+          "label": "Buddy Count (If Paired)",
+          "requirements": { "items_any": [], "flags_all": ["buddy_check"] },
+          "outcomes": {
+            "success": {
+              "effects": [ { "type": "buff", "id": "sync_pair_adv", "value": true } ],
+              "narration": "You and your partner trade counts like batons. The lane widens politely."
+            }
+          },
+          "banter": {
+            "dev": "Pair programming for ankles.",
+            "trader": "Two voices, one book.",
+            "whale": "Wake braided again.",
+            "hacker": "Distributed timing.",
+            "shiller": "Duet UX.",
+            "validator": "Co-signature recorded.",
+            "miner": "Two swings, single seam.",
+            "meme": "Co-op cadence."
+          },
+          "telemetry_tags": ["scene:2.4","action:buddy_count"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.4-R4",
+      "description": "Discrepancy Bench: submit a conflict between plan and practice; receive a reconcile.",
+      "actions": [
+        {
+          "id": "file_variance",
+          "label": "File a Variance (Plan vs. Reality)",
+          "requirements": { "items_any": [], "flags_all": ["method_reflected"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","insight","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "trinket_variance_stamp" },
+                { "type": "xp", "value": 18 }
+              ],
+              "narration": "You name the mismatch without drama and without shrug. The bench prints a stamp: ‘Variance: Welcomed, Resolved.’"
+            },
+            "success": {
+              "effects": [ { "type": "flag", "id": "variance_logged", "value": true } ],
+              "narration": "A tidy reconcile line links intent to outcome with a bridge of because."
+            },
+            "fail": {
+              "effects": [ { "type": "coins", "op": "-", "value": 8 } ],
+              "narration": "You round the corners; the bench bills you for sandpaper."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "hp", "op": "-", "value": 2 } ],
+              "narration": "You perform the variance instead of filing it. The bench files you under ‘teachable.’"
+            }
+          },
+          "banter": {
+            "dev": "Post-mortem but alive.",
+            "trader": "Slippage named is slippage tamed.",
+            "whale": "Wake admits crosswind.",
+            "hacker": "Gap identified, patch follows.",
+            "shiller": "Narrative includes edits.",
+            "validator": "Variance attested.",
+            "miner": "Swing drift → corrected.",
+            "meme": "Oops → oopsology."
+          },
+          "telemetry_tags": ["scene:2.4","action:file_variance"]
+        },
+        {
+          "id": "gremlin_receipt_confetti",
+          "label": "Buy Confetti Receipt (Optional)",
+          "requirements": { "items_any": [], "flags_all": ["gremlin"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 5 },
+                { "type": "buff", "id": "variance_celebrated", "value": true }
+              ],
+              "narration": "A receipt prints with confetti perforations. Tearing it off feels like a fresh start with witnesses."
+            }
+          },
+          "banter": {
+            "dev": "Cheerful compliance artifact.",
+            "trader": "Fees, but make them fiesta.",
+            "whale": "Wake throws tiny party.",
+            "hacker": "DX of doing it right.",
+            "shiller": "PR for honesty.",
+            "validator": "Receipt embellished (allowed).",
+            "miner": "Confetti mines morale.",
+            "meme": "Paper L → paper win."
+          },
+          "telemetry_tags": ["scene:2.4","action:gremlin_receipt_confetti"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.4-R5",
+      "description": "Echo Well: speak one sentence you intend to keep; the Well returns a shorter one you cannot forget.",
+      "actions": [
+        {
+          "id": "compress_oath",
+          "label": "Compress an Oath to Five Words",
+          "requirements": { "items_any": [], "flags_all": ["careful_next_act"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","integrity","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "phrase_small_words_big_spine" },
+                { "type": "xp", "value": 16 }
+              ],
+              "narration": "Your words shrink and harden into a pocket-size sentence that carries you back when you drift."
+            },
+            "success": {
+              "effects": [ { "type": "buff", "id": "oath_compact", "value": true } ],
+              "narration": "The Well returns a version you can whisper while moving."
+            },
+            "fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 1 } ],
+              "narration": "You try for poetry and catch fog. The Well suggests nouns."
+            }
+          },
+          "banter": {
+            "dev": "Commit message ≤ 5 words.",
+            "trader": "Rule of five holds risk.",
+            "whale": "Wake motto fixed.",
+            "hacker": "Slogan as guardrail.",
+            "shiller": "Tagline with teeth.",
+            "validator": "Oath admissible.",
+            "miner": "Five words, deeper seam.",
+            "meme": "Tiny vow, giga vibes."
+          },
+          "telemetry_tags": ["scene:2.4","action:compress_oath"]
+        },
+        {
+          "id": "share_oath_pair",
+          "label": "Share Oath with Partner",
+          "requirements": { "items_any": [], "flags_all": ["buddy_check","oath_compact"] },
+          "outcomes": {
+            "success": {
+              "effects": [ { "type": "buff", "id": "buddy_oath_sync", "value": true } ],
+              "narration": "Two oaths braid; one rope forms."
+            }
+          },
+          "banter": {
+            "dev": "Distributed fail-safes.",
+            "trader": "Social stop-loss.",
+            "whale": "Wake remembers together.",
+            "hacker": "Pair promises, fewer bugs.",
+            "shiller": "Co-brand courage.",
+            "validator": "Dual oath recorded.",
+            "miner": "Rope > thread.",
+            "meme": "Vow2Vec."
+          },
+          "telemetry_tags": ["scene:2.4","action:share_oath_pair"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.4-R6",
+      "description": "Quality Gate: a frame with three beads—Kind, Clear, True. Pass only if two click; pass with flourish if three.",
+      "actions": [
+        {
+          "id": "bead_check",
+          "label": "Click Two Beads (Kind + Clear)",
+          "requirements": { "items_any": [], "flags_all": ["echo_partner","method_reflected"] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","integrity","social"] },
+          "outcomes": {
+            "success": {
+              "effects": [ { "type": "xp", "value": 12 } ],
+              "narration": "Kind and Clear click. True nods from across the room, promising to catch up."
+            },
+            "fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 1 } ],
+              "narration": "You fumble Clear and it rolls under a gremlin. Rental fee applied in the form of side-eye."
+            }
+          },
+          "banter": {
+            "dev": "K-C-T gate ≈ linter.",
+            "trader": "Two greens, one amber.",
+            "whale": "Wake clears two buoys.",
+            "hacker": "Ship with kindness and clarity.",
+            "shiller": "Brand tone meets truth later.",
+            "validator": "Beads logged.",
+            "miner": "Click, click, through.",
+            "meme": "K+C > K.O."
+          },
+          "telemetry_tags": ["scene:2.4","action:bead_check"]
+        },
+        {
+          "id": "triple_true",
+          "label": "Click All Three (If Variance Logged)",
+          "requirements": { "items_any": [], "flags_all": ["variance_logged"] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","integrity","poise"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "sleight", "op": "+", "value": 1 },
+                { "type": "item", "id": "phrase_kind_clear_true" }
+              ],
+              "narration": "True clicks with the relief of a ledger that matches down to the pebble."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "True hesitates. It wants your next attempt, not your next performance."
+            }
+          },
+          "banter": {
+            "dev": "Strict mode enabled.",
+            "trader": "Reconcile, then ring.",
+            "whale": "Wake lines up bow to stern.",
+            "hacker": "Assertions all pass.",
+            "shiller": "Truth sells itself.",
+            "validator": "Triple click admissible.",
+            "miner": "Three beads = clean seam.",
+            "meme": "KCT 100%."
+          },
+          "telemetry_tags": ["scene:2.4","action:triple_true"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.4-R7",
+      "description": "Off-Ramp of Echoes: the corridor asks whether you continue careful, detour for lore, or carnival with gremlins.",
+      "actions": [
+        {
+          "id": "advance_to_2.5",
+          "label": "Advance — Measured",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "The pillars dim respectfully. A stripe of light shows stairs ahead that have already read your steps.",
+              "next_hint": "2.5"
+            }
+          },
+          "banter": {
+            "dev": "Module sealed; next mounted.",
+            "trader": "Continuity compounding.",
+            "whale": "Wake threads onward.",
+            "hacker": "No warnings left behind.",
+            "shiller": "Act 2 keeps its cadence.",
+            "validator": "Exit notarized.",
+            "miner": "Pick up; move on.",
+            "meme": "Careful.exe persists."
+          },
+          "telemetry_tags": ["scene:2.4","action:advance_to_2.5"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "sleight_gte": 5, "rewards": [ { "type": "coins", "value": 85 } ] },
+    { "sleight_gte": 8, "rewards": [ { "type": "coins", "value": 85 }, { "type": "fragment", "value": 1 } ] },
+    { "sleight_gte": 10, "rewards": [ { "type": "item", "id": "phrase_kind_clear_true" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.key_insight", "goto": "2C" },
+    { "when": "flags.gremlin", "goto": "2D" },
+    { "when": "else", "goto": "2.5" }
+  ]
+}
