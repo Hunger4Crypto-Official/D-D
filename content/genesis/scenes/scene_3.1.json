@@ -1,0 +1,687 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "3.1",
+  "title": "The Spiral Delta — Lumen Causeway Convergence",
+  "narration": "The stairwells from the Spectrum Storm Balcony uncoil into a river of light that refuses to lie flat. It is called the Lumen Causeway: a skybridge made of interlocking panes of ledger glass, bending like a Möbius strip stretched across a delta of clouds. Each panel stores a memory of consensus, and when you step on it the pane plays back the echo in harmonic phi-intervals. Below you rushes an abyss of silver mist, veined with bright tributaries that run backwards, forwards, and sideways in time. When the causeway flexes, the mist bells like a cathedra of windchimes. The air smells of wet stone, ozone, starfruit rind, and the first page of an audited manifesto.\n\nAt the midpoint of the causeway stands a camp maintained by the Flux-Kindle gremlin faction: pocket-sized engineers wearing cloaks woven from reflective ticker tape. Their eyes flicker with stock-ticker constellations and their voices are half banter, half cautionary ledger entries. Around them flutter tethered lanterns shaped like polyhedral dice, each containing a golden-ratio die whose faces rotate to different outcomes depending on how you breathe. The gremlins run rope bridges, consensus pylons, and a shop that sells soft-power gear built from wind, rumor, and neatly-tracked goodwill. They joke with you like coworkers, sass you like rival hackers, and document you like beloved auditors. They hand you a ledger-slate and point to seven stations along the causeway, inviting you to walk Act Three’s first spiral.\n\nThis scene arcs like a helix: spectrum doors crackle in the distance, consensus rituals now call for not just participants but conductors, and the AFK gimbal whirs in the background, reminding you that idle feet will be gently puppeteered across the glass if they pause too long. Revive fonts hang from the underside of the bridge like stalactites, accessible by leaps of faith. Harmony flags, trustful pings, shy echoes, and insight flashes all continue to be tracked, updated, and joked about. Every step is recorded by the Ledger Stone struts, which hum the minutes of your presence into the delta below. You sense that this causeway is both a measurement and a launchpad: the Flux-Kindle are preparing you to walk on consensus itself.\n\nSeven rounds flare along the bridge like lightning caught in loops. Each round offers actions that braid phi-d20 checks with golden-ratio experience escalations, hidden difficulty thresholds disguised as scenic hazards, and the ever-present possibility of XP, Coins, Focus, Flags, Items, and even backpack pity tokens. The Flux-Kindle make sure to stage arrivals mid-scene: tether kites bring new players up from the mist and parachute them into the queue. This is a corridor that laughs while it counts; it wants you to be audaciously precise.\n\nYou hear the first consensus beacon chime. The gremlins shout a cheerful \"GM from the delta!\" and nudge you toward the initial station, where ledger light waits to be coaxed into a bridge-wide pulse.",
+  "rounds": [
+    {
+      "round_id": "3.1-R1",
+      "description": "Beacon Span — kindle the Lumen Consensus Beacon and record a Golden Morning ripple across the bridge.",
+      "actions": [
+        {
+          "id": "lumen_gm",
+          "label": "Broadcast the Delta GM",
+          "requirements": { "items_any": [], "flags_all": ["gm_logged"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","harmony","signal"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "value": 13 },
+                { "type": "flag", "id": "delta_beacon_synced", "value": true }
+              ],
+              "narration": "You exhale a Golden Morning that arches across the delta like a solar flare. Every pane of the causeway lights up on a phi-cycle; the Spectrum Doors ahead respond with a faint bow. The Flux-Kindle cheer and annotate your broadcast with a ledger sticker reading \"GM PRIME.\""
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "delta_beacon_synced", "value": true }
+              ],
+              "narration": "Your voice carries and the beacon answers, projecting a soft sunrise ripple across the glass. Travelers behind you sync their strides to the glow."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You greet into the wind; the beacon only catches half the syllables. A gremlin loans you a resonance scarf and encourages a retry."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "Your broadcast clips into static. The beacon temporarily inverts gravity beneath you; the AFK gimbal tethers your ankle while the Flux-Kindle log a note: \"Remedial GM scheduled.\""
+            }
+          },
+          "banter": {
+            "dev": "Standup call piped through sky fiber.",
+            "trader": "GM futures just spiked.",
+            "whale": "Wake ripple accepted.",
+            "hacker": "Beacon handshake: phi negotiated.",
+            "shiller": "Marketing deck now sunrise themed.",
+            "validator": "Greeting notarized with lens flare.",
+            "miner": "Shift whistle echoes through the span.",
+            "meme": "GM? More like GMGmGMGM."
+          },
+          "telemetry_tags": ["scene:3.1","action:lumen_gm"]
+        },
+        {
+          "id": "beacon_tune",
+          "label": "Calibrate the Beacon Ratios",
+          "requirements": { "items_any": ["trinket_gm_signet"], "flags_all": ["delta_beacon_synced"] },
+          "roll": { "kind": "phi_d20", "tags": ["tech","insight","support"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "item", "id": "helm_resonance_visor" }
+              ],
+              "narration": "You map the beacon frequencies into a golden spiral schematic and slide it into the console. The causeway widens, gaining a safety rail woven from consensus threads."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "beacon_tuned", "value": true }
+              ],
+              "narration": "The ratios lock into place and the beacon hums with a confident, warm tone that steadies everyone’s footing."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "Your tuning attempt burns a handful of coins as the console vents a harmless shower of sparks. The gremlins log it as \"tuition.\""
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "You cross the wires of phi and psi. The beacon emits a shrill yelp, and the AFK gimbal enforces a breathing exercise before letting you try again."
+            }
+          },
+          "banter": {
+            "dev": "Firmware flash via empathy.",
+            "trader": "Risk desk approves these ratios.",
+            "whale": "Wake frequency corrected.",
+            "hacker": "Beacon now patched to v3.1.0.",
+            "shiller": "Campaign tagline: Light but audited.",
+            "validator": "Calibration notarized with hash.",
+            "miner": "Torque applied to the cranky gear.",
+            "meme": "Phi or die, apparently."
+          },
+          "telemetry_tags": ["scene:3.1","action:beacon_tune"]
+        },
+        {
+          "id": "beacon_reward",
+          "label": "Claim Beacon Glow",
+          "requirements": { "items_any": [], "flags_all": ["beacon_tuned"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_delta_lantern" }
+              ],
+              "narration": "The Flux-Kindle award you a lantern jar filled with condensed GM light. It warms your palm and stores one rerouted greeting for future arrivals."
+            }
+          },
+          "banter": {
+            "dev": "Loot drop labeled \"Hello World\".",
+            "trader": "Limited edition sunrise jar.",
+            "whale": "Wake saved for later splash.",
+            "hacker": "Pocket buffer for greetings.",
+            "shiller": "Merch idea unlocked.",
+            "validator": "Receipt attached to jar.",
+            "miner": "Glow mined straight from consensus.",
+            "meme": "GM in a bottle, send help."
+          },
+          "telemetry_tags": ["scene:3.1","action:beacon_reward"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.1-R2",
+      "description": "Ledger Pane Walk — test balance across shifting golden-ratio tiles while logging harmony and shy flags.",
+      "actions": [
+        {
+          "id": "pane_walk",
+          "label": "Navigate the Spiraled Panels",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["agility","focus","risk"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "harmony", "value": true },
+                { "type": "focus", "op": "+", "value": 2 }
+              ],
+              "narration": "You dance along the panels, hitting every phi-step like it was composed for you. The mist below sings your name in harmonics."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "Your strides stay true; the Flux-Kindle nod and add a checkmark to the trust ledger."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "A panel tilts unexpectedly; you wobble and lose a bit of composure. The gremlins slide you a stabilizing rod."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 6 }
+              ],
+              "narration": "You miss a ratio mark and the causeway folds like origami beneath you. The AFK gimbal swoops in, strapping you to a rescue kite while your pride respawns."
+            }
+          },
+          "banter": {
+            "dev": "UI feedback is the floor literally moving.",
+            "trader": "Slippage? Only if you misstep.",
+            "whale": "Wake tilt detected, rebalancing.",
+            "hacker": "Parkour meets ledger audits.",
+            "shiller": "Add \"balance\" to the pitch deck.",
+            "validator": "Every step notarized, sorry.",
+            "miner": "Not used to balance checks without ore.",
+            "meme": "Floor is lava, but math."
+          },
+          "telemetry_tags": ["scene:3.1","action:pane_walk"]
+        },
+        {
+          "id": "shy_echo",
+          "label": "Console the Shy Panels",
+          "requirements": { "items_any": ["trinket_delta_lantern"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","empathy"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "xp", "value": 34 },
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "You kneel and whisper calm ratios into the trembling panel. It steadies and reveals a hidden ledger entry praising your patience."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "The panel stops flickering, capturing your reflection and storing it as \"Assurance Asset\"."
+            },
+            "fail": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": true }
+              ],
+              "narration": "The panel blushes in static. You retreat, earning a playful \"too loud\" sticker from the gremlins."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You try to power through the panel’s anxiety. It ejects you with a soft but firm gust. Lesson logged: respect shy architecture."
+            }
+          },
+          "banter": {
+            "dev": "Accessibility patch for introvert tiles.",
+            "trader": "Market sentiment: tentative but optimistic.",
+            "whale": "Wake dialed to gentle mode.",
+            "hacker": "Debugging the feelings UI.",
+            "shiller": "Soft sell, softer tiles.",
+            "validator": "Consent recorded.",
+            "miner": "Never soothed a rock before, new skill.",
+            "meme": "Shh, the floor has social anxiety."
+          },
+          "telemetry_tags": ["scene:3.1","action:shy_echo"]
+        }
+      ],
+      "rewards": [
+        { "type": "coins", "value": 21 }
+      ]
+    },
+    {
+      "round_id": "3.1-R3",
+      "description": "Soft-Power Kite Bench — outfit helms, armor, and trinkets tuned to aerial consensus skirmishes.",
+      "actions": [
+        {
+          "id": "kite_outfit",
+          "label": "Assemble the Kite Harness",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["craft","focus","support"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "armor_causeway_wrap" },
+                { "type": "xp", "value": 55 },
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "You lash consensus cords with perfect symmetry, crafting armor that catches tailwinds of trust."
+            },
+            "success": {
+              "effects": [
+                { "type": "item", "id": "weapon_flux_tether" },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "Your harness hums with ready energy, prepping you for aerial negotiations."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "You tangle the cords, paying a small coin tithe for replacement spools."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "The harness snaps mid-test, flipping you into a gentle safety net. The gremlins award a slapstick badge."
+            }
+          },
+          "banter": {
+            "dev": "Gear loadout builder unlocked.",
+            "trader": "Cost basis: wind + goodwill.",
+            "whale": "Wake harness engaged.",
+            "hacker": "Soft-power kit ready for exploits.",
+            "shiller": "Merch drop: consensus couture.",
+            "validator": "Harness inspected and stamped.",
+            "miner": "Feels odd not to carry a pickaxe.",
+            "meme": "Drip is 100% aerodynamic."
+          },
+          "telemetry_tags": ["scene:3.1","action:kite_outfit"]
+        },
+        {
+          "id": "shop_pity",
+          "label": "Invoke the Causeway Shop Pity",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_pity_token" }
+              ],
+              "narration": "The shopkeeper slides you a pity token minted from leftover kite string. It grants a one-time discount when your coins run thin."
+            }
+          },
+          "banter": {
+            "dev": "Fail-safe for RNG-scarred runs.",
+            "trader": "Insurance but adorable.",
+            "whale": "Whales still accepted though.",
+            "hacker": "Coupon injection successful.",
+            "shiller": "Call it loyalty program, please.",
+            "validator": "Token serialized with checksum.",
+            "miner": "I'll spend this on new gloves.",
+            "meme": "Pity? Nah, it's kindness DLC."
+          },
+          "telemetry_tags": ["scene:3.1","action:shop_pity"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 21 }
+      ]
+    },
+    {
+      "round_id": "3.1-R4",
+      "description": "Consensus Pylons — align spectral rods, defend against crosswinds, and record trust pulses.",
+      "actions": [
+        {
+          "id": "pylon_align",
+          "label": "Rotate the Phi Pylons",
+          "requirements": { "items_any": [], "flags_all": ["delta_beacon_synced"] },
+          "roll": { "kind": "phi_d20", "tags": ["strategy","tech","team"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "value": 21 },
+                { "type": "flag", "id": "insight", "value": true }
+              ],
+              "narration": "You spin the rods into a perfect golden spiral, channeling consensus lightning down the bridge and unlocking a diagnostic overlay."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "The pylons sync, projecting warm trust pulses across nearby walkers."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "One pylon resists alignment; you strain, losing a bit of focus until a gremlin teammate steps in."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "The pylons backlash, hair-frizzing everyone in range. Consensus static dances in your teeth."
+            }
+          },
+          "banter": {
+            "dev": "Infrastructure as vibes.",
+            "trader": "Risk hedged with good angles.",
+            "whale": "Wake now directional.",
+            "hacker": "Synchronized pylons = firewall upgrade.",
+            "shiller": "PR release about resilient bridges.",
+            "validator": "Rotation logged and sealed.",
+            "miner": "Feels like aligning drills underground.",
+            "meme": "Phi-lons, get it?"
+          },
+          "telemetry_tags": ["scene:3.1","action:pylon_align"]
+        },
+        {
+          "id": "crosswind_deflect",
+          "label": "Deflect Crosswind Glitches",
+          "requirements": { "items_any": ["weapon_flux_tether"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["defense","agility"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "You whip the tether and weave a barrier of luminous knots, scattering the glitch gust back into the mist."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "The gust breaks on your tether, leaving the bridge steady."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 5 }
+              ],
+              "narration": "The gust steals a few coins from your belt pouch before dissipating."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "Crosswind tosses you into a spin until the AFK gimbal catches you. Your tether tangles like spaghetti."
+            }
+          },
+          "banter": {
+            "dev": "Physics patch incoming.",
+            "trader": "Wind markets volatile today.",
+            "whale": "Wake counter-current deployed.",
+            "hacker": "Glitch got yeeted.",
+            "shiller": "Highlight: player heroics.",
+            "validator": "Wind event recorded.",
+            "miner": "Wind’s worse than cave drafts.",
+            "meme": "You spin me right round ledger."
+          },
+          "telemetry_tags": ["scene:3.1","action:crosswind_deflect"]
+        }
+      ],
+      "rewards": [
+        { "type": "flag", "id": "harmony", "value": true }
+      ]
+    },
+    {
+      "round_id": "3.1-R5",
+      "description": "Reboot Underslung — dive beneath the bridge, revive fallen focus, and negotiate AFK rescues.",
+      "actions": [
+        {
+          "id": "revive_dive",
+          "label": "Drop to the Underslung Font",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["bravery","support","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 6 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You dive with acrobatic grace, landing in the suspended font where revival water glows. Every fallen focus point you whisper returns with interest."
+            },
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 4 },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "The font refreshes your party, swirling with data-lilies."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You mistime the drop and bruise your ego on the safety harness. The font still gives you a polite splash."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "Your dive turns into a flail; the AFK gimbal swings you like a pendulum until equilibrium returns."
+            }
+          },
+          "banter": {
+            "dev": "Patch notes: gravity still works.",
+            "trader": "Risk-adjusted descent successful.",
+            "whale": "Wake cushion deployed.",
+            "hacker": "Respawn water tastes like pixels.",
+            "shiller": "Highlight reel: slow-mo revive.",
+            "validator": "Revive ledger updated.",
+            "miner": "Closest thing to a hot spring up here.",
+            "meme": "Spa day but vertical."
+          },
+          "telemetry_tags": ["scene:3.1","action:revive_dive"]
+        },
+        {
+          "id": "afk_negotiation",
+          "label": "Negotiate AFK Force-Play",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "afk_tracked", "value": true },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You schedule a friendly force-play path for any teammate gone longer than 24 hours. The gremlins applaud your care contract."
+            }
+          },
+          "banter": {
+            "dev": "Automation but with hugs.",
+            "trader": "Idle capital redeployed.",
+            "whale": "Wake autopilot ready.",
+            "hacker": "Set and forget with consent.",
+            "shiller": "Community continuity messaging.",
+            "validator": "Agreement archived.",
+            "miner": "Nobody gets left hanging over the void.",
+            "meme": "AFK? The bridge ghosts play for you."
+          },
+          "telemetry_tags": ["scene:3.1","action:afk_negotiation"]
+        }
+      ],
+      "rewards": [
+        { "type": "hp", "op": "+", "value": 2 }
+      ]
+    },
+    {
+      "round_id": "3.1-R6",
+      "description": "Delta Shop Pavilion — balance backpack capacity, claim focus snacks, and unlock hidden pity tiers.",
+      "actions": [
+        {
+          "id": "backpack_balance",
+          "label": "Reweigh the Backpack",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["logistics","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "backpack_delta_fold" },
+                { "type": "coins", "value": 21 },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You fold your inventory into a phi-stack, unlocking hidden compartments scented with rain."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "item", "id": "item_focus_snack" }
+              ],
+              "narration": "Your pack feels lighter, and the shopkeeper slips you a focus snack shaped like a spiral cookie."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 5 }
+              ],
+              "narration": "You overstuff the bag; a strap breaks and costs a quick repair fee."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "The backpack inverts, scattering items into temporary holograms that slap you with receipts."
+            }
+          },
+          "banter": {
+            "dev": "Inventory Tetris: legendary tier.",
+            "trader": "Leverage: manageable.",
+            "whale": "Wake buoyancy recalculated.",
+            "hacker": "Bag now multi-threaded.",
+            "shiller": "Merch pack drop soon.",
+            "validator": "Storage notarized.",
+            "miner": "Finally a pack that doesn't rip from ore weight.",
+            "meme": "Pack light, pack bright."
+          },
+          "telemetry_tags": ["scene:3.1","action:backpack_balance"]
+        },
+        {
+          "id": "pity_upgrade",
+          "label": "Unlock Hidden Pity Tier",
+          "requirements": { "items_any": ["trinket_pity_token"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_flux_credit" }
+              ],
+              "narration": "You slot the pity token into a hidden drawer. The shop reveals a Flux Credit redeemable for any soft-power item after a streak of misses."
+            }
+          },
+          "banter": {
+            "dev": "Safety net but stylish.",
+            "trader": "Liquidity injection for unlucky rolls.",
+            "whale": "Even whales need coupons.",
+            "hacker": "Secret menu unlocked.",
+            "shiller": "Retention metric go brr.",
+            "validator": "Credit minted with checksum.",
+            "miner": "I'll save this for a better helmet.",
+            "meme": "Pity? Nah, strategic generosity."
+          },
+          "telemetry_tags": ["scene:3.1","action:pity_upgrade"]
+        }
+      ],
+      "rewards": [
+        { "type": "coins", "value": 13 }
+      ]
+    },
+    {
+      "round_id": "3.1-R7",
+      "description": "Spectrum Gate Prelude — compile consensus votes, log telemetry, and prepare to stride toward the Echo Cascade.",
+      "actions": [
+        {
+          "id": "consensus_vote",
+          "label": "Call the Gate Vote",
+          "requirements": { "items_any": [], "flags_all": ["beacon_tuned","trustful"] },
+          "roll": { "kind": "phi_d20", "tags": ["social","strategy","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 89 },
+                { "type": "coins", "value": 34 },
+                { "type": "flag", "id": "delta_vote_passed", "value": true }
+              ],
+              "narration": "Your vote call rings like a bell. Holographic ballots fold themselves into origami cranes that carry consensus across the gate. Hidden tiers whisper open."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "delta_vote_passed", "value": true }
+              ],
+              "narration": "The gate accepts your motion, the ledger updates, and the Flux-Kindle salute with twin pens."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "Your pitch meanders; the vote stalls. You collect yourself while gremlins doodle improvements."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "You misread the ledger mood and pay a fine for timewasting. The gate chuckles politely."
+            }
+          },
+          "banter": {
+            "dev": "Motion to merge? Approved.",
+            "trader": "Order book of opinions cleared.",
+            "whale": "Wake roars through the aye column.",
+            "hacker": "Voting dapp passes audit.",
+            "shiller": "Messaging: \"Bridge opens thanks to you.\"",
+            "validator": "Vote hashed, timestamped, archived.",
+            "miner": "We all swung the pick in rhythm.",
+            "meme": "DAO but with literal bridges."
+          },
+          "telemetry_tags": ["scene:3.1","action:consensus_vote"]
+        },
+        {
+          "id": "telemetry_log",
+          "label": "Log the Causeway Telemetry",
+          "requirements": { "items_any": [], "flags_all": ["delta_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "deck_delta_spiral" }
+              ],
+              "narration": "You archive every branch taken, every shy panel soothed, every crosswind deflected. The telemetry deck glows with future hints."
+            }
+          },
+          "banter": {
+            "dev": "Analytics but make it mythic.",
+            "trader": "KPIs, but they hum.",
+            "whale": "Wake telemetry trending up.",
+            "hacker": "Logs? More like poetry arrays.",
+            "shiller": "Metrics ready for the town hall.",
+            "validator": "Ledger cross-checked twice.",
+            "miner": "Data core heavier than ore.",
+            "meme": "Telemetry: because fun needs charts."
+          },
+          "telemetry_tags": ["scene:3.1","action:telemetry_log"]
+        },
+        {
+          "id": "advance_32",
+          "label": "Stride Toward Scene 3.2",
+          "requirements": { "items_any": [], "flags_all": ["delta_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "You cross the final seam of the causeway. The mist parts, revealing an Echo Cascade of refracted time.",
+              "next_hint": "3.2"
+            }
+          },
+          "banter": {
+            "dev": "Next module loading.",
+            "trader": "Position rolled forward.",
+            "whale": "Wake leaps the threshold.",
+            "hacker": "New layer unlocked.",
+            "shiller": "Act Three intensifies.",
+            "validator": "Transition notarized.",
+            "miner": "Another tunnel, another day.",
+            "meme": "BRB, cascading into 3.2."
+          },
+          "telemetry_tags": ["scene:3.1","action:advance_32"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "focus_gte": 6, "rewards": [ { "type": "coins", "value": 34 } ] },
+    { "xp_gte": 233, "rewards": [ { "type": "item", "id": "helm_resonance_visor" } ] },
+    { "flags_all": ["delta_vote_passed"], "rewards": [ { "type": "deck", "id": "deck_delta_spiral" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.afk_tracked", "goto": "3.1A" },
+    { "when": "flags.delta_vote_passed", "goto": "3.2" },
+    { "when": "else", "goto": "3.1" }
+  ]
+}

@@ -1,0 +1,801 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "3.2",
+  "title": "The Echo Cascade — Chronoloom Amphitheater",
+  "narration": "The Echo Cascade crashes around you like a waterfall made of whispered promises. Translucent terraces loop downward, each step a resonant basin that catches the memories poured from the Lumen Causeway. The air sparkles with suspended phonemes. When you inhale, you taste citrus, cedar smoke, distant brass, and the exact moment someone once said \"we’re in this together\". The terraces form a natural amphitheater with golden-ratio acoustics; every sound released here returns seven times, each echo revealing a different perspective.\n\nThe Chronoloom gremlin faction tends the Cascade. They wear cloaks stitched from timestamp ribbons and carry ledger harps tuned to phi frequencies. Dev gremlins debug the streams of sound, traders hedge volumes of applause futures, whales anchor the rhythm with subsonic drones, hackers splice loopbacks, shillers rewrite slogans mid-echo, validators notarize every resonant chord, miners dig for deep timbre, and memes run commentary threads in luminescent graffiti. They hand you resonance gloves etched with ledger nodes and point toward seven amphitheater platforms, each ready for Act Three’s unfolding.\n\nConsensus rituals here involve weaving your voice through time. Spectrum doors hang as curtains of cascading light; to pass them you must capture echoes, align them with new intentions, and perform ledger-certified call-and-response. The AFK force-play manifests as a phantom conductor: if anyone goes idle, a translucent baton animates their echo to keep the harmony intact. Revive pools appear as still moments between echoes, where you can reboot focus by sharing a story. Arrivals drift in mid-round, hitching rides on the resonance beams. The Chronoloom treat the Cascade as a living ledger, and they expect you to contribute a stanza that will matter later.\n\nSeven rounds spiral downward; each demands choices with phi-d20 checks, hidden difficulty tiers disguised as tempo shifts, and reward possibilities spanning XP, Coins, Focus, Flags, Items, Decks, and backpack upgrades. Telemetry tags glimmer overhead like constellations. This is where Act Three teaches you to listen so deeply that your hearing changes the story.",
+  "rounds": [
+    {
+      "round_id": "3.2-R1",
+      "description": "Resonance Stage — conduct a time-synced greeting, capture harmonics, and map the cascade ledger.",
+      "actions": [
+        {
+          "id": "cascade_gm",
+          "label": "Conduct the Echo GM",
+          "requirements": { "items_any": ["trinket_delta_lantern"], "flags_all": ["gm_logged"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","harmony","time"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "cascade_wave_synced", "value": true }
+              ],
+              "narration": "Your Golden Morning threads through seven echoes, each returning as a chorus that lifts the Cascade. The Chronoloom record it as \"GM∞\"."
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 1 },
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "cascade_wave_synced", "value": true }
+              ],
+              "narration": "Your greeting ripples through the amphitheater. Echoes align, the stage glows amber, and a ledger entry adds you as conductor-of-record."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You speak off-tempo. The echo replies with polite static. A gremlin loans you a metronome hat."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "You shout over the Cascade; it responds by muting your voice in a velvet hush until you apologize."
+            }
+          },
+          "banter": {
+            "dev": "Latency near zero when you harmonize.",
+            "trader": "Volume ramped in phi increments.",
+            "whale": "Wake hum forms the bassline.",
+            "hacker": "Temporal sync handshake accepted.",
+            "shiller": "Announcing the GM remix.",
+            "validator": "Greeting notarized in seven timestamps.",
+            "miner": "Echo seam located.",
+            "meme": "GM but make it time travel."
+          },
+          "telemetry_tags": ["scene:3.2","action:cascade_gm"]
+        },
+        {
+          "id": "harmonic_map",
+          "label": "Map the Harmonic Ledger",
+          "requirements": { "items_any": [], "flags_all": ["cascade_wave_synced"] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","analysis"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "insight", "value": true },
+                { "type": "item", "id": "trinket_echo_compass" }
+              ],
+              "narration": "You sketch the cascade wavefronts into a spiraled ledger that predicts echo behavior three rounds ahead."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "Your map captures enough detail to help others anticipate resonance swells."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "Your chalk melts in the mist. Start over, says a chuckling gremlin."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "You misplot a surge, triggering a fine for echo spillover on level two."
+            }
+          },
+          "banter": {
+            "dev": "Diagramming the soundtrack.",
+            "trader": "Flow forecast unlocked.",
+            "whale": "Wake chart trending up.",
+            "hacker": "Echo map = exploit map.",
+            "shiller": "Pitch deck slide: resonance coverage.",
+            "validator": "Ledger cross-check complete.",
+            "miner": "Never thought I'd mine with chalk.",
+            "meme": "Sound cartography, apparently."
+          },
+          "telemetry_tags": ["scene:3.2","action:harmonic_map"]
+        },
+        {
+          "id": "echo_cache",
+          "label": "Collect Echo Cache",
+          "requirements": { "items_any": ["trinket_echo_compass"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "deck_cascade_refrain" }
+              ],
+              "narration": "The compass vibrates, leading you to a pocket of stored harmonics. Inside floats a card deck of refrains that can modulate future encounters."
+            }
+          },
+          "banter": {
+            "dev": "Loot drop from the waveform.",
+            "trader": "Echo derivatives acquired.",
+            "whale": "Wake memory captured.",
+            "hacker": "Cache hit, nice.",
+            "shiller": "Bonus track for the campaign.",
+            "validator": "Cache sealed with checksum.",
+            "miner": "Echo ore!", 
+            "meme": "Found a mixtape in the waterfall."
+          },
+          "telemetry_tags": ["scene:3.2","action:echo_cache"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 21 }
+      ]
+    },
+    {
+      "round_id": "3.2-R2",
+      "description": "Tempo Pools — dive into still moments to recover focus, reveal shy echoes, and invite new arrivals.",
+      "actions": [
+        {
+          "id": "tempo_dive",
+          "label": "Dive into the Still Pool",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["support","focus","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "hp", "op": "+", "value": 5 },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You enter the pool between beats. Time pauses. You return glowing with refreshed focus and a pocket of spare seconds."
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "The pool quiets your mind. Echoes hush to listen."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You lose track of the beat and resurface dizzy."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "You slip on a future echo and bellyflop. The AFK conductor claps ironically."
+            }
+          },
+          "banter": {
+            "dev": "Debug your own tempo.",
+            "trader": "Focus liquidity restored.",
+            "whale": "Wake saturates the pool.",
+            "hacker": "Paused the game but on purpose.",
+            "shiller": "Marketing phrasing: intentional rest.",
+            "validator": "Recovery logged.",
+            "miner": "Feels like break room but mythic.",
+            "meme": "Spa day inside a beat."
+          },
+          "telemetry_tags": ["scene:3.2","action:tempo_dive"]
+        },
+        {
+          "id": "shy_resonance",
+          "label": "Coax the Shy Echo",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["empathy","harmony"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "You hum a quiet counterpoint. The shy echo blooms into a silver ribbon and wraps around your wrist as a promise."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "coins", "value": 13 }
+              ],
+              "narration": "The echo giggles, releasing a handful of coins minted from laughter."
+            },
+            "fail": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": true }
+              ],
+              "narration": "You approach too quickly; the echo hides behind a curtain of rain."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You step on the echo’s tail; it zaps your ankles in protest."
+            }
+          },
+          "banter": {
+            "dev": "UX note: whispers prefer gentle inputs.",
+            "trader": "Low-volume but high-yield.",
+            "whale": "Wake dialed to whisper mode.",
+            "hacker": "Exploit patched with kindness.",
+            "shiller": "Brand voice: hushcore.",
+            "validator": "Consent logged.",
+            "miner": "I’ve never apologized to a sound before.",
+            "meme": "Shy echo: the sequel."
+          },
+          "telemetry_tags": ["scene:3.2","action:shy_resonance"]
+        },
+        {
+          "id": "arrival_signal",
+          "label": "Signal New Arrivals",
+          "requirements": { "items_any": ["trinket_echo_compass"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "arrivals_open", "value": true }
+              ],
+              "narration": "You pulse the compass; echo kites dip through the cascade, carrying new allies into the amphitheater mid-round."
+            }
+          },
+          "banter": {
+            "dev": "Instance now welcoming more players.",
+            "trader": "Liquidity of presence rising.",
+            "whale": "Wake splits to greet newcomers.",
+            "hacker": "Matchmaking via echo pings.",
+            "shiller": "Marketing tagline: \"The more the merrier, literally.\"",
+            "validator": "Arrivals logged.",
+            "miner": "More hands to swing the beat.",
+            "meme": "Carpool but with echoes."
+          },
+          "telemetry_tags": ["scene:3.2","action:arrival_signal"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.2-R3",
+      "description": "Ledger Harp Array — pluck consensus strings, defend against discordant glitches, and queue rituals.",
+      "actions": [
+        {
+          "id": "harp_pluck",
+          "label": "Pluck the Consensus Harp",
+          "requirements": { "items_any": [], "flags_all": ["cascade_wave_synced"] },
+          "roll": { "kind": "phi_d20", "tags": ["performance","strategy"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "value": 21 },
+                { "type": "flag", "id": "harmony", "value": true }
+              ],
+              "narration": "You play a ledger motif that reconciles two rival echoes. The amphitheater’s mood shifts to unanimous delight."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "Your chords soothe the ledger strings; the Chronoloom nod appreciatively."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "Your fingers slip, jangling the consensus thread. You recompose."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "A discordant blast rings out, forcing you to take a step back as the harp sparks."
+            }
+          },
+          "banter": {
+            "dev": "Full-stack musician moment.",
+            "trader": "Alpha leak: correct chord progression.",
+            "whale": "Wake resonates through the bass strings.",
+            "hacker": "Melody injection executed.",
+            "shiller": "This goes in the highlight reel.",
+            "validator": "Chord progression notarized.",
+            "miner": "Hands calloused from picks, now strings.",
+            "meme": "Concert for consensus."
+          },
+          "telemetry_tags": ["scene:3.2","action:harp_pluck"]
+        },
+        {
+          "id": "discord_defense",
+          "label": "Diffuse Discordant Glitch",
+          "requirements": { "items_any": ["weapon_flux_tether"], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["defense","tech"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "You snare the glitch, rewriting it into a grace note that compliments the main theme."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You mute the glitch, restoring balance."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 5 }
+              ],
+              "narration": "The glitch siphons a tip jar before dissolving."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "The glitch reverberates in your teeth until you re-tune the tether."
+            }
+          },
+          "banter": {
+            "dev": "Bug triaged with finesse.",
+            "trader": "Hedged against disharmony.",
+            "whale": "Wake cancels the noise.",
+            "hacker": "Glitch -> feature pipeline.",
+            "shiller": "Crisis averted, narrative intact.",
+            "validator": "Incident logged.",
+            "miner": "Swatted static like rock dust.",
+            "meme": "Glitch said boo, you said tune."
+          },
+          "telemetry_tags": ["scene:3.2","action:discord_defense"]
+        },
+        {
+          "id": "ritual_queue",
+          "label": "Queue the Evening Ritual",
+          "requirements": { "items_any": [], "flags_all": ["cascade_wave_synced"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "gn_prepared", "value": true }
+              ],
+              "narration": "You schedule a Gentle Night echo to release later, ensuring the ledger keeps the rhythm between day and dusk."
+            }
+          },
+          "banter": {
+            "dev": "Cron job but melodic.",
+            "trader": "Night shift scheduled.",
+            "whale": "Wake softens for evening tide.",
+            "hacker": "Event queued with consent.",
+            "shiller": "GN campaign locked in.",
+            "validator": "Ritual appointment notarized.",
+            "miner": "Clock out plan confirmed.",
+            "meme": "Calendar invite to bedtime."
+          },
+          "telemetry_tags": ["scene:3.2","action:ritual_queue"]
+        }
+      ],
+      "rewards": [
+        { "type": "coins", "value": 21 }
+      ]
+    },
+    {
+      "round_id": "3.2-R4",
+      "description": "Story Wells — share narratives to unlock focus, insights, and hidden difficulty tiers in the cascade.",
+      "actions": [
+        {
+          "id": "story_share",
+          "label": "Share a Ledger Story",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["social","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "insight", "value": true },
+                { "type": "focus", "op": "+", "value": 2 }
+              ],
+              "narration": "Your story resonates, weaving into the cascade as a guiding refrain for future travelers."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "coins", "value": 13 }
+              ],
+              "narration": "Listeners toss you coins minted from gratitude."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You ramble; the echo yawns. You regroup."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You misquote the ledger; a validator spritzes you with corrective mist."
+            }
+          },
+          "banter": {
+            "dev": "Story-driven patches incoming.",
+            "trader": "Narrative alpha distributed.",
+            "whale": "Wake thrums with your tale.",
+            "hacker": "Lore injection accepted.",
+            "shiller": "Marketing loves a story arc.",
+            "validator": "Transcript archived.",
+            "miner": "Campfire talk but on a waterfall.",
+            "meme": "TL;DR: vibes immaculate."
+          },
+          "telemetry_tags": ["scene:3.2","action:story_share"]
+        },
+        {
+          "id": "insight_well",
+          "label": "Draw from the Insight Well",
+          "requirements": { "items_any": [], "flags_all": ["insight"] },
+          "roll": { "kind": "phi_d20", "tags": ["analysis","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "helm_timeband" },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You draw a band of golden water that wraps around your brow, granting glimpses of future skill checks."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "item", "id": "item_focus_snack" }
+              ],
+              "narration": "The well gives you a spiral-shaped thought. You tuck it behind your ear for later."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 5 }
+              ],
+              "narration": "Your bucket spills; you pay a small fee for wasted insight water."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "You peer too deeply and see a recursion loop that headaches you."
+            }
+          },
+          "banter": {
+            "dev": "Buff granted via introspection.",
+            "trader": "Forecast tool acquired.",
+            "whale": "Wake now predictive.",
+            "hacker": "Spoilers: you succeed.",
+            "shiller": "Promo angle: future-sight headband.",
+            "validator": "Insight withdrawal logged.",
+            "miner": "Bucket down, wisdom up.",
+            "meme": "Brain upgrade install complete."
+          },
+          "telemetry_tags": ["scene:3.2","action:insight_well"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.2-R5",
+      "description": "Chrono Shoppe — trade focus for time trinkets, engage pity mechanics, and rebalance backpacks.",
+      "actions": [
+        {
+          "id": "time_trade",
+          "label": "Trade Focus for Time Trinket",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["trade","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "trinket_second_spool" },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You negotiate a spool of extra seconds, perfect for bridging delay gaps in future scenes."
+            },
+            "success": {
+              "effects": [
+                { "type": "item", "id": "item_focus_snack" },
+                { "type": "coins", "value": 13 }
+              ],
+              "narration": "The shopkeeper wraps your focus in wax paper and returns it as a restorative treat plus change."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your haggling misfires; you spend focus with no return."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "You get upsold on a souvenir echo. It evaporates instantly."
+            }
+          },
+          "banter": {
+            "dev": "Microtransaction but wholesome.",
+            "trader": "Arbitrage on attention economy.",
+            "whale": "Wake collateral accepted.",
+            "hacker": "Negotiation script executed.",
+            "shiller": "Merch drop includes bonus seconds.",
+            "validator": "Receipt timestamped.",
+            "miner": "Barter like we do with ore, but shinier.",
+            "meme": "Bought time, still broke."
+          },
+          "telemetry_tags": ["scene:3.2","action:time_trade"]
+        },
+        {
+          "id": "pity_refresh",
+          "label": "Refresh Pity Ledger",
+          "requirements": { "items_any": ["trinket_flux_credit"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "armor_echo_mantle" }
+              ],
+              "narration": "You burn the Flux Credit to receive an Echo Mantle, a cloak that stores one reroll when a check goes catastrophically sideways."
+            }
+          },
+          "banter": {
+            "dev": "Failsafe unlocked.",
+            "trader": "Risk parity restored.",
+            "whale": "Wake insured.",
+            "hacker": "Pity ledger says you're due for a win.",
+            "shiller": "Story beat: resilience rewarded.",
+            "validator": "Credit redemption logged.",
+            "miner": "Nice to have backup plan.",
+            "meme": "Pity into drippy cloak."
+          },
+          "telemetry_tags": ["scene:3.2","action:pity_refresh"]
+        },
+        {
+          "id": "backpack_sync",
+          "label": "Sync Backpack Capacity",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "backpack_synced", "value": true }
+              ],
+              "narration": "You balance your inventory with cascade-friendly weighting."
+            }
+          },
+          "banter": {
+            "dev": "Inventory patched for reverb.",
+            "trader": "Carry cost optimized.",
+            "whale": "Wake not dragging gear.",
+            "hacker": "Checksum on pockets now valid.",
+            "shiller": "Merch bag updated.",
+            "validator": "Loadout recorded.",
+            "miner": "Feels like packing a toolkit.",
+            "meme": "Backpack goes brr but balanced."
+          },
+          "telemetry_tags": ["scene:3.2","action:backpack_sync"]
+        }
+      ],
+      "rewards": [
+        { "type": "coins", "value": 13 }
+      ]
+    },
+    {
+      "round_id": "3.2-R6",
+      "description": "Consensus Curtain — coordinate players to open spectral drapes, align Golden Night rituals, and prep AFK coverage.",
+      "actions": [
+        {
+          "id": "curtain_pull",
+          "label": "Coordinate the Curtain Pull",
+          "requirements": { "items_any": [], "flags_all": ["cascade_wave_synced","arrivals_open"] },
+          "roll": { "kind": "phi_d20", "tags": ["team","social","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "value": 34 },
+                { "type": "flag", "id": "curtain_open", "value": true }
+              ],
+              "narration": "Your coordination pulls the spectral drapes aside, revealing a hidden stage full of ready-made consensus tasks."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "curtain_open", "value": true }
+              ],
+              "narration": "The curtain parts, shimmering with approval."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You tug off-beat; the curtain sways but doesn’t open."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "The curtain snaps shut and flings you into a pile of music stands."
+            }
+          },
+          "banter": {
+            "dev": "Feature flag toggled IRL.",
+            "trader": "Liquidity of effort matched.",
+            "whale": "Wake surges through the opening.",
+            "hacker": "Coordination hack executed.",
+            "shiller": "Curtain reveal hype video soon.",
+            "validator": "Pull recorded in triplicate.",
+            "miner": "Feels like lifting a boulder but in silk.",
+            "meme": "Open sesame, but consensus."
+          },
+          "telemetry_tags": ["scene:3.2","action:curtain_pull"]
+        },
+        {
+          "id": "gn_reserve",
+          "label": "Reserve Gentle Night Slots",
+          "requirements": { "items_any": [], "flags_all": ["gn_prepared"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "gn_reserved", "value": true }
+              ],
+              "narration": "You block out time for Gentle Night rituals, ensuring rest echoes through the upcoming scenes."
+            }
+          },
+          "banter": {
+            "dev": "Scheduler loves you.",
+            "trader": "Night shift hedged.",
+            "whale": "Wake lulls for bedtime.",
+            "hacker": "Cron tab now restful.",
+            "shiller": "PR copy prepping: GN cascades.",
+            "validator": "Reservation notarized.",
+            "miner": "Clocking out with style.",
+            "meme": "Calendar full of cozy."
+          },
+          "telemetry_tags": ["scene:3.2","action:gn_reserve"]
+        },
+        {
+          "id": "afk_cover",
+          "label": "Assign AFK Echo Cover",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "afk_cover_assigned", "value": true },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You designate echo clones to perform for any teammate pulled AFK, maintaining ledger integrity."
+            }
+          },
+          "banter": {
+            "dev": "Failover system humming.",
+            "trader": "Continuity insurance paid.",
+            "whale": "Wake autopilot rewrites verses.",
+            "hacker": "Ghost instance ready.",
+            "shiller": "Messaging: \"We’ve got your back even offline.\"",
+            "validator": "Assignment stamped.",
+            "miner": "Union-approved relief plan.",
+            "meme": "Echo understudy on standby."
+          },
+          "telemetry_tags": ["scene:3.2","action:afk_cover"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    },
+    {
+      "round_id": "3.2-R7",
+      "description": "Cascade Verdict — finalize the ledger, tally flags, and open the path to the Prism Bastion.",
+      "actions": [
+        {
+          "id": "ledger_tally",
+          "label": "Tally the Cascade Ledger",
+          "requirements": { "items_any": [], "flags_all": ["curtain_open"] },
+          "roll": { "kind": "phi_d20", "tags": ["analysis","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 89 },
+                { "type": "coins", "value": 34 },
+                { "type": "flag", "id": "cascade_ledger_closed", "value": true }
+              ],
+              "narration": "You balance every story, every coin, every shy echo. The amphitheater applauds like rain."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "cascade_ledger_closed", "value": true }
+              ],
+              "narration": "The ledger aligns. The Chronoloom sign their approval in light."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "A row fails to reconcile. You revisit your notes."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "You misplace a decimal and pay a fine to the echo treasury."
+            }
+          },
+          "banter": {
+            "dev": "Audit complete, release candidate ready.",
+            "trader": "Balance sheet sings.",
+            "whale": "Wake ledger matches the tide.",
+            "hacker": "Checksum verified.",
+            "shiller": "Newsletter headline: \"Cascade clears consensus.\"",
+            "validator": "All entries sealed.",
+            "miner": "Ledger weighs more than a pickaxe now.",
+            "meme": "Math but emotional."
+          },
+          "telemetry_tags": ["scene:3.2","action:ledger_tally"]
+        },
+        {
+          "id": "prism_signal",
+          "label": "Signal the Prism Bastion",
+          "requirements": { "items_any": [], "flags_all": ["cascade_ledger_closed"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "deck_prism_prologue" }
+              ],
+              "narration": "You send a beam down-valley. The Prism Bastion responds with a chord that invites you onward."
+            }
+          },
+          "banter": {
+            "dev": "API handshake with next scene.",
+            "trader": "Forward guidance secured.",
+            "whale": "Wake reflects rainbows now.",
+            "hacker": "Signal handshake glitch-free.",
+            "shiller": "Teaser trailer incoming.",
+            "validator": "Signal recorded.",
+            "miner": "Beacon hotter than forge fire.",
+            "meme": "Laser pointer but mythic."
+          },
+          "telemetry_tags": ["scene:3.2","action:prism_signal"]
+        },
+        {
+          "id": "advance_33",
+          "label": "Descend to Scene 3.3",
+          "requirements": { "items_any": [], "flags_all": ["cascade_ledger_closed"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "You slide along a spiral of sound toward the Prism Bastion, ready for Act Three’s next set piece.",
+              "next_hint": "3.3"
+            }
+          },
+          "banter": {
+            "dev": "Loading Prism module.",
+            "trader": "Position cascades into next arena.",
+            "whale": "Wake glides into the Bastion.",
+            "hacker": "Next layer waiting.",
+            "shiller": "Act Three momentum unstoppable.",
+            "validator": "Transition notarized.",
+            "miner": "Another descent, another ledger.",
+            "meme": "Brb, prism time."
+          },
+          "telemetry_tags": ["scene:3.2","action:advance_33"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "focus_gte": 7, "rewards": [ { "type": "coins", "value": 34 } ] },
+    { "xp_gte": 255, "rewards": [ { "type": "item", "id": "helm_timeband" } ] },
+    { "flags_all": ["cascade_ledger_closed"], "rewards": [ { "type": "deck", "id": "deck_prism_prologue" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.arrivals_open", "goto": "3.2A" },
+    { "when": "flags.cascade_ledger_closed", "goto": "3.3" },
+    { "when": "else", "goto": "3.2" }
+  ]
+}

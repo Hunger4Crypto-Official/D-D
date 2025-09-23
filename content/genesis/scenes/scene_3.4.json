@@ -1,0 +1,709 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "3.4",
+  "title": "The Ledger Spindle — Rotational Archive Engine",
+  "narration": "The staircase from the Bastion unwinds into the Ledger Spindle: a colossal tower of interlocked rings spinning around a column of living stone. Every rotation writes a ledger line into the air, which then folds itself into archival ribbons. The floor vibrates with a hum tuned to the golden ratio. When you touch the rail, you can feel the heartbeat of every transaction recorded since Act One. Scents swirl between warm brass, clove, petrichor, and freshly debugged code.\n\nThe Spindle belongs to the Turn-Keeper gremlin faction. They wear belts of keys and chronometers, each ticking in sync with the rings. Dev gremlins oil the algorithms, traders arbitrage rotational futures, whales guide the momentum, hackers install safety overrides, shillers broadcast rotation updates, validators stamp every pass, miners maintain the central stone, and memes scribble jokes on the margins of time. They greet you with a rotating GM that loops every 1.618 minutes and then hand you checklists for the seven rotational tiers ahead.\n\nInside the Spindle, consensus rituals are literal revolutions: you must align phi-d20 checks with rotational thresholds, maintain AFK auto-turners, revive players with spool rewinds, and manage backpacks while the floor moves. Soft-power equipment includes torque gloves, gyroscopic helms, and ledger-thread trinkets that catch stray insights. Hidden difficulty tiers hide behind acceleration spikes; if you cannot match the pace, the Spindle gently ejects you into a cushion alcove and logs a learning loop.\n\nSeven rounds orbit the tower, each anchored to a specific ring. Actions grant XP, Coins, Focus, Flags, Items, and Decks. Telemetry tags blink like constellations on the inner ceiling. Arrivals ride elevators that sync with the rotation; if you call them, they appear mid-round with wind in their hair. The Turn-Keepers expect precision with a sense of humor — laugh, but do not miss your mark.",
+  "rounds": [
+    {
+      "round_id": "3.4-R1",
+      "description": "Index Ring — initialize rotational greetings, calibrate torque meters, and log morning/night loops.",
+      "actions": [
+        {
+          "id": "spindle_gm",
+          "label": "Spin the GM Loop",
+          "requirements": { "items_any": [], "flags_all": ["gm_logged"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","focus","motion"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "spindle_loop_synced", "value": true }
+              ],
+              "narration": "You time your greeting to the ring’s rhythm. The Spindle hums back, logging you as loop steward."
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "spindle_loop_synced", "value": true }
+              ],
+              "narration": "Your GM catches the rotation and rides it like a song."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You speak between beats; the loop stores your greeting as a blooper reel."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "You shout at the wrong moment and the ring jolts you into a safety harness."
+            }
+          },
+          "banter": {
+            "dev": "Timed events demand respect.",
+            "trader": "Rotational futures bullish.",
+            "whale": "Wake syncs to the turn.",
+            "hacker": "Loop handshake verified.",
+            "shiller": "Campaign update: GM keeps spinning.",
+            "validator": "Greeting logged per revolution.",
+            "miner": "Feels like checking shifts on a drill.",
+            "meme": "GM, but centrifuged."
+          },
+          "telemetry_tags": ["scene:3.4","action:spindle_gm"]
+        },
+        {
+          "id": "torque_calibrate",
+          "label": "Calibrate Torque Meters",
+          "requirements": { "items_any": [], "flags_all": ["spindle_loop_synced"] },
+          "roll": { "kind": "phi_d20", "tags": ["tech","analysis"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "item", "id": "gloves_torque_pair" }
+              ],
+              "narration": "You align torque metrics within micro tolerances; the Spindle rewards you with gloves that grip rotational truth."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "torque_ready", "value": true }
+              ],
+              "narration": "Meters settle into harmonic balance."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "A meter over-rotates; you pay to replace a calibration spring."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "The meter snaps back and smacks your knuckles."
+            }
+          },
+          "banter": {
+            "dev": "Instrumentation calibrated.",
+            "trader": "Torque arbitrage sorted.",
+            "whale": "Wake pressure matched.",
+            "hacker": "Sensors now chatty.",
+            "shiller": "Press kit loves numbers.",
+            "validator": "Calibration notarized.",
+            "miner": "Feels like tightening drill bolts.",
+            "meme": "Torque talk 101."
+          },
+          "telemetry_tags": ["scene:3.4","action:torque_calibrate"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 21 }
+      ]
+    },
+    {
+      "round_id": "3.4-R2",
+      "description": "Momentum Ring — ride moving walkways, soothe shy oscillations, and update focus pools.",
+      "actions": [
+        {
+          "id": "walkway_ride",
+          "label": "Ride the Momentum Walkway",
+          "requirements": { "items_any": [], "flags_all": ["torque_ready"] },
+          "roll": { "kind": "phi_d20", "tags": ["agility","focus","motion"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "coins", "value": 21 }
+              ],
+              "narration": "You surf the walkway, guiding others with a conductor’s hand. The Spindle whistles in appreciation."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "You stay balanced, logging your run as steady."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You stumble and catch yourself on a rail, losing rhythm."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 6 }
+              ],
+              "narration": "You trip and skid into a foam barrier. The Turn-Keepers hand you tea and a retry ticket."
+            }
+          },
+          "banter": {
+            "dev": "Moving sidewalks but audited.",
+            "trader": "Momentum trading IRL.",
+            "whale": "Wake matches belt speed.",
+            "hacker": "Speed hack via balance.",
+            "shiller": "Highlight: you gliding with style.",
+            "validator": "Ride recorded.",
+            "miner": "Less dirt, more whirl.",
+            "meme": "Treadmill for consensus."
+          },
+          "telemetry_tags": ["scene:3.4","action:walkway_ride"]
+        },
+        {
+          "id": "soothe_oscillation",
+          "label": "Soothe Shy Oscillation",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["empathy","tech"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "xp", "value": 34 },
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "You adjust damping ratios with a gentle touch. The oscillation calms and harmonizes with your heartbeat."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "coins", "value": 13 }
+              ],
+              "narration": "The vibration loosens coins trapped in the walkway seams."
+            },
+            "fail": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": true }
+              ],
+              "narration": "You over-tighten; the oscillation retreats."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You get a static shock and a lecture on empathy."
+            }
+          },
+          "banter": {
+            "dev": "Vibration UX: handle with care.",
+            "trader": "Stability premium captured.",
+            "whale": "Wake humming at gentle amplitude.",
+            "hacker": "Sine wave patched.",
+            "shiller": "Story: kindness calms machines.",
+            "validator": "Oscillation log updated.",
+            "miner": "Never calmed a wobble before.",
+            "meme": "Hush little sine wave."
+          },
+          "telemetry_tags": ["scene:3.4","action:soothe_oscillation"]
+        },
+        {
+          "id": "arrival_elevator",
+          "label": "Signal Arrival Elevator",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "arrivals_synced", "value": true }
+              ],
+              "narration": "You ring the elevator bell in phi intervals. New allies step out mid-rotation, laughing at the dizziness."
+            }
+          },
+          "banter": {
+            "dev": "Instance welcoming more players.",
+            "trader": "Participant liquidity up.",
+            "whale": "Wake splits to greet.",
+            "hacker": "Matchmaking pipeline secure.",
+            "shiller": "Onboarding literally uplifting.",
+            "validator": "Arrival logged.",
+            "miner": "Elevator faster than ladders.",
+            "meme": "Spiral Lyft."
+          },
+          "telemetry_tags": ["scene:3.4","action:arrival_elevator"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.4-R3",
+      "description": "Archive Ring — weave ledger threads, draw insight bobbins, and craft soft-power textiles.",
+      "actions": [
+        {
+          "id": "ledger_weave",
+          "label": "Weave Ledger Threads",
+          "requirements": { "items_any": [], "flags_all": ["spindle_loop_synced"] },
+          "roll": { "kind": "phi_d20", "tags": ["craft","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "item", "id": "armor_spindle_wrap" },
+                { "type": "flag", "id": "insight", "value": true }
+              ],
+              "narration": "You weave narratives into cloth that glows with consensus signatures."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "item", "id": "item_focus_snack" }
+              ],
+              "narration": "Your weaving yields a focus snack shaped like a spool."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 5 }
+              ],
+              "narration": "Thread tangles; you buy new spools."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "The loom snaps; you retreat to bandage your fingers."
+            }
+          },
+          "banter": {
+            "dev": "Data weaving is canon now.",
+            "trader": "Textile futures spike.",
+            "whale": "Wake threads into patterns.",
+            "hacker": "Weft injection accepted.",
+            "shiller": "PR loves wearable ledger.",
+            "validator": "Weave log stored.",
+            "miner": "Spinning fiber beats hauling rock.",
+            "meme": "Knitting but make it consensus."
+          },
+          "telemetry_tags": ["scene:3.4","action:ledger_weave"]
+        },
+        {
+          "id": "insight_bobbin",
+          "label": "Wind the Insight Bobbin",
+          "requirements": { "items_any": [], "flags_all": ["insight"] },
+          "roll": { "kind": "phi_d20", "tags": ["analysis","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "helm_spiral_visor" },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You wind an insight bobbin that predicts rotational surges two rounds in advance."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "coins", "value": 21 }
+              ],
+              "narration": "The bobbin stores a tidy roll of guidance."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 5 }
+              ],
+              "narration": "You wind too tight and snap the thread, paying for replacement."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "The bobbin whips free, smacking your forehead."
+            }
+          },
+          "banter": {
+            "dev": "Forecast module upgraded.",
+            "trader": "Insight inventory built.",
+            "whale": "Wake hum anticipatory.",
+            "hacker": "Buffer prefetch success.",
+            "shiller": "Messaging: foresight unlocked.",
+            "validator": "Bobbin log notarized.",
+            "miner": "Feels like winding cable in the shafts.",
+            "meme": "Bobbin for apples? No, for destiny."
+          },
+          "telemetry_tags": ["scene:3.4","action:insight_bobbin"]
+        }
+      ],
+      "rewards": [
+        { "type": "coins", "value": 21 }
+      ]
+    },
+    {
+      "round_id": "3.4-R4",
+      "description": "Gyro Bay — install soft-power helms, engage pity mechanisms, and rebalance backpacks mid-rotation.",
+      "actions": [
+        {
+          "id": "helm_install",
+          "label": "Install Gyro Helm",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["craft","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "helm_spiral_visor" },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You install a helm that rotates with your thoughts, keeping balance perfect even during acceleration spikes."
+            },
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_spindle_token" },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "The helm sits snug; the Turn-Keepers award you a token for future gear trades."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "A strap snaps; you buy new hardware."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "The helm spins off and bonks you."
+            }
+          },
+          "banter": {
+            "dev": "Wearable tech patch applied.",
+            "trader": "Asset: balanced mind.",
+            "whale": "Wake navigates tighter turns.",
+            "hacker": "Firmware in the helmet now mine.",
+            "shiller": "Merch drop: gyro chic.",
+            "validator": "Helm installed per spec.",
+            "miner": "Better than a hard hat.",
+            "meme": "Helm hair but worth it."
+          },
+          "telemetry_tags": ["scene:3.4","action:helm_install"]
+        },
+        {
+          "id": "pity_spindle",
+          "label": "Redeem Spindle Pity",
+          "requirements": { "items_any": ["trinket_refraction_token"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_spindle_credit" }
+              ],
+              "narration": "You cash in the token for a Spindle Credit that allows one failed roll to be rewound and retried."
+            }
+          },
+          "banter": {
+            "dev": "Rewind safety granted.",
+            "trader": "Risk hedge upgraded.",
+            "whale": "Wake insurance renewed.",
+            "hacker": "Time rollback coupon.",
+            "shiller": "Story beat: resilience encoded.",
+            "validator": "Credit minted.",
+            "miner": "Good to have a redo.",
+            "meme": "Ctrl+Z but physical."
+          },
+          "telemetry_tags": ["scene:3.4","action:pity_spindle"]
+        },
+        {
+          "id": "pack_rebalance",
+          "label": "Rebalance Backpack",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "backpack_synced", "value": true }
+              ],
+              "narration": "You strap your pack to a counter-rotating hook, distributing weight evenly."
+            }
+          },
+          "banter": {
+            "dev": "Inventory motion smoothed.",
+            "trader": "Carry trade balanced.",
+            "whale": "Wake not tugging gear.",
+            "hacker": "Loadout hashed.",
+            "shiller": "Merch bag stable.",
+            "validator": "Rebalance logged.",
+            "miner": "Keeps tools from flying.",
+            "meme": "Spin-proof luggage."
+          },
+          "telemetry_tags": ["scene:3.4","action:pack_rebalance"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    },
+    {
+      "round_id": "3.4-R5",
+      "description": "Rewind Bay — revive fallen allies, log AFK rotations, and capture focus from temporal pools.",
+      "actions": [
+        {
+          "id": "rewind_revive",
+          "label": "Initiate Rewind Revive",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["support","ritual","time"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 6 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You rewind the moment before a fall. Your ally stands again, deja vu glowing around them."
+            },
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 4 },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "The rewind spool restores vitality."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "The spool slips; you gather yourself before trying again."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "You rewind too far and get disoriented in your own timeline."
+            }
+          },
+          "banter": {
+            "dev": "Time travel but HR-approved.",
+            "trader": "Losses recovered.",
+            "whale": "Wake loops compassionately.",
+            "hacker": "Temporal rollback executed.",
+            "shiller": "Narrative beat: second chances.",
+            "validator": "Rewind recorded.",
+            "miner": "Feels like reversing a cave-in.",
+            "meme": "Oops, ctrl+Z a whole injury."
+          },
+          "telemetry_tags": ["scene:3.4","action:rewind_revive"]
+        },
+        {
+          "id": "afk_rotation",
+          "label": "Program AFK Rotation",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "afk_rotation_ready", "value": true },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You set the auto-rotation to keep idle allies spinning safely and productively."
+            }
+          },
+          "banter": {
+            "dev": "Automation but mindful.",
+            "trader": "Idle capital redeployed.",
+            "whale": "Wake autopilot engaged.",
+            "hacker": "Force-play script uploaded.",
+            "shiller": "Messaging: we’ve got you even offline.",
+            "validator": "Rotation notarized.",
+            "miner": "Nobody left behind on the turn.",
+            "meme": "AFK? The tower twirls for you."
+          },
+          "telemetry_tags": ["scene:3.4","action:afk_rotation"]
+        }
+      ],
+      "rewards": [
+        { "type": "hp", "op": "+", "value": 2 }
+      ]
+    },
+    {
+      "round_id": "3.4-R6",
+      "description": "Telemetry Gallery — compile rotational data, release focus thresholds, and prep consensus vote.",
+      "actions": [
+        {
+          "id": "telemetry_compile",
+          "label": "Compile Rotation Telemetry",
+          "requirements": { "items_any": [], "flags_all": ["torque_ready","arrivals_synced"] },
+          "roll": { "kind": "phi_d20", "tags": ["analysis","strategy"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "value": 34 },
+                { "type": "flag", "id": "telemetry_ready", "value": true }
+              ],
+              "narration": "You gather data from every ring, projecting a spiral dashboard that dazzles the Turn-Keepers."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "telemetry_ready", "value": true }
+              ],
+              "narration": "Charts populate with tidy ratios."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You misplace a dataset and spend time reorganizing."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "A projection overheats; you pay for replacement lenses."
+            }
+          },
+          "banter": {
+            "dev": "Analytics ascend.",
+            "trader": "Data-driven hedging ready.",
+            "whale": "Wake metrics trending.",
+            "hacker": "Logs sanitized.",
+            "shiller": "Deck ready for investors.",
+            "validator": "Telemetry sealed.",
+            "miner": "Feels like reading strata logs.",
+            "meme": "Spreadsheet but in 4D."
+          },
+          "telemetry_tags": ["scene:3.4","action:telemetry_compile"]
+        },
+        {
+          "id": "focus_release",
+          "label": "Release Focus Threshold",
+          "requirements": { "items_any": [], "flags_all": ["telemetry_ready"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 }
+              ],
+              "narration": "You open a focus reservoir, letting the team sip from the stored momentum."
+            }
+          },
+          "banter": {
+            "dev": "Stamina injection authorized.",
+            "trader": "Focus dividend distributed.",
+            "whale": "Wake refreshed.",
+            "hacker": "Battery release triggered.",
+            "shiller": "Boost messaging: we got you.",
+            "validator": "Release logged.",
+            "miner": "Break room but in charts.",
+            "meme": "Focus keg tapped."
+          },
+          "telemetry_tags": ["scene:3.4","action:focus_release"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    },
+    {
+      "round_id": "3.4-R7",
+      "description": "Axis Vote — finalize the rotation agenda, unlock deck rewards, and move toward the Harmonix Atrium.",
+      "actions": [
+        {
+          "id": "axis_vote",
+          "label": "Call the Axis Vote",
+          "requirements": { "items_any": [], "flags_all": ["telemetry_ready","afk_rotation_ready"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","strategy","social"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 89 },
+                { "type": "coins", "value": 34 },
+                { "type": "flag", "id": "axis_vote_passed", "value": true }
+              ],
+              "narration": "The rings synchronize at your command, glowing with unanimous assent."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "axis_vote_passed", "value": true }
+              ],
+              "narration": "The vote passes and the Spindle logs a new chapter titled \"Act Three Momentum.\""
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You falter mid-call; the rings wait patiently."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "You trip a counter-rotation and must pay for the lost time."
+            }
+          },
+          "banter": {
+            "dev": "Rotation locked.",
+            "trader": "Agenda passed at speed.",
+            "whale": "Wake threads the axis.",
+            "hacker": "Vote script stable.",
+            "shiller": "Announcement: spindle accelerates.",
+            "validator": "Vote stamped.",
+            "miner": "Decision hammered home.",
+            "meme": "Spin the vote!"
+          },
+          "telemetry_tags": ["scene:3.4","action:axis_vote"]
+        },
+        {
+          "id": "deck_unlock",
+          "label": "Unlock Rotation Deck",
+          "requirements": { "items_any": [], "flags_all": ["axis_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "deck", "id": "deck_spindle_arc" }
+              ],
+              "narration": "A deck of rotational tactics descends from the ceiling, cards spinning in perfect harmony."
+            }
+          },
+          "banter": {
+            "dev": "Deck drop from orbit.",
+            "trader": "Card equity unlocked.",
+            "whale": "Wake signature embossed.",
+            "hacker": "Deck seeded with secrets.",
+            "shiller": "Marketing: unstoppable momentum.",
+            "validator": "Deck recorded.",
+            "miner": "Cards smell like oil and lightning.",
+            "meme": "Spin-to-win starter kit."
+          },
+          "telemetry_tags": ["scene:3.4","action:deck_unlock"]
+        },
+        {
+          "id": "advance_35",
+          "label": "Proceed to Scene 3.5",
+          "requirements": { "items_any": [], "flags_all": ["axis_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "You step into a harmonic elevator, rising toward the Atrium of Harmonix.",
+              "next_hint": "3.5"
+            }
+          },
+          "banter": {
+            "dev": "Next ring unlocking.",
+            "trader": "Position rotates forward.",
+            "whale": "Wake spirals upward.",
+            "hacker": "Layer 3.5 ready.",
+            "shiller": "Momentum unstoppable.",
+            "validator": "Transition notarized.",
+            "miner": "Elevator beats a ladder.",
+            "meme": "BRB, atrium jam."
+          },
+          "telemetry_tags": ["scene:3.4","action:advance_35"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "focus_gte": 7, "rewards": [ { "type": "coins", "value": 34 } ] },
+    { "xp_gte": 300, "rewards": [ { "type": "item", "id": "helm_spiral_visor" } ] },
+    { "flags_all": ["axis_vote_passed"], "rewards": [ { "type": "deck", "id": "deck_spindle_arc" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.arrivals_synced", "goto": "3.4A" },
+    { "when": "flags.axis_vote_passed", "goto": "3.5" },
+    { "when": "else", "goto": "3.4" }
+  ]
+}
