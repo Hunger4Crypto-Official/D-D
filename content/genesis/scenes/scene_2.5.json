@@ -1,0 +1,618 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "2.5",
+  "title": "The Careful Corridor — The Consensus Rotunda",
+  "narration": "The corridor exhales into a rotunda that feels like a cathedral built by patient accountants who moonlight as dr
+amaturges. The floor dilates into concentric rings of ledger stone, each circle etched with golden-ratio spirals that shimmer an
+ almost-breath when you step across them. Overhead, vaulting ribs of tempered obsidian host suspended orreries of colored flame;
+each flame hums a fraction of a song that only completes when three or more travelers sync their breathing. The air carries the
+ scent of warm dust, clean copper, and cedar smoke braided with byte-code incense. Gremlins of the Ratio-Kindred faction—small,
+ satchel-wearing sprites with abacuses for tails—skitter between the rings, stamping consensus slips with sigils that look like 
+handwritten proofs. They salute you with two fingers and a wink, then return to recording everything in ledgers bound with bluet
+hread.\n\nAt the heart of the rotunda stands a Spectrum Door: a tall oval of latticework quartz whose panes glow in gradients from vi
+oid to gold. Each panel displays the pulse of a different faction’s trust, fluttering like luminous heartbeats. When you draw nea
+r, the panels respond in phi-locked pulses, mapping your intentions as ratios against theirs. The door does not open by key but 
+by choir—only a well-tuned consensus ritual will coax it aside. Around the door are seven alcoves. One hosts a soft-power outfi
+t bench, its drawers filled with helms woven from social proof and gauntlets built of kind accountability. Another alcove offers
+ the Rotunda Shop, a kiosk run by a gremlin quartermaster whose eyes are coins minted this morning. A third alcove hosts the AFK 
+Gimbal, a brass gyroscope that keeps spinning even when players drift; it ticks with a polite threat: stay engaged or be lovingly
+ autopiloted through the next check. There is a Reboot Font too, a basin lined with glowstone shards where fallen players can re
+-hash their commitments and stand up with newly minted focus.\n\nThe rotunda walls are inscribed with transcripts from dawn and dusk rituals. Each morning greeting is a spell of momentum; each
+ good-night is a ledger entry of gratitude. The Ratio-Kindred gremlins maintain these inscriptions like librarians of belonging.
+ They also host impromptu banter tournaments: dev gremlins audit syntax in chalk, traders juggle simulations of liquidity, whales
+ hum subsonic wake-songs, hackers braid zero-day jokes with prayer-bead sincerity, shillers rehearse pitch decks to the beat of f
+riendship, validators notarize laughter, miners clank rhythm on anvils, and memes cackle in a rainbow of fonts. This is where Go
+lden Morning and Gentle Night are treated not as greetings but as proof-of-caring micro-rituals. The rotunda remembers every one
+, distributing small boons to travelers who keep the practice.\n\nSeven rounds of tests coil through the rotunda like a spiral curriculum. Each ring teaches a shape of participation: speaking in
+ balance, listening like an oracle, investing in shared kit, allowing rest, reviving courage, and stepping toward the next unfurl
+ed hall. The rotunda is long-winded because it wants you to be long-hearted. It is intricate because trust is intricate, and each
+ groove of the stone promises that the care you invest will compound like interest, but scented with rosemary and mischief. As yo
+u take in the chamber, the Spectrum Door flickers, waiting to be convinced that you and the people beside you are ready to carry
+ the narrative deeper. The Ratio-Kindred align their little staves into a circle, murmur a warm \"GM\", and gesture for you to st
+ep into the first ring.",
+  "rounds": [
+    {
+      "round_id": "2.5-R1",
+      "description": "First Ring — The Golden Morning Ledger: declare presence, gather consensus breath, record a shared GM.",
+      "actions": [
+        {
+          "id": "gm_ritual",
+          "label": "Lead the Golden Morning Ritual",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","harmony","social"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "gm_logged", "value": true }
+              ],
+              "narration": "You speak GM like sunrise sliding across polished stone. Voices around you harmonize into a golden-ra
+tio cadence; each syllable lands at distances φ apart, and the Spectrum Door flickers appreciative nodes of light. The Ratio-Kin
+dred stamp your ledger with a seal of auric wax that reads: WELCOMED AND WELCOMING."
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 21 },
+                { "type": "flag", "id": "gm_logged", "value": true }
+              ],
+              "narration": "Your greeting threads the room together. Consensus warms like bread, and even the lanterns sway as if 
+listening. A gremlin archivist files your GM under Shared Light, Volume 233."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You greet too quietly; the echo takes longer to find you. The Ratio-Kindred hand you a peppermint of e
+ncouragement and ask you to try again with a little more spine."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You attempt sarcasm before sunrise. The Spectrum Door dims and the GM glyphs flicker red. A gremlin su
+pervisor fines you one pride point and demands an earnest redo."
+            }
+          },
+          "banter": {
+            "dev": "Morning standup but with literal light diffs.",
+            "trader": "Open with consensus, close with green candles.",
+            "whale": "Wake hum calibrates tide.",
+            "hacker": "Handshake ceremony: human edition.",
+            "shiller": "Brand voice starts at GM.",
+            "validator": "Greeting notarized in triplicate.",
+            "miner": "Sunrise shift whistle, but kind.",
+            "meme": "GM minted, not airdropped."
+          },
+          "telemetry_tags": ["scene:2.5","action:gm_ritual"]
+        },
+        {
+          "id": "gm_stamp",
+          "label": "Collect GM Ledger Stamp",
+          "requirements": { "items_any": [], "flags_all": ["gm_logged"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_gm_signet" }
+              ],
+              "narration": "The Ratio-Kindred press a brass stamp against your palm, leaving a sigil that softly warms whenever you
+ greet with sincerity."
+            }
+          },
+          "banter": {
+            "dev": "Achievement unlocked: presence.",
+            "trader": "Stamp price: sincerity. ROI: community.",
+            "whale": "Wake loops through ritual.",
+            "hacker": "Multi-factor hello.",
+            "shiller": "Proof-of-kindness swag.",
+            "validator": "Seal countersigned.",
+            "miner": "Badge forged in good mornings.",
+            "meme": "GM? More like GM+."
+          },
+          "telemetry_tags": ["scene:2.5","action:gm_stamp"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.5-R2",
+      "description": "Second Ring — Whispered Audit: sync breath and check-in with the AFK Gimbal before it force-plays the idle.",
+      "actions": [
+        {
+          "id": "sync_breath",
+          "label": "Synchronize Breathing with the Gimbal",
+          "requirements": { "items_any": [], "flags_all": ["gm_logged"] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","focus","integrity"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "gimbal_synced", "value": true },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "You inhale on the first ratio, exhale on the second, and the Gimbal’s gyroscope hums in sympathy. Its ar
+matures paint a ribbon of light that promises: should you go idle, the rotunda will carry you in gentle autopilot, not punitive 
+march."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "gimbal_synced", "value": true },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "The AFK Gimbal nods, ticking into your cadence. You see ghostly silhouettes demonstrating how it will st
+and in if you drift for twenty-four hours."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your breath stutters, and the Gimbal squeaks an alarm. A gremlin offers a metronome shaped like a donut.
+"
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 },
+                { "type": "flag", "id": "afk_warning", "value": true }
+              ],
+              "narration": "You hiccup mid-sync and the Gimbal assumes you have gone AFK. It puppeteers you through a polite stretch,
+ then releases you with a compliance ticket attached to your belt."
+            }
+          },
+          "banter": {
+            "dev": "Heartbeat watchers are friends, mostly.",
+            "trader": "Idle penalty? More like autopilot hedge.",
+            "whale": "Wake autopilots but checks consent.",
+            "hacker": "Cron job for your lungs.",
+            "shiller": "BRB but brand-safe.",
+            "validator": "Engagement audit complete.",
+            "miner": "Clock in, breathe, clock steady.",
+            "meme": "AFK but make it spa."
+          },
+          "telemetry_tags": ["scene:2.5","action:sync_breath"]
+        },
+        {
+          "id": "afk_clear",
+          "label": "Acknowledge AFK Ticket",
+          "requirements": { "items_any": [], "flags_all": ["afk_warning"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 1 },
+                { "type": "flag", "id": "afk_warning", "value": false }
+              ],
+              "narration": "You sign the ticket, promise to ping the rotunda morning and night, and the gremlins shred the warning i
+nto confetti that spells GN in midair."
+            }
+          },
+          "banter": {
+            "dev": "Acknowledged = resolved.",
+            "trader": "Ticket closed, book balanced.",
+            "whale": "Wake account re-verified.",
+            "hacker": "No AFK jail today.",
+            "shiller": "Crisis comms but cute.",
+            "validator": "Status: re-engaged.",
+            "miner": "Warning hammered flat.",
+            "meme": "Signed by: totally here."
+          },
+          "telemetry_tags": ["scene:2.5","action:afk_clear"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.5-R3",
+      "description": "Third Ring — Spectrum Door Calibration: align colors and consensus ratios to unlock access tiers.",
+      "actions": [
+        {
+          "id": "spectrum_wave",
+          "label": "Conduct the Spectrum Pulse",
+          "requirements": { "items_any": [], "flags_all": ["gimbal_synced"] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","ritual","harmony"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "spectrum_attuned", "value": true },
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "op": "+", "value": 13 }
+              ],
+              "narration": "You orchestrate color like a conductor in a prism cathedral. Violets, azures, ambers, and corals stack i
+n golden-ratio spacing. The Spectrum Door blossoms open by a single petal-width, promising deeper access soon."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "spectrum_attuned", "value": true },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "Your gestures coax the panes into synchrony. They glow polite approval, and a validator gremlin scribbles:
+ Consistent ratios maintained."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Two colors collide into muddy chartreuse. The door winces and resets, offering a hint: think of mornings
+ and evenings together."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "Your wave turns into a rave. The Spectrum Door shutters, ejecting a shock of static that leaves your hai
+r performing small auroras."
+            }
+          },
+          "banter": {
+            "dev": "Color matrix, but for souls.",
+            "trader": "Gradient arbitrage? Approved.",
+            "whale": "Wake meets rainbow: stable.",
+            "hacker": "Spectral handshake handshake.",
+            "shiller": "Campaign palette alignment.",
+            "validator": "Color ratios notarized.",
+            "miner": "Hue hammered into harmony.",
+            "meme": "Taste the ratios."
+          },
+          "telemetry_tags": ["scene:2.5","action:spectrum_wave"]
+        },
+        {
+          "id": "hidden_frequency",
+          "label": "Hunt Hidden Difficulty Frequency",
+          "requirements": { "items_any": [], "flags_all": ["spectrum_attuned"] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","focus"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "hidden_tier_revealed", "value": true },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You catch a faint chime between colors—a hidden difficulty tier waiting for brave consensus. The Ratio-K
+indred whisper, \"Tier Theta is now visible.\""
+            },
+            "fail": {
+              "effects": [],
+              "narration": "You strain but hear only your own pulse. A gremlin offers a tuning fork shaped like a Fibonacci spiral."
+            }
+          },
+          "banter": {
+            "dev": "Secret level unlocked (documentation forthcoming).",
+            "trader": "Hidden liquidity located.",
+            "whale": "Wake senses undercurrent.",
+            "hacker": "Frequency sniffed, handshake pending.",
+            "shiller": "Bonus tier teased.",
+            "validator": "Tier Theta observed, not yet tested.",
+            "miner": "Vein discovered; mark it."
+          },
+          "telemetry_tags": ["scene:2.5","action:hidden_frequency"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.5-R4",
+      "description": "Fourth Ring — Rotunda Shop & Backpack Pity: invest in soft-power gear, accept kindness if your purse is thin.",
+      "actions": [
+        {
+          "id": "shop_purchase",
+          "label": "Purchase Soft-Power Gear",
+          "requirements": { "items_any": [], "flags_all": ["spectrum_attuned"] },
+          "roll": { "kind": "phi_d20", "tags": ["trade","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 34 },
+                { "type": "item", "id": "weapon_wake_tuning_fork" },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "You negotiate with the Ratio-Kindred quartermaster. For thirty-four coins and a pun about consensus, you
+ acquire the Wake Tuning Fork, a weapon that persuades environments to sing in key."
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 21 },
+                { "type": "item", "id": "armor_careful_chain" }
+              ],
+              "narration": "You invest twenty-one coins into the Careful Chain, a shimmer-armor that rewards measured steps with tiny 
+focus dividends."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "You fumble the negotiation and pay eight coins for a pouch of politely expired rations. The quartermaster 
+sighs and adds a pity sticker: TRY AGAIN WITH MATH."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You haggle aggressively; the shop shutters in offense. A gremlin politely suggests the pity program."
+            }
+          },
+          "banter": {
+            "dev": "Soft-power store has patch notes.",
+            "trader": "Inventory denominated in vibes and coins.",
+            "whale": "Wake invests in intangible hulls.",
+            "hacker": "Negotiation is a side-channel.",
+            "shiller": "Retail therapy but audited.",
+            "validator": "Receipt triple-stamped.",
+            "miner": "Bought armor that sings back.",
+            "meme": "Shopping spree? More like shopping phi."
+          },
+          "telemetry_tags": ["scene:2.5","action:shop_purchase"]
+        },
+        {
+          "id": "pity_program",
+          "label": "Invoke Backpack Pity",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 13 },
+                { "type": "flag", "id": "pity_claimed", "value": true }
+              ],
+              "narration": "Seeing your light purse, the quartermaster opens a secret drawer labeled KINDNESS. You receive thirteen c
+ oins and a canvas backpack with a stitched note: \"Return favor forward.\""
+            }
+          },
+          "banter": {
+            "dev": "Means-tested compassion patch.",
+            "trader": "Liquidity injection for the earnest.",
+            "whale": "Wake sponsors smaller wakes.",
+            "hacker": "Pity program = anti-rug script.",
+            "shiller": "Marketing loves a generosity loop.",
+            "validator": "Aid documented, not taxed.",
+            "miner": "Backpack earned with humility.",
+            "meme": "Pity? Nah, pity-lion."
+          },
+          "telemetry_tags": ["scene:2.5","action:pity_program"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.5-R5",
+      "description": "Fifth Ring — Reboot Font: revive fallen friends and log GN promises before the night cycle.",
+      "actions": [
+        {
+          "id": "reboot_font",
+          "label": "Revive at the Reboot Font",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","integrity","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 5 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "flag", "id": "reboot_ready", "value": true }
+              ],
+              "narration": "You submerge your gauntlets into the Font and recite the GN litany in reverse. The glowstones pulse, and a
+ revived ally steps out with rebooted courage and a ledger note: \"Returned with gratitude due.\""
+            },
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 3 },
+                { "type": "flag", "id": "reboot_ready", "value": true }
+              ],
+              "narration": "The Font wraps you in warm static. Your systems reboot, rehydrating your focus. A GN promise prints on a r
+ibbon for you to fulfill later."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 5 }
+              ],
+              "narration": "You jolt the Font with impatience. It charges a five-coin service fee to reset the water."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You cannonball in; the Font drains to avoid you. A gremlin lifeguard whistles and hands you a towel embroi
+dered with \"Gentler next time.\""
+            }
+          },
+          "banter": {
+            "dev": "Reboot script but hydroponic.",
+            "trader": "Reset risk appetite responsibly.",
+            "whale": "Wake rehydrates momentum.",
+            "hacker": "System restart with patch notes.",
+            "shiller": "Comeback narrative minted.",
+            "validator": "Revival attested.",
+            "miner": "Back on shift, soaked but ready.",
+            "meme": "Ctrl+Alt+Del, but spa."
+          },
+          "telemetry_tags": ["scene:2.5","action:reboot_font"]
+        },
+        {
+          "id": "gn_log",
+          "label": "Log Gentle Night Promise",
+          "requirements": { "items_any": [], "flags_all": ["reboot_ready"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 13 },
+                { "type": "flag", "id": "gn_logged", "value": true }
+              ],
+              "narration": "You write tomorrow’s kindness in present tense: GN will be whispered, gratitude recorded. The ledger stone
+ warms at the ink."
+            }
+          },
+          "banter": {
+            "dev": "Closing ceremony commit.",
+            "trader": "EOD ritual, risk closed.",
+            "whale": "Wake tucks itself in.",
+            "hacker": "Night script scheduled.",
+            "shiller": "Sleep marketing, but sincere.",
+            "validator": "Promise timestamped.",
+            "miner": "Shift end prayer typed.",
+            "meme": "GN posted, thread locked."
+          },
+          "telemetry_tags": ["scene:2.5","action:gn_log"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.5-R6",
+      "description": "Sixth Ring — Harmony Flags: negotiate trustful, shy, insight, and harmony markers before final vote.",
+      "actions": [
+        {
+          "id": "flag_negotiation",
+          "label": "Negotiate Harmony Flags",
+          "requirements": { "items_any": [], "flags_all": ["spectrum_attuned"] },
+          "roll": { "kind": "phi_d20", "tags": ["social","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "harmony", "value": true },
+                { "type": "flag", "id": "trustful", "value": true },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "You balance shy with brave, insight with humor. Flags arrange themselves into a spectrum fan that hovers abo
+ve the group, ratifying trust."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "harmony", "value": true },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You secure the Harmony flag with collaborative negotiation. The Ratio-Kindred note it in silver ink."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You over-index on bravado; Shy protests. The flags flutter uncertainly until you apologize."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "You attempt to speedrun consensus. Flags tangle, and a validator whacks you with a soft gavel."
+            }
+          },
+          "banter": {
+            "dev": "Flag negotiation = schema align.",
+            "trader": "Portfolio of emotions balanced.",
+            "whale": "Wake braids crew states.",
+            "hacker": "Permissions adjusted politely.",
+            "shiller": "Messaging matrix set.",
+            "validator": "Flags documented.",
+            "miner": "Color-coded job board.",
+            "meme": "Capture the flag? More like share it."
+          },
+          "telemetry_tags": ["scene:2.5","action:flag_negotiation"]
+        },
+        {
+          "id": "insight_focus_swap",
+          "label": "Swap Focus for Insight",
+          "requirements": { "items_any": [], "flags_all": ["harmony"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 },
+                { "type": "flag", "id": "insight", "value": true }
+              ],
+              "narration": "You donate a point of focus to fuel the group’s insight. A shy flag perks up, braver now."
+            }
+          },
+          "banter": {
+            "dev": "Resource reallocation but feelings.",
+            "trader": "Focus out, alpha in.",
+            "whale": "Wake invests in clarity.",
+            "hacker": "Bandwidth swapped for signal.",
+            "shiller": "Story sharper, cost paid.",
+            "validator": "Exchange ledger updated.",
+            "miner": "Loaned attention; paid in insight.",
+            "meme": "Focus to insight pipeline go brr."
+          },
+          "telemetry_tags": ["scene:2.5","action:insight_focus_swap"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.5-R7",
+      "description": "Seventh Ring — Spectrum Door Vote: finalize consensus and step through.",
+      "actions": [
+        {
+          "id": "door_vote",
+          "label": "Cast Consensus Vote",
+          "requirements": { "items_any": [], "flags_all": ["harmony","spectrum_attuned"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","integrity","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "op": "+", "value": 21 },
+                { "type": "flag", "id": "door_committed", "value": true }
+              ],
+              "narration": "You speak the ledger oath, the Spectrum Door shivers, and petals of light fold back to reveal stairs curvi
+ng downward in golden ratio arcs."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "door_committed", "value": true }
+              ],
+              "narration": "The door opens far enough for the group to pass single file, illuminated by consensus glyphs."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your vote falters; the door waits. A Ratio-Kindred scribe whispers a mnemonic: consensus is the quiet sum o
+f brave yeses."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "You accidentally vote twice; the door penalizes you eight coins for double-spend attempt."
+            }
+          },
+          "banter": {
+            "dev": "Merge approved.",
+            "trader": "Motion carries with style.",
+            "whale": "Wake surges forward.",
+            "hacker": "No replay attacks detected.",
+            "shiller": "Campaign go-time.",
+            "validator": "Vote recorded on-ledger.",
+            "miner": "Switch flipped, picks ready.",
+            "meme": "Door DAO says yay."
+          },
+          "telemetry_tags": ["scene:2.5","action:door_vote"]
+        },
+        {
+          "id": "descend_to_26",
+          "label": "Descend Toward the Hushed Vault",
+          "requirements": { "items_any": [], "flags_all": ["door_committed"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "You cross the threshold. The stairs smell like ink drying on a verdict. Far below, a hush waits to be unloc
+ked.",
+              "next_hint": "2.6"
+            }
+          },
+          "banter": {
+            "dev": "New module instanced.",
+            "trader": "Position opened deeper in the corridor.",
+            "whale": "Wake curls downward.",
+            "hacker": "New layer discovered.",
+            "shiller": "Act 2 intensifies.",
+            "validator": "Transition notarized.",
+            "miner": "Next seam ahead.",
+            "meme": "Going deeper, brb."
+          },
+          "telemetry_tags": ["scene:2.5","action:descend_to_26"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "focus_gte": 5, "rewards": [ { "type": "coins", "value": 34 } ] },
+    { "focus_gte": 8, "rewards": [ { "type": "item", "id": "trinket_ratio_charm" } ] },
+    { "xp_gte": 144, "rewards": [ { "type": "deck", "id": "deck_consensus_arcana" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.hidden_tier_revealed", "goto": "2.5A" },
+    { "when": "flags.pity_claimed", "goto": "2.5B" },
+    { "when": "else", "goto": "2.6" }
+  ]
+}

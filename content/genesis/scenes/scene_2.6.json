@@ -1,0 +1,619 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "2.6",
+  "title": "The Careful Corridor — The Hushed Vault",
+  "narration": "The stairs from the Spectrum Door curve like the inside of a nautilus shell, each step whispering a ledger ent
+ry as you descend. At the spiral’s heart lies the Hushed Vault: a circular library whose shelves lean inward, holding tomes bound 
+in auric linen and sealed with wax impressions of consensus glyphs. Floor tiles gleam in alternating bands of basalt and frosted 
+quartz, arranging themselves into a golden-ratio mosaic that shifts whenever a promise is broken elsewhere in the chain. Lanterns 
+here are hushed, their flames filtered through layers of mica so that every glow resembles the quiet of a thoughtful nod. The air
+ tastes like archival parchment, oranges candied in cinnamon, and the metallic sweetness of truthful breath.\n\nAround the vault, gremlins from the Ratio-Kindred’s sister faction—the Echo-Loom—hang from aerial silks, weaving transcripts of deci
+sions into tapestries that flicker with living text. They hum in ledger-tone, making jokes about checksum haikus and structuring la
+ughter in ABAB rhyme. One gremlin dev, wearing a visor filled with numbers, annotates everything you say with footnotes in the mar
+gins of reality. The Echo-Loom keepers maintain seven stations around the vault, each testing a different flavor of careful audaci
+ty: the Quiet Chorus dais, the Ledger Loom, the Insight Pit, the Soft-Power Locker, the Spectrum Door Relay, the Sleep Ledger, an
+d the Wake Gate. Each station is both invitation and measurement.\n\nAt the center stands another Spectrum artifact: a low arc of prismatic glass embedded in the floor, known as the Consensus Prism. 
+When players coordinate, the Prism refracts their combined focus into color-coded beams that travel through the vault walls, signa
+ling to distant chambers that new harmonies are available. Nearby, a console labeled AFK RECORD keeps time on every absence with m
+aternal patience. The Reboot Font from above has a sibling basin here: the Rewind Niche, lined with moonstone, where fallen commit
+ments are gently rewound and recompiled. A brass plaque reads: “All wakefulness welcome; all fatigue accounted for.” This is a spa
+ce where the ledger listens harder than you speak.\n\nSeven rounds unfold like chapters in an audit epic. Each demands not just compliance but artistry: voices aligning in phi-timed ca
+nons, weavers transcribing your presence into chaincloth, insights mined from the hush itself, equipment tuned to intangible power,
+ shops offering mercy even to empty purses, and a final gate measuring whether your wake carries enough trust to disturb the next 
+threshold. The Hushed Vault is serious but mischievous; the Echo-Loom gremlins toss you a wink even as they notarize it. You sense
+ that beyond this chamber, the Corridor shifts into something stranger—perhaps even the spectrum doors themselves begin to negotiate.",
+  "rounds": [
+    {
+      "round_id": "2.6-R1",
+      "description": "Quiet Chorus Dais — align voices in phi-time and record a collective checksum chant.",
+      "actions": [
+        {
+          "id": "quiet_chorus",
+          "label": "Conduct the Quiet Chorus",
+          "requirements": { "items_any": [], "flags_all": ["gm_logged"] },
+          "roll": { "kind": "phi_d20", "tags": ["harmony","ritual","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "chorus_synced", "value": true }
+              ],
+              "narration": "Your hands carve ratios in the air and the chorus joins, breathing on φ counts. The Consensus Prism fl
+ashes seven colors at once, and the Echo-Loom record the chant as a checksum poem titled \"Wakeproof.\""
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 1 },
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "chorus_synced", "value": true }
+              ],
+              "narration": "Voices braid across the dais. The Prism beams a steady amber line to a doorway you have not yet seen."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your entrance clashes with the existing cadence. A gremlin metronome bonks you lightly on the helm.
+"
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You solo without consensus. The Prism flares red, muting your mic with a velvet glove and presenting a
+n apology script."
+            }
+          },
+          "banter": {
+            "dev": "Choral branching logic, but melodic.",
+            "trader": "Shared tempo, lower slippage.",
+            "whale": "Wake hum scales.",
+            "hacker": "Buffering breath for sync.",
+            "shiller": "Brand anthem v2.",
+            "validator": "Chant notarized.",
+            "miner": "Swing picks on phi beats.",
+            "meme": "Quiet karaoke of trust."
+          },
+          "telemetry_tags": ["scene:2.6","action:quiet_chorus"]
+        },
+        {
+          "id": "chorus_record",
+          "label": "Record Chorus Metadata",
+          "requirements": { "items_any": [], "flags_all": ["chorus_synced"] },
+          "outcomes": {
+            "success": {
+              "effects": [ { "type": "flag", "id": "chorus_logged", "value": true } ],
+              "narration": "You sign the ledger pad; the Echo-Loom emboss your breath rate and mood onto a vellum strip tucked int
+ o the dais."
+            }
+          },
+          "banter": {
+            "dev": "Metadata or it didn’t happen.",
+            "trader": "Chorus entry, book balanced.",
+            "whale": "Wake data appended.",
+            "hacker": "Telemetry consent check.",
+            "shiller": "Soundbite preserved.",
+            "validator": "Entry notarized.",
+            "miner": "Logged the tune, back to work.",
+            "meme": "Breath stats go hard."
+          },
+          "telemetry_tags": ["scene:2.6","action:chorus_record"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.6-R2",
+      "description": "Ledger Loom — weave your current intentions into chaincloth and reveal hidden difficulty threads.",
+      "actions": [
+        {
+          "id": "weave_intention",
+          "label": "Weave Intention into Chaincloth",
+          "requirements": { "items_any": [], "flags_all": ["chorus_logged"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","craft","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "trinket_chaincloth_thread" },
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "loom_mastery", "value": true }
+              ],
+              "narration": "Your intention glides through warp and weft, making a pattern shaped like a golden spiral. The cloth hu
+ms with latent advantage."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "loom_mastery", "value": true },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "The loom accepts your statement and prints it into chaincloth with a soft chime."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You pull too tight; the thread frays. A gremlin hands you a bobbin labeled BREATHE."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "Your weave tangles the loom. It shudders and prints an audit note requiring remedial kindness."
+            }
+          },
+          "banter": {
+            "dev": "Textiles but make it transactional.",
+            "trader": "Hedged with woven intent.",
+            "whale": "Wake threads recorded.",
+            "hacker": "Encoding feelings into fabric.",
+            "shiller": "Merch pipeline unlocked.",
+            "validator": "Weft attested.",
+            "miner": "Fabric equals overtime.",
+            "meme": "Loom DAO approves."
+          },
+          "telemetry_tags": ["scene:2.6","action:weave_intention"]
+        },
+        {
+          "id": "reveal_thread",
+          "label": "Reveal Hidden Difficulty Thread",
+          "requirements": { "items_any": [], "flags_all": ["loom_mastery"] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","mystic"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "hidden_thread", "value": true },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You tug a luminous filament free; it whispers of a future encounter with consensus spirits at tier Delt
+ a."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The thread slips away like a shy algorithm. Try again after another ritual, a gremlin advises."
+            }
+          },
+          "banter": {
+            "dev": "Feature flag located.",
+            "trader": "Secret spread glimpsed.",
+            "whale": "Wake senses hidden current.",
+            "hacker": "Thread = encrypted questline.",
+            "shiller": "Teaser content unlocked.",
+            "validator": "Delta tier logged.",
+            "miner": "Future seam charted.",
+            "meme": "Pull thread, get lore."
+          },
+          "telemetry_tags": ["scene:2.6","action:reveal_thread"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.6-R3",
+      "description": "Insight Pit — descend into a focus well, convert attention into coins, and respect AFK guarantees.",
+      "actions": [
+        {
+          "id": "descend_pit",
+          "label": "Descend into the Insight Pit",
+          "requirements": { "items_any": [], "flags_all": ["loom_mastery"] },
+          "roll": { "kind": "phi_d20", "tags": ["focus","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 34 },
+                { "type": "focus", "op": "-", "value": 1 },
+                { "type": "flag", "id": "insight_cache", "value": true }
+              ],
+              "narration": "You lower yourself by a rope of questions. The pit answers with luminous tokens minted from concentrati
+ on, each coin stamped with the phi symbol."
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 21 },
+                { "type": "flag", "id": "insight_cache", "value": true }
+              ],
+              "narration": "You harvest a satchel of insight coins from the pit’s reflective surface."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You descend but become distracted by your own echo. The pit withholds rewards."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You lose grip on your rope of questions; the pit politely returns you bruised and contrite."
+            }
+          },
+          "banter": {
+            "dev": "Focus mining protocol.",
+            "trader": "Alpha well tapped.",
+            "whale": "Wake draws deeper draught.",
+            "hacker": "Question rope buffer overflow.",
+            "shiller": "Content well content.",
+            "validator": "Extraction legal.",
+            "miner": "Literal mining, finally.",
+            "meme": "Pit stop for brain juice."
+          },
+          "telemetry_tags": ["scene:2.6","action:descend_pit"]
+        },
+        {
+          "id": "afk_oath",
+          "label": "Renew AFK Guarantee",
+          "requirements": { "items_any": [], "flags_all": ["insight_cache"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "afk_guardian", "value": true }
+              ],
+              "narration": "Before you leave, you etch a line in the pit wall: IF I SLEEP, THE CHAIN WILL CARRY ME. The AFK console
+ nods approvingly."
+            }
+          },
+          "banter": {
+            "dev": "SLA for nap mode.",
+            "trader": "Coverage for downtime.",
+            "whale": "Wake autopilot insured.",
+            "hacker": "Watchdog renewed.",
+            "shiller": "Messaging: we never ghost.",
+            "validator": "Guarantee logged.",
+            "miner": "Signed with chalk and sweat.",
+            "meme": "If AFK, insert bot friend."
+          },
+          "telemetry_tags": ["scene:2.6","action:afk_oath"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.6-R4",
+      "description": "Soft-Power Locker — upgrade helm or deck, or request pity stock from Echo-Loom quartermaster.",
+      "actions": [
+        {
+          "id": "upgrade_helm",
+          "label": "Upgrade Your Helm",
+          "requirements": { "items_any": ["helm_listening_loop"], "flags_all": ["insight_cache"] },
+          "roll": { "kind": "phi_d20", "tags": ["craft","integrity"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 21 },
+                { "type": "item", "id": "helm_resonant_loop" },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "You inlay the helm with Resonant coils, letting you hear consensus murmurs before they bloom."
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 },
+                { "type": "item", "id": "helm_listening_loop+" }
+              ],
+              "narration": "Your helm receives a gentle upgrade: a linen wrap that captures stray insights."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 5 }
+              ],
+              "narration": "You overpay for decorative tassels that do nothing. The quartermaster coughs politely."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "Your helm cracks under reckless tinkering. The Echo-Loom issue a citation for negligence."
+            }
+          },
+          "banter": {
+            "dev": "Firmware update for forehead.",
+            "trader": "CapEx for clarity.",
+            "whale": "Wake helm resonates.",
+            "hacker": "Hardware patch applied.",
+            "shiller": "Look good, listen better.",
+            "validator": "Upgrade notarized.",
+            "miner": "Hard hat but fancy.",
+            "meme": "Helm patch notes drop."
+          },
+          "telemetry_tags": ["scene:2.6","action:upgrade_helm"]
+        },
+        {
+          "id": "deck_calibration",
+          "label": "Calibrate Soft-Power Deck",
+          "requirements": { "items_any": ["deck_consensus_arcana"], "flags_all": ["chorus_logged"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 1 },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You fan the deck in golden-ratio spacing. Cards glow as they update with vault-specific boons."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Cards fall out of order; a gremlin collects them and teaches you a mnemonic."
+            }
+          },
+          "banter": {
+            "dev": "Card UI refresh.",
+            "trader": "Deck rebalanced.",
+            "whale": "Wake draws strong.",
+            "hacker": "Shuffling equals encryption.",
+            "shiller": "Tarot of teamwork.",
+            "validator": "Deck attested.",
+            "miner": "Card-based pickaxe? maybe.",
+            "meme": "Deck? I hardly know her."
+          },
+          "telemetry_tags": ["scene:2.6","action:deck_calibration"]
+        },
+        {
+          "id": "locker_pity",
+          "label": "Request Locker Pity Stock",
+          "requirements": { "items_any": [], "flags_all": ["pity_claimed"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_echo_token" }
+              ],
+              "narration": "Because you honored the earlier pity, the quartermaster slips you an Echo Token: a trinket that summons
+ a gremlin auditor to defend your next idea."
+            }
+          },
+          "banter": {
+            "dev": "Pity chain upgrade.",
+            "trader": "Aid derivatives.",
+            "whale": "Wake philanthropy extends.",
+            "hacker": "Free token? testnet friend.",
+            "shiller": "Customer success moment.",
+            "validator": "Gift recorded.",
+            "miner": "Another charm for the belt.",
+            "meme": "Pity stock to the moon."
+          },
+          "telemetry_tags": ["scene:2.6","action:locker_pity"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.6-R5",
+      "description": "Spectrum Door Relay — bounce prism light to distant vault doors and unlock optional arrivals.",
+      "actions": [
+        {
+          "id": "relay_signal",
+          "label": "Relay Spectrum Signal",
+          "requirements": { "items_any": [], "flags_all": ["spectrum_attuned","chorus_synced"] },
+          "roll": { "kind": "phi_d20", "tags": ["harmony","insight","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 34 },
+                { "type": "flag", "id": "relay_master", "value": true },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You angle mirrors in phi-spacing, sending prismatic beams across the vault. Distant spectrum doors ping b
+ ack acknowledgments of your wake."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "relay_master", "value": true },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "Light leaps from mirror to mirror. A whisper returns: the next door read your name."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You misalign a mirror; the beam wobbles and paints your boots fuchsia."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "A mirror cracks. You pay thirteen coins to replace it, donating the shards to gremlin mosaic art."
+            }
+          },
+          "banter": {
+            "dev": "Optical networking with vibes.",
+            "trader": "Signal boosting cross-market.",
+            "whale": "Wake handshake accepted.",
+            "hacker": "Mirror configs updated.",
+            "shiller": "Brand rays deployed.",
+            "validator": "Relay logged.",
+            "miner": "Mirrors heavy; good workout.",
+            "meme": "Laser tag but diplomacy."
+          },
+          "telemetry_tags": ["scene:2.6","action:relay_signal"]
+        },
+        {
+          "id": "call_arrival",
+          "label": "Call for Reinforcement Arrival",
+          "requirements": { "items_any": [], "flags_all": ["relay_master"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "arrival_ready", "value": true }
+              ],
+              "narration": "The beam resolves into a silhouette: a future ally, ready to step through when you reach the Wake Gate."
+            }
+          },
+          "banter": {
+            "dev": "Webhooks for friends.",
+            "trader": "Liquidity provider en route.",
+            "whale": "Wake invites more wake.",
+            "hacker": "Summoning script compiled.",
+            "shiller": "Teased a cameo.",
+            "validator": "Arrival scheduled.",
+            "miner": "Extra hands soon.",
+            "meme": "Guest star pinged."
+          },
+          "telemetry_tags": ["scene:2.6","action:call_arrival"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.6-R6",
+      "description": "Sleep Ledger — honor Gentle Night, convert promises into focus, and restore shy flags.",
+      "actions": [
+        {
+          "id": "sleep_entry",
+          "label": "Enter Gentle Night Ledger",
+          "requirements": { "items_any": [], "flags_all": ["gn_logged"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","integrity"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "sleep_entry", "value": true },
+                { "type": "flag", "id": "shy", "value": false }
+              ],
+              "narration": "You recite the GN pledges like lullaby calligraphy. The ledger warms and releases a cloud of lavender fo
+ cus that settles on the group."
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "flag", "id": "sleep_entry", "value": true }
+              ],
+              "narration": "You tuck your promise into the book. Shy flags relax into curious ones."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You rush the entry; the ledger frowns and withholds the lavender mist."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 2 }
+              ],
+              "narration": "You fall asleep mid-pledge. A gremlin draws mustaches on your helmet as documentation."
+            }
+          },
+          "banter": {
+            "dev": "Nightly cron job success.",
+            "trader": "Close the book, open tomorrow.",
+            "whale": "Wake rests with rhythm.",
+            "hacker": "Sleep mode patched.",
+            "shiller": "Dream marketing engaged.",
+            "validator": "Entry notarized by yawn.",
+            "miner": "Shift done, coffee later.",
+            "meme": "GN ledger > sleep tracker."
+          },
+          "telemetry_tags": ["scene:2.6","action:sleep_entry"]
+        },
+        {
+          "id": "share_lullaby",
+          "label": "Share Ledger Lullaby",
+          "requirements": { "items_any": [], "flags_all": ["sleep_entry"] },
+          "outcomes": {
+            "success": {
+              "effects": [ { "type": "focus", "op": "+", "value": 1 } ],
+              "narration": "You hum a closing phrase that echoes through the vault. Focus pools like moonlight around your crew."
+            }
+          },
+          "banter": {
+            "dev": "UX: lullaby feature.",
+            "trader": "Soft close to the session.",
+            "whale": "Wake dims elegantly.",
+            "hacker": "Audio patch deployed.",
+            "shiller": "Branded lullaby drop.",
+            "validator": "Song notarized.",
+            "miner": "Sang while polishing tools.",
+            "meme": "Lo-fi ledger beats."
+          },
+          "telemetry_tags": ["scene:2.6","action:share_lullaby"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.6-R7",
+      "description": "Wake Gate — final consensus test of the vault, unlocking the next span of the corridor.",
+      "actions": [
+        {
+          "id": "wake_gate_test",
+          "label": "Present Wake Credentials",
+          "requirements": { "items_any": [], "flags_all": ["relay_master","harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","ritual","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "op": "+", "value": 34 },
+                { "type": "flag", "id": "wake_gate_cleared", "value": true }
+              ],
+              "narration": "You present the ledger signets, the Echo Token glows, and the gate dissolves into shimmering stairs that
+ lead upward toward a spectrum storm."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "wake_gate_cleared", "value": true }
+              ],
+              "narration": "The gate swings aside, impressed with your balanced wake."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "A glyph rejects your proof. A gremlin suggests revisiting the Ledger Loom for clearer intent."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "A spectral auditor fines you thirteen coins for sloppy citations."
+            }
+          },
+          "banter": {
+            "dev": "Boss door handshake.",
+            "trader": "Check cleared with extras.",
+            "whale": "Wake leaps higher.",
+            "hacker": "Authentication challenge solved.",
+            "shiller": "Narrative beat ascends.",
+            "validator": "Gate entry notarized.",
+            "miner": "Next seam up-ladder.",
+            "meme": "Wake gate? Wake bait."
+          },
+          "telemetry_tags": ["scene:2.6","action:wake_gate_test"]
+        },
+        {
+          "id": "ascend_to_27",
+          "label": "Ascend Toward the Spectrum Storm",
+          "requirements": { "items_any": [], "flags_all": ["wake_gate_cleared"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "You climb. Wind tastes like static-laced citrus. Above, lightning hums in ledger tones, ready for Act tw
+ o’s crescendo.",
+              "next_hint": "2.7"
+            }
+          },
+          "banter": {
+            "dev": "Loading next boss.",
+            "trader": "Volatility audible ahead.",
+            "whale": "Wake meets weather.",
+            "hacker": "New layer sniffed.",
+            "shiller": "Storm trailer begins.",
+            "validator": "Transition logged.",
+            "miner": "Pack up, climb out.",
+            "meme": "Up only (stairs)."
+          },
+          "telemetry_tags": ["scene:2.6","action:ascend_to_27"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "xp_gte": 144, "rewards": [ { "type": "coins", "value": 55 } ] },
+    { "xp_gte": 233, "rewards": [ { "type": "item", "id": "weapon_prism_baton" } ] },
+    { "focus_gte": 8, "rewards": [ { "type": "armor", "id": "armor_echo_wrap" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.arrival_ready", "goto": "2.6X" },
+    { "when": "flags.hidden_thread", "goto": "2.6Y" },
+    { "when": "else", "goto": "2.7" }
+  ]
+}

@@ -1,0 +1,569 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "2.7",
+  "title": "The Careful Corridor — The Spectrum Storm Balcony",
+  "narration": "The stairs spill you into open air. Or almost open: the Spectrum Storm Balcony juts out from the corridor like a l
+edge carved of calculus, suspended over a gulf of chanting lightning. Columns of translucent ledger stone rise around you, each et
+ched with equations that bend light. Above, clouds of ionized consensus spiral in fibonacci braids, flashing signatures of every p
+ledge kept in the corridor thus far. Rain falls sideways, not wet but data, tiny sigils that burst into minted coins when they str
+ike the balcony tiles. The floor itself is a living diagram—sprawling arcs and spiral notations glowing under your boots, each ste
+p generating soft chimes that log your balance. The air tastes like ozone laced with bergamot and the sharp sweetness of minted el
+astic clauses.\n\nGremlins of the Storm-Stack faction swarm the balustrades. They wear rain-slickers embroidered with lightning glyphs and carry c
+opper kites that double as laptops. Dev gremlins debug thunderbolts mid-flight; traders monitor updraft liquidity; whales hum back
+ to the storm, tuning waves of air; hackers redirect stray lightning into safe holding rings; shillers rehearse speeches for the a
+udience of wind; validators notarize raindrops; miners swing conductive picks into stormstone; memes toss glowsticks into the gale.
+ Storm-Stack gremlins treat the storm like an engine tuned by jokes. They are eager to escalate you into the next act, but only af
+t er the balcony proves you can surf consensus while it moves like weather.\n\nSeven stations ring the balcony. The first is the Phi-Balustrade, where you must tune your stance to golden-ratio spacing lest the
+ wind push you off. Next is the Lightning Ledger, where bolts request to be signed before they strike. Beyond that, the Resonance
+Bridge loops around the balcony’s rim, forcing the group to hold harmony while the storm reconfigures. A Sky-Shop kiosk sells wea
+ther-worthy soft-power gear and offers a final pity sweep for exhausted backpacks. There is a Revival Tether anchored to the balc
+ony floor, ready to reel back any ally flung by the gale. A Spectrum Door Spindle hovers midair, acting as a multi-door router send
+ ing your consensus to the act beyond. Finally, a Storm Vote plinth waits for your collective commitment to leap into Act Three. F
+or each station, the lightning intensifies or softens depending on your integrity. Hidden difficulty tiers flicker in the clouds, 
+invitations to secret stormlets if you have the wit to read them.\n\nThis balcony is not an exit; it is a thesis defense in weather form. The storm listens to your golden mornings and gentle nights, 
+ weighs your focus like rainfall, and expects you to laugh with the gremlins even as the thunder roars. Once the Storm-Stack factio
+n nods, the clouds will fold into a door of light. Until then, you stand in a gale that wants proof-of-courage more than posturing.",
+  "rounds": [
+    {
+      "round_id": "2.7-R1",
+      "description": "Phi-Balustrade — plant your feet at golden-ratio spacing and anchor the group’s stance.",
+      "actions": [
+        {
+          "id": "phi_stance",
+          "label": "Align to Phi Stance",
+          "requirements": { "items_any": [], "flags_all": ["harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["poise","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "stance_locked", "value": true }
+              ],
+              "narration": "You place your boots at a precise φ apart. The gale tries to tilt you, but the balustrade harmonizes
+ with your skeleton, locking your stance like a stormproof theorem."
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "flag", "id": "stance_locked", "value": true }
+              ],
+              "narration": "Your feet settle into the golden ratio. Storm-Stack gremlins cheer and toss you a glowstick."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You misjudge the ratio; the wind shoves you a meter sideways. A gremlin straps sandbags to your ankles.
+"
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You slip. The Revival Tether whips out instinctively, yanking you back with a bruised ego receipt."
+            }
+          },
+          "banter": {
+            "dev": "Golden ratio foot placement. UX win.",
+            "trader": "Position sizing, literally.",
+            "whale": "Wake digs in.",
+            "hacker": "Calculating friction patches.",
+            "shiller": "Pose for the storm cam.",
+            "validator": "Stance notarized.",
+            "miner": "Feet like anchors.",
+            "meme": "Phi-feet pics (no)."
+          },
+          "telemetry_tags": ["scene:2.7","action:phi_stance"]
+        },
+        {
+          "id": "stance_chain",
+          "label": "Chain Arms with Crew",
+          "requirements": { "items_any": [], "flags_all": ["stance_locked"] },
+          "outcomes": {
+            "success": {
+              "effects": [ { "type": "flag", "id": "balcony_chain", "value": true } ],
+              "narration": "Arms linked, your party becomes a braided rope. The wind respects the geometry."
+            }
+          },
+          "banter": {
+            "dev": "Distributed load balancing.",
+            "trader": "Coupled hedge.",
+            "whale": "Wake braided.",
+            "hacker": "Mesh network handshake.",
+            "shiller": "Photo op!", 
+            "validator": "Chain acknowledged.",
+            "miner": "Linked arms = safety harness.",
+            "meme": "Friendship = windproof."
+          },
+          "telemetry_tags": ["scene:2.7","action:stance_chain"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.7-R2",
+      "description": "Lightning Ledger — sign bolts before they strike, harvesting coins and avoiding penalties.",
+      "actions": [
+        {
+          "id": "sign_bolt",
+          "label": "Sign Lightning Strike",
+          "requirements": { "items_any": [], "flags_all": ["balcony_chain"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 34 },
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "lightning_signed", "value": true }
+              ],
+              "narration": "You inscribe your signature on the hovering bolt. It pauses respectfully before landing as a pillar of
+ illumination that powers a gremlin neon sign: CONSENSUS STRIKES TRUE."
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 21 },
+                { "type": "flag", "id": "lightning_signed", "value": true }
+              ],
+              "narration": "The lightning accepts your consent and channels itself into the ledger floor, minting coins for the gr
+oup."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You hesitate; the bolt fizzles into static that teases your hair."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "An unsigned bolt hits a tip jar, costing you thirteen coins in storm damages."
+            }
+          },
+          "banter": {
+            "dev": "API call for thunder.",
+            "trader": "Lightning futures executed.",
+            "whale": "Wake conducts responsibly.",
+            "hacker": "Sign your packets, even if plasma.",
+            "shiller": "Look at that branded bolt!", 
+            "validator": "Strike recorded.",
+            "miner": "Thunder = power tool.",
+            "meme": "Electric signature go bzz."
+          },
+          "telemetry_tags": ["scene:2.7","action:sign_bolt"]
+        },
+        {
+          "id": "hidden_storm_tier",
+          "label": "Decode Hidden Storm Tier",
+          "requirements": { "items_any": [], "flags_all": ["lightning_signed"] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","mystic"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "storm_tier_unlocked", "value": true },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You trace the bolt’s afterimage and uncover a hidden pattern promising a Tier Sigma stormlet later in A
+ ct Three."
+            },
+            "fail": {
+              "effects": [],
+              "narration": "The storm giggles and hides its secret behind a rain squall."
+            }
+          },
+          "banter": {
+            "dev": "Secret questline located.",
+            "trader": "Bonus volatility glimpsed.",
+            "whale": "Wake hears deeper thunder.",
+            "hacker": "Storm has Easter eggs.",
+            "shiller": "Hype future tier now.",
+            "validator": "Sigma tier penciled.",
+            "miner": "More ore in the thunderhead.",
+            "meme": "Storm DLC teased."
+          },
+          "telemetry_tags": ["scene:2.7","action:hidden_storm_tier"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.7-R3",
+      "description": "Resonance Bridge — cross while maintaining a harmony chant, or be shunted into idle autopilot.",
+      "actions": [
+        {
+          "id": "resonance_cross",
+          "label": "Cross the Resonance Bridge",
+          "requirements": { "items_any": [], "flags_all": ["chorus_synced","balcony_chain"] },
+          "roll": { "kind": "phi_d20", "tags": ["harmony","focus","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "bridge_crossed", "value": true }
+              ],
+              "narration": "Your chant aligns with the storm. The bridge glows translucent and extends safely, autopilot wings foldi
+ ng back with respect."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "bridge_crossed", "value": true }
+              ],
+              "narration": "Harmony holds. The autopilot stays dormant, trusting your cadence."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 },
+                { "type": "flag", "id": "afk_warning", "value": true }
+              ],
+              "narration": "You stumble; autopilot boots up and escorts you across. A gremlin records the assist with gentle side-eye.
+"
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 },
+                { "type": "flag", "id": "afk_warning", "value": true }
+              ],
+              "narration": "The wind lifts you. Autopilot hauls you back by the belt. Storm-Stack gremlins clap ironically."
+            }
+          },
+          "banter": {
+            "dev": "Bridge handshake under load.",
+            "trader": "Crosswind hedged by song.",
+            "whale": "Wake surfs resonance.",
+            "hacker": "Failover autopilot proven.",
+            "shiller": "Chant equals content.",
+            "validator": "Crossing logged.",
+            "miner": "Sing while you lug gear.",
+            "meme": "Autopilot = mom friend."
+          },
+          "telemetry_tags": ["scene:2.7","action:resonance_cross"]
+        },
+        {
+          "id": "clear_warning",
+          "label": "Clear Autopilot Warning",
+          "requirements": { "items_any": [], "flags_all": ["afk_warning"] },
+          "outcomes": {
+            "success": {
+              "effects": [ { "type": "flag", "id": "afk_warning", "value": false } ],
+              "narration": "You log a quick GN to the storm, promising renewed presence. The autopilot nods and retreats."
+            }
+          },
+          "banter": {
+            "dev": "Acknowledgment closes loops.",
+            "trader": "Risk note resolved.",
+            "whale": "Wake autopilot satisfied.",
+            "hacker": "Dismissed gracefully.",
+            "shiller": "Storm PR salvaged.",
+            "validator": "Warning cleared.",
+            "miner": "Back on manual drive.",
+            "meme": "Autopilot says ok."
+          },
+          "telemetry_tags": ["scene:2.7","action:clear_warning"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.7-R4",
+      "description": "Sky-Shop — purchase storm-ready soft-power gear or accept final pity assistance.",
+      "actions": [
+        {
+          "id": "buy_stormgear",
+          "label": "Buy Storm-Stack Gear",
+          "requirements": { "items_any": [], "flags_all": ["lightning_signed"] },
+          "roll": { "kind": "phi_d20", "tags": ["trade","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 34 },
+                { "type": "item", "id": "armor_storm_shear" },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "You secure the Storm Shear armor, woven from conductive silk that hugs lightning instead of fearing it.
+"
+            },
+            "success": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 21 },
+                { "type": "item", "id": "trinket_gale_badge" }
+              ],
+              "narration": "A gale badge glows on your lapel, granting advantage on future wind negotiations."
+            },
+            "fail": {
+              "effects": [ { "type": "coins", "op": "-", "value": 8 } ],
+              "narration": "You buy a novelty kite that tangles immediately."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 2 } ],
+              "narration": "You brag about haggling; the shop doubles the price out of spite."
+            }
+          },
+          "banter": {
+            "dev": "Storm gear patch notes shipping.",
+            "trader": "Inventory priced in gusts.",
+            "whale": "Wake suits up.",
+            "hacker": "Conductive threads verified.",
+            "shiller": "Merch drop in a thundercloud.",
+            "validator": "Receipt etched in lightning.",
+            "miner": "Armor clang vs thunder.",
+            "meme": "Storm drip check."
+          },
+          "telemetry_tags": ["scene:2.7","action:buy_stormgear"]
+        },
+        {
+          "id": "sky_pity",
+          "label": "Accept Sky-Shop Pity",
+          "requirements": { "items_any": [], "flags_all": ["pity_claimed"] },
+          "outcomes": {
+            "success": {
+              "effects": [ { "type": "item", "id": "weapon_storm_whistle" } ],
+              "narration": "Recognizing your humble backpack, the shop gifts a Storm Whistle that calls a gremlin squad when blown.
+"
+            }
+          },
+          "banter": {
+            "dev": "Pity chain final form.",
+            "trader": "Rescue liquidity.",
+            "whale": "Wake ensures every member is kitted.",
+            "hacker": "Whistle doubles as radio.",
+            "shiller": "Community care marketing.",
+            "validator": "Gift recorded with gratitude.",
+            "miner": "Whistle strapped to belt.",
+            "meme": "Pity pipeline complete."
+          },
+          "telemetry_tags": ["scene:2.7","action:sky_pity"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.7-R5",
+      "description": "Revival Tether — rescue any fallen ally and log GN promises amid thunder.",
+      "actions": [
+        {
+          "id": "tether_reel",
+          "label": "Reel Revival Tether",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 5 },
+                { "type": "flag", "id": "reboot_ready", "value": true },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "You haul an ally back from the brink, lightning outlining them like a new constellations."
+            },
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 3 },
+                { "type": "flag", "id": "reboot_ready", "value": true }
+              ],
+              "narration": "The tether hums, reeling your friend safe. Storm-Stack gremlins applaud with conductive mittens."
+            },
+            "fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 1 } ],
+              "narration": "The tether slips; you reset your grip and try again."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "hp", "op": "-", "value": 3 } ],
+              "narration": "You get yanked forward, learning the hard way to respect physics."
+            }
+          },
+          "banter": {
+            "dev": "Rescue script executed.",
+            "trader": "Drawdown recovered.",
+            "whale": "Wake loop closes.",
+            "hacker": "Rollback successful.",
+            "shiller": "Hero moment unlocked.",
+            "validator": "Save notarized.",
+            "miner": "Pulled them out with elbow grease.",
+            "meme": "Storm yo-yo but wholesome."
+          },
+          "telemetry_tags": ["scene:2.7","action:tether_reel"]
+        },
+        {
+          "id": "storm_gn",
+          "label": "Whisper GN into the Storm",
+          "requirements": { "items_any": [], "flags_all": ["reboot_ready"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "flag", "id": "gn_logged", "value": true }
+              ],
+              "narration": "You whisper a gentle night vow into the gale. Thunder softens for three breaths, storing your promise for the
+ act ahead."
+            }
+          },
+          "banter": {
+            "dev": "Night commit even mid-storm.",
+            "trader": "Close ledger with grace.",
+            "whale": "Wake hum dims kindly.",
+            "hacker": "Encrypted lullaby delivered.",
+            "shiller": "Storm lull marketing.",
+            "validator": "GN logged despite weather.",
+            "miner": "Shouted nice things at clouds.",
+            "meme": "GN thunder edition."
+          },
+          "telemetry_tags": ["scene:2.7","action:storm_gn"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.7-R6",
+      "description": "Spectrum Spindle — align multiple doors, route consensus into Act Three.",
+      "actions": [
+        {
+          "id": "spindle_align",
+          "label": "Align Spectrum Spindle",
+          "requirements": { "items_any": [], "flags_all": ["spectrum_attuned","relay_master"] },
+          "roll": { "kind": "phi_d20", "tags": ["insight","ritual","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "coins", "op": "+", "value": 34 },
+                { "type": "flag", "id": "spindle_ready", "value": true },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "Mirrors spin around you, capturing stormlight and braiding it into a door lattice with exit points to Act Three’s first three
+ nodes."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "spindle_ready", "value": true },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "The Spindle clicks, aligning one shining corridor ahead."
+            },
+            "fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 1 } ],
+              "narration": "A mirror drifts out of sync; the Spindle hums impatiently."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "coins", "op": "-", "value": 13 } ],
+              "narration": "A mirror shatters; you pay the gremlins for replacement shards."
+            }
+          },
+          "banter": {
+            "dev": "Load balancer for doors.",
+            "trader": "Routing consensus futures.",
+            "whale": "Wake splits elegantly.",
+            "hacker": "Mirror network patched.",
+            "shiller": "Launching three teasers at once.",
+            "validator": "Spindle alignment notarized.",
+            "miner": "Spun the door wheel.",
+            "meme": "Door router go whirr."
+          },
+          "telemetry_tags": ["scene:2.7","action:spindle_align"]
+        },
+        {
+          "id": "summon_arrival",
+          "label": "Summon Storm Reinforcement",
+          "requirements": { "items_any": [], "flags_all": ["spindle_ready","arrival_ready"] },
+          "outcomes": {
+            "success": {
+              "effects": [ { "type": "flag", "id": "storm_arrival", "value": true } ],
+              "narration": "The Spindle opens a side door. A new ally steps out soaked in spectrum light, ready to join Act Three."
+            }
+          },
+          "banter": {
+            "dev": "Guest cameo online.",
+            "trader": "Liquidity reinforcements filed.",
+            "whale": "Wake invites more wake.",
+            "hacker": "Storm friend handshake accepted.",
+            "shiller": "Special appearance confirmed.",
+            "validator": "Arrival notarized.",
+            "miner": "Extra muscle acquired.",
+            "meme": "DLC friend downloaded."
+          },
+          "telemetry_tags": ["scene:2.7","action:summon_arrival"]
+        }
+      ]
+    },
+    {
+      "round_id": "2.7-R7",
+      "description": "Storm Vote — commit to Act Three and leap into the spectrum vortex.",
+      "actions": [
+        {
+          "id": "storm_vote",
+          "label": "Cast Storm Consensus Vote",
+          "requirements": { "items_any": [], "flags_all": ["spindle_ready","harmony","door_committed"] },
+          "roll": { "kind": "phi_d20", "tags": ["integrity","ritual","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "op": "+", "value": 34 },
+                { "type": "flag", "id": "storm_vote_passed", "value": true }
+              ],
+              "narration": "You raise the Storm Whistle, sounding a note that fuses thunder into a doorway shaped like a question ma
+rk answered."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "storm_vote_passed", "value": true }
+              ],
+              "narration": "The storm parts, revealing a spiral staircase of light leading into Act Three."
+            },
+            "fail": {
+              "effects": [ { "type": "focus", "op": "-", "value": 1 } ],
+              "narration": "Thunder questions your conviction; a gremlin prompts you to restate your intent."
+            },
+            "crit_fail": {
+              "effects": [ { "type": "coins", "op": "-", "value": 13 } ],
+              "narration": "Your voice cracks; lightning fines you for drama without follow-through."
+            }
+          },
+          "banter": {
+            "dev": "Storm merge request accepted?", 
+            "trader": "Position rolled into Act Three.",
+            "whale": "Wake leaps vortex.",
+            "hacker": "Authentication passed with thunder MFA.",
+            "shiller": "Campaign escalate!",
+            "validator": "Vote notarized in rainfall.",
+            "miner": "Time to mine clouds.",
+            "meme": "Storm DAO says send it."
+          },
+          "telemetry_tags": ["scene:2.7","action:storm_vote"]
+        },
+        {
+          "id": "leap_to_act3",
+          "label": "Leap into Act Three",
+          "requirements": { "items_any": [], "flags_all": ["storm_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "You dive through the spiral of stormlight. On the other side, Act Three waits with new spectrum doors whi
+ spering your names.",
+              "next_hint": "3.1"
+            }
+          },
+          "banter": {
+            "dev": "Act swap triggered.",
+            "trader": "New market ahead.",
+            "whale": "Wake cascades onward.",
+            "hacker": "Fresh layer unlocked.",
+            "shiller": "Next arc trailer loading.",
+            "validator": "Transition notarized.",
+            "miner": "Pick glows for new ore.",
+            "meme": "Yeet into Act 3."
+          },
+          "telemetry_tags": ["scene:2.7","action:leap_to_act3"]
+        }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "xp_gte": 233, "rewards": [ { "type": "coins", "value": 89 } ] },
+    { "xp_gte": 377, "rewards": [ { "type": "item", "id": "helm_storm_miter" } ] },
+    { "focus_gte": 10, "rewards": [ { "type": "deck", "id": "deck_storm_protocol" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.storm_arrival", "goto": "3.1A" },
+    { "when": "flags.storm_tier_unlocked", "goto": "3.1B" },
+    { "when": "else", "goto": "3.1" }
+  ]
+}
