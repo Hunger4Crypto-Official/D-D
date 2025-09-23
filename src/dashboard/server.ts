@@ -7,6 +7,8 @@ import { getGuildSettings, upsertGuildSettings } from '../persistence/settings.j
 import { listLicenses, upsertLicense, setFeatureFlag } from '../persistence/licensing.js';
 import { listGemOrders, recordGemPurchase, verifyWebhookSignature, GemPurchasePayload } from '../payments/gems.js';
 import { loadManifest } from '../content/contentLoader.js';
+import { worldEventManager, WORLD_EVENTS, ActiveWorldEventSummary } from '../events/worldEvents.js';
+import { listActiveMatches, getPvPLeaderboard } from '../pvp/duels.js';
 
 interface DiscordGuildSummary {
   id: string;
@@ -116,7 +118,10 @@ function sendHtml(res: http.ServerResponse, status: number, body: string) {
 }
 
 function sendJson(res: http.ServerResponse, status: number, payload: any) {
-  res.writeHead(status, { 'Content-Type': 'application/json' });
+  res.writeHead(status, {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+  });
   res.end(JSON.stringify(payload));
 }
 
@@ -132,6 +137,24 @@ async function readBody(req: http.IncomingMessage): Promise<string> {
     req.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
     req.on('error', reject);
   });
+}
+
+function formatDuration(ms: number) {
+  const minutes = Math.max(0, Math.floor(ms / 60000));
+  const hours = Math.floor(minutes / 60);
+  const mins = minutes % 60;
+  if (hours) return `${hours}h ${mins}m`;
+  return `${mins}m`;
+}
+
+function summarizeEventGoals(summary: ActiveWorldEventSummary) {
+  if (!summary.progress.length) return '—';
+  return `<ul>${summary.progress
+    .map((goal) => {
+      const status = goal.completed ? '✅' : `${goal.current}/${goal.target}`;
+      return `<li>${htmlEscape(goal.goalId)} — ${status} (${goal.participantCount} players)</li>`;
+    })
+    .join('')}</ul>`;
 }
 
 function renderDashboard(user: DashboardUser) {
@@ -171,6 +194,36 @@ function renderDashboard(user: DashboardUser) {
     ? `<p><strong>${htmlEscape(manifest.book_name ?? 'Genesis')}</strong> • Version ${htmlEscape(manifest.version ?? '1.0.0')} • Scenes: ${manifest.scenes?.length ?? 0}</p>`
     : '<p>No manifest loaded.</p>';
 
+  const activeEvents = worldEventManager.listActiveEvents();
+  const eventRows = activeEvents
+    .map(
+      (evt) =>
+        `<tr><td>${htmlEscape(evt.event.name)}</td><td>${htmlEscape(evt.serverId)}</td><td>${formatDuration(evt.remainingMs)}</td><td>${evt.participantCount}</td><td>${summarizeEventGoals(evt)}</td></tr>`
+    )
+    .join('');
+
+  const eventOptions = WORLD_EVENTS.map(
+    (evt) => `<option value="${evt.id}">${htmlEscape(`${evt.id} — ${evt.name} (${evt.rarity})`)}</option>`
+  ).join('');
+
+  const matches = listActiveMatches();
+  const matchRows = matches
+    .map(
+      (match) =>
+        `<tr><td>${match.matchId}</td><td>${match.mode}</td><td>${match.participants
+          .map((p) => htmlEscape(p))
+          .join(', ')}</td><td>${htmlEscape(JSON.stringify(match.scores))}</td><td>${new Date(match.updatedAt).toLocaleString()}</td></tr>`
+    )
+    .join('');
+
+  const leaderboard = getPvPLeaderboard(10);
+  const leaderboardRows = leaderboard
+    .map(
+      (entry, index) =>
+        `<tr><td>${index + 1}</td><td>${entry.user_id}</td><td>${entry.wins}</td><td>${entry.losses}</td><td>${entry.draws}</td><td>${entry.rating}</td></tr>`
+    )
+    .join('');
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -180,7 +233,7 @@ function renderDashboard(user: DashboardUser) {
     body { font-family: system-ui, sans-serif; margin: 2rem; background: #111827; color: #f9fafb; }
     a { color: #93c5fd; }
     table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
-    th, td { border: 1px solid #374151; padding: 0.5rem; text-align: left; }
+    th, td { border: 1px solid #374151; padding: 0.5rem; text-align: left; vertical-align: top; }
     th { background: #1f2937; }
     section { margin-bottom: 2rem; padding: 1rem; background: #1f2937; border-radius: 0.75rem; }
     input, select, textarea { width: 100%; padding: 0.5rem; margin-top: 0.25rem; margin-bottom: 0.75rem; border-radius: 0.5rem; border: 1px solid #4b5563; background: #111827; color: #f9fafb; }
@@ -188,6 +241,7 @@ function renderDashboard(user: DashboardUser) {
     button:hover { background: #1d4ed8; }
     form.inline { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end; }
     form.inline label { flex: 1 1 12rem; }
+    ul { margin: 0; padding-left: 1rem; }
   </style>
 </head>
 <body>
@@ -195,6 +249,35 @@ function renderDashboard(user: DashboardUser) {
     <h1>LedgerLegends Control Panel</h1>
     <p>Logged in as <strong>${htmlEscape(`${user.username}#${user.discriminator}`)}</strong>. <a href="/logout">Log out</a></p>
   </header>
+
+  <section>
+    <h2>World Events</h2>
+    <table>
+      <thead><tr><th>Event</th><th>Server</th><th>Time Left</th><th>Participants</th><th>Goals</th></tr></thead>
+      <tbody>${eventRows || '<tr><td colspan="5">No active world events.</td></tr>'}</tbody>
+    </table>
+    ${isOwner(user) ? `<form method="POST" action="/world-events/trigger" class="inline">
+      <label>Event
+        <select name="event_id" required>${eventOptions}</select>
+      </label>
+      <label>Server ID
+        <input name="server_id" placeholder="global" />
+      </label>
+      <button type="submit">Trigger Event</button>
+    </form>
+    <form method="POST" action="/world-events/end" class="inline">
+      <label>Event ID
+        <input name="event_id" required />
+      </label>
+      <label>Server ID
+        <input name="server_id" placeholder="global" />
+      </label>
+      <button type="submit">End Event</button>
+    </form>
+    <form method="POST" action="/world-events/sweep">
+      <button type="submit">Run Trigger Sweep</button>
+    </form>` : ''}
+  </section>
 
   <section>
     <h2>Economy Snapshot</h2>
@@ -286,6 +369,19 @@ function renderDashboard(user: DashboardUser) {
     </form>
   </section>` : ''}
 
+  <section>
+    <h2>PvP Activity</h2>
+    <table>
+      <thead><tr><th>Match</th><th>Mode</th><th>Participants</th><th>Scores</th><th>Updated</th></tr></thead>
+      <tbody>${matchRows || '<tr><td colspan="5">No active matches.</td></tr>'}</tbody>
+    </table>
+    <h3>Leaderboard</h3>
+    <table>
+      <thead><tr><th>#</th><th>User</th><th>Wins</th><th>Losses</th><th>Draws</th><th>Rating</th></tr></thead>
+      <tbody>${leaderboardRows || '<tr><td colspan="6">No ranked matches yet.</td></tr>'}</tbody>
+    </table>
+  </section>
+
   ${isOwner(user) ? `<section>
     <h2>Gem Purchase Orders</h2>
     <table>
@@ -351,18 +447,6 @@ async function handleOAuth(session: SessionRecord, code: string) {
     guilds: manageable,
     accessibleGuilds: Array.from(accessible),
   };
-import http from 'node:http';
-import url from 'node:url';
-import db from '../persistence/db.js';
-import { loadManifest } from '../content/contentLoader.js';
-
-function json(res: any, status: number, data: any) {
-  const payload = JSON.stringify(data, null, 2);
-  res.writeHead(status, {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-  });
-  res.end(payload);
 }
 
 function queryDB(sql: string, params: any[] = []) {
@@ -372,6 +456,54 @@ function queryDB(sql: string, params: any[] = []) {
     console.error('Dashboard query failed', err);
     return [];
   }
+}
+
+async function handleApiRequest(path: string, req: http.IncomingMessage, res: http.ServerResponse, user: DashboardUser) {
+  if (path === '/api/world-events' && req.method === 'GET') {
+    return sendJson(res, 200, { active: worldEventManager.listActiveEvents(), catalog: WORLD_EVENTS });
+  }
+
+  if (path === '/api/pvp/matches' && req.method === 'GET') {
+    return sendJson(res, 200, { matches: listActiveMatches() });
+  }
+
+  if (path === '/api/pvp/leaderboard' && req.method === 'GET') {
+    return sendJson(res, 200, { leaderboard: getPvPLeaderboard(50) });
+  }
+
+  if (path === '/api/economy' && req.method === 'GET') {
+    const balances = queryDB('SELECT user_id, coins, gems, fragments FROM profiles LIMIT 100');
+    const ledger = queryDB('SELECT * FROM economy_ledger ORDER BY ts DESC LIMIT 50');
+    return sendJson(res, 200, { balances, ledger });
+  }
+
+  if (path === '/api/shop' && req.method === 'GET') {
+    const rotations = queryDB('SELECT * FROM shop_rotations ORDER BY active_from DESC LIMIT 5');
+    return sendJson(res, 200, { rotations });
+  }
+
+  if (path === '/api/content' && req.method === 'GET') {
+    const manifest = loadManifest('genesis');
+    return sendJson(res, 200, { manifest });
+  }
+
+  if (path === '/api/analytics' && req.method === 'GET') {
+    const runs = queryDB('SELECT * FROM runs ORDER BY updated_at DESC LIMIT 20');
+    const events = queryDB("SELECT type, COUNT(*) as count FROM events GROUP BY type ORDER BY count DESC LIMIT 20");
+    return sendJson(res, 200, { runs, events });
+  }
+
+  if (path === '/api/licenses' && req.method === 'GET') {
+    const licenses = queryDB('SELECT * FROM licenses');
+    return sendJson(res, 200, { licenses });
+  }
+
+  if (path === '/api/orders' && req.method === 'GET') {
+    if (!isOwner(user)) return sendJson(res, 403, { error: 'Owner only' });
+    return sendJson(res, 200, { orders: listGemOrders(100) });
+  }
+
+  return sendJson(res, 404, { error: 'Unknown endpoint' });
 }
 
 export function startDashboardServer(port: number) {
@@ -384,6 +516,15 @@ export function startDashboardServer(port: number) {
     const path = parsedUrl.pathname;
 
     try {
+      if (req.method === 'OPTIONS' && path.startsWith('/api/')) {
+        res.writeHead(204, {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        });
+        return res.end();
+      }
+
       if (path === '/health') {
         return sendJson(res, 200, { ok: true });
       }
@@ -436,6 +577,13 @@ export function startDashboardServer(port: number) {
       if (path === '/logout') {
         destroySession(res, session);
         return redirect(res, '/login');
+      }
+
+      if (path.startsWith('/api/')) {
+        if (!session.user) {
+          return sendJson(res, 401, { error: 'Authentication required' });
+        }
+        return handleApiRequest(path, req, res, session.user);
       }
 
       if (!session.user) {
@@ -552,11 +700,48 @@ export function startDashboardServer(port: number) {
         }
       }
 
-      if (path === '/api/orders' && req.method === 'GET') {
+      if (path === '/world-events/trigger' && req.method === 'POST') {
         if (!isOwner(user)) {
-          return sendJson(res, 403, { error: 'Owner only' });
+          return sendHtml(res, 403, '<h1>Owner only</h1>');
         }
-        return sendJson(res, 200, { orders: listGemOrders(100) });
+        const body = await readBody(req);
+        const params = new url.URLSearchParams(body);
+        const eventId = params.get('event_id') || '';
+        const serverId = params.get('server_id') || 'global';
+        if (!eventId) {
+          return sendHtml(res, 400, '<h1>Missing event id</h1>');
+        }
+        const triggered = await worldEventManager.triggerEvent(eventId, serverId, { source: 'manual' });
+        if (!triggered) {
+          return sendHtml(res, 400, '<h1>Event already active or unknown.</h1>');
+        }
+        return redirect(res, '/');
+      }
+
+      if (path === '/world-events/end' && req.method === 'POST') {
+        if (!isOwner(user)) {
+          return sendHtml(res, 403, '<h1>Owner only</h1>');
+        }
+        const body = await readBody(req);
+        const params = new url.URLSearchParams(body);
+        const eventId = params.get('event_id') || '';
+        const serverId = params.get('server_id') || 'global';
+        if (!eventId) {
+          return sendHtml(res, 400, '<h1>Missing event id</h1>');
+        }
+        const ended = await worldEventManager.forceEndEvent(eventId, serverId);
+        if (!ended) {
+          return sendHtml(res, 404, '<h1>Event not active.</h1>');
+        }
+        return redirect(res, '/');
+      }
+
+      if (path === '/world-events/sweep' && req.method === 'POST') {
+        if (!isOwner(user)) {
+          return sendHtml(res, 403, '<h1>Owner only</h1>');
+        }
+        await worldEventManager.checkEventTriggers();
+        return redirect(res, '/');
       }
 
       return sendHtml(res, 404, '<h1>Not Found</h1>');
@@ -564,44 +749,6 @@ export function startDashboardServer(port: number) {
       console.error('Dashboard request failed', err);
       return sendHtml(res, 500, '<h1>Server Error</h1>');
     }
-    
-  const server = http.createServer((req: any, res: any) => {
-    if (!req.url) return json(res, 404, { error: 'Not found' });
-    const parsed = url.parse(req.url, true);
-    const path = parsed.pathname || '/';
-
-    if (path === '/health') {
-      return json(res, 200, { ok: true });
-    }
-
-    if (path === '/economy') {
-      const balances = queryDB('SELECT user_id, coins, gems, fragments FROM profiles LIMIT 100');
-      const ledger = queryDB('SELECT * FROM economy_ledger ORDER BY ts DESC LIMIT 50');
-      return json(res, 200, { balances, ledger });
-    }
-
-    if (path === '/shop') {
-      const rotations = queryDB('SELECT * FROM shop_rotations ORDER BY active_from DESC LIMIT 5');
-      return json(res, 200, { rotations });
-    }
-
-    if (path === '/content') {
-      const manifest = loadManifest('genesis');
-      return json(res, 200, { manifest });
-    }
-
-    if (path === '/analytics') {
-      const runs = queryDB('SELECT * FROM runs ORDER BY updated_at DESC LIMIT 20');
-      const events = queryDB("SELECT type, COUNT(*) as count FROM events GROUP BY type ORDER BY count DESC LIMIT 20");
-      return json(res, 200, { runs, events });
-    }
-
-    if (path === '/licenses') {
-      const licenses = queryDB('SELECT * FROM licenses');
-      return json(res, 200, { licenses });
-    }
-
-    return json(res, 404, { error: 'Unknown endpoint' });
   });
 
   server.listen(port, () => {

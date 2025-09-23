@@ -112,6 +112,15 @@ CREATE TABLE IF NOT EXISTS pvp_matches (
   result_json TEXT
 );
 
+CREATE TABLE IF NOT EXISTS pvp_records (
+  user_id TEXT PRIMARY KEY,
+  wins INTEGER DEFAULT 0,
+  losses INTEGER DEFAULT 0,
+  draws INTEGER DEFAULT 0,
+  rating INTEGER DEFAULT 1200,
+  updated_at INTEGER
+);
+
 CREATE TABLE IF NOT EXISTS difficulty_snapshots (
   run_id TEXT,
   scene_id TEXT,
@@ -138,6 +147,16 @@ CREATE TABLE IF NOT EXISTS events (
   type TEXT,
   payload_json TEXT,
   ts INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS world_events_active (
+  event_id TEXT,
+  server_id TEXT,
+  start_time INTEGER,
+  end_time INTEGER,
+  community_progress_json TEXT,
+  participants_json TEXT,
+  PRIMARY KEY(event_id, server_id)
 );
 
 CREATE TABLE IF NOT EXISTS pity (
