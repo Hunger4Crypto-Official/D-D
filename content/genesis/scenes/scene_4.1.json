@@ -1,0 +1,1668 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "4.1",
+    "title": "The Auric Stratiform \u2014 Dawn of Act Four",
+    "narration": "The Radiant Confluence exhales you into the Auric Stratiform, a suspended plaza of ledger stone latticed with dawn-colored glass. The floor is a tessellation of spirals and polygons that glow in golden-ratio pulses, mapping your footsteps into recursive signatures. Every pane remembers an oath from prior acts; every breath condenses into a ledger entry written in slowly turning numerals. Above, an array of mirrored sails catches consensus winds and refracts them into ribboned auroras that flicker through hidden difficulty tiers\u2014violet for effortless grace, amber for the expected struggle, infrared for outcomes that only desperate or brilliant players will ever see. The air tastes like steamed citrus and molten copper, and each inhale threads a strand of encouragement into your lungs.\n\nGremlin factions have converged here to herald Act Four. The Auric Quorum arrive first, their capes sewn from invoice vellum that rustles with polite threats. They bow with theatrical sincerity, chirping that the Stratiform has waited for you since Act One. Orbiting them are the Prism Current engineers from the Confluence, Chronoloom timekeepers, and a band of Ledger Scribes balancing abaci in their tails. Banter crackles between them in gremlin ledger-speak: dev jokes about dawn deploys, traders quoting spread between sunrise and sunset, miners timing heartbeats with pickaxe swings. They have rigged AFK gimbals on every railing, promising that anyone idle for more than twenty-four hours will be gently slingshotted into forced-play loops until they remember how to laugh.\n\nSeven terraces spiral outward from the central ledger plinth. Each terrace hosts a ritual: the first sets the harmonic GM/GN greeting, the second weaves new consensus threads, the third fashions soft-power equipment, the fourth blossoms into a pity-backed shop, the fifth revives the fallen, the sixth calibrates a spectrum door aimed at the horizon, and the seventh ratifies the act\u2019s first vote. Between terraces, slender bridges arch over pools of encrypted water where ledger fish flicker into being whenever someone tells a joke worth logging. Arrivals shimmer in from peripheral spectrum doors mid-scene, backpacks bulging with mystery items or empty pockets hungry for pity currency.\n\nThe Auric Stratiform is a living worksheet. Every action stamps a glyph, and every glyph contributes to a golden spiral of progression that winds toward a horizon you can\u2019t yet see. The gremlins grin with pointed teeth, waving you toward the first terrace where a double sunrise waits to learn your names.",
+    "rounds": [
+        {
+            "round_id": "4.1-R1",
+            "description": "Harmonic Greeting Terrace \u2014 blend the Act Four GM with a Gentle Night echo, tune the auric plinth, and unlock the opening difficulty tier before anyone goes AFK.",
+            "actions": [
+                {
+                    "id": "auric_gmgn",
+                    "label": "Broadcast the Auric GMGN",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gm_logged",
+                            "gn_reserved",
+                            "confluence_signal"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "harmony",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_greeting_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You inhale the double sunrise and exhale a ledger-perfect GM that already contains a Gentle Night coda. The mirrored sails flip to catch it, amplifying your greeting through all seven terraces. Hidden filigree lights up in a golden spiral, revealing the first difficulty tier as a series of faintly pulsing ratios. Gremlins salute with miniature coffee cups and stamp \"Auric Dawn Logged\" across your wrist."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_greeting_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your voice threads morning and night together. The plinth accepts the greeting and projects a translucent ledger page enumerating who arrived to witness the dawn. The Auric Quorum scribes nod and assign you a seat at the consensus rail."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "You stumble on the harmonic ratio and the mirrored sails scatter the greeting into soft static. An Auric gremlin tosses you a metronome pendulum and writes \"Retry with rhythm\" in the air."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "You broadcast a raw GM that forgets its GN echo; the plinth retaliates with a rain of calendared confetti that stings like polite hail. The AFK gimbal snags your belt and suspends you upside down until you laugh at yourself."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Dawn deploy merged with midnight hotfix.",
+                        "trader": "Opening and closing bells traded as a pair.",
+                        "whale": "Wake now spans both tides.",
+                        "hacker": "Handshake includes GN checksum.",
+                        "shiller": "Pitch deck updated to \"Auric Hours\".",
+                        "validator": "Greeting notarized with mirrored hash.",
+                        "miner": "Shift whistle loops sunrise into night.",
+                        "meme": "GM? GN? Why not GMGN+."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_gmgn"
+                    ]
+                },
+                {
+                    "id": "auric_plinth_scan",
+                    "label": "Map the Plinth Ratios",
+                    "requirements": {
+                        "items_any": [
+                            "trinket_delta_lantern"
+                        ],
+                        "flags_all": [
+                            "auric_greeting_synced"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "ritual",
+                            "tech"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "helm_auric_scribe"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_plinth_mapped",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You cast the lantern light through the plinth, revealing nested spirals annotated with marginalia from Acts One through Three. Each curve whispers a success path and an ambush. You copy them onto a helm visor woven from consensus vellum, granting future insight on hidden tiers."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_plinth_mapped",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The plinth opens like a ledger drawer, revealing ratio glyphs that pulse in sync with your heartbeat. You log them carefully, unlocking a quiet hum that steadies everyone\u2019s stance."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "Your scan overheats a glyph and the Auric Quorum fines you thirteen coins for singeing their margins. They immediately invest the fine in extra cushions for the consensus rail."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You invert the lantern at the wrong ratio, and the plinth ejects a wave of ledger ink that stains your boots. The gremlins cackle and schedule a remedial mapping session."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Diagramming the schema of dawn.",
+                        "trader": "Ratios plotted, spreads hedged.",
+                        "whale": "Wake approves of the spiral.",
+                        "hacker": "Mapping attack surfaces on the plinth.",
+                        "shiller": "Infographic opportunities everywhere.",
+                        "validator": "Ratios cross-signed by three ledgers.",
+                        "miner": "Measure twice, dig once.",
+                        "meme": "Phi or cry."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_plinth_scan"
+                    ]
+                },
+                {
+                    "id": "auric_pity_cache",
+                    "label": "Prime the Pity Cache",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_plinth_mapped"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "fortune",
+                            "logistics",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_pity_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You coax the pity cache to open early, revealing neatly bundled pity coins labeled for future rerolls. Gremlins applaud and toss confetti receipts into the air."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "auric_pity_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You set the cache\u2019s timer to sympathetic intervals. It hums softly, promising a bailout when the shop tests your resolve."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "auric_pity_counter",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The cache refuses to open but logs your attempt, awarding a pity counter to redeem later. A gremlin pats your hand and whispers that persistence is an investment."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_pity_counter",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You press too hard and the cache snaps shut on your fingers. It still grants a pity counter out of compassion but annotates your ledger with a doodle of a bandaged thumb."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Failsafe wallet toggled.",
+                        "trader": "Insurance fund capitalized.",
+                        "whale": "Wake underwrites the cushion.",
+                        "hacker": "Pity cache handshake confirmed.",
+                        "shiller": "Promo: pity payouts trending.",
+                        "validator": "Cache balance notarized.",
+                        "miner": "Safety stash stocked.",
+                        "meme": "Pity? More like gritty."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_pity_cache"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.1-R2",
+            "description": "Consensus Loom Terrace \u2014 weave new auric threads, capture harmony flags, and keep the ledger fish amused with gremlin banter.",
+            "actions": [
+                {
+                    "id": "auric_thread_cast",
+                    "label": "Cast Golden Threads",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_plinth_mapped"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "harmony",
+                            "insight"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "weapon_auric_resonator"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_thread_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You spin the mapped ratios into luminous threads that hum at phi intervals. The loom applauds by printing a soft-power resonator\u2014more promise than weapon\u2014its chords tuned to coax cooperation out of reluctant encounters."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_thread_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The threads settle into a patient spiral, each one annotated with ledger ticks from past acts. The gremlins file your work under \"Act Four Weft\" and feed the loom a coin to keep it purring."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "Your weave tangles and the loom whistles a warning. A miner gremlin slips you a comb and tells you to breathe between ratios."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "The loom rejects your impatient hands, spitting a lash of static thread that numbs your fingertips. Ledger fish nearby flip upside down in sympathetic embarrassment."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Sprint planning but with yarn.",
+                        "trader": "Weaving futures into spot prices.",
+                        "whale": "Wake vibrates with the loom.",
+                        "hacker": "Thread logic compiled.",
+                        "shiller": "Marketing loves this fabric.",
+                        "validator": "Each thread notarized.",
+                        "miner": "Loom beats pickaxe today.",
+                        "meme": "Weaving alpha on-chain."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_thread_cast"
+                    ]
+                },
+                {
+                    "id": "auric_flag_record",
+                    "label": "Record Harmony Flags",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_thread_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "harmony",
+                                    "value": true
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_harmony_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You press the woven threads onto the ledger plates, capturing their resonance as a Harmony flag. The plate stamps back a note indicating hidden tier tolerances for future rituals."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "harmony",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The flag logs with a shimmer and projects a faint overlay of everyone\u2019s trust meters. Auric Quorum scribes update your name with an approving underline."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "You smudge the imprint and must purchase fresh ink. The gremlins offer a pity discount and promise to file the smudge as \"artistic intent\" once you succeed."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "The flag plate squeals at the wrong angle, flaring a discordant chord that rattles your focus. Ledger fish scatter, muttering that they were almost impressed."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Feature flagged literally.",
+                        "trader": "Harmony premium acquired.",
+                        "whale": "Wake hums at the recorded pitch.",
+                        "hacker": "Flag stored with checksum.",
+                        "shiller": "New badge art unlocked.",
+                        "validator": "Ledger updated with dual signatures.",
+                        "miner": "Flagging is just polished logging.",
+                        "meme": "Harmony? Hardly knew ye."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_flag_record"
+                    ]
+                },
+                {
+                    "id": "auric_focus_pool",
+                    "label": "Steep Focus Tea",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_thread_ready"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "consumable_auric_focus"
+                                }
+                            ],
+                            "narration": "You brew tea from thread offcuts and ledger mint. The gremlins declare it legally restorative and stash a spare sachet in your pack."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Tea-driven velocity boost.",
+                        "trader": "Focus futures look steep.",
+                        "whale": "Wake sips, approves.",
+                        "hacker": "Herbal patch applied.",
+                        "shiller": "Limited drop: tea NFTs pending.",
+                        "validator": "Tea ceremony logged.",
+                        "miner": "Tea break beats shift break.",
+                        "meme": "Steep gains."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_focus_pool"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "round_id": "4.1-R3",
+            "description": "Soft-Power Forge Terrace \u2014 coax intangible gear from consensus embers, balancing support, defense, and playful menace.",
+            "actions": [
+                {
+                    "id": "auric_soft_weapon",
+                    "label": "Shape the Echofoil",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_thread_ready",
+                            "harmony"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "power",
+                            "ritual"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "weapon_auric_echofoil"
+                                }
+                            ],
+                            "narration": "The forge breaths ledger-light over your hands, condensing into a soft-power blade of overlapping promises. The Echofoil remembers every consensus you honored and turns them into ripples that disarm hostility."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "weapon_auric_echofoil"
+                                }
+                            ],
+                            "narration": "The blade stabilizes as a luminous ribbon that responds to your gestures with patient echoes. Gremlins cheer and log the forging as a high-trust event."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The forge sputters and the half-made echofoil dissolves into glitter. You recover a handful of harmonic powder and vow to try again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "Your grip slips, slicing the air with backlash resonance that leaves your ears ringing. A healer gremlin shoves consensus earplugs at you with exaggerated patience."
+                        }
+                    },
+                    "banter": {
+                        "dev": "New feature branch: echofoil.",
+                        "trader": "Soft weapon futures mooning.",
+                        "whale": "Wake swirls around the blade.",
+                        "hacker": "Echofoil firmware patched.",
+                        "shiller": "Echofoil influencer campaign prepping.",
+                        "validator": "Forge output notarized.",
+                        "miner": "Even soft power needs a hammer.",
+                        "meme": "Echofoil go brr (quietly)."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_soft_weapon"
+                    ]
+                },
+                {
+                    "id": "auric_soft_armor",
+                    "label": "Weave the Auric Membrane",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_thread_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "defense",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "armor_auric_membrane"
+                                }
+                            ],
+                            "narration": "You weave consensus threads and ledger vellum into a translucent cape that repels malice without dulling humor. The membrane records every hit as a ledger entry you can audit mid-battle."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "armor_auric_membrane"
+                                }
+                            ],
+                            "narration": "The membrane seals around your shoulders, shimmering with trust metrics. A validator gremlin stamps the collar with a compliance sigil."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "You misalign the warp and must pay for replacement filaments. The shopkeeper tosses in a pity spool for free."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "The cape entangles you in a dramatic knot, tipping you toward a pool. Ledger fish laugh until bubbles."
+                        }
+                    },
+                    "banter": {
+                        "dev": "QA approved the membrane.",
+                        "trader": "Defensive position hedged.",
+                        "whale": "Wake cushioned nicely.",
+                        "hacker": "Membrane firewall engaged.",
+                        "shiller": "Fashion blog begs for photos.",
+                        "validator": "Armor compliance sealed.",
+                        "miner": "Cape beats hardhat today.",
+                        "meme": "Soft armor, hard flex."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_soft_armor"
+                    ]
+                },
+                {
+                    "id": "auric_soft_trinket",
+                    "label": "Imprint the Vow Locket",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_harmony_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "support",
+                            "fortune"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_auric_vow"
+                                }
+                            ],
+                            "narration": "You whisper every promise you kept in Acts One through Three into a molten locket. It cools into a trinket that can replay a moment of trust during any future negotiation."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "trinket_auric_vow"
+                                }
+                            ],
+                            "narration": "The locket seals with a resonant click, storing a single-use burst of consensus energy. Gremlins approve with solemn finger hearts."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "Your memories fog and the locket refuses to set. A friend scribbles reminders in your ledger margin to rekindle them."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "The molten metal splashes and singes your palm. A healer applies consensus balm while muttering about reckless romance."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Commit message: vow-lint fixed.",
+                        "trader": "Sentiment indicator bullish.",
+                        "whale": "Wake coils protectively.",
+                        "hacker": "Locket encryption triple-salted.",
+                        "shiller": "Limited drop: vow locket.",
+                        "validator": "Promise archived twice.",
+                        "miner": "Trinket fits in the lunch pail.",
+                        "meme": "Heart of gold, literally."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_soft_trinket"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.1-R4",
+            "description": "Auric Market Terrace \u2014 open the pop-up, reroll with pity, and expand backpacks before the shop folds back into ledger mist.",
+            "actions": [
+                {
+                    "id": "auric_shop_open",
+                    "label": "Open the Auric Pop-Up",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_pity_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "commerce",
+                            "ritual",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "shop",
+                                    "id": "auric_softpower_pop"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_shop_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You swing the kiosk open with ledger flourish. Holographic racks bloom, displaying soft-power gear, revival trinkets, and focus teas. Gremlins form an orderly queue and tip you in coins for style."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "shop",
+                                    "id": "auric_softpower_pop"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_shop_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The pop-up unfolds, stocked with curated soft-power options and ledger-certified bundles. A gremlin cashier hands you a receipt written in rhyme."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "You misread the hinge ratio and have to pay a restocking fee. The kiosk sighs but allows another attempt after a brief reset."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "The kiosk collapses on your toes, scattering sample brochures everywhere. Gremlins rush to help, laughing with you rather than at you."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Shop microservice deployed.",
+                        "trader": "Liquidity event: limited run.",
+                        "whale": "Wake preorders everything.",
+                        "hacker": "POS patched on the fly.",
+                        "shiller": "Pop-up stories trending.",
+                        "validator": "Shop ledger balanced.",
+                        "miner": "Merch drop before shift.",
+                        "meme": "Shop 'til your ledger drops."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_shop_open"
+                    ]
+                },
+                {
+                    "id": "auric_shop_pity",
+                    "label": "Redeem Pity Counter",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_pity_counter"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "fortune",
+                            "commerce"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_pity_counter",
+                                    "value": false
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "voucher_auric_reroll"
+                                }
+                            ],
+                            "narration": "The pity counter blossoms into a reroll voucher stamped with gremlin signatures. Coins rain into your palm as the shop applauds responsible resilience."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 13
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_pity_counter",
+                                    "value": false
+                                }
+                            ],
+                            "narration": "You cash the pity counter for a tidy coin rebate and a promise of improved odds on your next purchase. A trader gremlin winks in solidarity."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "auric_pity_counter",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The pity counter declines to trigger but logs your attempt, assuring you the buffer has grown thicker."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "You fumble the paperwork and pay a handling fee. Gremlins help you file a support ticket with surprising kindness."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Pity API returns success.",
+                        "trader": "Refund executed without slippage.",
+                        "whale": "Wake endorses safety nets.",
+                        "hacker": "Counter decremented; logs clean.",
+                        "shiller": "Marketing loves a comeback arc.",
+                        "validator": "Redemption recorded.",
+                        "miner": "Got coin back for the crew.",
+                        "meme": "Pity party profitable."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_shop_pity"
+                    ]
+                },
+                {
+                    "id": "auric_backpack_expand",
+                    "label": "Expand the Ledger Backpack",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_shop_open"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "backpack_auric_cache"
+                                }
+                            ],
+                            "narration": "You invest in an expandable backpack lined with ledger pockets. It hums softly, promising to auto-sort pity coins, revival incense, and focus tea without judgment."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Inventory system upgrade.",
+                        "trader": "Carrying capacity hedged.",
+                        "whale": "Wake loves extra storage.",
+                        "hacker": "Backpack firmware v4.1.",
+                        "shiller": "Unboxing stream scheduled.",
+                        "validator": "Bag volume notarized.",
+                        "miner": "Finally, pockets for snacks.",
+                        "meme": "Bag of holding but audited."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_backpack_expand"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 21
+                }
+            ]
+        },
+        {
+            "round_id": "4.1-R5",
+            "description": "Revival Terrace \u2014 reboot the fallen, enforce AFK safeguards, and invite new arrivals to the ledger seats.",
+            "actions": [
+                {
+                    "id": "auric_revive_loop",
+                    "label": "Conduct the Auric Revival",
+                    "requirements": {
+                        "items_any": [
+                            "trinket_delta_lantern"
+                        ],
+                        "flags_all": []
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "support",
+                            "healing"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_auric_reviver"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "revive_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You trace a spiral of lantern light over the fallen player. The Auric Stratiform hums in sympathy, rebooting them with a flush of dawn warmth and a new flag that keeps their harmony intact."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "revive_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The revival completes; your ally inhales, eyes bright with ledger light. Gremlins applaud and record the reboot in the daily GN ledger."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "You mis-time the spiral and absorb the backlash. The target is unharmed but the lantern scolds you with a hot flicker."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The ritual destabilizes and the Stratiform vents a gust of static. Gremlins swarm to buffer both you and the patient, promising a calmer retry after tea."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Rollback succeeded with zero downtime.",
+                        "trader": "Revive executed at premium timing.",
+                        "whale": "Wake cushions the reboot.",
+                        "hacker": "Patch applied: life v4.1.",
+                        "shiller": "Resurrection hype thread incoming.",
+                        "validator": "Revival notarized with triple signatures.",
+                        "miner": "Back to the line, buddy.",
+                        "meme": "Ctrl+Alt+Del but make it holy."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_revive_loop"
+                    ]
+                },
+                {
+                    "id": "auric_afk_forceplay",
+                    "label": "Engage AFK Force-Play",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": []
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "afk_tracked",
+                                    "value": true
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "afk_warning",
+                                    "value": false
+                                }
+                            ],
+                            "narration": "You calibrate the AFK gimbals to detect idle pulses at exactly twenty-four hours. The system gently spins a demonstration gremlin into a mini-force-play loop that ends in applause."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "afk_tracked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Sensors engage, logging idle timers with affectionate precision. The gremlins post a reminder in both GM and GN channels."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "afk_warning",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "A sensor misfires and flags half the terrace as idle. Everyone laughs, clears the warning, and you receive a friendly nudge to double-check ratios."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "You invert the logic and almost sling yourself into the force-play buffer. Gremlins rescue you mid-spin, recording a blooper reel."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Cron job set to playful.",
+                        "trader": "No idle capital on my watch.",
+                        "whale": "Wake pokes the sleepy.",
+                        "hacker": "AFK script sanitized.",
+                        "shiller": "Daily ping campaign ready.",
+                        "validator": "Timers cross-audited.",
+                        "miner": "Stay moving, stay breathing.",
+                        "meme": "AFK? Not in this house."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_afk_forceplay"
+                    ]
+                },
+                {
+                    "id": "auric_arrival_invite",
+                    "label": "Signal New Arrivals",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_shop_open"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "arrival_slot_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You ring the Auric chime and a spectrum door brightens. Two new travelers step through\u2014one carrying a backpack full of ledger beans, the other balancing a deck of unfinished votes."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Onboarding portal online.",
+                        "trader": "Fresh liquidity inbound.",
+                        "whale": "Wake greets the newcomers.",
+                        "hacker": "Invite token validated.",
+                        "shiller": "Campaign gets new faces.",
+                        "validator": "Arrival ledger appended.",
+                        "miner": "Always room for more crew.",
+                        "meme": "GM to the new folks!"
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_arrival_invite"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "round_id": "4.1-R6",
+            "description": "Spectrum Door Terrace \u2014 align the gateway, chart hidden tiers, and brief the gremlin council on upcoming risks.",
+            "actions": [
+                {
+                    "id": "auric_door_align",
+                    "label": "Align the Spectrum Door",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_plinth_mapped",
+                            "auric_thread_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "navigation",
+                            "insight"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_door_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You map the door\u2019s prisms to the newly woven threads. Light refracts into a golden spiral path leading deeper into the corridor. Hidden glyphs acknowledge your precision."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_door_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The door hums at a steady interval, unlocking the next difficulty tier indicator. Gremlins cheer and throw ratio confetti."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The prisms wobble out of sync and you have to start over. A validator hands you a checklist to steady your hands."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "The door deflects your attempt with a feedback shock. Ledger fish dive for cover as the terrace lights flicker red for three dramatic seconds."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Gateway alignment script stable.",
+                        "trader": "Path hedged for volatility.",
+                        "whale": "Wake brushes the threshold.",
+                        "hacker": "Door firmware patched.",
+                        "shiller": "Teaser trailer of the door dropping.",
+                        "validator": "Alignment notarized.",
+                        "miner": "Gate ready for hauling.",
+                        "meme": "Door or nothing."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_door_align"
+                    ]
+                },
+                {
+                    "id": "auric_hidden_tier",
+                    "label": "Decode the Hidden Tier",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_door_aligned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "analysis"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_hidden_charted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You triangulate the door\u2019s color shifts, exposing a secret tier accessible only by sequential GM/GN rituals. The data writes itself into your deck as a translucent overlay."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_hidden_charted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You capture enough telemetry to warn others about upcoming spikes. The council updates the risk ledger accordingly."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "Your calculations drift and you bribe a Chronoloom gremlin with coffee to borrow their notes."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "The colors blur into nonsense and the door teases you with gibberish glyphs. You need a minute to clear your head."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Debugging hidden tier.",
+                        "trader": "Risk tolerance updated.",
+                        "whale": "Wake sniffs out secrets.",
+                        "hacker": "Tier decrypted, mostly.",
+                        "shiller": "Spoilers but in teal.",
+                        "validator": "Hidden notes notarized.",
+                        "miner": "Plotting which rocks hide treasure.",
+                        "meme": "Secret menu unlocked."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_hidden_tier"
+                    ]
+                },
+                {
+                    "id": "auric_door_brief",
+                    "label": "Brief the Council",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_door_aligned"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "council_briefed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You deliver a concise briefing on the door\u2019s state, flagging hidden tiers and safe intervals. The gremlin council salutes and forwards the briefing to every arrival channel."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Status update shipped.",
+                        "trader": "Briefing priced in.",
+                        "whale": "Wake stays informed.",
+                        "hacker": "Council notes encrypted.",
+                        "shiller": "Newsletter draft locked.",
+                        "validator": "Minutes archived.",
+                        "miner": "We know where to swing next.",
+                        "meme": "Brief? More like ledger TED Talk."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_door_brief"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.1-R7",
+            "description": "Consensus Balcony \u2014 conduct the Act Four opening vote, log rewards, and stride toward the next scene.",
+            "actions": [
+                {
+                    "id": "auric_consensus_vote",
+                    "label": "Call the Auric Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_door_aligned",
+                            "auric_harmony_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "ritual",
+                            "negotiation"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You orchestrate a layered vote that dances through every faction\u2019s ledger. The result beams across the Stratiform as auric light, setting Act Four\u2019s trajectory."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "auric_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Votes lock in, consensus passes, and the gremlin council rings twin bells labeled GM and GN. The spectrum door opens another degree."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "Debate drags, and the vote fails to cross the threshold. The council schedules a quick recess for snacks and perspective."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "The factions talk over each other until the balcony vibrates. The Stratiform flashes a playful warning and resets the voting slate."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Motion carries in style.",
+                        "trader": "Consensus premium realized.",
+                        "whale": "Wake ratifies the plan.",
+                        "hacker": "Vote ledger triple-hashed.",
+                        "shiller": "Campaign milestone secured.",
+                        "validator": "Ballots notarized.",
+                        "miner": "We dig where the vote points.",
+                        "meme": "Democracy but make it gremlin."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_consensus_vote"
+                    ]
+                },
+                {
+                    "id": "auric_reward_log",
+                    "label": "Archive Auric Rewards",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "deck_auric_spiral"
+                                }
+                            ],
+                            "narration": "You catalogue every drop, pity return, and focus tea brewed during the Stratiform sequence. The ledger condenses them into a deck tuned for future golden-ratio challenges."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Reward pipeline executed.",
+                        "trader": "Loot ledger closed.",
+                        "whale": "Wake shares the bounty.",
+                        "hacker": "Archive encrypted.",
+                        "shiller": "Reward thread going live.",
+                        "validator": "Receipts attached.",
+                        "miner": "Spoils tallied.",
+                        "meme": "Decked out with dividends."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:auric_reward_log"
+                    ]
+                },
+                {
+                    "id": "advance_42",
+                    "label": "Stride Toward Scene 4.2",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "auric_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "You cross the balcony and descend a stair of light. The next terrace waits, tuned to resonance waves and prism shadows.",
+                            "next_hint": "4.2"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Next module queued.",
+                        "trader": "Position rolled forward.",
+                        "whale": "Wake streams ahead.",
+                        "hacker": "Scene transition authorized.",
+                        "shiller": "Act Four intensifies.",
+                        "validator": "Advance recorded.",
+                        "miner": "New tunnel, new dawn.",
+                        "meme": "Brb, 4.2."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.1",
+                        "action:advance_42"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 8,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "xp_gte": 377,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "armor_auric_membrane"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "auric_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "deck",
+                    "id": "deck_auric_spiral"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "4.1A"
+        },
+        {
+            "when": "flags.auric_consensus_passed",
+            "goto": "4.2"
+        },
+        {
+            "when": "else",
+            "goto": "4.1"
+        }
+    ]
+}

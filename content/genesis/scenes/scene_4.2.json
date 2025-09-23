@@ -1,0 +1,1668 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "4.2",
+    "title": "The Resonant Gradient \u2014 Waves That Remember",
+    "narration": "The stair of light from the Auric Stratiform descends into the Resonant Gradient, a canyon of sound frozen mid-vibration. Pillars of glassy basalt curve into amphitheater shells, each one vibrating with phi-locked harmonics that paint visible currents through the air. Footsteps trigger ripples that climb the walls before looping back as shimmering whispers of your own voice. Hidden difficulty tiers appear as color shifts in the waves: opal for friendly paths, amber for calculated tension, ultraviolet for the daring missteps that lead to secret caches.\n\nGremlin factions reassemble in aquatic garb. Wavecasters wear robes stitched from sheet music, while Gradient Tenders adjust tuning forks with the gravitas of validators. A cadre of Trader-manta gremlins swim through the air, quoting liquidity curves measured in decibels. They greet you with a GM so resonant it generates a GN echo on the opposite wall. AFK gimbals hang like tuning pendulums from the vaulted ceiling, ready to yank any idle player into a gentle rhythm drill should twenty-four hours pass without a check-in.\n\nSeven terraces arc along the canyon\u2019s edge. The first calibrates the GM/GN waveform; the second sculpts echoes into usable flags; the third coaxes soft-power instruments from condensed resonance; the fourth opens a market woven from undertow pity currents; the fifth baptizes the fallen in reverb pools; the sixth aligns a gate that slips between frequencies; and the seventh gathers the consensus vote that will unlock the corridor\u2019s next modulation. Between terraces, spectral fish swim through the air, nibbling on stray ledger notes.\n\nThe Resonant Gradient remembers every song played within it. Your successes will echo forward into Act Four\u2019s deeper chambers, while your failures will be logged as syncopated footnotes. The gremlins invite you to tune your instruments and step onto the first terrace where the waveform waits to learn your cadence.",
+    "rounds": [
+        {
+            "round_id": "4.2-R1",
+            "description": "Amplitude Basin \u2014 tune the Gradient GM/GN waveform, chart the canyon\u2019s first ratios, and spin up the pity undertow.",
+            "actions": [
+                {
+                    "id": "gradient_gmgn",
+                    "label": "Sing the Gradient GMGN",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gm_logged",
+                            "gn_reserved",
+                            "auric_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "harmony",
+                            "performance"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_greeting_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your greeting threads through the canyon in a golden spiral. Echoes bloom like sympathetic flowers, each carrying a Gentle Night refrain on the return. Gremlins record the waveform and rename it \"Gradient Dawn.\""
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_greeting_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your song reverberates cleanly. The canyon illuminates ledger runes that count your syllables and mark the ratio as safe for travelers."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The echo returns slightly off beat, splashing you with gentle reverb. A Wavecaster hands you a tuning fork and encourages another attempt."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "You overdrive the canyon; the waves collapse into booming static that rattles your bones. Gremlins dive to reset the waveform while you recover."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Deploy pipeline now sings.",
+                        "trader": "Volume and velocity aligned.",
+                        "whale": "Wake harmonizes with the canyon.",
+                        "hacker": "Waveform handshake completed.",
+                        "shiller": "Marketing calls it the sonic GM.",
+                        "validator": "Greeting logged with resonance hash.",
+                        "miner": "Beat hits harder than a pickaxe.",
+                        "meme": "GM? More like GMMMM."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_gmgn"
+                    ]
+                },
+                {
+                    "id": "gradient_wave_scan",
+                    "label": "Chart the Wave Ratios",
+                    "requirements": {
+                        "items_any": [
+                            "helm_auric_scribe"
+                        ],
+                        "flags_all": [
+                            "gradient_greeting_synced"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "analysis",
+                            "ritual"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_wave_mapped",
+                                    "value": true
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_gradient_meter"
+                                }
+                            ],
+                            "narration": "Your visor projects a lattice of waveforms and you capture their intersections. The canyon engraves a meter that will ping whenever difficulty tiers shift."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_wave_mapped",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Ratios align and the basin reveals a quiet hum indicating safe traversal. Gremlins update the shared ledger with your measurements."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A resonance spike snaps your stylus. You pay for repairs, gaining sympathy from the Wavecasters."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You misread the waveform and trigger a discordant blast. Ledger fish scatter, splashing you with cold mist."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Wave analytics online.",
+                        "trader": "Ratios priced into the tide.",
+                        "whale": "Wake follows the mapped curve.",
+                        "hacker": "Waveform parsed and cached.",
+                        "shiller": "Charts for the community call.",
+                        "validator": "Scans notarized.",
+                        "miner": "Now we know where to swing.",
+                        "meme": "Surfing spreadsheets."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_wave_scan"
+                    ]
+                },
+                {
+                    "id": "gradient_pity_prime",
+                    "label": "Spin Up the Undertow",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_wave_mapped"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "fortune",
+                            "logistics",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_pity_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You coax the undertow to swirl obediently, storing pity current beneath the terrace. A gremlin posts a holographic counter advertising your generosity."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_pity_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The undertow murmurs approval. Whenever luck falters, it will surge to provide refunds."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_pity_buffer",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The undertow resists, but logs your attempt as credit. A Wavecaster assures you the buffer will double next time."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_pity_buffer",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You get caught in a miniature whirlpool and cough up waterlogged laughter. The undertow still logs a buffer as consolation."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Safety net toggled.",
+                        "trader": "Insurance pool spun up.",
+                        "whale": "Wake pledges collateral.",
+                        "hacker": "Undertow handshake verified.",
+                        "shiller": "Pity fund trending.",
+                        "validator": "Buffer recorded.",
+                        "miner": "Spare rope for future slips.",
+                        "meme": "Undertow? More like under-bro."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_pity_prime"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.2-R2",
+            "description": "Echo Ladder \u2014 weave resonant threads, capture Insight flags, and steep focus draughts from sonic condensate.",
+            "actions": [
+                {
+                    "id": "gradient_echo_weave",
+                    "label": "Weave Resonant Threads",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_wave_mapped"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "harmony",
+                            "insight"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "weapon_gradient_tuner"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_threads_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You braid echoes into tangible threads that hum at golden intervals. The canyon gifts you a soft-power tuner that amplifies harmony rather than harm."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_threads_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Threads settle around your arms, shimmering like translucent scarves. Gremlins chart their tensile strength and applaud."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The weave frays and the echoes slip away. A miner gremlin hands you a spool and suggests slower breathing."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "A rogue echo twangs like a snapped string, stinging your fingertips. Ledger fish snicker behind their fins."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Feature weaving complete.",
+                        "trader": "Thread futures align.",
+                        "whale": "Wake resonates politely.",
+                        "hacker": "Tuner firmware compiled.",
+                        "shiller": "New merch: echo scarves.",
+                        "validator": "Weave signatures verified.",
+                        "miner": "Threads stronger than rope.",
+                        "meme": "Spinning beats, literally."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_echo_weave"
+                    ]
+                },
+                {
+                    "id": "gradient_flag_capture",
+                    "label": "Capture Insight Echoes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_threads_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "insight",
+                                    "value": true
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_insight_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You pin the brightest echoes onto a ledger reel, extracting patterns that forecast future spikes. The canyon hums approval."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "insight",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Insight locks into place, illuminating hidden angles of upcoming encounters. Gremlins scribble notes for the consensus briefing."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A slippery echo escapes and you bribe it with coins to return later."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "The echo lashes back with a dizzying chord, scattering your concentration. A friend steadies you before you topple."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Logging insights as metrics.",
+                        "trader": "Data priced in.",
+                        "whale": "Wake takes notes.",
+                        "hacker": "Echo packets captured.",
+                        "shiller": "Insight thread trending.",
+                        "validator": "Flag recorded with checksum.",
+                        "miner": "Knowledge is the sharpest tool.",
+                        "meme": "Insight? More like incite."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_flag_capture"
+                    ]
+                },
+                {
+                    "id": "gradient_focus_brew",
+                    "label": "Distill Focus Draught",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_threads_ready"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "consumable_gradient_focus"
+                                }
+                            ],
+                            "narration": "You condense dew from resonant threads into a crystalline vial. It sparkles like morning on water and restores attention when sipped."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Potion build succeeded.",
+                        "trader": "Focus commodity secured.",
+                        "whale": "Wake tastes the clarity.",
+                        "hacker": "Recipe documented.",
+                        "shiller": "Influencers want the draught.",
+                        "validator": "Potion logged and sealed.",
+                        "miner": "Hydration with benefits.",
+                        "meme": "Sip happens."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_focus_brew"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "round_id": "4.2-R3",
+            "description": "Frequency Forge \u2014 coax instruments of soft power from condensed waves, crafting support gear for the road ahead.",
+            "actions": [
+                {
+                    "id": "gradient_instrument_forge",
+                    "label": "Forge the Resonance Baton",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_threads_ready",
+                            "insight"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "ritual",
+                            "power"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "weapon_gradient_resonator"
+                                }
+                            ],
+                            "narration": "You condense standing waves into a baton that hums with negotiated power. When spun, it orchestrates allies rather than striking foes."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "weapon_gradient_resonator"
+                                }
+                            ],
+                            "narration": "The baton stabilizes, etched with ledger motifs. Gremlins certify it as soft-power compliant."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "Waves slip through your grasp, leaving only a faint hum. You note the pattern for next time."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "A dissonant pulse jolts your hands. Healer gremlins apply vibration balm while giggling."
+                        }
+                    },
+                    "banter": {
+                        "dev": "New weapon, still pacifist.",
+                        "trader": "Resonance baton futures pop.",
+                        "whale": "Wake keeps time.",
+                        "hacker": "Baton firmware secured.",
+                        "shiller": "Concert tour pending.",
+                        "validator": "Forge log stamped.",
+                        "miner": "Feels like wielding a song.",
+                        "meme": "Drop the beat, not the foe."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_instrument_forge"
+                    ]
+                },
+                {
+                    "id": "gradient_wave_wrap",
+                    "label": "Shape the Wave Wrap",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_threads_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "defense",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "armor_gradient_wrap"
+                                }
+                            ],
+                            "narration": "You coax waves around your shoulders until they settle into a cloak of resilient rhythm. It deflects insults and diffuses tension with measured beats."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "armor_gradient_wrap"
+                                }
+                            ],
+                            "narration": "The wrap seals like water made textile. Validators notarize each seam."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "You mis-time a fold and must purchase replacement filaments. The shopkeeper adds a pity spool."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "The wrap tightens unpredictably, flipping you into a slow-motion somersault. Gremlins cheer your acrobatics."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Wrap passes QA.",
+                        "trader": "Protection priced in.",
+                        "whale": "Wake hugs the cloak.",
+                        "hacker": "Fabric firewall active.",
+                        "shiller": "Fashion week invites pending.",
+                        "validator": "Seams notarized.",
+                        "miner": "Cozy armor beats metal.",
+                        "meme": "Security blanket upgrade."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_wave_wrap"
+                    ]
+                },
+                {
+                    "id": "gradient_chime_trinket",
+                    "label": "Craft the Chime Pendant",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_insight_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "support",
+                            "fortune"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_gradient_chime"
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "You trap a helpful echo inside a crystal chime. When rung, it replays the best argument you ever made, persuading hesitant allies."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "trinket_gradient_chime"
+                                }
+                            ],
+                            "narration": "The chime pings softly and folds into your hand, ready to store a promise for later use."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The echo escapes with a mischievous giggle. You vow to find a better story to trap it with."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "The chime shatters with a sharp pop, startling you into dropping your notes. Gremlins sweep up the shards and hand you a sympathy sticker."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Trinket built with love.",
+                        "trader": "Sentiment instrument secured.",
+                        "whale": "Wake jingles approvingly.",
+                        "hacker": "Chime encryption stable.",
+                        "shiller": "Limited edition pendants!",
+                        "validator": "Promise locked.",
+                        "miner": "Chime fits in the lunch tin.",
+                        "meme": "Ring for consensus."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_chime_trinket"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.2-R4",
+            "description": "Undertow Market \u2014 unfurl the wave bazaar, cash in pity currents, and expand storage for resonant trinkets.",
+            "actions": [
+                {
+                    "id": "gradient_market_open",
+                    "label": "Open the Wave Bazaar",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_pity_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "commerce",
+                            "ritual",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "shop",
+                                    "id": "gradient_wave_pop"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_market_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Waves curl inward to form stalls piled with shimmerware. Gremlins browse politely, tipping you for the flawless reveal."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "shop",
+                                    "id": "gradient_wave_pop"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_market_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The bazaar manifests, shelves stocked with soft-power instruments, revival incense, and focus draught bundles. A cashier gremlin sings receipts."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "The stalls wobble and you pay a restocking fee to reattempt the reveal."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "A rogue wave knocks the bazaar sideways, scattering sample coupons. Everyone laughs as you reset the frame."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Wave bazaar deployed.",
+                        "trader": "Inventory ripples nicely.",
+                        "whale": "Wake buys the deluxe bundle.",
+                        "hacker": "Point-of-sale tuned.",
+                        "shiller": "Bazaar vibes trending.",
+                        "validator": "Till balanced.",
+                        "miner": "Shopping before spelunking.",
+                        "meme": "Bazaar but make it liquid."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_market_open"
+                    ]
+                },
+                {
+                    "id": "gradient_market_pity",
+                    "label": "Redeem Undertow Credit",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_pity_buffer"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "fortune",
+                            "commerce"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_pity_buffer",
+                                    "value": false
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "voucher_gradient_wave"
+                                }
+                            ],
+                            "narration": "The undertow releases a shimmering voucher and shower of coins. Gremlins chant congratulations."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 13
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_pity_buffer",
+                                    "value": false
+                                }
+                            ],
+                            "narration": "You withdraw your pity credit with interest, resetting the buffer for future fails."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_pity_buffer",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The undertow asks for patience, promising larger returns if you wait a round."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "You misfile paperwork and pay a handling fee. A bureaucrat gremlin helps reorganize your ledgers."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Credit API returned 200.",
+                        "trader": "Refund executed.",
+                        "whale": "Wake endorses patience.",
+                        "hacker": "Buffer toggled to zero.",
+                        "shiller": "Customer loyalty story.",
+                        "validator": "Redemption notarized.",
+                        "miner": "Cashback for the crew.",
+                        "meme": "Pity coin go brrrr."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_market_pity"
+                    ]
+                },
+                {
+                    "id": "gradient_backpack_expand",
+                    "label": "Expand the Wave Satchel",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_market_open"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "backpack_gradient_satchel"
+                                }
+                            ],
+                            "narration": "You purchase a satchel lined with resonant pockets. It reorganizes coins, tea, and pity vouchers with harmonic efficiency."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Inventory upgrade shipped.",
+                        "trader": "Satchel ROI guaranteed.",
+                        "whale": "Wake stores more goods.",
+                        "hacker": "Satchel firmware patched.",
+                        "shiller": "Unboxing stream scheduled.",
+                        "validator": "Capacity logged.",
+                        "miner": "More room for snacks and rope.",
+                        "meme": "Bag but make it boogie."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_backpack_expand"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 21
+                }
+            ]
+        },
+        {
+            "round_id": "4.2-R5",
+            "description": "Reverb Pools \u2014 revive allies with sonic rituals, maintain AFK metronomes, and invite fresh arrivals through wave portals.",
+            "actions": [
+                {
+                    "id": "gradient_reverb_revive",
+                    "label": "Conduct Reverb Revival",
+                    "requirements": {
+                        "items_any": [
+                            "trinket_delta_lantern"
+                        ],
+                        "flags_all": []
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "support",
+                            "healing"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_gradient_reverb"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_revive_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You guide harmonics through the reverb pool, coaxing your ally back with a melody that carries both GM and GN. They awaken laughing, ledger refreshed."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_revive_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The revival completes and the pool records your name in its ripples. Gremlins toss petals onto the surface."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "The melody slips; you absorb the feedback. The patient remains stable while you catch your breath."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A discordant surge shakes the pool, splashing everyone. The gremlins reset the ritual circle with sympathetic patience."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Hotfix: life restored.",
+                        "trader": "Revival priced perfectly.",
+                        "whale": "Wake holds the pulse.",
+                        "hacker": "Patch applied to soul v4.2.",
+                        "shiller": "Resurrection thread inbound.",
+                        "validator": "Revive notarized across three ledgers.",
+                        "miner": "Back from the depths.",
+                        "meme": "Respawn, but make it orchestral."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_reverb_revive"
+                    ]
+                },
+                {
+                    "id": "gradient_afk_metronome",
+                    "label": "Tune the AFK Metronomes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": []
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "afk_tracked",
+                                    "value": true
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "afk_warning",
+                                    "value": false
+                                }
+                            ],
+                            "narration": "You synchronize every metronome to the canyon\u2019s heartbeat. Idle players will now receive gentle rhythm prompts before force-play activates."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "afk_tracked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The metronomes tick in harmony, logging the twenty-four-hour safeguard across the ledger."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "afk_warning",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "A metronome stutters and flags a false alarm. Everyone grins and resets it with a group clap."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "You get tangled in the pendulums, swinging in an AFK loop until gremlins rescue you."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Cron jobs on tempo.",
+                        "trader": "No idle liquidity allowed.",
+                        "whale": "Wake taps the beat.",
+                        "hacker": "Metronome script sanitized.",
+                        "shiller": "Daily ping copy approved.",
+                        "validator": "Timer logs consistent.",
+                        "miner": "Stay moving, stay alive.",
+                        "meme": "AFK = Away From Keys, not allowed."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_afk_metronome"
+                    ]
+                },
+                {
+                    "id": "gradient_arrival_signal",
+                    "label": "Invite Wave Arrivals",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_market_open"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "arrival_slot_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You send a harmonic pulse down the canyon. A pair of travelers glide in on surfboard ledgers, ready to join the journey."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Onboarding portal tuned.",
+                        "trader": "Fresh flow inbound.",
+                        "whale": "Wake waves hello.",
+                        "hacker": "Invite tokens validated.",
+                        "shiller": "New faces for the campaign.",
+                        "validator": "Arrivals logged.",
+                        "miner": "More hands on deck.",
+                        "meme": "GM surfers!"
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_arrival_signal"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "round_id": "4.2-R6",
+            "description": "Frequency Gate \u2014 align the shifting doorway, decode hidden tiers, and brief the wave council.",
+            "actions": [
+                {
+                    "id": "gradient_gate_align",
+                    "label": "Align the Frequency Gate",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_wave_mapped",
+                            "gradient_threads_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "navigation",
+                            "insight"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_gate_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You trace harmonic arcs around the gate until it locks into a golden spiral. The doorway pulses open like a breathing instrument, ready for passage."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_gate_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The gate stabilizes, shifting from chaotic sound to measured chords. Gremlins check the hinges and give thumbs up."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The gate wobbles, forcing you to restart your ratios. A Validator hands you a checklist."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A misaligned chord blasts you backward with a comic twang. Spectral fish scatter like confetti."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Gateway tuning stable.",
+                        "trader": "Path risk hedged.",
+                        "whale": "Wake tests the doorway.",
+                        "hacker": "Gate firmware patched.",
+                        "shiller": "Sneak peek at the next chamber.",
+                        "validator": "Alignment notarized.",
+                        "miner": "Door ready for hauling gear.",
+                        "meme": "Open sesame but make it math."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_gate_align"
+                    ]
+                },
+                {
+                    "id": "gradient_hidden_decode",
+                    "label": "Decode the Hidden Tier",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_gate_aligned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "analysis"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_hidden_charted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You measure microtones in the gate\u2019s hum, revealing a secret corridor that requires alternating GM and GN pulses. The data writes itself into your deck overlay."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_hidden_charted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You capture enough metrics to forecast hidden spikes. The wave council updates their caution logs."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "The calculations slip, and you buy fresh chalk from a trader to try again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "The tones blur into a headache-inducing smear. You rest your ears while the gremlins fetch warm towels."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Hidden tier analytics compiled.",
+                        "trader": "Risk curve updated.",
+                        "whale": "Wake tastes the secret.",
+                        "hacker": "Encryption cracked.",
+                        "shiller": "Secret spoilers withheld.",
+                        "validator": "Hidden ledger entries signed.",
+                        "miner": "Plotting hidden seams.",
+                        "meme": "Secret menu unlocked again."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_hidden_decode"
+                    ]
+                },
+                {
+                    "id": "gradient_gate_brief",
+                    "label": "Brief the Wave Council",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_gate_aligned"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "council_briefed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You deliver a concise update on gate stability, hidden tiers, and pity reserves. The council replicates your briefing across the canyon via choral echo."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Status memo delivered.",
+                        "trader": "Briefing priced immediately.",
+                        "whale": "Wake stays informed.",
+                        "hacker": "Minutes encrypted.",
+                        "shiller": "Newsletter copy polished.",
+                        "validator": "Briefing archived.",
+                        "miner": "We know tomorrow\u2019s dig sites.",
+                        "meme": "Brief me baby one more time."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_gate_brief"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.2-R7",
+            "description": "Resonance Balcony \u2014 finalize the wave consensus, archive rewards, and stride toward the Prism vault beyond.",
+            "actions": [
+                {
+                    "id": "gradient_consensus_vote",
+                    "label": "Call the Wave Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_gate_aligned",
+                            "gradient_insight_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "ritual",
+                            "negotiation"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You orchestrate the vote like a conductor, weaving GM and GN phrases until every faction nods. The canyon lights up, confirming consensus."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "gradient_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Votes align, and the Resonant Gradient approves your plan with a steady hum. The gate opens another degree."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "Debate hits a sour note. The council schedules a five-minute snack break before retrying."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "Voices clash and the balcony rattles. The Gradient resets the vote with a patient sigh."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vote passed in stereo.",
+                        "trader": "Consensus premium realized.",
+                        "whale": "Wake signs the ledger.",
+                        "hacker": "Ballots hashed thrice.",
+                        "shiller": "Campaign milestone waves.",
+                        "validator": "Results notarized.",
+                        "miner": "We dig where the vote points.",
+                        "meme": "Democracy but vibey."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_consensus_vote"
+                    ]
+                },
+                {
+                    "id": "gradient_reward_archive",
+                    "label": "Archive Resonant Rewards",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "deck_gradient_resonance"
+                                }
+                            ],
+                            "narration": "You catalogue undertow refunds, soft-power instruments, and focus draught recipes. The ledger condenses them into a resonant deck for future encounters."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Reward archive compiled.",
+                        "trader": "Loot ledger settled.",
+                        "whale": "Wake distributes dividends.",
+                        "hacker": "Archive checksum verified.",
+                        "shiller": "Reward thread prepped.",
+                        "validator": "Receipts attached.",
+                        "miner": "Spoils counted.",
+                        "meme": "Decked out again."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:gradient_reward_archive"
+                    ]
+                },
+                {
+                    "id": "advance_43",
+                    "label": "Stride Toward Scene 4.3",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gradient_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "You follow the harmonic stair upward. Prism lights flare ahead, hinting at the next challenge.",
+                            "next_hint": "4.3"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Next module queued.",
+                        "trader": "Position rolled onward.",
+                        "whale": "Wake races ahead.",
+                        "hacker": "Transition approved.",
+                        "shiller": "Act Four crescendo incoming.",
+                        "validator": "Advance notarized.",
+                        "miner": "Another cavern awaits.",
+                        "meme": "BRB, gradient -> prism."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.2",
+                        "action:advance_43"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 9,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "xp_gte": 377,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "armor_gradient_wrap"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "gradient_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "deck",
+                    "id": "deck_gradient_resonance"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "4.2A"
+        },
+        {
+            "when": "flags.gradient_consensus_passed",
+            "goto": "4.3"
+        },
+        {
+            "when": "else",
+            "goto": "4.2"
+        }
+    ]
+}
