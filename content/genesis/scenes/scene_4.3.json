@@ -1581,6 +1581,8 @@
                     ]
                 },
                 {
+                    "id": "advance_44",
+                    "label": "Stride Toward the Meridian Helix",
                     "id": "advance_5",
                     "label": "Stride Toward Act Five",
                     "requirements": {
@@ -1592,6 +1594,23 @@
                     "outcomes": {
                         "success": {
                             "effects": [],
+                            "narration": "You step through the spectrum door as it opens into a spiral walkway humming with dawn and midnight echoes. The Meridian Helix beckons with fresh ledgers.",
+                            "next_hint": "4.4"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Helix module queued.",
+                        "trader": "Position rolled into 4.4.",
+                        "whale": "Wake spirals ahead.",
+                        "hacker": "Transition authenticated.",
+                        "shiller": "Campaign winds deeper into Act Four.",
+                        "validator": "Advance notarized.",
+                        "miner": "New tunnel, same grit.",
+                        "meme": "Brb, helixing."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:advance_44"
                             "narration": "You step through the spectrum door as it opens. A new corridor waits, awash in possibilities.",
                             "next_hint": "5.1"
                         }
@@ -1658,6 +1677,7 @@
         },
         {
             "when": "flags.prism_consensus_passed",
+            "goto": "4.4"
             "goto": "5.1"
         },
         {
