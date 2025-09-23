@@ -1,0 +1,1668 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "4.3",
+    "title": "The Prism Vault \u2014 Concord of Light",
+    "narration": "The Resonant Gradient\u2019s stairway spills into the Prism Vault, a cathedral carved from translucent stone and humming with compressed dawn. Columns of crystal rise like stalagmites of light, each refracting the corridor\u2019s history into layered holograms. The floor is etched with nested golden spirals that rotate beneath your steps, aligning ratio markers with your every decision. Hidden difficulty tiers manifest as sudden shifts in hue: turquoise for standard consensus work, crimson for risky gambits, and obsidian for paths that reveal vault secrets at a cost.\n\nGremlin factions don prismatic regalia. The Prism Current engineers juggle mirrors while Ledger Scribes trace glyphs in hovering light. A troupe of Meme gremlins project gifs onto the ceiling, each captioned with ledger jokes. They greet you with a harmonized GM that also signs a GN reflection in sign language, honoring accessibility protocols. AFK sentry drones float between columns, ready to nudge any idle participant into a forced-play routine shaped like a laser light show.\n\nSeven dais platforms circle the central spectrum door. The first amplifies your greeting into fractal light; the second fuses color threads into flags; the third forges soft-power prisms; the fourth unfolds a kaleidoscope marketplace; the fifth renews fallen allies inside chromatic cocoons; the sixth calibrates the spectrum door to route into Act Five; and the seventh convenes the prism council for the vote that will open the vault fully. Between dais, spectrum fish swim through the air, leaving trails of glitter data.\n\nEvery action here is logged in color and tone. The vault expects mastery of everything learned so far\u2014GM rituals, pity economies, revival protocols, and consensus votes. The gremlins grin, stepping aside to let you take the center platform. The light intensifies, waiting for your signal.",
+    "rounds": [
+        {
+            "round_id": "4.3-R1",
+            "description": "Fractal Greeting Dais \u2014 flood the vault with GM light, map prismatic ratios, and prepare the pity prism.",
+            "actions": [
+                {
+                    "id": "prism_gmgn",
+                    "label": "Project the Prism GMGN",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "gm_logged",
+                            "gn_reserved",
+                            "gradient_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "harmony",
+                            "light"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_greeting_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your greeting refracts into a halo of chromatic rings. Each ring echoes a Gentle Night whisper, and the vault crowns the moment with aurora confetti."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_greeting_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Light threads respond and stabilize, painting your name across the vault in shimmering letters. Gremlins cheer quietly to avoid disrupting the frequencies."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The light flickers unevenly, splashing you with pastel static. A Prism Current engineer offers a color wheel for calibration."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "The vault misreads your tone and momentarily inverts gravity. You float awkwardly until the gimbals reel you back in."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Launch message in living color.",
+                        "trader": "Market open and close in one beam.",
+                        "whale": "Wake sparkles in response.",
+                        "hacker": "Light handshake verified.",
+                        "shiller": "GM deck now holographic.",
+                        "validator": "Greeting notarized in color.",
+                        "miner": "Brightness beats headlamp.",
+                        "meme": "GM? More like RGBM."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_gmgn"
+                    ]
+                },
+                {
+                    "id": "prism_ratio_map",
+                    "label": "Map Spectrum Ratios",
+                    "requirements": {
+                        "items_any": [
+                            "trinket_gradient_meter"
+                        ],
+                        "flags_all": [
+                            "prism_greeting_synced"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "analysis",
+                            "light"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_ratios_logged",
+                                    "value": true
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "helm_prism_cartographer"
+                                }
+                            ],
+                            "narration": "You plot the prism\u2019s refraction pattern into a layered map that displays hidden difficulty tiers as color gradients. The vault rewards you with a visor that projects future anomalies."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_ratios_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Ratios fall into place, and the floor engraves your work as a glowing overlay others can follow."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A prism edge chips under pressure. You pay for repairs and gain a lecture on gentle handling."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "The prism throws a glare into your eyes, temporarily blinding you with neon blotches. Gremlins guide you back to safety."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Analytics but make it chroma.",
+                        "trader": "Ratios now in living color.",
+                        "whale": "Wake consults the map.",
+                        "hacker": "Light log parsed.",
+                        "shiller": "Data viz for the town hall.",
+                        "validator": "Spectral readings notarized.",
+                        "miner": "Bright map, bright future.",
+                        "meme": "Prism spreadsheet unlocked."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_ratio_map"
+                    ]
+                },
+                {
+                    "id": "prism_pity_crystal",
+                    "label": "Prime the Pity Prism",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_ratios_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "fortune",
+                            "logistics",
+                            "light"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_pity_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You focus light into a rotating prism that stores pity energy. It pulses with potential refunds."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "prism_pity_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The prism glows softly, pledging to reimburse unlucky shoppers."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "prism_pity_buffer",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The prism remains inert but records your attempt as stored compassion."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_pity_buffer",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The prism flashes and singes your fingertips. Gremlins hand you gloves and praise your dedication."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Safety crystal online.",
+                        "trader": "Insurance fund refracted.",
+                        "whale": "Wake bankrolls the glow.",
+                        "hacker": "Prism handshake secured.",
+                        "shiller": "Refunds but make them pretty.",
+                        "validator": "Prism balance logged.",
+                        "miner": "Glow stash ready.",
+                        "meme": "Pity prism = glitter bank."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_pity_crystal"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.3-R2",
+            "description": "Spectrum Loom \u2014 weave color threads into action, capture Harmony flags, and brew focus tonics from refracted dew.",
+            "actions": [
+                {
+                    "id": "prism_thread_weave",
+                    "label": "Weave Color Threads",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_ratios_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "harmony",
+                            "insight"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "weapon_prism_sceptre"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_threads_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You braid light into a soft-power sceptre whose facets amplify consensus rather than violence. Each strand hums with golden ratio intervals."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_threads_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Threads settle across your shoulders like a friendly cape. Gremlins annotate their tensile spectrum."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The colors blur. A Meme gremlin offers a playlist to get you back on beat."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "The threads snap with a sparkle pop, showering you in glitter that itches. Friendly hands brush it off."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Color weaving stable.",
+                        "trader": "Spectrum futures bullish.",
+                        "whale": "Wake glows with the threads.",
+                        "hacker": "Loom script optimized.",
+                        "shiller": "Colorway drop imminent.",
+                        "validator": "Thread signatures valid.",
+                        "miner": "Rainbow rope stronger than steel.",
+                        "meme": "Weaving? More like beaming."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_thread_weave"
+                    ]
+                },
+                {
+                    "id": "prism_flag_set",
+                    "label": "Set the Harmony Prism",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_threads_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "harmony",
+                                    "value": true
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_harmony_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You slot the woven threads into a crystal mount, projecting harmony metrics across the vault. Each faction nods in time."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "harmony",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The prism locks and displays consensus health. Validators sign off with mirrored gestures."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "Your calibration drifts. You buy new crystal spacers from a shrewd trader."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "The mount sings dissonance. You take a breath while a gremlin retunes the cradle."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Flag set with flair.",
+                        "trader": "Harmony premium locked.",
+                        "whale": "Wake hums approval.",
+                        "hacker": "Prism logs updated.",
+                        "shiller": "Harmony metrics for the recap.",
+                        "validator": "Flag notarized.",
+                        "miner": "Alignment done. Back to work.",
+                        "meme": "Harmony? Hard yes."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_flag_set"
+                    ]
+                },
+                {
+                    "id": "prism_focus_brew",
+                    "label": "Brew Prism Tonic",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_threads_ready"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "consumable_prism_focus"
+                                }
+                            ],
+                            "narration": "You distill dew from refracted light into a vial that tastes like citrus and data. Focus returns in shimmering pulses."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Focus potion deployed.",
+                        "trader": "Tonic demand skyrockets.",
+                        "whale": "Wake sips thoughtfully.",
+                        "hacker": "Recipe commit 4.3.",
+                        "shiller": "Tasting notes for the update.",
+                        "validator": "Potion ledger signed.",
+                        "miner": "Hydration, but luminous.",
+                        "meme": "Sip of pure prism."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_focus_brew"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "round_id": "4.3-R3",
+            "description": "Prism Forge \u2014 crystallize soft-power armor, helms, and trinkets from converged light.",
+            "actions": [
+                {
+                    "id": "prism_armor_forge",
+                    "label": "Forge the Spectrum Mantle",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_threads_ready",
+                            "harmony"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "defense",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "armor_prism_mantle"
+                                }
+                            ],
+                            "narration": "You coax light around your shoulders until it solidifies into a mantle that redirects conflict into conversation."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "armor_prism_mantle"
+                                }
+                            ],
+                            "narration": "The mantle seals, shimmering with consensus metrics. Gremlins seal it with wax stamps."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "The mantle unravels mid-forge. You purchase fresh prisms to try again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "Light lashes out, leaving afterimages in your vision. A healer applies soothing gel."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Mantle compiled.",
+                        "trader": "Defense premium executed.",
+                        "whale": "Wake drapes elegantly.",
+                        "hacker": "Mantle firmware secure.",
+                        "shiller": "Fashion blog meltdown.",
+                        "validator": "Armor notarized.",
+                        "miner": "Cloak beats armor plate.",
+                        "meme": "Cape, but consensus."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_armor_forge"
+                    ]
+                },
+                {
+                    "id": "prism_helm_cast",
+                    "label": "Cast the Aperture Helm",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_ratios_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "insight",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "helm_prism_aperture"
+                                }
+                            ],
+                            "narration": "You mold a helm that refracts incoming noise into actionable data. Hidden tiers appear as color-coded prompts."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "helm_prism_aperture"
+                                }
+                            ],
+                            "narration": "The helm snaps into shape, edges lined with telemetry runes. Validators sign the inside brim."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "Your mould slips. A gremlin adjusts it and encourages patience."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "The helm flashes, zapping your hair into an embarrassing halo. Everyone applauds the look."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Helmet passes QA.",
+                        "trader": "Insight hardware delivered.",
+                        "whale": "Wake tests the lenses.",
+                        "hacker": "Aperture patched.",
+                        "shiller": "Helmet selfie incoming.",
+                        "validator": "Calibration recorded.",
+                        "miner": "Finally, a helmet that fits.",
+                        "meme": "Hair day courtesy of prism."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_helm_cast"
+                    ]
+                },
+                {
+                    "id": "prism_trinket_glint",
+                    "label": "Set the Glint Locket",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_harmony_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "support",
+                            "fortune"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_prism_glint"
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "You seal a stored beam inside a locket. When opened, it replays the vault\u2019s most persuasive harmony to sway negotiations."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "trinket_prism_glint"
+                                }
+                            ],
+                            "narration": "The locket clicks shut with a satisfying chime, ready to project consensus light when needed."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The light escapes and paints moustaches on nearby gremlins. They retaliate with glitter."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "The locket overheats in your palm. You cool it in a nearby fountain while gremlins fan you with ledger sheets."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Trinket compiled.",
+                        "trader": "Sentiment device minted.",
+                        "whale": "Wake admires the glint.",
+                        "hacker": "Locket encryption layered.",
+                        "shiller": "Limited drop inbound.",
+                        "validator": "Promise sealed.",
+                        "miner": "Fits perfectly in the toolbelt.",
+                        "meme": "Locket and load."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_trinket_glint"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.3-R4",
+            "description": "Kaleidoscope Market \u2014 unfold the prismatic shop, redeem pity crystals, and expand storage for luminous loot.",
+            "actions": [
+                {
+                    "id": "prism_market_open",
+                    "label": "Open the Kaleidoscope",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_pity_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "commerce",
+                            "ritual",
+                            "light"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "shop",
+                                    "id": "prism_kaleidoscope_pop"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_market_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Mirrors unfurl, creating aisles of refracted goods. Gremlins applaud the flourish and shower you with coins."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "shop",
+                                    "id": "prism_kaleidoscope_pop"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_market_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The market opens, shelves lined with prismatic gear and focus tonics. A cashier choir sings totals in four-part harmony."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "The mirrors misalign; you pay a reset fee to try again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "A mirror bursts into rainbow static, zapping your eyebrows. Gremlins hand you stylized replacements."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Shop portal deployed.",
+                        "trader": "Inventory sparkles.",
+                        "whale": "Wake buys the entire aisle.",
+                        "hacker": "POS shines.",
+                        "shiller": "Market selfies trending.",
+                        "validator": "Receipts luminous.",
+                        "miner": "Shopping before mining.",
+                        "meme": "Retail therapy but prismatic."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_market_open"
+                    ]
+                },
+                {
+                    "id": "prism_market_pity",
+                    "label": "Redeem Pity Crystal",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_pity_buffer"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "fortune",
+                            "commerce"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_pity_buffer",
+                                    "value": false
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "voucher_prism_reroll"
+                                }
+                            ],
+                            "narration": "The pity crystal spins, releasing coins and a shimmering voucher for future shopping rerolls."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "value": 13
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_pity_buffer",
+                                    "value": false
+                                }
+                            ],
+                            "narration": "You cash in credit, resetting the crystal to zero with a satisfied hum."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "prism_pity_buffer",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The crystal declines politely, promising a larger payout soon."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "Paperwork tangles you up. A bureaucratic gremlin helps file the forms for next time."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Refund pipeline working.",
+                        "trader": "Credit redeemed.",
+                        "whale": "Wake approves.",
+                        "hacker": "Buffer toggled off.",
+                        "shiller": "Pity success story.",
+                        "validator": "Redemption logged.",
+                        "miner": "Coins back in the pouch.",
+                        "meme": "Pity prism printing."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_market_pity"
+                    ]
+                },
+                {
+                    "id": "prism_backpack_expand",
+                    "label": "Expand the Prism Pack",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_market_open"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "backpack_prism_carrier"
+                                }
+                            ],
+                            "narration": "You acquire a pack woven from light filaments. It sorts coins, focus tonics, and pity vouchers by wavelength."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Inventory capacity increased.",
+                        "trader": "Pack ROI excellent.",
+                        "whale": "Wake loves more space.",
+                        "hacker": "Carrier firmware updated.",
+                        "shiller": "Unboxing video scheduled.",
+                        "validator": "Storage notarized.",
+                        "miner": "Space for extra snacks.",
+                        "meme": "Bag of holding but glam."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_backpack_expand"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 21
+                }
+            ]
+        },
+        {
+            "round_id": "4.3-R5",
+            "description": "Chromatic Sanctuary \u2014 revive allies within light cocoons, maintain AFK lasers, and welcome new arrivals.",
+            "actions": [
+                {
+                    "id": "prism_revive_cocoon",
+                    "label": "Conduct Prism Revival",
+                    "requirements": {
+                        "items_any": [
+                            "trinket_gradient_reverb"
+                        ],
+                        "flags_all": []
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "support",
+                            "healing"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_prism_reviver"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_revive_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Light cocoons rise, enfolding your ally. They awaken radiant, ledger refreshed, and hug you with luminous gratitude."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_revive_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The revival completes. Gremlins log the ritual and update the GN board with celebratory emojis."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "The cocoon flickers, passing the strain into you. The patient rests while you recover."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The light misfires and showers the dais with sparkles. Support gremlins reset the ritual and hand you tea."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Rollback in technicolor.",
+                        "trader": "Revival executed precisely.",
+                        "whale": "Wake cushions the revived.",
+                        "hacker": "Life patch v4.3 installed.",
+                        "shiller": "Resurrection thread trending.",
+                        "validator": "Revive notarized.",
+                        "miner": "Back on your feet, friend.",
+                        "meme": "Respawn IRL."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_revive_cocoon"
+                    ]
+                },
+                {
+                    "id": "prism_afk_lasers",
+                    "label": "Tune AFK Lasers",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": []
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "afk_tracked",
+                                    "value": true
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "afk_warning",
+                                    "value": false
+                                }
+                            ],
+                            "narration": "You calibrate gentle laser sweeps that remind idle players to move before force-play kicks in. The drones hum approval."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "afk_tracked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Sensors align and log the twenty-four-hour safeguard into the prismatic ledger."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "afk_warning",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "A laser paints fake mustaches on everyone before you tame it. Laughter resets morale."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "You tangle the beams and get twirled in forced-play mode until gremlins rescue you."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Cron lasers fired up.",
+                        "trader": "No idle capital here.",
+                        "whale": "Wake taps the beat.",
+                        "hacker": "Laser script sanitized.",
+                        "shiller": "Daily ping overlay done.",
+                        "validator": "Timers verified.",
+                        "miner": "Stay moving, stay glowing.",
+                        "meme": "AFK lasers > alarm clock."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_afk_lasers"
+                    ]
+                },
+                {
+                    "id": "prism_arrival_portal",
+                    "label": "Signal Prism Arrivals",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_market_open"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "arrival_slot_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You open a side portal. A duo of travelers glide in on lightboards, ready to participate."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Onboarding portal active.",
+                        "trader": "Fresh flow inbound.",
+                        "whale": "Wake bows in welcome.",
+                        "hacker": "Invite tokens validated.",
+                        "shiller": "Campaign welcomes new friends.",
+                        "validator": "Arrivals logged.",
+                        "miner": "More crew, more progress.",
+                        "meme": "GM, prismatic pals!"
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_arrival_portal"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "round_id": "4.3-R6",
+            "description": "Spectrum Door \u2014 align the vault gate, decode hidden tiers, and brief the prism council.",
+            "actions": [
+                {
+                    "id": "prism_door_align",
+                    "label": "Align the Spectrum Door",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_ratios_logged",
+                            "prism_threads_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "navigation",
+                            "light"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_door_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You rotate the door\u2019s prisms until the spectrum forms a perfect golden spiral. The portal glows, revealing hints of Act Five."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_door_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The door stabilizes, projecting a countdown to the vote. Gremlins nod approvingly."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The prisms wobble. A validator hands you a lens cloth and checklist."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "Misaligned light backfires, scattering kaleidoscope shards. You duck while gremlins sweep up."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Door tuning complete.",
+                        "trader": "Path risk hedged.",
+                        "whale": "Wake touches the threshold.",
+                        "hacker": "Door firmware v4.3.",
+                        "shiller": "Teaser trailer ready.",
+                        "validator": "Alignment recorded.",
+                        "miner": "Gate open for mining.",
+                        "meme": "Door? More like floor."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_door_align"
+                    ]
+                },
+                {
+                    "id": "prism_hidden_decode",
+                    "label": "Decode Hidden Spectrum",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_door_aligned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "analysis"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_hidden_charted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You read the door\u2019s color pulses, uncovering a secret route that requires alternating GM and GN echoes."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_hidden_charted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You log enough data to warn the council about hidden spikes."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "Your calculations smear. You buy fresh chalk to retry."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "Light floods your senses, forcing a pause. Friendly hands guide you away from the glare."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Hidden tier charted.",
+                        "trader": "Risk profile updated.",
+                        "whale": "Wake senses secrets.",
+                        "hacker": "Encryption decrypted.",
+                        "shiller": "Spoiler channel updated.",
+                        "validator": "Hidden data notarized.",
+                        "miner": "Map reveals new seams.",
+                        "meme": "Secret unlocked!"
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_hidden_decode"
+                    ]
+                },
+                {
+                    "id": "prism_council_brief",
+                    "label": "Brief the Prism Council",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_door_aligned"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "council_briefed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You summarize door status, hidden tiers, and pity reserves. The council beams the briefing across the vault as color-coded bullet points."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Status synced.",
+                        "trader": "Briefing priced in.",
+                        "whale": "Wake remains informed.",
+                        "hacker": "Minutes encrypted.",
+                        "shiller": "Newsletter drafted.",
+                        "validator": "Notes archived.",
+                        "miner": "Agenda clear, picks ready.",
+                        "meme": "Brief me again, beams."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_council_brief"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.3-R7",
+            "description": "Prism Council Balcony \u2014 finalize the consensus, archive prism loot, and stride toward Act Five.",
+            "actions": [
+                {
+                    "id": "prism_consensus_vote",
+                    "label": "Call the Prism Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_door_aligned",
+                            "prism_harmony_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "ritual",
+                            "negotiation"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You orchestrate a vote composed of light and ledger, and the council\u2019s approval manifests as a rainbow cascade."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "prism_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Consensus locks in. The vault door brightens, inviting you onward."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "Debate drifts. The council schedules a quick snack break before trying again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "Voices overlap into cacophony. The vault resets the vote with a patient shimmer."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vote passed in full color.",
+                        "trader": "Consensus premium realized.",
+                        "whale": "Wake signs in light.",
+                        "hacker": "Ballots hashed thrice.",
+                        "shiller": "Campaign milestone locked.",
+                        "validator": "Result notarized.",
+                        "miner": "We dig where the prism points.",
+                        "meme": "Democracy but disco."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_consensus_vote"
+                    ]
+                },
+                {
+                    "id": "prism_reward_archive",
+                    "label": "Archive Prism Rewards",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "deck_prism_constellation"
+                                }
+                            ],
+                            "narration": "You log every item forged, every pity refund, and every revival. The vault compiles them into a constellation deck for future runs."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Reward ledger closed.",
+                        "trader": "Loot tallied.",
+                        "whale": "Wake shares the bounty.",
+                        "hacker": "Archive locked.",
+                        "shiller": "Highlight reel ready.",
+                        "validator": "Receipts filed.",
+                        "miner": "Spoils sorted.",
+                        "meme": "Deck to the future."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:prism_reward_archive"
+                    ]
+                },
+                {
+                    "id": "advance_5",
+                    "label": "Stride Toward Act Five",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "You step through the spectrum door as it opens. A new corridor waits, awash in possibilities.",
+                            "next_hint": "5.1"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Next act queued.",
+                        "trader": "Position rolled into Act Five.",
+                        "whale": "Wake leaps forward.",
+                        "hacker": "Transition authenticated.",
+                        "shiller": "Campaign enters the next phase.",
+                        "validator": "Advance notarized.",
+                        "miner": "Fresh tunnels ahead.",
+                        "meme": "Brb, Act Five."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:advance_5"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 10,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "xp_gte": 444,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "helm_prism_aperture"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "prism_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "deck",
+                    "id": "deck_prism_constellation"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "4.3A"
+        },
+        {
+            "when": "flags.prism_consensus_passed",
+            "goto": "5.1"
+        },
+        {
+            "when": "else",
+            "goto": "4.3"
+        }
+    ]
+}

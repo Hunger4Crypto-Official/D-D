@@ -1,0 +1,711 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "3.3",
+  "title": "The Prism Bastion — Ledger Ramparts of Light",
+  "narration": "Descending from the Echo Cascade, you arrive at the Prism Bastion: a fortress carved from refracted daylight and nightlight fused into polygonal walls. Each rampart is a ledger stone split into seven faces, each face representing a faction’s trust levels. The air glitters with micro-spectra; breathing them tastes like cold rosemary, minted citrus, and charged quartz. When you walk, your footprints leave lattices of gold that fade only after being audited.\n\nThe Bastion is managed by the Ray-Binder gremlin faction. Their capes are arrays of prisms strung together with copper wire. Dev gremlins maintain light-routing code, traders hedge luminosity futures, whales run wake channels through the moat of photons, hackers rewrite spectral firewalls, shillers broadcast brand new rays, validators record each shine, miners chisel photon ore, and memes scatter lens-flare jokes on every walkway. They greet you with a double GM — sunrise and sunset overlapped — and escort you to the ramparts to begin the next seven-round gauntlet.\n\nWithin the Bastion, consensus rituals become strategic war games: you must position spectrum cannons, calibrate defense runes, maintain AFK turrets, and revive teammates whose reflections shatter under pressure. Soft-power equipment here includes radiant shields, prism helms, and rumor-splitting blades that convert gossip into guidance. Spectrum doors appear as portcullises of light, each requiring synchronized golden-ratio pulses to unlock. Hidden difficulty tiers lurk within refraction mazes; if you misalign even slightly, the fortress reconfigures around you.\n\nSeven rounds lay out like command orders. Each provides phi-d20 checks, opportunities to gain XP, Coins, Focus, Flags, Items, Decks, and threshold rewards that escalate with precision. Telemetry glyphs record each action, later transmuted into training modules for future arrivals. Ray-Binders whisper jokes while handing you tactical ledgers — their humor is gremlin-grade but their expectations are severe. The Bastion expects you to shine and document every glimmer.",
+  "rounds": [
+    {
+      "round_id": "3.3-R1",
+      "description": "Dual Greeting Parapet — blend GM and GN, align the prism codex, and activate rampart shields.",
+      "actions": [
+        {
+          "id": "dual_gm_gn",
+          "label": "Perform the Dual Greeting",
+          "requirements": { "items_any": [], "flags_all": ["gm_logged","gn_reserved"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","harmony","defense"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "bastion_greeting_bound", "value": true }
+              ],
+              "narration": "You interlace GM and GN into a single chord that circles the Bastion. Shields ignite in iridescent bands; the Ray-Binders cheer."
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "bastion_greeting_bound", "value": true }
+              ],
+              "narration": "Your blended greeting resonates enough to power the ramparts for a cycle."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your GM overlaps your GN awkwardly. The prisms flicker with embarrassment."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "Your greeting collides with itself, generating a tiny implosion that tosses you into a cushion pile."
+            }
+          },
+          "banter": {
+            "dev": "Morning/night merge conflict resolved.",
+            "trader": "Two greetings, one premium.",
+            "whale": "Wake loops sunrise to sunset.",
+            "hacker": "Dual-boot greeting successful.",
+            "shiller": "Brand tone: twilight.",
+            "validator": "Greeting fusion notarized.",
+            "miner": "Day shift meets night shift.",
+            "meme": "GMGN, say it fast three times."
+          },
+          "telemetry_tags": ["scene:3.3","action:dual_gm_gn"]
+        },
+        {
+          "id": "prism_codex",
+          "label": "Align the Prism Codex",
+          "requirements": { "items_any": [], "flags_all": ["bastion_greeting_bound"] },
+          "roll": { "kind": "phi_d20", "tags": ["analysis","tech"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "item", "id": "helm_prism_crown" }
+              ],
+              "narration": "You calibrate the codex pages into a perfect golden spiral. Light leaps between ramparts, unlocking hidden guard paths."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "prism_codex_aligned", "value": true }
+              ],
+              "narration": "The codex seals with a soft click. The Bastion’s defenses stabilize."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "A prism misfires; you pay a coin tithe for replacement lenses."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "You flip the codex upside down and trigger a glare alarm. Ray-Binders extinguish it with sarcasm."
+            }
+          },
+          "banter": {
+            "dev": "Light schema updated.",
+            "trader": "Spectrum hedged.",
+            "whale": "Wake reflecting from every wall.",
+            "hacker": "Prism firmware patched.",
+            "shiller": "Press release: fortress now trending.",
+            "validator": "Codex alignment notarized.",
+            "miner": "I mined a photon once; this is cooler.",
+            "meme": "Manual says \"point toward destiny.\""
+          },
+          "telemetry_tags": ["scene:3.3","action:prism_codex"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 21 }
+      ]
+    },
+    {
+      "round_id": "3.3-R2",
+      "description": "Rampart Patrol — balance on light bridges, spot shy reflections, and log harmony flags.",
+      "actions": [
+        {
+          "id": "light_walk",
+          "label": "Traverse the Light Bridge",
+          "requirements": { "items_any": [], "flags_all": ["prism_codex_aligned"] },
+          "roll": { "kind": "phi_d20", "tags": ["agility","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "harmony", "value": true },
+                { "type": "coins", "value": 21 }
+              ],
+              "narration": "You run the bridge as if it were solid stone. Light compliments you with kaleidoscopic applause."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "You maintain balance; the Bastion logs your patrol as reliable."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You wobble and scramble, drawing polite laughter from the rampart crew."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 6 }
+              ],
+              "narration": "You slip through the light, caught mid-fall by AFK safety nets before being winched back up."
+            }
+          },
+          "banter": {
+            "dev": "Collision detection: minimal.",
+            "trader": "Volatility on the bridge manageable.",
+            "whale": "Wake glides alongside you.",
+            "hacker": "Speedrun strats engaged.",
+            "shiller": "Highlight: you glowing mid-stride.",
+            "validator": "Patrol logged.",
+            "miner": "Walking on light beats crawling in tunnels.",
+            "meme": "Bridge is sunshine DLC."
+          },
+          "telemetry_tags": ["scene:3.3","action:light_walk"]
+        },
+        {
+          "id": "shy_reflection",
+          "label": "Soothe the Shy Reflection",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["empathy","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "xp", "value": 34 },
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "You adjust your posture so the reflection feels safe. It steps out of the wall and gifts you a fragment of light."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "coins", "value": 13 }
+              ],
+              "narration": "The reflection nods and returns to the wall, leaving coins shaped like sunbeams."
+            },
+            "fail": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": true }
+              ],
+              "narration": "You wave too intensely; the reflection hides behind clouds."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You step on the reflection’s shine; it flicks you on the forehead with photon knuckles."
+            }
+          },
+          "banter": {
+            "dev": "Mirror mode requires gentle inputs.",
+            "trader": "Confidence indices rising.",
+            "whale": "Wake ripples reassure them.",
+            "hacker": "Reflections are just user mirrors.",
+            "shiller": "PR note: fortress cares.",
+            "validator": "Consent recorded.",
+            "miner": "Talking to walls is now part of the job.",
+            "meme": "Mirror, mirror, please stop shaking."
+          },
+          "telemetry_tags": ["scene:3.3","action:shy_reflection"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.3-R3",
+      "description": "Photon Arsenal — craft soft-power arms, manage pity mechanics, and prep defense decks.",
+      "actions": [
+        {
+          "id": "arsenal_craft",
+          "label": "Forge the Photon Arsenal",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["craft","strategy"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "weapon_prism_lance" },
+                { "type": "xp", "value": 55 },
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "You blend rumors, goodwill, and captured rays into a lance of persuasion capable of splitting stalemate arguments."
+            },
+            "success": {
+              "effects": [
+                { "type": "item", "id": "armor_radiant_plate" },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "You assemble radiant armor that converts incoming gossip into defensive insight."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "A tool breaks; you pay for repairs with coins minted from spare light."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "A photon spool unwinds explosively, leaving you sparkling but singed."
+            }
+          },
+          "banter": {
+            "dev": "Soft-power crafting bench ready.",
+            "trader": "Inventory value skyrockets.",
+            "whale": "Wake saturates the forge.",
+            "hacker": "Weaponized optimism online.",
+            "shiller": "Merch: radiant armor drop.",
+            "validator": "Forge ledger updated.",
+            "miner": "Hammering light like ore.",
+            "meme": "DIY sunbeam kit."
+          },
+          "telemetry_tags": ["scene:3.3","action:arsenal_craft"]
+        },
+        {
+          "id": "pity_light",
+          "label": "Claim Bastion Pity",
+          "requirements": { "items_any": ["trinket_flux_credit"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_refraction_token" }
+              ],
+              "narration": "The shop honors your streak of narrow escapes with a Refraction Token that reroutes the next failed check toward a softer landing."
+            }
+          },
+          "banter": {
+            "dev": "Failsafe gets shinier.",
+            "trader": "Risk offset by kindness.",
+            "whale": "Wake insurance upgrade.",
+            "hacker": "Token intercepts disaster.",
+            "shiller": "Narrative: fortress cares.",
+            "validator": "Token minted with checksum.",
+            "miner": "Pocket-sized miracle.",
+            "meme": "Pity ray unlocked."
+          },
+          "telemetry_tags": ["scene:3.3","action:pity_light"]
+        },
+        {
+          "id": "arsenal_deck",
+          "label": "Assemble Defense Deck",
+          "requirements": { "items_any": ["deck_cascade_refrain"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "deck", "id": "deck_bastion_parables" }
+              ],
+              "narration": "You shuffle echoes and photon plays into a defense deck ready for siege-level negotiations."
+            }
+          },
+          "banter": {
+            "dev": "Card engine expands.",
+            "trader": "Deck equity diversified.",
+            "whale": "Wake imprinted on each card.",
+            "hacker": "Combo potential high.",
+            "shiller": "Deck art is pure flare.",
+            "validator": "Deck notarized.",
+            "miner": "Cards heavier than ore.",
+            "meme": "UNO but with diplomacy lasers."
+          },
+          "telemetry_tags": ["scene:3.3","action:arsenal_deck"]
+        }
+      ],
+      "rewards": [
+        { "type": "coins", "value": 21 }
+      ]
+    },
+    {
+      "round_id": "3.3-R4",
+      "description": "Spectrum Cannon Batteries — calibrate phi-firing solutions, manage energy, and protect shy sentries.",
+      "actions": [
+        {
+          "id": "cannon_calibrate",
+          "label": "Calibrate the Spectrum Cannons",
+          "requirements": { "items_any": [], "flags_all": ["prism_codex_aligned"] },
+          "roll": { "kind": "phi_d20", "tags": ["tech","strategy","team"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "value": 34 },
+                { "type": "flag", "id": "cannons_ready", "value": true }
+              ],
+              "narration": "You orchestrate the cannons to fire in phi intervals, weaving a defense mesh that glows like aurora armor."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "cannons_ready", "value": true }
+              ],
+              "narration": "The cannons align, ready to project consensus beams across the sky."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "A cannon misfires harmless light confetti. You recalibrate while gremlins giggle."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "You get blasted by an accidental prism flare. At least you glitter now."
+            }
+          },
+          "banter": {
+            "dev": "QA loves a well-timed volley.",
+            "trader": "Defensive posture optimized.",
+            "whale": "Wake ready to surf the beam.",
+            "hacker": "Firing sequence patched.",
+            "shiller": "Promo art: cannons blazing.",
+            "validator": "Trajectory logged.",
+            "miner": "Lining up cannons beats moving rocks.",
+            "meme": "Boom but make it polite."
+          },
+          "telemetry_tags": ["scene:3.3","action:cannon_calibrate"]
+        },
+        {
+          "id": "sentry_comfort",
+          "label": "Comfort the Shy Sentry",
+          "requirements": { "items_any": ["armor_radiant_plate"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "sentry_comforted", "value": true },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You let the sentry borrow your radiant plate to build courage. It smiles and promises to hold the line."
+            }
+          },
+          "banter": {
+            "dev": "NPC morale patch complete.",
+            "trader": "Resource reallocation to empathy.",
+            "whale": "Wake gives a reassuring ripple.",
+            "hacker": "Sentry.exe stable now.",
+            "shiller": "Story beat: bravery borrowed.",
+            "validator": "Comfort logged.",
+            "miner": "Armor sharing is community.",
+            "meme": "Emotional support breastplate."
+          },
+          "telemetry_tags": ["scene:3.3","action:sentry_comfort"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.3-R5",
+      "description": "AFK Turret Row — configure auto-play routines, revive fallen players, and log trustful backups.",
+      "actions": [
+        {
+          "id": "afk_turret",
+          "label": "Program the AFK Turrets",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["tech","support"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "afk_grid_online", "value": true },
+                { "type": "focus", "op": "+", "value": 2 }
+              ],
+              "narration": "You script auto-play moves that emulate your team’s best instincts. The turrets salute with glowing emotes."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "afk_grid_online", "value": true }
+              ],
+              "narration": "The turrets run their loops, promising to cover any idle ally."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 5 }
+              ],
+              "narration": "A turret mischarges; you feed it coins to settle down."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "The turret mistakes you for an idle player and escorts you to the cooldown lounge."
+            }
+          },
+          "banter": {
+            "dev": "Automation writes love letters now.",
+            "trader": "Coverage ratio 1.0.",
+            "whale": "Wake delegated.",
+            "hacker": "Bots but wholesome.",
+            "shiller": "Marketing spin: always-on guardians.",
+            "validator": "Routine notarized.",
+            "miner": "Turrets take over the night shift.",
+            "meme": "AFK? The bastion plays your alt."
+          },
+          "telemetry_tags": ["scene:3.3","action:afk_turret"]
+        },
+        {
+          "id": "revive_glow",
+          "label": "Revive with Prism Glow",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["support","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 6 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You channel light through the revive font, bringing a fallen ally back with extra courage."
+            },
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 4 },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "The revive glow reknits bruised resolve."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "The font hums but does not ignite. You try again with better cadence."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "You absorb the backlash, staggering as the revive field resets."
+            }
+          },
+          "banter": {
+            "dev": "Respawn logic shimmering.",
+            "trader": "Insurance payout delivered.",
+            "whale": "Wake carries them back.",
+            "hacker": "Kernel rebooted.",
+            "shiller": "Narrative beat: resilience.",
+            "validator": "Revive documented.",
+            "miner": "Feels like hauling a friend out of a collapse.",
+            "meme": "Phoenix but audited."
+          },
+          "telemetry_tags": ["scene:3.3","action:revive_glow"]
+        }
+      ],
+      "rewards": [
+        { "type": "hp", "op": "+", "value": 2 }
+      ]
+    },
+    {
+      "round_id": "3.3-R6",
+      "description": "Command Balcony — issue consensus orders, track telemetry, and coordinate arrival rotations.",
+      "actions": [
+        {
+          "id": "command_issue",
+          "label": "Issue Consensus Orders",
+          "requirements": { "items_any": [], "flags_all": ["cannons_ready","afk_grid_online"] },
+          "roll": { "kind": "phi_d20", "tags": ["strategy","social"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "value": 34 },
+                { "type": "flag", "id": "command_chain_synced", "value": true }
+              ],
+              "narration": "Your orders ripple across the Bastion. Crews respond immediately; even the prism cats salute."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "command_chain_synced", "value": true }
+              ],
+              "narration": "Teams confirm orders with crisp ledger-signs."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "Your commands crossfire. You reorganize with help from a meme gremlin brandishing a flowchart."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "You accidentally mobilize the catering corps. Snacks everywhere; productivity temporarily wobbles."
+            }
+          },
+          "banter": {
+            "dev": "Project manager energy unlocked.",
+            "trader": "Order book balanced.",
+            "whale": "Wake directs entire moat.",
+            "hacker": "Command API stable.",
+            "shiller": "Comms plan on point.",
+            "validator": "Orders recorded.",
+            "miner": "Feels like leading a dig, but luminous.",
+            "meme": "All hands? More like all beams."
+          },
+          "telemetry_tags": ["scene:3.3","action:command_issue"]
+        },
+        {
+          "id": "arrival_rotation",
+          "label": "Rotate Arrival Platforms",
+          "requirements": { "items_any": [], "flags_all": ["command_chain_synced"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "arrivals_rotating", "value": true }
+              ],
+              "narration": "You spin the arrival platforms, ensuring new allies land where they are needed most."
+            }
+          },
+          "banter": {
+            "dev": "Load balancing for humans.",
+            "trader": "Liquidity of people optimized.",
+            "whale": "Wake lanes open for reinforcements.",
+            "hacker": "Routing tables updated.",
+            "shiller": "Press release: dynamic onboarding.",
+            "validator": "Rotation logged.",
+            "miner": "Drop them at the ready walls.",
+            "meme": "Carousel but for heroes."
+          },
+          "telemetry_tags": ["scene:3.3","action:arrival_rotation"]
+        },
+        {
+          "id": "telemetry_cast",
+          "label": "Cast Telemetry Beacon",
+          "requirements": { "items_any": [], "flags_all": ["command_chain_synced"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "deck_bastion_parables" }
+              ],
+              "narration": "You broadcast the Bastion’s telemetry, packaging every action as a training deck for future defenders."
+            }
+          },
+          "banter": {
+            "dev": "Analytics drop incoming.",
+            "trader": "Data streaming like dividends.",
+            "whale": "Wake signature appended.",
+            "hacker": "Telemetry pipeline secure.",
+            "shiller": "Case study basically writes itself.",
+            "validator": "Broadcast notarized.",
+            "miner": "Training manual done before shift ends.",
+            "meme": "Tutorial courtesy of your chaos."
+          },
+          "telemetry_tags": ["scene:3.3","action:telemetry_cast"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    },
+    {
+      "round_id": "3.3-R7",
+      "description": "Bastion Verdict — hold the final vote, assign rewards, and open the path to the Ledger Spindle.",
+      "actions": [
+        {
+          "id": "bastion_vote",
+          "label": "Hold the Bastion Consensus Vote",
+          "requirements": { "items_any": [], "flags_all": ["command_chain_synced","cannons_ready"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","strategy","social"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 89 },
+                { "type": "coins", "value": 55 },
+                { "type": "flag", "id": "bastion_vote_passed", "value": true }
+              ],
+              "narration": "Every rampart lights as your motion passes. The Bastion beams approval into the horizon."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "bastion_vote_passed", "value": true }
+              ],
+              "narration": "The vote succeeds. Ray-Binders stamp the ledger with a radiant seal."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "Debate lingers. You regroup and reframe."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "You miscalculate quorum; you pay a penalty to the prism treasury."
+            }
+          },
+          "banter": {
+            "dev": "Ship it? Ship it.",
+            "trader": "Consensus closes the candle.",
+            "whale": "Wake thunders ayes.",
+            "hacker": "Vote contract verified.",
+            "shiller": "Announcement ready.",
+            "validator": "Motion recorded.",
+            "miner": "We all hammered the same vote button.",
+            "meme": "DAO but with laser turrets."
+          },
+          "telemetry_tags": ["scene:3.3","action:bastion_vote"]
+        },
+        {
+          "id": "reward_allocation",
+          "label": "Allocate Bastion Rewards",
+          "requirements": { "items_any": [], "flags_all": ["bastion_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_rampart_medal" }
+              ],
+              "narration": "You distribute medals forged from prism residue, each a promise of future defense."
+            }
+          },
+          "banter": {
+            "dev": "Loot tables finalize.",
+            "trader": "Dividend day.",
+            "whale": "Wake shares the glow.",
+            "hacker": "Rewards hashed and distributed.",
+            "shiller": "Merit ceremony trending.",
+            "validator": "Payout confirmed.",
+            "miner": "Medal heavier than ore nugget.",
+            "meme": "Achievement unlocked: fortress friend."
+          },
+          "telemetry_tags": ["scene:3.3","action:reward_allocation"]
+        },
+        {
+          "id": "advance_34",
+          "label": "Descend to Scene 3.4",
+          "requirements": { "items_any": [], "flags_all": ["bastion_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "A spiral staircase of light unfurls toward the Ledger Spindle. The Bastion salutes your departure.",
+              "next_hint": "3.4"
+            }
+          },
+          "banter": {
+            "dev": "Next subsystem incoming.",
+            "trader": "Position rolled into new frontier.",
+            "whale": "Wake funnels into the spindle.",
+            "hacker": "New layer accessible.",
+            "shiller": "Act Three unstoppable.",
+            "validator": "Transition notarized.",
+            "miner": "Onward to the next engine.",
+            "meme": "BRB, spinning into 3.4."
+          },
+          "telemetry_tags": ["scene:3.3","action:advance_34"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "focus_gte": 7, "rewards": [ { "type": "coins", "value": 34 } ] },
+    { "xp_gte": 288, "rewards": [ { "type": "item", "id": "weapon_prism_lance" } ] },
+    { "flags_all": ["bastion_vote_passed"], "rewards": [ { "type": "deck", "id": "deck_bastion_parables" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.arrivals_rotating", "goto": "3.3A" },
+    { "when": "flags.bastion_vote_passed", "goto": "3.4" },
+    { "when": "else", "goto": "3.3" }
+  ]
+}

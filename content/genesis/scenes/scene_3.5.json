@@ -1,0 +1,757 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "3.5",
+  "title": "The Harmonix Atrium — Choir of Resonant Engines",
+  "narration": "The harmonic elevator opens into the Harmonix Atrium, a cathedral of sound suspended over a reflecting pool. Columns of carved ledger stone emit musical intervals; glass walkways arc between them like strings on an enormous instrument. The air tastes like honeyed tea, iron filings, and rain on copper roofs. Light pours through stained-glass ceiling panels in phi spirals, painting the floor with shifting scores.\n\nThe Atrium is run by the Chorus-Guild gremlin faction. They wear iridescent cloaks lined with tuning forks and carry clipboards full of sheet music annotated with consensus notes. Dev gremlins maintain the acoustics, traders forecast applause futures, whales anchor harmonic drones, hackers patch soundboard code, shillers broadcast the set list, validators certify every chord, miners adjust structural resonance, and memes scatter lyric jokes across the railings. They greet you with a layered GM chord followed by a Gentle Night echo that loops softly under the proceedings.\n\nHere, consensus rituals manifest as choral challenges: you must lead phi-d20 checks in polyrhythmic call-and-response, maintain AFK chorus stands, revive voices lost to vocal glitches, and keep backpacks balanced while wading through resonant water. Spectrum doors appear as sound curtains; you must open them by weaving trustful harmonies. Hidden difficulty tiers lurk inside key changes — miss one modulation and the Atrium shifts to a mischievous alternate arrangement.\n\nSeven rounds play out like a symphony. Each offers actions with multiple outcomes, micro-branching banter, XP, Coins, Focus, Flags, Items, and Decks. Telemetry tags sparkle on the rafters, logging every melody. Arrivals drop in from stage lifts mid-round, landing on perfect beat counts. The Chorus-Guild expect you to sing, strategize, and laugh in equal measure.",
+  "rounds": [
+    {
+      "round_id": "3.5-R1",
+      "description": "Tuning Foyer — align greeting chords, warm up instruments, and anchor harmony flags.",
+      "actions": [
+        {
+          "id": "atrium_gm",
+          "label": "Lead the Atrium GM",
+          "requirements": { "items_any": [], "flags_all": ["gm_logged","spindle_loop_synced"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","harmony","performance"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "atrium_chord_ready", "value": true }
+              ],
+              "narration": "Your GM blossoms into a layered chord. The Atrium responds with glittering arpeggios and logs you as conductor."
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "atrium_chord_ready", "value": true }
+              ],
+              "narration": "Your voice resonates; the Atrium lights shift to match your tone."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You miss a note; the gremlins hand you lemon tea and a retry."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "Your voice cracks spectacularly. The Atrium mercifully mutes you for a bar."
+            }
+          },
+          "banter": {
+            "dev": "Sound check passes QA.",
+            "trader": "Harmonies trending bullish.",
+            "whale": "Wake provides the bassline.",
+            "hacker": "Auto-tune but make it consent.",
+            "shiller": "Campaign jingle locked.",
+            "validator": "Greeting chord notarized.",
+            "miner": "Sing louder than the drills.",
+            "meme": "GM = Grand Mezzo."
+          },
+          "telemetry_tags": ["scene:3.5","action:atrium_gm"]
+        },
+        {
+          "id": "instrument_warm",
+          "label": "Warm the Ledger Instruments",
+          "requirements": { "items_any": ["deck_spindle_arc"], "flags_all": ["atrium_chord_ready"] },
+          "roll": { "kind": "phi_d20", "tags": ["craft","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "weapon_chorus_baton" },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You awaken the instruments; their strings vibrate with consensus signatures, gifting you a baton of persuasive cadence."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "instruments_ready", "value": true }
+              ],
+              "narration": "The instruments hum, ready for performance."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "You snap a string, paying for replacements."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "A harp rejects your tuning and snaps your wrist lightly."
+            }
+          },
+          "banter": {
+            "dev": "Instruments patched to v3.5.",
+            "trader": "Sound asset ready.",
+            "whale": "Wake hum calibrates resonators.",
+            "hacker": "Firmware for violins updated.",
+            "shiller": "Merch idea: ledger lutes.",
+            "validator": "Warm-up recorded.",
+            "miner": "I once tuned air horns; this is nicer.",
+            "meme": "Tune squad, but ledger."
+          },
+          "telemetry_tags": ["scene:3.5","action:instrument_warm"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.5-R2",
+      "description": "Resonant Pool — wade through harmonic water, soothe shy currents, and invite arrivals mid-song.",
+      "actions": [
+        {
+          "id": "pool_walk",
+          "label": "Wade the Resonant Pool",
+          "requirements": { "items_any": [], "flags_all": ["instruments_ready"] },
+          "roll": { "kind": "phi_d20", "tags": ["agility","focus","performance"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "coins", "value": 21 }
+              ],
+              "narration": "You wade gracefully; your ripples create harmonies that the Atrium samples for later."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "You keep time with the pool’s rhythm; your reflection nods in approval."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You splash off-beat; gremlins loan you waterproof metronomes."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 6 }
+              ],
+              "narration": "You slip and dunk the conductor’s score. You owe the Atrium a new copy."
+            }
+          },
+          "banter": {
+            "dev": "Water physics with rhythm.",
+            "trader": "Liquidity literally musical.",
+            "whale": "Wake ripples align.",
+            "hacker": "Splish-splash with precision.",
+            "shiller": "Footage: you, unstoppable.",
+            "validator": "Pool log updated.",
+            "miner": "Better than slogging through mud.",
+            "meme": "Water ballet for auditors."
+          },
+          "telemetry_tags": ["scene:3.5","action:pool_walk"]
+        },
+        {
+          "id": "current_soothe",
+          "label": "Soothe Shy Current",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["empathy","harmony"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "xp", "value": 34 },
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "You hum softly; the current settles and whispers a hidden melody into your ear."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "coins", "value": 13 }
+              ],
+              "narration": "The current relaxes, releasing coins shaped like musical notes."
+            },
+            "fail": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": true }
+              ],
+              "narration": "You sing too loudly; the current hides behind coral."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You disrupt the current; it splashes your face with harmonic foam."
+            }
+          },
+          "banter": {
+            "dev": "Dynamic flow smoothing engaged.",
+            "trader": "Gentle liquidity injection.",
+            "whale": "Wake hushes respectfully.",
+            "hacker": "Soft skills patch deployed.",
+            "shiller": "Story beat: empathy wins.",
+            "validator": "Consent logged.",
+            "miner": "Never sang to water before.",
+            "meme": "Shh, the pool is shy."
+          },
+          "telemetry_tags": ["scene:3.5","action:current_soothe"]
+        },
+        {
+          "id": "arrival_stage",
+          "label": "Summon Stage Arrivals",
+          "requirements": { "items_any": [], "flags_all": ["atrium_chord_ready"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "stage_arrivals", "value": true }
+              ],
+              "narration": "You trigger hidden lifts; new allies rise from beneath the stage, hitting their marks mid-verse."
+            }
+          },
+          "banter": {
+            "dev": "Spawn points tuned.",
+            "trader": "Participant liquidity doubled.",
+            "whale": "Wake embraces newcomers.",
+            "hacker": "Stage elevator handshake done.",
+            "shiller": "Entrance theatrics on-brand.",
+            "validator": "Arrivals notarized.",
+            "miner": "Backup chorus engaged.",
+            "meme": "DLC: surprise choir."
+          },
+          "telemetry_tags": ["scene:3.5","action:arrival_stage"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.5-R3",
+      "description": "Choir Stands — arrange harmonies, manage pity tokens, and craft chorus decks.",
+      "actions": [
+        {
+          "id": "harmony_arrange",
+          "label": "Arrange Harmonies",
+          "requirements": { "items_any": [], "flags_all": ["atrium_chord_ready","stage_arrivals"] },
+          "roll": { "kind": "phi_d20", "tags": ["strategy","harmony","social"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "harmony", "value": true },
+                { "type": "coins", "value": 34 }
+              ],
+              "narration": "You slot voices perfectly; the Atrium erupts in golden chords."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "The choir stands align; trust flows easily."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "Voices clash; you reorganize with patience."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "A singer storms off; you chase them with apologies."
+            }
+          },
+          "banter": {
+            "dev": "Team composition patched.",
+            "trader": "Harmony index up.",
+            "whale": "Wake spreads across sections.",
+            "hacker": "Choral load balancing done.",
+            "shiller": "Press release: unstoppable choir.",
+            "validator": "Arrangement recorded.",
+            "miner": "Choir formation like lining up drill crews.",
+            "meme": "Sopranos and tenors in consensus."
+          },
+          "telemetry_tags": ["scene:3.5","action:harmony_arrange"]
+        },
+        {
+          "id": "pity_chorus",
+          "label": "Redeem Chorus Pity",
+          "requirements": { "items_any": ["trinket_spindle_credit"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_crescendo_token" }
+              ],
+              "narration": "The Chorus-Guild grants you a Crescendo Token guaranteeing a dramatic surge after the next stumble."
+            }
+          },
+          "banter": {
+            "dev": "Fail forward, musically.",
+            "trader": "Crescendo futures priced in.",
+            "whale": "Wake gets louder later.",
+            "hacker": "Token rewrites mistakes as solos.",
+            "shiller": "Narrative beat: comeback arc.",
+            "validator": "Token minted.",
+            "miner": "Safety net with style.",
+            "meme": "Pity? Nah, encore fuel."
+          },
+          "telemetry_tags": ["scene:3.5","action:pity_chorus"]
+        },
+        {
+          "id": "chorus_deck",
+          "label": "Compile Chorus Deck",
+          "requirements": { "items_any": ["deck_prism_prologue"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "deck", "id": "deck_atrium_canticle" }
+              ],
+              "narration": "You blend prism tactics with choral motifs, producing a deck that harmonizes strategy and performance."
+            }
+          },
+          "banter": {
+            "dev": "Deck synergy unlocked.",
+            "trader": "Card composition on point.",
+            "whale": "Wake resonance etched on every card.",
+            "hacker": "Combo potential soprano-tier.",
+            "shiller": "Deck art is lit.",
+            "validator": "Deck logged.",
+            "miner": "Cards weigh like sheet metal.",
+            "meme": "Trading cards but they sing."
+          },
+          "telemetry_tags": ["scene:3.5","action:chorus_deck"]
+        }
+      ],
+      "rewards": [
+        { "type": "coins", "value": 21 }
+      ]
+    },
+    {
+      "round_id": "3.5-R4",
+      "description": "Balcony of Echoes — conduct call-and-response checks, revive faltering voices, and schedule rituals.",
+      "actions": [
+        {
+          "id": "call_response",
+          "label": "Conduct Call-and-Response",
+          "requirements": { "items_any": [], "flags_all": ["harmony"] },
+          "roll": { "kind": "phi_d20", "tags": ["social","performance","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "value": 34 },
+                { "type": "flag", "id": "echo_chain_synced", "value": true }
+              ],
+              "narration": "Your cues weave seamlessly; the Atrium echoes your phrases back in shimmering canon."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "echo_chain_synced", "value": true }
+              ],
+              "narration": "The call-and-response holds; the ledger records a balanced exchange."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You enter late on one response. The crowd giggles kindly."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "You miscue entirely; the Atrium dims lights until you reset."
+            }
+          },
+          "banter": {
+            "dev": "Latency zero, morale high.",
+            "trader": "Responsiveness metrics lit.",
+            "whale": "Wake pulses keep time.",
+            "hacker": "Call-response handshake accepted.",
+            "shiller": "Audience testimonials incoming.",
+            "validator": "Exchange notarized.",
+            "miner": "Feels like shouting across shafts, but prettier.",
+            "meme": "You say call, they say response."
+          },
+          "telemetry_tags": ["scene:3.5","action:call_response"]
+        },
+        {
+          "id": "voice_revive",
+          "label": "Revive Faltering Voice",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["support","ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 6 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You guide a trembling singer back to pitch; the crowd erupts in relief."
+            },
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 4 },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "The singer finds confidence thanks to your steady presence."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You misjudge the key; both of you regroup."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "You strain your own voice while helping; the gremlins bring steam inhalers."
+            }
+          },
+          "banter": {
+            "dev": "Support role OP.",
+            "trader": "Risk offset by empathy.",
+            "whale": "Wake cradles the melody.",
+            "hacker": "Hotfix for stage fright.",
+            "shiller": "Narrative: you save the show.",
+            "validator": "Revive logged.",
+            "miner": "Pep talk like before a heavy shift.",
+            "meme": "Voice doctor on call."
+          },
+          "telemetry_tags": ["scene:3.5","action:voice_revive"]
+        },
+        {
+          "id": "ritual_schedule",
+          "label": "Schedule Gentle Night Encore",
+          "requirements": { "items_any": [], "flags_all": ["echo_chain_synced"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "gn_reserved", "value": true }
+              ],
+              "narration": "You slot a Gentle Night encore into the Atrium’s program, promising rest after the crescendo."
+            }
+          },
+          "banter": {
+            "dev": "Cron job: lullaby.",
+            "trader": "Night shift chart plotted.",
+            "whale": "Wake softens post-show.",
+            "hacker": "Scheduler loves a good lull.",
+            "shiller": "PR teaser: GN encore.",
+            "validator": "Encore logged.",
+            "miner": "Break after the big number.",
+            "meme": "GN but make it stage canon."
+          },
+          "telemetry_tags": ["scene:3.5","action:ritual_schedule"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    },
+    {
+      "round_id": "3.5-R5",
+      "description": "Merch Nook — trade pity tokens, restock focus snacks, and configure backpacks for stage duty.",
+      "actions": [
+        {
+          "id": "merch_trade",
+          "label": "Trade for Harmony Merch",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["trade","focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "armor_cantor_coat" },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You negotiate a coat that amplifies your presence without raising volume."
+            },
+            "success": {
+              "effects": [
+                { "type": "item", "id": "item_focus_snack" },
+                { "type": "coins", "value": 21 }
+              ],
+              "narration": "You leave with snacks and change, ready for the next set."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You overspend energy haggling."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "Impulse buy: novelty kazoo. Immediate regret."
+            }
+          },
+          "banter": {
+            "dev": "Microtransaction but wholesome.",
+            "trader": "Merch margins acceptable.",
+            "whale": "Wake invests in drip.",
+            "hacker": "Coupon code injected.",
+            "shiller": "Campaign merch drop.",
+            "validator": "Receipt notarized.",
+            "miner": "Coat warmer than a hard hat.",
+            "meme": "Kazoo optional."
+          },
+          "telemetry_tags": ["scene:3.5","action:merch_trade"]
+        },
+        {
+          "id": "pity_shop",
+          "label": "Upgrade Pity Ledger",
+          "requirements": { "items_any": ["trinket_crescendo_token"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_harmony_scrip" }
+              ],
+              "narration": "You exchange the token for Harmony Scrip guaranteeing a supportive chord when luck wobbles."
+            }
+          },
+          "banter": {
+            "dev": "Failsafe leveled up.",
+            "trader": "Insurance but melodic.",
+            "whale": "Wake credit extended.",
+            "hacker": "Scrip triggers backup choir.",
+            "shiller": "Narrative: never singing alone.",
+            "validator": "Scrip logged.",
+            "miner": "Voucher for extra voices.",
+            "meme": "Pity? More like encore credit."
+          },
+          "telemetry_tags": ["scene:3.5","action:pity_shop"]
+        },
+        {
+          "id": "backpack_stage",
+          "label": "Stage-Proof Backpack",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "backpack_synced", "value": true }
+              ],
+              "narration": "You add anti-rattle straps so your gear doesn’t shake during crescendos."
+            }
+          },
+          "banter": {
+            "dev": "Inventory damping added.",
+            "trader": "Carry cost optimized.",
+            "whale": "Wake not jostling gear.",
+            "hacker": "Velcro patch handshake.",
+            "shiller": "Merch bag silent mode.",
+            "validator": "Adjustment recorded.",
+            "miner": "Keeps tools from clanging.",
+            "meme": "Backpack ASMR off."
+          },
+          "telemetry_tags": ["scene:3.5","action:backpack_stage"]
+        }
+      ],
+      "rewards": [
+        { "type": "coins", "value": 13 }
+      ]
+    },
+    {
+      "round_id": "3.5-R6",
+      "description": "Skywalk Choir — coordinate AFK stands, broadcast telemetry, and prep for the Atrium vote.",
+      "actions": [
+        {
+          "id": "afk_stand",
+          "label": "Configure AFK Choir Stand",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["support","tech"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "afk_stand_ready", "value": true },
+                { "type": "focus", "op": "+", "value": 2 }
+              ],
+              "narration": "You program the stand to harmonize when players go idle, keeping the choir full and kind."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "afk_stand_ready", "value": true }
+              ],
+              "narration": "Idle coverage locked. The stand glows with ready notes."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 5 }
+              ],
+              "narration": "A servo jams; you pay for grease."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "The stand leans into feedback, covering you in glitter dust."
+            }
+          },
+          "banter": {
+            "dev": "Auto-harmony patch live.",
+            "trader": "Coverage ratio 100%.",
+            "whale": "Wake holds the notes.",
+            "hacker": "Idle singer emulator online.",
+            "shiller": "Messaging: choir never sleeps.",
+            "validator": "Stand recorded.",
+            "miner": "Robot stand-in on duty.",
+            "meme": "AFK? Auto choir sings your part."
+          },
+          "telemetry_tags": ["scene:3.5","action:afk_stand"]
+        },
+        {
+          "id": "telemetry_broadcast",
+          "label": "Broadcast Atrium Telemetry",
+          "requirements": { "items_any": [], "flags_all": ["afk_stand_ready"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "deck_atrium_canticle" }
+              ],
+              "narration": "You beam performance data into the rafters, creating a training deck for future choirs."
+            }
+          },
+          "banter": {
+            "dev": "Analytics but with harmonies.",
+            "trader": "Charts sing.",
+            "whale": "Wake recorded in staff notation.",
+            "hacker": "Telemetry pipeline double-checked.",
+            "shiller": "Case study basically writes itself.",
+            "validator": "Broadcast notarized.",
+            "miner": "Manual for next crew done.",
+            "meme": "Spreadsheets? More like sheet music."
+          },
+          "telemetry_tags": ["scene:3.5","action:telemetry_broadcast"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    },
+    {
+      "round_id": "3.5-R7",
+      "description": "Atrium Vote — finalize the concert ledger, distribute rewards, and descend toward the Pulse Vault.",
+      "actions": [
+        {
+          "id": "atrium_vote",
+          "label": "Hold the Atrium Vote",
+          "requirements": { "items_any": [], "flags_all": ["afk_stand_ready","echo_chain_synced"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","social","strategy"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 89 },
+                { "type": "coins", "value": 34 },
+                { "type": "flag", "id": "atrium_vote_passed", "value": true }
+              ],
+              "narration": "Your motion lands with a triumphant chord; every column lights up in sync."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "atrium_vote_passed", "value": true }
+              ],
+              "narration": "The vote carries. Chorus-Guild stamps the ledger with gilded clefs."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "The choir hesitates; you regroup and refine your pitch."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "You miscount the beat; the Atrium charges you a fine for overtime."
+            }
+          },
+          "banter": {
+            "dev": "Ship the encore.",
+            "trader": "Consensus crescendo.",
+            "whale": "Wake roars approval.",
+            "hacker": "Vote contract in tune.",
+            "shiller": "Announcement ready for socials.",
+            "validator": "Ledger sealed with treble clef.",
+            "miner": "All hands singing the same yes.",
+            "meme": "DAO but with harmonies."
+          },
+          "telemetry_tags": ["scene:3.5","action:atrium_vote"]
+        },
+        {
+          "id": "reward_resonance",
+          "label": "Distribute Resonance Rewards",
+          "requirements": { "items_any": [], "flags_all": ["atrium_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_chorus_medal" }
+              ],
+              "narration": "You hand out resonance medals shaped like eighth notes."
+            }
+          },
+          "banter": {
+            "dev": "Loot drop in tune.",
+            "trader": "Dividends delivered.",
+            "whale": "Wake carries applause.",
+            "hacker": "Rewards hashed and distributed.",
+            "shiller": "Highlight reel incoming.",
+            "validator": "Payout recorded.",
+            "miner": "Medals ring when you tap them.",
+            "meme": "Achievement unlocked: choir captain."
+          },
+          "telemetry_tags": ["scene:3.5","action:reward_resonance"]
+        },
+        {
+          "id": "advance_36",
+          "label": "Descend to Scene 3.6",
+          "requirements": { "items_any": [], "flags_all": ["atrium_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "You follow a descending scale of light toward the Pulse Vault below.",
+              "next_hint": "3.6"
+            }
+          },
+          "banter": {
+            "dev": "Next dungeon unlocked.",
+            "trader": "Position flows downward.",
+            "whale": "Wake glides to the vault.",
+            "hacker": "New layer loading.",
+            "shiller": "Act Three momentum unstoppable.",
+            "validator": "Transition notarized.",
+            "miner": "Another shift, another ledger.",
+            "meme": "Encore done, onto vault vibes."
+          },
+          "telemetry_tags": ["scene:3.5","action:advance_36"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "focus_gte": 8, "rewards": [ { "type": "coins", "value": 34 } ] },
+    { "xp_gte": 322, "rewards": [ { "type": "item", "id": "armor_cantor_coat" } ] },
+    { "flags_all": ["atrium_vote_passed"], "rewards": [ { "type": "deck", "id": "deck_atrium_canticle" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.stage_arrivals", "goto": "3.5A" },
+    { "when": "flags.atrium_vote_passed", "goto": "3.6" },
+    { "when": "else", "goto": "3.5" }
+  ]
+}
