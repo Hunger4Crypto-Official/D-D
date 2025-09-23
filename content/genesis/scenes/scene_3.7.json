@@ -1,0 +1,692 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "3.7",
+  "title": "The Radiant Confluence — Nexus of Spectrum Currents",
+  "narration": "You ascend from the Pulse Vault into the Radiant Confluence, where every path of the corridor braids together. The chamber is an amphitheater of light with seven terraces, each representing a storyline you’ve shepherded since the Act began. The floor is a circular mosaic of ledger stone fused with opal, reflecting starfields and memetic graffiti. Above, a dome of liquid glass holds the reflected sky, rotating at a gentle phi pace. The air is electric with scent: roasted chestnuts, midnight rain, neon ink, and the ozone from consensus lightning.\n\nThe Confluence Wardens—an alliance of Ratio-Kindred, Chronoloom, Ray-Binder, Turn-Keeper, Chorus-Guild, Heartline, and a new faction called the Prism Current—manage this nexus. They arrive as a council of gremlins, each representing their specialty. They speak in overlapping ledger poetry, greeting you with a synchronized GM that also contains a GN echo, acknowledging the journey’s span. They hand you a Confluence Ledger, thick with blank pages awaiting Act Four, and they point toward seven radiant thresholds arranged around the amphitheater.\n\nAt the Confluence, consensus rituals become orchestration: you will calibrate multi-faction votes, channel spectrum doors, manage AFK avatars of the factions, revive allies through cross-faction rituals, distribute threshold rewards, and prepare the corridor for Act Four’s expansion. The golden-ratio die mechanic remains the arbiter, but now hidden difficulty tiers manifest as subtle color shifts in the dome. Each round invites micro-branching, multiple outcomes, and opportunities to earn XP, Coins, Focus, Flags, Items, Decks, and story hooks. Arrivals take the form of new allies stepping through spectrum arcs mid-scene, ready to join Act Four once the Confluence vote passes.\n\nSeven rounds will close Act Three: they weave every subsystem you mastered into a final ledger entry. The Wardens grin, mischief sparkling in their eyes, and invite you to step onto the first terrace.",
+  "rounds": [
+    {
+      "round_id": "3.7-R1",
+      "description": "Harmonic Greeting Terrace — combine GM/GN, align cross-faction signals, and activate confluence metrics.",
+      "actions": [
+        {
+          "id": "confluence_gm",
+          "label": "Deliver the Harmonic GMGN",
+          "requirements": { "items_any": [], "flags_all": ["gm_logged","gn_reserved","pulse_sync_ready"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","harmony","leadership"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "xp", "value": 89 },
+                { "type": "flag", "id": "confluence_signal", "value": true }
+              ],
+              "narration": "You braid morning and night into a single phrase. The dome flares with aurora colors, logging the greeting as \"Confluence Prime\"."
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "confluence_signal", "value": true }
+              ],
+              "narration": "Your voice resonates; each faction nods. Metrics initialize across the terraces."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You miss a microbeat; the Wardens loop a gentle metronome for you."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "You blend greetings poorly and trigger a playful rain of glitter fines."
+            }
+          },
+          "banter": {
+            "dev": "Act Three handshake locked.",
+            "trader": "Opening bell plus closing bell.",
+            "whale": "Wake loops the whole day.",
+            "hacker": "Dual-boot greeting executed.",
+            "shiller": "Campaign synopsis in one chord.",
+            "validator": "Greeting notarized at seven signatures.",
+            "miner": "Shift begins and ends together.",
+            "meme": "GMGN++."
+          },
+          "telemetry_tags": ["scene:3.7","action:confluence_gm"]
+        },
+        {
+          "id": "signal_matrix",
+          "label": "Calibrate the Confluence Matrix",
+          "requirements": { "items_any": [], "flags_all": ["confluence_signal"] },
+          "roll": { "kind": "phi_d20", "tags": ["tech","insight","strategy"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "item", "id": "helm_confluence_circlet" }
+              ],
+              "narration": "You align the matrix to track every faction’s influence. A circlet of living light crowns you."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "matrix_calibrated", "value": true }
+              ],
+              "narration": "Indicators glow steady, mapping Act Three’s relationships."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "A sensor misfires; you pay for prism coolant."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 6 }
+              ],
+              "narration": "The matrix jolts, leaving your hair in static phi-spikes."
+            }
+          },
+          "banter": {
+            "dev": "Dashboard unlocked.",
+            "trader": "Cross-faction liquidity tracked.",
+            "whale": "Wake overlay engaged.",
+            "hacker": "Matrix handshake secured.",
+            "shiller": "Story map ready.",
+            "validator": "Calibration notarized.",
+            "miner": "Feels like surveying seven seams at once.",
+            "meme": "All stats, all vibes."
+          },
+          "telemetry_tags": ["scene:3.7","action:signal_matrix"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.7-R2",
+      "description": "Spectrum Arches — open faction gates, invite arrivals, and balance harmony flags.",
+      "actions": [
+        {
+          "id": "open_arch",
+          "label": "Open Spectrum Arch",
+          "requirements": { "items_any": [], "flags_all": ["matrix_calibrated"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","team","timing"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "coins", "value": 34 },
+                { "type": "flag", "id": "arch_open", "value": true }
+              ],
+              "narration": "You blend colors into a perfect phi gradient. Seven arches ignite, ready for arrivals."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "arch_open", "value": true }
+              ],
+              "narration": "The arch opens with a soft shimmer; factions applaud."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "The arch flickers; you rework the color ratios."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 6 }
+              ],
+              "narration": "Colors clash; the arch splashes you with prismatic paint."
+            }
+          },
+          "banter": {
+            "dev": "Gateway unlocked.",
+            "trader": "New liquidity inbound.",
+            "whale": "Wake surges through colors.",
+            "hacker": "Spectrum handshake accepted.",
+            "shiller": "Entrance cinematics ready.",
+            "validator": "Arch opening notarized.",
+            "miner": "Door heavier than ore, but pretty.",
+            "meme": "Rainbow DAO portal."
+          },
+          "telemetry_tags": ["scene:3.7","action:open_arch"]
+        },
+        {
+          "id": "arrival_conflux",
+          "label": "Welcome Arrivals",
+          "requirements": { "items_any": [], "flags_all": ["arch_open"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "confluence_arrivals", "value": true }
+              ],
+              "narration": "New allies step through, representing future acts. They offer nods and ready themselves for the vote."
+            }
+          },
+          "banter": {
+            "dev": "Instance maxed.",
+            "trader": "Participation skyrockets.",
+            "whale": "Wake hugs newcomers.",
+            "hacker": "Matching algorithm perfect.",
+            "shiller": "Narrative expands.",
+            "validator": "Arrivals recorded.",
+            "miner": "More hands to share the work.",
+            "meme": "Guest list: everyone."
+          },
+          "telemetry_tags": ["scene:3.7","action:arrival_conflux"]
+        },
+        {
+          "id": "balance_flags",
+          "label": "Balance Harmony Flags",
+          "requirements": { "items_any": [], "flags_all": ["arch_open"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "harmony", "value": true }
+              ],
+              "narration": "You adjust banners and metrics so each faction feels seen."
+            }
+          },
+          "banter": {
+            "dev": "UX for factions.",
+            "trader": "Sentiment index leveled.",
+            "whale": "Wake purrs.",
+            "hacker": "Flag balancing algorithm online.",
+            "shiller": "Messaging: inclusive and glowing.",
+            "validator": "Harmony logged.",
+            "miner": "Flags hung like safety nets.",
+            "meme": "Diplomacy via banner placement."
+          },
+          "telemetry_tags": ["scene:3.7","action:balance_flags"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.7-R3",
+      "description": "Council Bench — gather faction insights, redeem pity credits, and craft the Confluence deck.",
+      "actions": [
+        {
+          "id": "council_dialogue",
+          "label": "Host Council Dialogue",
+          "requirements": { "items_any": [], "flags_all": ["confluence_arrivals"] },
+          "roll": { "kind": "phi_d20", "tags": ["social","strategy","insight"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "insight", "value": true },
+                { "type": "coins", "value": 34 }
+              ],
+              "narration": "Your facilitation bridges every voice; the council drafts a unanimous agenda."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "The dialogue flows; agreement emerges."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "A debate stalls; you regroup."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 6 }
+              ],
+              "narration": "Two factions bicker; you catch a stray paper plane."
+            }
+          },
+          "banter": {
+            "dev": "Meeting run like a pro.",
+            "trader": "Sentiment rally.",
+            "whale": "Wake hum ensures respect.",
+            "hacker": "Facilitation exploit success.",
+            "shiller": "Minutes ready to publish.",
+            "validator": "Dialogue recorded.",
+            "miner": "Feels like union meeting but cosmic.",
+            "meme": "Town hall but sparkle."
+          },
+          "telemetry_tags": ["scene:3.7","action:council_dialogue"]
+        },
+        {
+          "id": "pity_confluence",
+          "label": "Redeem Confluence Pity",
+          "requirements": { "items_any": ["trinket_heartbeat_credit"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_confluence_bond" }
+              ],
+              "narration": "You transform the credit into a Confluence Bond that guarantees a supportive faction response after a failure."
+            }
+          },
+          "banter": {
+            "dev": "Final failsafe primed.",
+            "trader": "Risk pooled across factions.",
+            "whale": "Wake collateralized.",
+            "hacker": "Bond rewrites future friction.",
+            "shiller": "Narrative: unity dividends.",
+            "validator": "Bond minted.",
+            "miner": "Backup promise forged.",
+            "meme": "Pity evolves into pact."
+          },
+          "telemetry_tags": ["scene:3.7","action:pity_confluence"]
+        },
+        {
+          "id": "deck_confluence",
+          "label": "Compile Confluence Deck",
+          "requirements": { "items_any": ["deck_pulse_sequence"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "deck", "id": "deck_confluence_lattice" }
+              ],
+              "narration": "You weave data from Acts 1-3 into a deck of guidance for the next saga."
+            }
+          },
+          "banter": {
+            "dev": "Meta-deck assembled.",
+            "trader": "Portfolio of tactics diversified.",
+            "whale": "Wake signature embossed.",
+            "hacker": "Deck reveals hidden combos.",
+            "shiller": "Preview for Act Four marketing.",
+            "validator": "Deck archived.",
+            "miner": "Cards heavy with destiny.",
+            "meme": "Deck of holding but luminous."
+          },
+          "telemetry_tags": ["scene:3.7","action:deck_confluence"]
+        }
+      ],
+      "rewards": [
+        { "type": "coins", "value": 21 }
+      ]
+    },
+    {
+      "round_id": "3.7-R4",
+      "description": "Revival Prism — revive allies across factions, configure AFK avatars, and share focus reservoirs.",
+      "actions": [
+        {
+          "id": "prism_revive",
+          "label": "Invoke Prism Revival",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["support","ritual","harmony"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 6 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You refract light through seven prisms, reviving allies with cross-faction blessings."
+            },
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 4 },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "The revival prism hums; spirits lift."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You misalign a prism; you reset and try again."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "The prism flashes; you absorb feedback glitter."
+            }
+          },
+          "banter": {
+            "dev": "Healing ray patched.",
+            "trader": "Risk mitigated across squads.",
+            "whale": "Wake glows.",
+            "hacker": "Revival API stable.",
+            "shiller": "Narrative: cross-faction love.",
+            "validator": "Revive recorded.",
+            "miner": "Feels like pulling friends from a cave-in.",
+            "meme": "Rainbow defib."
+          },
+          "telemetry_tags": ["scene:3.7","action:prism_revive"]
+        },
+        {
+          "id": "afk_avatar",
+          "label": "Deploy AFK Avatars",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "afk_avatar_ready", "value": true },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You program spectral avatars representing each faction to act on behalf of idle allies."
+            }
+          },
+          "banter": {
+            "dev": "Automation 7.0.",
+            "trader": "Full coverage achieved.",
+            "whale": "Wake proxies engaged.",
+            "hacker": "Avatar code sleek.",
+            "shiller": "Story: community continuity.",
+            "validator": "Avatars logged.",
+            "miner": "Ghost coworkers on standby.",
+            "meme": "AFK but still shining."
+          },
+          "telemetry_tags": ["scene:3.7","action:afk_avatar"]
+        },
+        {
+          "id": "focus_share",
+          "label": "Share Focus Reservoir",
+          "requirements": { "items_any": [], "flags_all": ["insight"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 }
+              ],
+              "narration": "You channel insight into a communal focus pool, boosting morale."
+            }
+          },
+          "banter": {
+            "dev": "Resource pooling success.",
+            "trader": "Focus dividends shared.",
+            "whale": "Wake carries the surge.",
+            "hacker": "Focus API open.",
+            "shiller": "Messaging: generosity wins.",
+            "validator": "Share recorded.",
+            "miner": "Feels like passing water bottles underground.",
+            "meme": "Focus soup served."
+          },
+          "telemetry_tags": ["scene:3.7","action:focus_share"]
+        }
+      ],
+      "rewards": [
+        { "type": "hp", "op": "+", "value": 2 }
+      ]
+    },
+    {
+      "round_id": "3.7-R5",
+      "description": "Soft-Power Bazaar — finalize equipment trades, convert pity bonds, and prepare backpacks for Act Four.",
+      "actions": [
+        {
+          "id": "equipment_trade",
+          "label": "Trade at the Confluence Bazaar",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["trade","strategy"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "armor_confluence_mantle" },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You negotiate a mantle woven from every faction’s emblem, granting cross-faction respect."
+            },
+            "success": {
+              "effects": [
+                { "type": "item", "id": "item_focus_snack" },
+                { "type": "coins", "value": 21 }
+              ],
+              "narration": "You secure snacks and currency, ready for the final rounds."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You haggle badly and feel silly."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "Impulse buy: glowing kazoo sequel."
+            }
+          },
+          "banter": {
+            "dev": "Final shop run.",
+            "trader": "Market closes soon.",
+            "whale": "Wake invests in unity drip.",
+            "hacker": "Coupon exploit executed.",
+            "shiller": "Merch drop finale.",
+            "validator": "Receipts archived.",
+            "miner": "Mantle heavier than my coat.",
+            "meme": "Shopping spree before the finale."
+          },
+          "telemetry_tags": ["scene:3.7","action:equipment_trade"]
+        },
+        {
+          "id": "pity_bond",
+          "label": "Convert Confluence Bond",
+          "requirements": { "items_any": ["trinket_confluence_bond"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_act_four_writ" }
+              ],
+              "narration": "You convert the bond into an Act Four Writ, promising safe passage for a future setback."
+            }
+          },
+          "banter": {
+            "dev": "Insurance upgraded to saga-level.",
+            "trader": "Forward contract on resilience.",
+            "whale": "Wake collateral extends beyond Act Three.",
+            "hacker": "Bond transforms into script.",
+            "shiller": "Teaser: Act Four invite.",
+            "validator": "Writ notarized.",
+            "miner": "Ticket to the next dig.",
+            "meme": "Season pass unlocked."
+          },
+          "telemetry_tags": ["scene:3.7","action:pity_bond"]
+        },
+        {
+          "id": "backpack_future",
+          "label": "Prep Backpack for Act Four",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "backpack_synced", "value": true }
+              ],
+              "narration": "You re-slot gear for unknown adventures, leaving room for future artifacts."
+            }
+          },
+          "banter": {
+            "dev": "Inventory ready for expansion.",
+            "trader": "Carry capacity hedged.",
+            "whale": "Wake not tangled.",
+            "hacker": "Future-proofed pockets.",
+            "shiller": "Merch bag 4.0.",
+            "validator": "Preparation logged.",
+            "miner": "Tool belt future-proof.",
+            "meme": "Packing for arc-long trip."
+          },
+          "telemetry_tags": ["scene:3.7","action:backpack_future"]
+        }
+      ],
+      "rewards": [
+        { "type": "coins", "value": 13 }
+      ]
+    },
+    {
+      "round_id": "3.7-R6",
+      "description": "Telemetry Dome — broadcast final analytics, set AFK contingencies, and prepare the ultimate vote.",
+      "actions": [
+        {
+          "id": "telemetry_final",
+          "label": "Broadcast Final Analytics",
+          "requirements": { "items_any": [], "flags_all": ["matrix_calibrated","afk_avatar_ready"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "deck_confluence_lattice" }
+              ],
+              "narration": "You beam Act Three’s dataset into the dome, creating a living constellation of lessons."
+            }
+          },
+          "banter": {
+            "dev": "Analytics complete.",
+            "trader": "Charts glow.",
+            "whale": "Wake pattern memorialized.",
+            "hacker": "Telemetry pipeline flawless.",
+            "shiller": "Case study for the ages.",
+            "validator": "Broadcast notarized.",
+            "miner": "Report filed before we clock out.",
+            "meme": "Dashboard in the stars."
+          },
+          "telemetry_tags": ["scene:3.7","action:telemetry_final"]
+        },
+        {
+          "id": "contingency_plan",
+          "label": "Set AFK Contingency",
+          "requirements": { "items_any": [], "flags_all": ["afk_avatar_ready"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "afk_ready_for_act4", "value": true }
+              ],
+              "narration": "You map how AFK avatars will cover the first 24 hours of Act Four."
+            }
+          },
+          "banter": {
+            "dev": "Launch plan bulletproof.",
+            "trader": "Continuity ensured.",
+            "whale": "Wake autopilot beyond horizon.",
+            "hacker": "Failover script primed.",
+            "shiller": "Messaging: community never idle.",
+            "validator": "Plan notarized.",
+            "miner": "Off-shift? The avatars take it.",
+            "meme": "AFK but future."
+          },
+          "telemetry_tags": ["scene:3.7","action:contingency_plan"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    },
+    {
+      "round_id": "3.7-R7",
+      "description": "Confluence Vote — seal Act Three, distribute rewards, and open the path into Act Four.",
+      "actions": [
+        {
+          "id": "confluence_vote",
+          "label": "Call the Confluence Vote",
+          "requirements": { "items_any": [], "flags_all": ["arch_open","confluence_signal","afk_ready_for_act4"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","strategy","leadership"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 144 },
+                { "type": "coins", "value": 55 },
+                { "type": "flag", "id": "confluence_vote_passed", "value": true }
+              ],
+              "narration": "Every faction raises their sigil; the dome erupts in aurora script reading \"Act Three Complete\"."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 89 },
+                { "type": "flag", "id": "confluence_vote_passed", "value": true }
+              ],
+              "narration": "The vote passes with thunderous applause."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "Debate flickers; you refine the motion."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 21 }
+              ],
+              "narration": "A faction abstains; you offer restitution to restore trust."
+            }
+          },
+          "banter": {
+            "dev": "Ship the act.",
+            "trader": "Consensus closes Act Three.",
+            "whale": "Wake roars approval.",
+            "hacker": "Vote contract immaculate.",
+            "shiller": "Announcement for the ages.",
+            "validator": "Ledger sealed.",
+            "miner": "We hammered yes together.",
+            "meme": "DAO finale unlocked."
+          },
+          "telemetry_tags": ["scene:3.7","action:confluence_vote"]
+        },
+        {
+          "id": "reward_confluence",
+          "label": "Distribute Confluence Rewards",
+          "requirements": { "items_any": [], "flags_all": ["confluence_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_confluence_seal" }
+              ],
+              "narration": "You hand out seals of radiant glass, each containing a map fragment for Act Four."
+            }
+          },
+          "banter": {
+            "dev": "Loot distribution final.",
+            "trader": "Dividends from unity.",
+            "whale": "Wake carries the glow.",
+            "hacker": "Rewards hashed.",
+            "shiller": "Press kit ready.",
+            "validator": "Seals notarized.",
+            "miner": "Badge heavier than ore.",
+            "meme": "Achievement: Act Three All-Star."
+          },
+          "telemetry_tags": ["scene:3.7","action:reward_confluence"]
+        },
+        {
+          "id": "advance_act4",
+          "label": "Open the Spectrum Door to Act Four",
+          "requirements": { "items_any": [], "flags_all": ["confluence_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "A massive spectrum door unfolds. Beyond, Act Four glows with untold challenges.",
+              "next_hint": "4.1"
+            }
+          },
+          "banter": {
+            "dev": "Next saga queued.",
+            "trader": "Position rolled into future.",
+            "whale": "Wake surges through new horizons.",
+            "hacker": "Layer Four handshake ready.",
+            "shiller": "Marketing: buckle up.",
+            "validator": "Transition notarized.",
+            "miner": "Another act, another ledger.",
+            "meme": "BRB, touching Act Four."
+          },
+          "telemetry_tags": ["scene:3.7","action:advance_act4"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 55 }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "focus_gte": 9, "rewards": [ { "type": "coins", "value": 55 } ] },
+    { "xp_gte": 377, "rewards": [ { "type": "item", "id": "helm_confluence_circlet" } ] },
+    { "flags_all": ["confluence_vote_passed"], "rewards": [ { "type": "deck", "id": "deck_confluence_lattice" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.confluence_arrivals", "goto": "3.7A" },
+    { "when": "flags.confluence_vote_passed", "goto": "4.1" },
+    { "when": "else", "goto": "3.7" }
+  ]
+}

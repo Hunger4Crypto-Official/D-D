@@ -1,0 +1,646 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "book_1",
+  "scene_id": "3.6",
+  "title": "The Pulse Vault — Heart of Consensus Currents",
+  "narration": "The descent from the Atrium lands you in the Pulse Vault, a cavernous chamber where the corridor’s heartbeat lives. Walls of translucent stone reveal veins of glowing light that surge in sync with decisions made across Act Three. The floor is a tessellation of pressure plates arranged in golden-ratio spirals, each plate thumping like a low drum. Air smells of warm granite, citrus peel, and the ozone before a summer storm.\n\nThe Pulse Vault is tended by the Heartline gremlin faction. They wear harnesses connected to the walls, monitoring consensus pulses like medics and DJs combined. Dev gremlins maintain rhythm algorithms, traders manage liquidity of focus, whales pace the undertow, hackers debug biofeedback loops, shillers narrate the heartbeat, validators stamp every pulse, miners keep the cavern stable, and memes paint graffiti charts of BPM jokes. They greet you with a synchronized GM beat and a Gentle Night echo recorded in stethoscope clicks.\n\nWithin the Vault, consensus rituals are cardiographic quests: you must align phi-d20 checks with rhythmic thresholds, maintain AFK heart monitors, revive allies using focus defibrillators, and move between pressure plates without tripping alarms. Soft-power equipment includes pulse gauntlets, harmony stethoscopes, and rumor pacemakers. Spectrum doors manifest as rhythm gates: to proceed, you must capture, stabilize, and direct the heart’s beat toward the next scene. Hidden difficulty tiers appear in offbeat syncopations that test your reflexes and empathy simultaneously.\n\nSeven rounds echo through the Vault. Each includes actions, banter, telemetry tags, and rewards across XP, Coins, Focus, Flags, Items, and Decks. Arrivals ride pulse elevators, emerging mid-round with hearts literally glowing. The Heartline expects you to listen fiercely, act kindly, and keep the chain’s circulation strong.",
+  "rounds": [
+    {
+      "round_id": "3.6-R1",
+      "description": "Pulse Intake — align greeting beats, calibrate monitors, and anchor harmony flags.",
+      "actions": [
+        {
+          "id": "pulse_gm",
+          "label": "Sync the Pulse GM",
+          "requirements": { "items_any": [], "flags_all": ["gm_logged","atrium_chord_ready"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","harmony","timing"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 3 },
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "pulse_sync_ready", "value": true }
+              ],
+              "narration": "Your greeting matches the Vault’s heartbeat. The walls flash a warm amber, logging you as rhythm steward."
+            },
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "pulse_sync_ready", "value": true }
+              ],
+              "narration": "You clap into the beat; the Vault nods and records the harmony."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "You rush the beat. A gremlin hands you a metronome bracelet."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "You clap on the offbeat and trigger a harmless but humiliating siren."
+            }
+          },
+          "banter": {
+            "dev": "Heartbeat handshake complete.",
+            "trader": "Rhythm liquidity high.",
+            "whale": "Wake thumps with you.",
+            "hacker": "Beat-matching script executed.",
+            "shiller": "Campaign tagline: feel the ledger.",
+            "validator": "Pulse greeting notarized.",
+            "miner": "Feels like syncing pick swings.",
+            "meme": "GM stands for Good Metronome."
+          },
+          "telemetry_tags": ["scene:3.6","action:pulse_gm"]
+        },
+        {
+          "id": "monitor_calibrate",
+          "label": "Calibrate Heart Monitors",
+          "requirements": { "items_any": [], "flags_all": ["pulse_sync_ready"] },
+          "roll": { "kind": "phi_d20", "tags": ["tech","analysis"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "item", "id": "gloves_pulse_cuffs" }
+              ],
+              "narration": "You calibrate monitors to micron precision; they reward you with cuffs that amplify consensus beats."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "monitors_ready", "value": true }
+              ],
+              "narration": "The monitors blink green and sync to the Vault."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "A monitor short circuits; you pay for a replacement fuse."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "Static shock! Your hair stands up like radio antennae."
+            }
+          },
+          "banter": {
+            "dev": "Diagnostics pass.",
+            "trader": "Vital stats trending.",
+            "whale": "Wake monitors stable.",
+            "hacker": "Telemetry nodes secure.",
+            "shiller": "Press kit loves biometrics.",
+            "validator": "Calibration notarized.",
+            "miner": "Heartbeat mining apparently a thing.",
+            "meme": "Check ya pulse before ya wreck ya pulse."
+          },
+          "telemetry_tags": ["scene:3.6","action:monitor_calibrate"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.6-R2",
+      "description": "Pressure Spiral — navigate moving plates, soothe shy beats, and invite arrivals through pulse elevators.",
+      "actions": [
+        {
+          "id": "plate_run",
+          "label": "Dash the Pressure Plates",
+          "requirements": { "items_any": [], "flags_all": ["monitors_ready"] },
+          "roll": { "kind": "phi_d20", "tags": ["agility","focus","timing"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "coins", "value": 21 }
+              ],
+              "narration": "You dance across plates, leaving a trail of perfect beats. The Vault records your run as a training clip."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 34 },
+                { "type": "flag", "id": "trustful", "value": true }
+              ],
+              "narration": "You stay in sync. Heartline gremlins high-five you mid-stride."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "You step slightly offbeat; alarms chirp until you recover."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 6 }
+              ],
+              "narration": "You miss a plate and tumble. Safety nets catch you; pride bruised."
+            }
+          },
+          "banter": {
+            "dev": "Quick time events done right.",
+            "trader": "Tempo trading mastered.",
+            "whale": "Wake pulses between plates.",
+            "hacker": "Parkour but cardio.",
+            "shiller": "Highlight reel incoming.",
+            "validator": "Plate run logged.",
+            "miner": "Feels like stepping stones over magma.",
+            "meme": "Dance Dance Ledger."
+          },
+          "telemetry_tags": ["scene:3.6","action:plate_run"]
+        },
+        {
+          "id": "shy_beat",
+          "label": "Coax the Shy Beat",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["empathy","timing"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "xp", "value": 34 },
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "You tap softly; the shy beat re-enters the groove, gifting you a micro melody."
+            },
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": false },
+                { "type": "coins", "value": 13 }
+              ],
+              "narration": "The beat rejoins and leaves coins shaped like tiny hearts."
+            },
+            "fail": {
+              "effects": [
+                { "type": "flag", "id": "shy", "value": true }
+              ],
+              "narration": "You clap too loud; the beat hides."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 3 }
+              ],
+              "narration": "You step on the beat’s tail; it zaps your toes."
+            }
+          },
+          "banter": {
+            "dev": "Gentle taps only.",
+            "trader": "Low volatility empathy.",
+            "whale": "Wake softens.",
+            "hacker": "Beat coaxing: patch applied.",
+            "shiller": "Narrative: quiet courage returns.",
+            "validator": "Beat consent logged.",
+            "miner": "Patted a heartbeat today.",
+            "meme": "Shy beat? Shy feet."
+          },
+          "telemetry_tags": ["scene:3.6","action:shy_beat"]
+        },
+        {
+          "id": "pulse_arrival",
+          "label": "Trigger Pulse Elevator",
+          "requirements": { "items_any": [], "flags_all": ["pulse_sync_ready"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "pulse_arrivals", "value": true }
+              ],
+              "narration": "You call an elevator; new allies emerge bathed in heartlight, ready to join the rhythm."
+            }
+          },
+          "banter": {
+            "dev": "Instance now multi-party.",
+            "trader": "Participant liquidity surges.",
+            "whale": "Wake splits to greet.",
+            "hacker": "Elevator handshake encoded.",
+            "shiller": "Onboarding via heartbeat.",
+            "validator": "Arrival logged.",
+            "miner": "More hands to keep rhythm.",
+            "meme": "Elevator music? Actual heartbeat."
+          },
+          "telemetry_tags": ["scene:3.6","action:pulse_arrival"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.6-R3",
+      "description": "Pulse Lab — craft soft-power gear, redeem pity credits, and assemble rhythm decks.",
+      "actions": [
+        {
+          "id": "gear_craft",
+          "label": "Craft Pulse Gear",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["craft","strategy"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "weapon_pulse_tuningfork" },
+                { "type": "xp", "value": 55 },
+                { "type": "focus", "op": "+", "value": 1 }
+              ],
+              "narration": "You forge a tuning fork that can reset consensus rhythms on demand."
+            },
+            "success": {
+              "effects": [
+                { "type": "item", "id": "armor_heartline_vest" },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "You assemble a vest that resonates with teammates, sharing focus."
+            },
+            "fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 8 }
+              ],
+              "narration": "A capacitor pops; you buy replacements."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "The bench vibrates violently; you bounce into padded walls."
+            }
+          },
+          "banter": {
+            "dev": "Workshop meets cardiology.",
+            "trader": "Gear ROI strong.",
+            "whale": "Wake resonates through hardware.",
+            "hacker": "Pulseware firmware patched.",
+            "shiller": "Merch drop: heartline chic.",
+            "validator": "Craft log recorded.",
+            "miner": "Tools hum like drills.",
+            "meme": "DIY defib swag."
+          },
+          "telemetry_tags": ["scene:3.6","action:gear_craft"]
+        },
+        {
+          "id": "pity_pulse",
+          "label": "Redeem Pulse Pity",
+          "requirements": { "items_any": ["trinket_harmony_scrip"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_heartbeat_credit" }
+              ],
+              "narration": "You exchange the scrip for a Heartbeat Credit that auto-stabilizes one failed check into a soft success."
+            }
+          },
+          "banter": {
+            "dev": "Safety net installed.",
+            "trader": "Risk parity applied.",
+            "whale": "Wake contingency arranged.",
+            "hacker": "Credit rewrites failure states.",
+            "shiller": "Narrative: resilience pulse.",
+            "validator": "Credit minted.",
+            "miner": "Backup heartbeat secured.",
+            "meme": "Pity = pacemaker."
+          },
+          "telemetry_tags": ["scene:3.6","action:pity_pulse"]
+        },
+        {
+          "id": "deck_rhythm",
+          "label": "Assemble Rhythm Deck",
+          "requirements": { "items_any": ["deck_atrium_canticle"], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "deck", "id": "deck_pulse_sequence" }
+              ],
+              "narration": "You mix choir motifs with heartline algorithms, creating a deck of rhythm interventions."
+            }
+          },
+          "banter": {
+            "dev": "Card engine beats.",
+            "trader": "Deck diversified.",
+            "whale": "Wake signature recorded.",
+            "hacker": "Combo potential pulses.",
+            "shiller": "Deck art glows.",
+            "validator": "Deck notarized.",
+            "miner": "Cards heavy with resonance.",
+            "meme": "MTG but ECG."
+          },
+          "telemetry_tags": ["scene:3.6","action:deck_rhythm"]
+        }
+      ],
+      "rewards": [
+        { "type": "coins", "value": 21 }
+      ]
+    },
+    {
+      "round_id": "3.6-R4",
+      "description": "Heartline Ward — revive fallen allies, configure AFK monitors, and manage focus reservoirs.",
+      "actions": [
+        {
+          "id": "pulse_revive",
+          "label": "Perform Pulse Revive",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "roll": { "kind": "phi_d20", "tags": ["support","ritual","timing"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 6 },
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "You deliver a perfect consensus pulse; the fallen ally gasps awake with renewed courage."
+            },
+            "success": {
+              "effects": [
+                { "type": "hp", "op": "+", "value": 4 },
+                { "type": "xp", "value": 34 }
+              ],
+              "narration": "Your revive works; the Vault records a steady beat."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Your timing slips; you regroup and try again."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "The revive backfires, leaving you winded."
+            }
+          },
+          "banter": {
+            "dev": "Support hero arc continues.",
+            "trader": "Loss recovered.",
+            "whale": "Wake lifts them up.",
+            "hacker": "Defib macro executed.",
+            "shiller": "Narrative: heart-to-heart rescue.",
+            "validator": "Revive documented.",
+            "miner": "Feels like pumping air into a collapsed tunnel.",
+            "meme": "Certified lifesaver."
+          },
+          "telemetry_tags": ["scene:3.6","action:pulse_revive"]
+        },
+        {
+          "id": "afk_monitor",
+          "label": "Configure AFK Monitor",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "afk_monitor_ready", "value": true },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You set up sensors that keep idle teammates in rhythm."
+            }
+          },
+          "banter": {
+            "dev": "Automation with empathy.",
+            "trader": "Coverage ratio high.",
+            "whale": "Wake autopilot pulses.",
+            "hacker": "Force-play beats loaded.",
+            "shiller": "Messaging: no heart left behind.",
+            "validator": "Monitor logged.",
+            "miner": "Even off-shift we stay in sync.",
+            "meme": "AFK? The heart keeps drumming."
+          },
+          "telemetry_tags": ["scene:3.6","action:afk_monitor"]
+        }
+      ],
+      "rewards": [
+        { "type": "hp", "op": "+", "value": 2 }
+      ]
+    },
+    {
+      "round_id": "3.6-R5",
+      "description": "Focus Reservoir — release stored focus, rebalance backpacks, and log telemetry for the pulse archive.",
+      "actions": [
+        {
+          "id": "focus_release_pulse",
+          "label": "Release Focus Reservoir",
+          "requirements": { "items_any": [], "flags_all": ["monitors_ready"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 21 }
+              ],
+              "narration": "You open valves; focus flows through the team like warm light."
+            }
+          },
+          "banter": {
+            "dev": "Energy management patch.",
+            "trader": "Focus dividend distributed.",
+            "whale": "Wake surges.",
+            "hacker": "Battery script executed.",
+            "shiller": "Message: we keep hearts strong.",
+            "validator": "Release recorded.",
+            "miner": "Hydrate, but for focus.",
+            "meme": "Focus keg tapped again."
+          },
+          "telemetry_tags": ["scene:3.6","action:focus_release_pulse"]
+        },
+        {
+          "id": "pack_adjust",
+          "label": "Adjust Backpack Rhythm",
+          "requirements": { "items_any": [], "flags_all": [] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "flag", "id": "backpack_synced", "value": true }
+              ],
+              "narration": "You attach counterbeats to your straps, keeping gear in sync."
+            }
+          },
+          "banter": {
+            "dev": "Inventory BPM locked.",
+            "trader": "Carry cost stabilized.",
+            "whale": "Wake not jostling gear.",
+            "hacker": "Strap firmware updated.",
+            "shiller": "Merch bag pulses politely.",
+            "validator": "Adjustment recorded.",
+            "miner": "No more rattling tools.",
+            "meme": "Metronome backpack drop."
+          },
+          "telemetry_tags": ["scene:3.6","action:pack_adjust"]
+        },
+        {
+          "id": "telemetry_record",
+          "label": "Record Pulse Telemetry",
+          "requirements": { "items_any": [], "flags_all": ["pulse_sync_ready"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "deck_pulse_sequence" }
+              ],
+              "narration": "You log every beat into a deck that future defenders can replay."
+            }
+          },
+          "banter": {
+            "dev": "Analytics heartbeats.",
+            "trader": "Charts pulse.",
+            "whale": "Wake signature archived.",
+            "hacker": "Telemetry secure.",
+            "shiller": "Case study writes itself.",
+            "validator": "Record notarized.",
+            "miner": "Data weighs as much as ore.",
+            "meme": "Wearable stats drop."
+          },
+          "telemetry_tags": ["scene:3.6","action:telemetry_record"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    },
+    {
+      "round_id": "3.6-R6",
+      "description": "Consensus Gate — coordinate heartbeats for a major vote, prepare rewards, and stage the exit toward Scene 3.7.",
+      "actions": [
+        {
+          "id": "pulse_vote",
+          "label": "Call the Pulse Vote",
+          "requirements": { "items_any": [], "flags_all": ["afk_monitor_ready","pulse_sync_ready"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual","strategy","timing"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 89 },
+                { "type": "coins", "value": 34 },
+                { "type": "flag", "id": "pulse_vote_passed", "value": true }
+              ],
+              "narration": "Every plate flashes with approval. The Vault thrums with collective affirmation."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "pulse_vote_passed", "value": true }
+              ],
+              "narration": "The vote passes with steady beats."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "The rhythm wavers; you re-center."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "coins", "op": "-", "value": 13 }
+              ],
+              "narration": "You lose the beat; the Vault fines you for sync drops."
+            }
+          },
+          "banter": {
+            "dev": "Heartbeat consensus locked.",
+            "trader": "Vote volume off the charts.",
+            "whale": "Wake booms the aye beat.",
+            "hacker": "Ballot script loops perfectly.",
+            "shiller": "Announcement ready: heartline triumph.",
+            "validator": "Vote notarized.",
+            "miner": "We hammered yes in rhythm.",
+            "meme": "DAO but BPM."
+          },
+          "telemetry_tags": ["scene:3.6","action:pulse_vote"]
+        },
+        {
+          "id": "reward_pulse",
+          "label": "Allocate Pulse Rewards",
+          "requirements": { "items_any": [], "flags_all": ["pulse_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "trinket_heartline_medal" }
+              ],
+              "narration": "You distribute medals shaped like pulse waves."
+            }
+          },
+          "banter": {
+            "dev": "Loot drop with BPM.",
+            "trader": "Dividends pulse.",
+            "whale": "Wake echoes the reward beat.",
+            "hacker": "Medals hashed.",
+            "shiller": "Press release: hearts aligned.",
+            "validator": "Payout logged.",
+            "miner": "Medal thrums when tapped.",
+            "meme": "Achievement unlocked: cardiophile."
+          },
+          "telemetry_tags": ["scene:3.6","action:reward_pulse"]
+        }
+      ],
+      "rewards": [
+        { "type": "focus", "op": "+", "value": 1 }
+      ]
+    },
+    {
+      "round_id": "3.6-R7",
+      "description": "Pulse Exit — stabilize telemetry, prepare arrivals, and open the path to the Radiant Confluence of Scene 3.7.",
+      "actions": [
+        {
+          "id": "telemetry_sync",
+          "label": "Sync Final Telemetry",
+          "requirements": { "items_any": [], "flags_all": ["pulse_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "item", "id": "deck_pulse_sequence" }
+              ],
+              "narration": "You finalize the telemetry package, ready for delivery to the next nexus."
+            }
+          },
+          "banter": {
+            "dev": "Data gift prepared.",
+            "trader": "Analytics ready for export.",
+            "whale": "Wake signature appended.",
+            "hacker": "Checksum sealed.",
+            "shiller": "Story moves forward.",
+            "validator": "Sync confirmed.",
+            "miner": "Logs filed before shift ends.",
+            "meme": "Telemetry drop like a mixtape."
+          },
+          "telemetry_tags": ["scene:3.6","action:telemetry_sync"]
+        },
+        {
+          "id": "advance_37",
+          "label": "Ascend to Scene 3.7",
+          "requirements": { "items_any": [], "flags_all": ["pulse_vote_passed"] },
+          "outcomes": {
+            "success": {
+              "effects": [],
+              "narration": "You climb a staircase of light pulses leading to the Radiant Confluence above.",
+              "next_hint": "3.7"
+            }
+          },
+          "banter": {
+            "dev": "Final scene loading.",
+            "trader": "Position rises with heartbeat.",
+            "whale": "Wake surges upward.",
+            "hacker": "Layer 3.7 prepping.",
+            "shiller": "Penultimate hype.",
+            "validator": "Transition notarized.",
+            "miner": "Next shift’s at the confluence.",
+            "meme": "BRB, glowing finale."
+          },
+          "telemetry_tags": ["scene:3.6","action:advance_37"]
+        }
+      ],
+      "rewards": [
+        { "type": "xp", "value": 34 }
+      ]
+    }
+  ],
+  "threshold_rewards": [
+    { "focus_gte": 8, "rewards": [ { "type": "coins", "value": 34 } ] },
+    { "xp_gte": 333, "rewards": [ { "type": "item", "id": "weapon_pulse_tuningfork" } ] },
+    { "flags_all": ["pulse_vote_passed"], "rewards": [ { "type": "deck", "id": "deck_pulse_sequence" } ] }
+  ],
+  "arrivals": [
+    { "when": "flags.pulse_arrivals", "goto": "3.6A" },
+    { "when": "flags.pulse_vote_passed", "goto": "3.7" },
+    { "when": "else", "goto": "3.6" }
+  ]
+}
