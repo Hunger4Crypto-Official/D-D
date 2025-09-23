@@ -1,4 +1,7 @@
-declare module 'fs-extra';
+declare module 'fs-extra' {
+  const fs: any;
+  export = fs;
+}
 
 declare module 'better-sqlite3' {
   export default class Database {
@@ -13,6 +16,21 @@ declare module 'better-sqlite3' {
 declare module 'fast-deep-equal' {
   const equal: (a: unknown, b: unknown) => boolean;
   export default equal;
+}
+
+declare module 'algosdk' {
+  export class Algodv2 {
+    constructor(token: string, server: string, port: string);
+    accountInformation(address: string): { do(): Promise<any> };
+    getAssetByID(assetId: number): { do(): Promise<any> };
+  }
+
+  export class Indexer {
+    constructor(token: string, server: string, port: string);
+    lookupAssetByID(assetId: number): { do(): Promise<any> };
+  }
+
+  export function verifyBytes(message: Uint8Array, signature: Uint8Array, address: string): boolean;
 }
 
 declare module 'nanoid' {
@@ -60,7 +78,11 @@ declare module 'discord.js' {
     constructor();
     setCustomId(id: string): this;
     setPlaceholder(text: string): this;
-    addOptions(options: { label: string; value: string; description?: string; emoji?: string }[] | { label: string; value: string; description?: string; emoji?: string }): this;
+    addOptions(
+      options:
+        | { label: string; value: string; description?: string; emoji?: string }[]
+        | { label: string; value: string; description?: string; emoji?: string }
+    ): this;
     [key: string]: any;
   }
 
@@ -74,7 +96,7 @@ declare module 'discord.js' {
     Primary,
     Secondary,
     Success,
-    Danger
+    Danger,
   }
 
   export class TextChannel {
@@ -159,12 +181,12 @@ declare module 'discord.js' {
 
 declare module 'node:path' {
   const path: any;
-  export default path;
+  export = path;
 }
 
 declare module 'node:crypto' {
   const crypto: any;
-  export default crypto;
+  export = crypto;
 }
 
 declare module 'node:http' {
@@ -172,10 +194,6 @@ declare module 'node:http' {
   export type ServerResponse = any;
   export type RequestListener = (req: IncomingMessage, res: ServerResponse) => void;
   export function createServer(listener: RequestListener): any;
-  const http: {
-    createServer: typeof createServer;
-  };
-declare module 'node:http' {
   const http: any;
   export default http;
 }
@@ -196,28 +214,28 @@ declare module 'node:url' {
     pathname: string;
   }
   const url: {
-    URLSearchParams: typeof URLSearchParams;
     URL: typeof URL;
+    URLSearchParams: typeof URLSearchParams;
   };
-
-  const url: any;
   export default url;
 }
 
 declare module 'fs' {
   const fs: any;
-  export default fs;
+  export = fs;
 }
 
 declare module 'path' {
   const path: any;
-  export default path;
+  export = path;
 }
 
 declare const process: {
   env: Record<string, string | undefined>;
   argv: string[];
+  pid: number;
   exit(code?: number): void;
+  on(event: string, listener: (...args: any[]) => void): void;
 };
 
 type Buffer = any;
@@ -226,4 +244,42 @@ declare const Buffer: {
   concat(list: Buffer[]): Buffer;
 };
 
-declare module 'better-sqlite3';
+declare module 'ethers' {
+  export class Interface {
+    constructor(abi: readonly string[]);
+    parseLog(log: { topics: string[]; data: string }): {
+      name?: string;
+      args: Record<string, unknown> | unknown[];
+    };
+  }
+
+  export class JsonRpcProvider {
+    constructor(url: string);
+  }
+
+  export class BrowserProvider {
+    constructor(externalProvider: unknown);
+    getSigner(): Promise<Signer>;
+  }
+
+  export class Wallet {
+    constructor(privateKey: string, provider?: Provider);
+    connect(provider: Provider): Wallet;
+  }
+
+  export class Contract {
+    constructor(address: string, abi: readonly string[], signerOrProvider: Provider | Signer);
+    connect(signer: Signer): Contract;
+    [key: string]: any;
+  }
+
+  export type Provider = unknown;
+  export type Signer = {
+    getAddress(): Promise<string>;
+  } & Record<string, any>;
+
+  export function verifyMessage(message: string, signature: string): string;
+  export function parseEther(value: string): bigint;
+  export function formatEther(value: bigint | number | string): string;
+  export function id(value: string): string;
+}

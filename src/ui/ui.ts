@@ -18,6 +18,9 @@ import {
   handleEquipmentEquip,
   handleEquipmentSelect,
 } from './equipment.js';
+import { cardEngine } from '../nft/cards.js';
+
+export { showShop } from './shop.js';
 
 export async function renderScene(run_id: string) {
   const run = db.prepare('SELECT * FROM runs WHERE run_id=?').get(run_id);
@@ -39,17 +42,17 @@ export async function renderScene(run_id: string) {
   }
   embed.addFields({ name: 'Sleight Score', value: `${run.sleight_score ?? 0}`, inline: true });
 
-  const rows: any[] = [];
+  const rows: ActionRowBuilder<ButtonBuilder>[] = [];
   let row = new ActionRowBuilder<ButtonBuilder>();
-  for (const a of round.actions) {
+  for (const action of round.actions) {
     if ((row as any).components.length >= 5) {
       rows.push(row);
       row = new ActionRowBuilder<ButtonBuilder>();
     }
     row.addComponents(
       new ButtonBuilder()
-        .setCustomId(`act:${run_id}:${a.id}`)
-        .setLabel(a.label)
+        .setCustomId(`act:${run_id}:${action.id}`)
+        .setLabel(action.label)
         .setStyle(ButtonStyle.Secondary)
     );
   }
@@ -103,27 +106,39 @@ export async function syncPinnedUi(channel: TextChannel, run_id: string, reuse?:
 
 export async function onButton(i: ButtonInteraction) {
   const [prefix, run_id, rest] = i.customId.split(':');
-  
-  if (prefix === 'act') {
+
+  if (prefix === 'card') {
     await i.deferReply({ ephemeral: true });
-    let res;
     try {
-      res = handleAction(run_id, i.user.id, rest);
-      await i.editReply(`🎲 You chose **${rest}** → ${res.summary}`);
+      const result = await cardEngine.playCard(run_id, i.user.id, rest);
+      await i.editReply(result.message);
+      if (i.channel && (i.channel as any).isTextBased?.()) {
+        await syncPinnedUi(i.channel as unknown as TextChannel, run_id, i.message as Message);
+      }
     } catch (err: any) {
-      await i.editReply(`❌ ${err.message ?? 'Could not resolve action.'}`);
-      return;
-    }
-    if (i.channel && (i.channel as any).isTextBased?.()) {
-      await syncPinnedUi(i.channel as unknown as TextChannel, run_id, i.message as Message);
-    }
-    const channel = i.channel;
-    if (res.compliment && channel && channel.isTextBased() && 'send' in channel) {
-      await (channel as any).send({ content: `✨ ${res.compliment} (<@${i.user.id}>)` });
+      await i.editReply(`❌ ${err.message ?? 'Unable to play card.'}`);
     }
     return;
   }
-  
+
+  if (prefix === 'act') {
+    await i.deferReply({ ephemeral: true });
+    try {
+      const res = handleAction(run_id, i.user.id, rest);
+      await i.editReply(`🎲 You chose **${rest}** → ${res.summary}`);
+      if (i.channel && (i.channel as any).isTextBased?.()) {
+        await syncPinnedUi(i.channel as unknown as TextChannel, run_id, i.message as Message);
+      }
+      const channel = i.channel;
+      if (res.compliment && channel && channel.isTextBased() && 'send' in channel) {
+        await (channel as any).send({ content: `✨ ${res.compliment} (<@${i.user.id}>)` });
+      }
+    } catch (err: any) {
+      await i.editReply(`❌ ${err.message ?? 'Could not resolve action.'}`);
+    }
+    return;
+  }
+
   if (prefix === 'shop') {
     await i.deferReply({ ephemeral: true });
     const msg = await handleEnhancedShopInteraction(i.customId, i.user.id);
@@ -134,7 +149,7 @@ export async function onButton(i: ButtonInteraction) {
     await i.editReply(msg);
     return;
   }
-  
+
   if (prefix === 'role') {
     await i.deferReply({ ephemeral: true });
     const msg = handleRoleSelection(i.customId, i.user.id);
@@ -144,7 +159,7 @@ export async function onButton(i: ButtonInteraction) {
     await i.editReply(msg);
     return;
   }
-  
+
   if (prefix === 'equipment') {
     if (rest === 'open') {
       await i.deferReply({ ephemeral: true });
@@ -168,7 +183,7 @@ export async function onSelectMenu(i: StringSelectMenuInteraction) {
     await i.editReply(msg);
     return;
   }
-  
+
   if (i.customId.startsWith('role:')) {
     await i.deferReply({ ephemeral: true });
     const msg = handleRoleSelection(i.customId, i.user.id, i.values);
@@ -178,36 +193,34 @@ export async function onSelectMenu(i: StringSelectMenuInteraction) {
     await i.editReply(msg);
     return;
   }
-  
+
   if (i.customId === 'equipment:slot') {
     await handleEquipmentSelect(i);
     return;
   }
-  
+
   if (i.customId.startsWith('equipment:equip:')) {
     await handleEquipmentEquip(i);
     return;
   }
 }
 
-// Add to src/ui/ui.ts
-import { cardEngine, deckManager } from '../nft/cards.js';
-
 export async function renderSceneWithCards(run_id: string) {
   const baseRender = await renderScene(run_id);
-  const run = db.prepare('SELECT active_user_id FROM runs WHERE run_id=?').get(run_id) as any;
-  
+  const run = db.prepare('SELECT active_user_id FROM runs WHERE run_id=?').get(run_id) as
+    | { active_user_id?: string }
+    | undefined;
+
   if (!run?.active_user_id) return baseRender;
-  
-  const hand = await cardEngine.getHand(run_id);
+
+  let hand = await cardEngine.getHand(run_id);
   if (hand.length === 0) {
-    // Draw initial hand
     for (let i = 0; i < 3; i++) {
       await cardEngine.drawCard(run_id, run.active_user_id);
     }
+    hand = await cardEngine.getHand(run_id);
   }
-  
-  // Add card buttons
+
   if (hand.length > 0) {
     const cardRow = new ActionRowBuilder<ButtonBuilder>();
     for (const card of hand.slice(0, 5)) {
@@ -218,23 +231,8 @@ export async function renderSceneWithCards(run_id: string) {
           .setStyle(ButtonStyle.Primary)
       );
     }
-    baseRender.components.push(cardRow);
+    (baseRender.components as ActionRowBuilder<ButtonBuilder>[]).push(cardRow);
   }
-  
+
   return baseRender;
 }
-
-// Handle card plays in onButton
-if (prefix === 'card') {
-  const [, runId, cardId] = i.customId.split(':');
-  const result = await cardEngine.playCard(runId, i.user.id, cardId);
-  await i.reply({ 
-    content: result.message, 
-    ephemeral: true 
-  });
-  // Refresh UI
-  await syncPinnedUi(i.channel as TextChannel, runId);
-  return;
-}
-
-export { showShop } from './shop.js';
