@@ -36,7 +36,14 @@ import { attemptSelfReboot, attemptAllyRevive } from './ui/recovery.js';
 import { startMinigame, handleMinigameButton } from './ui/minigames.js';
 import { listSeasons, startSeasonalRun } from './ui/seasonal.js';
 import { listCraftables, craftItem } from './ui/crafting.js';
-import { queueForMatch, listActiveMatches, recordPvPAction, concludeMatch } from './pvp/duels.js';
+import {
+  queueForMatch,
+  listActiveMatches,
+  recordPvPAction,
+  concludeMatch,
+  getPvPLeaderboard,
+  getPvPRecord,
+} from './pvp/duels.js';
 import { getRun, processAfkTimeouts, startRun } from './engine/orchestrator.js';
 import { guildHasLicense, featureEnabled } from './persistence/licensing.js';
 import { getGuildSettings } from './persistence/settings.js';
@@ -52,6 +59,7 @@ import {
   registerRunParticipants,
   declineGuildInvite,
 } from './guilds/guilds.js';
+import { worldEventManager, WORLD_EVENTS } from './events/worldEvents.js';
 
 export const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers],
@@ -100,7 +108,13 @@ client.once(Events.ClientReady, async (c: Client<true>) => {
   const tag = c.user?.tag ?? 'unknown user';
   console.log(`Logged in as ${tag}`);
   await registerSlash();
-  
+
+  try {
+    await worldEventManager.checkEventTriggers();
+  } catch (err) {
+    console.error('World event trigger sweep failed on startup', err);
+  }
+
   // AFK timeout processing
   setInterval(async () => {
     const events = processAfkTimeouts();
@@ -162,6 +176,102 @@ client.on(Events.MessageCreate, async (m: Message) => {
     } else {
       scheduleDecay(m.reply({ content: '(Ritual on cooldown or max 2/day reached.)' }));
     }
+    return;
+  }
+
+  if (lc === '!events') {
+    const events = worldEventManager.listActiveEvents();
+    if (!events.length) {
+      scheduleDecay(m.reply({ content: '🌍 No global events are active right now.' }));
+    } else {
+      const lines = events.map((evt) => {
+        const goals = evt.progress
+          .map((goal) => `${goal.completed ? '✅' : `${goal.current}/${goal.target}`} ${goal.goalId}`)
+          .join(' | ');
+        const hours = Math.ceil(evt.remainingMs / (60 * 60 * 1000));
+        return `• **${evt.event.name}** (${hours}h left) — ${goals || 'No goals'}`;
+      });
+      scheduleDecay(m.reply({ content: lines.join('\n') }));
+    }
+    return;
+  }
+
+  if (lc.startsWith('!event')) {
+    const raw = m.content.trim().slice('!event'.length).trim();
+    const tokens = tokenizeArgs(raw);
+    const sub = (tokens.shift() ?? 'status').toLowerCase();
+
+    if (sub === 'list') {
+      const list = WORLD_EVENTS.map((evt) => `${evt.id} — ${evt.name} (${evt.rarity})`).join('\n');
+      scheduleDecay(m.reply({ content: list || 'No events defined.' }));
+      return;
+    }
+
+    if (sub === 'status') {
+      const events = worldEventManager.listActiveEvents();
+      const lines = events.map((evt) => {
+        const goals = evt.progress
+          .map((goal) => `${goal.completed ? '✅' : `${goal.current}/${goal.target}`} ${goal.goalId}`)
+          .join(' | ');
+        const hours = Math.ceil(evt.remainingMs / (60 * 60 * 1000));
+        return `• **${evt.event.name}** (${hours}h left) — ${goals || 'No goals'}`;
+      });
+      scheduleDecay(m.reply({ content: lines.join('\n') || '🌍 No active events.' }));
+      return;
+    }
+
+    if (sub === 'start' && tokens[0]) {
+      if (m.author.id !== CFG.ownerId) {
+        scheduleDecay(m.reply({ content: '❌ Only the bot owner can start world events.' }));
+        return;
+      }
+      const eventId = tokens[0];
+      const serverId = tokens[1] ?? 'global';
+      const triggered = await worldEventManager.triggerEvent(eventId, serverId, { source: 'manual' });
+      if (!triggered) {
+        scheduleDecay(m.reply({ content: '❌ Event not found or already active.' }));
+      } else {
+        scheduleDecay(m.reply({ content: `🌍 Event **${eventId}** triggered for ${serverId}.` }));
+      }
+      return;
+    }
+
+    if (sub === 'end' && tokens[0]) {
+      if (m.author.id !== CFG.ownerId) {
+        scheduleDecay(m.reply({ content: '❌ Only the bot owner can end events.' }));
+        return;
+      }
+      const eventId = tokens[0];
+      const serverId = tokens[1] ?? 'global';
+      const ended = await worldEventManager.forceEndEvent(eventId, serverId);
+      scheduleDecay(
+        m.reply({ content: ended ? `🌅 Event **${eventId}** ended for ${serverId}.` : '❌ Event not active.' })
+      );
+      return;
+    }
+
+    if (sub === 'sweep') {
+      if (m.author.id !== CFG.ownerId) {
+        scheduleDecay(m.reply({ content: '❌ Only the bot owner can run the trigger sweep.' }));
+        return;
+      }
+      await worldEventManager.checkEventTriggers();
+      scheduleDecay(m.reply({ content: '🔍 Trigger sweep complete.' }));
+      return;
+    }
+
+    scheduleDecay(
+      m.reply({
+        content:
+          '🌍 **World Event Commands**\n' +
+          '• `!events` — show active events\n' +
+          '• `!event list` — list event definitions\n' +
+          '• `!event status` — show current progress\n' +
+          '• `!event start <id> [server]` — owner only\n' +
+          '• `!event end <id> [server]` — owner only\n' +
+          '• `!event sweep` — owner only trigger check',
+      })
+    );
     return;
   }
 
@@ -439,6 +549,34 @@ client.on(Events.MessageCreate, async (m: Message) => {
       scheduleDecay(m.reply({ content: lines || 'No active matches.' }));
       return;
     }
+    if (sub === 'leaderboard') {
+      const limitArg = Number(parts[2] ?? 10);
+      const limit = Number.isFinite(limitArg) ? Math.max(1, Math.min(25, limitArg)) : 10;
+      const board = getPvPLeaderboard(limit);
+      const lines = board
+        .map(
+          (entry, index) =>
+            `#${index + 1} <@${entry.user_id}> — ${entry.wins}W/${entry.losses}L/${entry.draws}D (rating ${entry.rating})`
+        )
+        .join('\n');
+      scheduleDecay(m.reply({ content: lines || 'No ranked matches yet.' }));
+      return;
+    }
+    if (sub === 'stats') {
+      const mention = m.mentions.users.first();
+      const target = mention?.id || parts[2] || m.author.id;
+      const record = getPvPRecord(target);
+      if (!record) {
+        scheduleDecay(m.reply({ content: `📉 No PvP record for <@${target}>.` }));
+      } else {
+        scheduleDecay(
+          m.reply({
+            content: `🎯 PvP record for <@${target}> — ${record.wins}W/${record.losses}L/${record.draws}D (rating ${record.rating}).`,
+          })
+        );
+      }
+      return;
+    }
     if (sub === 'report' && parts[2] && parts[3]) {
       const res = recordPvPAction(parts[2], m.author.id, parts[3] as any);
       scheduleDecay(m.reply({ content: res.message }));
@@ -446,7 +584,12 @@ client.on(Events.MessageCreate, async (m: Message) => {
     }
     if (sub === 'conclude' && parts[2]) {
       const res = concludeMatch(parts[2]);
-      scheduleDecay(m.reply({ content: res.success ? `Match ${parts[2]} complete. Winner <@${res.winner}>` : 'Unable to conclude.' }));
+      if (res.success) {
+        const winners = res.winners?.length ? res.winners.map((id) => `<@${id}>`).join(', ') : 'No clear winner';
+        scheduleDecay(m.reply({ content: `Match ${parts[2]} complete. Winner(s): ${winners}` }));
+      } else {
+        scheduleDecay(m.reply({ content: 'Unable to conclude.' }));
+      }
       return;
     }
   }

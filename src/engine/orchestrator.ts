@@ -6,6 +6,7 @@ import { thresholdRewards, groupBonusAllSurvive, loneSurvivor } from './rewards.
 import { computeHiddenTier, flavorForTier } from './difficulty.js';
 import { calculatePartyDifficultyInputs } from './partyStrength.js';
 import { SceneDef } from '../models.js';
+import { worldEventManager } from '../events/worldEvents.js';
 import {
   equipmentAdvantageState,
   loadoutSleightBonus,
@@ -243,6 +244,7 @@ export function handleAction(
 
   const tags: string[] = act.roll?.tags ?? [];
   const { advantage, disadvantage, dcShift, dcOffset, focusBonus, hpBonus } = equipmentAdvantageState(user_id, tags);
+  const { contexts: worldContexts, modifiers: worldModifiers } = worldEventManager.prepareAction(run.guild_id, act);
   const difficultyInputs = calculatePartyDifficultyInputs(run);
   const settings = getGuildSettings(run.guild_id);
   const { dcOffset: hiddenOffset, tier } = computeHiddenTier(
@@ -267,20 +269,20 @@ export function handleAction(
       members: difficultyInputs.members,
     })
   );
-  
-  const { dcOffset: hiddenOffset, tier } = computeHiddenTier(10, 1200, 0);
 
-  const baseDc = 13 + dcShift;
+  const baseDc = 13 + dcShift + worldModifiers.dcShift;
   const totalOffset = hiddenOffset + dcOffset;
   let roll = act.roll
     ? phiD20(baseDc, totalOffset)
     : ({ kind: 'success', roll: 20, dc: baseDc + totalOffset } as any);
 
   if (act.roll) {
-    if (advantage && !disadvantage) {
+    const advCount = (advantage ? 1 : 0) + worldModifiers.advantageStacks;
+    const disadvCount = (disadvantage ? 1 : 0) + worldModifiers.disadvantageStacks;
+    if (advCount > disadvCount) {
       const contender = phiD20(baseDc, totalOffset);
       roll = contender.roll >= roll.roll ? contender : roll;
-    } else if (disadvantage && !advantage) {
+    } else if (disadvCount > advCount) {
       const contender = phiD20(baseDc, totalOffset);
       roll = contender.roll <= roll.roll ? contender : roll;
     }
@@ -324,7 +326,35 @@ export function handleAction(
   }
 
   const summary = applyEffects(outcome.effects || [], state as any, user_id);
+
+  const rewardFields: Array<{ target: 'coins' | 'xp' | 'fragments'; field: '_coins' | '_xp' | '_fragments' }> = [
+    { target: 'coins', field: '_coins' },
+    { target: 'xp', field: '_xp' },
+    { target: 'fragments', field: '_fragments' },
+  ];
+  for (const { target, field } of rewardFields) {
+    const multiplier = worldModifiers.multipliers[target];
+    if (multiplier !== undefined && multiplier !== 1 && state[field][user_id] !== undefined) {
+      state[field][user_id] = Math.round((state[field][user_id] ?? 0) * multiplier);
+    }
+    const bonus = worldModifiers.bonuses[target];
+    if (bonus !== undefined && bonus !== 0 && (roll.kind === 'success' || roll.kind === 'crit_success')) {
+      state[field][user_id] = Math.round((state[field][user_id] ?? 0) + bonus);
+    }
+  }
+
   commitState(user_id, state);
+
+  worldEventManager.recordActionImpact(worldContexts, {
+    serverId: run.guild_id,
+    userId: user_id,
+    userId,
+    tags,
+    rollKind: roll.kind,
+    coinsDelta: state._coins[user_id] ?? 0,
+    xpDelta: state._xp[user_id] ?? 0,
+    fragmentsDelta: state._fragments[user_id] ?? 0,
+  });
 
   const newFlags = { ...(JSON.parse(run.flags_json || '{}')), ...(state.flags || {}) };
   run.flags_json = JSON.stringify(newFlags);
@@ -337,6 +367,19 @@ export function handleAction(
   run.sleight_score += sleightDelta;
   appendSleightHistory(run, { user_id, delta: sleightDelta, reason: roll.kind, ts: Date.now() });
 
+  if ((roll.kind === 'success' || roll.kind === 'crit_success') && worldModifiers.sleightSuccessBonus) {
+    const eventBonus = Math.round(worldModifiers.sleightSuccessBonus);
+    if (eventBonus) {
+      run.sleight_score += eventBonus;
+      appendSleightHistory(run, {
+        user_id,
+        delta: eventBonus,
+        reason: 'world_event_bonus',
+        ts: Date.now(),
+      });
+    }
+  }
+
   const rounds = scene.rounds.map((r: any) => r.round_id);
   const idx = rounds.indexOf(run.round_id);
   let completedScene = false;
@@ -345,25 +388,16 @@ export function handleAction(
   } else {
     completedScene = true;
     applyThresholdRewards(run, user_id, scene, state);
-    const arr = scene.arrivals || [];
+    const arrivals = scene.arrivals || [];
     const next =
-      arr.find((a) => a.when.startsWith('flags') && (newFlags as any)[a.when.split('.')[1]])?.goto ||
-      arr.find((a) => a.when === 'else')?.goto ||
+      arrivals.find((a) => a.when.startsWith('flags') && (newFlags as any)[a.when.split('.')[1]])?.goto ||
+      arrivals.find((a) => a.when === 'else')?.goto ||
       '2B';
     const sceneMap: Record<'A' | 'B' | 'C' | 'D', string> = { A: '2.1', B: '2.1', C: '2.1', D: '2.1' };
     run.scene_id = ('' + next)
       .replace(/^\s*→?\s*/, '')
       .replace(/^Scene\s*/, '')
       .replace(/^2([A-D])$/, (m, p: 'A' | 'B' | 'C' | 'D') => sceneMap[p]);
-    const rewards = thresholdRewards(run.sleight_score, scene.threshold_rewards);
-    applyEffects(rewards, state, user_id);
-    const arr = scene.arrivals||[];
-    const next = arr.find(a => a.when.startsWith('flags') && (newFlags as any)[a.when.split('.')[1]])?.goto || arr.find(a=>a.when==='else')?.goto || '2B';
-    const sceneMap: Record<'A'|'B'|'C'|'D', string> = { A: '2.1', B: '2.1', C: '2.1', D: '2.1' };
-    run.scene_id = (''+next)
-      .replace(/^\s*→?\s*/,'')
-      .replace(/^Scene\s*/,'')
-      .replace(/^2([A-D])$/,(m, p: 'A'|'B'|'C'|'D')=> sceneMap[p]);
     run.round_id = `${run.scene_id}-R1`;
     run.micro_ix += 1;
     run.sleight_score = 0;
@@ -407,7 +441,6 @@ export function processAfkTimeouts(now = Date.now()) {
     .prepare('SELECT * FROM runs WHERE turn_expires_at IS NOT NULL AND turn_expires_at <= ?')
     .all(now) as any[];
   const events: { run_id: string; user_id: string; action_id: string; message: string; channel_id: string; refresh?: boolean }[] = [];
-  const events: { run_id: string; user_id: string; action_id: string; message: string; channel_id: string }[] = [];
   for (const run of timedOut) {
     if (!run.active_user_id) continue;
     const scene = loadScene(run.content_id, run.scene_id);
@@ -439,6 +472,5 @@ export function processAfkTimeouts(now = Date.now()) {
     }
   }
   return events;
-  
-  return { roll, outcome, summary, tier };
 }
+

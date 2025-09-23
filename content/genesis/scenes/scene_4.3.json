@@ -1583,6 +1583,8 @@
                 {
                     "id": "advance_44",
                     "label": "Stride Toward the Meridian Helix",
+                    "id": "advance_5",
+                    "label": "Stride Toward Act Five",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
@@ -1609,6 +1611,23 @@
                     "telemetry_tags": [
                         "scene:4.3",
                         "action:advance_44"
+                            "narration": "You step through the spectrum door as it opens. A new corridor waits, awash in possibilities.",
+                            "next_hint": "5.1"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Next act queued.",
+                        "trader": "Position rolled into Act Five.",
+                        "whale": "Wake leaps forward.",
+                        "hacker": "Transition authenticated.",
+                        "shiller": "Campaign enters the next phase.",
+                        "validator": "Advance notarized.",
+                        "miner": "Fresh tunnels ahead.",
+                        "meme": "Brb, Act Five."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.3",
+                        "action:advance_5"
                     ]
                 }
             ],
@@ -1659,6 +1678,7 @@
         {
             "when": "flags.prism_consensus_passed",
             "goto": "4.4"
+            "goto": "5.1"
         },
         {
             "when": "else",

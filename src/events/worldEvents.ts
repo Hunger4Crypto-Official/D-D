@@ -1,5 +1,7 @@
+import { nanoid } from 'nanoid';
 import db from '../persistence/db.js';
 import { Effect } from '../models.js';
+import { applyEffects } from '../engine/rules.js';
 
 export interface GlobalEffect {
   type: 'multiplier' | 'bonus' | 'penalty' | 'advantage' | 'disadvantage' | 'unlock';
@@ -47,18 +49,54 @@ export interface WorldEvent {
   triggerConditions?: TriggerCondition[];
 }
 
+type WorldEventGoalProgress = {
+  goalId: string;
+  current: number;
+  target: number;
+  participants: Set<string>;
+  completed: boolean;
+};
+
 export interface WorldEventInstance {
   eventId: string;
   serverId: string;
   startTime: number;
   endTime: number;
-  communityProgress: {
-    goalId: string;
-    current: number;
-    target: number;
-    participants: Set<string>;
-  }[];
+  communityProgress: WorldEventGoalProgress[];
   participants: Set<string>;
+}
+
+interface SerializedProgress {
+  goalId: string;
+  current: number;
+  target: number;
+  participants: string[];
+  completed?: boolean;
+}
+
+interface ActiveEventContext {
+  event: WorldEvent;
+  instance: WorldEventInstance;
+  effects: GlobalEffect[];
+}
+
+export interface ActionModifiers {
+  advantageStacks: number;
+  disadvantageStacks: number;
+  dcShift: number;
+  multipliers: Record<string, number>;
+  bonuses: Record<string, number>;
+  sleightSuccessBonus: number;
+}
+
+export interface ActiveWorldEventSummary {
+  event: WorldEvent;
+  serverId: string;
+  startedAt: number;
+  endsAt: number;
+  remainingMs: number;
+  participantCount: number;
+  progress: { goalId: string; current: number; target: number; completed: boolean; participantCount: number }[];
 }
 
 export const WORLD_EVENTS: WorldEvent[] = [
@@ -289,33 +327,162 @@ export const WORLD_EVENTS: WorldEvent[] = [
   },
 ];
 
-export class WorldEventManager {
+class WorldEventManager {
   private readonly activeEvents = new Map<string, WorldEventInstance>();
+  private readonly timers = new Map<string, ReturnType<typeof setTimeout>>();
+  private triggerInterval?: ReturnType<typeof setTimeout>;
+  private readonly timers = new Map<string, NodeJS.Timeout>();
+  private triggerInterval?: NodeJS.Timeout;
+  private initialized = false;
 
-  async triggerEvent(eventId: string, serverId: string = 'global'): Promise<void> {
+  initialize(): void {
+    if (this.initialized) return;
+    this.initialized = true;
+
+    const rows = db.prepare('SELECT * FROM world_events_active').all() as {
+      event_id: string;
+      server_id: string;
+      start_time: number;
+      end_time: number;
+      community_progress_json: string;
+      participants_json: string;
+    }[];
+
+    for (const row of rows) {
+      const progressRaw = JSON.parse(row.community_progress_json || '[]') as SerializedProgress[];
+      const progress: WorldEventGoalProgress[] = progressRaw.map((entry) => ({
+        goalId: entry.goalId,
+        current: entry.current,
+        target: entry.target,
+        completed: Boolean(entry.completed),
+        participants: new Set(entry.participants ?? []),
+      }));
+      const instance: WorldEventInstance = {
+        eventId: row.event_id,
+        serverId: row.server_id,
+        startTime: row.start_time,
+        endTime: row.end_time,
+        communityProgress: progress,
+        participants: new Set(JSON.parse(row.participants_json || '[]') as string[]),
+      };
+      this.activeEvents.set(this.instanceKey(instance.eventId, instance.serverId), instance);
+      this.scheduleEnd(instance);
+    }
+
+    const timer = setInterval(() => {
+      try {
+        this.checkEventTriggers().catch((err) => console.error('World event trigger sweep failed', err));
+      } catch (err) {
+        console.error('World event trigger sweep failed', err);
+      }
+    }, 30 * 60 * 1000);
+    (timer as any).unref?.();
+    this.triggerInterval = timer;
+  }
+
+  listActiveEvents(): ActiveWorldEventSummary[] {
+    const now = Date.now();
+    const summaries: ActiveWorldEventSummary[] = [];
+    for (const instance of this.activeEvents.values()) {
+      const event = WORLD_EVENTS.find((e) => e.id === instance.eventId);
+      if (!event) continue;
+      summaries.push({
+        event,
+        serverId: instance.serverId,
+        startedAt: instance.startTime,
+        endsAt: instance.endTime,
+        remainingMs: Math.max(0, instance.endTime - now),
+        participantCount: instance.participants.size,
+        progress: instance.communityProgress.map((goal) => ({
+          goalId: goal.goalId,
+          current: goal.current,
+          target: goal.target,
+          completed: goal.completed,
+          participantCount: goal.participants.size,
+        })),
+      });
+    }
+    return summaries.sort((a, b) => a.endsAt - b.endsAt);
+  }
+
+  prepareAction(serverId: string, action: { roll?: { tags?: string[] } }): { contexts: ActiveEventContext[]; modifiers: ActionModifiers } {
+    const contexts = this.collectActiveContexts(action, serverId);
+    return { contexts, modifiers: this.computeModifiers(contexts) };
+  }
+
+  recordActionImpact(
+    contexts: ActiveEventContext[],
+    impact: { serverId: string; userId: string; tags: string[]; rollKind: 'crit_success' | 'success' | 'fail' | 'crit_fail'; coinsDelta: number; xpDelta: number; fragmentsDelta: number }
+  ): void {
+    if (!contexts.length) return;
+    const coinsLost = impact.coinsDelta < 0 ? Math.abs(impact.coinsDelta) : 0;
+    const coinsGained = impact.coinsDelta > 0 ? impact.coinsDelta : 0;
+    const xpGained = impact.xpDelta > 0 ? impact.xpDelta : 0;
+    const fragmentsGained = impact.fragmentsDelta > 0 ? impact.fragmentsDelta : 0;
+    const success = impact.rollKind === 'success' || impact.rollKind === 'crit_success';
+    const failure = impact.rollKind === 'fail' || impact.rollKind === 'crit_fail';
+
+    for (const ctx of contexts) {
+      const instance = this.activeEvents.get(this.instanceKey(ctx.instance.eventId, ctx.instance.serverId));
+      if (!instance) continue;
+      instance.participants.add(impact.userId);
+
+      const eventDef = ctx.event;
+      if (eventDef.communityGoals?.length) {
+        for (const goalProgress of instance.communityProgress) {
+          if (goalProgress.completed) continue;
+          const goalDef = eventDef.communityGoals.find((goal) => goal.description === goalProgress.goalId);
+          if (!goalDef) continue;
+          const delta = this.calculateGoalDelta(goalDef, {
+            tags: impact.tags,
+            success,
+            failure,
+            coinsLost,
+            coinsGained,
+            xpGained,
+            fragmentsGained,
+          });
+          if (delta > 0) {
+            goalProgress.current = Math.min(goalProgress.target, goalProgress.current + delta);
+            goalProgress.participants.add(impact.userId);
+            if (goalProgress.current >= goalProgress.target) {
+              goalProgress.completed = true;
+              this.handleGoalCompletion(eventDef, goalDef, goalProgress, instance);
+            }
+          }
+        }
+      }
+      this.saveInstance(instance);
+    }
+  }
+
+  async triggerEvent(eventId: string, serverId: string = 'global', opts: { source?: 'manual' | 'automatic' } = {}): Promise<boolean> {
     const event = WORLD_EVENTS.find((e) => e.id === eventId);
-    if (!event) return;
+    if (!event) return false;
+    if (this.isEventActive(eventId, serverId)) return false;
 
+    const now = Date.now();
     const instance: WorldEventInstance = {
       eventId: event.id,
       serverId,
-      startTime: Date.now(),
-      endTime: Date.now() + event.duration * 60 * 60 * 1000,
+      startTime: now,
+      endTime: now + event.duration * 60 * 60 * 1000,
       communityProgress:
         event.communityGoals?.map((goal) => ({
           goalId: goal.description,
           current: 0,
           target: goal.target,
+          completed: false,
           participants: new Set<string>(),
         })) ?? [],
       participants: new Set<string>(),
     };
 
     this.activeEvents.set(this.instanceKey(eventId, serverId), instance);
-    await this.broadcastEventStart(event, instance);
-    const timer = setTimeout(() => this.endEvent(instance), event.duration * 60 * 60 * 1000);
-    const maybeUnref = (timer as { unref?: () => void }).unref;
-    if (maybeUnref) maybeUnref.call(timer);
+    this.saveInstance(instance);
+    this.scheduleEnd(instance);
+    await this.broadcastEventStart(event, instance, opts.source ?? 'manual');
+    return true;
   }
 
   async checkEventTriggers(): Promise<void> {
@@ -323,53 +490,299 @@ export class WorldEventManager {
       if (!event.triggerConditions || event.triggerConditions.length === 0) continue;
       const shouldTrigger = await this.evaluateTriggerConditions(event.triggerConditions);
       if (shouldTrigger && !this.isEventActive(event.id)) {
-        await this.triggerEvent(event.id);
+        await this.triggerEvent(event.id, 'global', { source: 'automatic' });
       }
     }
   }
 
-  getActiveEventsForAction(action: { roll?: { tags?: string[] } }, serverId: string): GlobalEffect[] {
-    const effects: GlobalEffect[] = [];
+  async forceEndEvent(eventId: string, serverId: string = 'global'): Promise<boolean> {
+    const instance = this.activeEvents.get(this.instanceKey(eventId, serverId));
+    if (!instance) return false;
+    this.finalizeEvent(instance, 'forced');
+    return true;
+  }
+
+  private collectActiveContexts(action: { roll?: { tags?: string[] } }, serverId: string): ActiveEventContext[] {
+    const contexts: ActiveEventContext[] = [];
     for (const [key, instance] of this.activeEvents.entries()) {
       const [, storedServer] = key.split(':');
       if (storedServer !== 'global' && storedServer !== serverId) continue;
       const event = WORLD_EVENTS.find((e) => e.id === instance.eventId);
       if (!event) continue;
-      for (const effect of event.globalEffects) {
-        if (this.effectApplies(effect, action)) {
-          effects.push(effect);
+      const effects = event.globalEffects.filter((effect) => this.effectApplies(effect, action));
+      contexts.push({ event, instance, effects });
+    }
+    return contexts;
+  }
+
+  private computeModifiers(contexts: ActiveEventContext[]): ActionModifiers {
+    const modifiers: ActionModifiers = {
+      advantageStacks: 0,
+      disadvantageStacks: 0,
+      dcShift: 0,
+      multipliers: {},
+      bonuses: {},
+      sleightSuccessBonus: 0,
+    };
+
+    for (const ctx of contexts) {
+      for (const effect of ctx.effects) {
+        switch (effect.type) {
+          case 'advantage':
+            modifiers.advantageStacks += effect.value ?? 1;
+            break;
+          case 'disadvantage':
+            modifiers.disadvantageStacks += effect.value ?? 1;
+            break;
+          case 'penalty': {
+            const amount = Number(effect.value ?? 0);
+            modifiers.dcShift += -amount;
+            const lowerTarget = effect.target.toLowerCase();
+            const lowerDesc = effect.description.toLowerCase();
+            if (
+              lowerTarget.includes('sleight') ||
+              lowerTarget.includes('survival') ||
+              lowerTarget.includes('integrity') ||
+              lowerDesc.includes('sleight')
+            ) {
+              modifiers.sleightSuccessBonus += amount;
+            }
+            break;
+          }
+          case 'bonus': {
+            const amount = Number(effect.value ?? 0);
+            modifiers.bonuses[effect.target] = (modifiers.bonuses[effect.target] ?? 0) + amount;
+            const lowerTarget = effect.target.toLowerCase();
+            const lowerDesc = effect.description.toLowerCase();
+            if (
+              lowerTarget.includes('sleight') ||
+              lowerTarget.includes('survival') ||
+              lowerTarget.includes('integrity') ||
+              lowerDesc.includes('sleight')
+            ) {
+              modifiers.sleightSuccessBonus += amount;
+            }
+            break;
+          }
+          case 'multiplier': {
+            const amount = Number(effect.value ?? 1);
+            modifiers.multipliers[effect.target] = (modifiers.multipliers[effect.target] ?? 1) * amount;
+            break;
+          }
         }
       }
     }
-    return effects;
+
+    return modifiers;
   }
 
-  private effectApplies(effect: GlobalEffect, action: { roll?: { tags?: string[] } }): boolean {
-    if (!action.roll) {
-      return effect.target === 'all' || ['coins', 'xp', 'fragments'].includes(effect.target);
+  private scheduleEnd(instance: WorldEventInstance) {
+    const key = this.instanceKey(instance.eventId, instance.serverId);
+    const existing = this.timers.get(key);
+    if (existing) {
+      clearTimeout(existing);
+      this.timers.delete(key);
     }
-    if (effect.target === 'all') return true;
-    if (['coins', 'xp', 'fragments', 'shop_prices', 'crafting_success', 'rare_drops'].includes(effect.target)) return true;
-    const tags = action.roll.tags ?? [];
-    const targetTags = effect.target.split(',').map((tag) => tag.trim());
-    return targetTags.some((tag) => tags.includes(tag));
+    const ms = Math.max(0, instance.endTime - Date.now());
+    const timer = setTimeout(() => {
+      this.finalizeEvent(instance, 'expired');
+    }, ms);
+    (timer as any).unref?.();
+    this.timers.set(key, timer);
   }
 
-  private async broadcastEventStart(event: WorldEvent, instance: WorldEventInstance): Promise<void> {
+  private finalizeEvent(instance: WorldEventInstance, reason: 'expired' | 'forced') {
+    const key = this.instanceKey(instance.eventId, instance.serverId);
+    if (!this.activeEvents.has(key)) return;
+    this.activeEvents.delete(key);
+    const timer = this.timers.get(key);
+    if (timer) {
+      clearTimeout(timer);
+      this.timers.delete(key);
+    }
+    db.prepare('DELETE FROM world_events_active WHERE event_id=? AND server_id=?').run(instance.eventId, instance.serverId);
+    db.prepare('INSERT INTO events (event_id, run_id, user_id, type, payload_json, ts) VALUES (?,?,?,?,?,?)').run(
+      `world_event_${instance.eventId}_${instance.endTime}_${reason}`,
+      null,
+      null,
+      'world_event_ended',
+      JSON.stringify({ eventId: instance.eventId, serverId: instance.serverId, reason }),
+      Date.now()
+    );
+  }
+
+  private calculateGoalDelta(
+    goal: CommunityGoal,
+    impact: {
+      tags: string[];
+      success: boolean;
+      failure: boolean;
+      coinsLost: number;
+      coinsGained: number;
+      xpGained: number;
+      fragmentsGained: number;
+    }
+  ): number {
+    const desc = goal.description.toLowerCase();
+    if (desc.includes('lose') && desc.includes('coin')) {
+      return Math.round(impact.coinsLost);
+    }
+    if (desc.includes('gain') && desc.includes('xp')) {
+      return Math.round(impact.xpGained);
+    }
+    if (desc.includes('fragment')) {
+      return Math.round(impact.fragmentsGained);
+    }
+    if (desc.includes('gremlin')) {
+      return impact.success && impact.tags.some((tag) => tag.includes('gremlin')) ? 1 : 0;
+    }
+    if (desc.includes('craft')) {
+      return impact.success ? 1 : 0;
+    }
+    if (desc.includes('non-validator')) {
+      return impact.success ? 1 : 0;
+    }
+    if (desc.includes('timeline') || desc.includes('support')) {
+      return impact.success ? 1 : 0;
+    }
+    if (desc.includes('integrity')) {
+      return impact.success ? 1 : 0;
+    }
+    if (desc.includes('death') || desc.includes('downed')) {
+      return impact.failure ? 1 : 0;
+    }
+    if (desc.includes('restore') || desc.includes('consensus')) {
+      return impact.success ? 1 : 0;
+    }
+    return impact.success ? 1 : 0;
+  }
+
+  private handleGoalCompletion(
+    event: WorldEvent,
+    goal: CommunityGoal,
+    progress: WorldEventGoalProgress,
+    instance: WorldEventInstance
+  ) {
+    db.prepare('INSERT INTO events (event_id, run_id, user_id, type, payload_json, ts) VALUES (?,?,?,?,?,?)').run(
+      `world_event_goal_${event.id}_${Date.now()}`,
+      null,
+      null,
+      'world_event_goal_completed',
+      JSON.stringify({ eventId: event.id, serverId: instance.serverId, goal: goal.description }),
+      Date.now()
+    );
+
+    if (goal.participantRewards?.length) {
+      const participants = Array.from(progress.participants);
+      for (const userId of participants) {
+        this.applyOutOfRunRewards(userId, goal.participantRewards, event.id, goal.description);
+      }
+    }
+
+    if (goal.rewards?.length) {
+      // Server wide rewards are recorded for operators to process manually.
+      db.prepare('INSERT INTO events (event_id, run_id, user_id, type, payload_json, ts) VALUES (?,?,?,?,?,?)').run(
+        `world_event_reward_${event.id}_${Date.now()}`,
+        null,
+        null,
+        'world_event_global_reward',
+        JSON.stringify({ eventId: event.id, serverId: instance.serverId, rewards: goal.rewards }),
+        Date.now()
+      );
+    }
+  }
+
+  private applyOutOfRunRewards(userId: string, rewards: Effect[], eventId: string, goalId: string) {
+    if (!rewards.length) return;
+    const state: any = {
+      hp: {},
+      focus: {},
+      flags: {},
+      _coins: {},
+      _xp: {},
+      _fragments: {},
+      _items: {},
+      _buffs: {},
+      _debuffs: {},
+      _gems: {},
+    };
+    const summary = applyEffects(rewards, state, userId);
+    const coins = Math.round(state._coins[userId] ?? 0);
+    const xp = Math.round(state._xp[userId] ?? 0);
+    const fragments = Math.round(state._fragments[userId] ?? 0);
+    const gems = Math.round(state._gems[userId] ?? 0);
+
+    if (coins) {
+      db.prepare('UPDATE profiles SET coins=coins+? WHERE user_id=?').run(coins, userId);
+    }
+    if (xp) {
+      db.prepare('UPDATE profiles SET xp=xp+? WHERE user_id=?').run(xp, userId);
+    }
+    if (fragments) {
+      db.prepare('UPDATE profiles SET fragments=fragments+? WHERE user_id=?').run(fragments, userId);
+    }
+    if (gems) {
+      db.prepare('UPDATE profiles SET gems=gems+? WHERE user_id=?').run(gems, userId);
+    }
+    if (Array.isArray(state._items[userId]) && state._items[userId].length) {
+      const stmt = db.prepare(
+        'INSERT INTO inventories (user_id,item_id,kind,rarity,qty,meta_json) VALUES (?,?,?,?,?,?) ON CONFLICT(user_id,item_id) DO UPDATE SET qty=qty+excluded.qty'
+      );
+      for (const itemId of state._items[userId]) {
+        stmt.run(userId, itemId, 'reward', 'unknown', 1, '{}');
+      }
+    }
+
+    db.prepare('INSERT INTO events (event_id, run_id, user_id, type, payload_json, ts) VALUES (?,?,?,?,?,?)').run(
+      `world_event_participant_reward_${nanoid(8)}`,
+      null,
+      userId,
+      'world_event_participant_reward',
+      JSON.stringify({ eventId, goalId, summary }),
+      Date.now()
+    );
+  }
+
+  private async broadcastEventStart(event: WorldEvent, instance: WorldEventInstance, source: 'manual' | 'automatic') {
     const message =
       `🌍 **${event.name}** has begun!\n\n${event.description}\n\nDuration: ${event.duration} hours\n\n${event.globalEffects
         .map((effect) => `• ${effect.description}`)
         .join('\n')}`;
-    // Actual broadcast will depend on the bot runtime. For now we store a log entry for observability.
-    db.prepare(
-      'INSERT INTO events (event_id, run_id, user_id, type, payload_json, ts) VALUES (?,?,?,?,?,?)'
-    ).run(
-      `world_event_${instance.eventId}_${instance.startTime}`,
+    db.prepare('INSERT INTO events (event_id, run_id, user_id, type, payload_json, ts) VALUES (?,?,?,?,?,?)').run(
+      `world_event_${instance.eventId}_${instance.startTime}_${source}`,
       null,
       null,
       'world_event_started',
-      JSON.stringify({ eventId: event.id, serverId: instance.serverId, duration: event.duration, message }),
+      JSON.stringify({
+        eventId: event.id,
+        serverId: instance.serverId,
+        duration: event.duration,
+        message,
+        source,
+      }),
       Date.now()
+    );
+  }
+
+  private saveInstance(instance: WorldEventInstance) {
+    const progress: SerializedProgress[] = instance.communityProgress.map((goal) => ({
+      goalId: goal.goalId,
+      current: goal.current,
+      target: goal.target,
+      completed: goal.completed,
+      participants: Array.from(goal.participants),
+    }));
+    db.prepare(
+      `INSERT INTO world_events_active (event_id, server_id, start_time, end_time, community_progress_json, participants_json)
+       VALUES (?,?,?,?,?,?)
+       ON CONFLICT(event_id, server_id) DO UPDATE SET start_time=excluded.start_time, end_time=excluded.end_time, community_progress_json=excluded.community_progress_json, participants_json=excluded.participants_json`
+    ).run(
+      instance.eventId,
+      instance.serverId,
+      instance.startTime,
+      instance.endTime,
+      JSON.stringify(progress),
+      JSON.stringify(Array.from(instance.participants))
     );
   }
 
@@ -390,7 +803,7 @@ export class WorldEventManager {
           | { coins: number | null; gems: number | null }
           | undefined;
         const coins = row?.coins ?? 0;
-        const gems = (row?.gems ?? 0) * 1000; // weight gems heavily to count toward wealth
+        const gems = (row?.gems ?? 0) * 1000;
         return coins + gems >= Number(condition.value);
       }
       case 'community_sleight_threshold': {
@@ -401,9 +814,7 @@ export class WorldEventManager {
       }
       case 'community_flag': {
         const flag = db
-          .prepare(
-            'SELECT enabled FROM feature_flags WHERE guild_id=? AND feature=?'
-          )
+          .prepare('SELECT enabled FROM feature_flags WHERE guild_id=? AND feature=?')
           .get('global', condition.value) as { enabled?: number } | undefined;
         return (flag?.enabled ?? 0) === 1;
       }
@@ -438,18 +849,15 @@ export class WorldEventManager {
     }
   }
 
-  private endEvent(instance: WorldEventInstance) {
-    const key = this.instanceKey(instance.eventId, instance.serverId);
-    if (!this.activeEvents.has(key)) return;
-    this.activeEvents.delete(key);
-    db.prepare('INSERT INTO events (event_id, run_id, user_id, type, payload_json, ts) VALUES (?,?,?,?,?,?)').run(
-      `world_event_${instance.eventId}_${instance.endTime}`,
-      null,
-      null,
-      'world_event_ended',
-      JSON.stringify({ eventId: instance.eventId, serverId: instance.serverId }),
-      Date.now()
-    );
+  private effectApplies(effect: GlobalEffect, action: { roll?: { tags?: string[] } }): boolean {
+    if (!action.roll) {
+      return effect.target === 'all' || ['coins', 'xp', 'fragments'].includes(effect.target);
+    }
+    if (effect.target === 'all') return true;
+    if (['coins', 'xp', 'fragments', 'shop_prices', 'crafting_success', 'rare_drops'].includes(effect.target)) return true;
+    const tags = action.roll.tags ?? [];
+    const targetTags = effect.target.split(',').map((tag) => tag.trim());
+    return targetTags.some((tag) => tags.includes(tag));
   }
 
   private isEventActive(eventId: string, serverId: string = 'global'): boolean {
