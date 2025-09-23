@@ -250,3 +250,48 @@ CREATE TABLE IF NOT EXISTS gem_orders (
 CREATE INDEX IF NOT EXISTS idx_events_run ON events(run_id);
 CREATE INDEX IF NOT EXISTS idx_runs_guild ON runs(guild_id);
 CREATE INDEX IF NOT EXISTS idx_user_runs_status ON user_runs(user_id, status);
+
+-- Card and deck tables
+CREATE TABLE IF NOT EXISTS player_decks (
+  deck_id TEXT PRIMARY KEY,
+  user_id TEXT,
+  name TEXT,
+  theme TEXT,
+  cards_json TEXT DEFAULT '[]',
+  is_active INTEGER DEFAULT 0,
+  created_at INTEGER,
+  updated_at INTEGER,
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS active_buffs (
+  run_id TEXT,
+  user_id TEXT,
+  buff_id TEXT,
+  source_card TEXT,
+  duration INTEGER,
+  created_at INTEGER,
+  PRIMARY KEY(run_id, user_id, buff_id),
+  FOREIGN KEY (run_id) REFERENCES runs(run_id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS nft_ownership (
+  user_id TEXT,
+  wallet_address TEXT,
+  chain TEXT,
+  nft_ids TEXT,
+  verified_at INTEGER,
+  PRIMARY KEY(user_id, chain),
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS card_collection (
+  user_id TEXT,
+  card_id TEXT,
+  quantity INTEGER DEFAULT 1,
+  obtained_at INTEGER,
+  source TEXT,
+  PRIMARY KEY(user_id, card_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
