@@ -228,3 +228,43 @@ declare const Buffer: {
   from(input: any, encoding?: any): Buffer;
   concat(list: Buffer[]): Buffer;
 };
+
+declare module 'ethers' {
+  export class Interface {
+    constructor(abi: readonly string[]);
+    parseLog(log: { topics: string[]; data: string }): {
+      name?: string;
+      args: Record<string, unknown> | unknown[];
+    };
+  }
+
+  export class JsonRpcProvider {
+    constructor(url: string);
+  }
+
+  export class BrowserProvider {
+    constructor(externalProvider: unknown);
+    getSigner(): Promise<Signer>;
+  }
+
+  export class Wallet {
+    constructor(privateKey: string, provider?: Provider);
+    connect(provider: Provider): Wallet;
+  }
+
+  export class Contract {
+    constructor(address: string, abi: readonly string[], signerOrProvider: Provider | Signer);
+    connect(signer: Signer): Contract;
+    [key: string]: any;
+  }
+
+  export type Provider = unknown;
+  export type Signer = {
+    getAddress(): Promise<string>;
+  } & Record<string, any>;
+
+  export function verifyMessage(message: string, signature: string): string;
+  export function parseEther(value: string): bigint;
+  export function formatEther(value: bigint | number | string): string;
+  export function id(value: string): string;
+}

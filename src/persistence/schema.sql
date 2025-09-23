@@ -305,6 +305,31 @@ CREATE TABLE IF NOT EXISTS nft_ownership (
   FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS wallet_verifications (
+  user_id TEXT,
+  wallet_address TEXT,
+  chain TEXT,
+  challenge TEXT,
+  created_at INTEGER,
+  status TEXT,
+  verified_at INTEGER,
+  PRIMARY KEY(user_id, chain),
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS nft_rewards (
+  id TEXT PRIMARY KEY,
+  user_id TEXT,
+  wallet_address TEXT,
+  chain TEXT,
+  asset_id TEXT,
+  reward_type TEXT,
+  metadata_json TEXT,
+  minted_at INTEGER,
+  tx_hash TEXT,
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS card_collection (
   user_id TEXT,
   card_id TEXT,
