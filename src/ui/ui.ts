@@ -190,4 +190,51 @@ export async function onSelectMenu(i: StringSelectMenuInteraction) {
   }
 }
 
+// Add to src/ui/ui.ts
+import { cardEngine, deckManager } from '../nft/cards.js';
+
+export async function renderSceneWithCards(run_id: string) {
+  const baseRender = await renderScene(run_id);
+  const run = db.prepare('SELECT active_user_id FROM runs WHERE run_id=?').get(run_id) as any;
+  
+  if (!run?.active_user_id) return baseRender;
+  
+  const hand = await cardEngine.getHand(run_id);
+  if (hand.length === 0) {
+    // Draw initial hand
+    for (let i = 0; i < 3; i++) {
+      await cardEngine.drawCard(run_id, run.active_user_id);
+    }
+  }
+  
+  // Add card buttons
+  if (hand.length > 0) {
+    const cardRow = new ActionRowBuilder<ButtonBuilder>();
+    for (const card of hand.slice(0, 5)) {
+      cardRow.addComponents(
+        new ButtonBuilder()
+          .setCustomId(`card:${run_id}:${card.id}`)
+          .setLabel(`🎴 ${card.name}`)
+          .setStyle(ButtonStyle.Primary)
+      );
+    }
+    baseRender.components.push(cardRow);
+  }
+  
+  return baseRender;
+}
+
+// Handle card plays in onButton
+if (prefix === 'card') {
+  const [, runId, cardId] = i.customId.split(':');
+  const result = await cardEngine.playCard(runId, i.user.id, cardId);
+  await i.reply({ 
+    content: result.message, 
+    ephemeral: true 
+  });
+  // Refresh UI
+  await syncPinnedUi(i.channel as TextChannel, runId);
+  return;
+}
+
 export { showShop } from './shop.js';
