@@ -60,6 +60,8 @@ import {
   declineGuildInvite,
 } from './guilds/guilds.js';
 import { worldEventManager, WORLD_EVENTS } from './events/worldEvents.js';
+import { tournamentManager } from './systems/tournament/tournamentManager.js';
+import { vaultManager } from './systems/vault/vaultManager.js';
 
 export const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers],
@@ -272,6 +274,61 @@ client.on(Events.MessageCreate, async (m: Message) => {
           '• `!event sweep` — owner only trigger check',
       })
     );
+    return;
+  }
+
+  if (lc === '!tournaments' || lc === '!tournament') {
+    const view = await tournamentManager.renderTournamentHub(m.author.id);
+    await m.reply({ ...view });
+    return;
+  }
+
+  if (lc.startsWith('!tournament register')) {
+    const [, , tournamentId] = m.content.trim().split(/\s+/);
+    if (!tournamentId) {
+      await m.reply({ content: 'Usage: `!tournament register <tournamentId>`' });
+      return;
+    }
+    const result = tournamentManager.registerPlayer(tournamentId, m.author.id);
+    await m.reply({ content: result.message });
+    return;
+  }
+
+  if (lc.startsWith('!tournament start')) {
+    if (m.author.id !== CFG.ownerId) {
+      await m.reply({ content: 'Only the bot owner can start tournaments via command.' });
+      return;
+    }
+    const [, , tournamentId] = m.content.trim().split(/\s+/);
+    if (!tournamentId) {
+      await m.reply({ content: 'Usage: `!tournament start <tournamentId>`' });
+      return;
+    }
+    const result = tournamentManager.startTournament(tournamentId);
+    await m.reply({ content: result.message });
+    return;
+  }
+
+  if (lc === '!vault') {
+    const view = vaultManager.renderVaultInterface(m.author.id);
+    await m.reply({ ...view });
+    return;
+  }
+
+  if (lc.startsWith('!visitvault')) {
+    const parts = m.content.trim().split(/\s+/);
+    const target = parts[1];
+    if (!target) {
+      await m.reply({ content: 'Usage: `!visitvault <userId or @mention>`' });
+      return;
+    }
+    const hostId = target.replace(/[<@!>]/g, '');
+    const result = vaultManager.visitVault(m.author.id, hostId);
+    if (result?.success) {
+      await m.reply({ content: result.message });
+    } else {
+      await m.reply({ content: result?.message ?? 'Unable to visit vault.' });
+    }
     return;
   }
 
@@ -639,11 +696,15 @@ client.on(Events.MessageCreate, async (m: Message) => {
 
 client.on(Events.InteractionCreate, async (i: Interaction) => {
   if (i.isButton()) {
+    if (await tournamentManager.handleButton(i as ButtonInteraction)) return;
+    if (await vaultManager.handleButton(i as ButtonInteraction)) return;
     if (i.customId === 'shop:open') return showShop(i as ButtonInteraction);
     if (i.customId.startsWith('minigame:')) return handleMinigameButton(i as ButtonInteraction);
     return onButton(i as ButtonInteraction);
   }
   if (i.isStringSelectMenu()) {
+    if (await tournamentManager.handleSelectMenu(i as StringSelectMenuInteraction)) return;
+    if (await vaultManager.handleSelectMenu(i as StringSelectMenuInteraction)) return;
     return onSelectMenu(i as StringSelectMenuInteraction);
   }
   if (i.isChatInputCommand()) {

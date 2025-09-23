@@ -18,6 +18,21 @@ declare module 'fast-deep-equal' {
   export default equal;
 }
 
+declare module 'algosdk' {
+  export class Algodv2 {
+    constructor(token: string, server: string, port: string);
+    accountInformation(address: string): { do(): Promise<any> };
+    getAssetByID(assetId: number): { do(): Promise<any> };
+  }
+
+  export class Indexer {
+    constructor(token: string, server: string, port: string);
+    lookupAssetByID(assetId: number): { do(): Promise<any> };
+  }
+
+  export function verifyBytes(message: Uint8Array, signature: Uint8Array, address: string): boolean;
+}
+
 declare module 'nanoid' {
   export function nanoid(size?: number): string;
 }

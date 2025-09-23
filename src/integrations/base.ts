@@ -437,3 +437,4 @@ export class BaseIntegration {
 }
 
 export const baseIntegration = new BaseIntegration();
+export const base = baseIntegration;
