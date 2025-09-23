@@ -688,15 +688,15 @@ export class CardEngine {
     return results;
   }
   
-  async getHand(runId: string): Promise<Card[]> {
+  getHand(runId: string): Card[] {
     return this.hand.get(runId) || [];
   }
-  
-  async getDiscardPile(runId: string): Promise<Card[]> {
+
+  getDiscardPile(runId: string): Card[] {
     return this.discardPile.get(runId) || [];
   }
   
-  async clearRunData(runId: string): void {
+  async clearRunData(runId: string): Promise<void> {
     this.hand.delete(runId);
     this.discardPile.delete(runId);
   }
