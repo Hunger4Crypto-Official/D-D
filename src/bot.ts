@@ -584,7 +584,12 @@ client.on(Events.MessageCreate, async (m: Message) => {
     }
     if (sub === 'conclude' && parts[2]) {
       const res = concludeMatch(parts[2]);
-      scheduleDecay(m.reply({ content: res.success ? `Match ${parts[2]} complete. Winner <@${res.winner}>` : 'Unable to conclude.' }));
+      if (res.success) {
+        const winners = res.winners?.length ? res.winners.map((id) => `<@${id}>`).join(', ') : 'No clear winner';
+        scheduleDecay(m.reply({ content: `Match ${parts[2]} complete. Winner(s): ${winners}` }));
+      } else {
+        scheduleDecay(m.reply({ content: 'Unable to conclude.' }));
+      }
       return;
     }
   }

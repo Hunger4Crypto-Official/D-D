@@ -347,6 +347,7 @@ export function handleAction(
 
   worldEventManager.recordActionImpact(worldContexts, {
     serverId: run.guild_id,
+    userId: user_id,
     userId,
     tags,
     rollKind: roll.kind,
