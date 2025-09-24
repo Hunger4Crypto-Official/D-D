@@ -1,0 +1,21 @@
+{
+  "roles": {
+    "dev": {
+      "id": "dev",
+      "name": "Dev Wizard",
+      "description": "See the code beneath reality. Master of logic and systems.",
+      "emoji": "🧙‍♂️",
+      "banter_key": "dev",
+      "startingStats": {
+        "hp": 18,
+        "focus": 12,
+        "coins": 500
+      },
+      "passiveEffects": [
+        { "type": "buff", "id": "debug_vision", "value": 1 }
+      ],
+      "advantageTags": ["logic", "puzzle", "insight"],
+      "unlockRequirements": null
+    }
+  }
+}

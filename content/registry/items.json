@@ -1,0 +1,20 @@
+{
+  "items": {
+    "wp_liquidity_spear": {
+      "id": "wp_liquidity_spear",
+      "name": "Liquidity Spear",
+      "type": "weapon",
+      "slot": "weapon",
+      "rarity": "epic",
+      "emoji": "⚔️",
+      "description": "A spear that flows through gaps in consensus.",
+      "bonuses": {
+        "dcOffset": -1,
+        "advantageTags": ["rush", "momentum", "gremlin"],
+        "sleightBonus": 1
+      },
+      "setKey": "liquidity",
+      "durability": 100
+    }
+  }
+}

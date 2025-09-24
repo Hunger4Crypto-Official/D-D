@@ -112,6 +112,15 @@ CREATE TABLE IF NOT EXISTS pvp_matches (
   result_json TEXT
 );
 
+CREATE TABLE IF NOT EXISTS pvp_records (
+  user_id TEXT PRIMARY KEY,
+  wins INTEGER DEFAULT 0,
+  losses INTEGER DEFAULT 0,
+  draws INTEGER DEFAULT 0,
+  rating INTEGER DEFAULT 1200,
+  updated_at INTEGER
+);
+
 CREATE TABLE IF NOT EXISTS difficulty_snapshots (
   run_id TEXT,
   scene_id TEXT,
@@ -138,6 +147,16 @@ CREATE TABLE IF NOT EXISTS events (
   type TEXT,
   payload_json TEXT,
   ts INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS world_events_active (
+  event_id TEXT,
+  server_id TEXT,
+  start_time INTEGER,
+  end_time INTEGER,
+  community_progress_json TEXT,
+  participants_json TEXT,
+  PRIMARY KEY(event_id, server_id)
 );
 
 CREATE TABLE IF NOT EXISTS pity (
@@ -286,6 +305,31 @@ CREATE TABLE IF NOT EXISTS nft_ownership (
   FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS wallet_verifications (
+  user_id TEXT,
+  wallet_address TEXT,
+  chain TEXT,
+  challenge TEXT,
+  created_at INTEGER,
+  status TEXT,
+  verified_at INTEGER,
+  PRIMARY KEY(user_id, chain),
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS nft_rewards (
+  id TEXT PRIMARY KEY,
+  user_id TEXT,
+  wallet_address TEXT,
+  chain TEXT,
+  asset_id TEXT,
+  reward_type TEXT,
+  metadata_json TEXT,
+  minted_at INTEGER,
+  tx_hash TEXT,
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS card_collection (
   user_id TEXT,
   card_id TEXT,
@@ -294,4 +338,97 @@ CREATE TABLE IF NOT EXISTS card_collection (
   source TEXT,
   PRIMARY KEY(user_id, card_id),
   FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS vault_rooms (
+  room_id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  room_type TEXT NOT NULL,
+  level INTEGER DEFAULT 1,
+  capacity INTEGER DEFAULT 5,
+  decorations_json TEXT DEFAULT '[]',
+  effects_json TEXT DEFAULT '[]',
+  visitors_json TEXT DEFAULT '[]',
+  active INTEGER DEFAULT 1,
+  created_at INTEGER,
+  last_updated INTEGER,
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS vault_visits (
+  visitor_id TEXT,
+  host_id TEXT,
+  visited_at INTEGER,
+  rewards_json TEXT,
+  PRIMARY KEY(visitor_id, host_id, visited_at)
+);
+
+CREATE TABLE IF NOT EXISTS user_achievements (
+  user_id TEXT,
+  achievement_id TEXT,
+  earned_at INTEGER,
+  PRIMARY KEY(user_id, achievement_id)
+);
+
+CREATE TABLE IF NOT EXISTS tournaments (
+  tournament_id TEXT PRIMARY KEY,
+  name TEXT,
+  format TEXT,
+  status TEXT,
+  max_participants INTEGER,
+  current_round INTEGER,
+  total_rounds INTEGER,
+  start_time INTEGER,
+  end_time INTEGER,
+  entry_fee_json TEXT,
+  prizes_json TEXT,
+  rules_json TEXT,
+  metadata_json TEXT,
+  created_at INTEGER,
+  updated_at INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS tournament_registrations (
+  tournament_id TEXT,
+  user_id TEXT,
+  registered_at INTEGER,
+  seed REAL,
+  PRIMARY KEY(tournament_id, user_id),
+  FOREIGN KEY (tournament_id) REFERENCES tournaments(tournament_id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS tournament_brackets (
+  tournament_id TEXT,
+  round INTEGER,
+  match_id TEXT PRIMARY KEY,
+  player1_id TEXT,
+  player2_id TEXT,
+  winner_id TEXT,
+  loser_id TEXT,
+  scores_json TEXT,
+  status TEXT,
+  scheduled_time INTEGER,
+  created_at INTEGER,
+  completed_at INTEGER,
+  FOREIGN KEY (tournament_id) REFERENCES tournaments(tournament_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS tournament_prizes (
+  tournament_id TEXT,
+  user_id TEXT,
+  placement TEXT,
+  prizes_json TEXT,
+  awarded_at INTEGER,
+  PRIMARY KEY(tournament_id, user_id),
+  FOREIGN KEY (tournament_id) REFERENCES tournaments(tournament_id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS tournament_bans (
+  user_id TEXT,
+  reason TEXT,
+  issued_at INTEGER,
+  expires_at INTEGER,
+  PRIMARY KEY(user_id)
 );

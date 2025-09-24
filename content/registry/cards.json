@@ -1,0 +1,20 @@
+{
+  "cards": {
+    "dev_recursion": {
+      "id": "dev_recursion",
+      "name": "Infinite Recursion",
+      "rarity": "epic",
+      "type": "instant",
+      "cost": { "focus": 3 },
+      "effects": [
+        { "type": "buff", "id": "reroll_next", "value": 1 },
+        { "type": "flag", "id": "recursion_active", "value": true }
+      ],
+      "tags": ["dev", "logic", "instant"],
+      "description": "Reroll your next failed action. If successful, draw another card.",
+      "flavorText": "Stack overflow is just another kind of infinity.",
+      "set": "genesis",
+      "requiresClass": ["dev"]
+    }
+  }
+}

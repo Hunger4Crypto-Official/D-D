@@ -7,6 +7,7 @@ import {
 } from 'discord.js';
 import db from '../persistence/db.js';
 import { startRun } from '../engine/orchestrator.js';
+import { contentRegistry, RoleDefinition } from '../content/contentRegistry.js';
 
 interface Role {
   id: string;
@@ -16,7 +17,7 @@ interface Role {
   banter_key: string;
 }
 
-export const AVAILABLE_ROLES: Role[] = [
+const FALLBACK_ROLES: Role[] = [
   {
     id: 'dev',
     name: 'Dev Wizard',
@@ -75,9 +76,46 @@ export const AVAILABLE_ROLES: Role[] = [
   },
 ];
 
+function roleFromDefinition(def: RoleDefinition): Role | null {
+  if (!def.id || !def.name || !def.description || !def.emoji || !def.banter_key) {
+    return null;
+  }
+  return {
+    id: def.id,
+    name: def.name,
+    description: def.description,
+    emoji: def.emoji,
+    banter_key: def.banter_key,
+  };
+}
+
+function resolveRoles(): Role[] {
+  const merged = new Map<string, Role>();
+  for (const role of FALLBACK_ROLES) {
+    merged.set(role.id, role);
+  }
+  for (const roleDef of contentRegistry.getAllRoles()) {
+    const mapped = roleFromDefinition(roleDef);
+    if (mapped) {
+      merged.set(mapped.id, mapped);
+    }
+  }
+  return Array.from(merged.values());
+}
+
+let cachedRoles = resolveRoles();
+contentRegistry.onReload(() => {
+  cachedRoles = resolveRoles();
+});
+
+function getAvailableRoles(): Role[] {
+  return cachedRoles;
+}
+
 export async function showRoleSelection(user_id: string, for_tutorial = false) {
   const userRuns = getUserActiveRuns(user_id);
   const currentRole = getCurrentRole(user_id);
+  const roles = getAvailableRoles();
 
   let description = for_tutorial
     ? '🎭 **Choose Your Role for Tutorial**\nEach role experiences the story differently with unique dialogue and options.\n\n'
@@ -106,7 +144,7 @@ export async function showRoleSelection(user_id: string, for_tutorial = false) {
     .setDescription(description)
     .setColor(0x5b8cff);
 
-  AVAILABLE_ROLES.forEach((role) => {
+  roles.forEach((role) => {
     embed.addFields({
       name: `${role.emoji} ${role.name}`,
       value: role.description,
@@ -118,7 +156,7 @@ export async function showRoleSelection(user_id: string, for_tutorial = false) {
     .setCustomId(for_tutorial ? 'role:select:tutorial' : 'role:select:main')
     .setPlaceholder('Choose your role...')
     .addOptions(
-      AVAILABLE_ROLES.map((role) => ({
+      roles.map((role) => ({
         label: role.name,
         description: role.description.slice(0, 100),
         value: role.id,
@@ -260,7 +298,7 @@ export function getCurrentRole(user_id: string) {
 }
 
 export function getRoleById(role_id: string): Role | undefined {
-  return AVAILABLE_ROLES.find((r) => r.id === role_id);
+  return getAvailableRoles().find((r) => r.id === role_id);
 }
 
 export function showUserGames(user_id: string): string {
