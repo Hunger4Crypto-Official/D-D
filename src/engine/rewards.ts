@@ -1,9 +1,14 @@
 import { Effect } from '../models.js';
 
-export function thresholdRewards(sleight:number, thresholds?: {sleight_gte:number; rewards: Effect[]}[]){
+export function thresholdRewards(
+  sleight: number,
+  thresholds?: { sleight_gte?: number; rewards: Effect[] }[],
+) {
   if (!thresholds) return [] as Effect[];
-  const best = thresholds.filter(t => sleight >= t.sleight_gte).sort((a,b)=>b.sleight_gte-a.sleight_gte)[0];
-  return best?.rewards || [];
+  const available = thresholds
+    .filter((t) => typeof t.sleight_gte === 'number' && sleight >= (t.sleight_gte ?? 0))
+    .sort((a, b) => (b.sleight_gte ?? 0) - (a.sleight_gte ?? 0))[0];
+  return available?.rewards || [];
 }
 
 export function groupBonusAllSurvive(): Effect[] {

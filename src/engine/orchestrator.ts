@@ -5,7 +5,7 @@ import { phiD20, pickOutcome, applyEffects } from './rules.js';
 import { thresholdRewards, groupBonusAllSurvive, loneSurvivor } from './rewards.js';
 import { computeHiddenTier, flavorForTier } from './difficulty.js';
 import { calculatePartyDifficultyInputs } from './partyStrength.js';
-import { SceneDef } from '../models.js';
+import { Effect, SceneDef } from '../models.js';
 import { worldEventManager } from '../events/worldEvents.js';
 import {
   equipmentAdvantageState,
@@ -191,13 +191,59 @@ function advanceTurn(run: any, { skipActiveCheck = false } = {}) {
 }
 
 function applyThresholdRewards(run: any, user_id: string, scene: SceneDef, state: CommitState) {
-  const rewards = thresholdRewards(run.sleight_score, scene.threshold_rewards);
-  if (rewards?.length) {
-    applyEffects(rewards, state as any, user_id);
+  const thresholds = scene.threshold_rewards ?? [];
+  const baseFlags = JSON.parse(run.flags_json || '{}');
+  let mergedFlags = { ...baseFlags } as Record<string, any>;
+  let flagsChanged = false;
+
+  const actorThresholds = thresholds.filter((t) => typeof t.sleight_gte === 'number');
+  const actorRewards = actorThresholds.length ? thresholdRewards(run.sleight_score, actorThresholds) : [];
+  if (actorRewards?.length) {
+    applyEffects(actorRewards, state as any, user_id);
+    if (state.flags && Object.keys(state.flags).length) {
+      mergedFlags = { ...mergedFlags, ...state.flags };
+      flagsChanged = true;
+    }
     commitState(user_id, state);
   }
 
   const party = (run.party_id as string)?.split(',').filter(Boolean) ?? [];
+  const applyToMember = (effects: Effect[], member: string) => {
+    const blank: CommitState = {
+      hp: {},
+      focus: {},
+      flags: {},
+      _coins: {},
+      _xp: {},
+      _fragments: {},
+      _items: {},
+      _buffs: {},
+      _debuffs: {},
+      _gems: {},
+    };
+    applyEffects(effects, blank as any, member);
+    if (blank.flags && Object.keys(blank.flags).length) {
+      mergedFlags = { ...mergedFlags, ...blank.flags };
+      flagsChanged = true;
+    }
+    commitState(member, blank);
+  };
+
+  if (party.length) {
+    for (const entry of thresholds) {
+      if (!entry.flags_all?.length) continue;
+      const satisfied = entry.flags_all.every((flag) => mergedFlags[flag]);
+      if (!satisfied) continue;
+      for (const member of party) {
+        applyToMember(entry.rewards || [], member);
+      }
+    }
+  }
+
+  if (flagsChanged) {
+    run.flags_json = JSON.stringify(mergedFlags);
+  }
+
   if (!party.length) return;
   const downed = party.filter((p) => {
     const prof = db.prepare('SELECT downed_at FROM profiles WHERE user_id=?').get(p) as { downed_at?: number } | undefined;
@@ -205,14 +251,16 @@ function applyThresholdRewards(run: any, user_id: string, scene: SceneDef, state
   });
   if (downed.length === 0) {
     const bonus = groupBonusAllSurvive();
-    applyEffects(bonus, state as any, user_id);
-    commitState(user_id, state);
+    if (bonus.length) {
+      applyToMember(bonus, user_id);
+    }
   } else if (downed.length === party.length - 1) {
     const survivor = party.find((p) => !downed.includes(p));
     if (survivor) {
       const bonus = loneSurvivor();
-      applyEffects(bonus, state as any, survivor);
-      commitState(survivor, state);
+      if (bonus.length) {
+        applyToMember(bonus, survivor);
+      }
     }
   }
 }
