@@ -1,0 +1,1277 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "5.3",
+    "title": "The Wake Apex — Binding Every Ending",
+    "narration": "You crest the Wake Spire and step into the Wake Apex, a suspended platform carved from refracted aurora. Four",
+    " gates ring the platform — the Mourning Tower, the Hidden Vault, the Survivor Field, and the Victory Gate — while a sealed f",
+    "ifth aperture waits in the center, blank as unwritten dawn. Gremlins string consoles along the railings, traders float ledger",
+    " globes between the lanes, whales slow the gravity to a heartbeat, hackers sketch counter-hexes in light, validators polish t",
+    "he verdict bells, miners tap hidden batteries, and the meme division paints banners shouting \"LOSE WITH HONOR, HIDE WITH STYL",
+    "E, LIVE WITH FIRE, WIN WITH EVERYONE\" across the air. AFK safeties twist like comet tails above every squad, ready to yank an",
+    " ally back from the brink.\n\nSeven sequences keep the Apex from splintering. The first restabilizes the platform and maps every",
+    " live variable. The second braids four fate threads into actionable conduits. The third seeds caches and cloaks. The fourth as",
+    "signs teams and links their comms. The fifth stress tests the synthesis plan until every lane can swap roles without warning. ",
+    "The sixth convenes the Apex Verdict. The seventh opens the blank aperture toward the Crucible. Hold steady — this is the last",
+    " rehearsal before endings ignite.",
+    "rounds": [
+        {
+            "round_id": "5.3-R1",
+            "description": "Apex Landing — stabilize the platform and log the volatile variables.",
+            "actions": [
+                {
+                    "id": "wakeapex_field_stabilize",
+                    "label": "Stabilize the Apex Field",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "systems",
+                            "discipline",
+                            "defense"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_field_stable",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You reroute the grav-anchors and the Apex locks in place like a held breath."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_field_stable",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The platform steadies beneath your boots."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A plate wobbles and you hire gremlin riggers to bolt it down."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Gravity whips sideways, slamming you into the rail before the mesh hauls you back."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Stability patch deployed.",
+                        "trader": "Insurance rates drop instantly.",
+                        "whale": "Tide braces the deck.",
+                        "hacker": "Grav daemons sandboxed.",
+                        "shiller": "Floor so steady it passes vibe check.",
+                        "validator": "Anchor lock notarized.",
+                        "miner": "We fused the bolts with comet fire.",
+                        "meme": "APEX FLOOR: NOW 70% LESS YEET."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_field_stabilize"
+                    ]
+                },
+                {
+                    "id": "wakeapex_vector_map",
+                    "label": "Map the Fate Vectors",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "strategy",
+                            "perception"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_vectors_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You pin every surge, lull, and trap in the four lanes until the Wake itself nods approv",
+                            "al."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_vectors_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Telemetry pours into your slate in crisp lines of possibility."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "Glare off the Victory Gate forces you to rent anti-flare visors."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You stare too hard into the Wake and stagger back dizzy with futures."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vector map uploaded to every HUD.",
+                        "trader": "Odds recalibrated live.",
+                        "whale": "Currents echo the plotlines.",
+                        "hacker": "Telemetry scrubbed for leaks.",
+                        "shiller": "Forecast thread trending.",
+                        "validator": "Survey notarized.",
+                        "miner": "Looks like veins of molten ore.",
+                        "meme": "Weather report: 100% chance of climax."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_vector_map"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.3-R2",
+            "description": "Fate Loom — braid the four lanes and load their first-wave caches.",
+            "actions": [
+                {
+                    "id": "wakeapex_quartet_braid",
+                    "label": "Braid the Quartet",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_field_stable",
+                            "wakeapex_vectors_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "teamwork",
+                            "strategy"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_quartet_braided",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Loss, concealment, survival, and triumph plait into a radiant rope that refuses to tear."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_quartet_braided",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The four threads lock together and hum in harmony."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A knot slips. Traders hand you extra cord when you pay for the upgrade."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "The rope snaps across your palms. You keep weaving through the sting."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Quartet handshake logged.",
+                        "trader": "Diversified fate portfolio aligned.",
+                        "whale": "Currents twine with the braid.",
+                        "hacker": "Thread encrypted at the fiber.",
+                        "shiller": "Friendship bracelet but for apocalypse.",
+                        "validator": "Braid notarized.",
+                        "miner": "We dusted it with ore spark.",
+                        "meme": "Power friendship levels: endgame."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_quartet_braid"
+                    ]
+                },
+                {
+                    "id": "wakeapex_quartet_stock",
+                    "label": "Stock the Quartet Caches",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_quartet_braided"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "teamwork",
+                            "empathy"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_caches_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Reliquaries, veils, rations, and laurels slot into position beside each lane, ready fo",
+                            "r whoever needs them first."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_caches_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Inventory lists light up green across the Apex."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "A crate bursts into celebratory glitter. Worth it, but messy."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You wrench your shoulder hefting a battery into place."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Cache manifests synced.",
+                        "trader": "Supply chains insured.",
+                        "whale": "Currents deliver pallets.",
+                        "hacker": "Locks tuned to ally bios.",
+                        "shiller": "Loot drop of feelings and fireworks.",
+                        "validator": "Inventory notarized.",
+                        "miner": "Ore batteries humming.",
+                        "meme": "Care packages for every plot twist."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_quartet_stock"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.3-R3",
+            "description": "Hidden Infrastructure — sanctify memorial bells and concealment grids while the hearths warm up.",
+            "actions": [
+                {
+                    "id": "wakeapex_memorial_consecrate",
+                    "label": "Consecrate the Memorial Bells",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_caches_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "empathy",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_memorials_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Each bell learns a name and a promise. Loss will never be anonymous here."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_memorials_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The bells settle into a steady cadence of courage."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "One bell cracks. You commission a replacement on the spot."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "The resonance cuts through your chest. Teammates steady you until it fades."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Memorial playlist curated.",
+                        "trader": "Offering pool oversubscribed.",
+                        "whale": "Currents cradle the names.",
+                        "hacker": "No grief-scrapers allowed.",
+                        "shiller": "Tribute stream trending.",
+                        "validator": "Blessing notarized.",
+                        "miner": "We cast the new bell from aurora ore.",
+                        "meme": "Crying but iconic."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_memorial_consecrate"
+                    ]
+                },
+                {
+                    "id": "wakeapex_cloak_grid",
+                    "label": "Prime the Cloak Grid",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_quartet_braided"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "stealth",
+                            "systems",
+                            "teamwork"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_cloak_grid_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Veils shimmer over the Hidden Vault. Anyone under your protection slips off hostile le",
+                            "dgers."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_cloak_grid_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The grid hums like a content ghost."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "A cloak flickers neon. Hackers demand hazard pay to fix it."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You vanish from your own HUD and panic before the mesh yanks you back."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Stealth grid uptime perfect.",
+                        "trader": "Hide lane premiums skyrocketing.",
+                        "whale": "Currents hush around you.",
+                        "hacker": "Camouflage keyed to friend signatures.",
+                        "shiller": "Influencers begging for cloak selfies.",
+                        "validator": "Grid notarized anonymously.",
+                        "miner": "We laced the veils with star ash.",
+                        "meme": "Stealth but make it glitter."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_cloak_grid"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.3-R4",
+            "description": "Signal Lattice — assign the four squads and lace their comms into a single heartbeat.",
+            "actions": [
+                {
+                    "id": "wakeapex_team_assign",
+                    "label": "Assign the Quartet Squads",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_caches_ready",
+                            "wakeapex_memorials_ready",
+                            "wakeapex_cloak_grid_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "strategy",
+                            "teamwork"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_squads_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Mourners, ghosts, guardians, and champions take their posts with grins sharp as comets."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_squads_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The roster locks in and squad channels explode with reaction emojis."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You double-book a captain and bribe the bench with premium snacks."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You shout over the cheers until your voice cracks; medics hand you honey tea."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Roster synced to mission planner.",
+                        "trader": "Talent swaps cleared.",
+                        "whale": "Currents drum for each squad.",
+                        "hacker": "Private channels triple sealed.",
+                        "shiller": "Announcement holo trending.",
+                        "validator": "Assignments notarized.",
+                        "miner": "We minted lane badges in the forge.",
+                        "meme": "Squad comp? Chef's kiss."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_team_assign"
+                    ]
+                },
+                {
+                    "id": "wakeapex_lattice_weave",
+                    "label": "Weave the Signal Lattice",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_squads_ready",
+                            "wakeapex_afk_mesh_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "systems",
+                            "support",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_lattice_online",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Every ping ricochets through a lattice of light. Loss can warn Win, Hide can shield Liv",
+                            "e, Live can heal Loss, Win can boost them all."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_lattice_online",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The lattice hums like a choir warming up."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "Feedback squeals across the Apex until you sponsor new filters."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A spark leaps from the lattice and singes your hair."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Signal quality at six nines.",
+                        "trader": "Latency hedged to zero.",
+                        "whale": "Currents carry every whisper.",
+                        "hacker": "Mesh within the mesh.",
+                        "shiller": "We just invented choir comms.",
+                        "validator": "Lattice notarized.",
+                        "miner": "We strung relays through ore veins.",
+                        "meme": "It's giving telecom deity."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_lattice_weave"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.3-R5",
+            "description": "Stress Test — make the squads swap roles and declare the synthesis mission.",
+            "actions": [
+                {
+                    "id": "wakeapex_swap_drill",
+                    "label": "Run the Quad Swap Drill",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_lattice_online"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "teamwork",
+                            "strategy",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_swap_mastered",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Squads trade lanes mid-maneuver without dropping a beat. Even the Wake pauses to clap."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_swap_mastered",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The drill completes with cheers and relieved laughter."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A timing slip causes a spectacular dogpile. You pay for extra padding."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "You take a friendly tackle to the ribs and laugh through the bruise."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Swap macros compiled.",
+                        "trader": "Risk redistribution flawless.",
+                        "whale": "Currents reroute like lightning.",
+                        "hacker": "Failsafes confirmed.",
+                        "shiller": "Musical chairs but mythic.",
+                        "validator": "Drill notarized mid-spin.",
+                        "miner": "We shifted scenery on the fly.",
+                        "meme": "Squads go brrrr."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_swap_drill"
+                    ]
+                },
+                {
+                    "id": "wakeapex_synthesis_proclaim",
+                    "label": "Proclaim the Synthesis",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_swap_mastered"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "inspiration",
+                            "ritual",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_synthesis_declared",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You promise to carry every ending at once. The Wake vibrates as if it just learned a ne",
+                            "w word."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_synthesis_declared",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The squads shout the vow back at you in four-part harmony."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You ramble. You make up for it with commemorative patches."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Emotion closes your throat. The crowd finishes the promise for you."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Speech archived in crystal.",
+                        "trader": "We priced the plan at priceless.",
+                        "whale": "Currents roar assent.",
+                        "hacker": "Echo recorded without leaks.",
+                        "shiller": "Motivation level: transcendence.",
+                        "validator": "Vow notarized.",
+                        "miner": "We etched it into the guard rail.",
+                        "meme": "Mission statement? More like prophecy."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_synthesis_proclaim"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.3-R6",
+            "description": "Apex Verdict — gather the council, cast the vote, and archive the plan for the next community.",
+            "actions": [
+                {
+                    "id": "wakeapex_council_convene",
+                    "label": "Convene the Apex Council",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_synthesis_declared"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "leadership",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_council_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Delegates from every lane circle the sigil. Bells hush, cloaks shimmer, hearths glow, la",
+                            "urels blaze."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_council_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Councilors lock hands and nod for the vote."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Two representatives argue about snacks; you upgrade catering to settle it."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Your voice cracks during roll call, but the room cheers you through it."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Council attendance logged.",
+                        "trader": "Governance tokens minted.",
+                        "whale": "Currents swirl into quorum.",
+                        "hacker": "Meeting warded against leaks.",
+                        "shiller": "Town hall of legends.",
+                        "validator": "Agenda notarized.",
+                        "miner": "We set the chairs in a ring of ore.",
+                        "meme": "Council? More like hype caucus."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_council_convene"
+                    ]
+                },
+                {
+                    "id": "wakeapex_vote_call",
+                    "label": "Call the Apex Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_council_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "consensus",
+                            "ritual",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                }
+                            ],
+                            "narration": "Every hand rises. The bells ring four chords and then a fifth none of you have heard bef",
+                            "ore."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakeapex_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Consensus holds. The Wake opens a seam toward possibility."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "A tie stalls the room. You sweeten the incentives and call the vote again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Voices clash. You absorb the backlash and promise a reconvene."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vote recorded on-chain and on-heart.",
+                        "trader": "Consensus premium achieved.",
+                        "whale": "Currents crash in applause.",
+                        "hacker": "No bots, all bravery.",
+                        "shiller": "Headline: 'Apex chooses everything.'",
+                        "validator": "Ballots notarized.",
+                        "miner": "We rang the bells with ore mallets.",
+                        "meme": "Motion passes. Motion dances."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_vote_call"
+                    ]
+                },
+                {
+                    "id": "wakeapex_archive",
+                    "label": "Archive the Apex Playbook",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "deck",
+                                    "id": "deck_wakeapex_quartet"
+                                }
+                            ],
+                            "narration": "You compress the rehearsals, drills, and vows into a glowing deck for whoever faces the",
+                            " Wake after you."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Playbook mirrored across shards.",
+                        "trader": "Priceless and freely shared.",
+                        "whale": "Currents carry the archive.",
+                        "hacker": "Checksum verified.",
+                        "shiller": "Collectors already screaming.",
+                        "validator": "Archive notarized.",
+                        "miner": "We etched a backup into the Apex bedrock.",
+                        "meme": "Lore drop!"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:wakeapex_archive"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.3-R7",
+            "description": "Aperture Gate — open the blank way toward the Crucible beyond.",
+            "actions": [
+                {
+                    "id": "advance_5_4",
+                    "label": "Open the Blank Aperture",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "The sealed gate unfurls into a path of white fire. Every lane surges forward beside you.",
+                            "next_hint": "5.4"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Transition compiled.",
+                        "trader": "All positions rolling into the Crucible.",
+                        "whale": "Currents beckon you onward.",
+                        "hacker": "No turning back, only turning better.",
+                        "shiller": "Next stop: legend."
+                        ,
+                        "validator": "Gate opening notarized.",
+                        "miner": "We pry the path open with star picks.",
+                        "meme": "Time to full-send destiny."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.3",
+                        "action:advance_5_4"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 21,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 233
+                }
+            ]
+        },
+        {
+            "xp_gte": 1666,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "relic_wakeapex_azimuth"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "wakeapex_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "deck",
+                    "id": "deck_wakeapex_quartet"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "5.3A"
+        },
+        {
+            "when": "flags.wakeapex_consensus_passed",
+            "goto": "5.4"
+        },
+        {
+            "when": "else",
+            "goto": "5.3"
+        }
+    ]
+}

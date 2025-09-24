@@ -1,0 +1,1284 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "5.5",
+    "title": "The Wake Reckoning — Drawing the Lines",
+    "narration": "Beyond the shattered Crucible lies the Wake Reckoning: a colossal amphitheater of grav staircases spiral",
+    "ing around a void of mirrored water. Every reflection shows a different resolution of Act Five. Some gleam with victory parad",
+    "es, some whisper with hidden caravans, some hold cities that survived with scars, and some shimmer with memorial gardens. A ma",
+    "ssive ledger-constellation hovers overhead, ticking down the moments before the final confrontation. Gremlins wire the stairs",
+    " with phase gates, traders float credit orbs you can cash in for last-minute miracles, whales fold the void so any squad can ",
+    "surface instantly, hackers weave counter-scripts against the Reckoning intelligence, validators align oath pylons around the",
+    " rim, miners anchor resonance pylons, and the meme division throws up sigils reading \"WE GO ALL-IN, WE GO ALL-TOGETHER\" in an",
+    "y language you ever loved.\n\nSeven beats prepare the Reckoning. The first anchors the amphitheater and decodes the adversary",
+    " clock. The second phases your quartet plan across reflected timelines. The third consecrates memory vaults and cloak flux cha",
+    "nnels. The fourth assigns phalanx, shadow, lifeline, and herald crews to the staircases. The fifth rehearses simultaneous tria",
+    "ls and resolves. The sixth convenes the Reckoning Verdict. The seventh opens the mirrored descent toward Act Five’s deciding mo",
+    "ment.",
+    "rounds": [
+        {
+            "round_id": "5.5-R1",
+            "description": "Reckoning Anchor — steady the amphitheater and decipher the enemy countdown.",
+            "actions": [
+                {
+                    "id": "wakereckoning_stage_anchor",
+                    "label": "Anchor the Reckoning Stage",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "systems",
+                            "discipline",
+                            "defense"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_stage_stable",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You lock the grav staircases in synchronized orbit. The void settles like a waiting dr",
+                            "um."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_stage_stable",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The amphitheater steadies and the reflections align."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A staircase wobbles. You fund whale-guided braces to lock it down."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You tumble three tiers before the AFK mesh yanks you upright."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Stage anchor patch applied.",
+                        "trader": "Volatility curve calms.",
+                        "whale": "Currents hold the stairs firm.",
+                        "hacker": "Gravity gremlins declawed.",
+                        "shiller": "Arena locked, hype unlocked.",
+                        "validator": "Anchor notarized.",
+                        "miner": "We bolted every tread with star rivets.",
+                        "meme": "Zero wobble, all drama."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_stage_anchor"
+                    ]
+                },
+                {
+                    "id": "wakereckoning_enemy_decode",
+                    "label": "Decode the Reckoning Clock",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "strategy",
+                            "perception"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_clock_decoded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You read the ledger-constellation like sheet music. You now know exactly when the reck",
+                            "oning intelligence plans to strike."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_clock_decoded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The countdown resolves into a clear rhythm on your HUD."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "Glare off the mirrored void throws your readings; you buy polarized visors."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A counter-pulse spikes your vision. Teammates steady you while the clock snaps into foc",
+                            "us."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Countdown feed mirrored to everyone.",
+                        "trader": "Risk horizon plotted.",
+                        "whale": "Currents echo the tempo.",
+                        "hacker": "Clock firmware exploited.",
+                        "shiller": "Time to destiny: trending.",
+                        "validator": "Decode notarized.",
+                        "miner": "We carved the timing into the steps.",
+                        "meme": "Final boss schedule obtained."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_enemy_decode"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.5-R2",
+            "description": "Phase Weave — align the quartet plan across mirrored timelines and reinforce supply wards.",
+            "actions": [
+                {
+                    "id": "wakereckoning_lane_phase",
+                    "label": "Phase the Quartet Across Mirrors",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_stage_stable",
+                            "wakereckoning_clock_decoded"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "teamwork",
+                            "strategy"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_phase_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Loss, hide, live, and win shimmer through every reflection. The Reckoning recognizes y",
+                            "ou in all futures at once."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_phase_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The mirrored lanes echo your plan with crisp precision."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "One reflection desyncs; you bribe the Reckoning with a vow and resync it."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The mirrors shatter and reassemble around you. You keep weaving through the vertigo."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Phase handshake verified.",
+                        "trader": "Timeline arbitrage locked.",
+                        "whale": "Currents ripple in quadruple.",
+                        "hacker": "Reflections patched against spoofs.",
+                        "shiller": "We are everywhere at once, babe.",
+                        "validator": "Phase notarized.",
+                        "miner": "We studded the mirrors with ore anchors.",
+                        "meme": "Multiverse? More like multivictory."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_lane_phase"
+                    ]
+                },
+                {
+                    "id": "wakereckoning_ward_reserves",
+                    "label": "Ward the Supply Rings",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_phase_aligned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "support",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_reserves_warded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You ring the amphitheater with shielded caches. Whoever falls back will find reliquarie",
+                            "s, cloaks, rations, and banners waiting."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_reserves_warded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Status icons flash green around the arena."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "A cache falls into the void; traders bill you for retrieval."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A ward detonates in your hands. You shake off the sparks and rebuild it."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Supply wards monitored.",
+                        "trader": "Backup budgets balanced.",
+                        "whale": "Currents guard every stash.",
+                        "hacker": "Locks biometric and vibe-metric.",
+                        "shiller": "Snack rings plus banner vaults? Luxury.",
+                        "validator": "Wards notarized.",
+                        "miner": "We riveted each cache into bedrock.",
+                        "meme": "Ring of power, but it's snacks and hope."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_ward_reserves"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.5-R3",
+            "description": "Memory Flux — bless the vaults and tune cloak pathways across the void.",
+            "actions": [
+                {
+                    "id": "wakereckoning_memory_vault",
+                    "label": "Sanctify the Memory Vault",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_reserves_warded"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "empathy",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_memory_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You seal vows, names, and unfinished toasts into the vault. The Reckoning promises none",
+                            " of them will be erased."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_memory_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The vault doors glow with every story you honor."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A ledger squeals. You buy a new stylus and keep writing."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "Memories flood you until you sob; friends steady you and add their own stories."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vault UI now tear-proof.",
+                        "trader": "Sentiment index off the charts.",
+                        "whale": "Currents hum remembrance hymns.",
+                        "hacker": "No edits without consent.",
+                        "shiller": "Tribute wall trending.",
+                        "validator": "Blessing notarized.",
+                        "miner": "We lined the vault with luminous ore.",
+                        "meme": "Cry harder, fight harder."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_memory_vault"
+                    ]
+                },
+                {
+                    "id": "wakereckoning_cloak_flux",
+                    "label": "Stabilize the Cloak Flux",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_phase_aligned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "stealth",
+                            "systems",
+                            "teamwork"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_cloak_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Veil currents flow across the void like aurora. Anyone under your guard can vanish betw",
+                            "een reflections at will."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_cloak_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The cloak pathways glow faint and obedient."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "A veil flickers. You pay hackers to retune the flux channels."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You vanish mid-sentence and reappear upside down. The squad applauds your acrobatics."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Flux map stable.",
+                        "trader": "Shadow liquidity abundant.",
+                        "whale": "Currents obey your whispers.",
+                        "hacker": "No leak leaves these veils.",
+                        "shiller": "Stealth, but glitter core.",
+                        "validator": "Flux notarized.",
+                        "miner": "We threaded the flux through crystal veins.",
+                        "meme": "Teleport but make it dramatic."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_cloak_flux"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.5-R4",
+            "description": "Phalanx Designation — assign crews to stairwells and link them with mirrored comm bridges.",
+            "actions": [
+                {
+                    "id": "wakereckoning_phalanx_assign",
+                    "label": "Assign the Reckoning Crews",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_memory_ready",
+                            "wakereckoning_cloak_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "strategy",
+                            "teamwork"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_crews_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Phalanx, shadowline, lifeline, and herald squads claim stairwells with chants that shak",
+                            "e the amphitheater."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_crews_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Assignments lock; mirrored insignias bloom over every squad."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Two crews fight over theme music. You sponsor a mashup remix to settle it."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You get hoisted in celebration and accidentally dropped into a fountain."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Rosters synced to mirrored HUDs.",
+                        "trader": "Stairwell equities balanced.",
+                        "whale": "Currents applaud the lineup.",
+                        "hacker": "Private comms sealed.",
+                        "shiller": "Squad reveal trending.",
+                        "validator": "Assignments notarized.",
+                        "miner": "We carved insignias into the steps.",
+                        "meme": "Roll call? More like rock concert."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_phalanx_assign"
+                    ]
+                },
+                {
+                    "id": "wakereckoning_signal_bridge",
+                    "label": "Bridge the Mirror Comms",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_crews_ready",
+                            "wakereckoning_phase_aligned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "systems",
+                            "support",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_bridge_online",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your comm grid folds through every reflection, letting squads call across realities with",
+                            "out delay."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_bridge_online",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Mirrored signals lock into crisp harmony."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "Echoes screech; you underwrite extra dampeners."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "The bridge zaps you through twelve reflections before it stabilizes."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Signal bridge latency zero.",
+                        "trader": "Communication futures bullish.",
+                        "whale": "Currents carry whispers perfectly.",
+                        "hacker": "Crossworld handshake locked.",
+                        "shiller": "We built a hotline to every possible us.",
+                        "validator": "Bridge notarized.",
+                        "miner": "We strung the relays through mirrored ore.",
+                        "meme": "Group chat includes alternate timelines now."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_signal_bridge"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.5-R5",
+            "description": "Trial Rehearsal — simulate multi-ending clashes and prime the resolve chant.",
+            "actions": [
+                {
+                    "id": "wakereckoning_trial_sim",
+                    "label": "Simulate the Reckoning Trial",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_bridge_online"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "strategy",
+                            "teamwork",
+                            "offense"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_trial_mastered",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You stage simultaneous duels, rescues, stealth strikes, and celebrations until every sq",
+                            "uad moves like a choir."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_trial_mastered",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The simulations run hot and end with applause."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A mis-timed swap collapses half the staging. You rebuild with upgraded props."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The simulation hits you with a surprise sacrifice scenario. You stagger but stay standi",
+                            "ng."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Trial sim flagged as heroic canon.",
+                        "trader": "Outcome spreads trending in your favor.",
+                        "whale": "Currents clap along.",
+                        "hacker": "Recording sealed for posterity.",
+                        "shiller": "Behind-the-scenes doc incoming.",
+                        "validator": "Trial notarized.",
+                        "miner": "We reset sets between runs.",
+                        "meme": "Dress rehearsal? Stress rehearsal."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_trial_sim"
+                    ]
+                },
+                {
+                    "id": "wakereckoning_resolve_chant",
+                    "label": "Prime the Resolve Chant",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_trial_mastered"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "inspiration",
+                            "ritual",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_resolve_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your chant threads through every mirrored future. Even timelines you never visited ans",
+                            "wer with echoes."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_resolve_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The amphitheater vibrates with collective resolve."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Your voice cracks; you hand out throat lozenges and start over."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Emotion floors you mid-verse. The crowd finishes it with tears and laughter."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Chant audio normalized.",
+                        "trader": "Sentiment graph ascends.",
+                        "whale": "Currents hum the melody.",
+                        "hacker": "No spoiler leaks.",
+                        "shiller": "National anthem of Act Five.",
+                        "validator": "Chant notarized.",
+                        "miner": "We carved lyrics into the rail.",
+                        "meme": "Earworm of destiny."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_resolve_chant"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.5-R6",
+            "description": "Reckoning Verdict — call the council, commit the plan, and archive the chant for posterity.",
+            "actions": [
+                {
+                    "id": "wakereckoning_council_convene",
+                    "label": "Convene the Reckoning Council",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_resolve_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "leadership",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_council_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Delegates from every mirror stand on the central dais. The void mirrors them into infin",
+                            "ity."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_council_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The council assembles, voices steady."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Logistics hiccup. You underwrite extra teleport gates to bring everyone in."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Your heart stutters from adrenaline; medics steady you while the council waits."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Council quorum logged across mirrors.",
+                        "trader": "Governance spread tight.",
+                        "whale": "Currents circle the dais.",
+                        "hacker": "Minutes encrypted.",
+                        "shiller": "Town hall of every world.",
+                        "validator": "Agenda notarized.",
+                        "miner": "We carved seats from mirrored stone.",
+                        "meme": "Council? More like multiversal hype squad."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_council_convene"
+                    ]
+                },
+                {
+                    "id": "wakereckoning_vote_call",
+                    "label": "Call the Reckoning Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_council_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "consensus",
+                            "ritual",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                }
+                            ],
+                            "narration": "Hands rise across the amphitheater and within every reflection. The Reckoning accepts yo",
+                            "ur plan."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakereckoning_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Consensus ripples through the void in concentric light."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "A stalemate forms. You bribe destiny with another round of miracle credits."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Debate spikes; you take the backlash and promise a calmer re-call."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vote recorded in mirrored ink.",
+                        "trader": "Consensus premium secured.",
+                        "whale": "Currents thunder their approval.",
+                        "hacker": "No tampering, just heart.",
+                        "shiller": "Headline: 'Reckoning chooses everyone.'",
+                        "validator": "Ballots notarized.",
+                        "miner": "We rang the stair bells in chorus.",
+                        "meme": "Motion passes across realities."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_vote_call"
+                    ]
+                },
+                {
+                    "id": "wakereckoning_archive",
+                    "label": "Archive the Resolve Hymnal",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "deck",
+                                    "id": "deck_wakereckoning_resolve"
+                                }
+                            ],
+                            "narration": "You bind the chant, drills, and promises into a mirrored hymnal that future crews can u",
+                            "nfurl."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Hymnal archived across reflections.",
+                        "trader": "Priced at infinite goodwill.",
+                        "whale": "Currents carry the melody onward.",
+                        "hacker": "Checksum locked.",
+                        "shiller": "Collector's edition includes glow scripts.",
+                        "validator": "Archive notarized.",
+                        "miner": "We etched staves into mirrored stone.",
+                        "meme": "Drop the mixtape already!"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:wakereckoning_archive"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.5-R7",
+            "description": "Mirrored Descent — open the way toward Act Five’s decisive confrontation.",
+            "actions": [
+                {
+                    "id": "advance_5_6",
+                    "label": "Descend into the Wake Reckoning",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "Mirrors fold into a single stair of light. Every squad marches beside its reflection to",
+                            "ward whatever waits.",
+                            "next_hint": "5.6"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Final descent compiled.",
+                        "trader": "All stakes consolidated.",
+                        "whale": "Currents usher you downward.",
+                        "hacker": "No exit but triumph.",
+                        "shiller": "Act Five endgame unlocked.",
+                        "validator": "Descent notarized.",
+                        "miner": "We polished the stair with comet dust.",
+                        "meme": "Time to meet destiny face to face."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.5",
+                        "action:advance_5_6"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 23,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 288
+                }
+            ]
+        },
+        {
+            "xp_gte": 1888,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "relic_wakereckoning_lens"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "wakereckoning_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "deck",
+                    "id": "deck_wakereckoning_resolve"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "5.5A"
+        },
+        {
+            "when": "flags.wakereckoning_consensus_passed",
+            "goto": "5.6"
+        },
+        {
+            "when": "else",
+            "goto": "5.5"
+        }
+    ]
+}
