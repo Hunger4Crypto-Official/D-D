@@ -62,7 +62,13 @@ export interface SceneDef {
   title: string;
   narration: string;
   rounds: RoundDef[];
-  threshold_rewards?: { sleight_gte:number; rewards: Effect[] }[];
+  threshold_rewards?: {
+    sleight_gte?: number;
+    focus_gte?: number;
+    xp_gte?: number;
+    flags_all?: string[];
+    rewards: Effect[];
+  }[];
   arrivals?: { when: string; goto: string }[];
 }
 

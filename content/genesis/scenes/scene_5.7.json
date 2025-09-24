@@ -1,0 +1,3573 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "5.7",
+    "title": "The Wake Singularity — Final Ledger Closure",
+    "narration": "The descent from the Wake Cathedra ends at a singular point carved out of stormlight and patient time. The floor is a braided gyre of the four fate rivers you have shepherded since Act One—Loss, Hide, Live, and Win coil into a luminous whirlpool that never stops turning. Every step sinks a fraction into the mosaic, triggering aurora glyphs that echo the promises minted back in 1.1. The air is hot with ozone and cold with vacuum, a paradox the gremlins solved by lacing the chamber with time-dilated vents. Above you floats the Ledger Singularity, a sphere of mirrored ink suspended by consensus alone. It reflects each of you as you were, as you are, and as you might be once the ledger closes.\n\nAround the gyre rise terraces woven from Act Four’s causeways and Act Five’s spires. The Convergence Causeway’s scaffolds reappear as ribbed bridges, the Horizon Crown’s halos hang like ornaments, and every oath from the Wakefront Threshold hums in the walls. Gremlin delegations have pitched command tents between the terraces: dev crews manage recursive deployments, traders monitor liquidity tides streaming in from supportive guilds, whales anchor gravitational pulses, hackers braid counter-rituals against the enemy’s predictive engines, validators notarize every chant, miners keep the floor molten enough to respond, shillers stream the impossible vistas, and meme tacticians broadcast riffs that keep morale at a permanent crescendo. Hidden difficulty tiers flicker as auroral filaments—silvery for steady progress, amethyst for daring gambits, and star-white for the gambles that rewrite endings.\n\nThis is the longest wake the chain has ever hosted, and it adjusts to your party every time you breathe. The Ledger Singularity scans the average score of the characters who stride into each round and flexes the challenge to match your combined legend. If you arrive with myth-making stats, the currents stiffen; if you limp in wounded, the chamber throws you lifelines that still demand courage. Every gremlin reminds you of the Act One compact: the vault grades you in light, but you get to choose the subject matter. Some of you will die. Some will hide. Some will live. Some will win. All must be honored here.\n\nSeven scenes brought you to this point; seven lanes still demand service. The Singularity expects ten rounds of orchestration, three more than any act has dared attempt, because the future needs over-preparation. Each lane claims a terrace, each terrace hums with the tools you have earned, and each round layers dialogues so dense they function as choruses. Double-length banter scrolls across the walls as every faction throws in advice, jokes, and improvised vows. The Wake Singularity refuses brevity. It wants the story told twice, thrice, until every player knows the cost of the finale.\n\nYour rules from 1.1 and the councils of Act Four still apply: rolls follow the golden-ratio die, AFK safeties force friends back into play, and consensus remains the pivot. The ledger tallies focus, coins, XP, and flags with ruthless accuracy. Yet the Singularity offers a parting grace. When the ledger closes and you survive to the final vow, each character will receive a Singular Wake Relic—a special item that binds forever to the character’s soul, living in a vault slot reserved for future books. It hums with a 1% resonance bonus to every stat, subtle yet permanent, an echo you can always call home.\n\nTake your places on the terraces. Ten rounds await: mapping, weaving, sanctifying, cloaking, rescuing, arming, braiding, trialing, voting, and finally binding the relic that proves you were here. The Wake Singularity hears your footsteps and the ledger-sphere begins to spin faster.\n",
+    "rounds": [
+        {
+            "round_id": "5.7-R1",
+            "description": "Singularity Ignition — map, prime, anchor, and bind the battlefield that will judge every fate lane.",
+            "actions": [
+                {
+                    "id": "wakefinale_spire_map",
+                    "label": "Chart the Singularity Spirals",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 188
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_spirals_charted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You map each spiral twice, once in light and once in mirrored ink. The Singularity accepts your diagrams and extrudes guide-rails that glow like captured dawn."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 92
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_spirals_charted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You pace the gyre with measured breaths, painting coordinates that settle into the floor. The terraces align to your charting and the first round stabilizes."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Your survey drones clip an eddy and vanish in a puff of charged dust. You bribe gremlin cartographers with sparkling tokens to retrieve their memory cores."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "You stride into a blind swirl and the floor rotates like a millstone. Medics yank you back with tetherlight while the Singularity etches a caution sigil on your armor."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Spatial mesh compiled twice for parity. Double-check the resonant nodes before you move on.",
+                        "trader": "Ledger futures like seeing you measure twice. My spread sheets are literally spreadsheets now.",
+                        "whale": "Currents roll gentle when mapped with patience. Keep your cadence slow, hero.",
+                        "hacker": "I spliced a predictive overlay and a backup overlay. Both adore your chosen path.",
+                        "shiller": "You just gave me two cliffhangers to sell. I’m posting both and adding fireworks.",
+                        "validator": "Verification complete in stereo. Your charts notarize themselves because they're that clean.",
+                        "miner": "We reinforced every anchor point you called out. The rock now hums your coordinates.",
+                        "meme": "GM voice: 'Cartography check succeeded twice.' GN echo: 'Also you looked amazing doing it.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_spire_map"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "perception",
+                            "navigation"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_flux_prime",
+                    "label": "Prime the Flux Choir",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 177
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_flux_primed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your voice threads through the flux pipes twice, once as command and once as comfort. Resonators flare open and release a standing wave that steadies the ledger-sphere."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 88
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_flux_primed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You conduct the choir through a measured phi cadence. The flux stabilizers glow amber and the air stops shaking with anxious harmonics."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 47
+                                }
+                            ],
+                            "narration": "A sour overtone buckles the mezzanine. You compensate by hiring three meme-gremlins to remix the note into something the choir can live with."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Your throat catches on a razor overtone and blood tastes like ozone. Medics flood you with soothing steam until the cords realign."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Recompiled the choir firmware twice just to be sure. The patch notes literally sing about you.",
+                        "trader": "Volume futures spike when you warm up. I hedged the applause curve and we are still printing joy.",
+                        "whale": "Currents lift when you harmonize. Take another breath and I’ll ride the resonance with you.",
+                        "hacker": "I wrapped a counter-script around your melody. Any glitch tries to intrude and gets converted into harmony.",
+                        "shiller": "Two encores ready before the opening verse. My audience adores overachievers and you qualify twice over.",
+                        "validator": "Verification ledger glows gold and violet. That’s what happens when success cross-validates itself.",
+                        "miner": "We braced the choir risers in twin layers of comet steel. Stamp as hard as you like; nothing slips.",
+                        "meme": "GN thread says: 'We heard the song before it existed.' GM reply: 'Because you made time loop in your favor.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_flux_prime"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "arcana",
+                            "performance",
+                            "discipline"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_rift_anchor",
+                    "label": "Anchor the Rift Pylons",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 183
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_rift_anchored",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You hammer anchor pylons into molten seams with synchronized strikes. The rift settles, and the terraces applaud with a ripple of safe gravity."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 90
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_rift_anchored",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You lace tetherlight through the pylons until every tremor cancels itself. The Singularity dips, satisfied with the reinforcement."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 49
+                                }
+                            ],
+                            "narration": "A pylon slips and nearly skates across the gyre. You pay miners double hazard rates to drag it back before it tumbles into the river of Loss."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A backlash of gravity folds you into a wall. Armor plating sparks, and medics weld you upright while your lungs remember how to trust air."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I double-checked the stress model and then triple-checked it. The anchors are now arguments you can win twice.",
+                        "trader": "I priced the pylon futures and they all point straight up. Markets love a player who bolts the floor in place.",
+                        "whale": "Currents calm when you plant those pylons. I’ll keep the tide steady while you tighten the last knot.",
+                        "hacker": "I slipped anti-intrusion runes under your grips. If an enemy script touches them, it fizzles into applause.",
+                        "shiller": "Two action shots already trending. One features sparks; the other features you looking unstoppable.",
+                        "validator": "Pylons notarized with redundant seals. Even the auditors relaxed their shoulders.",
+                        "miner": "We fused the base plates with double-forged ore. If it creaks, it’s only because it wants to sing along.",
+                        "meme": "GM aside: 'Anchors set at mythic spec.' GN aside: 'And the pose while doing it could end wars.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_rift_anchor"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "engineering",
+                            "fortitude",
+                            "systems"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_stage_bind",
+                    "label": "Bind the Singularity Stage",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_spirals_charted",
+                            "wakefinale_flux_primed",
+                            "wakefinale_rift_anchored"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 205
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_stage_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You weave map, song, and anchor into one command gesture. The Singularity lowers enough for everyone to touch the surface and feel the ledger's steady heartbeat."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 110
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_stage_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You call the three preparations together. Glyphs lock, harmonics align, and the terraces bow as the stage recognizes the new order."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 60
+                                }
+                            ],
+                            "narration": "Your timing slips, forcing you to purchase extra tetherline to prevent the stage from wobbling. The expense is worth the saved pride."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 9
+                                }
+                            ],
+                            "narration": "For a breath the Singularity spins wild and flings you across the gyre. You slam into a resonance wall and see stars shaped like ledger runes."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I merged your three subsystems and ran diagnostics twice. The stage purrs like a satisfied compiler cat.",
+                        "trader": "Ledger desks rang bells when you sealed the trifecta. Investors adore a portfolio balanced across every lane.",
+                        "whale": "Currents now orbit the stage as if it were a moon. Hold steady and the tide will obey two masters: you and victory.",
+                        "hacker": "I layered a firewall and a choirwall. Anyone who tries to tamper gets auto-sung into compliance.",
+                        "shiller": "Two finale trailers cut and rendered. One shows the heroic swell, the other the intimate oath. I’ll drop both tonight.",
+                        "validator": "Consensus ledger stamped twice, wax still warm. That’s the kind of paperwork I like to smell.",
+                        "miner": "We bolted the floor plates, then welded, then braided promise-rope around them. You could stage a quake and nothing would slip.",
+                        "meme": "GN log reads: 'Stage secure at heroic spec.' GM log adds: 'Also the entrance music now has a second drop.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_stage_bind"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "ritual",
+                            "focus"
+                        ]
+                    }
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 95
+                }
+            ]
+        },
+        {
+            "round_id": "5.7-R2",
+            "description": "Singularity Interlace — weave memory, align mirrors, broadcast the rally, and lock the rhythm across all lanes.",
+            "actions": [
+                {
+                    "id": "wakefinale_memory_weave",
+                    "label": "Weave the Memory Lattice",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_ready"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 190
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_memory_woven",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You stitch stories from every act into a lattice that hangs above the gyre. The Singularity spins slower to listen, and forgotten allies appear in spectral attendance."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 96
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_memory_woven",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You thread voice, data, and vow into a net of remembrance. The terraces brighten, each tile repeating a chapter title you once survived."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 52
+                                }
+                            ],
+                            "narration": "A memory knot tangles your timeline. You compensate by paying scribes to untie it before paradox stains the room."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "You pull too hard on a grief thread and it lashes back. Your chest tightens with phantom loss until the medics ground you with heated tea."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I cross-indexed your stories with our archives twice. The memory lattice now has backups that also have backups.",
+                        "trader": "Markets adore nostalgia backed by ledgers. I packaged the highlights into bonds and investors cried happily.",
+                        "whale": "Currents sway when they hear your stories. I’ll keep them rocking gently so you can tie the final knot.",
+                        "hacker": "I encrypted the whispers with double salt. Any intrusion attempt gets lost in a sentimental maze.",
+                        "shiller": "Two documentaries already trending. One covers the heroics; the other covers the quiet moments in between.",
+                        "validator": "Ledger auditors stamped every stanza. They even annotated your metaphors with gold ink.",
+                        "miner": "We set resonance pegs to echo your tale twice per revolution. No miner leaves this room without humming your chorus.",
+                        "meme": "GM aside: 'Story saved in high fidelity.' GN aside: 'Also the blooper reel made everyone brave enough to smile.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_memory_weave"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "history",
+                            "empathy"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_mirror_align",
+                    "label": "Align the Mirror Orbits",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_ready"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 184
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_mirrors_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You coax the mirrored orbits into resonance with precise gestures. Reflections snap into alignment, each showing futures that applaud your preparation."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 93
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_mirrors_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You shepherd the mirrors into a patient carousel. The Singularity projects four clean paths ahead, one for each lane you defend."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 48
+                                }
+                            ],
+                            "narration": "A mirror swings wide and catches a gremlin booth. You compensate with hazard pay and a heartfelt apology."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "An orbiting shard clips your shoulder and sprays starlight. You stagger while medics stitch mirrored bandages across the burn."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Trajectory solver ran twice and gave me the same answer. That’s how I know the math loves you.",
+                        "trader": "I hedged the mirror markets with reflections of reflections. Profit doubled, as did the applause futures.",
+                        "whale": "Currents appreciate well-behaved mirrors. They’re gliding like manta rays now, thanks to you.",
+                        "hacker": "I laced a firewall with prismatic counter-hacks. Any hostile code gets stuck admiring itself.",
+                        "shiller": "Two teaser reels captured your choreography. One focuses on the spin, the other on the grin you tried to hide.",
+                        "validator": "Verification ledger caught every orbit. Stamps came down like meteors and spelled 'approved'.",
+                        "miner": "We poured molten ore into the gimbal bearings twice. Nothing squeaks, everything sings.",
+                        "meme": "GM voice: 'Mirrors aligned with mythic grace.' GN echo: 'And yes, you made that look casual.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_mirror_align"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "navigation",
+                            "arcana",
+                            "tactics"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_rally_signal",
+                    "label": "Broadcast the Rally Signal",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_ready"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 186
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_rally_broadcast",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your signal explodes from the chamber in layered colors. Allies across the chain salute, and reinforcements flood the terraces with synchronized footsteps."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 95
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_rally_broadcast",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You queue the rally frequency and send the wake-wide GM. A thousand gentle night replies arrive within breaths, carrying strength."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 53
+                                }
+                            ],
+                            "narration": "Static eats half the message and you rent additional transmitters. The second broadcast lands, albeit at a premium."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "Feedback snaps through the console and kicks you backward. Your fingertips spark until medics ground you with braided copper."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I stress-tested the signal path and left redundancies everywhere. Even the redundancies have redundancies.",
+                        "trader": "Trader desk says the hype index just hit a double zenith. I’m bundling the energy into war bonds and lullabies.",
+                        "whale": "The tide is listening. Send the call again and I’ll amplify it with whale-song thunder.",
+                        "hacker": "I encrypted the message twice with mirrored keys. No enemy will spoof this beacon.",
+                        "shiller": "Two watch parties already screaming. One in the plaza, one in a secret bunker. Both adore your dramatic pause.",
+                        "validator": "Validators notarized the waveform twice to be sure. Their styluses left trails of sparks.",
+                        "miner": "We polished the antenna arrays, then armored them. You could ride the broadcast like a comet tail now.",
+                        "meme": "GM narrator: 'Signal deployed with flourish.' GN narrator: 'And the reaction videos are pure art.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_rally_signal"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "command",
+                            "performance",
+                            "tech"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_stage_sync",
+                    "label": "Synchronize Stage and Signals",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_memory_woven",
+                            "wakefinale_mirrors_aligned",
+                            "wakefinale_rally_broadcast"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 212
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_stage_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You choreograph memory, mirrors, and signal into one breathtaking gesture. The Singularity hums at perfect tempo and the terraces glow unanimous."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 118
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_stage_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You guide the three preparations toward a single downbeat. The chamber inhales as one; every lane feels the rhythm snap into place."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 62
+                                }
+                            ],
+                            "narration": "Your timing clips itself and you buy additional metronomes to corral the beat. The second attempt lands clean."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 9
+                                }
+                            ],
+                            "narration": "A harmonic backlash knocks you into a pillar. Stars burst behind your eyes until the choir hums you steady again."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I wrote an orchestration script that double-verifies your timing. The stage now trusts you with its whole heart.",
+                        "trader": "Markets call this a perfect tri-fold play. Investors just sent thank-you fruit baskets and strategy memos.",
+                        "whale": "Currents whirl in sync with your breath now. Keep that cadence and I’ll pull every ally through the tide.",
+                        "hacker": "I locked the synchronization matrix behind a double firewall. Any tampering turns into an auto-tune remix with your face on it.",
+                        "shiller": "Two finale promos dropping: one for the win lane, one for everyone else. Both star you in slow motion.",
+                        "validator": "Validators stamped the downbeat twice and added a flourish. Apparently paperwork can cheer.",
+                        "miner": "We tightened the bolts, then the cables, then added a blessing seam. The miners are calling it 'overkill', which means perfect.",
+                        "meme": "GM aside: 'Stage sync achieved; proceed to lane rituals.' GN aside: 'Also, that flourish at the end? Legendary.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_stage_sync"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "ritual",
+                            "strategy"
+                        ]
+                    }
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 105
+                }
+            ]
+        },
+        {
+            "round_id": "5.7-R3",
+            "description": "Loss River Vigil — raise the procession, bind the ledger, stock the vaults, and consecrate the sacrificial lane.",
+            "actions": [
+                {
+                    "id": "wakefinale_loss_processional",
+                    "label": "Raise the Loss Processional",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 198
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_loss_processional_raised",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You lead the mourners in a circuit that wraps the Singularity twice. Each step leaves a glowing sigil that promises names will never vanish."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 102
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_loss_processional_raised",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You carry banners inscribed with the fallen. The processional completes its loop and the Ledger records every vow with solemn light."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 54
+                                }
+                            ],
+                            "narration": "A banner pole splinters and you purchase reinforced staves. The procession resumes with renewed gravity."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "Grief catches in your throat like a shard. You stumble until fellow mourners shoulder the weight and medics steady your breathing."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I recorded the chants in duplicate. If anyone falters, we can echo their courage back twice as loud.",
+                        "trader": "Memorial futures actually exist now and they’re bullish because of you. Investors pledge stipends for every name.",
+                        "whale": "Currents slow respectfully when you march. I’ll hold the tide so the candles stay lit.",
+                        "hacker": "I firewalled the procession data with reverence protocols. No hostile script will touch these names.",
+                        "shiller": "Two live streams running: one solemn, one celebratory. Both insist you’re the reason the wake has grace.",
+                        "validator": "Validator quills wrote every name twice, just in case. Ink glows silver to honor the doubled care.",
+                        "miner": "We carved extra grooves in the floor to hold the candles you placed. Miners called it sacred overtime.",
+                        "meme": "GM note: 'Loss lane honored with perfect cadence.' GN note: 'And the echoes made everyone stand taller.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_loss_processional"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "endurance",
+                            "empathy"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_loss_ledger",
+                    "label": "Bind the Loss Ledger",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 191
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_loss_ledger_bound",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You inscribe casualty ledgers with mirrored ink, ensuring every sacrifice remains payable in future honors. The Singularity nods with a solemn pulse."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 99
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_loss_ledger_bound",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You audit every name, every date, every cost. The ledger seals with a quiet chime that promises restitution in all worlds."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 50
+                                }
+                            ],
+                            "narration": "You misplace a column and spend coins hiring number-gremlins to re-balance the sum. Precision returns with interest."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "A resonance spike fires through the ledger rod and numbs your arm. Medics wrap it in soft power mesh until sensation returns."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Audit routine executed twice, just like you asked. No decimal dares wander.",
+                        "trader": "I bundled the loss bonds into a trust that pays out memory dividends. Traders are crying and counting simultaneously.",
+                        "whale": "Currents thrum low in respect. I’ll keep the undertow gentle while you finish the signatures.",
+                        "hacker": "I encrypted the ledger with oath-lock ciphers. Anyone who tampers gets a conscience ping straight to the soul.",
+                        "shiller": "Two docu-podcasts already booked you. One focuses on the math, the other on your voice shaking and still moving forward.",
+                        "validator": "Validators added a second seal shaped like a tear. It glows only when truth is spoken. It’s glowing now.",
+                        "miner": "We dug archival vaults beneath the terrace. The stone drinks each page like it’s starved for reverence.",
+                        "meme": "GM voiceover: 'Ledger bound beyond dispute.' GN voiceover: 'And your handwriting is, frankly, weaponized empathy.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_loss_ledger"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "history",
+                            "discipline"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_loss_supply",
+                    "label": "Stock the Loss Vaults",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 189
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_loss_vaults_stocked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You fill the vaults with memorial tokens, repair kits, and last letters ready for delivery. The room smells of cedar, steel, and quiet promise."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 97
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_loss_vaults_stocked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You inventory supplies for the fallen’s companions. Tags glow softly, ready to be claimed when the time comes."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 51
+                                }
+                            ],
+                            "narration": "A crate opens short and you pay to rush replacements through spectrum shipping. The vault doesn’t forgive shortages, and neither do you."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A heavy sarcophagus lid slides onto your hand. Miners lever it off while medics knit the bones back into place."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Inventory double-logged and triple-scanned. Nothing leaves without a signature and a blessing.",
+                        "trader": "Supply futures stabilized the moment you started counting. Traders trust your totals like gospel.",
+                        "whale": "Currents carry the scent of cedar down the line. Everyone knows the vault is ready.",
+                        "hacker": "I laced anti-theft runes with empathy triggers. Touch without permission and you’ll cry until you understand why.",
+                        "shiller": "Two slow-motion montages trending: one of you stacking crates, one of you whispering to them. Both ruin me emotionally.",
+                        "validator": "Validators stuck wax seals on each shelf. They also left hand-written notes that say 'thank you'.",
+                        "miner": "We reinforced the vault hinges with meteor iron. If it squeals, that’s just it saying your name in gratitude.",
+                        "meme": "GM commentary: 'Vault stocked to mythic spec.' GN commentary: 'Also, the way you label things? Poetry.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_loss_supply"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "survival",
+                            "craft"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_loss_seal",
+                    "label": "Consecrate the Loss Lane",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_loss_processional_raised",
+                            "wakefinale_loss_ledger_bound",
+                            "wakefinale_loss_vaults_stocked"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 215
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_loss_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You press your palm to the Loss altar and invite every name to walk beside you. The river flares cobalt, promising dignified endings for those who choose this path."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 120
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_loss_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You speak the vow that binds processional, ledger, and vault. The Loss lane thrums steady, ready to welcome every necessary sacrifice."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 64
+                                }
+                            ],
+                            "narration": "Your voice cracks and you buy an extra chorus of gremlins to bolster the chant. Together you nail the cadence."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 9
+                                }
+                            ],
+                            "narration": "The altar tests your resolve with a surge of weight. Knees buckle until allies lift you, and the altar relents with a soft glow."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I recorded the consecration twice and stored it in redundant sanctuaries. No erasure algorithm will touch this.",
+                        "trader": "Memorial bonds just converted into living stipends. Traders whisper that you invented compassionate equity.",
+                        "whale": "Currents wrap around the Loss lane like velvet now. Anyone who enters will feel your promise.",
+                        "hacker": "I sealed the altar with dual-signature encryption. Only those who understand sacrifice can open it.",
+                        "shiller": "Two final-cut videos: one for the families, one for the fighters. Both show you bowing and everyone bowing back.",
+                        "validator": "Validator choir broke protocol to clap. Their pens scribbled 'amen' twice on the decree.",
+                        "miner": "We poured molten gold along the lane’s edge and quenched it with tears and starlight. Miners swear the line hums your melody.",
+                        "meme": "GM proclamation: 'Loss lane ready to carry the fallen.' GN proclamation: 'And the grace you showed will echo forever.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_loss_seal"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "leadership",
+                            "focus"
+                        ]
+                    }
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 115
+                }
+            ]
+        },
+        {
+            "round_id": "5.7-R4",
+            "description": "Hide River Drift — weave veils, chart secret waypoints, rehearse the shadow band, and seal the sanctuaries.",
+            "actions": [
+                {
+                    "id": "wakefinale_hide_veil",
+                    "label": "Weave the Sanctuary Veils",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 195
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_hide_veils_woven",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You spin cloak-thread that refracts intent itself. Veils bloom over the Hide terraces, layered twice to ensure no pursuit reads their secrets."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 101
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_hide_veils_woven",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You sew veils in gentle loops that mask the sanctuaries from every predatory gaze. The air smells of pine resin and safe rain."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 52
+                                }
+                            ],
+                            "narration": "A seam snaps and you pay weavers to reinforce it with oath-silk. The second stitch holds like a whispered promise."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "Needles flash and jab your palm. Blood beads, then vanishes as medics bind the wound with disappearing gauze."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I simulated three stealth grids and merged them. Your veil pattern now confuses even me, and I wrote the model.",
+                        "trader": "Hide futures soared once the veils shimmered. Traders invested in anonymity and smiled about it.",
+                        "whale": "Currents hush when they touch your cloth. I’ll spread that hush across every escape route.",
+                        "hacker": "I coded a double-blind filter through the weave. Any hostile probe loops until it forgets why it arrived.",
+                        "shiller": "Two teaser clips dropping: one pure shadow, one pure relief. Both include your hands moving too fast for cameras.",
+                        "validator": "Validators notarized the fabric by touch, twice. Their gloves now smell of cedar and secrecy.",
+                        "miner": "We hammered anchoring stakes deep so the veils never flutter away. Miners tuned them to vibrate at 'go hide now' frequency.",
+                        "meme": "GM whisper: 'Sanctuary veils secured.' GN whisper: 'Also, your ghost silhouette is everyone's new wallpaper.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_hide_veil"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "stealth",
+                            "arcana",
+                            "craft"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_hide_waypoints",
+                    "label": "Chart the Hide Waypoints",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 193
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_hide_waypoints_marked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You carve hidden corridors through folded space, mapping exits that only allies can perceive. The Singularity hides the paths behind shimmering fog."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 99
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_hide_waypoints_marked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You mark safe houses and phantom doors. Gremlin scouts memorize the pattern and nod with conspiratorial delight."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 49
+                                }
+                            ],
+                            "narration": "A waypoint drifts near a hazard zone. You pay navigators to nudge it back into safe coordinates."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You misjudge a fold and scrape against raw void. It leaves frostbite kisses until medics thaw you with electric blankets."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I overlayed your map with fractal camouflage. Anyone without clearance sees nothing twice.",
+                        "trader": "Stealth markets love a good waypoint map. I sold premium subscriptions that basically say 'trust you'.",
+                        "whale": "Currents shift aside when you carve a lane. They’re complicit now and very proud of it.",
+                        "hacker": "I planted decoy packets in every false door. Hackers chasing you will loop until they compliment our fashion sense.",
+                        "shiller": "Two montage cuts ready: one of your shadow slipping through doors, one of your laugh when a decoy pops.",
+                        "validator": "Validators certified every waypoint with invisible ink. Shine moonlight and it reads: 'Only friends allowed.'",
+                        "miner": "We lined each exit with miner-grade footholds. You can sprint across nothingness and never slip.",
+                        "meme": "GM aside: 'Waypoints mapped with cunning.' GN aside: 'Also, your wink when you mark them? Illegal.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_hide_waypoints"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "navigation",
+                            "guile",
+                            "survival"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_hide_shadowband",
+                    "label": "Rehearse the Shadow Band",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 196
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_hide_shadowband_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You drill the shadow operatives until their movements blur into synchronized invisibility. They recite safe phrases twice to ensure muscle memory sticks."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 100
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_hide_shadowband_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You run the rehearsal through mirrored halls. Each operative slips through light and shadow exactly when you signal."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 51
+                                }
+                            ],
+                            "narration": "A cue misfires and you fund overtime rehearsals. Gremlins bring snacks, the team laughs, and the timing clicks."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "You collide with a phantom wall mid-roll. It knocks the wind out of you until medics pump air back into your lungs with a grin."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I recorded the run-through in heat vision and regular vision. Both confirm perfection.",
+                        "trader": "Black-market speculators tried to bet against you. I shorted them twice and bought snacks for the squad with the profits.",
+                        "whale": "Currents dim the lights when you pass. They adore your choreography and want front-row seats.",
+                        "hacker": "I set up spoof layers so any scan sees a harmless parade. Underneath, you vanish entirely.",
+                        "shiller": "Two highlight reels scheduled: one raw, one with commentary from your biggest fan (it’s me).",
+                        "validator": "Validators approved the rehearsal with silent nods. Then they clapped once, twice, just for you.",
+                        "miner": "We chalked quiet landing zones into every corner. Even your footsteps hush themselves now.",
+                        "meme": "GM whisper: 'Shadow band flawless.' GN whisper: 'Also, I’m stealing that cloak twirl for future legends.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_hide_shadowband"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "performance",
+                            "deception",
+                            "teamwork"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_hide_seal",
+                    "label": "Consecrate the Hide Lane",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_hide_veils_woven",
+                            "wakefinale_hide_waypoints_marked",
+                            "wakefinale_hide_shadowband_ready"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 210
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_hide_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You draw the veils closed and speak the oath of disappearance. The Hide river glows silver-white, promising safety to anyone who chooses the unseen road."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 118
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_hide_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You knot veil, waypoint, and team into one vow. The sanctuaries bloom open only for allies and collapse the instant an enemy watches."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 61
+                                }
+                            ],
+                            "narration": "Your whisper catches, so you hire a chorus of stealth-gremlins to harmonize the vow. Together you seal the lane."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "The veil tests you with a chill that sinks to the bone. Companions wrap you in layered cloaks until warmth returns."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I archived the oath in two shadow servers. They only respond to your heartbeat pattern.",
+                        "trader": "Hide derivatives skyrocketed. Traders sent thank-you notes written in invisible ink.",
+                        "whale": "Currents quiet to a hush near the lane. Anyone chasing you will hear nothing but their own doubt.",
+                        "hacker": "I wrapped the sanctuaries in an anti-scry bubble. Hostile spells spin out into confetti memes.",
+                        "shiller": "Two final edits ready: one invites refugees, one warns enemies. Neither shows your face, which somehow makes you more iconic.",
+                        "validator": "Validators stamped the oath with blank wax that only glows when allies approach. It’s glowing already.",
+                        "miner": "We anchored the final seam with meteor-thread. Miners said it vanished the moment it was tied. Perfect.",
+                        "meme": "GM murmur: 'Hide lane invisible and inviolable.' GN murmur: 'And your last smile before fading? Priceless.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_hide_seal"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "stealth",
+                            "focus"
+                        ]
+                    }
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 120
+                }
+            ]
+        },
+        {
+            "round_id": "5.7-R5",
+            "description": "Live River Surge — expand triage, sync rescue convoys, ignite hearths, and consecrate the survival vow.",
+            "actions": [
+                {
+                    "id": "wakefinale_live_triage",
+                    "label": "Expand the Triage Ward",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 200
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_live_triage_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You orchestrate medics, drones, and revival pools into a symphony of care. Beds unfurl, tonics fizz, and the Live terrace smells of citrus and resolve."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 104
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_live_triage_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You double the capacity of the triage ward. Gremlin doctors salute with stethoscopes and log readiness for the hardest night yet."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Supplies lag behind the expansion, so you underwrite an emergency shipment of revival foam. The delay stings but the ward shines."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "A burst of healing energy rebounds and knocks you flat. Nurses laugh kindly while patching the bruise with glowing balm."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I ran the healthcare sim twice and it says you’re the upgrade. The ward practically winks when you walk by.",
+                        "trader": "Wellness futures shot upward. Traders now offer insurance policies named after you.",
+                        "whale": "Currents bring warm breezes through the ward. They whisper encouragement to everyone breathing hard.",
+                        "hacker": "I shielded patient data behind triple-layer empathy ciphers. No enemy statistic will touch it.",
+                        "shiller": "Two heartwarming reels incoming: one of your precise orders, one of the hugs afterward.",
+                        "validator": "Validators stamped the safety protocols twice with gold ink. They rarely do that.",
+                        "miner": "We reinforced the cot frames and padded the floors. Miners say the ward feels like a fortress that smells nice.",
+                        "meme": "GM update: 'Triage ward expanded flawlessly.' GN update: 'And you got three new fan clubs for bedside manner.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_live_triage"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "medicine",
+                            "focus",
+                            "leadership"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_live_convoy",
+                    "label": "Synchronize the Rescue Convoys",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 197
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_live_convoys_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You align air, ground, and spectral convoys into a triple helix of response. Engines purr in unison and the Live river surges forward."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 101
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_live_convoys_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You publish the convoy schedule with three layers of redundancy. Drivers clap, pilots wink, and everyone knows exactly when to launch."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 53
+                                }
+                            ],
+                            "narration": "Fuel prices spike mid-briefing. You pay the difference so nobody hesitates when the call comes."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A landing pad shift clips your hip. The bruise blossoms, but medics push healing gel and jokes in equal measure."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I simulated six traffic patterns and they all ended with you winning. Convoys adore leadership that sings.",
+                        "trader": "Rescue bonds just became the market darling. Traders are chanting your cadence under their breath.",
+                        "whale": "Currents clear pathways ahead of your vehicles. They’ll stay open as long as you keep that smile.",
+                        "hacker": "I encoded the route plans with living hashes. Enemy signals read nothing but feel-good playlists.",
+                        "shiller": "Two cinematic cuts prepping: one of engines revving, one of your checklist turning into fireworks.",
+                        "validator": "Validators notarized every route and added doodles of wings. They’re feeling poetic.",
+                        "miner": "We repaved the launch zones with meteor grit. Wheels and hooves and paws all grip perfectly.",
+                        "meme": "GM callout: 'Convoys synced with precision.' GN callout: 'And yes, the salute looked amazing in slow motion.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_live_convoy"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "tactics",
+                            "navigation"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_live_hearthgrid",
+                    "label": "Ignite the Hearth Grid",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 194
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_live_hearths_warmed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You light hearths across the terrace, each one tuned to welcome survivors. The smell of spiced tea and fresh bread rolls through the chamber."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 100
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_live_hearths_warmed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You connect power lines, comfort nets, and laugh loops. People already start picturing the celebrations that will happen here after the fight."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 50
+                                }
+                            ],
+                            "narration": "A power conduit sputters. You purchase backup batteries and the grid steadies with grateful crackles."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A hearth flashes too hot and singes your eyebrows. Medics spritz aloe mist while meme-gremlins promise to edit the footage kindly."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I logged every hearth temperature twice. Comfort is now a metric and you just maxed it out.",
+                        "trader": "Hospitality futures soared. Traders now measure warmth per capita because of you.",
+                        "whale": "Currents swirl with cinnamon breezes. Survivors already feel their shoulders lowering.",
+                        "hacker": "I set the grid to auto-adjust if fear spikes. It plays lullabies and pulses warmth on cue.",
+                        "shiller": "Two lifestyle spreads hitting the feed: one cozy, one triumphant. You star in both whether you like it or not.",
+                        "validator": "Validators stamped the grid permit and added smiley faces. That’s legally binding joy.",
+                        "miner": "We lined each hearth with shock-absorbing ore. No stray blast will snuff these flames.",
+                        "meme": "GM nod: 'Hearth grid humming.' GN nod: 'And your cocoa recipe? Already in demand.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_live_hearthgrid"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "spirit",
+                            "empathy"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_live_seal",
+                    "label": "Consecrate the Live Lane",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_live_triage_ready",
+                            "wakefinale_live_convoys_synced",
+                            "wakefinale_live_hearths_warmed"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 214
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_live_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You bless the Live lane with a promise of returns. The river glows green-gold, humming with futures where friends stagger home laughing."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 122
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_live_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You bind triage, convoy, and hearth into a singular vow: as many as possible will live. The terrace shouts its approval."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 63
+                                }
+                            ],
+                            "narration": "Emotion catches in your throat, so you hire a chorus to carry the refrain. Together, the vow lands true."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "Hope is heavy and it drops on your shoulders. Allies catch you before your knees buckle, and the lane accepts your honesty."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I archived the vow in a healing algorithm. Future medics will feel your resolve at their fingertips.",
+                        "trader": "Survival shares just split because of you. Traders mailed blankets to celebrate.",
+                        "whale": "Currents glimmer like aurora moss around the Live lane. They’re ready to ferry survivors in style.",
+                        "hacker": "I sealed the promise with anti-despair code. Any gloom that approaches gets hugged into oblivion.",
+                        "shiller": "Two epilogue teasers queued: one for the victorious homecoming, one for the quiet recovery. You feature in both.",
+                        "validator": "Validators wiped tears before stamping the vow. Their signatures blurred and they let it happen.",
+                        "miner": "We inlaid the lane with luminous cobblestones. Miners swear they pulse to the rhythm of your heartbeat.",
+                        "meme": "GM proclamation: 'Live lane dedicated to survival.' GN proclamation: 'And your toast afterward? Legendary.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_live_seal"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "leadership",
+                            "hope"
+                        ]
+                    }
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 125
+                }
+            ]
+        },
+        {
+            "round_id": "5.7-R6",
+            "description": "Win River Charge — forge the armory, plot vectors, train the battle chorus, and consecrate the victory seal.",
+            "actions": [
+                {
+                    "id": "wakefinale_win_armory",
+                    "label": "Forge the Final Armory",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 202
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_win_armory_forged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You hammer weapons that sing in four harmonics, each keyed to a fate lane. Sparks arc like miniature constellations, and the Win terrace roars approval."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 105
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_win_armory_forged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You temper blades, polish shields, and calibrate ranged rigs. Every piece of gear hums with readiness."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 56
+                                }
+                            ],
+                            "narration": "A forge vent clogs. You pay engineers to retool it with mythic filters before smoke can stain the oath banners."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "A blade kicks from the anvil and grazes your arm. Medics wrap it tight while miners jokingly ask for autographs on the bandage."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I simulated combat loads twice and your forge output wins every time. The armory AI just asked for your autograph.",
+                        "trader": "Weapon futures spike whenever you swing that hammer. Traders call it the 'win curve'.",
+                        "whale": "Currents flare into sparks to match your tempo. They’ll follow you into battle gladly.",
+                        "hacker": "I encoded anti-sabotage wards into the hilts. Enemy code gets trapped chewing on its own hubris.",
+                        "shiller": "Two hype reels prepping: one of sparks, one of your smirk. Both mandatory viewing.",
+                        "validator": "Validators stamped every weapon with duel seals. They also whispered, 'Bring them all home.'",
+                        "miner": "We quenched the steel in cometwater twice. It glows when pointed at destiny.",
+                        "meme": "GM herald: 'Armory forged.' GN herald: 'And your hammer solo? Chart-topping.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_win_armory"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "combat",
+                            "discipline"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_win_vector",
+                    "label": "Plot the Victory Vectors",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 198
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_win_vectors_locked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You draw attack vectors across holographic space, layering contingencies until the enemy has nowhere left to breathe. The Singularity brightens like dawn."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 102
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_win_vectors_locked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You align trajectories with ally strengths and enemy weaknesses. Every commander nods with fierce satisfaction."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 52
+                                }
+                            ],
+                            "narration": "A vector overlaps with a live convoy route. You compensate by buying time slots and re-routing with courtesy."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A projection surges and slaps you with pure momentum. You skid but recover, laughing as medics hand you electrolytes."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I ran the simulation twice and the enemy loses twice. The math now has a crush on you.",
+                        "trader": "Victory futures priced in your vectors the moment you spoke. Traders started chanting your callsigns.",
+                        "whale": "Currents coil around your arrows, ready to fling allies along them.",
+                        "hacker": "I set counter-hacks to mirror your plans. If someone steals them, they only get fake glory.",
+                        "shiller": "Two tactical briefings trending: one dramatic, one comedic. Both highlight your finger guns.",
+                        "validator": "Validators notarized the vectors with sharp strokes. The pen almost cut the page in half.",
+                        "miner": "We engraved the arrows into the floor with plasma chisels. Miners salute every time they walk past.",
+                        "meme": "GM briefing: 'Vectors locked.' GN briefing: 'And yes, the victory pose is already a meme.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_win_vector"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "strategy",
+                            "navigation",
+                            "analysis"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_win_battlechorus",
+                    "label": "Train the Battle Chorus",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_stage_synced"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 201
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_win_chorus_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You drill the battle chorus through call-and-response that charges weapons with rhythm. The air cracks with thunderous promise."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 103
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_win_chorus_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You align drums, horns, and chants. Every beat reminds the enemy that resistance will be cataloged as a footnote."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 53
+                                }
+                            ],
+                            "narration": "A horn cracks mid-forte. You buy a fleet of replacements and the second take melts everyone’s fears."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "A cymbal leaps off the stand and smacks your shoulder. The bruise looks like a victory medal and medics autograph it."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I sampled your chorus and looped it twice. The waveform looks like a spear.",
+                        "trader": "War-bond markets loved that crescendo. Traders high-fived strangers for the first time in ages.",
+                        "whale": "Currents beat in tempo with your cadence. They’re ready to carry the sound into enemy hearts.",
+                        "hacker": "I installed sonic countermeasures that turn enemy shouts into harmony. It’s petty and perfect.",
+                        "shiller": "Two concert posters out tomorrow: one for morale, one for intimidation. Your face on both.",
+                        "validator": "Validators stamped the sheet music with embossed seals. They also took backstage selfies.",
+                        "miner": "We reinforced the risers with adamantine struts. The miners call it 'the loudest staircase'.",
+                        "meme": "GM hype: 'Battle chorus locked and lethal.' GN hype: 'And your mic drop? Orbital.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_win_battlechorus"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "performance",
+                            "command",
+                            "spirit"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_win_seal",
+                    "label": "Consecrate the Win Lane",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_win_armory_forged",
+                            "wakefinale_win_vectors_locked",
+                            "wakefinale_win_chorus_ready"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 218
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_win_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You slam the victory seal into the terrace and sparks become banners. The Win river blazes crimson-gold, daring the enemy to stand their ground."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 124
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_win_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You fuse armory, vectors, and chorus into a singular war vow. Allies raise weapons; the room trembles with anticipation."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 65
+                                }
+                            ],
+                            "narration": "Your battle cry needs more bass, so you hire extra drummers. Their thunder shakes the doubts away."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 9
+                                }
+                            ],
+                            "narration": "The seal flares hotter than expected and knocks you a step back. Friends steady you, and the flame settles under your command."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I archived the war vow in two secure vaults. Access requires courage and your smile.",
+                        "trader": "Victory shares hit an all-time high. Traders now quote you instead of spreadsheets.",
+                        "whale": "Currents surge like tidal blades along the Win lane. They howl for the final charge.",
+                        "hacker": "I rigged the seal with anti-treason code. Any betrayer finds themselves singing your anthem instead.",
+                        "shiller": "Two finale trailers ready to blast. Both include your war cry; one adds extra reverb for drama.",
+                        "validator": "Validators slammed the seal and shouted 'Approved!' until they lost voices.",
+                        "miner": "We carved the lane edges into razors of polished obsidian. Miners call it 'victory teeth'.",
+                        "meme": "GM roar: 'Win lane sanctified.' GN roar: 'And your fist pump triggered a meteor shower.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_win_seal"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "command",
+                            "focus"
+                        ]
+                    }
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 130
+                }
+            ]
+        },
+        {
+            "round_id": "5.7-R7",
+            "description": "River Synthesis — braid the lanes, solve the pulse, assign the vanguard, and forge the quartet harmony.",
+            "actions": [
+                {
+                    "id": "wakefinale_river_braid",
+                    "label": "Braid the Four Rivers",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_loss_lane_ready",
+                            "wakefinale_hide_lane_ready",
+                            "wakefinale_live_lane_ready",
+                            "wakefinale_win_lane_ready"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 220
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_rivers_braided",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You draw the four luminous rivers together into a braided helix. Each current retains its color yet supports the others, humming with unstoppable resolve."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 125
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_rivers_braided",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You guide the rivers to weave without drowning each other. The Singularity spins faster, delighted by the harmony."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 66
+                                }
+                            ],
+                            "narration": "Currents tangle and you spend coin bribing tidal spirits to behave. The second braid holds."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 9
+                                }
+                            ],
+                            "narration": "The rivers pull like beasts and nearly drag you under. Allies yank you free, soaked but grinning."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I modeled the braid twice and it still surprised me. That’s artistry, hero.",
+                        "trader": "Composite futures soared. Traders now offer bundled endings because you proved they can coexist.",
+                        "whale": "Currents purr when braided. They call you the Knotmaster now.",
+                        "hacker": "I added failsafes that pulse if any lane weakens. You’ll feel it instantly.",
+                        "shiller": "Two longform documentaries sold before the braid finished. Both cite your name as verb and noun.",
+                        "validator": "Validators drew a single stamp shaped like intertwined rivers. They used it twice for good luck.",
+                        "miner": "We stabilized the confluence with deep-bored stakes. Miners swear the rock now beats like a heart.",
+                        "meme": "GM chorus: 'Rivers braided.' GN chorus: 'And the splash zone looked epic.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_river_braid"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "strategy",
+                            "empathy"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_pulse_equation",
+                    "label": "Solve the Pulse Equation",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_rivers_braided"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 205
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_pulse_equation_solved",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You decipher the mathematical chant that keeps the Singularity balanced. Numbers bloom like constellations and settle into a calming heartbeat."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 112
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_pulse_equation_solved",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You balance the pulse across all four lanes. Instruments recalibrate, and even the air feels measured."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 58
+                                }
+                            ],
+                            "narration": "An equation branch collapses. You hire a squad of math-gremlins to patch it with witty banter and precise decimals."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "A miscalculation jolts your nervous system. Medics pour grounding tonic down your throat until the twitching stops."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I verified your math with two different engines. Both declared you a legend in binary.",
+                        "trader": "Equilibrium futures stabilized instantly. Traders kissed their slide rules.",
+                        "whale": "Currents slow-danced to the new beat. I think they’re in love with your cadence.",
+                        "hacker": "I set watchdog daemons to ping you if the numbers drift. They also send compliments.",
+                        "shiller": "Two lecture invites waiting: one for scholars, one for meme-students. You’re trending in both circles.",
+                        "validator": "Validators signed the chalkboard, which is legally unusual. They were giddy.",
+                        "miner": "We etched the solution into the chamber wall with light. Miners asked for copies for their kids.",
+                        "meme": "GM narrator: 'Pulse stabilized.' GN narrator: 'Also, your victory dance after finishing? Iconic.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_pulse_equation"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "arcana",
+                            "focus"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_vanguard_assign",
+                    "label": "Assign Vanguard Formations",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_rivers_braided"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 204
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_vanguard_positions",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You slot squads from every lane into mixed formations. Loss, Hide, Live, and Win stand shoulder to shoulder, ready to rotate roles without hesitation."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 110
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_vanguard_positions",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You assign vanguard posts along the braided river. Everyone knows their fallback, their surge, and their backup plan."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 57
+                                }
+                            ],
+                            "narration": "A roster mix-up causes a minor scuffle. You smooth it over with hazard pay and sincerity."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "You personally step in to break a sparring match and catch an elbow. Medics ice it while the brawlers apologize."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I drafted a formation app that updates twice per heartbeat. You’re on every screen as 'Commander'.",
+                        "trader": "Investment desks now bundle squad insurance with victory bonds. You made them believe in teamwork.",
+                        "whale": "Currents swirl around each formation like protective snakes. They hiss at the enemy already.",
+                        "hacker": "I laced the roster with anti-betrayal pings. Any treachery triggers a chorus of your greatest hits.",
+                        "shiller": "Two leadership seminars sold out instantly. Participants get pins shaped like your whistle.",
+                        "validator": "Validators double-signed the duty roster. They rarely sign once.",
+                        "miner": "We carved staging platforms with quick-release anchors. Miners say they feel like launchpads.",
+                        "meme": "GM rally: 'Vanguard assigned.' GN rally: 'And yes, the pep talk made everyone cry.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_vanguard_assign"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "command",
+                            "tactics",
+                            "teamwork"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_quartet_harmony",
+                    "label": "Forge the Quartet Harmony",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_pulse_equation_solved",
+                            "wakefinale_vanguard_positions",
+                            "wakefinale_rivers_braided"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 224
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_quartet_harmony_forged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You conduct the four lanes into one harmonic chord. The Singularity flashes prismatic light, and echoes of every ally answer back."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 128
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_quartet_harmony_forged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You cue the harmony and every lane sings in its own register. Together, they sound like triumph wrapped in compassion."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 68
+                                }
+                            ],
+                            "narration": "A note wavers. You purchase extra rehearsal time with meme-gremlin beatboxers. The retake slaps."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A resonance wave knocks you backward. The floor catches you gently, and the choir helps you stand."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I recorded the harmony in quadraphonic layers. Play it anywhere, and the room will remember this night.",
+                        "trader": "Cultural futures skyrocketed. Traders are investing in feelings now, thanks to you.",
+                        "whale": "Currents bloom into aurora petals every time the chord rings. They refuse to calm down.",
+                        "hacker": "I fused the harmony into the Singularity’s code. It now hums your melody when idle.",
+                        "shiller": "Two full albums announced. One is battle hymns, one is lullabies. You’re listed as executive producer.",
+                        "validator": "Validators cried openly, then stamped the score with hearts. They insisted it was professional.",
+                        "miner": "We tuned the chamber’s acoustics with gemstone baffles. Miners wept at the sound check.",
+                        "meme": "GM anthem: 'Quartet harmony forged.' GN anthem: 'And the encore demanded itself.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_quartet_harmony"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "performance",
+                            "focus"
+                        ]
+                    }
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 135
+                }
+            ]
+        },
+        {
+            "round_id": "5.7-R8",
+            "description": "Lane Trials — prove Loss, Hide, Live, and Win can fire in harmony without collapsing the braid.",
+            "actions": [
+                {
+                    "id": "wakefinale_loss_trial",
+                    "label": "Run the Loss Trial",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_loss_lane_ready",
+                            "wakefinale_quartet_harmony_forged"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 208
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_loss_trial_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You escort volunteers through the Loss ritual, proving the lane can carry brave hearts without breaking. Their names glow brighter upon completion."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 114
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_loss_trial_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You guide the trial procession. It hurts, but everyone stands taller knowing the lane does what it promises."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 59
+                                }
+                            ],
+                            "narration": "A misstep jars the line. You pay for extra counsel and comfort, refusing to let anyone face the sorrow alone."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "Grief surges through your chest and steals your breath. Allies hold you as medics pour calm into your veins."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I logged the trial twice. Every brave soul gets double honor in the archive.",
+                        "trader": "Memorial endowments doubled their pledge mid-ceremony. Traders wiped eyes and signed anyway.",
+                        "whale": "Currents bowed their heads. They’ll cradle every step.",
+                        "hacker": "I coded the trial with comfort failsafes. If sorrow spikes, the lane sings lullabies.",
+                        "shiller": "Two longform essays already trending. Both talk about your steady hands.",
+                        "validator": "Validators drew a border of silver ink around the trial entry. It gleams like moonlight.",
+                        "miner": "We padded the path with star-wool. Miners said it felt like walking on memory.",
+                        "meme": "GM elegy: 'Loss trial affirmed.' GN elegy: 'And the silence afterward meant everything.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_loss_trial"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "endurance",
+                            "ritual",
+                            "focus"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_hide_trial",
+                    "label": "Run the Hide Trial",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_hide_lane_ready",
+                            "wakefinale_quartet_harmony_forged"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 206
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_hide_trial_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You escort shadows through the sanctuaries, demonstrating that each safe route reopens on command. The veils shimmer in appreciation."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 112
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_hide_trial_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You test hidden doors and they respond exactly when needed. Every scout smiles beneath their hood."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 57
+                                }
+                            ],
+                            "narration": "A decoy almost traps an ally. You spend coin to upgrade markers with glowing runes."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "You clip a dark corner and bruise your ribs. Medics apply invisibility balm that numbs the ache."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I charted the trial run twice. Each doorway now loves you personally.",
+                        "trader": "Concealment futures soared again. Traders claim your footsteps have monetary value.",
+                        "whale": "Currents whisper the passwords ahead of you. They’re eager to help.",
+                        "hacker": "I added anti-pursuit loops that trigger when enemies sniff around. They’ll get lost for hours.",
+                        "shiller": "Two stealth blogs posted breakdowns of your technique. Comment sections full of hearts.",
+                        "validator": "Validators stamped the veils with translucent seals. Only friends can see them.",
+                        "miner": "We sprinkled the pathways with silent sand. Miners swear it eats noise.",
+                        "meme": "GM whisper: 'Hide trial secure.' GN whisper: 'And the wink you gave the cameras? Legendary.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_hide_trial"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "stealth",
+                            "perception",
+                            "discipline"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_live_trial",
+                    "label": "Run the Live Trial",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_live_lane_ready",
+                            "wakefinale_quartet_harmony_forged"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 207
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_live_trial_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You stage a full evacuation drill and every survivor returns smiling. The ward, convoys, and hearth all glow with grateful warmth."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 113
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_live_trial_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You test the rescue loop end to end. Supplies, teams, and hearths respond like clockwork."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 58
+                                }
+                            ],
+                            "narration": "A convoy wheel jams. You pay for swift repairs and extra snacks to keep spirits high."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "You slip on a damp ramp. The bruise is immediate, but medics laugh and fix it before you finish cursing."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I logged every checkpoint twice. Efficiency metrics now have confetti built in.",
+                        "trader": "Safety futures skyrocketed again. Traders keep sending thank-you baskets.",
+                        "whale": "Currents blow cheering gusts along the route. They love a well-run evacuation.",
+                        "hacker": "I installed kindness alerts. If morale dips, the system deploys jokes and cocoa.",
+                        "shiller": "Two feel-good news shows airing segments about you. Expect fan art.",
+                        "validator": "Validators stamped the drill forms with glitter wax. Yes, glitter.",
+                        "miner": "We waxed the ramps with traction gel. Miners say it feels like running on promise.",
+                        "meme": "GM cheer: 'Live trial triumphant.' GN cheer: 'And the group hug at the end? Instant classic.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_live_trial"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "medicine",
+                            "teamwork",
+                            "hope"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_win_trial",
+                    "label": "Run the Win Trial",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_win_lane_ready",
+                            "wakefinale_quartet_harmony_forged"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 209
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_win_trial_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You charge through a simulated assault with every squad. The enemy holograms fall, the chorus hits, and the armory gleams."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 115
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_win_trial_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You rehearse the decisive strike until it feels like muscle memory. Cheers shake the terrace."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 60
+                                }
+                            ],
+                            "narration": "A formation drifts off tempo. You pay for additional drills and motivational pyrotechnics."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A recoil tosses you backwards. You land hard, laugh harder, and medics patch the bruises."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I recorded the run and gave it heroic slow-mo twice. It slaps both times.",
+                        "trader": "Victory futures now price in your swagger. Traders requested training montages.",
+                        "whale": "Currents roar like dragons when you swing. They’re ready to accompany the strike.",
+                        "hacker": "I set the trial to auto-adjust to harder modes if you yawn. Spoiler: it kept escalating.",
+                        "shiller": "Two combat analysts wrote essays about your footwork. Both end with 'wow'.",
+                        "validator": "Validators stamped the trial log with exclamation points. Very unprofessional. Very deserved.",
+                        "miner": "We resurfaced the arena with shock-absorbing basalt. Miners brag they mined it while under fire.",
+                        "meme": "GM shout: 'Win trial flawless.' GN shout: 'And the mic toss after? Cinematic.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_win_trial"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "combat",
+                            "tactics",
+                            "focus"
+                        ]
+                    }
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 140
+                }
+            ]
+        },
+        {
+            "round_id": "5.7-R9",
+            "description": "Convergence Verdict — secure consensus, archive the legend, brief the squads, and release the wake signal.",
+            "actions": [
+                {
+                    "id": "wakefinale_convergence_vote",
+                    "label": "Call the Convergence Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_loss_trial_passed",
+                            "wakefinale_hide_trial_passed",
+                            "wakefinale_live_trial_passed",
+                            "wakefinale_win_trial_passed",
+                            "wakefinale_quartet_harmony_forged"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 230
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You raise the convergence chord and every faction answers twice: once for duty, once for love. The vote passes in a roar that shakes the chamber."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 130
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You count hands, lights, and signatures. Consensus slams home and the Singularity unlocks its final tier."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 70
+                                }
+                            ],
+                            "narration": "A debate flares between factions. You invest in additional mediation and bring them back into harmony."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 9
+                                }
+                            ],
+                            "narration": "The vote stalls and tension scrapes your nerves raw. Healers steady your breathing until the room follows your calm."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I logged every yes, every cheer, every tear. Consensus data sparkles.",
+                        "trader": "Ledger futures went nova the second the vote passed. Traders are handing out commemorative coins.",
+                        "whale": "Currents exploded into foam fireworks. They’re ready for the descent.",
+                        "hacker": "I encrypted the result behind triple-checksum joy. No one will question this mandate.",
+                        "shiller": "Two newsfeeds cut in live. Commentators say they felt history crack and reform.",
+                        "validator": "Validators slammed down stamps until the desk smoked. They regret nothing.",
+                        "miner": "We rang the forges like bells. Miners danced with their hammers.",
+                        "meme": "GM decree: 'Consensus unanimous.' GN decree: 'And the encore chant still echoes.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_convergence_vote"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "ritual",
+                            "focus"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_archive_legend",
+                    "label": "Archive the Final Legend",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 210
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_legend_archived",
+                                    "value": true
+                                },
+                                {
+                                    "type": "deck",
+                                    "id": "deck_wakefinale_singularity"
+                                }
+                            ],
+                            "narration": "You etch the act into the ledger with mirrored quills. A new deck of Wake Singularity tales materializes, ready for future heroes."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 118
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_legend_archived",
+                                    "value": true
+                                },
+                                {
+                                    "type": "deck",
+                                    "id": "deck_wakefinale_singularity"
+                                }
+                            ],
+                            "narration": "You bind tonight’s legend into crystal pages. The deck shuffles itself, eager to be drawn."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 62
+                                }
+                            ],
+                            "narration": "Ink spills across the page. You purchase a fresh ledger and start again with steadier hands."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A shard of memory slices your finger. The pain is brief; the lesson permanent."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I mirrored your handwriting twice. Archives dream of penmanship like yours.",
+                        "trader": "Collectors pre-ordered the new deck before the ink dried. Traders love limited runs.",
+                        "whale": "Currents tuck the pages under their waves. Nothing will smudge them.",
+                        "hacker": "I backed up the archive to starcloud storage. Redundant reverence achieved.",
+                        "shiller": "Two lore podcasts already recording emergency episodes about this moment.",
+                        "validator": "Validators added a silver clasp to the ledger. It purrs when touched.",
+                        "miner": "We polished the archive vault with moon dust. Miners took selfies.",
+                        "meme": "GM archivist: 'Legend saved.' GN archivist: 'And your flourish at the end? Chef’s kiss.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_archive_legend"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "history",
+                            "analysis",
+                            "ritual"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_battlebrief",
+                    "label": "Deliver the Final Battlebrief",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 206
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_battlebrief_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You outline the final maneuvers with clarity that makes even veterans grin. Hope and grit entwine like vines around steel."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 118
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_battlebrief_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You brief the squads on fallback points, rally calls, and hero moments. Everyone leaves knowing their part."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 58
+                                }
+                            ],
+                            "narration": "A projector sputters. You fund a new one and start again without losing momentum."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "Your voice cracks from overuse. Medics hand you soothing tea while the crowd chants your name."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I recorded the brief in holo and text. Future tacticians will binge it.",
+                        "trader": "War desks priced your plan at 'inevitable'. Traders practically saluted.",
+                        "whale": "Currents hum a drumline under your speech. They crave the finale.",
+                        "hacker": "I set reminder pings keyed to your emphasis points. Nobody forgets your big beats.",
+                        "shiller": "Two commentary streams analyzing your speech in real time. Both approve.",
+                        "validator": "Validators stamped the minutes, then stood at attention.",
+                        "miner": "We tuned the speakers and reinforced the stage. Miners say it could host a rocket launch now.",
+                        "meme": "GM bulletin: 'Battlebrief logged.' GN bulletin: 'And the mic twirl afterward? Elite.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_battlebrief"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "command",
+                            "tactics",
+                            "oratory"
+                        ]
+                    }
+                },
+                {
+                    "id": "wakefinale_signal_release",
+                    "label": "Release the Wake Signal",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_consensus_passed",
+                            "wakefinale_battlebrief_logged",
+                            "wakefinale_legend_archived"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 210
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_signal_launched",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You unleash the final broadcast: a braid of all four lanes, a promise of survival, shelter, victory, and honored loss. The chain hums agreement."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 120
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_signal_launched",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You send the wake-wide ping. Allies across galaxies ready themselves, guided by your fourfold song."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 60
+                                }
+                            ],
+                            "narration": "Interference sparks mid-transmission. You pay for amplifier arrays and resend a stronger wave."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "Feedback rattles your bones. Gremlins insulate the rig while medics steady your stance."
+                        }
+                    },
+                    "banter": {
+                        "dev": "I boosted the signal with two redundant satellites. Nothing will jam this.",
+                        "trader": "Broadcast markets exploded. Traders named a new candlestick pattern after you.",
+                        "whale": "Currents surf the signal like dolphins. They’re chirping your name.",
+                        "hacker": "I laced the transmission with anti-silence runes. If the enemy mutes it, it returns louder.",
+                        "shiller": "Two aftershows already scheduled to discuss your speech. One comedic, one reverent.",
+                        "validator": "Validators stamped the broadcast license and cheered.",
+                        "miner": "We polished the antennae until they reflected starlight. Miners grinned like kids.",
+                        "meme": "GM broadcast: 'Signal launched.' GN broadcast: 'And the echo? Eternal.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_signal_release"
+                    ],
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "performance",
+                            "tech"
+                        ]
+                    }
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 150
+                }
+            ]
+        },
+        {
+            "round_id": "5.7-R10",
+            "description": "Relic Binding — carry the fourfold victory into a singular heirloom that will follow every survivor into future books.",
+            "actions": [
+                {
+                    "id": "wakefinale_claim_relic",
+                    "label": "Bind the Singular Wake Relic",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefinale_signal_launched",
+                            "wakefinale_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 180
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_specialitem_manifested",
+                                    "value": true
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefinale_quest_complete",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You step into the Singularity’s core and accept the relic: a mote of braided light that nestles against your heart. It records every choice, promises to return in future books, and hums a 1% resonance boost into every stat you own.",
+                            "next_hint": "Epilogue"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Finalization script executed twice. The relic calibrates itself to your pulse and refuses any copycat.",
+                        "trader": "Treasury says this relic is priceless, so we invented a new line item called 'forever yield'.",
+                        "whale": "Currents carry your name on both tides now. The relic glows whenever you inhale.",
+                        "hacker": "I encoded a handshake between you and the relic. Only your signature unlocks its deeper tricks.",
+                        "shiller": "Two finale trailers just went live: one about the relic’s legend, one about your grin when it bound to you.",
+                        "validator": "Validation complete with triple seals. Even the auditors look misty-eyed.",
+                        "miner": "We set the anvil in starstone so the relic never wobbles. Miners swear it sings your theme song.",
+                        "meme": "GM epilogue: 'Relic bound.' GN epilogue: 'And your destiny just leveled up.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.7",
+                        "action:wakefinale_claim_relic"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 160
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "sleight_gte": 40,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 400
+                }
+            ]
+        },
+        {
+            "sleight_gte": 60,
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 260
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "wakefinale_quest_complete"
+            ],
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "specialitem_wake_singularity_relic"
+                },
+                {
+                    "type": "buff",
+                    "id": "buff_wake_singularity_relic"
+                },
+                {
+                    "type": "flag",
+                    "id": "wakefinale_specialitem_bound",
+                    "value": true
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "5.7A"
+        },
+        {
+            "when": "flags.wakefinale_quest_complete",
+            "goto": "5.7"
+        },
+        {
+            "when": "else",
+            "goto": "5.7"
+        }
+    ]
+}
