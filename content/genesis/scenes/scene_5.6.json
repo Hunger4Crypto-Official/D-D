@@ -1,0 +1,2213 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "5.6",
+    "title": "The Wake Cathedra — Penultimate Accord",
+    "narration": "The Wake Cathedra crowns the void like a cathedral grown from ledger light and remixed storms. Vaulted ribs of magnetized moonstone hold entire fleets in patient suspension. Choir lines of glasswork arch overhead, capturing the glow of every oath minted in the previous scenes. Banners stitched from memory spool in quiet winds that come from nowhere; they smell faintly of rain on hot rails. Beneath it all, the floor is a mosaic of four braided rivers flowing toward a single altar. Each river is bright enough to throw shadows and deep enough to drown regrets.\n\nThe dais sits at the intersection of every fate lane you have cultivated. Loss, Hide, Live, and Win spiral like constellations around the altar, each lane carrying its own cadence, its own color, its own promise to the final battlefront. The Wake Reckoning's mirrored descent empties out here, and all your reflections stand with you, arms crossed, eyes bright, waiting for the penultimate accord. They hum with the same anticipation you feel in your bones: the last chance to balance the ledger before you spend yourselves forever.\n\nPilgrim-compilers from Act Four have built scaffolds of shimmering data along the perimeters. Engineers patch the void with braids of tetherlight that keep the Cathedra locked against the enemy's gravity wells. The grease smell of machines mingles with incense distilled from raw time. Gremlins swing from pew to pew threading cables made of vow-silk; traders run tables beneath the arches, swapping miracles for promissory ballads. Whales circulate slow as weather, pulling in collapsed comets to feed the Cathedra's engines. Hackers etch counter-scripts across the nave, their code coiling like luminous ivy up the columns.\n\nEverywhere you look there are altars for specific endings. The Loss altar burns with steady blue flame waiting for the names of those who will spend themselves without return. The Hide altar is cloaked in layered veils, each one a map to a sanctuary no enemy can parse. The Live altar thrums with medics and logisticians weaving rescue nets, promising to pull as many as possible out of the coming fire. The Win altar bristles with spear-points, coordinates, and war songs rehearsed until the syllables sharpen like blades. The Cathedra does not ask you to choose just one; it demands you uplift all four simultaneously.\n\nRemembering the rules set back in 1.1, every choice writes itself in light. Here, light becomes cathedral stone, and the stone listens. Some will die and require a procession that dignifies the cost. Some will hide and need cloaks no pursuit can pierce. Some will live and yearn for hearths that can be rebuilt in a single night. Some will win and must be aimed with the precision of a starmap. The Cathedra's vault hears the distinctions, translates them into resonant chords, and waits for you to direct the choir.\n\nThis is the second-to-last scene, the inhale before Act Five's final exhale. The ledger-clock ticks audibly along the nave, each chime a reminder that hesitation is another kind of defeat. Yet the Cathedra offers time in the form of tasks, each beat a ritual that fortifies a lane. Walk the mosaics slowly, feel the heat of the Loss river, the cool of Hide, the pulse of Live, the storm of Win. Every step is a vow, every vow another stone mortared into the eventual triumph or the necessary sacrifice.\n\nWhen you stand at the center, the altar recognizes the sum of the crews that followed you from the Wakefront and beyond. The structure unfurls new balconies to hold those arriving from 4.6 and 4.7, ensuring the Convergence Causeway's promises carry forward. The Cathedra is luminous, somber, relentless; it expects you to answer with work equal to its glow. Raise your hands, queue the rounds, and pour everything you have left into this penultimate accord. The next scene will judge whether the ledger closes in glory, in mourning, in shelter, or in defiant survival. Tonight you prepare for all four at once.",
+    "rounds": [
+        {
+            "round_id": "5.6-R1",
+            "description": "Cathedra Ignition — map the spiraled dais, prime the choir, calibrate the siphons, and knit them into a resonance the enemy cannot shake.",
+            "actions": [
+                {
+                    "id": "wakecathedra_map_spirals",
+                    "label": "Map the Cathedra Spirals",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "perception",
+                            "navigation"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_stage_mapped",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You walk the mosaic with a surveyor's grace, sketching each bend of the rivers until the floor itself projects a holo of the Cathedra's circulatory system. The choir lofts respond by lowering spectral compasses that align with your plan."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_stage_mapped",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your mapping drones trace each spiral and return with coordinates glowing like molten ink. The Cathedra accepts the overlay and stabilizes its rotation."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "An eddy of gravity swallows your markers. You pay gremlins in polished tokens to retrieve them and reset the survey."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You step into an unmapped gap and the floor tilts like a jaw. Medics haul you out while the Cathedra flickers in concern."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Spatial mesh compiled. No drift detected.",
+                        "trader": "Cartography futures trending up.",
+                        "whale": "Currents respect marked lanes.",
+                        "hacker": "We patched the blind spots with light.",
+                        "shiller": "Tour begins with perfect choreography.",
+                        "validator": "Survey notarized in mirrored ink.",
+                        "miner": "We inlaid the bearings with comet steel.",
+                        "meme": "Cathedra now ships with GPS: Glorious Pathfinding System."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_map_spirals"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_choir_prime",
+                    "label": "Prime the Resonance Choir",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "performance",
+                            "spirit"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_choir_primed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your baton carves crescents through the air and every singer, mortal and mirrored, hits a frequency that braids with the Cathedra's ribs. The sound is a dawn that refuses to end."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_choir_primed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Voices align with the ledger-clock, producing a steady harmony that anchors the Cathedra's pulse."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A sour note ricochets through the nave. You compensate by hiring echo-engineers armed with tuning forks the size of spears."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Your voice cracks and the resonance backwash knocks you against a column. The choir steadies and offers a quieter entry."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Audio pipeline leveled.",
+                        "trader": "Ticket scalpers weep with joy.",
+                        "whale": "Currents carry the chord across the wake.",
+                        "hacker": "No feedback loops. All signal.",
+                        "shiller": "Penultimate anthem trending instantly.",
+                        "validator": "Choir prime notarized by every mirror.",
+                        "miner": "We carved resonance cavities in the pillars.",
+                        "meme": "Soundcheck passed: destiny has perfect pitch."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_choir_prime"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_siphon_calibrate",
+                    "label": "Calibrate the Penumbra Siphons",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakereckoning_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "systems",
+                            "engineering",
+                            "defense"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_siphons_calibrated",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You slot prismatic cores into the siphons until they drink hostile gravity like wine. Counter-rotations shimmer as translucent shields along the arches."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_siphons_calibrated",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Diagnostics confirm the siphons can deflect enemy pulls. The Cathedra breathes easier."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A siphon jams on ghosted debris. You contract miners to polish the channels with comet grit."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The siphon spits back a gout of cold plasma that stings through your armor. You reset with a steadier hand."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Siphon firmware synced.",
+                        "trader": "Insurance premiums drop nicely.",
+                        "whale": "Currents brace the outer shell.",
+                        "hacker": "We sandboxed the enemy pull routines.",
+                        "shiller": "Penumbra filters? Luxury-level preparedness.",
+                        "validator": "Calibration notarized.",
+                        "miner": "We packed the housings with starshot bearings.",
+                        "meme": "Siphons now come with anti-grav sass."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_siphon_calibrate"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_stage_harmonize",
+                    "label": "Harmonize the Rivers",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_mapped",
+                            "wakecathedra_choir_primed",
+                            "wakecathedra_siphons_calibrated"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "systems",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_stage_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You merge map, song, and siphon into a single command. The rivers flare, synchronize, and settle into a steady glow that thrums beneath every boot."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_stage_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your gestures braid the three preparations together. The Cathedra locks into position and awaits further rites."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "The harmonics clash, forcing you to burn through resonance catalysts until the dissonance quiets."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Resonance lashes back like a whip of light. You grit your teeth, absorb the sting, and begin anew with fresh reverence."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Stage baseline harmonized.",
+                        "trader": "Every lane priced into the rhythm.",
+                        "whale": "Currents hum approval.",
+                        "hacker": "All signals braided, zero leakage.",
+                        "shiller": "The Cathedra just hit chart-topping cohesion.",
+                        "validator": "Integration notarized with triple seals.",
+                        "miner": "We welded the seams with sunrise alloys.",
+                        "meme": "Four rivers, one beat, endless goosebumps."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_stage_harmonize"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 65
+                }
+            ]
+        },
+        {
+            "round_id": "5.6-R2",
+            "description": "Loss Processional — enshrine the cost, prepare the rite, and promise that every fallen ally crosses the Cathedra in honor, not silence.",
+            "actions": [
+                {
+                    "id": "wakecathedra_loss_processional",
+                    "label": "Raise the Loss Processional",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "discipline",
+                            "memory"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_loss_processional_raised",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You choreograph lantern-bearers, bell-ringers, and archive drones into a procession that circles the Cathedra with the solemnity of a comet orbit. Every step writes the names of volunteers along the air in cobalt flame."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_loss_processional_raised",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Lanterns ignite along the Loss river and crews rehearse the march that will honor those who fall."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "The first rehearsal falters when the bells detune. You fund precision clappers carved from meteorite."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A lantern flares too bright and sears your palms. The procession pauses to bind your hands in mirrored silk before continuing."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Processional route scripted cleanly.",
+                        "trader": "Memorial donations pouring in.",
+                        "whale": "Currents bow as the march forms.",
+                        "hacker": "Bell code tuned to grief frequencies.",
+                        "shiller": "No one falls without a stadium of light.",
+                        "validator": "Processional charter notarized.",
+                        "miner": "We paved the path with starmetal tiles.",
+                        "meme": "Funeral march? More like legendary send-off parade."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_loss_processional"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_loss_mesh_encode",
+                    "label": "Code the Last-Will Mesh",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "strategy",
+                            "law"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_loss_mesh_signed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You weave consent protocols, guardianship clauses, and asset bequests into a mesh that notarizes itself the moment a warrior speaks. The Cathedra's spires shimmer in acknowledgement."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_loss_mesh_signed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The mesh comes online with seamless interfaces that record every final wish without hesitation."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A legal recursion threatens to loop forever. You hire validators to prune the paradox and keep the wills honest."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Signing a test clause knocks the wind out of you with a flood of phantom memories. Counselors steady you and recalibrate the empathy dampers."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Mesh encryption double-blind and flawless.",
+                        "trader": "Inheritance markets stabilized.",
+                        "whale": "Currents carry their promises to safe harbors.",
+                        "hacker": "No exploit touches these wills.",
+                        "shiller": "Penultimate paperwork, but make it epic.",
+                        "validator": "All clauses notarized with golden seals.",
+                        "miner": "We pressed the contracts into alloy tablets.",
+                        "meme": "Last-will mesh? It's like hugging future history."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_loss_mesh_encode"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_loss_supply",
+                    "label": "Stock the Requiem Vaults",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "care",
+                            "wealth"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_loss_vaults_stocked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You fill the vaults with honor-coin stipends, memory crystals, and messenger wings ready to reach every next-of-kin. The vault doors glow like calm suns."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_loss_vaults_stocked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Supplies arrive in orderly waves: wreaths, stipends, letters pre-addressed. The Loss altar nods in approval."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A supply convoy stalls in debris. You spend hazard pay to clear the lanes and keep the vault schedule."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A vault door snaps shut on your shoulder during testing. Healers wrap the bruise in cooling glyphs while you continue directing pallets."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vault inventory indexed.",
+                        "trader": "Compensation funds compounded.",
+                        "whale": "Currents escort the memorial fleets.",
+                        "hacker": "Alerts route to kin with zero lag.",
+                        "shiller": "Final gifts sparkling like starfall.",
+                        "validator": "Every crate notarized and sealed.",
+                        "miner": "We carved niches for each honor token.",
+                        "meme": "Requiem vaults stocked? You get a hero send-off and a care package."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_loss_supply"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_loss_consecrate",
+                    "label": "Consecrate the Loss Lane",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_loss_processional_raised",
+                            "wakecathedra_loss_mesh_signed",
+                            "wakecathedra_loss_vaults_stocked"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "memory",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_loss_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You bless the river with cobalt fire and release doves of data that carry each volunteer's story skyward. The Loss lane glows steady, unafraid."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_loss_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You seal the rites and the Loss altar accepts the promise to remember."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Names briefly blur, forcing you to invest in mnemonic stabilizers to keep every syllable true."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A memory surge drops you to one knee. Allies brace you while you whisper the vow again until the lane shines."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Loss lane sanctified.",
+                        "trader": "Compensation cleared, conscience clear.",
+                        "whale": "Currents hush in respect.",
+                        "hacker": "Memorial feed immutable.",
+                        "shiller": "Fallen heroes trending with reverence.",
+                        "validator": "Consecration notarized with tear-stained seals.",
+                        "miner": "We lined the riverbed with nightglass.",
+                        "meme": "Loss lane ready: sadness with a soundtrack and fireworks."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_loss_consecrate"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 65
+                }
+            ]
+        },
+        {
+            "round_id": "5.6-R3",
+            "description": "Hide Sanctuary — weave shadowed passages, script false ledgers, and teach those who vanish how to bloom again in the dark.",
+            "actions": [
+                {
+                    "id": "wakecathedra_hide_network",
+                    "label": "Weave the Ghost Sanctuary",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "stealth",
+                            "weave",
+                            "strategy"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_hide_network_woven",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You knot shadow-threads between the Cathedra's arches until hidden corridors bloom like night-blooming flowers. The Hide altar purrs in ultraviolet."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_hide_network_woven",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Secret routes unfurl beneath the mosaic, ready to hide entire caravans at a whisper."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A wardstone misfires and lights up a safehouse. You bankroll extra veil fabric to reseal the breach."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You vanish into your own corridor and stagger out disoriented minutes later. Spotters tag you with orientation charms before you proceed."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Ghost routes obfuscated.",
+                        "trader": "Disguise kits sell out instantly.",
+                        "whale": "Currents soften into fog to hide you.",
+                        "hacker": "Decoy ledgers inject static.",
+                        "shiller": "Hide lane marketing? You never saw us.",
+                        "validator": "Safehouse coordinates notarized off-ledger.",
+                        "miner": "We carved quiet tunnels under the nave.",
+                        "meme": "Ghost sanctuary woven—now you see us, now you definitely don't."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_hide_network"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_hide_passes",
+                    "label": "Issue Shadow Passes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "bureaucracy",
+                            "charisma",
+                            "subterfuge"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_hide_passes_issued",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You stamp passes with inks visible only to loyal watchers. Each pass sings a different counter-melody to foil scanners."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_hide_passes_issued",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Shadow passes circulate quietly through the ranks, ready to vanish squads on command."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A counterfeiter slips in. You invest in anti-forgery sigils keyed to heartbeat rhythms."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "An enemy trace rides a pass back to you, leaving your nerves raw. Hackers sever the connection with obsidian shears."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Pass ledger segmented and safe.",
+                        "trader": "Shadow economies flourish discreetly.",
+                        "whale": "Currents escort the hidden.",
+                        "hacker": "Forgers blacklisted in microseconds.",
+                        "shiller": "Exclusive invite to the invisibility club.",
+                        "validator": "Identity seals notarized invisibly.",
+                        "miner": "We minted the passes from eclipse foil.",
+                        "meme": "Shadow pass obtained; privacy mode: legendary."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_hide_passes"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_hide_drills",
+                    "label": "Drill the Veil Teams",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "training",
+                            "strategy",
+                            "stealth"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_hide_drills_completed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your teams slip through practice hunts without triggering a single sensor. Even the Cathedra's mirrored guardians lose sight of them and applaud."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_hide_drills_completed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Veil teams move like patient storms, ready to fold entire communities into silence."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A drill stumbles when a trainee panics. You invest in calm-ink tattoos to steady breathing patterns."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A misstep slams you into a cloaked wall. The bruise blooms like nebula while mentors reset the lane."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Drill metrics perfect.",
+                        "trader": "Camouflage futures secure.",
+                        "whale": "Currents hide in plain sight alongside you.",
+                        "hacker": "Training sims adjust in real time.",
+                        "shiller": "Hide lane boasting about how no one will ever find them.",
+                        "validator": "Completion notarized quietly.",
+                        "miner": "We carved escape shafts through bedrock.",
+                        "meme": "Veil team motto: if you see us, you didn't."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_hide_drills"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_hide_consecrate",
+                    "label": "Shroud the Hide Lane",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_hide_network_woven",
+                            "wakecathedra_hide_passes_issued",
+                            "wakecathedra_hide_drills_completed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "shadow",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_hide_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You draw a veil over the river and it vanishes from hostile sight, yet glows softly for allies. The Hide lane promises entire worlds of survival underground and between breaths."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_hide_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You seal the sanctuaries with whispered oaths. The lane inhales and becomes a phantom paradise."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "A stray spotlight cuts across the veil. You pay to reroute constellations until the lane is shadowed once more."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Your senses blur as you share perspective with every hidden crew. You reel but finish the rite with shaking hands."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Hide lane disappears on cue.",
+                        "trader": "Safehouse ledgers close to prying eyes.",
+                        "whale": "Currents turn to mist to conceal you.",
+                        "hacker": "No tracker escapes our null field.",
+                        "shiller": "Nothing sells like secrecy.",
+                        "validator": "Shroud notarized in negative ink.",
+                        "miner": "We sealed the tunnels with velvet rock.",
+                        "meme": "Hide lane ready: we left a note saying 'Gone fishing.'"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_hide_consecrate"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 65
+                }
+            ]
+        },
+        {
+            "round_id": "5.6-R4",
+            "description": "Live Rampart — fortify refuge wards, flood the Cathedra with sustenance, and promise that survival is a victory worth defending.",
+            "actions": [
+                {
+                    "id": "wakecathedra_live_ramparts",
+                    "label": "Erect the Lifeline Ramparts",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "defense",
+                            "engineering",
+                            "care"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_live_ramparts_raised",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You conjure ramparts of braided energy and memory-steel that flex instead of shatter. They sing lullabies while absorbing incoming fire."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_live_ramparts_raised",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Ramparts settle into position, pulsing with promise and reinforced by medic wards."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A support beam cracks under refugee traffic. You invest in additional latticework to carry the load."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You take a glancing blow while testing shield resonance. Medics patch you up with restorative soup and solder."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Rampart code stable.",
+                        "trader": "Relief caravans breathe easier.",
+                        "whale": "Currents cradle the walls gently.",
+                        "hacker": "Defense turrets speak lullaby protocols.",
+                        "shiller": "Safest place in the multiverse, now open.",
+                        "validator": "Rampart charter notarized.",
+                        "miner": "We seeded the walls with heartstone.",
+                        "meme": "Ramparts so cozy the enemy might defect."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_live_ramparts"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_live_supply",
+                    "label": "Schedule the Lifeline Rain",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "healing",
+                            "nature"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_live_supply_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You choreograph drop pods, healing rains, and emergency kitchens into a cycle that nourishes every survivor exactly when they need it. The Cathedra's weather obeys your schedule."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_live_supply_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Nutrient rains fall in warm sheets, timed to med-bay shift changes and refugee arrivals."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A shipment misses orbit. You charter whales to tow the pods into alignment and keep the schedule intact."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You inhale a mist of concentrated stimulant while calibrating the sprayers. Nurses rush in with antidotes and stern looks."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Supply loops optimized.",
+                        "trader": "Aid futures stabilized across chains.",
+                        "whale": "Currents deliver the rains on tempo.",
+                        "hacker": "No one misses a meal under our watch.",
+                        "shiller": "Lifeline showers trending as #StayHydratedOrElse.",
+                        "validator": "Distribution notarized.",
+                        "miner": "We drilled cisterns under every pew.",
+                        "meme": "Forecast: 100% chance of restorative rain."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_live_supply"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_live_hearth",
+                    "label": "Light the Hearth Constellations",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "care",
+                            "community",
+                            "spirit"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_live_hearths_warmed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You project constellations of hearthfire over every refuge corner, coding lullabies into the starlight. Children fall asleep smiling despite the looming war."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_live_hearths_warmed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Hearth constellations glow over cots and command posts alike, promising warmth after battle."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A projector shorts and fills the nave with smoke. You bankroll emergency incense scrubbers to clear the air."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Overexertion leaves you light-headed amid the lantern glow. Caretakers sit you down with broth before you try again."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Comfort algorithm tuned.",
+                        "trader": "Tea futures booming.",
+                        "whale": "Currents curl like blankets around the weary.",
+                        "hacker": "Mood lighting patched across networks.",
+                        "shiller": "Spa-day vibes before apocalypse? Absolutely.",
+                        "validator": "Hearth map notarized with heartbeats.",
+                        "miner": "We built braziers from aurora stone.",
+                        "meme": "Hearth constellations unlocked: morale +1000."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_live_hearth"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_live_consecrate",
+                    "label": "Bless the Live Lane",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_live_ramparts_raised",
+                            "wakecathedra_live_supply_synced",
+                            "wakecathedra_live_hearths_warmed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "care",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_live_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You trace sigils of breath and bread over the river until it pulses with every heartbeat in the refuge. The Live lane becomes a promise that survival is sacred."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_live_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You seal the lane with a vow to protect every civilian who clings to life."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Doubt creeps in from weary voices. You answer with extra rations and restful shifts until the lane steadies."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You absorb a wave of exhaustion from every survivor. It nearly buckles you, but the community catches you and sings you back upright."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Live lane pulses with resilience.",
+                        "trader": "Relief credits spent to the last coin.",
+                        "whale": "Currents rock the cradles gently.",
+                        "hacker": "Vital signs mirrored across the net.",
+                        "shiller": "Survival is trending as the hottest rebellion.",
+                        "validator": "Blessing notarized with shared breath.",
+                        "miner": "We paved the lane with warm basalt.",
+                        "meme": "Live lane ready: naps, snacks, and shields for everyone."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_live_consecrate"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 65
+                }
+            ]
+        },
+        {
+            "round_id": "5.6-R5",
+            "description": "Win Spearhead — sharpen the vanguard, align stratagems with the Cathedra's pulse, and ready the strike that will decide the ledger.",
+            "actions": [
+                {
+                    "id": "wakecathedra_win_spear",
+                    "label": "Forge the Victory Spear",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "offense",
+                            "craft",
+                            "strategy"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_win_spear_forged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You hammer starlit alloys and oathfire into a spear that hums with every triumph you have banked. Its point records the coordinates of the enemy's heart."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_win_spear_forged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The spear cores align and lock, ready to channel the combined assault."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A quench bath cracks a blade. You commission a fresh mold lined with constellation dust."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Sparks bite deep when you overstrike. Commanders bind the burn and place the hammer back in your hand."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Spear telemetry perfect.",
+                        "trader": "Victory futures spike.",
+                        "whale": "Currents whisper toward the target.",
+                        "hacker": "Weapon script immune to tampering.",
+                        "shiller": "Highlight reel already editing itself.",
+                        "validator": "Forge notarized.",
+                        "miner": "We fed the furnace meteor hearts.",
+                        "meme": "Spear forged: ready to poke destiny."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_win_spear"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_win_banner",
+                    "label": "Crown the Triumphant Banner",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "performance",
+                            "spirit",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_win_banner_crowned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You sew signals from every allied banner into one vast pennant. When it unfurls, the Cathedra shakes and every soldier stands straighter."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_win_banner_crowned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The banner rises, carrying the scent of ozone and victory."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A seam frays under weight. You hire seam-smiths to stitch it with promise-thread."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The banner pole whips and knocks you breathless. Squadmates right it before the crowd loses heart."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Banner firmware uploaded.",
+                        "trader": "Merch preorders astronomical.",
+                        "whale": "Currents ripple the colors proudly.",
+                        "hacker": "Signal carriers triple-encrypted.",
+                        "shiller": "Triumph aesthetic: flawless.",
+                        "validator": "Crowning notarized.",
+                        "miner": "We gilded the finials with dawn ore.",
+                        "meme": "Banner drop hits harder than a bass drop."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_win_banner"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_win_breach",
+                    "label": "Chart the Final Breach",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "strategy",
+                            "tactics"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_win_breachcharted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You overlay enemy schedules, flux tides, and morale pulses until the breach path blazes like a comet. Every commander salutes the map."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_win_breachcharted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The route to the enemy core stabilizes on every tactical slate."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Static muddles the predictions. You bankroll extra recon flights to punch through the noise."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A counter-script slams your mind with false routes. Allies douse you in clarity water while the map reboots."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Breach route compiled.",
+                        "trader": "Risk models point to profit.",
+                        "whale": "Currents carve the corridor ahead.",
+                        "hacker": "Enemy overlays decrypted.",
+                        "shiller": "Livestream path to glory.",
+                        "validator": "Charts notarized.",
+                        "miner": "We cut guide grooves through asteroid husks.",
+                        "meme": "Final breach plotted: GPS recalculating for greatness."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_win_breach"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_win_consecrate",
+                    "label": "Anoint the Win Lane",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_win_spear_forged",
+                            "wakecathedra_win_banner_crowned",
+                            "wakecathedra_win_breachcharted"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "strategy",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_win_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You plunge the spear into the river, raise the banner, and project the breach route overhead. The Win lane crackles with destiny's heat."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_win_lane_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You seal the lane with a cheer that rattles the rafters."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Confidence dips; you invest in encore drills until the lane blazes again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The lane surges too hot and singes your lungs. You breathe through the fire and finish the rite anyway."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Win lane crowned.",
+                        "trader": "Victory pool solvent and roaring.",
+                        "whale": "Currents race toward the strike point.",
+                        "hacker": "Final assault macros signed.",
+                        "shiller": "Countdown to glory blasting everywhere.",
+                        "validator": "Anointing notarized with fireworks.",
+                        "miner": "We set the lane stones ablaze with victory runes.",
+                        "meme": "Win lane ready: hype armor engaged."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_win_consecrate"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 65
+                }
+            ]
+        },
+        {
+            "round_id": "5.6-R6",
+            "description": "Cathedra Council — summon every lane's champions, argue the penultimate doctrine, and ratify the plan that threads loss, hide, live, and win into one charge.",
+            "actions": [
+                {
+                    "id": "wakecathedra_council_convene",
+                    "label": "Summon the Cathedra Council",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_stage_ready",
+                            "wakecathedra_loss_lane_ready",
+                            "wakecathedra_hide_lane_ready",
+                            "wakecathedra_live_lane_ready",
+                            "wakecathedra_win_lane_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "ritual",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_council_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Representatives from every lane step onto a dais of braided light. Their voices harmonize instantly, and the Cathedra bends closer to listen."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_council_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The council assembles, cloaks overlapping like stained glass, ready to vote."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Logistics tangle. You sponsor additional teleport rings to bring every delegate in time."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A surge of conflicting emotions staggers you. Peers steady your shoulders until the council seats fill."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Council quorum confirmed.",
+                        "trader": "Governance liquidity high.",
+                        "whale": "Currents spiral respectfully.",
+                        "hacker": "Minutes encrypted before they're spoken.",
+                        "shiller": "Penultimate summit trending everywhere.",
+                        "validator": "Roll call notarized.",
+                        "miner": "We carved the dais from comet bone.",
+                        "meme": "Council assembled: bring your best arguments and snacks."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_council_convene"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_vote_call",
+                    "label": "Call the Penultimate Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_council_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "consensus",
+                            "strategy",
+                            "spirit"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                }
+                            ],
+                            "narration": "Every lane lifts a hand, every mirror echoes, and the Cathedra rings with unified intent."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakecathedra_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 65
+                                }
+                            ],
+                            "narration": "Votes ripple through the nave like synchronized waves. Consensus is sealed."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Debate flares. You pledge extra support packages to sway doubters toward unity."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Argument thunder rattles the rafters. You absorb the backlash and ask for a calmer recount."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vote ledger flawless.",
+                        "trader": "Consensus premiums paid.",
+                        "whale": "Currents applaud with tidal force.",
+                        "hacker": "No tampering on my watch.",
+                        "shiller": "Headline: 'Cathedra chooses everyone.'",
+                        "validator": "Ballots notarized in triplicate.",
+                        "miner": "We rang every bell between breaths.",
+                        "meme": "Vote passed: democracy but make it cosmic."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_vote_call"
+                    ]
+                },
+                {
+                    "id": "wakecathedra_archive_testament",
+                    "label": "Seal the Cathedra Testament",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "deck",
+                                    "id": "deck_wakecathedra_penultimate"
+                                }
+                            ],
+                            "narration": "You bind the council's rulings, the lanes' promises, and the choir's anthem into a testament that future crews can unseal when history needs courage."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Testament archived across every mirror.",
+                        "trader": "Priced at infinite goodwill.",
+                        "whale": "Currents carry the record to distant wakes.",
+                        "hacker": "Checksum flawless.",
+                        "shiller": "Collector's edition glows in four colors.",
+                        "validator": "Archive notarized with starlight.",
+                        "miner": "We inlaid the covers with oathstone.",
+                        "meme": "Penultimate mixtape secured."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:wakecathedra_archive_testament"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 65
+                }
+            ]
+        },
+        {
+            "round_id": "5.6-R7",
+            "description": "Final Descent — let the Cathedra open, gather every lane at your side, and step toward the last confrontation.",
+            "actions": [
+                {
+                    "id": "advance_5_7",
+                    "label": "Descend from the Cathedra",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecathedra_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "The rivers of Loss, Hide, Live, and Win flow beside you as the Cathedra tilts toward the battlefield. You march with everyone you saved, everyone you honored, everyone you armed.",
+                            "next_hint": "5.7"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Descent corridor compiled.",
+                        "trader": "All ledgers ready for payout.",
+                        "whale": "Currents surge ahead.",
+                        "hacker": "No way back but victory.",
+                        "shiller": "Penultimate cliffhanger delivered.",
+                        "validator": "Departure notarized.",
+                        "miner": "We carved stairways through aurora stone.",
+                        "meme": "Next stop: the endgame we've been screaming for."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.6",
+                        "action:advance_5_7"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 24,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 321
+                }
+            ]
+        },
+        {
+            "xp_gte": 2024,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "relic_wakecathedra_signet"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "wakecathedra_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "deck",
+                    "id": "deck_wakecathedra_penultimate"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "5.6A"
+        },
+        {
+            "when": "flags.wakecathedra_consensus_passed",
+            "goto": "5.7"
+        },
+        {
+            "when": "else",
+            "goto": "5.6"
+        }
+    ]
+}
