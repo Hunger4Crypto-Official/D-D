@@ -1,0 +1,1282 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "5.4",
+    "title": "The Wake Crucible — Colliding All Threads",
+    "narration": "The blank aperture spits you into the Wake Crucible, a spherical chamber cut from conden",
+    "sed starlight. Hexagonal plates orbit a molten core, each etched with the four lane sigils you carried from the Apex. Above",
+    " and below, ghost-cities of possible endings grind against each other like tectonic plates. Every clash throws sparks that co",
+    "uld become victory, retreat, survival, or sacrifice depending on who catches them first. Gremlins string sensor rigs between",
+    " the plates, traders run arbitrage booths where you can exchange despair for cunning, whales push tides of molten light to fo",
+    "rge temporary bridges, hackers unravel the adversary’s counter-protocols, validators hang verdict prisms ready to refract jus",
+    "tice, miners tap magma vents for raw energy, and the meme division projects graffiti like \"WE DO NOT CHOOSE BETWEEN ENDINGS; W",
+    "E CHOOSE ALL OF THEM\" across the burning walls.\n\nSeven phases keep the Crucible from imploding. The first locks the plates and",
+    " charts the adversary orbit. The second chains your quartet plan into the Crucible forge. The third loads catalysts and shelte",
+    "rs in case the chamber shatters. The fourth assigns strike, veil, rescue, and rally crews with mirrored comms. The fifth runs",
+    " live-fire drills that weaponize endings against each other. The sixth convenes the Crucible Verdict. The seventh cracks the c",
+    "ore, opening the path to the Reckoning ahead.",
+    "rounds": [
+        {
+            "round_id": "5.4-R1",
+            "description": "Crucible Lock — anchor the plates and identify hostile vectors.",
+            "actions": [
+                {
+                    "id": "wakecrucible_core_calibrate",
+                    "label": "Calibrate the Crucible Core",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "systems",
+                            "discipline",
+                            "defense"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_core_stable",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You counter-spin the plates until the chamber hums in balance. The molten heart settle",
+                            "s like a loyal sun."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_core_stable",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The plates lock into an orderly orbit around you."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "One plate lurches. You rent whale-guided tow cables to haul it back in line."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "A molten spray scorches your armor. The meme crew tags the scorch mark with a heart."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Orbital lock patched.",
+                        "trader": "Volatility premiums plummet.",
+                        "whale": "Tide cools the core.",
+                        "hacker": "No sabotage vectors detected.",
+                        "shiller": "We stabilized a sun. Casual.",
+                        "validator": "Plate positions notarized.",
+                        "miner": "We hammered the couplings with magma hammers.",
+                        "meme": "Core set to do-not-spin mode."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_core_calibrate"
+                    ]
+                },
+                {
+                    "id": "wakecrucible_enemy_chart",
+                    "label": "Chart the Enemy Orbit",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakeapex_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "strategy",
+                            "perception"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_vectors_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You map hostile swarms, fail-safes, and counterfates in crisp arcs. The Crucible reveal",
+                            "s every threat it can muster."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_vectors_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Vectors highlight across your visor. Weaknesses glow like fault lines."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "Heat haze fogs your scans. You buy cooling pylons to steady the signal."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A counter-hex pulses back through the sensor and numbs your arm."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Threat matrix streaming.",
+                        "trader": "Shorting their chances already.",
+                        "whale": "Currents outline every predator.",
+                        "hacker": "Scrubbed their mask subroutines.",
+                        "shiller": "Enemy reveal trailer dropping now.",
+                        "validator": "Orbit notarized.",
+                        "miner": "We etched the weaknesses into the rail.",
+                        "meme": "Know thy enemy, roast thy enemy."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_enemy_chart"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.4-R2",
+            "description": "Forge Loop — bind the quartet lanes into the Crucible’s pressure locks.",
+            "actions": [
+                {
+                    "id": "wakecrucible_lane_lock",
+                    "label": "Lock the Fate Loop",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_core_stable",
+                            "wakecrucible_vectors_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "teamwork",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_loop_locked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You weld loss, concealment, survival, and triumph into a feedback loop that feeds on ho",
+                            "pe instead of despair."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_loop_locked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The loop seals, glowing white-hot and obedient."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "A weld pops. Traders front extra flux after you pay hazard fees."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The feedback lashes your chest. You grit through it and finish the lock."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Loop handshake green.",
+                        "trader": "Endings arbitraged in your favor.",
+                        "whale": "Currents flow without backwash.",
+                        "hacker": "No sabotage vector survives.",
+                        "shiller": "We braided fate into adamant.",
+                        "validator": "Loop notarized.",
+                        "miner": "Welded with magma rods.",
+                        "meme": "Feedback loop? More like feedforward legend."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_lane_lock"
+                    ]
+                },
+                {
+                    "id": "wakecrucible_pressure_reserves",
+                    "label": "Load the Pressure Reserves",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_loop_locked"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "support",
+                            "strategy"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_reserves_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You seed reliquaries, veil kits, med bays, and celebration cannons into shielded alcove",
+                            "s before the chamber floods with heat."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_reserves_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Stockpiles click into place; status lights flash emerald."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "A cache melts. You buy insulated housings and restock."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You singe your hands shoving supplies into the alcoves."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Reserve manifests synced.",
+                        "trader": "Budget lines survived the lava.",
+                        "whale": "Currents deliver the crates.",
+                        "hacker": "All hatches keyed to ally prints.",
+                        "shiller": "Loot drop but make it lava-proof.",
+                        "validator": "Reserves notarized.",
+                        "miner": "We carved shelves into basalt.",
+                        "meme": "Emergency s'mores kit included."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_pressure_reserves"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.4-R3",
+            "description": "Catalyst Stage — charge the heart and carve bunkers in case the chamber ruptures.",
+            "actions": [
+                {
+                    "id": "wakecrucible_catalyst_charge",
+                    "label": "Charge the Catalyst Heart",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_reserves_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "offense",
+                            "inspiration"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_catalyst_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You thread lane energy into the molten heart until it spins like a contained nova, wait",
+                            "ing to be unleashed."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_catalyst_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The core glows brighter, pulsing to the rhythm of your squads."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "The heart flares wild. You buy dampeners and try again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Heat sears through your gauntlets. The meme crew captions the smoke trail."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Catalyst charge within tolerance.",
+                        "trader": "Yield curve now volcanic.",
+                        "whale": "Currents spin the fire gently.",
+                        "hacker": "Containment protocols green.",
+                        "shiller": "Heart of a star, playlist of a hero.",
+                        "validator": "Charge notarized.",
+                        "miner": "We drilled vents to keep it honest.",
+                        "meme": "Core flexing harder than we are."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_catalyst_charge"
+                    ]
+                },
+                {
+                    "id": "wakecrucible_shadow_bunkers",
+                    "label": "Hollow the Shadow Bunkers",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_loop_locked"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "stealth",
+                            "logistics",
+                            "teamwork"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_bunkers_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You carve mirrored bunkers inside the plates, cloaking them from hostile sensors and li",
+                            "nking them to the AFK mesh."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_bunkers_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Hidden chambers shimmer to life along the walls."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "A bunker vents steam like a beacon. You fund insulation and patch the leak."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You tumble into molten slag and crawl out smoking but alive."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Bunker network mapped.",
+                        "trader": "Hide assets secured.",
+                        "whale": "Currents chill the crawlspaces.",
+                        "hacker": "Invisible and invitation-only.",
+                        "shiller": "VIP panic rooms, now with mood lighting.",
+                        "validator": "Bunkers notarized anonymously.",
+                        "miner": "We carved them with subsonic drills.",
+                        "meme": "Stealth level: magma-proof."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_shadow_bunkers"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.4-R4",
+            "description": "Strike Grid — assign the four crews and mirror their comm lattice.",
+            "actions": [
+                {
+                    "id": "wakecrucible_strike_assign",
+                    "label": "Assign the Crucible Crews",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_reserves_ready",
+                            "wakecrucible_bunkers_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "strategy",
+                            "teamwork"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_crews_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Strike, veil, rescue, and rally leaders clasp wrists above the core. Their squads echo",
+                            " the motion in perfect sync."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_crews_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Assignments lock; lane icons flare over every helmet."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Two squads fight over anthem rights. You sponsor a mashup and move on."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You get hoisted during a celebratory toss and dropped into a foam pit."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Crew rosters synced.",
+                        "trader": "Strike options hedged.",
+                        "whale": "Currents drum for each call sign.",
+                        "hacker": "Private comms sealed.",
+                        "shiller": "Promo posters done before the ink dries.",
+                        "validator": "Assignments notarized.",
+                        "miner": "We forged insignias from cooling slag.",
+                        "meme": "Crews assemble!"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_strike_assign"
+                    ]
+                },
+                {
+                    "id": "wakecrucible_signal_matrix",
+                    "label": "Mirror the Signal Matrix",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_crews_ready",
+                            "wakecrucible_catalyst_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "systems",
+                            "support",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_matrix_online",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Twin lattices spin — one inside the Crucible, one ghosted at the Wake Apex — ensuring any",
+                            " message echoes across both arenas."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_matrix_online",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Signals shimmer like mirrored constellations across your HUD."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "Echoes feedback until you underwrite more dampeners."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "The twin matrix clips your shoulder with raw static."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Matrix mirrored without drift.",
+                        "trader": "Latency trades at zero.",
+                        "whale": "Currents carry your echoes.",
+                        "hacker": "Cross-sync locked.",
+                        "shiller": "Two arenas, one shout.",
+                        "validator": "Matrix notarized.",
+                        "miner": "We strung relay crystals through molten veins.",
+                        "meme": "It's stereo destiny."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_signal_matrix"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.4-R5",
+            "description": "Trial Fires — weaponize lane energy and rehearse emergency recoveries.",
+            "actions": [
+                {
+                    "id": "wakecrucible_overload_test",
+                    "label": "Test the Overload Spiral",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_matrix_online"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "offense",
+                            "strategy",
+                            "teamwork"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_overload_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You unleash the catalyst heart in a controlled burst that ricochets between lanes and r",
+                            "eturns as pure momentum."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_overload_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The spiral holds. Your squads cheer over the comms."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Energy leaks sideways. You pay miners to brace the conduits."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The spiral whips you off your feet. The AFK mesh slams you safely into a bunker."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Overload script tuned.",
+                        "trader": "Momentum futures skyrocketing.",
+                        "whale": "Currents ride the spiral.",
+                        "hacker": "Failsafes triple redundant.",
+                        "shiller": "That blast had merch potential.",
+                        "validator": "Test notarized mid-flare.",
+                        "miner": "We reinforced the conduits.",
+                        "meme": "Explosions but tasteful."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_overload_test"
+                    ]
+                },
+                {
+                    "id": "wakecrucible_recovery_wave",
+                    "label": "Launch the Recovery Wave",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_overload_ready",
+                            "wakecrucible_crews_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "support",
+                            "teamwork",
+                            "medicine"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_recovery_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Healers, smugglers, shieldbearers, and hype squads flood the chamber in choreographed w",
+                            "aves, undoing damage faster than the Crucible can inflict it."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_recovery_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The wave leaves every squad grinning and recharged."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Timing slips; you pay overtime to rehearse again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "A stray surge knocks you into a med bay. You wake up already healed."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Recovery macros synced.",
+                        "trader": "Resilience premium locked.",
+                        "whale": "Currents cushion every fall.",
+                        "hacker": "Med feeds encrypted.",
+                        "shiller": "Wellness wave trending.",
+                        "validator": "Wave notarized.",
+                        "miner": "We piped coolant where it counts.",
+                        "meme": "Group hug but tactical."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_recovery_wave"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.4-R6",
+            "description": "Crucible Verdict — call the council, ratify the plan, and archive the forge notes.",
+            "actions": [
+                {
+                    "id": "wakecrucible_council_convene",
+                    "label": "Convene the Crucible Council",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_recovery_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "leadership",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_council_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Delegates meet on a floating plate while molten light frames them like stained glass."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_council_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The council stands ready; the chamber hushes."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Heat makes tempers flare. You sponsor cooling wards until everyone smiles again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Your throat scorches mid-address. A healer mists your voice back into service."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Council quorum logged.",
+                        "trader": "Governance bonds trading hot.",
+                        "whale": "Currents curl into a halo.",
+                        "hacker": "Minutes encrypted.",
+                        "shiller": "Forge floor doubles as council chamber.",
+                        "validator": "Agenda notarized.",
+                        "miner": "We bolted the chairs to keep them from drifting.",
+                        "meme": "Molten parliament assemble."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_council_convene"
+                    ]
+                },
+                {
+                    "id": "wakecrucible_vote_call",
+                    "label": "Call the Crucible Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_council_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "consensus",
+                            "ritual",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                }
+                            ],
+                            "narration": "The verdict prisms ring in ascending chords. The chamber acknowledges your fourfold stra",
+                            "tegy."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakecrucible_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Consensus flashes across every visor."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "A stalemate forms. You buy extra coolant and emotional support snacks to break it."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "Arguments spike like lava. You absorb the backlash and promise a calmer re-vote."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vote recorded in molten ink.",
+                        "trader": "Consensus premium secured.",
+                        "whale": "Currents applaud.",
+                        "hacker": "No tampering on my watch.",
+                        "shiller": "Headline: 'Crucible picks all outcomes.'",
+                        "validator": "Ballots notarized.",
+                        "miner": "We rang the prisms with ore mallets.",
+                        "meme": "Motion passes with molten swagger."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_vote_call"
+                    ]
+                },
+                {
+                    "id": "wakecrucible_archive",
+                    "label": "Archive the Forge Notes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "relic_crucible_codex"
+                                }
+                            ],
+                            "narration": "You emboss the drills, failsafes, and bravado into a heat-proof codex for the next coho",
+                            "rt."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Codex etched and cooled.",
+                        "trader": "Priced at 'share freely'.",
+                        "whale": "Currents carry copies outward.",
+                        "hacker": "Checksum sealed.",
+                        "shiller": "Collector's edition forged today.",
+                        "validator": "Archive notarized.",
+                        "miner": "We quenched it in comet water.",
+                        "meme": "New lore drop smells like lava."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:wakecrucible_archive"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.4-R7",
+            "description": "Core Shatter — crack the molten heart and reveal the Reckoning path.",
+            "actions": [
+                {
+                    "id": "advance_5_5",
+                    "label": "Shatter the Crucible Core",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakecrucible_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "You strike the molten heart with the quartet loop. The chamber blooms into a corridor of",
+                            " red-white light leading deeper.",
+                            "next_hint": "5.5"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Reckoning gateway stable.",
+                        "trader": "All stakes roll forward.",
+                        "whale": "Currents surge toward the breach.",
+                        "hacker": "No failsafes left behind.",
+                        "shiller": "Stage five hype unlocked.",
+                        "validator": "Shatter notarized.",
+                        "miner": "We cracked a star and called it progress.",
+                        "meme": "Next zone speedrun when?"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.4",
+                        "action:advance_5_5"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 22,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 255
+                }
+            ]
+        },
+        {
+            "xp_gte": 1777,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "relic_crucible_core"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "wakecrucible_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "relic_crucible_codex"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "5.4A"
+        },
+        {
+            "when": "flags.wakecrucible_consensus_passed",
+            "goto": "5.5"
+        },
+        {
+            "when": "else",
+            "goto": "5.4"
+        }
+    ]
+}
