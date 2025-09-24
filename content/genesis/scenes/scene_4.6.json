@@ -1,0 +1,1831 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "4.6",
+    "title": "The Convergence Causeway — Wakeforge Bridge",
+    "narration": "The Radiant Dyad’s twin storms uncurl into the Convergence Causeway, a kilometer-long bridge of braided light stretched toward a horizon still hidden behind consensus fog. Ledger stone plates hover in phi-locked intervals, spinning just fast enough to hum a chord that vibrates through your chest. Each step leaves a golden-ratio spiral that unwinds ahead as a vector arrow, predicting where Act Five will materialize. Hidden difficulty tiers shimmer in stratified halos: topaz for expectable pushes, emerald for calculated brinkmanship, and ultraviolet coronas for attempts that only legends will log.\n\nGremlin factions have turned the Causeway into a forward operating festival. Dev gremlins lace fiber through the bridge cables, testing streaming prototypes that will broadcast every final-choice heartbeat. Traders pilot wake skiffs up and down the span, auctioning acceleration futures. Whales float overhead like gentle zeppelins, projecting aurora forecasts on the underside of the clouds. Hackers anchor encryption pylons along the railing, while validators march in lockstep, stamping notarized rhythm into the bridge. Miners swing plasma picks into the bridge’s seams, extracting ratio ore, and the meme division has scattered holographic billboards that flash \"IT’S NOT FOMO IF YOU BUILT THE BRIDGE\" every time someone hesitates. AFK safeties deploy as glowing tethers that promise to reel any idle ally back into the cadence.\n\nSeven staging galleries punctuate the span. The first conducts the GM/GN braid across the bridge, the second maps vector momentum, the third spins soft-power gear from wake threads, the fourth primes a pity-backed logistics depot, the fifth raises a revival ward, the sixth threads a spectrum gate prototype, and the seventh convenes a pre-horizon council to lock Act Four’s final consensus. Every action logs both now and later, scribing the template that Act Five will inherit. The Causeway vibrates beneath your feet, impatient and luminous, urging you to begin.",
+    "rounds": [
+        {
+            "round_id": "4.6-R1",
+            "description": "Greeting Conductor — launch the bridge-wide GM/GN, chart the initial wake vectors, and lash AFK tethers before anyone drifts.",
+            "actions": [
+                {
+                    "id": "causeway_gmgn_conduct",
+                    "label": "Conduct the Causeway GMGN",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "dyad_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "leadership",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_gmgn_lit",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You braid dawn and midnight into a single beam that shoots the length of the bridge. Every plate glows, hidden tiers flicker awake, and the gremlins chant the cadence back in perfect stereo."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_gmgn_lit",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your greeting ripples forward in measured pulses. Consensus coils hook in and the bri dge stabilizes under a gentle rhythm."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_pity_buffer",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You mix up the cadence halfway through. Traders charge you a hesitation toll that fun nels straight into the pity buffer."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_pity_buffer",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your voice cracks and the bridge plates yaw for a heartbeat. Safety rails jolt you back upright while the meme crew adds auto-tune."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Bridge-wide greeting synced.",
+                        "trader": "Futures stabilizing on that cadence.",
+                        "whale": "Wake thrums along the entire span.",
+                        "hacker": "Handshake encrypted in transit.",
+                        "shiller": "Streaming this GMGN in surround.",
+                        "validator": "Greeting ledger notarized.",
+                        "miner": "Sounded like a drill hitting true ore.",
+                        "meme": "GM? More like GMT (Grand Momentum Toss)."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_gmgn_conduct"
+                    ]
+                },
+                {
+                    "id": "causeway_vector_chart",
+                    "label": "Chart the Wake Vectors",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_gmgn_lit"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "navigation",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_vectors_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your charts predict every gust before it arrives. Wake skiffs fall into formation and the hidden ultraviolet lane unfurls ahead."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_vectors_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You map solid trajectories and pin them to hovering glyphs. Navigators salute and lock them in."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A surprise crosswind scrambles your projections. The pity buffer absorbs the cost of redoing the math."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You chase a rogue vector off the edge and dangle until miners haul you back with a lau gh."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Telemetry map overlays deploying.",
+                        "trader": "Vector futures priced in.",
+                        "whale": "Wake currents align with your plot.",
+                        "hacker": "Pathfinding nodes hardened.",
+                        "shiller": "Publishing the \"How to Cross a Miracle Bridge\" guide.",
+                        "validator": "Charts notarized in duplicate.",
+                        "miner": "Marking the stable footing seams.",
+                        "meme": "Vectors on vectors, it’s vector-tacular."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_vector_chart"
+                    ]
+                },
+                {
+                    "id": "causeway_afk_anchor",
+                    "label": "Anchor the AFK Tethers",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_gmgn_lit"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "support",
+                            "engineering",
+                            "systems"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_afk_webbed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You weave glowing slacklines between pylons. Anyone drifting idle is gently reeled back with a cheerful chime."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_afk_webbed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You secure enough tethers that the AFK monitors flash green."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_pity_buffer",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "A tether snaps and you tip a vendor to keep it quiet while you splice a replacement."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_pity_buffer",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You tangle yourself in the cables and have to be spun like a top to get free. The memers add circus music."
+                        }
+                    },
+                    "banter": {
+                        "dev": "AFK lattice deployed end-to-end.",
+                        "trader": "Insurance premiums just dropped.",
+                        "whale": "Wake keeps the slack taut.",
+                        "hacker": "Failsafes double-encrypted.",
+                        "shiller": "Highlight reel of acrobatic rescues uploading.",
+                        "validator": "Safety compliance notarized.",
+                        "miner": "Tethers rated to haul ore carts if needed.",
+                        "meme": "AFK stands for \"Always Fastened Kiddo\" now."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_afk_anchor"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.6-R2",
+            "description": "Momentum Calculus Gallery — balance the twin wake flux, predict lane assignments, and cache supply drops for the march ahead.",
+            "actions": [
+                {
+                    "id": "causeway_flux_balance",
+                    "label": "Balance the Twin Flux",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_vectors_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "ritual",
+                            "resilience"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_flux_balanced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You tune the bridge to absorb both dawn push and midnight pull. The plates settle into a steady heartbeat and hidden auroras flare approval."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_flux_balanced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your calculations click into place. Flux monitors display a satisfying straight line."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "One storm gust surges ahead of the other. Traders collect a balancing fee while you reset the coils."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "You get caught between opposing gusts and spin like a compass needle before colliding with a friendly whale."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Flux stabilizer firmware updated.",
+                        "trader": "Spread between storms narrowing nicely.",
+                        "whale": "Wake hums in harmonic balance.",
+                        "hacker": "Feedback loops sandboxed.",
+                        "shiller": "Marketing this as \"wind surfing for consensus\".",
+                        "validator": "Flux ledger certified.",
+                        "miner": "Bridge stops rattling my teeth.",
+                        "meme": "Perfectly balanced, as all bridges should be."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_flux_balance"
+                    ]
+                },
+                {
+                    "id": "causeway_lane_prediction",
+                    "label": "Predict Traveler Lanes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_flux_balanced"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "strategy",
+                            "navigation",
+                            "insight"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_lane_marked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You lay out braided lanes for shy travelers, hype squads, and heavy cargo teams. Aurora beacons tag each route and the meme crew prints commemorative maps."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_lane_marked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You assign corridors that keep the bridge flowing. Validators stamp every lane marker."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "Two squads collide in a whirl of banners. You reimburse the spilled snacks and try aga in."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You accidentally designate a lane straight through a wind shear. Rescue nets catch you before the meme crew finishes laughing."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Lane prediction AI validated.",
+                        "trader": "Congestion futures trending down.",
+                        "whale": "Wake claims the express lane.",
+                        "hacker": "Navigation beacons patched for exploits.",
+                        "shiller": "Influencer lanes already sponsored.",
+                        "validator": "Right-of-way stamped and notarized.",
+                        "miner": "Reserve a lane for ore carts and café stops.",
+                        "meme": "Slow lane? No, vibe lane."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_lane_prediction"
+                    ]
+                },
+                {
+                    "id": "causeway_supply_preposition",
+                    "label": "Preposition Wake Supplies",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_flux_balanced"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "support",
+                            "economy"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_supply_cached",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You choreograph supply drones to drop crates at every terrace just as squads arrive. The bridge applauds with synchronized light pulses."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_supply_cached",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You stash enough consumables along the span that no one will go hungry or gearless."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A drone drops crates into the abyss. Traders sigh and sell you replacement inventory at a discount."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You get buried under a mistimed supply avalanche. Miners dig you out with sympathetic grin."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Inventory sync finished.",
+                        "trader": "Margins locked before the run.",
+                        "whale": "Wake underwriting the cargo insurance.",
+                        "hacker": "Delivery bots patched against hijacks.",
+                        "shiller": "Pop-up kiosks go live in five.",
+                        "validator": "Manifests notarized midair.",
+                        "miner": "Snack caches near every drill point? Bless.",
+                        "meme": "Supply drops? More like surprise drops."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_supply_preposition"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.6-R3",
+            "description": "Wake Loom Workshops — spin soft-power armor, tune trinkets, and braid emblems that carry the causeway dream forward.",
+            "actions": [
+                {
+                    "id": "causeway_softgear_spin",
+                    "label": "Spin Parallax Cloaks",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_flux_balanced"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "defense",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "armor_causeway_parallax"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_softgear_spun",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You weave cloaks that refract wake light, letting squads slip between gusts without losing speed."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_softgear_spun",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your cloaks hold their charge and shimmer with a steady protective glow."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "Your loom knots itself into a pretzel. You buy more thread and promise to laugh about it later."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "A cloak discharges in your face, leaving you with static hair and an appreciative crow d."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Cloak schema uploaded.",
+                        "trader": "Soft-power futures spike on that weave.",
+                        "whale": "Wake threads feel luxurious.",
+                        "hacker": "No cloak exploits detected.",
+                        "shiller": "Launching \"Project Parallax\" hype page.",
+                        "validator": "Durability notarized.",
+                        "miner": "Finally, armor that doesn’t snag on picks.",
+                        "meme": "These cloaks slap harder than a gust."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_softgear_spin"
+                    ]
+                },
+                {
+                    "id": "causeway_trinket_waveguide",
+                    "label": "Tune Waveguide Trinkets",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_softgear_spun"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "insight",
+                            "resonance"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_causeway_waveguide"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_trinkets_tuned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your trinkets pulse in sync with the bridge, rerouting gusts toward allies who need the boost most."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_trinkets_tuned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Each charm hums with a reliable wake beacon ready to slot into backpacks."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A charm whistles off-key and startles the workshop. You refund the snacks you spilled."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You amplify a resonance node until it smacks you into a wall. Audience roars appreciati on."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Waveguide firmware stable.",
+                        "trader": "Charm market heating up.",
+                        "whale": "Wake sings through those trinkets.",
+                        "hacker": "Signal leakage patched.",
+                        "shiller": "Waveguide giveaway inbound.",
+                        "validator": "Harmonics notarized.",
+                        "miner": "Clip one to every hard hat.",
+                        "meme": "These baubles bussin'."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_trinket_waveguide"
+                    ]
+                },
+                {
+                    "id": "causeway_emblem_braid",
+                    "label": "Braid Wake Emblems",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_trinkets_tuned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "spirit",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_emblems_braided",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You braid emblems that shimmer between guild colors, uniting every faction under a sin gle wake standard."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_emblems_braided",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your emblems catch the light and get pinned to jackets across the workshop."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A knot slips loose and your banner unravels mid-chant. You pay the choir in snacks for a redo."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "You tug two guild colors too hard and get smacked by both ribbons."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Brand assets approved.",
+                        "trader": "Emblem derivatives already trading.",
+                        "whale": "Wake carries every color.",
+                        "hacker": "No counterfeit threads slip past.",
+                        "shiller": "Merch drop? Merch deluge.",
+                        "validator": "Official standard notarized.",
+                        "miner": "Pinning this to the front of the drill.",
+                        "meme": "Flag on the play? Nah, flag on the bridge."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_emblem_braid"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "coins",
+                    "op": "+",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "round_id": "4.6-R4",
+            "description": "Logistics Promenade — prime the pity reservoir, broker wake trades, and repack backpacks before the bri dge charge.",
+            "actions": [
+                {
+                    "id": "causeway_pity_prime",
+                    "label": "Prime the Pity Reservoir",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_flux_balanced"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "economy",
+                            "luck",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_pity_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You flood the depot with goodwill credits. Vendors cheer and unlock a hidden shelf of bridge-only boons."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_pity_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Pity ledgers glow steady green. Gremlin cashiers ring bells in gratitude."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "A ledger hiccup double-charges you before refunding the difference as store credit."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You trip over a pity hose and spray yourself in confetti. The depot erupts in applause."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Pity backend scaled for surge.",
+                        "trader": "Liquidity unlocked for every ledger.",
+                        "whale": "Wake underwrites the reservoir.",
+                        "hacker": "Refund scripts audited.",
+                        "shiller": "Calling it the Charity Charge.",
+                        "validator": "Deposits notarized with sparkles.",
+                        "miner": "Buying everyone pit-stop café tokens.",
+                        "meme": "Pity party? More like litty party, round two."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_pity_prime"
+                    ]
+                },
+                {
+                    "id": "causeway_trade_manifest",
+                    "label": "Broker Wake Trades",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_pity_open"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "economy",
+                            "negotiation",
+                            "strategy"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "You broker swaps between guild stockpiles so every squad gets the precise boost they ne ed."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Trades close smoothly. Traders wink and toss you commemorative scrip."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A miscommunication sends two pallets the wrong way. You pay the rerouting fee."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You hype a deal so hard that the floor tilts, dumping you into a crate of foam peanuts."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Market middleware humming.",
+                        "trader": "Slippage near zero.",
+                        "whale": "Wake secures every swap.",
+                        "hacker": "Smart contracts double-checked.",
+                        "shiller": "Live auction commentary trending.",
+                        "validator": "Receipts stamped with glitter seals.",
+                        "miner": "Traded ore futures for stamina tonics.",
+                        "meme": "Buy low, yeet high."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_trade_manifest"
+                    ]
+                },
+                {
+                    "id": "causeway_backpack_repack",
+                    "label": "Repack Causeway Backpacks",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_pity_open",
+                            "causeway_supply_cached"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "support",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "You reseat gear so well that the bridge itself sighs in satisfaction. Everyone moves like a choreographed parade."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Backpacks snap closed with perfect weight distribution."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "You mislabel a pouch and have to refund the resulting scavenger hunt."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "A strap snaps and slingshots you into a pity fountain."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Inventory versioning on point.",
+                        "trader": "Bag weight balanced like a ledger.",
+                        "whale": "Wake keeps the straps from biting.",
+                        "hacker": "No contraband zipped inside.",
+                        "shiller": "Unboxing stream scheduled.",
+                        "validator": "Checklist stamped per pouch.",
+                        "miner": "My kit finally stops squeaking.",
+                        "meme": "Bag check? More like brag check."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_backpack_repack"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.6-R5",
+            "description": "Revival Span — ignite the wake ward, rehearse force-play drills, and breathe focus into the squads.",
+            "actions": [
+                {
+                    "id": "causeway_revive_field",
+                    "label": "Ignite the Revival Field",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_flux_balanced"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "support",
+                            "healing",
+                            "ritual"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_revive_online",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You ignite a halo that revives anyone who touches the floor. Exhaustion evaporates in golden mist."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_revive_online",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The ward thrums and medics cheer. Anyone slipping can bounce back instantly."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "The halo flickers. You pay the technicians overtime to patch the relay."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "The ward backfires with a static pop that leaves you glowing neon for a minute."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Revival scripts live.",
+                        "trader": "Insurance premiums nosedive.",
+                        "whale": "Wake cushions every stumble.",
+                        "hacker": "Ward signals firewall-hardened.",
+                        "shiller": "Wellness spa but make it heroic.",
+                        "validator": "Uptime notarized.",
+                        "miner": "I can faceplant and still clock in.",
+                        "meme": "Glow up? Glow respawn."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_revive_field"
+                    ]
+                },
+                {
+                    "id": "causeway_force_drill",
+                    "label": "Run Force-Play Drills",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_afk_webbed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "discipline",
+                            "performance",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_force_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You choreograph AFK recoveries that look like dance numbers. Idle players return grinning and ready."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_force_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The drills run smooth. Nobody forgets how to rejoin the cadence."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A rehearsal devolves into slapstick. You bribe the meme crew not to loop it forever."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "You slip during a spin and skid the length of the ward. Everyone applauds your commitme nt."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Force-play tutorials uploaded.",
+                        "trader": "Idle time futures hedged.",
+                        "whale": "Wake catches anyone mid-spin.",
+                        "hacker": "Drill macros secured.",
+                        "shiller": "AFK? More like Always Forward Kinesis.",
+                        "validator": "Attendance notarized.",
+                        "miner": "These drills double as cardio.",
+                        "meme": "Choreographed comeback, 10/10."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_force_drill"
+                    ]
+                },
+                {
+                    "id": "causeway_focus_breath",
+                    "label": "Lead Focus Breathing",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_revive_online"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "spirit",
+                            "leadership",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                }
+                            ],
+                            "narration": "You synchronize the entire bridge in a single inhale. Even the storms hush to listen."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "Breathing circles spiral outward. The bridge steadies, hearts settle."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A gust interrupts your count. You offer snacks as apology before starting over."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "You inhale a confetti flake and cough glitter for a minute."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Focus protocol cached.",
+                        "trader": "Calm minds hedge better.",
+                        "whale": "Wake beats match your cadence.",
+                        "hacker": "Breath app patched mid-session.",
+                        "shiller": "ASMR stream rights secured.",
+                        "validator": "Attendance sealed with wax.",
+                        "miner": "Lungs ready for the next climb.",
+                        "meme": "Inhale hype, exhale doubt."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_focus_breath"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.6-R6",
+            "description": "Gatehouse Threading — align the spectrum needle, broadcast wake echoes, and armor the bridge against leakage.",
+            "actions": [
+                {
+                    "id": "causeway_gate_thread",
+                    "label": "Thread the Spectrum Needle",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_flux_balanced",
+                            "causeway_lane_marked"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "navigation",
+                            "arcana"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_gate_threaded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You sew a ribbon of light through the horizon fog. The future gate answers with a low, promising chord."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_gate_threaded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The needle seats cleanly. Holographic coordinates snap into alignment."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "Your stitch slips and the gate sputters. You compensate with extra conductive thread."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "The needle snaps and showers sparks. Hackers shield your eyes while you grab a spare."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Gate alignment logs pristine.",
+                        "trader": "Spec futures on Act Five skyrocketing.",
+                        "whale": "Wake hum acknowledges the stitch.",
+                        "hacker": "Portal firmware patched in real time.",
+                        "shiller": "First look at Act Five silhouettes trending.",
+                        "validator": "Thread notarized with wax and light.",
+                        "miner": "Portal seam ready for chisels.",
+                        "meme": "Needle drop of the century."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_gate_thread"
+                    ]
+                },
+                {
+                    "id": "causeway_signal_echo",
+                    "label": "Broadcast Wake Echoes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_gate_threaded"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "communication",
+                            "spirit",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_signal_echoed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your broadcast rides the stitched needle and returns with whispers of Act Five layouts."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_signal_echoed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Echoes answer, steady and warm. The crowd surges with confidence."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "The signal returns as static. You invest in better amplifiers."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "Your voice cracks mid-broadcast and the echo comes back laughing."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Echo telemetry captured.",
+                        "trader": "Spec quotes update on every ping.",
+                        "whale": "Wake hears its future self.",
+                        "hacker": "No spoofers on this channel.",
+                        "shiller": "Teaser trailers editing themselves.",
+                        "validator": "Transmission notarized.",
+                        "miner": "Echo says the next seam glitters.",
+                        "meme": "We called, the future picked up."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_signal_echo"
+                    ]
+                },
+                {
+                    "id": "causeway_gateward_enforce",
+                    "label": "Enforce Gate Wards",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_gate_threaded"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "defense",
+                            "systems",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_gate_hardened",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your wards lock like teeth. Stray gusts glance off and dissolve into harmless sparks."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_gate_hardened",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Barrier glyphs settle, bright and sturdy."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A gap flickers open. You hire hackers to plug the leak."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A ward rebounds and smacks you into a pylon. The crowd cheers your dedication."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Firewall literalized.",
+                        "trader": "Risk premiums recalculated.",
+                        "whale": "Wake swims behind the shields.",
+                        "hacker": "Ward handshake double-hashed.",
+                        "shiller": "Marketing copy: \"Portals but make it safe\".",
+                        "validator": "Barrier integrity notarized.",
+                        "miner": "Ward even covers the tool racks.",
+                        "meme": "Zero-day? More like zero-way."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_gateward_enforce"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.6-R7",
+            "description": "Pre-Horizon Council — call the Causeway vote, archive wake schematics, and signal the march into the final act.",
+            "actions": [
+                {
+                    "id": "causeway_consensus_vote",
+                    "label": "Call the Causeway Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_gate_threaded"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "consensus",
+                            "spirit"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You raise a torch of wake light and every faction answers. The bridge glows white-hot as consensus locks for the final march."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Hands, fins, and data tendrils lift. The council shouts yes and the bridge thrums in response."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A gust steals half the ballots. You reimburse the scribes while the pity ledger prints new ones."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "You try to freestyle the speech and get heckled by friendly memes until you reset."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vote tallies streaming live.",
+                        "trader": "Consensus candles spike green.",
+                        "whale": "Wake roars its approval.",
+                        "hacker": "Ballot ledger unbreakable.",
+                        "shiller": "Headline: Bridge says go!",
+                        "validator": "Votes notarized with holographic wax.",
+                        "miner": "We’re ready to swing into Act Five.",
+                        "meme": "Democracy but make it neon."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_consensus_vote"
+                    ]
+                },
+                {
+                    "id": "causeway_reward_archive",
+                    "label": "Archive Causeway Schematics",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "deck",
+                                    "id": "deck_causeway_vector"
+                                }
+                            ],
+                            "narration": "You compress bridge blueprints into a vector deck ready to redeploy anywhere the wake needs a foothold."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Schematics sealed.",
+                        "trader": "Blueprint futures minted.",
+                        "whale": "Wake engraves the pattern in memory.",
+                        "hacker": "Archives double-locked.",
+                        "shiller": "Limited edition prints dropping.",
+                        "validator": "Documentation notarized.",
+                        "miner": "Copy tucked into the toolbox.",
+                        "meme": "Blueprints but make them NFTs (Nice Functional Templates)."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_reward_archive"
+                    ]
+                },
+                {
+                    "id": "advance_4_7",
+                    "label": "March Toward the Horizon Crown",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "The bridge plates align into a runway of light pointing toward a distant crown of color. You lead the march forward.",
+                            "next_hint": "4.7"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Next staging area online.",
+                        "trader": "Rolling positions into Horizon Crown.",
+                        "whale": "Wake accelerates toward the finale.",
+                        "hacker": "Transition handshake solid.",
+                        "shiller": "Cliffhanger marketing writes itself.",
+                        "validator": "Advance notarized in triplicate.",
+                        "miner": "New seam dead ahead.",
+                        "meme": "From bridge to bling."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:advance_4_7"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 15,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "xp_gte": 910,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "armor_causeway_parallax"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "causeway_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "deck",
+                    "id": "deck_causeway_vector"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "4.6A"
+        },
+        {
+            "when": "flags.causeway_consensus_passed",
+            "goto": "4.7"
+        },
+        {
+            "when": "else",
+            "goto": "4.6"
+        }
+    ]
+}

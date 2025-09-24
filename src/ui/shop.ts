@@ -112,6 +112,13 @@ function purchasePack(user_id: string, pack: ShopPack) {
   if (pack.cost.coins && coins < pack.cost.coins) throw new Error(`Need ${pack.cost.coins.toLocaleString()} coins.`);
   if (pack.cost.gems && gems < pack.cost.gems) throw new Error(`Need ${pack.cost.gems} gems.`);
 
+
+  const coins = profile.coins ?? 0;
+  const gems = profile.gems ?? 0;
+
+  if (pack.cost.coins && coins < pack.cost.coins) throw new Error(`Need ${pack.cost.coins.toLocaleString()} coins.`);
+  if (pack.cost.gems && gems < pack.cost.gems) throw new Error(`Need ${pack.cost.gems} gems.`);
+
   if (pack.cost.coins) {
     db.prepare('UPDATE profiles SET coins=coins-? WHERE user_id=?').run(pack.cost.coins, user_id);
     db.prepare(

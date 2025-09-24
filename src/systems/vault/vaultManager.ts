@@ -701,3 +701,375 @@ export class VaultManager {
 }
 
 export const vaultManager = new VaultManager();
+// Continuing from the loadVaults() method in VaultRoomManager class
+
+export class VaultRoomManager {
+  private readonly vaultCache = new Map<string, VaultRoom[]>();
+
+  constructor() {
+    this.loadVaults();
+    this.startDailyEffectsProcessor();
+  }
+
+  private loadVaults() {
+    const rows = db.prepare(`
+      SELECT * FROM vault_rooms WHERE active = 1 ORDER BY user_id, room_type
+    `).all() as any[];
+
+    for (const row of rows) {
+      const room: VaultRoom = {
+        roomId: row.room_id,
+        userId: row.user_id,
+        type: row.type as RoomType,
+        level: row.level,
+        capacity: row.capacity,
+        decorations: JSON.parse(row.decorations || '[]'),
+        activeEffects: JSON.parse(row.active_effects || '[]'),
+        visitors: JSON.parse(row.visitors || '[]'),
+        lastUpdated: row.last_updated,
+        isPublic: Boolean(row.is_public),
+        customName: row.custom_name
+      };
+
+      if (!this.vaultCache.has(room.userId)) {
+        this.vaultCache.set(room.userId, []);
+      }
+      this.vaultCache.get(room.userId)!.push(room);
+    }
+  }
+
+  private startDailyEffectsProcessor() {
+    // Run daily effects every hour
+    setInterval(() => {
+      this.processDailyEffects();
+    }, 60 * 60 * 1000);
+  }
+
+  private processDailyEffects() {
+    const now = Date.now();
+    const dayMs = 24 * 60 * 60 * 1000;
+
+    for (const [userId, rooms] of this.vaultCache.entries()) {
+      for (const room of rooms) {
+        if (now - room.lastUpdated >= dayMs) {
+          this.applyDailyEffects(room);
+          this.updateRoomInDb(room);
+        }
+      }
+    }
+  }
+
+  private applyDailyEffects(room: VaultRoom) {
+    const definition = ROOM_DEFINITIONS[room.type];
+    const allEffects = [...definition.baseEffects];
+    
+    // Add decoration effects
+    for (const decoration of room.decorations) {
+      const decorationData = DECORATIONS.find(d => d.id === decoration.id);
+      if (decorationData?.effects) {
+        allEffects.push(...decorationData.effects);
+      }
+    }
+
+    // Process passive effects
+    for (const effect of allEffects.filter(e => e.type === 'passive')) {
+      this.applyEffect(room.userId, effect.effect);
+    }
+
+    room.lastUpdated = Date.now();
+  }
+
+  private applyEffect(userId: string, effect: Effect) {
+    // Apply the effect to the user (coins, HP, etc.)
+    switch (effect.type) {
+      case 'coins':
+        this.addCoinsToUser(userId, effect.value);
+        break;
+      case 'hp':
+        if (effect.op === '+') {
+          this.healUser(userId, effect.value);
+        }
+        break;
+      case 'focus':
+        if (effect.op === '+') {
+          this.restoreFocusToUser(userId, effect.value);
+        }
+        break;
+      // Handle other effect types...
+    }
+  }
+
+  public async createRoom(userId: string, type: RoomType): Promise<VaultRoom | null> {
+    const definition = ROOM_DEFINITIONS[type];
+    
+    // Check unlock requirements
+    if (definition.unlockRequirement) {
+      const hasRequirement = await this.checkUnlockRequirement(userId, definition.unlockRequirement);
+      if (!hasRequirement) {
+        return null;
+      }
+    }
+
+    const room: VaultRoom = {
+      roomId: nanoid(),
+      userId,
+      type,
+      level: 1,
+      capacity: definition.baseCapacity,
+      decorations: [],
+      activeEffects: [...definition.baseEffects],
+      visitors: [],
+      lastUpdated: Date.now(),
+      isPublic: false
+    };
+
+    // Save to database
+    db.prepare(`
+      INSERT INTO vault_rooms (
+        room_id, user_id, type, level, capacity, decorations, 
+        active_effects, visitors, last_updated, is_public, active
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
+    `).run(
+      room.roomId, room.userId, room.type, room.level, room.capacity,
+      JSON.stringify(room.decorations), JSON.stringify(room.activeEffects),
+      JSON.stringify(room.visitors), room.lastUpdated, room.isPublic ? 1 : 0
+    );
+
+    // Add to cache
+    if (!this.vaultCache.has(userId)) {
+      this.vaultCache.set(userId, []);
+    }
+    this.vaultCache.get(userId)!.push(room);
+
+    return room;
+  }
+
+  public async upgradeRoom(userId: string, roomId: string): Promise<boolean> {
+    const room = this.getRoom(userId, roomId);
+    if (!room) return false;
+
+    const definition = ROOM_DEFINITIONS[room.type];
+    const upgrade = definition.upgrades.find(u => u.fromLevel === room.level);
+    
+    if (!upgrade) return false;
+
+    // Check requirements and costs
+    const canUpgrade = await this.checkUpgradeRequirements(userId, upgrade);
+    if (!canUpgrade) return false;
+
+    // Deduct costs
+    await this.deductUpgradeCosts(userId, upgrade.cost);
+
+    // Apply upgrade
+    room.level = upgrade.toLevel;
+    if (upgrade.benefits.includes('decoration capacity')) {
+      room.capacity += 2; // or parse from benefits
+    }
+
+    this.updateRoomInDb(room);
+    return true;
+  }
+
+  public addDecoration(userId: string, roomId: string, decorationId: string): boolean {
+    const room = this.getRoom(userId, roomId);
+    if (!room) return false;
+
+    const decoration = DECORATIONS.find(d => d.id === decorationId);
+    if (!decoration) return false;
+
+    // Check capacity
+    if (room.decorations.length >= room.capacity) return false;
+
+    // Check requirements
+    if (decoration.requirements) {
+      // Check level, achievements, etc.
+    }
+
+    // Add decoration
+    room.decorations.push({
+      id: decoration.id,
+      name: decoration.name,
+      slot: decoration.slot,
+      rarity: decoration.rarity,
+      description: decoration.description
+    });
+
+    // Add decoration effects to room
+    if (decoration.effects) {
+      room.activeEffects.push(...decoration.effects);
+    }
+
+    this.updateRoomInDb(room);
+    return true;
+  }
+
+  public visitRoom(visitorId: string, ownerId: string, roomId: string): any {
+    const room = this.getRoom(ownerId, roomId);
+    if (!room || !room.isPublic) return null;
+
+    // Record visit
+    room.visitors.push({
+      userId: visitorId,
+      timestamp: Date.now()
+    });
+
+    // Apply visitor effects
+    const visitorEffects = room.activeEffects.filter(e => e.type === 'visitor');
+    for (const effect of visitorEffects) {
+      this.applyEffect(visitorId, effect.effect);
+    }
+
+    this.updateRoomInDb(room);
+    return {
+      room: this.formatRoomForDisplay(room),
+      effects: visitorEffects
+    };
+  }
+
+  public getUserRooms(userId: string): VaultRoom[] {
+    return this.vaultCache.get(userId) || [];
+  }
+
+  public getRoom(userId: string, roomId: string): VaultRoom | undefined {
+    const rooms = this.vaultCache.get(userId);
+    return rooms?.find(r => r.roomId === roomId);
+  }
+
+  public getPublicRooms(limit: number = 10): VaultRoom[] {
+    const publicRooms: VaultRoom[] = [];
+    
+    for (const rooms of this.vaultCache.values()) {
+      publicRooms.push(...rooms.filter(r => r.isPublic));
+    }
+
+    return publicRooms
+      .sort((a, b) => b.visitors.length - a.visitors.length)
+      .slice(0, limit);
+  }
+
+  private updateRoomInDb(room: VaultRoom) {
+    db.prepare(`
+      UPDATE vault_rooms SET 
+        level = ?, capacity = ?, decorations = ?, active_effects = ?,
+        visitors = ?, last_updated = ?, is_public = ?, custom_name = ?
+      WHERE room_id = ?
+    `).run(
+      room.level, room.capacity, JSON.stringify(room.decorations),
+      JSON.stringify(room.activeEffects), JSON.stringify(room.visitors),
+      room.lastUpdated, room.isPublic ? 1 : 0, room.customName || null,
+      room.roomId
+    );
+  }
+
+  private formatRoomForDisplay(room: VaultRoom): any {
+    const definition = ROOM_DEFINITIONS[room.type];
+    return {
+      ...room,
+      typeName: definition.name,
+      emoji: definition.emoji,
+      description: definition.description
+    };
+  }
+
+  // Helper methods (implement these based on your game's user system)
+  private async checkUnlockRequirement(userId: string, requirement: any): Promise<boolean> {
+    // Check user level, achievements, etc.
+    return true; // Placeholder
+  }
+
+  private async checkUpgradeRequirements(userId: string, upgrade: RoomUpgrade): Promise<boolean> {
+    // Check if user has required coins, fragments, achievements, etc.
+    return true; // Placeholder
+  }
+
+  private async deductUpgradeCosts(userId: string, cost: any): Promise<void> {
+    // Deduct coins, fragments, gems, materials from user
+  }
+
+  private addCoinsToUser(userId: string, amount: number): void {
+    // Add coins to user's balance
+  }
+
+  private healUser(userId: string, amount: number): void {
+    // Add HP to user
+  }
+
+  private restoreFocusToUser(userId: string, amount: number): void {
+    // Add focus to user
+  }
+
+  // Discord UI Methods
+  public createRoomSelectEmbed(userId: string): EmbedBuilder {
+    const rooms = this.getUserRooms(userId);
+    
+    const embed = new EmbedBuilder()
+      .setTitle('🏛️ Your Vault Rooms')
+      .setColor('#8B5CF6')
+      .setDescription('Manage your personal vault spaces');
+
+    if (rooms.length === 0) {
+      embed.addFields({
+        name: 'No Rooms Yet',
+        value: 'Use the buttons below to create your first room!',
+        inline: false
+      });
+    } else {
+      for (const room of rooms) {
+        const definition = ROOM_DEFINITIONS[room.type];
+        embed.addFields({
+          name: `${definition.emoji} ${room.customName || definition.name}`,
+          value: `Level ${room.level} • ${room.decorations.length}/${room.capacity} decorations\n${definition.description}`,
+          inline: true
+        });
+      }
+    }
+
+    return embed;
+  }
+
+  public createRoomTypeSelectMenu(): ActionRowBuilder<StringSelectMenuBuilder> {
+    const options = Object.entries(ROOM_DEFINITIONS).map(([type, def]) => ({
+      label: def.name,
+      description: def.description.slice(0, 100),
+      value: type,
+      emoji: def.emoji
+    }));
+
+    const selectMenu = new StringSelectMenuBuilder()
+      .setCustomId('vault_room_create')
+      .setPlaceholder('Choose a room type to create...')
+      .addOptions(options);
+
+    return new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(selectMenu);
+  }
+
+  public createRoomActionButtons(roomId: string): ActionRowBuilder<ButtonBuilder> {
+    const buttons = [
+      new ButtonBuilder()
+        .setCustomId(`vault_room_enter_${roomId}`)
+        .setLabel('Enter Room')
+        .setStyle(ButtonStyle.Primary)
+        .setEmoji('🚪'),
+      
+      new ButtonBuilder()
+        .setCustomId(`vault_room_upgrade_${roomId}`)
+        .setLabel('Upgrade')
+        .setStyle(ButtonStyle.Success)
+        .setEmoji('⬆️'),
+      
+      new ButtonBuilder()
+        .setCustomId(`vault_room_decorate_${roomId}`)
+        .setLabel('Decorate')
+        .setStyle(ButtonStyle.Secondary)
+        .setEmoji('🎨'),
+      
+      new ButtonBuilder()
+        .setCustomId(`vault_room_settings_${roomId}`)
+        .setLabel('Settings')
+        .setStyle(ButtonStyle.Secondary)
+        .setEmoji('⚙️')
+    ];
+
+    return new ActionRowBuilder<ButtonBuilder>().addComponents(buttons);
+  }
+}

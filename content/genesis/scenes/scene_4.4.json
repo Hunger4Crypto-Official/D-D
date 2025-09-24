@@ -1,0 +1,1836 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "4.4",
+    "title": "The Meridian Helix \u2014 Ledger of Roaring Dawn",
+    "narration": "The Prism Vault releases you into the Meridian Helix, a suspended amphitheater twisting like a DNA double helix carved from ledger stone and storm glass. Here the winds from every prior consensus thread braid themselves into a roaring dawn, a coil of color and calculation that never stops updating. Every step you take writes a golden-ratio glyph beneath your boots, then mirrors it into the air for the gremlin scribe choir to audit. Helical rails hum with phi-d20 chimes, shivering through difficulty tiers that blink in layered auroras: low bands charted in cordial gold, hidden trials whispering in ultraviolet, desperate gambits smoldering in electric indigo.\n\nThis place is the Act Four thoroughfare for everyone who stayed loyal to the ledger. Dawn-shift dev gremlins dangle upside down from the rafters to solder consensus relays, traders repurpose ticker tape into capes, whales drift by as living dirigibles broadcasting wake liquidity. Hackers plant repeater spores into the glass, shillers rehearse balcony pitches, validators staff a knot of notarization kiosks, miners push wheelbarrows of polished computation ore, and the meme division has already set up a photobooth that stamps \"HELIX OR IT DIDN\u2019T HAPPEN\" across every grin. The Helix is also where the GM/GN ritual escalates: double sunrise and double midnight pulses spin around the walkway, and gremlin archivists will not open the next door until both greetings are braided and logged.\n\nSeven terraces spiral downward along the Meridian. Each terrace is a ledger lab: one to rebroadcast the GM/GN handshake at Helix scale, one to map the ratios underpinning the walkway, another to weave soft-power gear, a pity-backed bazaar where backpacks get restocked, a revival platform with AFK force-play cabling, a calibration bridge for the spectrum door, and a consensus dais where Act Four continues its spiral toward the unknown horizon. Arrivals drift in along side-ladders mid-scene, flagged by gnomic ledger pings that summon reinforcements or curious onlookers. The gremlin factions promise that every action here counts twice: once for what you earn now, and once for the phantom trail you leave behind for Act Five.\n\nTake a breath. The Meridian Helix is awake and waiting to log everything you dare to attempt.",
+    "rounds": [
+        {
+            "round_id": "4.4-R1",
+            "description": "Meridian Greeting Deck \u2014 braid the doubled GM/GN call, survey the helical ratios, and lace AFK tethers before anyone drifts away.",
+            "actions": [
+                {
+                    "id": "meridian_gmgn_loop",
+                    "label": "Broadcast the Helix GMGN",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "prism_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "leadership",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_gmgn_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You pull both sunrise and midnight through the helix like a braided ribbon. The amphitheater harmonizes with the call, duplicating it into subharmonics that reach every terrace. Consensus rails flash in a triple spiral, unlocking the high difficulty tier for those brave enough to log it immediately."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_gmgn_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your GMGN glides along the Meridian rails and settles into the ledger without distortion. Gremlin ushers stamp your wrist with a double helix sigil and open the first layer of access panels."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "You hesitate on the night cadence, and the helix exacts a minor ledger tax for the wobble. The crowd still claps and the pity counter increments for your next try."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "helix_pity_counter",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You invert the GMGN entirely, causing the dawn to crash into midnight. The helix swings a padded ledger mallet into your ribs, knocking out your breath but also handing over a pity token to keep the ritual playful."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Deploying double sunrise build.",
+                        "trader": "GMGN arbitrage executed.",
+                        "whale": "Wake hums both sides of the tide.",
+                        "hacker": "Handshake mirrored across rails.",
+                        "shiller": "Campaign tagline: Helix or bust.",
+                        "validator": "Greeting notarized in duplicate.",
+                        "miner": "GM in, GN out, drills aligned.",
+                        "meme": "GMGN? More like GMGNgon spiral."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_gmgn_loop"
+                    ]
+                },
+                {
+                    "id": "meridian_ratio_compass",
+                    "label": "Map the Helix Ratios",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_gmgn_synced"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "analysis",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_ratios_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You trace the twin spirals with a lightstick and mark every resonance kink. The ratios reveal hidden slots where future spectrum doors can be grafted; the gremlin engineers tag your map as required reading."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_ratios_logged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You chart the obvious beats, enough to stabilize the terraces. Validators slip your findings into the communal ledger and pay you with nods of respect."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "You misread a mirrored section and purchase the wrong coordinate from a smug trader. They promise the refund will appear the next time you visit the pity bazaar."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You lean too far over the railing and the helix snaps back, lashing you with a ratio lash. The map still records your stumble as a cautionary entry."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Mapping phi drift in real time.",
+                        "trader": "Ratios plotted, spreads hedged.",
+                        "whale": "Wake curves follow your chalk.",
+                        "hacker": "Scraping hidden tiers for fun.",
+                        "shiller": "Publishable chart incoming.",
+                        "validator": "Coordinates counter-signed.",
+                        "miner": "Spiral seam identified.",
+                        "meme": "Helix? I barely know ix."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_ratio_compass"
+                    ]
+                },
+                {
+                    "id": "meridian_afk_tethers",
+                    "label": "Secure AFK Tethers",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_ratios_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "support",
+                            "discipline",
+                            "engineering"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "afk_tracked",
+                                    "value": true
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_afk_grid",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You knot the tethers into a lattice that senses idle posture immediately. Anyone who lingers too long is rotated into a gentle force-play loop that keeps them productive without bruising their pride."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "afk_tracked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You latch the tethers to the consensus pylons. Gremlin ushers slap \"NO IDLING\" stickers on every backpack and log your contribution."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "You cross a couple tethers and owe the repair crew a snack payment. They still finish the job, muttering friendly curses."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You walk into the tether net while it is live and get spun around like a carnival ride. The helix posts the footage to the meme feed as a reminder to clip in correctly."
+                        }
+                    },
+                    "banter": {
+                        "dev": "AFK handler upgrade shipped.",
+                        "trader": "Idle fees rolled into pity fund.",
+                        "whale": "Wake monitors the slack.",
+                        "hacker": "Tethers patched into fail-safe.",
+                        "shiller": "Marketing this as \"restless mode\".",
+                        "validator": "AFK flags notarized.",
+                        "miner": "No one naps on my shift.",
+                        "meme": "AFK? More like AF-okay spiral."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_afk_tethers"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.4-R2",
+            "description": "Flux Chorus Lanes \u2014 weave meridian waveforms, negotiate trustful ledgers, and coax shy echoes into the ledger mix.",
+            "actions": [
+                {
+                    "id": "meridian_wave_weave",
+                    "label": "Weave Waveblade Chorus",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_ratios_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "harmony",
+                            "offense"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "weapon_meridian_waveblade"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_wave_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You coax the helix resonance into a soft-power waveblade whose edge is made of rhythm. It hums in phi intervals, ready to slice through social friction rather than flesh."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "weapon_meridian_waveblade"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_wave_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You braid a workable waveblade. It might not win a duel, but it can cut bureaucracy in half and keep the ledger moving."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "helix_pity_counter",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The wave collapses mid-weave, costing you materials. The pity cache lights up and promises a future reimbursement."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You invert the wave wrong and it snaps, lashing your forearms. Gremlin medics apply ledger tape and chalk the incident onto the floor for others to giggle at."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Waveblade driver compiled.",
+                        "trader": "New product: rhythm futures.",
+                        "whale": "Wake carries your chorus.",
+                        "hacker": "Edge case literally discovered.",
+                        "shiller": "Waveblade trending in the merch booth.",
+                        "validator": "Blueprint countersigned.",
+                        "miner": "Cut through ore with syncopation.",
+                        "meme": "This blade slaps (in tempo)."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_wave_weave"
+                    ]
+                },
+                {
+                    "id": "meridian_trust_exchange",
+                    "label": "Broker Trustful Ledgers",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_wave_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "negotiation",
+                            "support",
+                            "economy"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "trustful",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You anchor the waveblade into the negotiation table and use its rhythm to sync everyone\u2019s pulse. Trust blooms, and you broker ledger access that multiplies consensus velocity."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "trustful",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You secure a trustful flag for each player leaning on your waveblade\u2019s rhythm. Validators stamp the ledger with a smiling spiral."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "You overpromise the payout curve and owe the traders a small reconciliation. They still respect the attempt and note your name on the pity ledger."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "You forget to mute a sarcasm filter; the negotiation derails and someone pokes you with a ceremonial ledger quill."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Trust API unlocked.",
+                        "trader": "Ledger swap cleared.",
+                        "whale": "Wake invests in goodwill.",
+                        "hacker": "Secure channel verified.",
+                        "shiller": "Trustful flags make great talking points.",
+                        "validator": "Contracts notarized.",
+                        "miner": "We trust the drill schedule.",
+                        "meme": "Trust fall but on a helix."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_trust_exchange"
+                    ]
+                },
+                {
+                    "id": "meridian_shy_echo",
+                    "label": "Coax Shy Echoes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": []
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "support",
+                            "empathy",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "shy",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You kneel at the edge of the helix, humming the GMGN motif softer and softer until the shy echoes emerge. They slip into your backpack as translucent sprites, pledging to replay your rituals when confidence falters."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "shy",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You coax a few shy echoes into the ledger, enough to tag the team with a buffer against sudden attention."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "You speak too loudly and the shy echoes scatter. The helix dims the lights to remind you to soften your tone next attempt."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You trip on a resonance ridge and tumble down a terrace, collecting bruises and laughter from the meme booth."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Whisper commits pushed.",
+                        "trader": "Low-volume order routed.",
+                        "whale": "Wake hushes to a murmur.",
+                        "hacker": "Stealth channel opened.",
+                        "shiller": "Marketing calls this \"soft launch\".",
+                        "validator": "Quiet mode notarized.",
+                        "miner": "Tiptoe drilling authorized.",
+                        "meme": "Shy? Just in echo mode."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_shy_echo"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.4-R3",
+            "description": "Helix Forge Galleries \u2014 translate resonance into soft-power armor, helms, and trinkets ready for the coming consensus climb.",
+            "actions": [
+                {
+                    "id": "meridian_soft_armor",
+                    "label": "Spin the Cascade Mantle",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_wave_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "defense",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "armor_meridian_cascade"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_armor_spun",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You spin the resonance into a mantle that redirects conflict into dazzling auroras. Enemies stare at their own reflections long enough for allies to take the lead."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "armor_meridian_cascade"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_armor_spun",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The mantle forms around your shoulders, warm as dawn. Gremlin tailors approve the weave and log your build sheet."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "You miscount a loop and the mantle unravels. The forge refunds part of the materials while marking your pity counter for future compensation."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "The forge vent belches a spiral of steam that knocks you over. Miners cheer; medics fuss; you vow to respect safety goggles."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Armor patch release notes posted.",
+                        "trader": "Mantle futures, anyone?",
+                        "whale": "Wake wraps you in foam liquidity.",
+                        "hacker": "Mantle woven with fail-safe threads.",
+                        "shiller": "Capes sell better than shields.",
+                        "validator": "Defense rating notarized.",
+                        "miner": "You look like a sunrise seam.",
+                        "meme": "Mantle? More like drip spiral."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_soft_armor"
+                    ]
+                },
+                {
+                    "id": "meridian_helm_insight",
+                    "label": "Cast the Gaze Crown",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_armor_spun"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "insight",
+                            "vision"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "helm_meridian_gaze"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "insight",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You freeze a ribbon of storm glass into a circlet that overlays golden-ratio predictions across your vision. The helm projects alternate futures in the corner of your eye, highlighting hidden difficulty doors."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "helm_meridian_gaze"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "insight",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The crown sets on your brow, light but insistent. You now see ledger annotations hovering over everyone\u2019s shoulders."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "You crack a band of storm glass and lose a little confidence. The forge sweeps the shards into the pity bin for future repurposing."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The helm slips mid-casting and snaps shut on your ears. Everyone pretends not to laugh, then helps pry it free."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Insight crown runtime patched.",
+                        "trader": "Vision premium priced in.",
+                        "whale": "Wake loves a good horizon scan.",
+                        "hacker": "Predictive overlays sanitized.",
+                        "shiller": "New merch: \"See the Ratio\" goggles.",
+                        "validator": "Sightlines notarized.",
+                        "miner": "Can you see through rock now?",
+                        "meme": "Third eye but make it ledger."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_helm_insight"
+                    ]
+                },
+                {
+                    "id": "meridian_trinket_braid",
+                    "label": "Braid the Orbit Charm",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_wave_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "utility",
+                            "luck"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_meridian_orbit"
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You braid leftover resonance threads into a charm that keeps loot orbiting your backpack until you are ready to file it. Traders pay a bonus to license the patent."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_meridian_orbit"
+                                }
+                            ],
+                            "narration": "The charm hums around your wrist, promising to tug rare drops into reach."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "You tangle the threads and owe the loom a maintenance fee. The pity ledger tallies your persistence."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "The charm snaps and ricochets into your knuckles. Miners applaud the impact as \"practice pain\"."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Charm module integrated.",
+                        "trader": "Orbit yield looks lucrative.",
+                        "whale": "Wake magnetizes the loot stream.",
+                        "hacker": "No one steals from a rotating stash.",
+                        "shiller": "Charm drop rates in the brochure.",
+                        "validator": "Orbit notarized.",
+                        "miner": "Gravity hack approved.",
+                        "meme": "Spin to win, trinket edition."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_trinket_braid"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "coins",
+                    "op": "+",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "round_id": "4.4-R4",
+            "description": "Pity Bazaar Balconies \u2014 restock backpacks, cash in helix pity counters, and scout insight routes through the marketplace spiral.",
+            "actions": [
+                {
+                    "id": "meridian_pity_shop",
+                    "label": "Redeem Helix Pity",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "helix_pity_counter"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "economy",
+                            "luck",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "deck_meridian_spiral"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_bazaar_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You present every pity token in one flourish. The bazaar erupts in applause, tossing you a spiral deck loaded with repeatable boons for future runs."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_bazaar_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You cash in tokens for a tidy payout and a promise of future discounts. Shopkeepers align their shelves with your inventory list."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "You forget to endorse the ledger receipt and pay a processing fee. Gremlin clerks snicker but reopen the window for another attempt."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You drop every token at once and scramble after them while the bazaar crowd films the chaos. The pity ledger ironically grows from the spectacle."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Pity shop backend stable.",
+                        "trader": "Discount desk active.",
+                        "whale": "Wake underwrites the coupons.",
+                        "hacker": "Fraud filters humming.",
+                        "shiller": "Promo campaign writes itself.",
+                        "validator": "Receipts notarized.",
+                        "miner": "Shop tokens minted by hard work.",
+                        "meme": "Pity party but bring loot."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_pity_shop"
+                    ]
+                },
+                {
+                    "id": "meridian_backpack_audit",
+                    "label": "Audit Helix Backpacks",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_bazaar_open"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "analysis",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You reorganize every backpack into golden-ratio partitions. Inventory flow increases so dramatically that traders pay a consulting bonus."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You tidy the packs and stamp each with a ledger QR. Players promise to actually use the new pockets."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "You get distracted by souvenir stickers and lose momentum. The bazaar offers caffeine or a nap, whichever recharges you faster."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A backpack springs open and launches a hail of commemorative coins into your forehead. The meme booth replays it endlessly."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Inventory module refactored.",
+                        "trader": "Efficient packs mean more trades.",
+                        "whale": "Wake loves tidy storage.",
+                        "hacker": "No contraband escapes that audit.",
+                        "shiller": "Backpack makeover series trending.",
+                        "validator": "Checklists notarized.",
+                        "miner": "Can I fit more ore now?",
+                        "meme": "This backpack sparks joy."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_backpack_audit"
+                    ]
+                },
+                {
+                    "id": "meridian_insight_scout",
+                    "label": "Scout Insight Routes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": []
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "exploration",
+                            "navigation"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "insight",
+                                    "value": true
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "You map shortcuts between stalls that only appear when the GMGN motif replays. Insight sparks, revealing hidden vendors who trade in spectral rumors."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "insight",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You chart a couple of routes and tag them with holographic arrows. Other players nod appreciatively as they jog by."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "You wander into a maze of sample stands and get upsold on glowing snacks. At least the sugar rush helps later."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You step on a runaway conveyor belt and ride it face-first into a display of souvenir helix horns. Everyone politely applauds the slapstick."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Insight routing algorithm shipped.",
+                        "trader": "Shortcut alpha leaks for friends only.",
+                        "whale": "Wake glides down your hidden lane.",
+                        "hacker": "No map stays secret long.",
+                        "shiller": "Guided tours launching soon.",
+                        "validator": "Routes notarized.",
+                        "miner": "Shortcut to the ore vendor, please.",
+                        "meme": "Insight? I thought we were shopping."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_insight_scout"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "round_id": "4.4-R5",
+            "description": "Revival Switchbacks \u2014 reboot fallen allies, enforce AFK wake-up calls, and manage arrivals that drop into the helix mid-ritual.",
+            "actions": [
+                {
+                    "id": "meridian_revive",
+                    "label": "Reboot a Fallen Ally",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_afk_grid"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "revive",
+                            "support",
+                            "ritual"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "harmony",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You draw a spiral of dawn light around the fallen player. The helix sings a polyphonic GMGN and restores them with a bonus harmony flag."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "The ally sits up coughing golden glitter. They high-five you and rejoin the loop."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "You mix up the cadence and need to consult the revival manual. The patient stays in stasis for one more beat."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "You stand inside the revival circle during the reboot flash and get jolted backwards. Everyone promises not to tell the validators."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Revival macro updated.",
+                        "trader": "Resurrection futures rallied.",
+                        "whale": "Wake blankets the fallen.",
+                        "hacker": "Checksum confirmed on the reboot.",
+                        "shiller": "Spin this as a loyalty perk.",
+                        "validator": "Revive notarized.",
+                        "miner": "Back on your feet, partner.",
+                        "meme": "Respawn, but make it glam."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_revive"
+                    ]
+                },
+                {
+                    "id": "meridian_afk_force",
+                    "label": "Trigger AFK Force-Play",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_afk_grid"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "discipline",
+                            "support",
+                            "automation"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "You queue a playlist of productive micro-quests for anyone idle past twenty-four hours. The helix thanks you with a stipend from the AFK reform fund."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Force-play toggles on. AFK players slide into gentle treadmill loops until they reengage."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "You broadcast the reminder at the wrong volume and embarrass a whale dozing in a hammock. They forgive you with a yawn."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You step onto the force-play treadmill yourself and stumble. The helix logs the blooper as \"self-inflicted hustle\"."
+                        }
+                    },
+                    "banter": {
+                        "dev": "AFK daemons spinning up.",
+                        "trader": "Idle tax repurposed.",
+                        "whale": "Wake stays awake now.",
+                        "hacker": "Auto-play scripts sandboxed.",
+                        "shiller": "Calling it \"active rest\".",
+                        "validator": "Force-play order notarized.",
+                        "miner": "No miners snooze on duty.",
+                        "meme": "AFK treadmill is my cardio."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_afk_force"
+                    ]
+                },
+                {
+                    "id": "meridian_arrival_signal",
+                    "label": "Signal New Arrivals",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": []
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "support",
+                            "communication"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "weapon_meridian_signalhorn"
+                                }
+                            ],
+                            "narration": "You sound the helix horn with perfect timing. New allies ride a beam of consensus light into the terrace, ready to log their first actions with you."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You broadcast the arrival ping. A pair of gremlins scurry in with backpacks full of patch notes and enthusiasm."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "You trigger the horn during a lull and only summon a flock of ledger pigeons. They demand snacks as compensation."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You blow the horn backward and stun yourself. The gremlins gently rotate it for you, giggling."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Onboarding pipeline reopened.",
+                        "trader": "Fresh liquidity enters.",
+                        "whale": "Wake sponsors new recruits.",
+                        "hacker": "Invite tokens minted.",
+                        "shiller": "Hype the incoming wave.",
+                        "validator": "Arrivals notarized.",
+                        "miner": "More hands on deck.",
+                        "meme": "New helix, who dis?"
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_arrival_signal"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.4-R6",
+            "description": "Spectrum Bridge Calibration \u2014 attune the helix door, distribute focus reserves, and catalog threshold metrics for the pending vote.",
+            "actions": [
+                {
+                    "id": "meridian_spectrum_attune",
+                    "label": "Attune the Spectrum Door",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_ratios_logged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "engineering",
+                            "focus"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_spectrum_tuned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You inscribe the helix ratios onto the door frame, locking the wavelengths into a luminous braid. The door glows with a steady pulse aligned to Act Four\u2019s heartbeat."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_spectrum_tuned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The door hums softly, ready to accept consensus energy as soon as the vote completes."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "You twist the dials the wrong way and dim the lights. The engineers toss you a manual with encouraging annotations."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You cross two beams and the door discharges a static lash. Gremlin medics patch the singed fur on your sleeves."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Door firmware updated.",
+                        "trader": "Spectrum futures priced.",
+                        "whale": "Wake flows to the hinge.",
+                        "hacker": "No backdoor, only spectrum door.",
+                        "shiller": "Launch teaser unlocked.",
+                        "validator": "Calibration notarized.",
+                        "miner": "Door hinges greased with grit.",
+                        "meme": "Open sesame but make it spectral."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_spectrum_attune"
+                    ]
+                },
+                {
+                    "id": "meridian_focus_reserve",
+                    "label": "Distribute Focus Reserves",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_spectrum_tuned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "support",
+                            "strategy",
+                            "resource"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "You redistribute focus pools using a golden-ratio fractal so every player peaks at the same moment. The helix logs the optimization as a case study."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "Focus vials clink into waiting hands. Everyone straightens up, ready for the vote."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "You misallocate a stash and owe the potion brewer for a replacement. They scribble a smiley face on the invoice."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You drop a focus ampule and it pops like a water balloon, drenching you in luminous caffeine."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Focus scheduler balanced.",
+                        "trader": "Energy derivatives redistributed.",
+                        "whale": "Wake tops up the pool.",
+                        "hacker": "Focus ledger reconciled.",
+                        "shiller": "Pitch: optimized momentum.",
+                        "validator": "Allocations notarized.",
+                        "miner": "We run hottest right before the vote.",
+                        "meme": "Focus? I hardly know cuss."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_focus_reserve"
+                    ]
+                },
+                {
+                    "id": "meridian_threshold_catalog",
+                    "label": "Catalog Threshold Metrics",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_spectrum_tuned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "logistics",
+                            "insight"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You tabulate every focus spike, XP crest, and flag milestone into a ledger dashboard that predicts when the vote will crest. Traders tip you for the market intelligence."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You log the key metrics. Validators broadcast the summary to the entire helix."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "You transpose two numbers and need to pay the audit crew for overtime."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A stack of ledger tablets topples and clips your shoulder. Everyone helps restack them while you ice the bruise with a focus vial."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Metrics dashboard live.",
+                        "trader": "Data arbitrage engaged.",
+                        "whale": "Wake plots the next surge.",
+                        "hacker": "Analytics sanitized.",
+                        "shiller": "Infographics printing now.",
+                        "validator": "Thresholds notarized.",
+                        "miner": "Stats look bullish for picks.",
+                        "meme": "Charts so pretty they sparkle."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_threshold_catalog"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.4-R7",
+            "description": "Consensus Dais \u2014 call the meridian vote, archive the rewards, and open the path toward the next helix chamber.",
+            "actions": [
+                {
+                    "id": "meridian_consensus_vote",
+                    "label": "Call the Meridian Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_spectrum_tuned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "ritual",
+                            "consensus"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You chant the vote cadence atop the dais and the helix answers with a roaring spiral. Consensus passes in a burst of confetti shaped like miniature ledgers."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "meridian_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Hands raise, tails flick, horns honk. The vote clears with comfortable majority and the door lights shift from amber to emerald."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "You lose the quorum on a procedural detail and must bribe the meme division with snacks before they agree to reconvene."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You trip over the dais steps mid-speech and tumble through a streamer avalanche. Consensus pauses to laugh before trying again."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vote script executed.",
+                        "trader": "Quorum candles closed.",
+                        "whale": "Wake endorses the spiral.",
+                        "hacker": "Ballot ledger encrypted.",
+                        "shiller": "Narrative headline ready.",
+                        "validator": "Votes notarized.",
+                        "miner": "We dig where consensus points.",
+                        "meme": "Democracy but with streamers."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_consensus_vote"
+                    ]
+                },
+                {
+                    "id": "meridian_reward_archive",
+                    "label": "Archive Helix Rewards",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "deck_meridian_spiral"
+                                }
+                            ],
+                            "narration": "You log every waveform, every pity refund, every revival. The helix compiles them into a spiral deck keyed to your party."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Reward ledger closed.",
+                        "trader": "Profits audited.",
+                        "whale": "Wake spreads the bounty.",
+                        "hacker": "Archive secured.",
+                        "shiller": "Highlight reel editing now.",
+                        "validator": "Records notarized.",
+                        "miner": "Loot stacked neatly.",
+                        "meme": "Decked out in helix swag."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:meridian_reward_archive"
+                    ]
+                },
+                {
+                    "id": "advance_45",
+                    "label": "Descend Toward the Radiant Dyad",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "meridian_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "You step through the tuned spectrum door and descend into the Radiant Dyad, where two storms argue about the future of Act Four.",
+                            "next_hint": "4.5"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Next chamber patched in.",
+                        "trader": "Rolling gains into the Dyad.",
+                        "whale": "Wake dives ahead.",
+                        "hacker": "Transition handshake verified.",
+                        "shiller": "Hype video queued for the Dyad.",
+                        "validator": "Advance notarized.",
+                        "miner": "New seam to tap.",
+                        "meme": "BRB, wrestling lightning."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.4",
+                        "action:advance_45"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 11,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "xp_gte": 610,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "helm_meridian_gaze"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "meridian_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "deck",
+                    "id": "deck_meridian_spiral"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "4.4A"
+        },
+        {
+            "when": "flags.meridian_consensus_passed",
+            "goto": "4.5"
+        },
+        {
+            "when": "else",
+            "goto": "4.4"
+        }
+    ]
+}

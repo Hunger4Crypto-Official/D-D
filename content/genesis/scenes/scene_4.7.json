@@ -1,0 +1,1826 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "4.7",
+    "title": "The Horizon Crown \u2014 Council Before the Wake",
+    "narration": "The Convergence Causeway delivers you into the Horizon Crown, a suspended amphitheater shaped like a radiant diadem hovering over the last visible horizon. Each prong of the crown is a tower of ledger glass tuned to a different future: some glow with paths already earned, others flicker with possibilities still unnamed. A lattice of light bridges the towers, projecting golden-ratio spirals that tighten around a central oculus through which Act Five\u2019s silhouette shimmers. Hidden difficulty tiers arc above as concentric halos: silver for assured strides, amethyst for daring gambits, and a blazing white corona reserved for the rally that will define the Wake forever.\n\nGremlin delegations occupy balconies carved into the crown\u2019s inner rim. Dev gremlins pilot drones that paint forecasts across the dome; traders parse ticker tapes woven from aurora strands; whales drift like living satellites, lending wake to the final prep; hackers install quantum firewalls inside each prong; validators orchestrate oath choruses that echo like cosmic metronomes; miners drill anchor bolts into free-floating stone; and the meme division has built a holo stage flashing slogans like \"ONE MORE VOTE UNTIL FOREVER\" and \"WAKE ME UP WHEN ACT FIVE BEGINS\". AFK safeties manifest as orbiting familiars ready to swoop any idle ally back into formation.\n\nSeven terraces ring the oculus. The first crowns the GM/GN hymn, the second engraves a horizon atlas, the third forges coronation gear, the fourth runs the pity-and-trade atrium, the fifth energizes revival constellations, the sixth threads the final gate alignment, and the seventh convenes the Horizon Council that will shout Act Four\u2019s last consent. The Crown hums with pent-up triumph, its gems glowing hotter each time you inhale. The finale waits on your signal.",
+    "rounds": [
+        {
+            "round_id": "4.7-R1",
+            "description": "Coronation Rostrum \u2014 crown the GM/GN hymn, engrave the horizon atlas, and deploy AFK satellites around the rim.",
+            "actions": [
+                {
+                    "id": "horizon_gmgn_corona",
+                    "label": "Crown the GMGN Hymn",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "leadership",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_gmgn_crowned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your GM/GN rises through the oculus like a coronation trumpet. Every tower resonates and the final halo unlocks with a blinding flare."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_gmgn_crowned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The hymn encircles the crown, steadies the oculus, and sets the cadence for the final council."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_pity_reserve",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your harmony wobbles and one tower charges you a tuning tax that lands in the pity reserve."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_pity_reserve",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You drop a note and the meme division drops a remix. The pity reserve swells with lanyard sales."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Crown hymn synced across towers.",
+                        "trader": "Opening bells resonate bullish.",
+                        "whale": "Wake orbits the hymn line.",
+                        "hacker": "No false notes on this channel.",
+                        "shiller": "GMGN but make it finale.",
+                        "validator": "Coronation greeting notarized.",
+                        "miner": "Beat hits like a pick on ore.",
+                        "meme": "GM? GN? Try OMG."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_gmgn_corona"
+                    ]
+                },
+                {
+                    "id": "horizon_atlas_engrave",
+                    "label": "Engrave the Horizon Atlas",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_gmgn_crowned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "navigation",
+                            "insight"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_vectors_engraved",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You carve constellations of possible futures into the crown. Every prong projects its chosen lane into the fog beyond."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_vectors_engraved",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your atlas aligns perfectly with the wake echoes. Navigators bow in gratitude."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A misdrawn spiral loops back on itself. You pay scribes to polish it out."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "Your etching pen sparks and you chase it halfway around the crown to catch it."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Atlas overlay uploaded.",
+                        "trader": "Lane arbitrage priced in.",
+                        "whale": "Wake currents confirm the chart.",
+                        "hacker": "No exploit lines left open.",
+                        "shiller": "Selling prints of that skyline.",
+                        "validator": "Atlas notarized with starlight.",
+                        "miner": "Marking the next ore seam on the map.",
+                        "meme": "Draw me like one of your golden ratios."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_atlas_engrave"
+                    ]
+                },
+                {
+                    "id": "horizon_afk_satellite",
+                    "label": "Deploy AFK Satellites",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_gmgn_crowned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "support",
+                            "engineering",
+                            "systems"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_afk_satellites",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You launch orbiting familiars that glow whenever someone drifts. They reel AFK friends back in with gentle gravity."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_afk_satellites",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Satellites lock into tidy formation and blink ready lights in rhythm with the hymn."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_pity_reserve",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "A satellite whips around and bonks you gently. You comp the repair crew in snacks."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_pity_reserve",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You launch one backwards and it has to be fished out of a popcorn vendor\u2019s cart."
+                        }
+                    },
+                    "banter": {
+                        "dev": "AFK orbit network live.",
+                        "trader": "Retention metrics mooning.",
+                        "whale": "Wake currents keep them steady.",
+                        "hacker": "Telemetry encrypted mid-air.",
+                        "shiller": "Satellites sponsored by hype.",
+                        "validator": "Safety compliance notarized.",
+                        "miner": "They\u2019ll haul me back if I nap on the job.",
+                        "meme": "AFK now means \"Afloat, Friend Kept\"."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_afk_satellite"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "4.7-R2",
+            "description": "Atlas Observatory \u2014 sing the wake resonance, weave orbital lanes, and encode supply constellations for the push ahead.",
+            "actions": [
+                {
+                    "id": "horizon_flux_resonance",
+                    "label": "Sing the Wake Resonance",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_vectors_engraved"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "resonance",
+                            "analysis"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_flux_sung",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your voice threads through the towers, locking the crown into harmonic balance with the hidden gate."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_flux_sung",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The resonance stabilizes. Wake ripples align with the atlas."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "Your pitch slips and the towers demand an apology tithe."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "You over-resonate and bounce off a halo into a pile of foam hands."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Resonance monitors reading perfect.",
+                        "trader": "Volatility smoothing nicely.",
+                        "whale": "Wake drinks the melody.",
+                        "hacker": "No signal bleed detected.",
+                        "shiller": "That note hits top of the charts.",
+                        "validator": "Frequency notarized.",
+                        "miner": "Even my pick hums along.",
+                        "meme": "Certified banger."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_flux_resonance"
+                    ]
+                },
+                {
+                    "id": "horizon_lane_orbit",
+                    "label": "Weave Orbital Lanes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_flux_sung"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "strategy",
+                            "navigation",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_lane_woven",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You designate concentric lanes for hype squads, analysts, medics, and miners. Satellites project neon arrows to guide everyone."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_lane_woven",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Traffic plans snap into place. Validators float approving stamps over each lane."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "Two squads tango in the wrong orbit. You reimburse the spilled confetti."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You misplace a lane and a whale gently nudges you back into position."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Lane weaving algorithm locked.",
+                        "trader": "Crowd flow trending optimal.",
+                        "whale": "Wake streams follow your orbit.",
+                        "hacker": "Navigation patches stable.",
+                        "shiller": "Orbit tours sold out already.",
+                        "validator": "Routes notarized with flair.",
+                        "miner": "My crew gets the express track.",
+                        "meme": "Orbital lanes? More like orbital slaynes."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_lane_orbit"
+                    ]
+                },
+                {
+                    "id": "horizon_supply_encode",
+                    "label": "Encode Supply Constellations",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_flux_sung"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "economy",
+                            "analysis"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_supply_encoded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You map supply caches onto the crown, hiding them in star-shaped lockers accessible on cue."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_supply_encoded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Resource nodes light up across the terraces, ready to dispense on schedule."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A crate misroutes into a meme booth. You pay the ransom in stickers."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You open a locker at the wrong angle and it launches you across a terrace."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Supply constellations logged.",
+                        "trader": "Fulfillment costs trending down.",
+                        "whale": "Wake bankrolls the caches.",
+                        "hacker": "Locker codes salted.",
+                        "shiller": "Treasure hunt overlay live now.",
+                        "validator": "Inventories notarized.",
+                        "miner": "Stash a caf\u00e9 token in every box.",
+                        "meme": "These loot stars slap."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_supply_encode"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.7-R3",
+            "description": "Coronation Forge \u2014 temper crownplate armor, spin gyre trinkets, and stitch banners that promise dawn.",
+            "actions": [
+                {
+                    "id": "horizon_armor_corona",
+                    "label": "Forge the Corona Plate",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_flux_sung"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "defense",
+                            "resonance"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "armor_horizon_corona"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_softgear_forged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You hammer wake metal into luminous plates that refract danger into dazzling auroras."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_softgear_forged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The armor holds a steady glow, ready to catch the first blow of Act Five."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "A plate cools unevenly and warps into a commemorative platter. You buy more alloy."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "A spark ricochets and brands your glove with a smiley face."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Corona plate schematics saved.",
+                        "trader": "Gear demand surging.",
+                        "whale": "Wake polishes every plate.",
+                        "hacker": "No cracks left for exploits.",
+                        "shiller": "Armor glamour shoot incoming.",
+                        "validator": "Durability notarized twice.",
+                        "miner": "Plates light the tunnels like sunrise.",
+                        "meme": "Drip level: celestial."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_armor_corona"
+                    ]
+                },
+                {
+                    "id": "horizon_trinket_gyre",
+                    "label": "Spin Gyre Signets",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_softgear_forged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "insight",
+                            "spirit"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_horizon_gyre"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_trinkets_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Each signet holds a miniaturized gyre that pulses with wake momentum. They glow hotter when allies cheer."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_trinkets_synced",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your signets hum at a steady pitch ready for every backpack slot."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A gyre spins backwards and sprays confetti. You pay the cleanup crew."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A signet hiccups and launches into your forehead like a friendly comet."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Gyre firmware polished.",
+                        "trader": "Charm market molten.",
+                        "whale": "Wake hum sweet through those rings.",
+                        "hacker": "No counterfeit gyres on my watch.",
+                        "shiller": "Signet selfie filters shipping.",
+                        "validator": "Spin rate notarized.",
+                        "miner": "Clip one to the drill for extra torque.",
+                        "meme": "Ring light? More like ring might."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_trinket_gyre"
+                    ]
+                },
+                {
+                    "id": "horizon_banner_stitch",
+                    "label": "Stitch Dawn Banners",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_trinkets_synced"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "spirit",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_banners_stitched",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You stitch banners that trail comet tails of hope behind every squad leader."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_banners_stitched",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The banners unfurl in steady light, ready to crown the charge."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "You sew two banners together and have to cut them apart while laughing with the crew."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "A banner pole tilts and bops you on the nose mid-speech."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Banner shaders loaded.",
+                        "trader": "Merch value skyrockets.",
+                        "whale": "Wake gusts keep them aloft.",
+                        "hacker": "Anti-fray enchantments installed.",
+                        "shiller": "Photo ops for days.",
+                        "validator": "Banner oath notarized.",
+                        "miner": "Tying one to the drill for luck.",
+                        "meme": "This flag slaps, literally."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_banner_stitch"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "coins",
+                    "op": "+",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "round_id": "4.7-R4",
+            "description": "Atrium of Exchange \u2014 flood the pity reserve, orchestrate crown trades, and attune backpacks for the final charge.",
+            "actions": [
+                {
+                    "id": "horizon_pity_atrium",
+                    "label": "Flood the Pity Reserve",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_flux_sung"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "economy",
+                            "luck",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_pity_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You spin the reserve into overdrive. Vendors unlock a hidden shelf of finale-only boons."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_pity_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The reserve glows steady and the atrium erupts in cheers."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "A ledger hiccup double-charges you before refunding it as hype coupons."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You slip on a gold coin avalanche and slide into a merch cart."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Reserve backend fortified.",
+                        "trader": "Liquidity for days.",
+                        "whale": "Wake bankrolls every boon.",
+                        "hacker": "Refund macros signed.",
+                        "shiller": "Calling it the Grand Gratitude Drop.",
+                        "validator": "Deposits notarized with sparkles.",
+                        "miner": "Buying stamina shots for the crew.",
+                        "meme": "Pity party enters legendary tier."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_pity_atrium"
+                    ]
+                },
+                {
+                    "id": "horizon_trade_crown",
+                    "label": "Orchestrate Crown Trades",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_pity_open"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "economy",
+                            "negotiation",
+                            "strategy"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "You swap relics and resources with such grace that even rival guilds hug it out."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Trades settle smoothly, leaving every squad stocked."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A mislabelled crate forces a scramble. You cover the shipping difference."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You hype a swap so hard you tumble into a fountain of holo confetti."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Market orchestration live.",
+                        "trader": "Bid-ask tighter than ever.",
+                        "whale": "Wake secures every handshake.",
+                        "hacker": "Contracts triple-checked.",
+                        "shiller": "Trading floor reality show greenlit.",
+                        "validator": "Receipts notarized midair.",
+                        "miner": "Bartered ore chips for focus potions.",
+                        "meme": "Buy low, cry never."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_trade_crown"
+                    ]
+                },
+                {
+                    "id": "horizon_backpack_attune",
+                    "label": "Attune Crown Backpacks",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_pity_open",
+                            "horizon_supply_encoded"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "support",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Backpacks hum with synchronized wake pulses. Everyone moves as if gravity forgot to oppose them."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Straps snug, pockets labelled, morale sky-high."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "You misplace a canteen and owe the squad a round of sodas."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "A strap snaps and slingshots you into a friendly validator."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Bag attunement patch shipped.",
+                        "trader": "Inventory friction near zero.",
+                        "whale": "Wake cushions every buckle.",
+                        "hacker": "No contraband zipped inside.",
+                        "shiller": "Backpack glam cam rolling.",
+                        "validator": "Checklists notarized.",
+                        "miner": "Tools click like music now.",
+                        "meme": "Pack light, pack bright."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_backpack_attune"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.7-R5",
+            "description": "Constellation Ward \u2014 ignite the revival corona, rehearse orbit-forcing drills, and channel focus into the final breath.",
+            "actions": [
+                {
+                    "id": "horizon_revive_corona",
+                    "label": "Ignite the Revival Corona",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_flux_sung"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "support",
+                            "healing",
+                            "ritual"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_revive_online",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You kindle a halo that revives anyone who stumbles. Exhaustion evaporates in a wash of dawn-colored mist."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_revive_online",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The corona hums steadily. Medics cheer as the ward goes green."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A pulse sputters. You fund extra shielding to fix it."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "The corona backfires with glitter sparks that coat you head to toe."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Revival corona online.",
+                        "trader": "Insurance rates nosedive.",
+                        "whale": "Wake cushions the stumble.",
+                        "hacker": "Ward relays hardened.",
+                        "shiller": "Finale spa treatment unlocked.",
+                        "validator": "Uptime notarized.",
+                        "miner": "Faceplant proof. Love it.",
+                        "meme": "Glow-up respawn."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_revive_corona"
+                    ]
+                },
+                {
+                    "id": "horizon_force_orbit",
+                    "label": "Rehearse Orbit Drills",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_afk_satellites"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "discipline",
+                            "performance",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_force_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You choreograph AFK recoveries into a zero-gravity dance. Every idle ally re-enters the fray grinning."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_force_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Drills flow smoothly. Nobody forgets how to jump back into orbit."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A rehearsal devolves into slapstick. You bribe the meme crew with popcorn."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "You spin too hard and skid the length of the terrace. Everyone applauds anyway."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Orbit drills uploaded.",
+                        "trader": "Idle risk hedged.",
+                        "whale": "Wake keeps the cadence tight.",
+                        "hacker": "Macros signed and sealed.",
+                        "shiller": "Tutorial montage trending.",
+                        "validator": "Attendance notarized.",
+                        "miner": "These drills double as core day.",
+                        "meme": "Orbit or it didn’t happen."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_force_orbit"
+                    ]
+                },
+                {
+                    "id": "horizon_focus_chorus",
+                    "label": "Lead Focus Chorus",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_revive_online"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "spirit",
+                            "leadership",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                }
+                            ],
+                            "narration": "You anchor the entire crown in a shared inhale. Even the towers pause to listen."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "Breathing circles spiral outward. Heartbeats sync with the wake hum."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A gust interrupts your count. You offer snacks and start again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "You inhale a stray glitter flake and sparkle-sneeze for a minute."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Focus chorus cached.",
+                        "trader": "Calm minds trade sharper.",
+                        "whale": "Wake beats align to your pulse.",
+                        "hacker": "Breath app patched live.",
+                        "shiller": "ASMR rights secured.",
+                        "validator": "Chorus attendance notarized.",
+                        "miner": "Lungs ready for the plunge.",
+                        "meme": "Inhale hype, exhale doubt."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_focus_chorus"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.7-R6",
+            "description": "Gate Alignment Deck \u2014 align the final gate lattice, broadcast future echoes, and seal the crown against leaks.",
+            "actions": [
+                {
+                    "id": "horizon_gate_align",
+                    "label": "Align the Gate Lattice",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_flux_sung",
+                            "horizon_lane_woven"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "navigation",
+                            "arcana"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_gate_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You stitch light through the oculus and the hidden gate answers with a resonant chord."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_gate_aligned",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Coordinates lock. The crown settles as if bracing for launch."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "Your stitch slips and the lattice flickers. You invest in a spool of brighter thread."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "The needle snaps and showers sparks. Hackers toss you a spare while laughing."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Gate lattice metrics green.",
+                        "trader": "Act Five futures spike.",
+                        "whale": "Wake hum acknowledges the stitch.",
+                        "hacker": "Portal firmware patched midair.",
+                        "shiller": "Teasers: unlocked.",
+                        "validator": "Alignment notarized.",
+                        "miner": "Portal seam ready for chisels.",
+                        "meme": "Needle drop part two."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_gate_align"
+                    ]
+                },
+                {
+                    "id": "horizon_signal_future",
+                    "label": "Broadcast Future Echoes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_gate_aligned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "communication",
+                            "spirit",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_signal_answered",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your broadcast rides the lattice and returns with a whisper of Act Five’s skyline."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_signal_answered",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Echoes answer steady and sure. The crowd roars."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "Static crackles back. You upgrade the transmitters."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "Your voice squeaks mid broadcast. The meme crew adds subtitles."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Echo telemetry captured.",
+                        "trader": "Spec curves updating live.",
+                        "whale": "Wake hears its future.",
+                        "hacker": "Channel sealed from spoofers.",
+                        "shiller": "Trailer editors screaming.",
+                        "validator": "Transmission notarized.",
+                        "miner": "Echo says the ore sparkles ahead.",
+                        "meme": "We called, destiny picked up."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_signal_future"
+                    ]
+                },
+                {
+                    "id": "horizon_gateward_seal",
+                    "label": "Seal the Crown Wards",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_gate_aligned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "defense",
+                            "systems",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_gate_guarded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your wards lock like a celestial vault. Stray gusts glance off in showers of harmless sparks."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_gate_guarded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Barrier glyphs settle, bright and secure."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A gap flickers open. You call hackers and patch it fast."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A ward rebounds and knocks you into a pylon. Crowd cheers your dedication."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Firewall literally lit.",
+                        "trader": "Risk premiums recalculated.",
+                        "whale": "Wake swims behind the shield.",
+                        "hacker": "Wards double-hashed.",
+                        "shiller": "Marketing copy: portals but safe.",
+                        "validator": "Integrity notarized.",
+                        "miner": "Ward even covers the tool racks.",
+                        "meme": "Zero-day? Zero-way."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_gateward_seal"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.7-R7",
+            "description": "Horizon Council \u2014 call the final consensus, archive the crown pattern, and stride toward Act Five.",
+            "actions": [
+                {
+                    "id": "horizon_consensus_vote",
+                    "label": "Call the Horizon Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_gate_aligned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "consensus",
+                            "spirit"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You raise a corona-lit banner and every guild answers. The crown blazes white as consensus locks."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "horizon_consensus_passed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Hands, fins, and data tendrils lift in unison. The horizon roars agreement."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A gust steals ballots mid-speech. You fund new ones with a grin."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "You riff too hard and the meme crew heckles you affectionately until you reset."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vote pipeline streaming.",
+                        "trader": "Consensus candles explode upward.",
+                        "whale": "Wake thunders approval.",
+                        "hacker": "Ballots unbreakable.",
+                        "shiller": "Headline: Horizon says go!",
+                        "validator": "Votes notarized with starlight.",
+                        "miner": "Ready to swing into Act Five.",
+                        "meme": "Democracy but orbital."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_consensus_vote"
+                    ]
+                },
+                {
+                    "id": "horizon_reward_archive",
+                    "label": "Archive the Crown Pattern",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "deck",
+                                    "id": "deck_horizon_corona"
+                                }
+                            ],
+                            "narration": "You fold the crown’s schematics into a radiant deck ready to deploy whenever a community needs a rally point."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Pattern sealed for posterity.",
+                        "trader": "Blueprint futures minted.",
+                        "whale": "Wake memorizes the design.",
+                        "hacker": "Archives double-locked.",
+                        "shiller": "Limited prints dropping at dawn.",
+                        "validator": "Documentation notarized.",
+                        "miner": "Copy tucked in the drill case.",
+                        "meme": "Decked out in destiny."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:horizon_reward_archive"
+                    ]
+                },
+                {
+                    "id": "advance_5",
+                    "label": "Stride Into Act Five",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "The crown’s prongs tilt and form a runway of light leading into Act Five’s waiting skyline. You charge forward with the Wake at your back.",
+                            "next_hint": "5.1"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Final transition committed.",
+                        "trader": "Rolling positions into Act Five.",
+                        "whale": "Wake accelerates into the unknown.",
+                        "hacker": "Handshake verified across timelines.",
+                        "shiller": "Trailer voiceover: \"And then...\"",
+                        "validator": "Advance notarized with fireworks.",
+                        "miner": "New seam dead ahead.",
+                        "meme": "From crown to clown? Never."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.7",
+                        "action:advance_5"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 17,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 89
+                }
+            ]
+        },
+        {
+            "xp_gte": 990,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "armor_horizon_corona"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "horizon_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "deck",
+                    "id": "deck_horizon_corona"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "4.7A"
+        },
+        {
+            "when": "flags.horizon_consensus_passed",
+            "goto": "5.1"
+        },
+        {
+            "when": "else",
+            "goto": "4.7"
+        }
+    ]
+}
