@@ -112,6 +112,13 @@ function purchasePack(user_id: string, pack: ShopPack) {
   if (pack.cost.coins && coins < pack.cost.coins) throw new Error(`Need ${pack.cost.coins.toLocaleString()} coins.`);
   if (pack.cost.gems && gems < pack.cost.gems) throw new Error(`Need ${pack.cost.gems} gems.`);
 
+
+  const coins = profile.coins ?? 0;
+  const gems = profile.gems ?? 0;
+
+  if (pack.cost.coins && coins < pack.cost.coins) throw new Error(`Need ${pack.cost.coins.toLocaleString()} coins.`);
+  if (pack.cost.gems && gems < pack.cost.gems) throw new Error(`Need ${pack.cost.gems} gems.`);
+
   if (pack.cost.coins) {
     db.prepare('UPDATE profiles SET coins=coins-? WHERE user_id=?').run(pack.cost.coins, user_id);
     db.prepare(
@@ -185,7 +192,7 @@ export async function renderEnhancedShop(user_id: string) {
   embed.addFields({ name: 'Limited Stock', value: limitedItems || 'Check back soon!', inline: false });
 
   const craftables = listCraftables()
-    .map((craft) => `${craft.id} — ${craft.costFragments} fragments`)
+    .map((craft) => `${craft.emoji} ${craft.name} — ${craft.costFragments} fragments`)
     .join('\n');
   embed.addFields({ name: 'Crafting', value: craftables || 'No recipes yet.', inline: false });
 
@@ -209,10 +216,10 @@ export async function renderEnhancedShop(user_id: string) {
     .setPlaceholder('Craft gear...')
     .addOptions(
       listCraftables().map((craft) => ({
-        label: craft.id,
+        label: craft.name,
         description: craft.description,
         value: craft.id,
-        emoji: '🛠️',
+        emoji: craft.emoji,
       }))
     );
 

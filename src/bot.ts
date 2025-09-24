@@ -522,7 +522,9 @@ client.on(Events.MessageCreate, async (m: Message) => {
   // Crafting
   if (lc === '!crafts') {
     if (!ensureFeatureAccess(m, 'shop')) return;
-    const lines = listCraftables().map((c) => `${c.id} — ${c.costFragments} fragments`).join('\n');
+    const lines = listCraftables()
+      .map((c) => `${c.emoji} ${c.name} — ${c.costFragments} fragments`)
+      .join('\n');
     scheduleDecay(m.reply({ content: `🛠️ Available recipes:\n${lines}` }));
     return;
   }

@@ -37,6 +37,11 @@ declare module 'nanoid' {
   export function nanoid(size?: number): string;
 }
 
+declare module 'node:crypto' {
+  type RandomBuffer = { toString(encoding?: string): string };
+  export function randomBytes(size: number): RandomBuffer;
+}
+
 declare module 'discord.js' {
   export type Snowflake = string;
 

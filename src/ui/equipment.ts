@@ -9,8 +9,11 @@ import {
 } from 'discord.js';
 import { EquipmentBonus } from '../models.js';
 import db from '../persistence/db.js';
+import { contentRegistry, ItemDefinition } from '../content/contentRegistry.js';
 
 export type EquipmentSlot = 'weapon' | 'armor' | 'helm' | 'trinket' | 'deck';
+
+const EQUIPMENT_SLOTS: EquipmentSlot[] = ['weapon', 'armor', 'helm', 'trinket', 'deck'];
 
 interface EquipmentDefinition {
   id: string;
@@ -135,6 +138,48 @@ const EQUIPMENT_SETS: Record<
     },
   },
 };
+
+const dynamicEquipmentIds = new Set<string>();
+
+function isEquipmentSlot(slot?: string): slot is EquipmentSlot {
+  return Boolean(slot && (EQUIPMENT_SLOTS as string[]).includes(slot));
+}
+
+function mapItemToEquipment(item: ItemDefinition): EquipmentDefinition | null {
+  if (!isEquipmentSlot(item.slot) || !item.bonuses) {
+    return null;
+  }
+
+  return {
+    id: item.id,
+    slot: item.slot,
+    name: item.name,
+    rarity: item.rarity,
+    emoji: item.emoji,
+    description: item.description,
+    setKey: item.setKey,
+    bonuses: item.bonuses as EquipmentBonus,
+  };
+}
+
+function hydrateEquipmentRegistry() {
+  for (const id of dynamicEquipmentIds) {
+    delete EQUIPMENT_REGISTRY[id];
+  }
+  dynamicEquipmentIds.clear();
+
+  const items = contentRegistry.getAllItems();
+  for (const item of items) {
+    const mapped = mapItemToEquipment(item);
+    if (mapped) {
+      EQUIPMENT_REGISTRY[mapped.id] = mapped;
+      dynamicEquipmentIds.add(mapped.id);
+    }
+  }
+}
+
+hydrateEquipmentRegistry();
+contentRegistry.onReload(hydrateEquipmentRegistry);
 
 export interface EquippedItem {
   slot: EquipmentSlot;
@@ -279,7 +324,7 @@ export async function renderEquipment(user_id: string) {
   if (equipped.length === 0) {
     embed.addFields({ name: 'Current Equipment', value: 'Nothing equipped yet.', inline: false });
   } else {
-    for (const slot of ['weapon', 'armor', 'helm', 'trinket', 'deck'] as EquipmentSlot[]) {
+    for (const slot of EQUIPMENT_SLOTS) {
       const eq = equipped.find((e) => e.slot === slot);
       if (!eq) {
         embed.addFields({ name: slot.toUpperCase(), value: '_empty_', inline: true });
@@ -299,7 +344,7 @@ export async function renderEquipment(user_id: string) {
     .setCustomId('equipment:slot')
     .setPlaceholder('Choose a slot to equip...')
     .addOptions(
-      ['weapon', 'armor', 'helm', 'trinket', 'deck'].map((slot) => ({
+      EQUIPMENT_SLOTS.map((slot) => ({
         label: slot.toUpperCase(),
         value: slot,
       }))

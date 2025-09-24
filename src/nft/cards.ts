@@ -1,5 +1,6 @@
 import db from '../persistence/db.js';
 import { Effect } from '../models.js';
+import { contentRegistry, CardDefinition } from '../content/contentRegistry.js';
 
 export interface Card {
   id: string;
@@ -214,6 +215,66 @@ export const CARD_REGISTRY: Record<string, Card> = {
     set: 'genesis'
   }
 };
+
+function cloneCard(card: Card): Card {
+  return {
+    ...card,
+    cost: { ...(card.cost ?? {}) },
+    effects: card.effects?.map((effect) => ({ ...effect })) ?? [],
+    tags: [...(card.tags ?? [])],
+  };
+}
+
+const FALLBACK_CARD_DEFS = new Map<string, Card>(Object.entries(CARD_REGISTRY).map(([id, card]) => [id, cloneCard(card)]));
+const DYNAMIC_CARD_IDS = new Set<string>();
+
+function hydrateCardRegistry() {
+  for (const id of DYNAMIC_CARD_IDS) {
+    const fallback = FALLBACK_CARD_DEFS.get(id);
+    if (fallback) {
+      CARD_REGISTRY[id] = cloneCard(fallback);
+    } else {
+      delete CARD_REGISTRY[id];
+    }
+  }
+  DYNAMIC_CARD_IDS.clear();
+
+  const cardDefs: CardDefinition[] = contentRegistry.getAllCards();
+  for (const def of cardDefs) {
+    const fallback = FALLBACK_CARD_DEFS.get(def.id);
+    const merged: Card = fallback ? cloneCard(fallback) : {
+      id: def.id,
+      name: def.name,
+      rarity: def.rarity as Card['rarity'],
+      type: def.type as Card['type'],
+      cost: {},
+      effects: [],
+      tags: [],
+      description: def.description,
+      set: def.set,
+    };
+
+    merged.name = def.name ?? merged.name;
+    merged.rarity = (def.rarity as Card['rarity']) ?? merged.rarity;
+    merged.type = (def.type as Card['type']) ?? merged.type;
+    merged.description = def.description ?? merged.description;
+    merged.flavorText = def.flavorText ?? merged.flavorText;
+    merged.set = def.set ?? merged.set;
+    merged.requiresClass = def.requiresClass ?? merged.requiresClass;
+    merged.cost = def.cost ? { ...def.cost } : merged.cost;
+    merged.tags = def.tags ? [...def.tags] : merged.tags;
+    merged.effects = def.effects ? (def.effects as Effect[]).map((effect) => ({ ...effect })) : merged.effects;
+
+    CARD_REGISTRY[def.id] = merged;
+
+    if (!fallback) {
+      DYNAMIC_CARD_IDS.add(def.id);
+    }
+  }
+}
+
+hydrateCardRegistry();
+contentRegistry.onReload(hydrateCardRegistry);
 
 // Deck management
 export class DeckManager {
