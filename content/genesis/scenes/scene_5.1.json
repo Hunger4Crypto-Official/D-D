@@ -1,0 +1,1591 @@
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "5.1",
+    "title": "The Wakefront Threshold — Fate Splits in Four",
+    "narration": "You burst from the Horizon Crown into the Wakefront Threshold, a colossal switchback of glass platforms suspended inside a prism of tidal light. Four immense silhouettes lean over the scene like possible endings: a tower crowned in mourning veils, a vault of camouflaged corridors, a field of stubborn survivors, and a victory gate blazing with laurels. Every time you blink, another silhouette leans closer, inviting you to choose it. Beneath your boots, the bridge hums at twice the heartbeat of the Causeway, impatient for resolution.\n\nGremlin cadres have already colonized the threshold. Dev gremlins weave chronologs between the four silhouettes, updating probability graphs in real time. Traders have set up a fate exchange where you can hedge sorrow against triumph. Whales orbit as living aurorae, grading each new plan with tidal push or pull. Hackers splice stealth firmware into the hidden corridors, validators choreograph oath-calls that modulate the mourning bells, miners carve luminous ore from the survivor field to feed the victory gate, and the meme division projects slogans like \"LIVE LOUD, HIDE SMART, DIE WELL, WIN LOUDER\" across every surface. AFK safeties swirl as grappling ribbons, ready to yank any ally back from whichever ending tempts them too soon.\n\nSeven terraces spiral up the Threshold. The first ignites the Wakefront greeting and maps the initial divergence. The second braids fate threads for loss, concealment, survival, and triumph. The third assigns shields, caches, and banners to each path. The fourth honors fallen echoes and rallies charges. The fifth forges a mosaic arsenal that only works when all four futures cooperate. The sixth convenes the first Act Five council vote. The seventh opens the way toward the Wake Spire. You have seven rounds before the endings start choosing you.",
+    "rounds": [
+        {
+            "round_id": "5.1-R1",
+            "description": "Wakefront Antechamber — ignite the GM/GN flare, map the divergence vectors, and lash AFK anchors before anyone gets claimed by a silhouette.",
+            "actions": [
+                {
+                    "id": "wakefront_gmgn_ignite",
+                    "label": "Ignite the Wakefront GM/GN",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "horizon_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "leadership",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_gmgn_flare",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You sing sunrise and starlight into one beam. The four silhouettes pause, listening, and the Wakefront flares bright enough to etch your outline across every ledger."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_gmgn_flare",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your greeting threads through the Threshold’s ribs. Each silhouette nods in recognition and waits to see if you choose it."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_pity_ladder",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You hesitate between endings and the traders charge you for indecision. The coins fund an emergency pity ladder."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_pity_ladder",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your greeting fractures and the mourning veils lash out, leaving static burns across your chest. The meme crew titles the clip ‘GM? GN? GG.’"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Wakefront audio synced across four futures.",
+                        "trader": "Hedging endings like options.",
+                        "whale": "The tide listens to your chord.",
+                        "hacker": "Handshake routed through every silhouette.",
+                        "shiller": "This greeting sells destiny merch.",
+                        "validator": "Wakefront salute notarized.",
+                        "miner": "Sound hits like striking prime ore.",
+                        "meme": "GMGN? Try GMGNGW (Good Morning, Good Night, Good Win)."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_gmgn_ignite"
+                    ]
+                },
+                {
+                    "id": "wakefront_vector_map",
+                    "label": "Map the Divergence Vectors",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_gmgn_flare"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "insight",
+                            "analysis",
+                            "fate"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_vectors_plotted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You trace four spiraling arcs that never quite touch. Each one glows with a different heartbeat: silence for the fallen, whisper for the hidden, drumfire for the living, fanfare for the triumphant."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_vectors_plotted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The divergence map unfurls across the air like a battle standard. Pathways align, arguable but legible."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "Your chalk lines smear. The futures blur together and a gremlin politely hands you a towel labeled TRY AGAIN."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "The divergence map snaps back like a slingshot. You taste blood and the victory gate flickers in disapproval."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vector field rendered in four overlays.",
+                        "trader": "Pricing survival at 1.2x, triumph at 2.5x.",
+                        "whale": "Currents agree with your geometry.",
+                        "hacker": "No phantom nodes detected... yet.",
+                        "shiller": "This diagram belongs on a flag.",
+                        "validator": "Divergence ledger balanced.",
+                        "miner": "Lines look like veins worth mining.",
+                        "meme": "Choose your fighter: Hide, Ride, Pride, or Die."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_vector_map"
+                    ]
+                },
+                {
+                    "id": "wakefront_afk_lash",
+                    "label": "Lash the AFK Ribbons",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_gmgn_flare"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "support",
+                            "coordination",
+                            "safety"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_afk_safeties",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You knot ribbons from all four futures into a single harness. Anyone who slips gets yanked back with a gentle jolt and a sarcastic thank-you note."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_afk_safeties",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The AFK net hums into place. No ally goes missing without a receipt."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "Two ribbons tangle and slap you across the face. The meme crew slow-mo replays the welt forming."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A ribbon snaps loose, whips around, and hurls you into the mourning tower’s stairwell. You climb back with bruises and new respect for knots."
+                        }
+                    },
+                    "banter": {
+                        "dev": "AFK nets ready to auto-resume.",
+                        "trader": "Insurance premium paid in smugness.",
+                        "whale": "Tide approves of safety harnesses.",
+                        "hacker": "No one logs off without consent now.",
+                        "shiller": "Sell the ribbons as merch later.",
+                        "validator": "Safety measures notarized.",
+                        "miner": "That knot could hold a drill rig.",
+                        "meme": "AFK? Nah, you’re AF-OK."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_afk_lash"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "5.1-R2",
+            "description": "Divergence Loom — braid the four fate threads so none fray alone.",
+            "actions": [
+                {
+                    "id": "wakefront_loss_thread",
+                    "label": "Trace the Loss Thread",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_vectors_plotted"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "fate",
+                            "resolve",
+                            "ritual"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_loss_forecast",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You walk the mourning tower’s spiral until the bells fall silent. Names write themselves on the air, waiting for guardians."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_loss_forecast",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You map the cost of Act Five in ink that refuses to dry. The ledger nods grimly."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "A bell tolls and the vibration climbs your bones. You stagger, knowing the Wake may claim someone you love."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "The tower mistakes you for an offering. You rip free, but you leave a handful of luck behind."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Loss ledger balanced but not forgiven.",
+                        "trader": "Pricing grief futures isn’t my favorite gig.",
+                        "whale": "Even tides ebb. Prepare to mourn.",
+                        "hacker": "Encrypt the names so only we can unlock them.",
+                        "shiller": "We cry loud, we fight louder.",
+                        "validator": "Names recorded with honor.",
+                        "miner": "Carved every loss into stone.",
+                        "meme": "Pour one out, then pour in the work."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_loss_thread"
+                    ]
+                },
+                {
+                    "id": "wakefront_hide_thread",
+                    "label": "Weave the Hidden Thread",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_vectors_plotted"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "stealth",
+                            "strategy",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_hide_threaded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You slip through the camouflaged vault and rewrite its walls with hush-ink. A whole platoon can disappear here and emerge victorious later."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_hide_threaded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Hidden corridors align with your breathing. Safehouses register themselves on your map."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "You bump a cloaked pillar. It scolds you with a spray of glitter and a note: TRY INVISIBLE HARDER."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "The vault slams shut on your ankle. You yank free, limping but wiser about secret doors."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Shadow network patched into the HUD.",
+                        "trader": "Hiding alpha until it moons.",
+                        "whale": "Stealth currents strong tonight.",
+                        "hacker": "Latency near zero in the hushways.",
+                        "shiller": "We’re invisible but make it fashion.",
+                        "validator": "Hidden sanctums notarized discretely.",
+                        "miner": "Cut tunnels so quiet even echoes tiptoe.",
+                        "meme": "If no one saw it, did it even loot? Yes."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_hide_thread"
+                    ]
+                },
+                {
+                    "id": "wakefront_glory_thread",
+                    "label": "Crown the Triumph Thread",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_vectors_plotted"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "valor",
+                            "charisma",
+                            "momentum"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_glory_charted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You plant your banner in the survivor field. Cheers ripple through the crowd and even the mourning tower rings in admiration."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_glory_charted",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The triumph gate flares open a crack. You can see the laurels waiting inside."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "Your banner slips. Traders swoop in to buy the dip on morale."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "You charge too soon and the gate spits you back, singed and humbled."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Triumph beacon integrated into HUD.",
+                        "trader": "Victory futures trending bullish.",
+                        "whale": "Tide leans toward glory.",
+                        "hacker": "Boosted the hype algorithm legally-ish.",
+                        "shiller": "Clip going viral: ‘We choose to win.’",
+                        "validator": "Triumph protocol notarized.",
+                        "miner": "That cheer shook dust from the ceiling.",
+                        "meme": "Win condition unlocked: shout louder."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_glory_thread"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.1-R3",
+            "description": "Triage Gallery — assign shields, hideouts, and banners to the paths before the futures start fighting.",
+            "actions": [
+                {
+                    "id": "wakefront_loss_bulwark",
+                    "label": "Erect the Mourning Bulwark",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_loss_forecast"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "defense",
+                            "sacrifice",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_loss_buffered",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You set stones for the fallen and the wall hums with their gratitude. Anyone who falls here leaves a message instead of a silence."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_loss_buffered",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "A protective bulwark grows around the mourning tower. It is beautiful and terrible."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You accept a wound meant for someone else. The wall gleams brighter but your ribs protest."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "The wall demands more than you intended to give. You stagger away, alive, but only because the AFK ribbons drag you back."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Loss buffer online. Latency acceptable.",
+                        "trader": "Insurance pool funded with tears and grit.",
+                        "whale": "Even the tide honors that wall.",
+                        "hacker": "Encrypted wills uploaded.",
+                        "shiller": "Memorial stream trending #RememberTheWake.",
+                        "validator": "Bulwark oath notarized.",
+                        "miner": "Cut stone bleeds light now.",
+                        "meme": "Dead? Nah, on legendary cooldown."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_loss_bulwark"
+                    ]
+                },
+                {
+                    "id": "wakefront_hide_cache",
+                    "label": "Seed the Shadow Cache",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_hide_threaded"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "stealth",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "consumable_shadow_pass"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_shadow_cache",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "You stash rations, disguises, and exit tokens behind false walls. Every hidden ally now has a way to vanish twice."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_shadow_cache",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The cache seals shut, invisible even to the dev gremlins unless you invite them."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "A meme gremlin accidentally livestreams the cache coordinates. You scramble to re-hide everything."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You buy decoy supplies to cover the breach. Costly, but secrecy restored."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Shadow inventory balanced.",
+                        "trader": "Hiding our best gains for later.",
+                        "whale": "Tide knows where to tuck the stealth fleet.",
+                        "hacker": "Cache keyed to breathing passwords.",
+                        "shiller": "Stealth chic is the look of the season.",
+                        "validator": "Cache receipts notarized invisibly.",
+                        "miner": "Buried the stash under three meters of hushstone.",
+                        "meme": "Invisible loot boxes? Inject that."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_hide_cache"
+                    ]
+                },
+                {
+                    "id": "wakefront_glory_banner",
+                    "label": "Raise the Survivor Banner",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_glory_charted"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "valor",
+                            "community"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "banner_wakefront_standard"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_banner_raised",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                }
+                            ],
+                            "narration": "You unfurl a banner woven from Radiant Dyad lightning and Horizon Crown aurora. Survivors roar approval; even the hidden corridors echo applause."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_banner_raised",
+                                    "value": true
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The banner catches the Wakefront wind and refuses to sag."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "A gust whips the banner pole into your shoulder. Pride bruised, shoulder worse."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "You almost tumble off the platform. AFK ribbons catch you as the crowd gasps."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Banner lighting cycle locked.",
+                        "trader": "Merch sales spike when that flag waves.",
+                        "whale": "Even the tide salutes that cloth.",
+                        "hacker": "Embedded a secret rally code in the seams.",
+                        "shiller": "Clip title: ‘How to banner drop a future.’",
+                        "validator": "Banner charter notarized.",
+                        "miner": "Pole anchored in bedrock.",
+                        "meme": "Flag so fire the storms asked for autographs."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_glory_banner"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "coins",
+                    "op": "+",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "round_id": "5.1-R4",
+            "description": "Requiem Forge — honor the fallen, empower the hidden, and prime the charge.",
+            "actions": [
+                {
+                    "id": "wakefront_echo_recall",
+                    "label": "Recall the Echoes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_loss_buffered"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "revival",
+                            "ritual",
+                            "compassion"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_fallen_recalled",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "trinket_echo_locket"
+                                }
+                            ],
+                            "narration": "You ring the mourning bells backward. Spirits step out of the wall, wearing smiles made of lightning. They promise to watch your back."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_fallen_recalled",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Echoes answer, faint but determined. Their names glow steady on the bulwark."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The bells shudder. Someone does not answer. You promise to try again."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "A grief echo lashes out, mistaking you for the one who left them. It fades when it recognizes you, leaving a scar of ice."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Echo channel stabilized.",
+                        "trader": "Trading sorrow for second chances.",
+                        "whale": "Tide carries their voices home.",
+                        "hacker": "Packet loss minimal on the afterline.",
+                        "shiller": "Clip titled ‘We don’t leave legends behind.’",
+                        "validator": "Echo contracts notarized.",
+                        "miner": "They still laugh like old crew.",
+                        "meme": "Ghosts? Nah, bonus party members."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_echo_recall"
+                    ]
+                },
+                {
+                    "id": "wakefront_shadow_route",
+                    "label": "Thread the Shadow Route",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_shadow_cache"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "stealth",
+                            "navigation",
+                            "logistics"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_hide_network",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                }
+                            ],
+                            "narration": "You splice the hidden corridors into a network of safe leaps. Anyone vanishing here returns with intel and intact pride."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_hide_network",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Routes flash on your map, accessible only to those who know the hush-passwords you just invented."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "A corridor loops on itself. You walk in circles until a gremlin leaves breadcrumbs shaped like memes."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You bribe the meme division to scrub the breadcrumb footage. Worth it."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Shadow routes added to mission planner.",
+                        "trader": "Selling stealth futures in limited quantity.",
+                        "whale": "Currents bend quietly for you.",
+                        "hacker": "No trace, no tracebacks.",
+                        "shiller": "Invisible caravans, unstoppable story.",
+                        "validator": "Pathway attestations sealed.",
+                        "miner": "Tunneled so soft even dust stayed asleep.",
+                        "meme": "Stealth level: screenshot shows nothing."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_shadow_route"
+                    ]
+                },
+                {
+                    "id": "wakefront_charge_prime",
+                    "label": "Prime the Victory Charge",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_banner_raised"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "valor",
+                            "tactics",
+                            "momentum"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_charge_ready",
+                                    "value": true
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                }
+                            ],
+                            "narration": "You choreograph the charge with the precision of a trader’s kill order. Every ally knows where to leap, when to shout, and when to plant the flag."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_charge_ready",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "The vanguard lines up, eyes blazing. The gate trembles, eager to swing wide."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You mis-time the drumbeat. A quick investment in extra speakers fixes morale."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "You lead a practice charge into a closed gate. The bruise will look heroic later."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Charge macro rehearsed.",
+                        "trader": "Momentum chart spiking hard.",
+                        "whale": "Tide curls behind the vanguard.",
+                        "hacker": "Syncing the war drums with the network clock.",
+                        "shiller": "Prepping the highlight reel.",
+                        "validator": "Charge plan notarized in duplicate.",
+                        "miner": "Boots stomp like drills on ore.",
+                        "meme": "Ready? Ready. READY!"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_charge_prime"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.1-R5",
+            "description": "Mosaic Arsenal — fuse all four futures into one weapon set.",
+            "actions": [
+                {
+                    "id": "wakefront_mosaic_forge",
+                    "label": "Forge the Wakefront Mosaic",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_fallen_recalled",
+                            "wakefront_hide_network",
+                            "wakefront_charge_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "ritual",
+                            "strategy"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_mosaic_forged",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "Echoes, shadows, and banners fuse into a shimmering disk that projects whichever future you need most."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_mosaic_forged",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "The mosaic locks into place, humming with four harmonies at once."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 2
+                                }
+                            ],
+                            "narration": "Pieces refuse to connect. You regroup and try again with blistered fingers."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The mosaic explodes into shards. AFK ribbons pull you clear while dev gremlins sweep up data glitter."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Mosaic compiled with zero merge conflicts.",
+                        "trader": "Diversified destiny portfolio secured.",
+                        "whale": "Currents adore this symmetry.",
+                        "hacker": "Four futures, one API.",
+                        "shiller": "Branding note: Mosaic = unstoppable.",
+                        "validator": "Fusion covenant notarized.",
+                        "miner": "Looks like ore, hits like prophecy.",
+                        "meme": "All endings? Why not choose ‘yes.’"
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_mosaic_forge"
+                    ]
+                },
+                {
+                    "id": "wakefront_aegis_allocate",
+                    "label": "Allocate the Wakefront Aegis",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_mosaic_forged"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "armor_wakefront_aegis"
+                                }
+                            ],
+                            "narration": "The mosaic blossoms into layered armor that shifts modes depending on which future you lean into."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Aegis hot-swaps between modes seamlessly.",
+                        "trader": "Protection packaged as premium utility.",
+                        "whale": "Shield hums like a tide at full moon.",
+                        "hacker": "Firmware patched and unbreakable.",
+                        "shiller": "Aegis photoshoot scheduled post-victory.",
+                        "validator": "Ownership ledger updated.",
+                        "miner": "Armor plates forged from mosaic offcuts.",
+                        "meme": "New drip unlocked: plot armor."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_aegis_allocate"
+                    ]
+                },
+                {
+                    "id": "wakefront_wildcard_bank",
+                    "label": "Bank the Wakefront Wildcard",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_mosaic_forged"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_wildcard_bank",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "You store a single, radiant possibility inside the mosaic. It will cash out when the story needs an impossible pivot."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Wildcard slot armed and ready.",
+                        "trader": "Holding one more option than fate expected.",
+                        "whale": "Currents love a surprise reserve.",
+                        "hacker": "Wildcard seeded in encrypted stasis.",
+                        "shiller": "Teaser trailer: ‘We kept a spare miracle.’",
+                        "validator": "Wildcard bond notarized.",
+                        "miner": "Tucked the extra chance under solid bedrock.",
+                        "meme": "Save scumming? Nah, save stunning."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_wildcard_bank"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "5.1-R6",
+            "description": "Outcome Congress — call the first Act Five vote.",
+            "actions": [
+                {
+                    "id": "wakefront_council_rally",
+                    "label": "Rally the Wakefront Council",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_mosaic_forged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "persuasion",
+                            "community"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_council_rallied",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "All four factions show up in force. Loss, hide, live, and win clasp hands across the table."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_council_rallied",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "The council seats fill. Gremlins pass snacks; stakes remain deadly serious."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "One faction storms out. You sprint after them with the wildcard as leverage."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "Arguments turn physical. You take a punch meant for someone who might not make it."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Council quorum reached.",
+                        "trader": "Consensus futures volatile but rising.",
+                        "whale": "Tide steadies the chairs.",
+                        "hacker": "Voting system triple-encrypted.",
+                        "shiller": "Democracy but make it legendary.",
+                        "validator": "Attendance logged in triplicate.",
+                        "miner": "Even the quiet ones spoke up.",
+                        "meme": "Meeting minutes: *aggressive hype noises*."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_council_rally"
+                    ]
+                },
+                {
+                    "id": "wakefront_vote_call",
+                    "label": "Call the Wakefront Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_council_rallied"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "consensus",
+                            "ritual",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                }
+                            ],
+                            "narration": "All four futures vote yes. The Wakefront trembles with approval and the silhouettes bow."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakefront_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Consensus holds. You feel the Wake Spire open ahead."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Ties require incentives. You sweeten the pot with treasury bonds."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The vote fractures and the silhouettes snarl. You absorb the backlash, determined to reconvene."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vote recorded, blockchain actually proud.",
+                        "trader": "Consensus premium paid in adrenaline.",
+                        "whale": "Wave crest marks the aye vote.",
+                        "hacker": "No bots, all heart.",
+                        "shiller": "Headline: ‘Wakefront chooses all endings.’",
+                        "validator": "Vote ledger sealed.",
+                        "miner": "We mined a yes out of bedrock.",
+                        "meme": "Motion passes, motion dances."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_vote_call"
+                    ]
+                },
+                {
+                    "id": "wakefront_reward_archive",
+                    "label": "Archive the Threshold Pattern",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "deck",
+                                    "id": "deck_wakefront_mosaic"
+                                }
+                            ],
+                            "narration": "You fold the fourfold plan into a deck of radiant tiles ready to redeploy when another community faces impossible choices."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Pattern archived with zero loss.",
+                        "trader": "Sell the manual? Never. Gift it.",
+                        "whale": "Future tides will thank us.",
+                        "hacker": "Backup stored across twelve light-years.",
+                        "shiller": "Limited edition: Legacy of the Wakefront.",
+                        "validator": "Archive notarized in perpetuity.",
+                        "miner": "Locked it in the strongbox too.",
+                        "meme": "Collectible card: Choose your ending."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:wakefront_reward_archive"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.1-R7",
+            "description": "Final Terrace — stride toward the Wake Spire with every future in tow.",
+            "actions": [
+                {
+                    "id": "advance_5_2",
+                    "label": "Ascend to the Wake Spire",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "The silhouettes converge into a single stair of blazing light. You climb with ghosts, shadows, survivors, and champions at your side.",
+                            "next_hint": "5.2"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Scene transition compiled.",
+                        "trader": "Rolling positions into the Spire.",
+                        "whale": "Tide pulls us upward now.",
+                        "hacker": "Handshake ready for the Spire gate.",
+                        "shiller": "Endgame trailer voice: ‘Meanwhile, above…’",
+                        "validator": "Advance notarized with fireworks.",
+                        "miner": "Next seam: destiny.",
+                        "meme": "Up only."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.1",
+                        "action:advance_5_2"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 19,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 144
+                }
+            ]
+        },
+        {
+            "xp_gte": 1337,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "relic_wakefront_compass"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "wakefront_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "deck",
+                    "id": "deck_wakefront_mosaic"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "5.1A"
+        },
+        {
+            "when": "flags.wakefront_consensus_passed",
+            "goto": "5.2"
+        },
+        {
+            "when": "else",
+            "goto": "5.1"
+        }
+    ]
+}

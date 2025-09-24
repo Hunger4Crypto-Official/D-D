@@ -1,0 +1,1524 @@
+
+{
+    "schema_version": "1.0",
+    "content_id": "genesis",
+    "book_id": "book_1",
+    "scene_id": "5.2",
+    "title": "The Wake Spire — Opening the Last Run",
+    "narration": "The Wake Spire erupts above you like a spiral comet of stone and starlight. Each tier is a living memory: banners from the Horizon Crown flutter beside lightning stolen from the Radiant Dyad, while the Convergence Causeway’s braided light now coils as railings around a central column of compressed dawn. Between those rails float four spectral lanes, each tinted by an ending you mapped below. Footsteps echo from the future as if your own victory, retreat, survival, and sacrifice are already pacing upstairs.\n\nThe gremlins have transformed the Spire into a mission control cathedral. Dev gremlins hover at holo-consoles, simulating permutations of the final push. Traders run a liquidity pit carved into the Spire’s heart, hedging bets on which lane will claim the loudest glory. Whales spiral upward, pushing gravity to favor your ascent. Hackers lace the walls with anti-scry firewalls, validators tune verdict bells that will toll once for every life saved or spent, miners carve footholds into the spiraling steps, and the meme division paints massive murals reading \"WIN, HIDE, FIGHT, OR FALL — JUST DO IT TOGETHER\" across the vault. AFK safeties snap into a mesh that wraps the entire column, ensuring no ally vanishes unmarked.\n\nSeven battlements wind up the Spire. The first reboots the GM/GN to resonate with Act Five. The second refracts the four fate lanes into actionable corridors. The third reclaims remnants and stockpiles them for the climb. The fourth assigns hidden cells, sentinel lines, and vanguard wedges. The fifth equips each team with gear forged from the Wakefront mosaic. The sixth convenes the Verdict Choir that will commit Act Five’s opening gambit. The seventh unlocks the path to the Wake Apex. Climb with care; endings sharpen here.",
+    "rounds": [
+        {
+            "round_id": "5.2-R1",
+            "description": "Spire Footing — reboot the GM/GN, triangulate the ascent, and anchor lifelines.",
+            "actions": [
+                {
+                    "id": "wakespire_gmgn_resonance",
+                    "label": "Resonate the Spire GM/GN",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_consensus_passed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "leadership",
+                            "harmony"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_gmgn_resonant",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your voice threads through the Spire. The four fate lanes hum in tune, promising to hold whatever future you choose."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_gmgn_resonant",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The Spire acknowledges your arrival with a low, approving chord."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_pity_reserve",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your greeting wavers. Traders fill the silence with a pity fund that echoes up the stairs."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_pity_reserve",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The Spire rings a discordant bell that knocks you to one knee. AFK mesh tightens around you until you stand again."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Spire greeting synchronized.",
+                        "trader": "Market opened for Act Five.",
+                        "whale": "Currents curl around the column.",
+                        "hacker": "Handshake patched to the apex nodes.",
+                        "shiller": "Broadcasting: ‘Act Five begins now.’",
+                        "validator": "Greeting notarized atop the ledger.",
+                        "miner": "Stone vibrates with every note.",
+                        "meme": "GM? GN? Try GG EZ? Not yet."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_gmgn_resonance"
+                    ]
+                },
+                {
+                    "id": "wakespire_pathfinding",
+                    "label": "Triangulate the Fate Lanes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_gmgn_resonant",
+                            "wakefront_vectors_plotted"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "analysis",
+                            "fate",
+                            "navigation"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_paths_triangulated",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You align the four lanes to intersect at critical checkpoints. No matter who falls, hides, survives, or conquers, their path feeds the others."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_paths_triangulated",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The lanes glow in harmony, ready for split-second rerouting."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "A lane twists unexpectedly. You scribble revisions before the gremlins notice."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "Two lanes collide, sparking lightning that scorches your arm. You swear and redraw them apart."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Lane triangulation stable.",
+                        "trader": "Diversified risk with style.",
+                        "whale": "Tide approves of this symmetry.",
+                        "hacker": "Routing tables updated.",
+                        "shiller": "Four ways up, zero ways alone.",
+                        "validator": "Paths notarized and sealed.",
+                        "miner": "Cut extra footholds along each lane.",
+                        "meme": "Choose your fighter? We chose all."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_pathfinding"
+                    ]
+                },
+                {
+                    "id": "wakespire_lifeline_deploy",
+                    "label": "Deploy the Ascension Lifelines",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_gmgn_resonant",
+                            "wakefront_afk_safeties"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "support",
+                            "coordination",
+                            "safety"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_lifelines_deployed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You weave the AFK mesh into climbing harnesses that glow when someone slips. Nobody falls unmarked."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_lifelines_deployed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Lifelines coil along the rails, ready to yank allies home."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "A harness snaps and smacks you in the helmet. You tie it again with teeth-gritted determination."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You get dragged halfway up the Spire before the mesh realizes you’re the rescuer, not the rescue."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Ascension lifelines calibrated.",
+                        "trader": "Insurance premium paid in bruises.",
+                        "whale": "Tide tugs kindly on these ropes.",
+                        "hacker": "Auto-reel triggers verified.",
+                        "shiller": "Merch idea: safety harness couture.",
+                        "validator": "Lifeline registry notarized.",
+                        "miner": "These knots could hold a drill rig.",
+                        "meme": "Falling? Not on my mesh."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_lifeline_deploy"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "5.2-R2",
+            "description": "Fate Prism Gallery — refract loss, concealment, survival, and triumph into operative lanes.",
+            "actions": [
+                {
+                    "id": "wakespire_loss_gate",
+                    "label": "Open the Loss Gate",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_loss_forecast"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "fate",
+                            "resolve",
+                            "ritual"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_loss_gate_open",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You touch the mourners’ bell and it swings inward, revealing a corridor lined with torches that burn in remembered names."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_loss_gate_open",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "The gate opens with a solemn bow. It promises a noble accounting for every loss."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "The bell tolls against your ribs. You cough, but refuse to retreat."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "The gate slams, mistaking your courage for arrogance. It reopens after drawing blood to make the point."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Loss gate stabilized.",
+                        "trader": "Pricing sorrow at cost.",
+                        "whale": "Even tides mourn with rhythm.",
+                        "hacker": "Names locked and encrypted.",
+                        "shiller": "Honor every fall, stream every rise.",
+                        "validator": "Gate oath notarized.",
+                        "miner": "Torches fueled with ore dust.",
+                        "meme": "Dead but make it dignified."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_loss_gate"
+                    ]
+                },
+                {
+                    "id": "wakespire_hide_chute",
+                    "label": "Unfurl the Hidden Chute",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_hide_threaded"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "stealth",
+                            "strategy",
+                            "mobility"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_hide_network",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The chute unspools like a ribbon of night. It bends light around anyone sliding through."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_hide_network",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Hidden footholds illuminate briefly, then vanish, remembering your allies alone."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "You trip and slide halfway down before the chute remembers you’re supposed to go up."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You bribe the meme division to delete footage of the unintended slide."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Hidden chute integrated into nav HUD.",
+                        "trader": "Short the obvious entrance, long the secret one.",
+                        "whale": "Currents cloak your steps.",
+                        "hacker": "Noise floor near zero.",
+                        "shiller": "Invisible runway, unstoppable story.",
+                        "validator": "Chute permissions notarized.",
+                        "miner": "Carved the slide with a whisper.",
+                        "meme": "Sneak 100."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_hide_chute"
+                    ]
+                },
+                {
+                    "id": "wakespire_glory_lane",
+                    "label": "Ignite the Glory Lane",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakefront_glory_charted"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "valor",
+                            "charisma",
+                            "momentum"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_glory_lane",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You spark the lane and it erupts in aurora gold. Cheers from below echo upward."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_glory_lane",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "The lane shines bright enough to guide the vanguard even through smoke."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "The flame sputters until you feed it a handful of rare fuel."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "You stand too close when the lane ignites. Your eyebrows will grow back."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Glory lane illumination at 200%.",
+                        "trader": "Victory futures limit up.",
+                        "whale": "Tide pushes you forward.",
+                        "hacker": "No spoofing this radiance.",
+                        "shiller": "Highlight reel is pure gold.",
+                        "validator": "Lane charter notarized.",
+                        "miner": "Carved spark grooves to keep it blazing.",
+                        "meme": "Fire? Fire."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_glory_lane"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.2-R3",
+            "description": "Reliquary Tier — reclaim remnants and prep caches for the ascent.",
+            "actions": [
+                {
+                    "id": "wakespire_reclaim_shades",
+                    "label": "Reclaim the Guardian Shades",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_loss_gate_open",
+                            "wakefront_fallen_recalled"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "revival",
+                            "ritual",
+                            "resolve"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_reclaimed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Shades step from the reliquary wearing armor of starlit vellum. They promise to guard those who fall behind."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_reclaimed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "The reliquary releases a squad of loyal echoes ready to anchor the loss lane."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "A shade hesitates, confused. You absorb its chill until it remembers the living."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "The reliquary closes with you inside for thirty heartbeats. You emerge shaking but resolute."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Shade guardians synced to team HUD.",
+                        "trader": "Investing in immortal support.",
+                        "whale": "Tide carries their whispers upward.",
+                        "hacker": "Spectral handshake verified.",
+                        "shiller": "Ghost squad is trending already.",
+                        "validator": "Shade contracts notarized.",
+                        "miner": "Echoes hold the line like seasoned crew.",
+                        "meme": "Undead but unionized."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_reclaim_shades"
+                    ]
+                },
+                {
+                    "id": "wakespire_cache_shadows",
+                    "label": "Expand the Shadow Stockpile",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_hide_network",
+                            "wakefront_shadow_cache"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
+                            "stealth",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "consumable_shadow_pass"
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_shadow_stockpile",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "You hide gear inside folds of darkness and mark them with a whisper only allies can hear."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_shadow_stockpile",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Caches bloom like midnight flowers along the chute."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "A hidden locker refuses your password. You change the passphrase to an inside joke."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You pay off a meme gremlin to forget where the locker is."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Shadow stockpile sync complete.",
+                        "trader": "Stealth supply chain secured.",
+                        "whale": "Currents conceal your caches.",
+                        "hacker": "Zero-trace stash confirmed.",
+                        "shiller": "Hidden stash, loud swagger.",
+                        "validator": "Cache receipts notarized invisibly.",
+                        "miner": "Buried gear like a pro.",
+                        "meme": "If you know, you know."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_cache_shadows"
+                    ]
+                },
+                {
+                    "id": "wakespire_lightforge_charge",
+                    "label": "Charge the Lightforge",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_glory_lane",
+                            "wakefront_charge_ready"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "valor",
+                            "engineering",
+                            "momentum"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_lightforge_charged",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The lightforge roars to life, spinning arcs of triumph energy that can be redirected to any lane in need."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_lightforge_charged",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Power hums through the forge, ready to launch the vanguard when the signal comes."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "The forge sputters until you feed it a crate of ratio ore."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "A misfire hurls you into a wall. You limp back, laughing through grit teeth."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Lightforge output steady.",
+                        "trader": "Momentum index screaming up.",
+                        "whale": "Tide fans the flames.",
+                        "hacker": "Safety interlocks double-checked.",
+                        "shiller": "Promo: ‘This forge fuels legends.’",
+                        "validator": "Output contract notarized.",
+                        "miner": "Forge drinks ore like victory drinks cheers.",
+                        "meme": "Hot forge summer."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_lightforge_charge"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "coins",
+                    "op": "+",
+                    "value": 34
+                }
+            ]
+        },
+        {
+            "round_id": "5.2-R4",
+            "description": "Veil Lattice — assign teams to their lanes before the climb begins in earnest.",
+            "actions": [
+                {
+                    "id": "wakespire_assign_hidden",
+                    "label": "Assign the Hidden Cell",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_hide_network",
+                            "wakespire_shadow_stockpile"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "strategy",
+                            "stealth",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_hidden_team",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                }
+                            ],
+                            "narration": "You choreograph the hidden cell like a ghost ballet. They vanish between breaths."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_hidden_team",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The hidden cell nods once and disappears into the chute."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "Two operatives argue over code names. You flip a coin; both accept the result."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You pay hush money to keep their argument off the meme feed."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Hidden cell roster locked.",
+                        "trader": "Secret team, secret alpha.",
+                        "whale": "Tide covers their tracks.",
+                        "hacker": "Encrypted comms humming.",
+                        "shiller": "Silence is golden and profitable.",
+                        "validator": "Assignments notarized under seal.",
+                        "miner": "They move like whispers in rock.",
+                        "meme": "Stealth squad says nothing (loudly)."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_assign_hidden"
+                    ]
+                },
+                {
+                    "id": "wakespire_assign_sentinels",
+                    "label": "Assign the Sentinel Line",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_loss_gate_open",
+                            "wakespire_reclaimed"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "defense",
+                            "resolve",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_sentinel_team",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                }
+                            ],
+                            "narration": "Living and shade sentinels lock shields. No loss goes unguarded."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_sentinel_team",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The sentinel line forms, quiet and immovable."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A sentinel tests your resolve with a sparring blow. You answer with respect."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "You underestimate the shades’ zeal and catch a shield edge to the jaw. Worth it to earn their trust."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Sentinel line formation saved.",
+                        "trader": "Defense derivatives trending.",
+                        "whale": "Tide braces behind their shields.",
+                        "hacker": "Communication latency minimal.",
+                        "shiller": "Guardian squad is pure cinematic gold.",
+                        "validator": "Duty oaths notarized.",
+                        "miner": "They hold the line like granite.",
+                        "meme": "Bodyguards? More like soulguards."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_assign_sentinels"
+                    ]
+                },
+                {
+                    "id": "wakespire_assign_vanguard",
+                    "label": "Assign the Vanguard Wedge",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_glory_lane",
+                            "wakespire_lightforge_charged"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "valor",
+                            "tactics",
+                            "momentum"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_vanguard_team",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                }
+                            ],
+                            "narration": "You align the vanguard under the blazing lane. They roar in unison, a sound like stormfront victory."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_vanguard_team",
+                                    "value": true
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "The vanguard wedge slots into formation, their boots sparking fire."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 34
+                                }
+                            ],
+                            "narration": "You bribe the drummer gremlins for a better cadence. Worth it."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 7
+                                }
+                            ],
+                            "narration": "Practice run goes sideways and you tumble down three tiers. Lifelines haul you back, laughing."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Vanguard wedge blueprint saved.",
+                        "trader": "Momentum wedge priced at premium hype.",
+                        "whale": "Tide curls beneath their boots.",
+                        "hacker": "Target prioritization uploaded.",
+                        "shiller": "This wedge is the movie poster.",
+                        "validator": "Charge oath notarized.",
+                        "miner": "Their stomp cracks the stairs.",
+                        "meme": "Frontline? More like headline."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_assign_vanguard"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.2-R5",
+            "description": "Loadout Vault — equip each team with gear forged from the Wakefront mosaic.",
+            "actions": [
+                {
+                    "id": "wakespire_equip_hidden",
+                    "label": "Issue Veilweave Kits",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_hidden_team",
+                            "wakefront_mosaic_forged"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "gear_wakespire_veilweave"
+                                }
+                            ],
+                            "narration": "Veilweave cloaks settle over the hidden cell, blending them into reflections and rumors."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Veilweave interface calibrated.",
+                        "trader": "Stealth gear sells itself.",
+                        "whale": "Currents wrap them in shadow.",
+                        "hacker": "No one’s cracking that fabric.",
+                        "shiller": "Look invisible, feel unstoppable.",
+                        "validator": "Gear ledger updated.",
+                        "miner": "Cloth feels like carved darkness.",
+                        "meme": "Fashion statement: unseen."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_equip_hidden"
+                    ]
+                },
+                {
+                    "id": "wakespire_equip_sentinels",
+                    "label": "Issue Bastion Plates",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_sentinel_team",
+                            "wakefront_mosaic_forged"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "armor_wakespire_bastion"
+                                }
+                            ],
+                            "narration": "Mosaic plates lock across the sentinel line, each tile glowing with a fallen friend’s sigil."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Bastion telemetry nominal.",
+                        "trader": "Defense suite worth every coin.",
+                        "whale": "Tide breaks around those shields.",
+                        "hacker": "Plates handshake with lifelines flawlessly.",
+                        "shiller": "Armored up and impossible to ignore.",
+                        "validator": "Armor registry notarized.",
+                        "miner": "Plates forged under enormous pressure.",
+                        "meme": "Plot armor? Literal now."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_equip_sentinels"
+                    ]
+                },
+                {
+                    "id": "wakespire_equip_vanguard",
+                    "label": "Issue Starspike Lances",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_vanguard_team",
+                            "wakefront_mosaic_forged"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "item",
+                                    "id": "weapon_wakespire_starspike"
+                                }
+                            ],
+                            "narration": "The vanguard hefts lances tipped with condensed dawn. Each strike will punch a new hole in fate."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Starspike charge cycle ready.",
+                        "trader": "Offense inventory maxed.",
+                        "whale": "Tide surges with every swing.",
+                        "hacker": "Telemetry locked to highlight reels.",
+                        "shiller": "Sunspear aesthetics for the win.",
+                        "validator": "Weapon ledger notarized.",
+                        "miner": "Tips forged from mosaic core.",
+                        "meme": "Pointy end goes toward destiny."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_equip_vanguard"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "focus",
+                    "op": "+",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "round_id": "5.2-R6",
+            "description": "Verdict Choir — commit the Wake Spire plan to law.",
+            "actions": [
+                {
+                    "id": "wakespire_convene_council",
+                    "label": "Convene the Verdict Choir",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_paths_triangulated",
+                            "wakefront_council_rallied"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "leadership",
+                            "persuasion",
+                            "community"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_council_assembled",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Representatives from every lane chant in harmonized resolve. The Spire itself leans in to listen."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_council_assembled",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "The choir stands ready, voices braided with steel."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "-",
+                                    "value": 1
+                                }
+                            ],
+                            "narration": "Discord flickers. You soothe it by reminding everyone what the Wakefront paid already."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "Two delegates clash. You step between them and take the hit. Respect returns, bruised but present."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Verdict choir assembled.",
+                        "trader": "Consensus volume spiking.",
+                        "whale": "Tide hushes to hear the vote.",
+                        "hacker": "Voting nodes synced.",
+                        "shiller": "Minutes from destiny meeting incoming.",
+                        "validator": "Attendance ledger sealed.",
+                        "miner": "Voices echo like picks in caverns.",
+                        "meme": "Choir warmup: la-la-LET’S GO."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_convene_council"
+                    ]
+                },
+                {
+                    "id": "wakespire_vote_cast",
+                    "label": "Cast the Spire Verdict",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_council_assembled"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "consensus",
+                            "ritual",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                }
+                            ],
+                            "narration": "The choir’s verdict shakes the Spire. Bells ring in quadruple harmony. The Wake Apex opens above."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "flag",
+                                    "id": "wakespire_consensus_passed",
+                                    "value": true
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Votes align and the ascent is ratified."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 55
+                                }
+                            ],
+                            "narration": "Bribing fate shouldn’t work, but it does when you pay with promises."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 6
+                                }
+                            ],
+                            "narration": "The verdict fractures. A backlash of silence slams into your chest. You stagger, then call for a revote with fire in your lungs."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Verdict commit successful.",
+                        "trader": "Final decision priced in.",
+                        "whale": "Tide surges assent.",
+                        "hacker": "No tampering detected.",
+                        "shiller": "Headline: Wake Spire chooses the climb.",
+                        "validator": "Verdict ledger sealed.",
+                        "miner": "We pickaxed the vote into stone.",
+                        "meme": "All in? ALL IN."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_vote_cast"
+                    ]
+                },
+                {
+                    "id": "wakespire_archive_pattern",
+                    "label": "Archive the Spire Schema",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "deck",
+                                    "id": "deck_wakespire_aegis"
+                                }
+                            ],
+                            "narration": "You transcribe the Spire’s battle schema into a living deck, each card a tactic tuned for impossible climbs."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Schema archived in redundant arrays.",
+                        "trader": "Blueprint value incalculable.",
+                        "whale": "Future tides can borrow this map.",
+                        "hacker": "Checksum verified across shards.",
+                        "shiller": "Collector’s edition: Last Run, First Lesson.",
+                        "validator": "Archive notarized for posterity.",
+                        "miner": "We carved copies into the Spire’s bones.",
+                        "meme": "Deck flex: we have plays for days."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:wakespire_archive_pattern"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "5.2-R7",
+            "description": "Ascension Gate — climb to the Wake Apex with every plan locked in.",
+            "actions": [
+                {
+                    "id": "advance_5_3",
+                    "label": "Climb to the Wake Apex",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "wakespire_consensus_passed"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": {
+                            "effects": [],
+                            "narration": "Lanes braid into a single spiral of light. You ascend with every fate singing in your wake.",
+                            "next_hint": "5.3"
+                        }
+                    },
+                    "banter": {
+                        "dev": "Advance payload queued.",
+                        "trader": "All positions staked on the Apex.",
+                        "whale": "Tide lifts you the rest of the way.",
+                        "hacker": "Final handshake ready at the summit.",
+                        "shiller": "Cliffhanger? More like cliff-climber.",
+                        "validator": "Ascent notarized in star ink.",
+                        "miner": "Next tier: the core seam.",
+                        "meme": "Up only, still."
+                    },
+                    "telemetry_tags": [
+                        "scene:5.2",
+                        "action:advance_5_3"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        }
+    ],
+    "threshold_rewards": [
+        {
+            "focus_gte": 20,
+            "rewards": [
+                {
+                    "type": "coins",
+                    "value": 233
+                }
+            ]
+        },
+        {
+            "xp_gte": 1555,
+            "rewards": [
+                {
+                    "type": "item",
+                    "id": "relic_wakespire_keystone"
+                }
+            ]
+        },
+        {
+            "flags_all": [
+                "wakespire_consensus_passed"
+            ],
+            "rewards": [
+                {
+                    "type": "deck",
+                    "id": "deck_wakespire_aegis"
+                }
+            ]
+        }
+    ],
+    "arrivals": [
+        {
+            "when": "flags.afk_tracked",
+            "goto": "5.2A"
+        },
+        {
+            "when": "flags.wakespire_consensus_passed",
+            "goto": "5.3"
+        },
+        {
+            "when": "else",
+            "goto": "5.2"
+        }
+    ]
+}
