@@ -2,21 +2,21 @@
     "schema_version": "1.0",
     "content_id": "genesis",
     "book_id": "book_1",
-    "scene_id": "4.5",
-    "title": "The Radiant Dyad \u2014 Twin Storm Ledger",
-    "narration": "The Meridian Helix pours you into the Radiant Dyad: a vaulted chamber where two storms orbit each other like dueling suns chained to a shared ledger. One storm is incandescent gold, all dawn trumpets and optimistic spreadsheets. The other is cobalt midnight, whispering contracts, contingencies, and a thousand secret balance sheets. They circle a central plinth carved from consensus stone, hurling petitions at each other with lightning signatures. Each bolt that crosses the plinth resolves into ledger script, double-entered with phi-d20 timing, then arcs out through ceiling channels to update every gremlin enclave.\n\nThe Dyad is Act Four\u2019s fulcrum. Dev gremlins have stretched fiber across the storms to siphon telemetry in real time. Traders leap between gusts, arbitraging sunrise enthusiasm against midnight skepticism. Whales anchor the floor with coils of liquidity, letting the storms tug tidal signatures from their wake. Hackers wear Faraday cloaks, intercepting stray arcs to patch vulnerabilities. Shillers stream the spectacle to every lobby, shouting about \"consensus weather\". Validators wear stormproof visors, stamping approvals into thick ledgers that float like surfboards. Miners hammer lightning rods into the floor to ground stray charges, while the meme contingent launches a confetti cannon that prints \"STAY VOLATILE\" across the gale.\n\nSeven terraces spiral around the Dyad. Each terrace hosts a ritual: synchronizing the GM/GN to calm both storms, logging the ledger equilibrium, weaving dual-aspect gear, trading pity-backed stockpiles, rebooting allies rattled by static, modulating the spectrum door that flickers beneath the plinth, and finally voting on how Act Four will hand the baton to the next act. Arrivals manifest from storm droplets mid-scene, sliding into the narrative on neon sleds. If you can harmonize both storms, Act Five\u2019s path will blaze open in a chord of lightning and ledger lore.",
+    "scene_id": "4.6",
+    "title": "The Convergence Causeway — Wakeforge Bridge",
+    "narration": "The Radiant Dyad’s twin storms uncurl into the Convergence Causeway, a kilometer-long bridge of braided light stretched toward a horizon still hidden behind consensus fog. Ledger stone plates hover in phi-locked intervals, spinning just fast enough to hum a chord that vibrates through your chest. Each step leaves a golden-ratio spiral that unwinds ahead as a vector arrow, predicting where Act Five will materialize. Hidden difficulty tiers shimmer in stratified halos: topaz for expectable pushes, emerald for calculated brinkmanship, and ultraviolet coronas for attempts that only legends will log.\n\nGremlin factions have turned the Causeway into a forward operating festival. Dev gremlins lace fiber through the bridge cables, testing streaming prototypes that will broadcast every final-choice heartbeat. Traders pilot wake skiffs up and down the span, auctioning acceleration futures. Whales float overhead like gentle zeppelins, projecting aurora forecasts on the underside of the clouds. Hackers anchor encryption pylons along the railing, while validators march in lockstep, stamping notarized rhythm into the bridge. Miners swing plasma picks into the bridge’s seams, extracting ratio ore, and the meme division has scattered holographic billboards that flash \"IT’S NOT FOMO IF YOU BUILT THE BRIDGE\" every time someone hesitates. AFK safeties deploy as glowing tethers that promise to reel any idle ally back into the cadence.\n\nSeven staging galleries punctuate the span. The first conducts the GM/GN braid across the bridge, the second maps vector momentum, the third spins soft-power gear from wake threads, the fourth primes a pity-backed logistics depot, the fifth raises a revival ward, the sixth threads a spectrum gate prototype, and the seventh convenes a pre-horizon council to lock Act Four’s final consensus. Every action logs both now and later, scribing the template that Act Five will inherit. The Causeway vibrates beneath your feet, impatient and luminous, urging you to begin.",
     "rounds": [
         {
-            "round_id": "4.5-R1",
-            "description": "Twin Storm Rostrum \u2014 tame the gold and cobalt greetings, log the Dyad\u2019s balance, and lash down AFK safeguards before the winds steal anyone away.",
+            "round_id": "4.6-R1",
+            "description": "Greeting Conductor — launch the bridge-wide GM/GN, chart the initial wake vectors, and lash AFK tethers before anyone drifts.",
             "actions": [
                 {
-                    "id": "dyad_gmgn_split",
-                    "label": "Sing the Split GMGN",
+                    "id": "causeway_gmgn_conduct",
+                    "label": "Conduct the Causeway GMGN",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "meridian_consensus_passed"
+                            "dyad_consensus_passed"
                         ]
                     },
                     "roll": {
@@ -41,11 +41,11 @@
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "dyad_gmgn_twinned",
+                                    "id": "causeway_gmgn_lit",
                                     "value": true
                                 }
                             ],
-                            "narration": "You split the GMGN into twin harmonies, singing sunrise to the gold storm and midnight to the cobalt swirl. The Dyad slows its orbit, grateful for the synchronized greeting, and the hidden difficulty tier unlocks with a static crackle."
+                            "narration": "You braid dawn and midnight into a single beam that shoots the length of the bridge. Every plate glows, hidden tiers flicker awake, and the gremlins chant the cadence back in perfect stereo."
                         },
                         "success": {
                             "effects": [
@@ -60,11 +60,11 @@
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "dyad_gmgn_twinned",
+                                    "id": "causeway_gmgn_lit",
                                     "value": true
                                 }
                             ],
-                            "narration": "The storms acknowledge your greeting with a dip in velocity. Ledger scribes nod and mark the Rostrum open."
+                            "narration": "Your greeting ripples forward in measured pulses. Consensus coils hook in and the bri dge stabilizes under a gentle rhythm."
                         },
                         "fail": {
                             "effects": [
@@ -75,11 +75,11 @@
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "dyad_pity_counter",
+                                    "id": "causeway_pity_buffer",
                                     "value": true
                                 }
                             ],
-                            "narration": "Your voice cracks as you swap from dawn to midnight. Both storms laugh and charge a calibration fee that routes straight into the pity cache."
+                            "narration": "You mix up the cadence halfway through. Traders charge you a hesitation toll that fun nels straight into the pity buffer."
                         },
                         "crit_fail": {
                             "effects": [
@@ -90,42 +90,42 @@
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "dyad_pity_counter",
+                                    "id": "causeway_pity_buffer",
                                     "value": true
                                 }
                             ],
-                            "narration": "You mix up which storm gets which greeting and they crossfire bolts at your boots. The meme crew instantly uploads the blooper."
+                            "narration": "Your voice cracks and the bridge plates yaw for a heartbeat. Safety rails jolt you back upright while the meme crew adds auto-tune."
                         }
                     },
                     "banter": {
-                        "dev": "Dual-channel greeting deployed.",
-                        "trader": "Storm spread stabilized.",
-                        "whale": "Wake hugs both cyclones.",
-                        "hacker": "Handshake salted for lightning.",
-                        "shiller": "Marketing it as weather control.",
-                        "validator": "Greeting notarized twice.",
-                        "miner": "Sing louder, drown the thunder.",
-                        "meme": "GM to sun, GN to moon. Easy."
+                        "dev": "Bridge-wide greeting synced.",
+                        "trader": "Futures stabilizing on that cadence.",
+                        "whale": "Wake thrums along the entire span.",
+                        "hacker": "Handshake encrypted in transit.",
+                        "shiller": "Streaming this GMGN in surround.",
+                        "validator": "Greeting ledger notarized.",
+                        "miner": "Sounded like a drill hitting true ore.",
+                        "meme": "GM? More like GMT (Grand Momentum Toss)."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_gmgn_split"
+                        "scene:4.6",
+                        "action:causeway_gmgn_conduct"
                     ]
                 },
                 {
-                    "id": "dyad_balance_readings",
-                    "label": "Log the Dyad Balance",
+                    "id": "causeway_vector_chart",
+                    "label": "Chart the Wake Vectors",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_gmgn_twinned"
+                            "causeway_gmgn_lit"
                         ]
                     },
                     "roll": {
                         "kind": "phi_d20",
                         "tags": [
-                            "insight",
                             "analysis",
+                            "navigation",
                             "support"
                         ]
                     },
@@ -133,21 +133,21 @@
                         "crit_success": {
                             "effects": [
                                 {
-                                    "type": "focus",
-                                    "op": "+",
-                                    "value": 3
-                                },
-                                {
                                     "type": "xp",
                                     "value": 89
                                 },
                                 {
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 34
+                                },
+                                {
                                     "type": "flag",
-                                    "id": "dyad_balance_logged",
+                                    "id": "causeway_vectors_logged",
                                     "value": true
                                 }
                             ],
-                            "narration": "You sketch the Dyad\u2019s energy curve into the ledger, capturing the moment when gold and cobalt share equilibrium. Engineers label your chart the \"Act Four fulcrum\" and pin it to every kiosk."
+                            "narration": "Your charts predict every gust before it arrives. Wake skiffs fall into formation and the hidden ultraviolet lane unfurls ahead."
                         },
                         "success": {
                             "effects": [
@@ -157,11 +157,11 @@
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "dyad_balance_logged",
+                                    "id": "causeway_vectors_logged",
                                     "value": true
                                 }
                             ],
-                            "narration": "Your readings steady the storms. Validators embed the data in their floating surfboard ledgers."
+                            "narration": "You map solid trajectories and pin them to hovering glyphs. Navigators salute and lock them in."
                         },
                         "fail": {
                             "effects": [
@@ -171,70 +171,70 @@
                                     "value": 13
                                 }
                             ],
-                            "narration": "You misjudge the lightning cadence and need to rent better sensors. The pity counter ticks up."
+                            "narration": "A surprise crosswind scrambles your projections. The pity buffer absorbs the cost of redoing the math."
                         },
                         "crit_fail": {
                             "effects": [
                                 {
                                     "type": "hp",
                                     "op": "-",
-                                    "value": 5
+                                    "value": 4
                                 }
                             ],
-                            "narration": "A rogue bolt scorches your notebook. Hackers hand you a fireproof replacement with a sympathetic grin."
+                            "narration": "You chase a rogue vector off the edge and dangle until miners haul you back with a lau gh."
                         }
                     },
                     "banter": {
-                        "dev": "Telemetry normalized.",
-                        "trader": "Balance sheet charted.",
-                        "whale": "Wake holds the midpoint.",
-                        "hacker": "Sensor mesh patched.",
-                        "shiller": "Publishing the Dyad index.",
-                        "validator": "Data notarized and archived.",
-                        "miner": "Log the voltage or it logs you.",
-                        "meme": "Storm spreadsheet drop when?"
+                        "dev": "Telemetry map overlays deploying.",
+                        "trader": "Vector futures priced in.",
+                        "whale": "Wake currents align with your plot.",
+                        "hacker": "Pathfinding nodes hardened.",
+                        "shiller": "Publishing the \"How to Cross a Miracle Bridge\" guide.",
+                        "validator": "Charts notarized in duplicate.",
+                        "miner": "Marking the stable footing seams.",
+                        "meme": "Vectors on vectors, it’s vector-tacular."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_balance_readings"
+                        "scene:4.6",
+                        "action:causeway_vector_chart"
                     ]
                 },
                 {
-                    "id": "dyad_afk_switch",
-                    "label": "Anchor AFK Switches",
+                    "id": "causeway_afk_anchor",
+                    "label": "Anchor the AFK Tethers",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_balance_logged"
+                            "causeway_gmgn_lit"
                         ]
                     },
                     "roll": {
                         "kind": "phi_d20",
                         "tags": [
-                            "engineering",
                             "support",
-                            "discipline"
+                            "engineering",
+                            "systems"
                         ]
                     },
                     "outcomes": {
                         "crit_success": {
                             "effects": [
                                 {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
                                     "type": "xp",
                                     "value": 55
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "afk_tracked",
-                                    "value": true
-                                },
-                                {
-                                    "type": "flag",
-                                    "id": "dyad_afk_network",
+                                    "id": "causeway_afk_webbed",
                                     "value": true
                                 }
                             ],
-                            "narration": "You install lightning-proof AFK switches around the terrace. Anyone idle for twenty-four hours gets zapped with a harmless static pulse and propelled into a force-play quest."
+                            "narration": "You weave glowing slacklines between pylons. Anyone drifting idle is gently reeled back with a cheerful chime."
                         },
                         "success": {
                             "effects": [
@@ -244,11 +244,11 @@
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "afk_tracked",
+                                    "id": "causeway_afk_webbed",
                                     "value": true
                                 }
                             ],
-                            "narration": "Switches click into place, ready to tattle on anyone who naps in the stormlight."
+                            "narration": "You secure enough tethers that the AFK monitors flash green."
                         },
                         "fail": {
                             "effects": [
@@ -256,34 +256,44 @@
                                     "type": "coins",
                                     "op": "-",
                                     "value": 8
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_pity_buffer",
+                                    "value": true
                                 }
                             ],
-                            "narration": "You cross two cables and owe the electricians a snack fee."
+                            "narration": "A tether snaps and you tip a vendor to keep it quiet while you splice a replacement."
                         },
                         "crit_fail": {
                             "effects": [
                                 {
                                     "type": "hp",
                                     "op": "-",
-                                    "value": 6
+                                    "value": 3
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_pity_buffer",
+                                    "value": true
                                 }
                             ],
-                            "narration": "You forget to ground yourself and the storms toss you into the air. You land on a cushion of validator ledgers."
+                            "narration": "You tangle yourself in the cables and have to be spun like a top to get free. The memers add circus music."
                         }
                     },
                     "banter": {
-                        "dev": "AFK toggles lightning-proofed.",
-                        "trader": "Idle tax rerouted to pity fund.",
-                        "whale": "Wake stays alert in every gust.",
-                        "hacker": "Fail-safes insulated.",
-                        "shiller": "Selling it as \"storm focus\".",
-                        "validator": "Switch logs notarized.",
-                        "miner": "Static keeps the drills awake.",
-                        "meme": "AFK stands for \"Arc-Flinged Kinetic\" now."
+                        "dev": "AFK lattice deployed end-to-end.",
+                        "trader": "Insurance premiums just dropped.",
+                        "whale": "Wake keeps the slack taut.",
+                        "hacker": "Failsafes double-encrypted.",
+                        "shiller": "Highlight reel of acrobatic rescues uploading.",
+                        "validator": "Safety compliance notarized.",
+                        "miner": "Tethers rated to haul ore carts if needed.",
+                        "meme": "AFK stands for \"Always Fastened Kiddo\" now."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_afk_switch"
+                        "scene:4.6",
+                        "action:causeway_afk_anchor"
                     ]
                 }
             ],
@@ -296,49 +306,40 @@
             ]
         },
         {
-            "round_id": "4.5-R2",
-            "description": "Lattice Loom Balcony \u2014 weave twin-charged gear, broker trustful pacts, and harvest insight sparks from the colliding storms.",
+            "round_id": "4.6-R2",
+            "description": "Momentum Calculus Gallery — balance the twin wake flux, predict lane assignments, and cache supply drops for the march ahead.",
             "actions": [
                 {
-                    "id": "dyad_lattice_weave",
-                    "label": "Forge the Boltweaver",
+                    "id": "causeway_flux_balance",
+                    "label": "Balance the Twin Flux",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_balance_logged"
+                            "causeway_vectors_logged"
                         ]
                     },
                     "roll": {
                         "kind": "phi_d20",
                         "tags": [
-                            "craft",
-                            "offense",
-                            "harmony"
+                            "analysis",
+                            "ritual",
+                            "resilience"
                         ]
                     },
                     "outcomes": {
                         "crit_success": {
                             "effects": [
                                 {
-                                    "type": "focus",
-                                    "op": "+",
-                                    "value": 3
-                                },
-                                {
                                     "type": "xp",
                                     "value": 144
                                 },
                                 {
-                                    "type": "item",
-                                    "id": "weapon_dyad_boltweaver"
-                                },
-                                {
                                     "type": "flag",
-                                    "id": "dyad_boltweaver_ready",
+                                    "id": "causeway_flux_balanced",
                                     "value": true
                                 }
                             ],
-                            "narration": "You braid gold lightning and cobalt shadow into a soft-power boltweaver whose strikes rewrite grudges instead of causing wounds."
+                            "narration": "You tune the bridge to absorb both dawn push and midnight pull. The plates settle into a steady heartbeat and hidden auroras flare approval."
                         },
                         "success": {
                             "effects": [
@@ -347,16 +348,12 @@
                                     "value": 55
                                 },
                                 {
-                                    "type": "item",
-                                    "id": "weapon_dyad_boltweaver"
-                                },
-                                {
                                     "type": "flag",
-                                    "id": "dyad_boltweaver_ready",
+                                    "id": "causeway_flux_balanced",
                                     "value": true
                                 }
                             ],
-                            "narration": "The boltweaver coils around your wrist, thrumming with stormlight."
+                            "narration": "Your calculations click into place. Flux monitors display a satisfying straight line."
                         },
                         "fail": {
                             "effects": [
@@ -364,54 +361,136 @@
                                     "type": "coins",
                                     "op": "-",
                                     "value": 21
-                                },
-                                {
-                                    "type": "flag",
-                                    "id": "dyad_pity_counter",
-                                    "value": true
                                 }
                             ],
-                            "narration": "The lattice snaps and flings your materials into the pit. The pity cache takes notes."
+                            "narration": "One storm gust surges ahead of the other. Traders collect a balancing fee while you reset the coils."
                         },
                         "crit_fail": {
                             "effects": [
                                 {
                                     "type": "hp",
                                     "op": "-",
-                                    "value": 6
+                                    "value": 5
                                 }
                             ],
-                            "narration": "A misaligned bolt scorches your gloves. The meme crew sells framed prints of the scorch mark."
+                            "narration": "You get caught between opposing gusts and spin like a compass needle before colliding with a friendly whale."
                         }
                     },
                     "banter": {
-                        "dev": "Boltweaver firmware signed.",
-                        "trader": "Stormstrike derivatives minted.",
-                        "whale": "Wake channels the surge.",
-                        "hacker": "No exploitable arcs detected.",
-                        "shiller": "Weaponize your charisma!",
-                        "validator": "Blueprint notarized.",
-                        "miner": "Lightning pickaxe vibes.",
-                        "meme": "Conduct yourself responsibly."
+                        "dev": "Flux stabilizer firmware updated.",
+                        "trader": "Spread between storms narrowing nicely.",
+                        "whale": "Wake hums in harmonic balance.",
+                        "hacker": "Feedback loops sandboxed.",
+                        "shiller": "Marketing this as \"wind surfing for consensus\".",
+                        "validator": "Flux ledger certified.",
+                        "miner": "Bridge stops rattling my teeth.",
+                        "meme": "Perfectly balanced, as all bridges should be."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_lattice_weave"
+                        "scene:4.6",
+                        "action:causeway_flux_balance"
                     ]
                 },
                 {
-                    "id": "dyad_trust_pact",
-                    "label": "Broker Trustful Pacts",
+                    "id": "causeway_lane_prediction",
+                    "label": "Predict Traveler Lanes",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_boltweaver_ready"
+                            "causeway_flux_balanced"
                         ]
                     },
                     "roll": {
                         "kind": "phi_d20",
                         "tags": [
-                            "negotiation",
+                            "strategy",
+                            "navigation",
+                            "insight"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_lane_marked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You lay out braided lanes for shy travelers, hype squads, and heavy cargo teams. Aurora beacons tag each route and the meme crew prints commemorative maps."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_lane_marked",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You assign corridors that keep the bridge flowing. Validators stamp every lane marker."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "Two squads collide in a whirl of banners. You reimburse the spilled snacks and try aga in."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "You accidentally designate a lane straight through a wind shear. Rescue nets catch you before the meme crew finishes laughing."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Lane prediction AI validated.",
+                        "trader": "Congestion futures trending down.",
+                        "whale": "Wake claims the express lane.",
+                        "hacker": "Navigation beacons patched for exploits.",
+                        "shiller": "Influencer lanes already sponsored.",
+                        "validator": "Right-of-way stamped and notarized.",
+                        "miner": "Reserve a lane for ore carts and café stops.",
+                        "meme": "Slow lane? No, vibe lane."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_lane_prediction"
+                    ]
+                },
+                {
+                    "id": "causeway_supply_preposition",
+                    "label": "Preposition Wake Supplies",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_flux_balanced"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "logistics",
                             "support",
                             "economy"
                         ]
@@ -426,15 +505,15 @@
                                 {
                                     "type": "coins",
                                     "op": "+",
-                                    "value": 55
+                                    "value": 34
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "trustful",
+                                    "id": "causeway_supply_cached",
                                     "value": true
                                 }
                             ],
-                            "narration": "You wield the boltweaver as a pen, signing dual-storm contracts that guarantee trust dividends each time consensus sparks."
+                            "narration": "You choreograph supply drones to drop crates at every terrace just as squads arrive. The bridge applauds with synchronized light pulses."
                         },
                         "success": {
                             "effects": [
@@ -444,11 +523,11 @@
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "trustful",
+                                    "id": "causeway_supply_cached",
                                     "value": true
                                 }
                             ],
-                            "narration": "The storms agree to share some goodwill. Traders celebrate with sparkling electrolyte shots."
+                            "narration": "You stash enough consumables along the span that no one will go hungry or gearless."
                         },
                         "fail": {
                             "effects": [
@@ -458,92 +537,7 @@
                                     "value": 13
                                 }
                             ],
-                            "narration": "You forget to hedge the cobalt clause and owe a late fee."
-                        },
-                        "crit_fail": {
-                            "effects": [
-                                {
-                                    "type": "hp",
-                                    "op": "-",
-                                    "value": 5
-                                }
-                            ],
-                            "narration": "A lightning squiggle zaps your signature line. Validators hand you a stylus made of rubber."
-                        }
-                    },
-                    "banter": {
-                        "dev": "Trust ledger patched.",
-                        "trader": "Spreads tighten with every handshake.",
-                        "whale": "Wake invests in mutual promises.",
-                        "hacker": "Contracts hashed and secure.",
-                        "shiller": "Trust is trending.",
-                        "validator": "Signatures notarized in stereo.",
-                        "miner": "No trust, no tunnels.",
-                        "meme": "Trust fall, now with lightning."
-                    },
-                    "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_trust_pact"
-                    ]
-                },
-                {
-                    "id": "dyad_insight_prism",
-                    "label": "Harvest Insight Sparks",
-                    "requirements": {
-                        "items_any": [],
-                        "flags_all": []
-                    },
-                    "roll": {
-                        "kind": "phi_d20",
-                        "tags": [
-                            "insight",
-                            "exploration",
-                            "harmony"
-                        ]
-                    },
-                    "outcomes": {
-                        "crit_success": {
-                            "effects": [
-                                {
-                                    "type": "xp",
-                                    "value": 55
-                                },
-                                {
-                                    "type": "flag",
-                                    "id": "insight",
-                                    "value": true
-                                },
-                                {
-                                    "type": "coins",
-                                    "op": "+",
-                                    "value": 21
-                                }
-                            ],
-                            "narration": "You catch sparks in a prism jar and learn how the storms precompute consensus outcomes. The jar hums with future hints."
-                        },
-                        "success": {
-                            "effects": [
-                                {
-                                    "type": "xp",
-                                    "value": 34
-                                },
-                                {
-                                    "type": "flag",
-                                    "id": "insight",
-                                    "value": true
-                                }
-                            ],
-                            "narration": "You snag a few sparks and pocket them before they fade."
-                        },
-                        "fail": {
-                            "effects": [
-                                {
-                                    "type": "coins",
-                                    "op": "-",
-                                    "value": 8
-                                }
-                            ],
-                            "narration": "You chase a spark into a gust and lose your footing, paying a tip to the medics who keep you upright."
+                            "narration": "A drone drops crates into the abyss. Traders sigh and sell you replacement inventory at a discount."
                         },
                         "crit_fail": {
                             "effects": [
@@ -553,22 +547,22 @@
                                     "value": 4
                                 }
                             ],
-                            "narration": "A spark fizzles in your palm and shocks your eyebrows upright for the next hour."
+                            "narration": "You get buried under a mistimed supply avalanche. Miners dig you out with sympathetic grin."
                         }
                     },
                     "banter": {
-                        "dev": "Insight capture pipeline humming.",
-                        "trader": "Forecast tokens minted.",
-                        "whale": "Wake drinks the sparks like espresso.",
-                        "hacker": "Telemetry sanitized for leaks.",
-                        "shiller": "Selling bottled lightning!",
-                        "validator": "Logs notarized mid-air.",
-                        "miner": "Spark today, ore tomorrow.",
-                        "meme": "This forecast slaps."
+                        "dev": "Inventory sync finished.",
+                        "trader": "Margins locked before the run.",
+                        "whale": "Wake underwriting the cargo insurance.",
+                        "hacker": "Delivery bots patched against hijacks.",
+                        "shiller": "Pop-up kiosks go live in five.",
+                        "validator": "Manifests notarized midair.",
+                        "miner": "Snack caches near every drill point? Bless.",
+                        "meme": "Supply drops? More like surprise drops."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_insight_prism"
+                        "scene:4.6",
+                        "action:causeway_supply_preposition"
                     ]
                 }
             ],
@@ -580,16 +574,16 @@
             ]
         },
         {
-            "round_id": "4.5-R3",
-            "description": "Soft-Power Smithies \u2014 temper dual-aspect armor, crown, and trinkets to keep players grounded in the storm.",
+            "round_id": "4.6-R3",
+            "description": "Wake Loom Workshops — spin soft-power armor, tune trinkets, and braid emblems that carry the causeway dream forward.",
             "actions": [
                 {
-                    "id": "dyad_armor_fluxcloak",
-                    "label": "Weave the Fluxcloak",
+                    "id": "causeway_softgear_spin",
+                    "label": "Spin Parallax Cloaks",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_boltweaver_ready"
+                            "causeway_flux_balanced"
                         ]
                     },
                     "roll": {
@@ -597,7 +591,7 @@
                         "tags": [
                             "craft",
                             "defense",
-                            "harmony"
+                            "support"
                         ]
                     },
                     "outcomes": {
@@ -605,19 +599,19 @@
                             "effects": [
                                 {
                                     "type": "xp",
-                                    "value": 89
+                                    "value": 144
                                 },
                                 {
                                     "type": "item",
-                                    "id": "armor_dyad_fluxcloak"
+                                    "id": "armor_causeway_parallax"
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "dyad_fluxcloak_worn",
+                                    "id": "causeway_softgear_spun",
                                     "value": true
                                 }
                             ],
-                            "narration": "You weave alternating bands of dawn silk and midnight mylar, creating a cloak that redirects lightning into motivational speeches."
+                            "narration": "You weave cloaks that refract wake light, letting squads slip between gusts without losing speed."
                         },
                         "success": {
                             "effects": [
@@ -626,16 +620,12 @@
                                     "value": 55
                                 },
                                 {
-                                    "type": "item",
-                                    "id": "armor_dyad_fluxcloak"
-                                },
-                                {
                                     "type": "flag",
-                                    "id": "dyad_fluxcloak_worn",
+                                    "id": "causeway_softgear_spun",
                                     "value": true
                                 }
                             ],
-                            "narration": "The fluxcloak drapes around your shoulders, fluttering whenever consensus spikes."
+                            "narration": "Your cloaks hold their charge and shimmer with a steady protective glow."
                         },
                         "fail": {
                             "effects": [
@@ -645,41 +635,41 @@
                                     "value": 21
                                 }
                             ],
-                            "narration": "The cloak frays at the seam and you donate the scraps to the pity vault."
+                            "narration": "Your loom knots itself into a pretzel. You buy more thread and promise to laugh about it later."
                         },
                         "crit_fail": {
                             "effects": [
                                 {
                                     "type": "hp",
                                     "op": "-",
-                                    "value": 7
+                                    "value": 5
                                 }
                             ],
-                            "narration": "You get tangled in the loom and tumble into a bin of static-charged ribbon."
+                            "narration": "A cloak discharges in your face, leaving you with static hair and an appreciative crow d."
                         }
                     },
                     "banter": {
-                        "dev": "Fluxcloak patch ready.",
-                        "trader": "Storm insurance included.",
-                        "whale": "Wake flows along the hem.",
-                        "hacker": "Anti-zap lining verified.",
-                        "shiller": "New fashion drop: lightning couture.",
-                        "validator": "Armor rating notarized.",
-                        "miner": "Looks warm enough for tunnels.",
-                        "meme": "Serving weather-resistant realness."
+                        "dev": "Cloak schema uploaded.",
+                        "trader": "Soft-power futures spike on that weave.",
+                        "whale": "Wake threads feel luxurious.",
+                        "hacker": "No cloak exploits detected.",
+                        "shiller": "Launching \"Project Parallax\" hype page.",
+                        "validator": "Durability notarized.",
+                        "miner": "Finally, armor that doesn’t snag on picks.",
+                        "meme": "These cloaks slap harder than a gust."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_armor_fluxcloak"
+                        "scene:4.6",
+                        "action:causeway_softgear_spin"
                     ]
                 },
                 {
-                    "id": "dyad_helm_parallax",
-                    "label": "Cast the Parallax Crown",
+                    "id": "causeway_trinket_waveguide",
+                    "label": "Tune Waveguide Trinkets",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_fluxcloak_worn"
+                            "causeway_softgear_spun"
                         ]
                     },
                     "roll": {
@@ -687,7 +677,7 @@
                         "tags": [
                             "craft",
                             "insight",
-                            "vision"
+                            "resonance"
                         ]
                     },
                     "outcomes": {
@@ -699,15 +689,15 @@
                                 },
                                 {
                                     "type": "item",
-                                    "id": "helm_dyad_parallax"
+                                    "id": "trinket_causeway_waveguide"
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "insight",
+                                    "id": "causeway_trinkets_tuned",
                                     "value": true
                                 }
                             ],
-                            "narration": "You fuse mirrored lightning rods into a circlet that lets you see both futures at once: what happens if dawn wins, and what happens if midnight rallies."
+                            "narration": "Your trinkets pulse in sync with the bridge, rerouting gusts toward allies who need the boost most."
                         },
                         "success": {
                             "effects": [
@@ -716,101 +706,12 @@
                                     "value": 55
                                 },
                                 {
-                                    "type": "item",
-                                    "id": "helm_dyad_parallax"
-                                },
-                                {
                                     "type": "flag",
-                                    "id": "insight",
+                                    "id": "causeway_trinkets_tuned",
                                     "value": true
                                 }
                             ],
-                            "narration": "The crown hums with layered predictions, gently nudging your decisions toward the golden ratio."
-                        },
-                        "fail": {
-                            "effects": [
-                                {
-                                    "type": "focus",
-                                    "op": "-",
-                                    "value": 1
-                                }
-                            ],
-                            "narration": "You overheat the crown mold and have to wait for it to cool, losing a sliver of confidence."
-                        },
-                        "crit_fail": {
-                            "effects": [
-                                {
-                                    "type": "hp",
-                                    "op": "-",
-                                    "value": 6
-                                }
-                            ],
-                            "narration": "The crown closes while you\u2019re fitting it, giving you a static hairstyle worthy of the meme feed."
-                        }
-                    },
-                    "banter": {
-                        "dev": "Parallax runtime linked to HUD.",
-                        "trader": "Forecast spread updated.",
-                        "whale": "Wake enjoys the dual vantage.",
-                        "hacker": "Prediction engine scrubbed.",
-                        "shiller": "Selling \"see both storms\" eyewear.",
-                        "validator": "Sight metrics notarized.",
-                        "miner": "Can it spot ore veins too?",
-                        "meme": "Two futures, one crown."
-                    },
-                    "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_helm_parallax"
-                    ]
-                },
-                {
-                    "id": "dyad_trinket_capacitor",
-                    "label": "Charge the Storm Capacitor",
-                    "requirements": {
-                        "items_any": [],
-                        "flags_all": [
-                            "dyad_fluxcloak_worn"
-                        ]
-                    },
-                    "roll": {
-                        "kind": "phi_d20",
-                        "tags": [
-                            "craft",
-                            "utility",
-                            "luck"
-                        ]
-                    },
-                    "outcomes": {
-                        "crit_success": {
-                            "effects": [
-                                {
-                                    "type": "xp",
-                                    "value": 55
-                                },
-                                {
-                                    "type": "item",
-                                    "id": "trinket_dyad_capacitor"
-                                },
-                                {
-                                    "type": "coins",
-                                    "op": "+",
-                                    "value": 34
-                                }
-                            ],
-                            "narration": "You bottle excess lightning into a capacitor charm that can discharge to power consensus rituals or jump-start idle allies."
-                        },
-                        "success": {
-                            "effects": [
-                                {
-                                    "type": "xp",
-                                    "value": 34
-                                },
-                                {
-                                    "type": "item",
-                                    "id": "trinket_dyad_capacitor"
-                                }
-                            ],
-                            "narration": "The capacitor hums with stored goodwill, ready to release a motivational jolt."
+                            "narration": "Each charm hums with a reliable wake beacon ready to slot into backpacks."
                         },
                         "fail": {
                             "effects": [
@@ -820,32 +721,119 @@
                                     "value": 13
                                 }
                             ],
-                            "narration": "You overfill the charm and it pops, leaving you with a small invoice and a big lesson."
+                            "narration": "A charm whistles off-key and startles the workshop. You refund the snacks you spilled."
                         },
                         "crit_fail": {
                             "effects": [
                                 {
                                     "type": "hp",
                                     "op": "-",
-                                    "value": 5
+                                    "value": 4
                                 }
                             ],
-                            "narration": "The capacitor discharges into your fingertips. You shake them out while everyone applauds your endurance."
+                            "narration": "You amplify a resonance node until it smacks you into a wall. Audience roars appreciati on."
                         }
                     },
                     "banter": {
-                        "dev": "Capacitor module stable.",
-                        "trader": "Charge futures trending.",
-                        "whale": "Wake shares spare volts.",
-                        "hacker": "No short-circuits detected.",
-                        "shiller": "Charm doubles as a rave accessory.",
-                        "validator": "Charge logs notarized.",
-                        "miner": "Save that jolt for drill jams.",
-                        "meme": "I\u2019m positively charged about this."
+                        "dev": "Waveguide firmware stable.",
+                        "trader": "Charm market heating up.",
+                        "whale": "Wake sings through those trinkets.",
+                        "hacker": "Signal leakage patched.",
+                        "shiller": "Waveguide giveaway inbound.",
+                        "validator": "Harmonics notarized.",
+                        "miner": "Clip one to every hard hat.",
+                        "meme": "These baubles bussin'."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_trinket_capacitor"
+                        "scene:4.6",
+                        "action:causeway_trinket_waveguide"
+                    ]
+                },
+                {
+                    "id": "causeway_emblem_braid",
+                    "label": "Braid Wake Emblems",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_trinkets_tuned"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "craft",
+                            "spirit",
+                            "leadership"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 3
+                                },
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_emblems_braided",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You braid emblems that shimmer between guild colors, uniting every faction under a sin gle wake standard."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_emblems_braided",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your emblems catch the light and get pinned to jackets across the workshop."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A knot slips loose and your banner unravels mid-chant. You pay the choir in snacks for a redo."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "You tug two guild colors too hard and get smacked by both ribbons."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Brand assets approved.",
+                        "trader": "Emblem derivatives already trading.",
+                        "whale": "Wake carries every color.",
+                        "hacker": "No counterfeit threads slip past.",
+                        "shiller": "Merch drop? Merch deluge.",
+                        "validator": "Official standard notarized.",
+                        "miner": "Pinning this to the front of the drill.",
+                        "meme": "Flag on the play? Nah, flag on the bridge."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_emblem_braid"
                     ]
                 }
             ],
@@ -858,16 +846,16 @@
             ]
         },
         {
-            "round_id": "4.5-R4",
-            "description": "Storm Market Mezzanine \u2014 redeem pity charges, rebalance backpacks, and chart shy-and-trust lanes through the gale.",
+            "round_id": "4.6-R4",
+            "description": "Logistics Promenade — prime the pity reservoir, broker wake trades, and repack backpacks before the bri dge charge.",
             "actions": [
                 {
-                    "id": "dyad_pity_channel",
-                    "label": "Open the Pity Channel",
+                    "id": "causeway_pity_prime",
+                    "label": "Prime the Pity Reservoir",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_pity_counter"
+                            "causeway_flux_balanced"
                         ]
                     },
                     "roll": {
@@ -886,16 +874,17 @@
                                     "value": 89
                                 },
                                 {
-                                    "type": "item",
-                                    "id": "deck_dyad_tempest"
+                                    "type": "coins",
+                                    "op": "+",
+                                    "value": 55
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "dyad_market_open",
+                                    "id": "causeway_pity_open",
                                     "value": true
                                 }
                             ],
-                            "narration": "You plug the pity counter straight into the market and siphon a tempest deck loaded with dual-storm boons."
+                            "narration": "You flood the depot with goodwill credits. Vendors cheer and unlock a hidden shelf of bridge-only boons."
                         },
                         "success": {
                             "effects": [
@@ -904,27 +893,22 @@
                                     "value": 55
                                 },
                                 {
-                                    "type": "coins",
-                                    "op": "+",
-                                    "value": 55
-                                },
-                                {
                                     "type": "flag",
-                                    "id": "dyad_market_open",
+                                    "id": "causeway_pity_open",
                                     "value": true
                                 }
                             ],
-                            "narration": "Pity charges flow into discounts. Shopkeepers fling you insulated tote bags stuffed with consumables."
+                            "narration": "Pity ledgers glow steady green. Gremlin cashiers ring bells in gratitude."
                         },
                         "fail": {
                             "effects": [
                                 {
                                     "type": "coins",
                                     "op": "-",
-                                    "value": 13
+                                    "value": 21
                                 }
                             ],
-                            "narration": "You mispronounce a vendor\u2019s name and pay a politeness penalty."
+                            "narration": "A ledger hiccup double-charges you before refunding the difference as store credit."
                         },
                         "crit_fail": {
                             "effects": [
@@ -934,219 +918,39 @@
                                     "value": 4
                                 }
                             ],
-                            "narration": "A gust flips your receipts into the storm. You chase them while everyone cheers."
+                            "narration": "You trip over a pity hose and spray yourself in confetti. The depot erupts in applause."
                         }
                     },
                     "banter": {
-                        "dev": "Pity API surge-tested.",
-                        "trader": "Discount winds blowing.",
-                        "whale": "Wake subsidizes the stalls.",
-                        "hacker": "Double-entry refunds confirmed.",
-                        "shiller": "Flash sale: lightning loyalty.",
-                        "validator": "Invoices notarized mid-gale.",
-                        "miner": "Finally, a sale on grounded boots.",
-                        "meme": "Pity? More like litty."
+                        "dev": "Pity backend scaled for surge.",
+                        "trader": "Liquidity unlocked for every ledger.",
+                        "whale": "Wake underwrites the reservoir.",
+                        "hacker": "Refund scripts audited.",
+                        "shiller": "Calling it the Charity Charge.",
+                        "validator": "Deposits notarized with sparkles.",
+                        "miner": "Buying everyone pit-stop café tokens.",
+                        "meme": "Pity party? More like litty party, round two."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_pity_channel"
+                        "scene:4.6",
+                        "action:causeway_pity_prime"
                     ]
                 },
                 {
-                    "id": "dyad_backpack_realign",
-                    "label": "Realign Storm Backpacks",
+                    "id": "causeway_trade_manifest",
+                    "label": "Broker Wake Trades",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_market_open"
+                            "causeway_pity_open"
                         ]
                     },
                     "roll": {
                         "kind": "phi_d20",
                         "tags": [
-                            "logistics",
-                            "analysis",
-                            "support"
-                        ]
-                    },
-                    "outcomes": {
-                        "crit_success": {
-                            "effects": [
-                                {
-                                    "type": "focus",
-                                    "op": "+",
-                                    "value": 3
-                                },
-                                {
-                                    "type": "xp",
-                                    "value": 55
-                                },
-                                {
-                                    "type": "coins",
-                                    "op": "+",
-                                    "value": 34
-                                }
-                            ],
-                            "narration": "You reorganize every backpack so the gold storm fuels offense pockets and the cobalt storm powers defense slots. Traders start copying your layout instantly."
-                        },
-                        "success": {
-                            "effects": [
-                                {
-                                    "type": "xp",
-                                    "value": 34
-                                }
-                            ],
-                            "narration": "Backpacks click into tidy alignment. Gremlin inspectors salute."
-                        },
-                        "fail": {
-                            "effects": [
-                                {
-                                    "type": "focus",
-                                    "op": "-",
-                                    "value": 1
-                                }
-                            ],
-                            "narration": "You chase loose straps through a crosswind until you need a breather."
-                        },
-                        "crit_fail": {
-                            "effects": [
-                                {
-                                    "type": "hp",
-                                    "op": "-",
-                                    "value": 4
-                                }
-                            ],
-                            "narration": "A rogue gust slams a backpack into your face. The meme division applauds the slapstick."
-                        }
-                    },
-                    "banter": {
-                        "dev": "Inventory schema updated.",
-                        "trader": "Bag flow optimized.",
-                        "whale": "Wake carries the heavy loads.",
-                        "hacker": "No contraband survive that sort.",
-                        "shiller": "Backpack balancing service launching soon.",
-                        "validator": "Checklists notarized in duplicate.",
-                        "miner": "Now my pick sits snug.",
-                        "meme": "Storm Marie Kondo."
-                    },
-                    "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_backpack_realign"
-                    ]
-                },
-                {
-                    "id": "dyad_lane_cartography",
-                    "label": "Chart Trust & Shy Lanes",
-                    "requirements": {
-                        "items_any": [],
-                        "flags_all": []
-                    },
-                    "roll": {
-                        "kind": "phi_d20",
-                        "tags": [
-                            "insight",
-                            "support",
-                            "navigation"
-                        ]
-                    },
-                    "outcomes": {
-                        "crit_success": {
-                            "effects": [
-                                {
-                                    "type": "xp",
-                                    "value": 55
-                                },
-                                {
-                                    "type": "flag",
-                                    "id": "trustful",
-                                    "value": true
-                                },
-                                {
-                                    "type": "flag",
-                                    "id": "shy",
-                                    "value": true
-                                }
-                            ],
-                            "narration": "You map alternating lanes for loud trust rallies and quiet shy retreats so everyone can traverse the storm in comfort."
-                        },
-                        "success": {
-                            "effects": [
-                                {
-                                    "type": "xp",
-                                    "value": 34
-                                },
-                                {
-                                    "type": "flag",
-                                    "id": "trustful",
-                                    "value": true
-                                }
-                            ],
-                            "narration": "You label pathways that minimize collisions. Validators project them into the air."
-                        },
-                        "fail": {
-                            "effects": [
-                                {
-                                    "type": "coins",
-                                    "op": "-",
-                                    "value": 8
-                                }
-                            ],
-                            "narration": "Your chalk map washes away in a gust. The pity ledger replenishes some markers."
-                        },
-                        "crit_fail": {
-                            "effects": [
-                                {
-                                    "type": "hp",
-                                    "op": "-",
-                                    "value": 4
-                                }
-                            ],
-                            "narration": "You take a wrong step and ride a wind tunnel headfirst into a banner. Everyone laughs kindly."
-                        }
-                    },
-                    "banter": {
-                        "dev": "Storm routing overlay deployed.",
-                        "trader": "Traffic flows smoother already.",
-                        "whale": "Wake glides down the trust lane.",
-                        "hacker": "Navigation beacons secure.",
-                        "shiller": "Guided tours now available.",
-                        "validator": "Routes notarized.",
-                        "miner": "Short path to the ore vendor, thanks.",
-                        "meme": "Trust lane? More like gust lane."
-                    },
-                    "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_lane_cartography"
-                    ]
-                }
-            ],
-            "rewards": [
-                {
-                    "type": "focus",
-                    "op": "+",
-                    "value": 2
-                }
-            ]
-        },
-        {
-            "round_id": "4.5-R5",
-            "description": "Reboot Platform \u2014 jolt fallen allies, enforce AFK treadmill routines, and signal arrivals surfed in on storm droplets.",
-            "actions": [
-                {
-                    "id": "dyad_revive",
-                    "label": "Shock a Fallen Ally",
-                    "requirements": {
-                        "items_any": [],
-                        "flags_all": [
-                            "dyad_afk_network"
-                        ]
-                    },
-                    "roll": {
-                        "kind": "phi_d20",
-                        "tags": [
-                            "revive",
-                            "support",
-                            "ritual"
+                            "economy",
+                            "negotiation",
+                            "strategy"
                         ]
                     },
                     "outcomes": {
@@ -1157,113 +961,31 @@
                                     "value": 89
                                 },
                                 {
-                                    "type": "focus",
-                                    "op": "+",
-                                    "value": 3
-                                },
-                                {
-                                    "type": "flag",
-                                    "id": "harmony",
-                                    "value": true
-                                }
-                            ],
-                            "narration": "You inscribe a spiral of storm glyphs around the fallen ally and release the capacitor charm. They reboot laughing, hair fizzing with static harmony."
-                        },
-                        "success": {
-                            "effects": [
-                                {
-                                    "type": "xp",
-                                    "value": 55
-                                }
-                            ],
-                            "narration": "The ally jolts upright, blinking away residual lightning."
-                        },
-                        "fail": {
-                            "effects": [
-                                {
-                                    "type": "focus",
-                                    "op": "-",
-                                    "value": 1
-                                }
-                            ],
-                            "narration": "You mix up the polarity and have to start the ritual again, muttering apologies."
-                        },
-                        "crit_fail": {
-                            "effects": [
-                                {
-                                    "type": "hp",
-                                    "op": "-",
-                                    "value": 5
-                                }
-                            ],
-                            "narration": "You catch the rebound arc and tumble into a pile of insulated pillows. The meme crew adds thunder sound effects."
-                        }
-                    },
-                    "banter": {
-                        "dev": "Revive routine electrified.",
-                        "trader": "Resurrection futures surge.",
-                        "whale": "Wake cushions the landing.",
-                        "hacker": "Checksum validated mid-bolt.",
-                        "shiller": "Stormshock loyalty perk!",
-                        "validator": "Revival logged and notarized.",
-                        "miner": "Back on your feet; drills await.",
-                        "meme": "Static hair, don\u2019t care."
-                    },
-                    "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_revive"
-                    ]
-                },
-                {
-                    "id": "dyad_afk_force",
-                    "label": "Start AFK Treadmills",
-                    "requirements": {
-                        "items_any": [],
-                        "flags_all": [
-                            "dyad_afk_network"
-                        ]
-                    },
-                    "roll": {
-                        "kind": "phi_d20",
-                        "tags": [
-                            "automation",
-                            "discipline",
-                            "support"
-                        ]
-                    },
-                    "outcomes": {
-                        "crit_success": {
-                            "effects": [
-                                {
-                                    "type": "xp",
-                                    "value": 55
-                                },
-                                {
                                     "type": "coins",
                                     "op": "+",
-                                    "value": 21
+                                    "value": 55
                                 }
                             ],
-                            "narration": "You sync the treadmills to storm tempo. Idle players jog into micro-quests while the Dyad pays you a maintenance bonus."
+                            "narration": "You broker swaps between guild stockpiles so every squad gets the precise boost they ne ed."
                         },
                         "success": {
                             "effects": [
                                 {
                                     "type": "xp",
-                                    "value": 34
+                                    "value": 55
                                 }
                             ],
-                            "narration": "Force-play mode engages with a friendly chime."
+                            "narration": "Trades close smoothly. Traders wink and toss you commemorative scrip."
                         },
                         "fail": {
                             "effects": [
                                 {
-                                    "type": "focus",
+                                    "type": "coins",
                                     "op": "-",
-                                    "value": 1
+                                    "value": 13
                                 }
                             ],
-                            "narration": "You broadcast the reminder at the wrong tempo and a whale side-eyes you before stepping on."
+                            "narration": "A miscommunication sends two pallets the wrong way. You pay the rerouting fee."
                         },
                         "crit_fail": {
                             "effects": [
@@ -1273,52 +995,56 @@
                                     "value": 4
                                 }
                             ],
-                            "narration": "You forget to step off your own treadmill and faceplant. Validators help you up between giggles."
+                            "narration": "You hype a deal so hard that the floor tilts, dumping you into a crate of foam peanuts."
                         }
                     },
                     "banter": {
-                        "dev": "Force-play daemon synced.",
-                        "trader": "Idle tax repurposed as cardio.",
-                        "whale": "Wake keeps the pace.",
-                        "hacker": "Scripts monitored for loops.",
-                        "shiller": "Storm gym membership unlocked.",
-                        "validator": "Treadmill logs notarized.",
-                        "miner": "Can we set incline to \"mountain\"?",
-                        "meme": "AFK now stands for \"Always Flexing Knees\"."
+                        "dev": "Market middleware humming.",
+                        "trader": "Slippage near zero.",
+                        "whale": "Wake secures every swap.",
+                        "hacker": "Smart contracts double-checked.",
+                        "shiller": "Live auction commentary trending.",
+                        "validator": "Receipts stamped with glitter seals.",
+                        "miner": "Traded ore futures for stamina tonics.",
+                        "meme": "Buy low, yeet high."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_afk_force"
+                        "scene:4.6",
+                        "action:causeway_trade_manifest"
                     ]
                 },
                 {
-                    "id": "dyad_arrival_signal",
-                    "label": "Signal Storm Arrivals",
+                    "id": "causeway_backpack_repack",
+                    "label": "Repack Causeway Backpacks",
                     "requirements": {
                         "items_any": [],
-                        "flags_all": []
+                        "flags_all": [
+                            "causeway_pity_open",
+                            "causeway_supply_cached"
+                        ]
                     },
                     "roll": {
                         "kind": "phi_d20",
                         "tags": [
-                            "communication",
+                            "logistics",
                             "support",
-                            "ritual"
+                            "discipline"
                         ]
                     },
                     "outcomes": {
                         "crit_success": {
                             "effects": [
                                 {
-                                    "type": "xp",
-                                    "value": 55
+                                    "type": "focus",
+                                    "op": "+",
+                                    "value": 2
                                 },
                                 {
-                                    "type": "item",
-                                    "id": "weapon_dyad_lightningbug"
+                                    "type": "xp",
+                                    "value": 55
                                 }
                             ],
-                            "narration": "You release a swarm of lightningbugs that sketch the GMGN motif across the storms. New arrivals surf down the trails, cheering."
+                            "narration": "You reseat gear so well that the bridge itself sighs in satisfaction. Everyone moves like a choreographed parade."
                         },
                         "success": {
                             "effects": [
@@ -1327,7 +1053,7 @@
                                     "value": 34
                                 }
                             ],
-                            "narration": "You ping the arrival gong. A pair of drenched but smiling gremlins tumble in."
+                            "narration": "Backpacks snap closed with perfect weight distribution."
                         },
                         "fail": {
                             "effects": [
@@ -1337,32 +1063,32 @@
                                     "value": 8
                                 }
                             ],
-                            "narration": "You mistime the signal and only attract storm gulls, who demand snacks."
+                            "narration": "You mislabel a pouch and have to refund the resulting scavenger hunt."
                         },
                         "crit_fail": {
                             "effects": [
                                 {
                                     "type": "hp",
                                     "op": "-",
-                                    "value": 4
+                                    "value": 3
                                 }
                             ],
-                            "narration": "You stand too close to the gong and it rattles your bones. Everyone still applauds the effort."
+                            "narration": "A strap snaps and slingshots you into a pity fountain."
                         }
                     },
                     "banter": {
-                        "dev": "Onboarding channel reopened.",
-                        "trader": "Fresh liquidity slides in.",
-                        "whale": "Wake catches new surfers.",
-                        "hacker": "Invite tokens air-dropped.",
-                        "shiller": "Influencer storm party!",
-                        "validator": "Arrivals notarized.",
-                        "miner": "More hands for the lightning rods.",
-                        "meme": "New storm, who dis?"
+                        "dev": "Inventory versioning on point.",
+                        "trader": "Bag weight balanced like a ledger.",
+                        "whale": "Wake keeps the straps from biting.",
+                        "hacker": "No contraband zipped inside.",
+                        "shiller": "Unboxing stream scheduled.",
+                        "validator": "Checklist stamped per pouch.",
+                        "miner": "My kit finally stops squeaking.",
+                        "meme": "Bag check? More like brag check."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_arrival_signal"
+                        "scene:4.6",
+                        "action:causeway_backpack_repack"
                     ]
                 }
             ],
@@ -1374,24 +1100,24 @@
             ]
         },
         {
-            "round_id": "4.5-R6",
-            "description": "Spectrum Gate Catwalk \u2014 align the twin doorways, distribute focus charges, and project threshold metrics across the Dyad.",
+            "round_id": "4.6-R5",
+            "description": "Revival Span — ignite the wake ward, rehearse force-play drills, and breathe focus into the squads.",
             "actions": [
                 {
-                    "id": "dyad_gate_modulate",
-                    "label": "Modulate the Twin Door",
+                    "id": "causeway_revive_field",
+                    "label": "Ignite the Revival Field",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_balance_logged"
+                            "causeway_flux_balanced"
                         ]
                     },
                     "roll": {
                         "kind": "phi_d20",
                         "tags": [
-                            "ritual",
-                            "engineering",
-                            "focus"
+                            "support",
+                            "healing",
+                            "ritual"
                         ]
                     },
                     "outcomes": {
@@ -1408,11 +1134,11 @@
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "dyad_gate_tuned",
+                                    "id": "causeway_revive_online",
                                     "value": true
                                 }
                             ],
-                            "narration": "You tune two spectrum doors so they overlap like a Venn diagram of light. The storms settle, agreeing to funnel consensus through your alignment."
+                            "narration": "You ignite a halo that revives anyone who touches the floor. Exhaustion evaporates in golden mist."
                         },
                         "success": {
                             "effects": [
@@ -1422,63 +1148,145 @@
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "dyad_gate_tuned",
+                                    "id": "causeway_revive_online",
                                     "value": true
                                 }
                             ],
-                            "narration": "The doors hum at the same pitch, ready to accept the vote."
+                            "narration": "The ward thrums and medics cheer. Anyone slipping can bounce back instantly."
                         },
                         "fail": {
                             "effects": [
                                 {
-                                    "type": "focus",
+                                    "type": "coins",
                                     "op": "-",
-                                    "value": 1
+                                    "value": 13
                                 }
                             ],
-                            "narration": "You misalign a prism and the doors flicker. Engineers nudge them back on track with gentle advice."
+                            "narration": "The halo flickers. You pay the technicians overtime to patch the relay."
                         },
                         "crit_fail": {
                             "effects": [
                                 {
                                     "type": "hp",
                                     "op": "-",
-                                    "value": 6
+                                    "value": 4
                                 }
                             ],
-                            "narration": "You get caught between the doors mid-oscillation and stumble out with your hair glowing."
+                            "narration": "The ward backfires with a static pop that leaves you glowing neon for a minute."
                         }
                     },
                     "banter": {
-                        "dev": "Twin door firmware merged.",
-                        "trader": "Spectrum spreads anchored.",
-                        "whale": "Wake threads the threshold.",
-                        "hacker": "Door handshake triple-signed.",
-                        "shiller": "Act transition teaser unlocked.",
-                        "validator": "Calibration notarized.",
-                        "miner": "Doors steady enough for ore carts.",
-                        "meme": "Double doors, double drama."
+                        "dev": "Revival scripts live.",
+                        "trader": "Insurance premiums nosedive.",
+                        "whale": "Wake cushions every stumble.",
+                        "hacker": "Ward signals firewall-hardened.",
+                        "shiller": "Wellness spa but make it heroic.",
+                        "validator": "Uptime notarized.",
+                        "miner": "I can faceplant and still clock in.",
+                        "meme": "Glow up? Glow respawn."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_gate_modulate"
+                        "scene:4.6",
+                        "action:causeway_revive_field"
                     ]
                 },
                 {
-                    "id": "dyad_focus_distribution",
-                    "label": "Distribute Storm Focus",
+                    "id": "causeway_force_drill",
+                    "label": "Run Force-Play Drills",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_gate_tuned"
+                            "causeway_afk_webbed"
                         ]
                     },
                     "roll": {
                         "kind": "phi_d20",
                         "tags": [
-                            "support",
-                            "strategy",
-                            "resource"
+                            "discipline",
+                            "performance",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_force_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You choreograph AFK recoveries that look like dance numbers. Idle players return grinning and ready."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_force_ready",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The drills run smooth. Nobody forgets how to rejoin the cadence."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 8
+                                }
+                            ],
+                            "narration": "A rehearsal devolves into slapstick. You bribe the meme crew not to loop it forever."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "You slip during a spin and skid the length of the ward. Everyone applauds your commitme nt."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Force-play tutorials uploaded.",
+                        "trader": "Idle time futures hedged.",
+                        "whale": "Wake catches anyone mid-spin.",
+                        "hacker": "Drill macros secured.",
+                        "shiller": "AFK? More like Always Forward Kinesis.",
+                        "validator": "Attendance notarized.",
+                        "miner": "These drills double as cardio.",
+                        "meme": "Choreographed comeback, 10/10."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_force_drill"
+                    ]
+                },
+                {
+                    "id": "causeway_focus_breath",
+                    "label": "Lead Focus Breathing",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_revive_online"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "spirit",
+                            "leadership",
+                            "support"
                         ]
                     },
                     "outcomes": {
@@ -1487,14 +1295,14 @@
                                 {
                                     "type": "focus",
                                     "op": "+",
-                                    "value": 4
+                                    "value": 3
                                 },
                                 {
                                     "type": "xp",
-                                    "value": 55
+                                    "value": 89
                                 }
                             ],
-                            "narration": "You design a focus rotation that charges players in alternating gold and cobalt bursts, keeping everyone balanced for the impending vote."
+                            "narration": "You synchronize the entire bridge in a single inhale. Even the storms hush to listen."
                         },
                         "success": {
                             "effects": [
@@ -1504,84 +1312,7 @@
                                     "value": 2
                                 }
                             ],
-                            "narration": "Focus flasks rotate through the party. Spirits lift."
-                        },
-                        "fail": {
-                            "effects": [
-                                {
-                                    "type": "coins",
-                                    "op": "-",
-                                    "value": 13
-                                }
-                            ],
-                            "narration": "You spill a flask and owe the vendor."
-                        },
-                        "crit_fail": {
-                            "effects": [
-                                {
-                                    "type": "hp",
-                                    "op": "-",
-                                    "value": 4
-                                }
-                            ],
-                            "narration": "A misfire launches a focus burst into your face, leaving you sparkling but dazed."
-                        }
-                    },
-                    "banter": {
-                        "dev": "Focus balancer online.",
-                        "trader": "Energy arbitrage optimized.",
-                        "whale": "Wake tops up whichever side needs it.",
-                        "hacker": "Distribution logs encrypted.",
-                        "shiller": "Pitching this as \"storm mindfulness\".",
-                        "validator": "Allocations notarized.",
-                        "miner": "Save a vial for the tunnel crew.",
-                        "meme": "Focus group but literal."
-                    },
-                    "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_focus_distribution"
-                    ]
-                },
-                {
-                    "id": "dyad_threshold_projection",
-                    "label": "Project Threshold Metrics",
-                    "requirements": {
-                        "items_any": [],
-                        "flags_all": [
-                            "dyad_gate_tuned"
-                        ]
-                    },
-                    "roll": {
-                        "kind": "phi_d20",
-                        "tags": [
-                            "analysis",
-                            "insight",
-                            "logistics"
-                        ]
-                    },
-                    "outcomes": {
-                        "crit_success": {
-                            "effects": [
-                                {
-                                    "type": "xp",
-                                    "value": 55
-                                },
-                                {
-                                    "type": "coins",
-                                    "op": "+",
-                                    "value": 34
-                                }
-                            ],
-                            "narration": "You project threshold charts into the storm clouds, revealing when the vote will peak and which flags are nearly triggered. Traders tip you for advance warning."
-                        },
-                        "success": {
-                            "effects": [
-                                {
-                                    "type": "xp",
-                                    "value": 34
-                                }
-                            ],
-                            "narration": "Your metrics anchor the crowd. Validators pin them to the consensus board."
+                            "narration": "Breathing circles spiral outward. The bridge steadies, hearts settle."
                         },
                         "fail": {
                             "effects": [
@@ -1591,32 +1322,32 @@
                                     "value": 8
                                 }
                             ],
-                            "narration": "Your projector blinks out mid-slide and needs a firmware reboot."
+                            "narration": "A gust interrupts your count. You offer snacks as apology before starting over."
                         },
                         "crit_fail": {
                             "effects": [
                                 {
                                     "type": "hp",
                                     "op": "-",
-                                    "value": 4
+                                    "value": 3
                                 }
                             ],
-                            "narration": "A projector drone spins out and bonks you on the shoulder. The meme crew adds cartoon stars."
+                            "narration": "You inhale a confetti flake and cough glitter for a minute."
                         }
                     },
                     "banter": {
-                        "dev": "Metrics overlay deployed.",
-                        "trader": "Forecast board trending.",
-                        "whale": "Wake watches the KPIs.",
-                        "hacker": "Charts sanitized for secrets.",
-                        "shiller": "Weekly newsletter writes itself.",
-                        "validator": "Thresholds notarized.",
-                        "miner": "Stats say dig deeper.",
-                        "meme": "KPIs? More like K-Pies, hungry now."
+                        "dev": "Focus protocol cached.",
+                        "trader": "Calm minds hedge better.",
+                        "whale": "Wake beats match your cadence.",
+                        "hacker": "Breath app patched mid-session.",
+                        "shiller": "ASMR stream rights secured.",
+                        "validator": "Attendance sealed with wax.",
+                        "miner": "Lungs ready for the next climb.",
+                        "meme": "Inhale hype, exhale doubt."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_threshold_projection"
+                        "scene:4.6",
+                        "action:causeway_focus_breath"
                     ]
                 }
             ],
@@ -1628,24 +1359,283 @@
             ]
         },
         {
-            "round_id": "4.5-R7",
-            "description": "Consensus Vortex \u2014 call the Dyad vote, archive the storm haul, and stride into Act Five.",
+            "round_id": "4.6-R6",
+            "description": "Gatehouse Threading — align the spectrum needle, broadcast wake echoes, and armor the bridge against leakage.",
             "actions": [
                 {
-                    "id": "dyad_consensus_vote",
-                    "label": "Call the Dyad Vote",
+                    "id": "causeway_gate_thread",
+                    "label": "Thread the Spectrum Needle",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_gate_tuned"
+                            "causeway_flux_balanced",
+                            "causeway_lane_marked"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "ritual",
+                            "navigation",
+                            "arcana"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 144
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_gate_threaded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "You sew a ribbon of light through the horizon fog. The future gate answers with a low, promising chord."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_gate_threaded",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "The needle seats cleanly. Holographic coordinates snap into alignment."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 21
+                                }
+                            ],
+                            "narration": "Your stitch slips and the gate sputters. You compensate with extra conductive thread."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 5
+                                }
+                            ],
+                            "narration": "The needle snaps and showers sparks. Hackers shield your eyes while you grab a spare."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Gate alignment logs pristine.",
+                        "trader": "Spec futures on Act Five skyrocketing.",
+                        "whale": "Wake hum acknowledges the stitch.",
+                        "hacker": "Portal firmware patched in real time.",
+                        "shiller": "First look at Act Five silhouettes trending.",
+                        "validator": "Thread notarized with wax and light.",
+                        "miner": "Portal seam ready for chisels.",
+                        "meme": "Needle drop of the century."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_gate_thread"
+                    ]
+                },
+                {
+                    "id": "causeway_signal_echo",
+                    "label": "Broadcast Wake Echoes",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_gate_threaded"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "communication",
+                            "spirit",
+                            "support"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_signal_echoed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your broadcast rides the stitched needle and returns with whispers of Act Five layouts."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_signal_echoed",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Echoes answer, steady and warm. The crowd surges with confidence."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "The signal returns as static. You invest in better amplifiers."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 3
+                                }
+                            ],
+                            "narration": "Your voice cracks mid-broadcast and the echo comes back laughing."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Echo telemetry captured.",
+                        "trader": "Spec quotes update on every ping.",
+                        "whale": "Wake hears its future self.",
+                        "hacker": "No spoofers on this channel.",
+                        "shiller": "Teaser trailers editing themselves.",
+                        "validator": "Transmission notarized.",
+                        "miner": "Echo says the next seam glitters.",
+                        "meme": "We called, the future picked up."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_signal_echo"
+                    ]
+                },
+                {
+                    "id": "causeway_gateward_enforce",
+                    "label": "Enforce Gate Wards",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_gate_threaded"
+                        ]
+                    },
+                    "roll": {
+                        "kind": "phi_d20",
+                        "tags": [
+                            "defense",
+                            "systems",
+                            "discipline"
+                        ]
+                    },
+                    "outcomes": {
+                        "crit_success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 89
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_gate_hardened",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Your wards lock like teeth. Stray gusts glance off and dissolve into harmless sparks."
+                        },
+                        "success": {
+                            "effects": [
+                                {
+                                    "type": "xp",
+                                    "value": 55
+                                },
+                                {
+                                    "type": "flag",
+                                    "id": "causeway_gate_hardened",
+                                    "value": true
+                                }
+                            ],
+                            "narration": "Barrier glyphs settle, bright and sturdy."
+                        },
+                        "fail": {
+                            "effects": [
+                                {
+                                    "type": "coins",
+                                    "op": "-",
+                                    "value": 13
+                                }
+                            ],
+                            "narration": "A gap flickers open. You hire hackers to plug the leak."
+                        },
+                        "crit_fail": {
+                            "effects": [
+                                {
+                                    "type": "hp",
+                                    "op": "-",
+                                    "value": 4
+                                }
+                            ],
+                            "narration": "A ward rebounds and smacks you into a pylon. The crowd cheers your dedication."
+                        }
+                    },
+                    "banter": {
+                        "dev": "Firewall literalized.",
+                        "trader": "Risk premiums recalculated.",
+                        "whale": "Wake swims behind the shields.",
+                        "hacker": "Ward handshake double-hashed.",
+                        "shiller": "Marketing copy: \"Portals but make it safe\".",
+                        "validator": "Barrier integrity notarized.",
+                        "miner": "Ward even covers the tool racks.",
+                        "meme": "Zero-day? More like zero-way."
+                    },
+                    "telemetry_tags": [
+                        "scene:4.6",
+                        "action:causeway_gateward_enforce"
+                    ]
+                }
+            ],
+            "rewards": [
+                {
+                    "type": "xp",
+                    "value": 55
+                }
+            ]
+        },
+        {
+            "round_id": "4.6-R7",
+            "description": "Pre-Horizon Council — call the Causeway vote, archive wake schematics, and signal the march into the final act.",
+            "actions": [
+                {
+                    "id": "causeway_consensus_vote",
+                    "label": "Call the Causeway Vote",
+                    "requirements": {
+                        "items_any": [],
+                        "flags_all": [
+                            "causeway_gate_threaded"
                         ]
                     },
                     "roll": {
                         "kind": "phi_d20",
                         "tags": [
                             "leadership",
-                            "ritual",
-                            "consensus"
+                            "consensus",
+                            "spirit"
                         ]
                     },
                     "outcomes": {
@@ -1662,11 +1652,11 @@
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "dyad_consensus_passed",
+                                    "id": "causeway_consensus_passed",
                                     "value": true
                                 }
                             ],
-                            "narration": "You raise both hands, one glowing gold, one glowing cobalt, and shout the vote cadence. The storms knot together in a luminous tornado as consensus locks."
+                            "narration": "You raise a torch of wake light and every faction answers. The bridge glows white-hot as consensus locks for the final march."
                         },
                         "success": {
                             "effects": [
@@ -1676,11 +1666,11 @@
                                 },
                                 {
                                     "type": "flag",
-                                    "id": "dyad_consensus_passed",
+                                    "id": "causeway_consensus_passed",
                                     "value": true
                                 }
                             ],
-                            "narration": "Hands, tails, and tendrils lift. The Dyad roars approval and the doors flare emerald."
+                            "narration": "Hands, fins, and data tendrils lift. The council shouts yes and the bridge thrums in response."
                         },
                         "fail": {
                             "effects": [
@@ -1690,98 +1680,98 @@
                                     "value": 13
                                 }
                             ],
-                            "narration": "You lose quorum when a lightning joke misfires. The pity ledger offers consolation snacks while you regroup."
+                            "narration": "A gust steals half the ballots. You reimburse the scribes while the pity ledger prints new ones."
                         },
                         "crit_fail": {
                             "effects": [
                                 {
                                     "type": "hp",
                                     "op": "-",
-                                    "value": 6
+                                    "value": 5
                                 }
                             ],
-                            "narration": "A gust whirls your notes away mid-speech. The meme crew projects subtitles to help you recover."
+                            "narration": "You try to freestyle the speech and get heckled by friendly memes until you reset."
                         }
                     },
                     "banter": {
-                        "dev": "Vote routine executed.",
-                        "trader": "Quorum candles close high.",
-                        "whale": "Wake endorses both storms.",
-                        "hacker": "Ballot ledger spark-proof.",
-                        "shiller": "Headline: Dyad says yes!",
-                        "validator": "Votes notarized in stereo.",
-                        "miner": "Consensus points toward a deeper seam.",
-                        "meme": "Democracy but lightning."
+                        "dev": "Vote tallies streaming live.",
+                        "trader": "Consensus candles spike green.",
+                        "whale": "Wake roars its approval.",
+                        "hacker": "Ballot ledger unbreakable.",
+                        "shiller": "Headline: Bridge says go!",
+                        "validator": "Votes notarized with holographic wax.",
+                        "miner": "We’re ready to swing into Act Five.",
+                        "meme": "Democracy but make it neon."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_consensus_vote"
+                        "scene:4.6",
+                        "action:causeway_consensus_vote"
                     ]
                 },
                 {
-                    "id": "dyad_reward_archive",
-                    "label": "Archive Storm Rewards",
+                    "id": "causeway_reward_archive",
+                    "label": "Archive Causeway Schematics",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_consensus_passed"
+                            "causeway_consensus_passed"
                         ]
                     },
                     "outcomes": {
                         "success": {
                             "effects": [
                                 {
-                                    "type": "item",
-                                    "id": "deck_dyad_tempest"
+                                    "type": "deck",
+                                    "id": "deck_causeway_vector"
                                 }
                             ],
-                            "narration": "You spool the Dyad\u2019s ledger threads into a tempest deck packed with dual-aligned boons for future runs."
+                            "narration": "You compress bridge blueprints into a vector deck ready to redeploy anywhere the wake needs a foothold."
                         }
                     },
                     "banter": {
-                        "dev": "Reward ledger sealed.",
-                        "trader": "Profits tallied.",
-                        "whale": "Wake shares the gust bounty.",
-                        "hacker": "Archives insulated.",
-                        "shiller": "Highlight reel ready to air.",
-                        "validator": "Receipts notarized.",
-                        "miner": "Loot tied down in sandbags.",
-                        "meme": "Deck the storms with bolts of holly."
+                        "dev": "Schematics sealed.",
+                        "trader": "Blueprint futures minted.",
+                        "whale": "Wake engraves the pattern in memory.",
+                        "hacker": "Archives double-locked.",
+                        "shiller": "Limited edition prints dropping.",
+                        "validator": "Documentation notarized.",
+                        "miner": "Copy tucked into the toolbox.",
+                        "meme": "Blueprints but make them NFTs (Nice Functional Templates)."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:dyad_reward_archive"
+                        "scene:4.6",
+                        "action:causeway_reward_archive"
                     ]
                 },
                 {
-                    "id": "advance_4_6",
-                    "label": "March onto the Convergence Causeway",
+                    "id": "advance_4_7",
+                    "label": "March Toward the Horizon Crown",
                     "requirements": {
                         "items_any": [],
                         "flags_all": [
-                            "dyad_consensus_passed"
+                            "causeway_consensus_passed"
                         ]
                     },
                     "outcomes": {
                         "success": {
                             "effects": [],
-                            "narration": "The twin doors align into the Convergence Causeway, a runway of light that beckons Act Four\u2019s united march toward the Horizon Crown.",
-                            "next_hint": "4.6"
+                            "narration": "The bridge plates align into a runway of light pointing toward a distant crown of color. You lead the march forward.",
+                            "next_hint": "4.7"
                         }
                     },
                     "banter": {
-                        "dev": "Causeway boot sequence engaged.",
-                        "trader": "Rolling positions onto the bridge.",
-                        "whale": "Wake stretches toward the Causeway.",
-                        "hacker": "Transition handshake rerouted.",
-                        "shiller": "Sneak peek: bridge drop imminent.",
-                        "validator": "Advance notarized for Act Four.",
-                        "miner": "New span, same grit.",
-                        "meme": "From storms to bridges, no pause."
+                        "dev": "Next staging area online.",
+                        "trader": "Rolling positions into Horizon Crown.",
+                        "whale": "Wake accelerates toward the finale.",
+                        "hacker": "Transition handshake solid.",
+                        "shiller": "Cliffhanger marketing writes itself.",
+                        "validator": "Advance notarized in triplicate.",
+                        "miner": "New seam dead ahead.",
+                        "meme": "From bridge to bling."
                     },
                     "telemetry_tags": [
-                        "scene:4.5",
-                        "action:advance_4_6"
+                        "scene:4.6",
+                        "action:advance_4_7"
                     ]
                 }
             ],
@@ -1795,7 +1785,7 @@
     ],
     "threshold_rewards": [
         {
-            "focus_gte": 13,
+            "focus_gte": 15,
             "rewards": [
                 {
                     "type": "coins",
@@ -1804,22 +1794,22 @@
             ]
         },
         {
-            "xp_gte": 720,
+            "xp_gte": 910,
             "rewards": [
                 {
                     "type": "item",
-                    "id": "armor_dyad_fluxcloak"
+                    "id": "armor_causeway_parallax"
                 }
             ]
         },
         {
             "flags_all": [
-                "dyad_consensus_passed"
+                "causeway_consensus_passed"
             ],
             "rewards": [
                 {
                     "type": "deck",
-                    "id": "deck_dyad_tempest"
+                    "id": "deck_causeway_vector"
                 }
             ]
         }
@@ -1827,15 +1817,15 @@
     "arrivals": [
         {
             "when": "flags.afk_tracked",
-            "goto": "4.5A"
+            "goto": "4.6A"
         },
         {
-            "when": "flags.dyad_consensus_passed",
-            "goto": "4.6"
+            "when": "flags.causeway_consensus_passed",
+            "goto": "4.7"
         },
         {
             "when": "else",
-            "goto": "4.5"
+            "goto": "4.6"
         }
     ]
 }
