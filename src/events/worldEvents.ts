@@ -329,8 +329,6 @@ export const WORLD_EVENTS: WorldEvent[] = [
 
 class WorldEventManager {
   private readonly activeEvents = new Map<string, WorldEventInstance>();
-  private readonly timers = new Map<string, ReturnType<typeof setTimeout>>();
-  private triggerInterval?: ReturnType<typeof setTimeout>;
   private readonly timers = new Map<string, NodeJS.Timeout>();
   private triggerInterval?: NodeJS.Timeout;
   private initialized = false;
@@ -680,7 +678,6 @@ class WorldEventManager {
     }
 
     if (goal.rewards?.length) {
-      // Server wide rewards are recorded for operators to process manually.
       db.prepare('INSERT INTO events (event_id, run_id, user_id, type, payload_json, ts) VALUES (?,?,?,?,?,?)').run(
         `world_event_reward_${event.id}_${Date.now()}`,
         null,
