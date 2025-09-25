@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "content_id": "seasons/halloween2025",
+  "book_id": "spooky_ledgers",
+  "scene_id": "H25-2",
+  "title": "Ledger of Whispering Masks",
+  "narration": "An obsidian ledger opens to reveal blank mask pages. Spirits bargain to write their stories if you balance the ledger with tales from the living. Choices shift the alignment of the masks, unlocking unique cosmetics and titles before the event expires.",
+  "rounds": [
+    {
+      "round_id": "H25-2-R1",
+      "description": "Negotiate with whispering spirits for limited time boons.",
+      "actions": [
+        {
+          "id": "trade_story",
+          "label": "Trade a Living Story",
+          "roll": { "kind": "phi_d20", "tags": ["social", "ritual"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 45 },
+                { "type": "item", "id": "whispering_mask" }
+              ],
+              "narration": "A mask inks itself with your tale and gifts you a seasonal cosmetic."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "The spirit rejects your offering; the ledger remains blank."
+            }
+          }
+        },
+        {
+          "id": "seal_breach",
+          "label": "Seal Mask Breach",
+          "roll": { "kind": "phi_d20", "tags": ["tech", "support"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 70 },
+                { "type": "flag", "id": "mask_balance", "value": true }
+              ],
+              "narration": "You stabilize the ledger and unlock the Mask Balance title."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 40 }
+              ],
+              "narration": "The breach closes before the spirits escape."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "A gust of wails knocks you back."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "time_limited_rewards": {
+    "cosmetics": ["mask_balance_title", "spectral_trail"],
+    "items": ["whispering_mask"],
+    "expires": "2025-11-05T23:59:59Z"
+  }
+}

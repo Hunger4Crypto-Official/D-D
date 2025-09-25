@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "content_id": "seasons/halloween2025",
+  "book_id": "spooky_ledgers",
+  "scene_id": "H25-1",
+  "title": "Pumpkin Paradox Procession",
+  "narration": "Jack-o-ledgers drift through the plaza as gremlin lantern bearers trace a loop of spectral fire. Each lap increases the paradox charge powering the harvest gate. Players must manipulate the procession to maintain equilibrium and unlock limited rewards.",
+  "rounds": [
+    {
+      "round_id": "H25-1-R1",
+      "description": "Guide the procession and manage paradox drift.",
+      "actions": [
+        {
+          "id": "sync_lanterns",
+          "label": "Sync Lantern Cadence",
+          "roll": { "kind": "phi_d20", "tags": ["ritual", "focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 60 },
+                { "type": "item", "id": "pumpkin_sigil" }
+              ],
+              "narration": "The lanterns hum in resonance, granting you a Pumpkin Sigil."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 35 }
+              ],
+              "narration": "The cadence stabilizes and paradox drift slows."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "The flames flare and singe your notes."
+            }
+          }
+        },
+        {
+          "id": "redirect_specters",
+          "label": "Redirect Mischievous Specters",
+          "roll": { "kind": "phi_d20", "tags": ["tactics", "spirit"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 40 },
+                { "type": "flag", "id": "specters_redirected", "value": true }
+              ],
+              "narration": "You coax the specters back onto the parade route." 
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "A specter slips through and drains warmth from the plaza."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "first_clear": [
+      { "type": "item", "id": "lantern_of_twilight" },
+      { "type": "flag", "id": "seasonal_fast_clear", "value": true }
+    ],
+    "repeat_clear": [
+      { "type": "coins", "value": 60 }
+    ]
+  }
+}

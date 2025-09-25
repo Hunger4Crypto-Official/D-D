@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "content_id": "seasons/halloween2025",
+  "version": "2025.10",
+  "book_name": "Spooky Ledgers",
+  "scenes": ["H25-1", "H25-2"],
+  "time_window": {
+    "start": "2025-10-15T00:00:00Z",
+    "end": "2025-11-05T23:59:59Z"
+  }
+}

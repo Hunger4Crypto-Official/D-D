@@ -329,8 +329,8 @@ export const WORLD_EVENTS: WorldEvent[] = [
 
 class WorldEventManager {
   private readonly activeEvents = new Map<string, WorldEventInstance>();
-  private readonly timers = new Map<string, NodeJS.Timeout>();
-  private triggerInterval?: NodeJS.Timeout;
+  private readonly timers = new Map<string, ReturnType<typeof setTimeout>>();
+  private triggerInterval?: ReturnType<typeof setInterval>;
   private initialized = false;
 
   initialize(): void {
