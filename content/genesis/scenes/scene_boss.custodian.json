@@ -1,0 +1,251 @@
+{
+  "schema_version": "1.0",
+  "content_id": "genesis",
+  "book_id": "bosses",
+  "scene_id": "boss.custodian",
+  "title": "The Stone Custodian Awakens",
+  "narration": "Deep beneath the ledger vault, a ring of obsidian pillars guards a dormant construct known as the Stone Custodian. When the audit beacon flares, the chamber seals shut and the golem unfurls, shaking dust and forgotten decrees from its plating. Obelisks around the arena pulse with contract glyphs that power the guardian. Each phase of the fight shifts the battlefield, forcing raiders to adapt their positioning and tactics.",
+  "phases": [
+    {
+      "phase": 1,
+      "hp_threshold": 100,
+      "mechanics": ["stone_gaze", "ledger_audit"],
+      "description": "The Custodian activates defensive scripts and tests the party's ledgers with wide arc attacks."
+    },
+    {
+      "phase": 2,
+      "hp_threshold": 50,
+      "mechanics": ["consensus_break", "gremlin_swarm"],
+      "description": "The vault destabilizes and gremlin underlings erupt from the walls while the Custodian fractures the floor into ledgers of molten stone."
+    },
+    {
+      "phase": 3,
+      "hp_threshold": 15,
+      "mechanics": ["stone_gaze", "enrage", "cataclysm_pulse"],
+      "description": "In its final rage the Custodian drains the obelisks to unleash cataclysmic pulses that must be intercepted by empowered raiders."
+    }
+  ],
+  "rounds": [
+    {
+      "round_id": "boss.custodian-R1",
+      "description": "Phase One — Stabilize ledgers and disrupt the Custodian's opening audits.",
+      "actions": [
+        {
+          "id": "interrupt_audit",
+          "label": "Disrupt Ledger Audit",
+          "roll": { "kind": "phi_d20", "tags": ["focus", "tech"] },
+          "requirements": { "items_any": ["ledger_spike"], "flags_all": [] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "focus", "op": "+", "value": 2 },
+                { "type": "xp", "value": 85 },
+                { "type": "flag", "id": "custodian_audit_staggered", "value": true }
+              ],
+              "narration": "You spike the ledger stream and the Custodian stutters, exposing a core sigil."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "custodian_audit_staggered", "value": true }
+              ],
+              "narration": "A feedback loop ripples across the obelisks, buying precious seconds."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 6 }
+              ],
+              "narration": "The audit completes and sears you with compliance glyphs."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 12 }
+              ],
+              "narration": "You trip the failsafe; the Custodian's gaze petrifies your armor."
+            }
+          }
+        },
+        {
+          "id": "kite_gaze",
+          "label": "Kite the Stone Gaze",
+          "roll": { "kind": "phi_d20", "tags": ["agility", "tactics"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 70 },
+                { "type": "flag", "id": "stone_gaze_redirected", "value": true }
+              ],
+              "narration": "You guide the petrifying beam into an obelisk, cracking its power siphon."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 40 }
+              ],
+              "narration": "The gaze sweeps past, leaving glassed runes where you once stood."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 5 }
+              ],
+              "narration": "Stone creeps across your limbs before the healers break the glaze."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 10 }
+              ],
+              "narration": "The beam locks onto you and the vault floor shatters beneath your feet."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round_id": "boss.custodian-R2",
+      "description": "Phase Two — Hold the line against swarm adds and stabilize consensus fractures.",
+      "actions": [
+        {
+          "id": "seal_fracture",
+          "label": "Seal Consensus Fracture",
+          "roll": { "kind": "phi_d20", "tags": ["ritual", "support"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 95 },
+                { "type": "flag", "id": "fracture_sealed", "value": true }
+              ],
+              "narration": "The tear mends with radiant ledger threads that empower your raid."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 60 }
+              ],
+              "narration": "You stabilize the crack, preventing a wipe cascade."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 7 }
+              ],
+              "narration": "An implosion ripples across the arena, staggering the team."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 12 }
+              ],
+              "narration": "The fracture erupts, unleashing volatile ledger shards."
+            }
+          }
+        },
+        {
+          "id": "rally_line",
+          "label": "Rally the Gremlin Line",
+          "roll": { "kind": "phi_d20", "tags": ["leadership", "support"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 80 },
+                { "type": "focus", "op": "+", "value": 3 }
+              ],
+              "narration": "You coordinate the gremlin defenders into a disciplined bulwark."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 45 }
+              ],
+              "narration": "The gremlin allies regroup and hold the breach."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 1 }
+              ],
+              "narration": "Chaos spreads and swarm damage increases."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 8 }
+              ],
+              "narration": "A miscommunication sends half the squad tumbling into the ledger pit."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round_id": "boss.custodian-R3",
+      "description": "Final Phase — Redirect the cataclysm pulses and end the Custodian before enrage.",
+      "actions": [
+        {
+          "id": "channel_obelisk",
+          "label": "Channel Obelisk Power",
+          "requirements": { "items_any": ["custodian_seal"], "flags_all": ["fracture_sealed"] },
+          "roll": { "kind": "phi_d20", "tags": ["ritual", "focus"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 120 },
+                { "type": "flag", "id": "custodian_core_exposed", "value": true }
+              ],
+              "narration": "You weave obelisk energy into a spear that pierces the Custodian's heartstone."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 85 }
+              ],
+              "narration": "Power funnels into the raid, mitigating the enrage pulse."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 10 }
+              ],
+              "narration": "The obelisk overloads and disorients you."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 18 }
+              ],
+              "narration": "The channel destabilizes and wipes half the raid."
+            }
+          }
+        },
+        {
+          "id": "deliver_final_blow",
+          "label": "Deliver the Final Blow",
+          "requirements": { "flags_all": ["custodian_core_exposed"] },
+          "roll": { "kind": "phi_d20", "tags": ["martial", "burst"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "custodian_seal" },
+                { "type": "xp", "value": 150 }
+              ],
+              "narration": "Your strike shatters the Custodian core, ending the raid with flawless form."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 110 }
+              ],
+              "narration": "The Custodian collapses into inert ledgers, defeated."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 12 }
+              ],
+              "narration": "You misjudge the timing and the enrage pulse knocks you aside."
+            },
+            "crit_fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 20 }
+              ],
+              "narration": "The Custodian retaliates with a cataclysm pulse that nearly wipes the raid."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "loot_table": {
+    "guaranteed": ["custodian_seal"],
+    "rare_drops": ["eternal_ledger_page", "stone_heart"],
+    "mythic_drops": ["primordial_core_shard"],
+    "currency": { "coins": 500, "gems": 10 }
+  }
+}
