@@ -1,4 +1,4 @@
-{
+export default {
   "schema_version": "1.0",
   "content_id": "genesis",
   "book_id": "book_1",
@@ -203,4 +203,4 @@
     { "when": "flags.gremlin_whisperer", "goto": "3.3.gremlin_alliance" },
     { "when": "else", "goto": "3.1" }
   ]
-}
+} as const;
