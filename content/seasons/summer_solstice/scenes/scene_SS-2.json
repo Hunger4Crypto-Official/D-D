@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "content_id": "seasons/summer_solstice",
+  "book_id": "solstice_radiance",
+  "scene_id": "SS-2",
+  "title": "Aurora Archive Expedition",
+  "narration": "During the solstice, the aurora archives descend into the lower vault. Teams dive into light tunnels to recover prismatic data caches while avoiding heat surges and temporal loops.",
+  "rounds": [
+    {
+      "round_id": "SS-2-R1",
+      "description": "Navigate the light tunnels and secure aurora caches.",
+      "actions": [
+        {
+          "id": "map_tunnels",
+          "label": "Map the Light Tunnels",
+          "roll": { "kind": "phi_d20", "tags": ["analysis", "ritual"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 55 },
+                { "type": "flag", "id": "tunnels_mapped", "value": true }
+              ],
+              "narration": "You chart a safe route through the aurora currents."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "The currents scramble your readings."
+            }
+          }
+        },
+        {
+          "id": "capture_cache",
+          "label": "Capture Prismatic Cache",
+          "requirements": { "flags_all": ["tunnels_mapped"] },
+          "roll": { "kind": "phi_d20", "tags": ["agility", "collection"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "item", "id": "aurora_cache" },
+                { "type": "xp", "value": 85 }
+              ],
+              "narration": "You snag a radiant cache containing solstice-only loot."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 55 }
+              ],
+              "narration": "The cache dissolves into your storage crystals."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 4 }
+              ],
+              "narration": "You clip a temporal loop and get scorched."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "limited_rewards": {
+    "first_clear": [
+      { "type": "item", "id": "aurora_cache" },
+      { "type": "flag", "id": "solstice_explorer", "value": true }
+    ],
+    "daily": [
+      { "type": "xp", "value": 40 },
+      { "type": "coins", "value": 80 }
+    ]
+  }
+}
