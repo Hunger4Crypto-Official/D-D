@@ -898,6 +898,18 @@ export class TournamentManager {
        VALUES (?,?,?,?,?)`
     ).run(tournamentId, userId, placement, JSON.stringify(prizes), Date.now());
   }
+
+  getTournament(tournamentId: string) {
+    return this.activeTournaments.get(tournamentId) ?? null;
+  }
+
+  getBrackets(tournamentId: string) {
+    return this.brackets.get(tournamentId) ?? [];
+  }
+
+  getRegistrations(tournamentId: string): Set<string> {
+    return new Set(this.registrations.get(tournamentId) ?? []);
+  }
 }
 
 export const tournamentManager = new TournamentManager();

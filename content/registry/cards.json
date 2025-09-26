@@ -5,16 +5,5312 @@
       "name": "Infinite Recursion",
       "rarity": "epic",
       "type": "instant",
-      "cost": { "focus": 3 },
+      "cost": {
+        "focus": 3
+      },
       "effects": [
-        { "type": "buff", "id": "reroll_next", "value": 1 },
-        { "type": "flag", "id": "recursion_active", "value": true }
+        {
+          "type": "buff",
+          "id": "reroll_next",
+          "value": 1
+        },
+        {
+          "type": "flag",
+          "id": "recursion_active",
+          "value": true
+        }
       ],
-      "tags": ["dev", "logic", "instant"],
+      "tags": [
+        "dev",
+        "logic",
+        "instant"
+      ],
       "description": "Reroll your next failed action. If successful, draw another card.",
       "flavorText": "Stack overflow is just another kind of infinity.",
       "set": "genesis",
-      "requiresClass": ["dev"]
+      "requiresClass": [
+        "dev"
+      ]
+    },
+    "ledger_card_001": {
+      "id": "ledger_card_001",
+      "name": "Ledger Technique 001",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_001",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 001 to sway encounters.",
+      "flavorText": "Debug iteration 001 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_002": {
+      "id": "ledger_card_002",
+      "name": "Ledger Technique 002",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_002",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 002 to sway encounters.",
+      "flavorText": "Debug iteration 002 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_003": {
+      "id": "ledger_card_003",
+      "name": "Ledger Technique 003",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_003",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 003 to sway encounters.",
+      "flavorText": "Debug iteration 003 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_004": {
+      "id": "ledger_card_004",
+      "name": "Ledger Technique 004",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_004",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 004 to sway encounters.",
+      "flavorText": "Debug iteration 004 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_005": {
+      "id": "ledger_card_005",
+      "name": "Ledger Technique 005",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_005",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 005 to sway encounters.",
+      "flavorText": "Debug iteration 005 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_006": {
+      "id": "ledger_card_006",
+      "name": "Ledger Technique 006",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_006",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 006 to sway encounters.",
+      "flavorText": "Debug iteration 006 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_007": {
+      "id": "ledger_card_007",
+      "name": "Ledger Technique 007",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_007",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 007 to sway encounters.",
+      "flavorText": "Debug iteration 007 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_008": {
+      "id": "ledger_card_008",
+      "name": "Ledger Technique 008",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_008",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 008 to sway encounters.",
+      "flavorText": "Debug iteration 008 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_009": {
+      "id": "ledger_card_009",
+      "name": "Ledger Technique 009",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_009",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 009 to sway encounters.",
+      "flavorText": "Debug iteration 009 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_010": {
+      "id": "ledger_card_010",
+      "name": "Ledger Technique 010",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_010",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 010 to sway encounters.",
+      "flavorText": "Debug iteration 010 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_011": {
+      "id": "ledger_card_011",
+      "name": "Ledger Technique 011",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_011",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 011 to sway encounters.",
+      "flavorText": "Debug iteration 011 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_012": {
+      "id": "ledger_card_012",
+      "name": "Ledger Technique 012",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_012",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 012 to sway encounters.",
+      "flavorText": "Debug iteration 012 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_013": {
+      "id": "ledger_card_013",
+      "name": "Ledger Technique 013",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_013",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 013 to sway encounters.",
+      "flavorText": "Debug iteration 013 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_014": {
+      "id": "ledger_card_014",
+      "name": "Ledger Technique 014",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_014",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 014 to sway encounters.",
+      "flavorText": "Debug iteration 014 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_015": {
+      "id": "ledger_card_015",
+      "name": "Ledger Technique 015",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_015",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 015 to sway encounters.",
+      "flavorText": "Debug iteration 015 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_016": {
+      "id": "ledger_card_016",
+      "name": "Ledger Technique 016",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_016",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 016 to sway encounters.",
+      "flavorText": "Debug iteration 016 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_017": {
+      "id": "ledger_card_017",
+      "name": "Ledger Technique 017",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_017",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 017 to sway encounters.",
+      "flavorText": "Debug iteration 017 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_018": {
+      "id": "ledger_card_018",
+      "name": "Ledger Technique 018",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_018",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 018 to sway encounters.",
+      "flavorText": "Debug iteration 018 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_019": {
+      "id": "ledger_card_019",
+      "name": "Ledger Technique 019",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_019",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 019 to sway encounters.",
+      "flavorText": "Debug iteration 019 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_020": {
+      "id": "ledger_card_020",
+      "name": "Ledger Technique 020",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_020",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 020 to sway encounters.",
+      "flavorText": "Debug iteration 020 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_021": {
+      "id": "ledger_card_021",
+      "name": "Ledger Technique 021",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_021",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 021 to sway encounters.",
+      "flavorText": "Debug iteration 021 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_022": {
+      "id": "ledger_card_022",
+      "name": "Ledger Technique 022",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_022",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 022 to sway encounters.",
+      "flavorText": "Debug iteration 022 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_023": {
+      "id": "ledger_card_023",
+      "name": "Ledger Technique 023",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_023",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 023 to sway encounters.",
+      "flavorText": "Debug iteration 023 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_024": {
+      "id": "ledger_card_024",
+      "name": "Ledger Technique 024",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_024",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 024 to sway encounters.",
+      "flavorText": "Debug iteration 024 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_025": {
+      "id": "ledger_card_025",
+      "name": "Ledger Technique 025",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_025",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 025 to sway encounters.",
+      "flavorText": "Debug iteration 025 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_026": {
+      "id": "ledger_card_026",
+      "name": "Ledger Technique 026",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_026",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 026 to sway encounters.",
+      "flavorText": "Debug iteration 026 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_027": {
+      "id": "ledger_card_027",
+      "name": "Ledger Technique 027",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_027",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 027 to sway encounters.",
+      "flavorText": "Debug iteration 027 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_028": {
+      "id": "ledger_card_028",
+      "name": "Ledger Technique 028",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_028",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 028 to sway encounters.",
+      "flavorText": "Debug iteration 028 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_029": {
+      "id": "ledger_card_029",
+      "name": "Ledger Technique 029",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_029",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 029 to sway encounters.",
+      "flavorText": "Debug iteration 029 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_030": {
+      "id": "ledger_card_030",
+      "name": "Ledger Technique 030",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_030",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 030 to sway encounters.",
+      "flavorText": "Debug iteration 030 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_031": {
+      "id": "ledger_card_031",
+      "name": "Ledger Technique 031",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_031",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 031 to sway encounters.",
+      "flavorText": "Debug iteration 031 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_032": {
+      "id": "ledger_card_032",
+      "name": "Ledger Technique 032",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_032",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 032 to sway encounters.",
+      "flavorText": "Debug iteration 032 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_033": {
+      "id": "ledger_card_033",
+      "name": "Ledger Technique 033",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_033",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 033 to sway encounters.",
+      "flavorText": "Debug iteration 033 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_034": {
+      "id": "ledger_card_034",
+      "name": "Ledger Technique 034",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_034",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 034 to sway encounters.",
+      "flavorText": "Debug iteration 034 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_035": {
+      "id": "ledger_card_035",
+      "name": "Ledger Technique 035",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_035",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 035 to sway encounters.",
+      "flavorText": "Debug iteration 035 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_036": {
+      "id": "ledger_card_036",
+      "name": "Ledger Technique 036",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_036",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 036 to sway encounters.",
+      "flavorText": "Debug iteration 036 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_037": {
+      "id": "ledger_card_037",
+      "name": "Ledger Technique 037",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_037",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 037 to sway encounters.",
+      "flavorText": "Debug iteration 037 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_038": {
+      "id": "ledger_card_038",
+      "name": "Ledger Technique 038",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_038",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 038 to sway encounters.",
+      "flavorText": "Debug iteration 038 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_039": {
+      "id": "ledger_card_039",
+      "name": "Ledger Technique 039",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_039",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 039 to sway encounters.",
+      "flavorText": "Debug iteration 039 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_040": {
+      "id": "ledger_card_040",
+      "name": "Ledger Technique 040",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_040",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 040 to sway encounters.",
+      "flavorText": "Debug iteration 040 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_041": {
+      "id": "ledger_card_041",
+      "name": "Ledger Technique 041",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_041",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 041 to sway encounters.",
+      "flavorText": "Debug iteration 041 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_042": {
+      "id": "ledger_card_042",
+      "name": "Ledger Technique 042",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_042",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 042 to sway encounters.",
+      "flavorText": "Debug iteration 042 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_043": {
+      "id": "ledger_card_043",
+      "name": "Ledger Technique 043",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_043",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 043 to sway encounters.",
+      "flavorText": "Debug iteration 043 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_044": {
+      "id": "ledger_card_044",
+      "name": "Ledger Technique 044",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_044",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 044 to sway encounters.",
+      "flavorText": "Debug iteration 044 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_045": {
+      "id": "ledger_card_045",
+      "name": "Ledger Technique 045",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_045",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 045 to sway encounters.",
+      "flavorText": "Debug iteration 045 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_046": {
+      "id": "ledger_card_046",
+      "name": "Ledger Technique 046",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_046",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 046 to sway encounters.",
+      "flavorText": "Debug iteration 046 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_047": {
+      "id": "ledger_card_047",
+      "name": "Ledger Technique 047",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_047",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 047 to sway encounters.",
+      "flavorText": "Debug iteration 047 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_048": {
+      "id": "ledger_card_048",
+      "name": "Ledger Technique 048",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_048",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 048 to sway encounters.",
+      "flavorText": "Debug iteration 048 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_049": {
+      "id": "ledger_card_049",
+      "name": "Ledger Technique 049",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_049",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 049 to sway encounters.",
+      "flavorText": "Debug iteration 049 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_050": {
+      "id": "ledger_card_050",
+      "name": "Ledger Technique 050",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_050",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 050 to sway encounters.",
+      "flavorText": "Debug iteration 050 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_051": {
+      "id": "ledger_card_051",
+      "name": "Ledger Technique 051",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_051",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 051 to sway encounters.",
+      "flavorText": "Debug iteration 051 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_052": {
+      "id": "ledger_card_052",
+      "name": "Ledger Technique 052",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_052",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 052 to sway encounters.",
+      "flavorText": "Debug iteration 052 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_053": {
+      "id": "ledger_card_053",
+      "name": "Ledger Technique 053",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_053",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 053 to sway encounters.",
+      "flavorText": "Debug iteration 053 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_054": {
+      "id": "ledger_card_054",
+      "name": "Ledger Technique 054",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_054",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 054 to sway encounters.",
+      "flavorText": "Debug iteration 054 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_055": {
+      "id": "ledger_card_055",
+      "name": "Ledger Technique 055",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_055",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 055 to sway encounters.",
+      "flavorText": "Debug iteration 055 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_056": {
+      "id": "ledger_card_056",
+      "name": "Ledger Technique 056",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_056",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 056 to sway encounters.",
+      "flavorText": "Debug iteration 056 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_057": {
+      "id": "ledger_card_057",
+      "name": "Ledger Technique 057",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_057",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 057 to sway encounters.",
+      "flavorText": "Debug iteration 057 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_058": {
+      "id": "ledger_card_058",
+      "name": "Ledger Technique 058",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_058",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 058 to sway encounters.",
+      "flavorText": "Debug iteration 058 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_059": {
+      "id": "ledger_card_059",
+      "name": "Ledger Technique 059",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_059",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 059 to sway encounters.",
+      "flavorText": "Debug iteration 059 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_060": {
+      "id": "ledger_card_060",
+      "name": "Ledger Technique 060",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_060",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 060 to sway encounters.",
+      "flavorText": "Debug iteration 060 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_061": {
+      "id": "ledger_card_061",
+      "name": "Ledger Technique 061",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_061",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 061 to sway encounters.",
+      "flavorText": "Debug iteration 061 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_062": {
+      "id": "ledger_card_062",
+      "name": "Ledger Technique 062",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_062",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 062 to sway encounters.",
+      "flavorText": "Debug iteration 062 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_063": {
+      "id": "ledger_card_063",
+      "name": "Ledger Technique 063",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_063",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 063 to sway encounters.",
+      "flavorText": "Debug iteration 063 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_064": {
+      "id": "ledger_card_064",
+      "name": "Ledger Technique 064",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_064",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 064 to sway encounters.",
+      "flavorText": "Debug iteration 064 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_065": {
+      "id": "ledger_card_065",
+      "name": "Ledger Technique 065",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_065",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 065 to sway encounters.",
+      "flavorText": "Debug iteration 065 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_066": {
+      "id": "ledger_card_066",
+      "name": "Ledger Technique 066",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_066",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 066 to sway encounters.",
+      "flavorText": "Debug iteration 066 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_067": {
+      "id": "ledger_card_067",
+      "name": "Ledger Technique 067",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_067",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 067 to sway encounters.",
+      "flavorText": "Debug iteration 067 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_068": {
+      "id": "ledger_card_068",
+      "name": "Ledger Technique 068",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_068",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 068 to sway encounters.",
+      "flavorText": "Debug iteration 068 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_069": {
+      "id": "ledger_card_069",
+      "name": "Ledger Technique 069",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_069",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 069 to sway encounters.",
+      "flavorText": "Debug iteration 069 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_070": {
+      "id": "ledger_card_070",
+      "name": "Ledger Technique 070",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_070",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 070 to sway encounters.",
+      "flavorText": "Debug iteration 070 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_071": {
+      "id": "ledger_card_071",
+      "name": "Ledger Technique 071",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_071",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 071 to sway encounters.",
+      "flavorText": "Debug iteration 071 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_072": {
+      "id": "ledger_card_072",
+      "name": "Ledger Technique 072",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_072",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 072 to sway encounters.",
+      "flavorText": "Debug iteration 072 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_073": {
+      "id": "ledger_card_073",
+      "name": "Ledger Technique 073",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_073",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 073 to sway encounters.",
+      "flavorText": "Debug iteration 073 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_074": {
+      "id": "ledger_card_074",
+      "name": "Ledger Technique 074",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_074",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 074 to sway encounters.",
+      "flavorText": "Debug iteration 074 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_075": {
+      "id": "ledger_card_075",
+      "name": "Ledger Technique 075",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_075",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 075 to sway encounters.",
+      "flavorText": "Debug iteration 075 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_076": {
+      "id": "ledger_card_076",
+      "name": "Ledger Technique 076",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_076",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 076 to sway encounters.",
+      "flavorText": "Debug iteration 076 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_077": {
+      "id": "ledger_card_077",
+      "name": "Ledger Technique 077",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_077",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 077 to sway encounters.",
+      "flavorText": "Debug iteration 077 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_078": {
+      "id": "ledger_card_078",
+      "name": "Ledger Technique 078",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_078",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 078 to sway encounters.",
+      "flavorText": "Debug iteration 078 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_079": {
+      "id": "ledger_card_079",
+      "name": "Ledger Technique 079",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_079",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 079 to sway encounters.",
+      "flavorText": "Debug iteration 079 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_080": {
+      "id": "ledger_card_080",
+      "name": "Ledger Technique 080",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_080",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 080 to sway encounters.",
+      "flavorText": "Debug iteration 080 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_081": {
+      "id": "ledger_card_081",
+      "name": "Ledger Technique 081",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_081",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 081 to sway encounters.",
+      "flavorText": "Debug iteration 081 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_082": {
+      "id": "ledger_card_082",
+      "name": "Ledger Technique 082",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_082",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 082 to sway encounters.",
+      "flavorText": "Debug iteration 082 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_083": {
+      "id": "ledger_card_083",
+      "name": "Ledger Technique 083",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_083",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 083 to sway encounters.",
+      "flavorText": "Debug iteration 083 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_084": {
+      "id": "ledger_card_084",
+      "name": "Ledger Technique 084",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_084",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 084 to sway encounters.",
+      "flavorText": "Debug iteration 084 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_085": {
+      "id": "ledger_card_085",
+      "name": "Ledger Technique 085",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_085",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 085 to sway encounters.",
+      "flavorText": "Debug iteration 085 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_086": {
+      "id": "ledger_card_086",
+      "name": "Ledger Technique 086",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_086",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 086 to sway encounters.",
+      "flavorText": "Debug iteration 086 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_087": {
+      "id": "ledger_card_087",
+      "name": "Ledger Technique 087",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_087",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 087 to sway encounters.",
+      "flavorText": "Debug iteration 087 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_088": {
+      "id": "ledger_card_088",
+      "name": "Ledger Technique 088",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_088",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 088 to sway encounters.",
+      "flavorText": "Debug iteration 088 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_089": {
+      "id": "ledger_card_089",
+      "name": "Ledger Technique 089",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_089",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 089 to sway encounters.",
+      "flavorText": "Debug iteration 089 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_090": {
+      "id": "ledger_card_090",
+      "name": "Ledger Technique 090",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_090",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 090 to sway encounters.",
+      "flavorText": "Debug iteration 090 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_091": {
+      "id": "ledger_card_091",
+      "name": "Ledger Technique 091",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_091",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 091 to sway encounters.",
+      "flavorText": "Debug iteration 091 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_092": {
+      "id": "ledger_card_092",
+      "name": "Ledger Technique 092",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_092",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 092 to sway encounters.",
+      "flavorText": "Debug iteration 092 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_093": {
+      "id": "ledger_card_093",
+      "name": "Ledger Technique 093",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_093",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 093 to sway encounters.",
+      "flavorText": "Debug iteration 093 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_094": {
+      "id": "ledger_card_094",
+      "name": "Ledger Technique 094",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_094",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 094 to sway encounters.",
+      "flavorText": "Debug iteration 094 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_095": {
+      "id": "ledger_card_095",
+      "name": "Ledger Technique 095",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_095",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 095 to sway encounters.",
+      "flavorText": "Debug iteration 095 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_096": {
+      "id": "ledger_card_096",
+      "name": "Ledger Technique 096",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_096",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 096 to sway encounters.",
+      "flavorText": "Debug iteration 096 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_097": {
+      "id": "ledger_card_097",
+      "name": "Ledger Technique 097",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_097",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 097 to sway encounters.",
+      "flavorText": "Debug iteration 097 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_098": {
+      "id": "ledger_card_098",
+      "name": "Ledger Technique 098",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_098",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 098 to sway encounters.",
+      "flavorText": "Debug iteration 098 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_099": {
+      "id": "ledger_card_099",
+      "name": "Ledger Technique 099",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_099",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 099 to sway encounters.",
+      "flavorText": "Debug iteration 099 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_100": {
+      "id": "ledger_card_100",
+      "name": "Ledger Technique 100",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_100",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 100 to sway encounters.",
+      "flavorText": "Debug iteration 100 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_101": {
+      "id": "ledger_card_101",
+      "name": "Ledger Technique 101",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_101",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 101 to sway encounters.",
+      "flavorText": "Debug iteration 101 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_102": {
+      "id": "ledger_card_102",
+      "name": "Ledger Technique 102",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_102",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 102 to sway encounters.",
+      "flavorText": "Debug iteration 102 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_103": {
+      "id": "ledger_card_103",
+      "name": "Ledger Technique 103",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_103",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 103 to sway encounters.",
+      "flavorText": "Debug iteration 103 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_104": {
+      "id": "ledger_card_104",
+      "name": "Ledger Technique 104",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_104",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 104 to sway encounters.",
+      "flavorText": "Debug iteration 104 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_105": {
+      "id": "ledger_card_105",
+      "name": "Ledger Technique 105",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_105",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 105 to sway encounters.",
+      "flavorText": "Debug iteration 105 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_106": {
+      "id": "ledger_card_106",
+      "name": "Ledger Technique 106",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_106",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 106 to sway encounters.",
+      "flavorText": "Debug iteration 106 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_107": {
+      "id": "ledger_card_107",
+      "name": "Ledger Technique 107",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_107",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 107 to sway encounters.",
+      "flavorText": "Debug iteration 107 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_108": {
+      "id": "ledger_card_108",
+      "name": "Ledger Technique 108",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_108",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 108 to sway encounters.",
+      "flavorText": "Debug iteration 108 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_109": {
+      "id": "ledger_card_109",
+      "name": "Ledger Technique 109",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_109",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 109 to sway encounters.",
+      "flavorText": "Debug iteration 109 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_110": {
+      "id": "ledger_card_110",
+      "name": "Ledger Technique 110",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_110",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 110 to sway encounters.",
+      "flavorText": "Debug iteration 110 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_111": {
+      "id": "ledger_card_111",
+      "name": "Ledger Technique 111",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_111",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 111 to sway encounters.",
+      "flavorText": "Debug iteration 111 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_112": {
+      "id": "ledger_card_112",
+      "name": "Ledger Technique 112",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_112",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 112 to sway encounters.",
+      "flavorText": "Debug iteration 112 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_113": {
+      "id": "ledger_card_113",
+      "name": "Ledger Technique 113",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_113",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 113 to sway encounters.",
+      "flavorText": "Debug iteration 113 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_114": {
+      "id": "ledger_card_114",
+      "name": "Ledger Technique 114",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_114",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 114 to sway encounters.",
+      "flavorText": "Debug iteration 114 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_115": {
+      "id": "ledger_card_115",
+      "name": "Ledger Technique 115",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_115",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 115 to sway encounters.",
+      "flavorText": "Debug iteration 115 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_116": {
+      "id": "ledger_card_116",
+      "name": "Ledger Technique 116",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_116",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 116 to sway encounters.",
+      "flavorText": "Debug iteration 116 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_117": {
+      "id": "ledger_card_117",
+      "name": "Ledger Technique 117",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_117",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 117 to sway encounters.",
+      "flavorText": "Debug iteration 117 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_118": {
+      "id": "ledger_card_118",
+      "name": "Ledger Technique 118",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_118",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 118 to sway encounters.",
+      "flavorText": "Debug iteration 118 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_119": {
+      "id": "ledger_card_119",
+      "name": "Ledger Technique 119",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_119",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 119 to sway encounters.",
+      "flavorText": "Debug iteration 119 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_120": {
+      "id": "ledger_card_120",
+      "name": "Ledger Technique 120",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_120",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 120 to sway encounters.",
+      "flavorText": "Debug iteration 120 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_121": {
+      "id": "ledger_card_121",
+      "name": "Ledger Technique 121",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_121",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 121 to sway encounters.",
+      "flavorText": "Debug iteration 121 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_122": {
+      "id": "ledger_card_122",
+      "name": "Ledger Technique 122",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_122",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 122 to sway encounters.",
+      "flavorText": "Debug iteration 122 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_123": {
+      "id": "ledger_card_123",
+      "name": "Ledger Technique 123",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_123",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 123 to sway encounters.",
+      "flavorText": "Debug iteration 123 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_124": {
+      "id": "ledger_card_124",
+      "name": "Ledger Technique 124",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_124",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 124 to sway encounters.",
+      "flavorText": "Debug iteration 124 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_125": {
+      "id": "ledger_card_125",
+      "name": "Ledger Technique 125",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_125",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 125 to sway encounters.",
+      "flavorText": "Debug iteration 125 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_126": {
+      "id": "ledger_card_126",
+      "name": "Ledger Technique 126",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_126",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 126 to sway encounters.",
+      "flavorText": "Debug iteration 126 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_127": {
+      "id": "ledger_card_127",
+      "name": "Ledger Technique 127",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_127",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 127 to sway encounters.",
+      "flavorText": "Debug iteration 127 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_128": {
+      "id": "ledger_card_128",
+      "name": "Ledger Technique 128",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_128",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 128 to sway encounters.",
+      "flavorText": "Debug iteration 128 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_129": {
+      "id": "ledger_card_129",
+      "name": "Ledger Technique 129",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_129",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 129 to sway encounters.",
+      "flavorText": "Debug iteration 129 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_130": {
+      "id": "ledger_card_130",
+      "name": "Ledger Technique 130",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_130",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 130 to sway encounters.",
+      "flavorText": "Debug iteration 130 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_131": {
+      "id": "ledger_card_131",
+      "name": "Ledger Technique 131",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_131",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 131 to sway encounters.",
+      "flavorText": "Debug iteration 131 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_132": {
+      "id": "ledger_card_132",
+      "name": "Ledger Technique 132",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_132",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 132 to sway encounters.",
+      "flavorText": "Debug iteration 132 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_133": {
+      "id": "ledger_card_133",
+      "name": "Ledger Technique 133",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_133",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 133 to sway encounters.",
+      "flavorText": "Debug iteration 133 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_134": {
+      "id": "ledger_card_134",
+      "name": "Ledger Technique 134",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_134",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 134 to sway encounters.",
+      "flavorText": "Debug iteration 134 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_135": {
+      "id": "ledger_card_135",
+      "name": "Ledger Technique 135",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_135",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 135 to sway encounters.",
+      "flavorText": "Debug iteration 135 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_136": {
+      "id": "ledger_card_136",
+      "name": "Ledger Technique 136",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_136",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 136 to sway encounters.",
+      "flavorText": "Debug iteration 136 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_137": {
+      "id": "ledger_card_137",
+      "name": "Ledger Technique 137",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_137",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 137 to sway encounters.",
+      "flavorText": "Debug iteration 137 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_138": {
+      "id": "ledger_card_138",
+      "name": "Ledger Technique 138",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_138",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 138 to sway encounters.",
+      "flavorText": "Debug iteration 138 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_139": {
+      "id": "ledger_card_139",
+      "name": "Ledger Technique 139",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_139",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 139 to sway encounters.",
+      "flavorText": "Debug iteration 139 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_140": {
+      "id": "ledger_card_140",
+      "name": "Ledger Technique 140",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_140",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 140 to sway encounters.",
+      "flavorText": "Debug iteration 140 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_141": {
+      "id": "ledger_card_141",
+      "name": "Ledger Technique 141",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_141",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 141 to sway encounters.",
+      "flavorText": "Debug iteration 141 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_142": {
+      "id": "ledger_card_142",
+      "name": "Ledger Technique 142",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_142",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 142 to sway encounters.",
+      "flavorText": "Debug iteration 142 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_143": {
+      "id": "ledger_card_143",
+      "name": "Ledger Technique 143",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_143",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 143 to sway encounters.",
+      "flavorText": "Debug iteration 143 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_144": {
+      "id": "ledger_card_144",
+      "name": "Ledger Technique 144",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_144",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 144 to sway encounters.",
+      "flavorText": "Debug iteration 144 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_145": {
+      "id": "ledger_card_145",
+      "name": "Ledger Technique 145",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_145",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 145 to sway encounters.",
+      "flavorText": "Debug iteration 145 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_146": {
+      "id": "ledger_card_146",
+      "name": "Ledger Technique 146",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_146",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 146 to sway encounters.",
+      "flavorText": "Debug iteration 146 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_147": {
+      "id": "ledger_card_147",
+      "name": "Ledger Technique 147",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_147",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 147 to sway encounters.",
+      "flavorText": "Debug iteration 147 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_148": {
+      "id": "ledger_card_148",
+      "name": "Ledger Technique 148",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_148",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 148 to sway encounters.",
+      "flavorText": "Debug iteration 148 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_149": {
+      "id": "ledger_card_149",
+      "name": "Ledger Technique 149",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_149",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 149 to sway encounters.",
+      "flavorText": "Debug iteration 149 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_150": {
+      "id": "ledger_card_150",
+      "name": "Ledger Technique 150",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_150",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 150 to sway encounters.",
+      "flavorText": "Debug iteration 150 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_151": {
+      "id": "ledger_card_151",
+      "name": "Ledger Technique 151",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_151",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 151 to sway encounters.",
+      "flavorText": "Debug iteration 151 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_152": {
+      "id": "ledger_card_152",
+      "name": "Ledger Technique 152",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_152",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 152 to sway encounters.",
+      "flavorText": "Debug iteration 152 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_153": {
+      "id": "ledger_card_153",
+      "name": "Ledger Technique 153",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_153",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 153 to sway encounters.",
+      "flavorText": "Debug iteration 153 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_154": {
+      "id": "ledger_card_154",
+      "name": "Ledger Technique 154",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_154",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 154 to sway encounters.",
+      "flavorText": "Debug iteration 154 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_155": {
+      "id": "ledger_card_155",
+      "name": "Ledger Technique 155",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_155",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 155 to sway encounters.",
+      "flavorText": "Debug iteration 155 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_156": {
+      "id": "ledger_card_156",
+      "name": "Ledger Technique 156",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_156",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 156 to sway encounters.",
+      "flavorText": "Debug iteration 156 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_157": {
+      "id": "ledger_card_157",
+      "name": "Ledger Technique 157",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_157",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 157 to sway encounters.",
+      "flavorText": "Debug iteration 157 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_158": {
+      "id": "ledger_card_158",
+      "name": "Ledger Technique 158",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_158",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 158 to sway encounters.",
+      "flavorText": "Debug iteration 158 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_159": {
+      "id": "ledger_card_159",
+      "name": "Ledger Technique 159",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_159",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 159 to sway encounters.",
+      "flavorText": "Debug iteration 159 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_160": {
+      "id": "ledger_card_160",
+      "name": "Ledger Technique 160",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_160",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 160 to sway encounters.",
+      "flavorText": "Debug iteration 160 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_161": {
+      "id": "ledger_card_161",
+      "name": "Ledger Technique 161",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_161",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 161 to sway encounters.",
+      "flavorText": "Debug iteration 161 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_162": {
+      "id": "ledger_card_162",
+      "name": "Ledger Technique 162",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_162",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 162 to sway encounters.",
+      "flavorText": "Debug iteration 162 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_163": {
+      "id": "ledger_card_163",
+      "name": "Ledger Technique 163",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_163",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 163 to sway encounters.",
+      "flavorText": "Debug iteration 163 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_164": {
+      "id": "ledger_card_164",
+      "name": "Ledger Technique 164",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_164",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 164 to sway encounters.",
+      "flavorText": "Debug iteration 164 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_165": {
+      "id": "ledger_card_165",
+      "name": "Ledger Technique 165",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_165",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 165 to sway encounters.",
+      "flavorText": "Debug iteration 165 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_166": {
+      "id": "ledger_card_166",
+      "name": "Ledger Technique 166",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_166",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 166 to sway encounters.",
+      "flavorText": "Debug iteration 166 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_167": {
+      "id": "ledger_card_167",
+      "name": "Ledger Technique 167",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_167",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 167 to sway encounters.",
+      "flavorText": "Debug iteration 167 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_168": {
+      "id": "ledger_card_168",
+      "name": "Ledger Technique 168",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_168",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 168 to sway encounters.",
+      "flavorText": "Debug iteration 168 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_169": {
+      "id": "ledger_card_169",
+      "name": "Ledger Technique 169",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_169",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 169 to sway encounters.",
+      "flavorText": "Debug iteration 169 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_170": {
+      "id": "ledger_card_170",
+      "name": "Ledger Technique 170",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_170",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 170 to sway encounters.",
+      "flavorText": "Debug iteration 170 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_171": {
+      "id": "ledger_card_171",
+      "name": "Ledger Technique 171",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_171",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 171 to sway encounters.",
+      "flavorText": "Debug iteration 171 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_172": {
+      "id": "ledger_card_172",
+      "name": "Ledger Technique 172",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_172",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 172 to sway encounters.",
+      "flavorText": "Debug iteration 172 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_173": {
+      "id": "ledger_card_173",
+      "name": "Ledger Technique 173",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_173",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 173 to sway encounters.",
+      "flavorText": "Debug iteration 173 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_174": {
+      "id": "ledger_card_174",
+      "name": "Ledger Technique 174",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_174",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 174 to sway encounters.",
+      "flavorText": "Debug iteration 174 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_175": {
+      "id": "ledger_card_175",
+      "name": "Ledger Technique 175",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_175",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 175 to sway encounters.",
+      "flavorText": "Debug iteration 175 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_176": {
+      "id": "ledger_card_176",
+      "name": "Ledger Technique 176",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_176",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 176 to sway encounters.",
+      "flavorText": "Debug iteration 176 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_177": {
+      "id": "ledger_card_177",
+      "name": "Ledger Technique 177",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_177",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 177 to sway encounters.",
+      "flavorText": "Debug iteration 177 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_178": {
+      "id": "ledger_card_178",
+      "name": "Ledger Technique 178",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_178",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 178 to sway encounters.",
+      "flavorText": "Debug iteration 178 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_179": {
+      "id": "ledger_card_179",
+      "name": "Ledger Technique 179",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_179",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 179 to sway encounters.",
+      "flavorText": "Debug iteration 179 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_180": {
+      "id": "ledger_card_180",
+      "name": "Ledger Technique 180",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_180",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 180 to sway encounters.",
+      "flavorText": "Debug iteration 180 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_181": {
+      "id": "ledger_card_181",
+      "name": "Ledger Technique 181",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_181",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 181 to sway encounters.",
+      "flavorText": "Debug iteration 181 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_182": {
+      "id": "ledger_card_182",
+      "name": "Ledger Technique 182",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_182",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 182 to sway encounters.",
+      "flavorText": "Debug iteration 182 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_183": {
+      "id": "ledger_card_183",
+      "name": "Ledger Technique 183",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_183",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 183 to sway encounters.",
+      "flavorText": "Debug iteration 183 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_184": {
+      "id": "ledger_card_184",
+      "name": "Ledger Technique 184",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_184",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 184 to sway encounters.",
+      "flavorText": "Debug iteration 184 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_185": {
+      "id": "ledger_card_185",
+      "name": "Ledger Technique 185",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_185",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 185 to sway encounters.",
+      "flavorText": "Debug iteration 185 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_186": {
+      "id": "ledger_card_186",
+      "name": "Ledger Technique 186",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_186",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 186 to sway encounters.",
+      "flavorText": "Debug iteration 186 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_187": {
+      "id": "ledger_card_187",
+      "name": "Ledger Technique 187",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_187",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 187 to sway encounters.",
+      "flavorText": "Debug iteration 187 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_188": {
+      "id": "ledger_card_188",
+      "name": "Ledger Technique 188",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_188",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 188 to sway encounters.",
+      "flavorText": "Debug iteration 188 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_189": {
+      "id": "ledger_card_189",
+      "name": "Ledger Technique 189",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_189",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 189 to sway encounters.",
+      "flavorText": "Debug iteration 189 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_190": {
+      "id": "ledger_card_190",
+      "name": "Ledger Technique 190",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_190",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 190 to sway encounters.",
+      "flavorText": "Debug iteration 190 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_191": {
+      "id": "ledger_card_191",
+      "name": "Ledger Technique 191",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_191",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 191 to sway encounters.",
+      "flavorText": "Debug iteration 191 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_192": {
+      "id": "ledger_card_192",
+      "name": "Ledger Technique 192",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_192",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 192 to sway encounters.",
+      "flavorText": "Debug iteration 192 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_193": {
+      "id": "ledger_card_193",
+      "name": "Ledger Technique 193",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_193",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 193 to sway encounters.",
+      "flavorText": "Debug iteration 193 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_194": {
+      "id": "ledger_card_194",
+      "name": "Ledger Technique 194",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_194",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 194 to sway encounters.",
+      "flavorText": "Debug iteration 194 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_195": {
+      "id": "ledger_card_195",
+      "name": "Ledger Technique 195",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_195",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 195 to sway encounters.",
+      "flavorText": "Debug iteration 195 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_196": {
+      "id": "ledger_card_196",
+      "name": "Ledger Technique 196",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_196",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 196 to sway encounters.",
+      "flavorText": "Debug iteration 196 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_197": {
+      "id": "ledger_card_197",
+      "name": "Ledger Technique 197",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_197",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 197 to sway encounters.",
+      "flavorText": "Debug iteration 197 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_198": {
+      "id": "ledger_card_198",
+      "name": "Ledger Technique 198",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_198",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 198 to sway encounters.",
+      "flavorText": "Debug iteration 198 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_199": {
+      "id": "ledger_card_199",
+      "name": "Ledger Technique 199",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_199",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 199 to sway encounters.",
+      "flavorText": "Debug iteration 199 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_200": {
+      "id": "ledger_card_200",
+      "name": "Ledger Technique 200",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_200",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 200 to sway encounters.",
+      "flavorText": "Debug iteration 200 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_201": {
+      "id": "ledger_card_201",
+      "name": "Ledger Technique 201",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_201",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 201 to sway encounters.",
+      "flavorText": "Debug iteration 201 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_202": {
+      "id": "ledger_card_202",
+      "name": "Ledger Technique 202",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_202",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 202 to sway encounters.",
+      "flavorText": "Debug iteration 202 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_203": {
+      "id": "ledger_card_203",
+      "name": "Ledger Technique 203",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_203",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 203 to sway encounters.",
+      "flavorText": "Debug iteration 203 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_204": {
+      "id": "ledger_card_204",
+      "name": "Ledger Technique 204",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_204",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 204 to sway encounters.",
+      "flavorText": "Debug iteration 204 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_205": {
+      "id": "ledger_card_205",
+      "name": "Ledger Technique 205",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_205",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 205 to sway encounters.",
+      "flavorText": "Debug iteration 205 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_206": {
+      "id": "ledger_card_206",
+      "name": "Ledger Technique 206",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_206",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 206 to sway encounters.",
+      "flavorText": "Debug iteration 206 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_207": {
+      "id": "ledger_card_207",
+      "name": "Ledger Technique 207",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_207",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 207 to sway encounters.",
+      "flavorText": "Debug iteration 207 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_208": {
+      "id": "ledger_card_208",
+      "name": "Ledger Technique 208",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_208",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 208 to sway encounters.",
+      "flavorText": "Debug iteration 208 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_209": {
+      "id": "ledger_card_209",
+      "name": "Ledger Technique 209",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_209",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 209 to sway encounters.",
+      "flavorText": "Debug iteration 209 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_210": {
+      "id": "ledger_card_210",
+      "name": "Ledger Technique 210",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_210",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 210 to sway encounters.",
+      "flavorText": "Debug iteration 210 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_211": {
+      "id": "ledger_card_211",
+      "name": "Ledger Technique 211",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_211",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 211 to sway encounters.",
+      "flavorText": "Debug iteration 211 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_212": {
+      "id": "ledger_card_212",
+      "name": "Ledger Technique 212",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_212",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 212 to sway encounters.",
+      "flavorText": "Debug iteration 212 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_213": {
+      "id": "ledger_card_213",
+      "name": "Ledger Technique 213",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_213",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 213 to sway encounters.",
+      "flavorText": "Debug iteration 213 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_214": {
+      "id": "ledger_card_214",
+      "name": "Ledger Technique 214",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_214",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 214 to sway encounters.",
+      "flavorText": "Debug iteration 214 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_215": {
+      "id": "ledger_card_215",
+      "name": "Ledger Technique 215",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_215",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 215 to sway encounters.",
+      "flavorText": "Debug iteration 215 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_216": {
+      "id": "ledger_card_216",
+      "name": "Ledger Technique 216",
+      "rarity": "uncommon",
+      "type": "instant",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_216",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "instant",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 216 to sway encounters.",
+      "flavorText": "Debug iteration 216 of the seasonal toolkit.",
+      "set": "genesis"
+    },
+    "ledger_card_217": {
+      "id": "ledger_card_217",
+      "name": "Ledger Technique 217",
+      "rarity": "rare",
+      "type": "ritual",
+      "cost": {
+        "focus": 2
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_217",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "ritual",
+        "ledger",
+        "raid"
+      ],
+      "description": "Deploys ledger algorithm 217 to sway encounters.",
+      "flavorText": "Debug iteration 217 of the seasonal toolkit.",
+      "set": "raid"
+    },
+    "ledger_card_218": {
+      "id": "ledger_card_218",
+      "name": "Ledger Technique 218",
+      "rarity": "epic",
+      "type": "tech",
+      "cost": {
+        "focus": 3
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_218",
+          "value": 3
+        }
+      ],
+      "tags": [
+        "tech",
+        "ledger",
+        "seasonal"
+      ],
+      "description": "Deploys ledger algorithm 218 to sway encounters.",
+      "flavorText": "Debug iteration 218 of the seasonal toolkit.",
+      "set": "seasonal"
+    },
+    "ledger_card_219": {
+      "id": "ledger_card_219",
+      "name": "Ledger Technique 219",
+      "rarity": "legendary",
+      "type": "support",
+      "cost": {
+        "focus": 4
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_219",
+          "value": 1
+        }
+      ],
+      "tags": [
+        "support",
+        "ledger",
+        "pvp"
+      ],
+      "description": "Deploys ledger algorithm 219 to sway encounters.",
+      "flavorText": "Debug iteration 219 of the seasonal toolkit.",
+      "set": "pvp"
+    },
+    "ledger_card_220": {
+      "id": "ledger_card_220",
+      "name": "Ledger Technique 220",
+      "rarity": "common",
+      "type": "skill",
+      "cost": {
+        "focus": 1
+      },
+      "effects": [
+        {
+          "type": "buff",
+          "id": "technique_220",
+          "value": 2
+        }
+      ],
+      "tags": [
+        "skill",
+        "ledger",
+        "genesis"
+      ],
+      "description": "Deploys ledger algorithm 220 to sway encounters.",
+      "flavorText": "Debug iteration 220 of the seasonal toolkit.",
+      "set": "genesis"
     }
   }
 }

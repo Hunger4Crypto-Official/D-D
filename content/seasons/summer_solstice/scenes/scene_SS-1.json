@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "content_id": "seasons/summer_solstice",
+  "book_id": "solstice_radiance",
+  "scene_id": "SS-1",
+  "title": "Solar Engine Defense",
+  "narration": "The solar engine that powers the ledger city draws solstice light into a spinning array. Sun-gremlins scramble to keep the mirrors aligned as prismatic raiders attempt to siphon the energy. The party must defend the engine and calibrate the mirrors before the timer expires.",
+  "rounds": [
+    {
+      "round_id": "SS-1-R1",
+      "description": "Calibrate the mirrors and repel invaders.",
+      "actions": [
+        {
+          "id": "align_mirror",
+          "label": "Align Solar Mirrors",
+          "roll": { "kind": "phi_d20", "tags": ["tech", "ritual"] },
+          "outcomes": {
+            "crit_success": {
+              "effects": [
+                { "type": "xp", "value": 80 },
+                { "type": "flag", "id": "mirror_overcharge", "value": true }
+              ],
+              "narration": "The mirrors flare brilliantly, overcharging the solar engine."
+            },
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 50 }
+              ],
+              "narration": "You lock the mirrors in place and stabilize the engine."
+            },
+            "fail": {
+              "effects": [
+                { "type": "focus", "op": "-", "value": 2 }
+              ],
+              "narration": "The mirror slips, scattering heat across the plaza."
+            }
+          }
+        },
+        {
+          "id": "repel_raid",
+          "label": "Repel Prismatic Raiders",
+          "roll": { "kind": "phi_d20", "tags": ["martial", "burst"] },
+          "outcomes": {
+            "success": {
+              "effects": [
+                { "type": "xp", "value": 45 },
+                { "type": "coins", "value": 70 }
+              ],
+              "narration": "You fend off the raiders, scattering prism shards you quickly collect."
+            },
+            "fail": {
+              "effects": [
+                { "type": "hp", "op": "-", "value": 6 }
+              ],
+              "narration": "The raiders nick the engine, causing a flare backlash."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "limited_rewards": {
+    "first_clear": [
+      { "type": "item", "id": "solstice_aegis" },
+      { "type": "flag", "id": "solar_engine_defense", "value": true }
+    ],
+    "weekly": [
+      { "type": "coins", "value": 120 },
+      { "type": "xp", "value": 60 }
+    ]
+  }
+}

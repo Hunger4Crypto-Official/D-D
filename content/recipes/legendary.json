@@ -1,0 +1,49 @@
+{
+  "reality_weaver_staff": {
+    "materials": {
+      "ancient_ore": 10,
+      "gremlin_essence": 50,
+      "custodian_stone": 1,
+      "consensus_fragment": 100
+    },
+    "requirements": {
+      "crafting_level": 10,
+      "discovered_recipe": true
+    },
+    "outcomes": {
+      "item": "reality_weaver_staff",
+      "bonus_flags": ["legendary_crafted"]
+    }
+  },
+  "custodian_plate": {
+    "materials": {
+      "custodian_stone": 4,
+      "stone_heart": 1,
+      "reinforced_alloy": 25
+    },
+    "requirements": {
+      "crafting_level": 9,
+      "raid_clear": "boss.custodian"
+    },
+    "outcomes": {
+      "item": "custodian_plate",
+      "bonus_flags": ["raid_defender"]
+    }
+  },
+  "ledger_phylactery": {
+    "materials": {
+      "eternal_ledger_page": 3,
+      "astral_ink": 20,
+      "void_glass": 12
+    },
+    "requirements": {
+      "crafting_level": 11,
+      "discovered_recipe": true,
+      "quest_completed": "the_ledger_prophecy"
+    },
+    "outcomes": {
+      "item": "ledger_phylactery",
+      "bonus_flags": ["legendary_crafted", "knowledge_keeper"]
+    }
+  }
+}

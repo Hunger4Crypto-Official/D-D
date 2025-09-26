@@ -1,0 +1,48 @@
+{
+  "the_ledger_prophecy": {
+    "title": "The Ledger Prophecy",
+    "chapters": [
+      {
+        "id": "awakening",
+        "name": "Awakening",
+        "scenes": ["1.1", "1.7"],
+        "summary": "Discover the first whispers of the ledger prophecy and rally a team of gremlins to investigate.",
+        "rewards": {
+          "items": ["prophecy_fragment"],
+          "xp": 200
+        }
+      },
+      {
+        "id": "the_fork",
+        "name": "The Fork",
+        "scenes": ["2.1", "2.2", "2.3", "2.4"],
+        "choices_matter": true,
+        "summary": "Navigate diverging paths and decide whether to ally with the consensus keepers or the rogue archivists.",
+        "rewards": {
+          "items": ["forked_token"],
+          "coins": 300
+        }
+      },
+      {
+        "id": "convergence",
+        "name": "Convergence",
+        "scenes": ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7"],
+        "multiple_endings": true,
+        "summary": "Return to the vault to confront the converging futures and prepare for the Stone Custodian.",
+        "rewards": {
+          "items": ["convergence_cache"],
+          "xp": 500,
+          "flags": ["legendary_crafted"]
+        }
+      }
+    ],
+    "epilogue": {
+      "scenes": ["boss.custodian"],
+      "summary": "Face the Stone Custodian in a raid-scale confrontation to secure the ledger prophecy.",
+      "rewards": {
+        "items": ["custodian_seal"],
+        "xp": 800
+      }
+    }
+  }
+}

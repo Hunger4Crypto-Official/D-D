@@ -22,7 +22,7 @@ export type RoomType =
 export type DecorationSlot = 'floor' | 'wall' | 'ceiling' | 'furniture' | 'lighting' | 'special';
 
 interface RoomEffect {
-  type: 'passive' | 'active' | 'ambient';
+  type: 'passive' | 'active' | 'ambient' | 'visitor';
   effect: Effect;
   cooldown?: number;
   lastActivated?: number;
@@ -33,6 +33,7 @@ interface Decoration {
   name: string;
   slot: DecorationSlot;
   rarity: string;
+  description?: string;
   effects?: RoomEffect[];
   requirements?: { level?: number; achievements?: string[] };
 }
@@ -47,15 +48,19 @@ export interface VaultRoom {
   activeEffects: RoomEffect[];
   visitors: { userId: string; timestamp: number }[];
   lastUpdated: number;
+  isPublic: boolean;
+  customName?: string | null;
 }
 
 interface RoomDefinition {
   name: string;
   description: string;
+  emoji?: string;
   baseCapacity: number;
   maxLevel: number;
   baseEffects: RoomEffect[];
   upgrades: RoomUpgrade[];
+  unlockRequirement?: { achievements?: string[]; quest?: string };
 }
 
 interface RoomUpgrade {
@@ -235,6 +240,8 @@ export class VaultManager {
         activeEffects: JSON.parse(row.effects_json || '[]'),
         visitors: JSON.parse(row.visitors_json || '[]'),
         lastUpdated: row.last_updated,
+        isPublic: Boolean(row.is_public),
+        customName: row.custom_name ?? null,
       };
 
       const rooms = this.vaultCache.get(room.userId) || [];
@@ -466,6 +473,7 @@ export class VaultManager {
       activeEffects: definition.baseEffects,
       visitors: [],
       lastUpdated: Date.now(),
+      isPublic: false,
     };
   }
 
@@ -781,18 +789,19 @@ export class VaultRoomManager {
 
   private applyEffect(userId: string, effect: Effect) {
     // Apply the effect to the user (coins, HP, etc.)
+    const value = typeof effect.value === 'number' ? effect.value : Number(effect.value ?? 0);
     switch (effect.type) {
       case 'coins':
-        this.addCoinsToUser(userId, effect.value);
+        this.addCoinsToUser(userId, value);
         break;
       case 'hp':
         if (effect.op === '+') {
-          this.healUser(userId, effect.value);
+          this.healUser(userId, value);
         }
         break;
       case 'focus':
         if (effect.op === '+') {
-          this.restoreFocusToUser(userId, effect.value);
+          this.restoreFocusToUser(userId, value);
         }
         break;
       // Handle other effect types...
@@ -1004,7 +1013,7 @@ export class VaultRoomManager {
     
     const embed = new EmbedBuilder()
       .setTitle('🏛️ Your Vault Rooms')
-      .setColor('#8B5CF6')
+      .setColor(0x8b5cf6)
       .setDescription('Manage your personal vault spaces');
 
     if (rooms.length === 0) {

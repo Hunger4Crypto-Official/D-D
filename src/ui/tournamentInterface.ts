@@ -11,6 +11,7 @@ import {
 import { nanoid } from 'nanoid';
 import db from '../persistence/db.js';
 import { tournamentManager } from '../systems/tournament/tournamentManager.js';
+import type { Effect } from '../models.js';
 
 interface TournamentConfig {
   name: string;
@@ -100,7 +101,7 @@ export class TournamentInterface {
       .setColor(0xffd700);
 
     if (active.length > 0) {
-      const activeList = active.map(t => 
+      const activeList = active.map((t: any) =>
         `**${t.name}** - Round ${t.current_round}/${t.total_rounds}\n` +
         `⏱️ Started <t:${Math.floor(t.start_time / 1000)}:R> | ${t.participants} players`
       ).join('\n\n');
@@ -108,7 +109,7 @@ export class TournamentInterface {
     }
 
     if (upcoming.length > 0) {
-      const upcomingList = upcoming.map(t => 
+      const upcomingList = upcoming.map((t: any) =>
         `**${t.name}** (${t.format})\n` +
         `🕒 Starts <t:${Math.floor(t.start_time / 1000)}:R>\n` +
         `💰 Entry: ${this.formatCost(t.entry_fee)}\n` +
@@ -148,7 +149,7 @@ export class TournamentInterface {
       .setCustomId('tournament:join')
       .setPlaceholder('Join a tournament...')
       .addOptions(
-        upcoming.map(t => ({
+        upcoming.map((t: any) => ({
           label: t.name,
           description: `${t.format} | Entry: ${this.formatCost(t.entry_fee)} | ${t.registered}/${t.max_participants}`,
           value: t.tournament_id,
@@ -357,10 +358,180 @@ export class TournamentInterface {
     // Show completed rounds summary
     for (let round = 1; round < tournament.currentRound; round++) {
       const matches = roundMatches.get(round) || [];
+      if (matches.length === 0) continue;
+      const summary = matches
+        .map(match => {
+          const winner = match.winner ? `<@${match.winner}>` : '—';
+          const score = match.scores ? `${match.scores.player1}-${match.scores.player2}` : '0-0';
+          return `${match.matchId}: ${winner} (${score})`;
+        })
+        .join('\n');
+
+      embed.addFields({
+        name: `✅ Round ${round} Results`,
+        value: summary,
+        inline: false
+      });
+    }
+
+    const upcoming: string[] = [];
+    for (let round = tournament.currentRound + 1; round <= tournament.totalRounds; round++) {
+      const matches = roundMatches.get(round) || [];
       if (matches.length > 0) {
-        const winners = matches
-          .filter(m => m.winner)
-          .map(m => `<@${m.winner}>`)
-          .join(', ');
-        
-        embed.ad
+        upcoming.push(`Round ${round}: ${matches.length} matches scheduled`);
+      }
+    }
+    if (upcoming.length > 0) {
+      embed.addFields({
+        name: '🗓️ Upcoming Rounds',
+        value: upcoming.join('\n'),
+        inline: false
+      });
+    }
+
+    return { embed, components: [] };
+  }
+
+  private formatCost(cost?: { coins?: number; gems?: number; fragments?: number }): string {
+    if (!cost || (!cost.coins && !cost.gems && !cost.fragments)) {
+      return 'Free Entry';
+    }
+    const parts: string[] = [];
+    if (cost.coins) parts.push(`${cost.coins.toLocaleString()} coins`);
+    if (cost.gems) parts.push(`${cost.gems.toLocaleString()} gems`);
+    if (cost.fragments) parts.push(`${cost.fragments.toLocaleString()} fragments`);
+    return parts.join(' + ');
+  }
+
+  private formatPrize(prize: { coins?: number; gems?: number; items?: string[] }): string {
+    const pieces: string[] = [];
+    if (prize.coins) pieces.push(`${prize.coins.toLocaleString()} coins`);
+    if (prize.gems) pieces.push(`${prize.gems.toLocaleString()} gems`);
+    if (prize.items?.length) pieces.push(prize.items.join(', '));
+    return pieces.join(' + ') || 'Bragging rights';
+  }
+
+  private formatAllPrizes(prizes: TournamentConfig['prizes']): string {
+    return [
+      `🥇 ${this.formatPrize(prizes.first)}`,
+      `🥈 ${this.formatPrize(prizes.second)}`,
+      `🥉 ${this.formatPrize(prizes.third)}`
+    ].join('\n');
+  }
+
+  private convertPrizesToEffects(prize: { coins?: number; gems?: number; items?: string[] }): Effect[] {
+    const effects: Effect[] = [];
+    if (prize.coins) effects.push({ type: 'coins', value: prize.coins });
+    if (prize.gems) effects.push({ type: 'gem', value: prize.gems });
+    if (prize.items) {
+      for (const item of prize.items) {
+        effects.push({ type: 'item', id: item });
+      }
+    }
+    return effects;
+  }
+
+  private canCreateTournament(member: any): boolean {
+    if (!member) return true;
+    if (typeof member.permissions?.has === 'function') {
+      return member.permissions.has('ManageGuild') || member.permissions.has('Administrator');
+    }
+    return true;
+  }
+
+  private getTournamentEmoji(format: TournamentConfig['format']): string {
+    switch (format) {
+      case 'single_elimination':
+        return '⚔️';
+      case 'double_elimination':
+        return '🌀';
+      case 'round_robin':
+        return '🔁';
+      case 'swiss':
+        return '🇨🇭';
+      default:
+        return '🎮';
+    }
+  }
+
+  private async showSchedule(message: any) {
+    const upcoming = await this.getUpcomingTournaments();
+    if (upcoming.length === 0) {
+      return message.reply('📅 No scheduled tournaments. Use the creator to plan one!');
+    }
+
+    const embed = new EmbedBuilder()
+      .setTitle('📅 Tournament Schedule')
+      .setColor(0x3498db);
+
+    upcoming.forEach((t: any) => {
+      embed.addFields({
+        name: `${t.name} (${t.format.replace('_', ' ')})`,
+        value: `Starts <t:${Math.floor(t.start_time / 1000)}:F>\nRegistered: ${t.registered}/${t.max_participants}`,
+        inline: false
+      });
+    });
+
+    return message.reply({ embeds: [embed] });
+  }
+
+  private async showTournamentHelp(message: any) {
+    const embed = new EmbedBuilder()
+      .setTitle('🏟️ Tournament Commands')
+      .setDescription('Use these commands to manage Ledger Legends tournaments:')
+      .addFields(
+        { name: '`/tournament list`', value: 'Show active and upcoming tournaments.' },
+        { name: '`/tournament create [preset]`', value: 'Create a new event using presets.' },
+        { name: '`/tournament join <id>`', value: 'Register for an event if slots are open.' },
+        { name: '`/tournament bracket <id>`', value: 'View the current bracket for an event.' }
+      )
+      .setColor(0x95a5a6);
+
+    return message.reply({ embeds: [embed] });
+  }
+
+  private async getActiveTournaments() {
+    const stmt = db.prepare(
+      `SELECT t.*, COUNT(r.user_id) AS registered
+       FROM tournaments t
+       LEFT JOIN tournament_registrations r ON r.tournament_id = t.tournament_id
+       WHERE t.status IN ('registration', 'in_progress')
+       GROUP BY t.tournament_id
+       ORDER BY t.start_time DESC
+       LIMIT 10`
+    );
+    return stmt.all();
+  }
+
+  private async getUpcomingTournaments() {
+    const stmt = db.prepare(
+      `SELECT t.*, COUNT(r.user_id) AS registered
+       FROM tournaments t
+       LEFT JOIN tournament_registrations r ON r.tournament_id = t.tournament_id
+       WHERE t.status IN ('registration', 'scheduled')
+       GROUP BY t.tournament_id
+       ORDER BY t.start_time ASC
+       LIMIT 10`
+    );
+    return stmt.all();
+  }
+
+  private scheduleAutoStart(tournamentId: string, startTime: number, channel: TextChannel) {
+    const delay = Math.max(startTime - Date.now(), 0);
+    setTimeout(() => this.autoStartTournament(tournamentId, channel), delay);
+  }
+
+  private autoStartTournament(tournamentId: string, channel: TextChannel) {
+    const result = tournamentManager.startTournament(tournamentId);
+    if (result.success) {
+      channel.send(`🏁 ${result.message}`);
+    }
+  }
+
+  private isTournamentFull(tournament: any): boolean {
+    const registrations = tournamentManager.getRegistrations(tournament.id);
+    return registrations.size >= tournament.maxParticipants;
+  }
+}
+
+export const tournamentInterface = new TournamentInterface();
