@@ -18,6 +18,8 @@ class DatabaseManager {
     this.db.pragma('foreign_keys = ON');
   }
 
+  prepare<Params extends any[] = any[], Row = any>(query: string) {
+    return this.db.prepare<Params, Row>(query);
   prepare(query: string) {
     return this.db.prepare(query);
   }
@@ -92,6 +94,7 @@ const handleShutdown = (signal: NodeJS.Signals) => {
   } catch (error) {
     console.error('Error closing database during shutdown:', error);
   } finally {
+    const timer = setTimeout(() => process.exit(0), 1000) as unknown as NodeJS.Timer;
     const timer = setTimeout(() => process.exit(0), 1000);
     if (typeof timer.unref === 'function') {
       timer.unref();

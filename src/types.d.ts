@@ -4,10 +4,34 @@ declare module 'fs-extra' {
 }
 
 declare module 'better-sqlite3' {
+  export interface RunResult {
+    changes: number;
+    lastInsertRowid: number | bigint;
+  }
+
+  export interface Statement<BindParameters extends any[] = any[], Row = any> {
+    run(...params: BindParameters): RunResult;
+    get(...params: BindParameters): Row;
+    all(...params: BindParameters): Row[];
+    iterate(...params: BindParameters): IterableIterator<Row>;
+    raw(toggle?: boolean): this;
+    pluck(toggle?: boolean): this;
+    bind(...params: BindParameters): this;
+    columns(): Array<{ name: string }>;
+  }
+
+  export interface DatabaseOptions {
+    readonly?: boolean;
+    fileMustExist?: boolean;
+    timeout?: number;
+  }
+
   export default class Database {
-    constructor(path: string);
-    prepare(query: string): any;
+    constructor(path: string, options?: DatabaseOptions);
+    prepare<BindParameters extends any[] = any[], Row = any>(query: string): Statement<BindParameters, Row>;
     transaction<T extends (...args: any[]) => any>(fn: T): T;
+    pragma<T = unknown>(statement: string): T;
+    exec(sql: string): this;
     pragma(statement: string): any;
     exec(sql: string): void;
     close(): void;
@@ -236,6 +260,11 @@ declare module 'path' {
   export = path;
 }
 
+declare namespace NodeJS {
+  type Signals = string;
+  type Timer = number & { ref(): void; unref(): void };
+}
+
 declare const process: {
   env: Record<string, string | undefined>;
   argv: string[];
@@ -244,6 +273,7 @@ declare const process: {
   exitCode?: number;
   exit(code?: number): void;
   on(event: string, listener: (...args: any[]) => void): void;
+  once(event: string, listener: (...args: any[]) => void): void;
 };
 
 type Buffer = any;
