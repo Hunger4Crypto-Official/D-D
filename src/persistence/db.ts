@@ -49,6 +49,8 @@ function loadSchema(): string {
     path.resolve(moduleDir, '../../src/persistence/schema.sql'),
     path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
     path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
+    path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
+    path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
   const candidates: (string | URL)[] = [
     path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
     path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
@@ -68,13 +70,28 @@ function loadSchema(): string {
       return fs.readFileSync(candidate, 'utf-8');
       return fs.readFileSync(filePath, 'utf-8');
     } catch (err) {
-      const code = (err as { code?: string } | undefined)?.code;
+      const error = err as NodeJS.ErrnoException | undefined;
+      const code = error?.code;
       if (code !== 'ENOENT') {
         throw new Error(
           `Failed to read schema from "${filePath}": ${(err as Error).message}`,
           { cause: err instanceof Error ? err : undefined },
         );
       }
+
+      const reason = code === 'ENOENT' ? 'missing file' : error?.message ?? String(err);
+      attempts.push(`${candidate} (${reason})`);
+    }
+  }
+
+  const attemptedPaths = attempts.map(path => `  • ${path}`).join('\n');
+  throw new Error(
+    [
+      'Failed to load schema.sql. The runtime looks for a checked-in schema alongside the compiled files.',
+      'Ensure schema.sql is copied next to dist/persistence/db.js (or set CFG.dbPath to a directory that contains it).',
+      'The following locations were tried without success:',
+      attemptedPaths,
+    ].join('\n')
     }
   }
 
