@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import Database from 'better-sqlite3';
+import { fileURLToPath } from 'node:url';
 import { CFG } from '../config.js';
 
 const dir = path.dirname(CFG.dbPath);
@@ -42,6 +43,12 @@ class DatabaseManager {
 const db = new DatabaseManager(CFG.dbPath);
 
 function loadSchema(): string {
+  const moduleDir = path.dirname(fileURLToPath(import.meta.url));
+  const candidates = [
+    path.join(moduleDir, 'schema.sql'),
+    path.resolve(moduleDir, '../../src/persistence/schema.sql'),
+    path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
+    path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
   const candidates: (string | URL)[] = [
     path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
     path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
@@ -58,6 +65,7 @@ function loadSchema(): string {
     attempts.push(filePath);
 
     try {
+      return fs.readFileSync(candidate, 'utf-8');
       return fs.readFileSync(filePath, 'utf-8');
     } catch (err) {
       const code = (err as { code?: string } | undefined)?.code;
@@ -71,6 +79,7 @@ function loadSchema(): string {
   }
 
   throw new Error(
+    `Unable to locate schema.sql. Checked paths: ${candidates.join(', ')}`
     `Unable to locate schema.sql. Tried the following locations:\n${attempts
       .map((p) => ` - ${p}`)
       .join('\n')}`

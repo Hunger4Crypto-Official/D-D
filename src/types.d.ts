@@ -67,6 +67,10 @@ declare module 'node:crypto' {
   export function randomBytes(size: number): RandomBuffer;
 }
 
+declare module 'node:url' {
+  export function fileURLToPath(url: string | { href: string }): string;
+}
+
 declare module 'discord.js' {
   export type Snowflake = string;
 
