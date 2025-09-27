@@ -11,21 +11,20 @@ RUN adduser -S bot -u 1001
 COPY package*.json ./
 RUN npm ci --only=production && npm cache clean --force
 
-# Copy source code and schema
+# Copy source code
 COPY . .
 
-# Ensure schema.sql is in the right place for both dev and prod
+# Ensure schema.sql is accessible after build
 RUN mkdir -p dist/persistence
-RUN cp src/persistence/schema.sql dist/persistence/ || echo "Schema will be created inline"
 
 # Build the application
 RUN npm run build
 
-# Create data directory with proper permissions
-RUN mkdir -p ./data && chown -R bot:nodejs ./data
+# Copy schema to dist directory after build
+RUN cp src/persistence/schema.sql dist/persistence/schema.sql || echo "Schema will be handled inline"
 
-# Ensure schema is available in dist
-RUN cp src/persistence/schema.sql dist/persistence/schema.sql || echo "Using inline schema"
+# Create data directory with proper permissions
+RUN mkdir -p ./data ./logs ./backups && chown -R bot:nodejs /app
 
 # Switch to non-root user
 USER bot
