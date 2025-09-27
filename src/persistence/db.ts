@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import Database from 'better-sqlite3';
 import { fileURLToPath } from 'node:url';
 import { CFG } from '../config.js';
@@ -18,6 +19,8 @@ class DatabaseManager {
     this.db.pragma('foreign_keys = ON');
   }
 
+  prepare<Params extends any[] = any[], Row = any>(query: string) {
+    return this.db.prepare<Params, Row>(query);
   prepare(query: string) {
     return this.db.prepare(query);
   }
@@ -46,19 +49,39 @@ function loadSchema(): string {
     path.resolve(moduleDir, '../../src/persistence/schema.sql'),
     path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
     path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
+    path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
+    path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
+    path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
+    path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
+  const candidates: (string | URL)[] = [
+    path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
+    path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
+    new URL('./schema.sql', import.meta.url),
+    new URL('../../src/persistence/schema.sql', import.meta.url),
     path.resolve(process.cwd(), 'schema.sql'),
   ];
 
   const attempts: string[] = [];
 
   for (const candidate of candidates) {
+    const filePath =
+      candidate instanceof URL ? fileURLToPath(candidate) : candidate;
+    attempts.push(filePath);
+
     try {
       return fs.readFileSync(candidate, 'utf-8');
     } catch (err) {
       const error = err as NodeJS.ErrnoException | undefined;
       const code = error ? error.code : undefined;
+      return fs.readFileSync(filePath, 'utf-8');
+    } catch (err) {
+      const error = err as NodeJS.ErrnoException | undefined;
+      const code = error?.code;
       if (code !== 'ENOENT') {
-        console.warn('Error reading schema candidate:', candidate, err);
+        throw new Error(
+          `Failed to read schema from "${filePath}": ${(err as Error).message}`,
+          { cause: err instanceof Error ? err : undefined },
+        );
       }
 
       const reason =
@@ -67,11 +90,13 @@ function loadSchema(): string {
           : error && typeof error.message === 'string'
           ? error.message
           : String(err);
+      const reason = code === 'ENOENT' ? 'missing file' : error?.message ?? String(err);
       attempts.push(`${candidate} (${reason})`);
     }
   }
 
   const attemptedPaths = attempts.map(path => `  - ${path}`).join('\n');
+  const attemptedPaths = attempts.map(path => `  • ${path}`).join('\n');
   throw new Error(
     [
       'Failed to load schema.sql. The runtime looks for a checked-in schema alongside the compiled files.',
@@ -79,6 +104,14 @@ function loadSchema(): string {
       'The following locations were tried without success:',
       attemptedPaths,
     ].join('\n')
+    }
+  }
+
+  throw new Error(
+    `Unable to locate schema.sql. Checked paths: ${candidates.join(', ')}`
+    `Unable to locate schema.sql. Tried the following locations:\n${attempts
+      .map((p) => ` - ${p}`)
+      .join('\n')}`
   );
 }
 
@@ -100,6 +133,7 @@ const handleShutdown = (signal: NodeJS.Signals) => {
     console.error('Error closing database during shutdown:', error);
   } finally {
     const timer = setTimeout(() => process.exit(0), 1000) as unknown as NodeJS.Timer;
+    const timer = setTimeout(() => process.exit(0), 1000);
     if (typeof timer.unref === 'function') {
       timer.unref();
     }
