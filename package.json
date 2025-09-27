@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "tsc -p .",
+    "build": "tsc -p . && node scripts/copy-schema.mjs",
     "start": "node dist/index.js",
     "dev": "node --loader ts-node/esm src/index.ts",
     "db:reset": "node --loader ts-node/esm src/persistence/db.ts --reset",
