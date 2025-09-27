@@ -51,6 +51,8 @@ function loadSchema(): string {
     path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
     path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
     path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
+    path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
+    path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
   const candidates: (string | URL)[] = [
     path.resolve(process.cwd(), 'dist', 'persistence', 'schema.sql'),
     path.resolve(process.cwd(), 'src', 'persistence', 'schema.sql'),
@@ -68,6 +70,9 @@ function loadSchema(): string {
 
     try {
       return fs.readFileSync(candidate, 'utf-8');
+    } catch (err) {
+      const error = err as NodeJS.ErrnoException | undefined;
+      const code = error ? error.code : undefined;
       return fs.readFileSync(filePath, 'utf-8');
     } catch (err) {
       const error = err as NodeJS.ErrnoException | undefined;
@@ -79,11 +84,18 @@ function loadSchema(): string {
         );
       }
 
+      const reason =
+        code === 'ENOENT'
+          ? 'missing file'
+          : error && typeof error.message === 'string'
+          ? error.message
+          : String(err);
       const reason = code === 'ENOENT' ? 'missing file' : error?.message ?? String(err);
       attempts.push(`${candidate} (${reason})`);
     }
   }
 
+  const attemptedPaths = attempts.map(path => `  - ${path}`).join('\n');
   const attemptedPaths = attempts.map(path => `  • ${path}`).join('\n');
   throw new Error(
     [
